@@ -80,3 +80,22 @@ export {default as message} from './Contact/message.svg'
 export {default as privateCheck} from './Contact/konfidelnos.svg'
 export {default as homeTrend} from './Contact/home-trend-up.svg'
 export {default as pictureframa} from './Contact/picture-frame.svg'
+
+
+
+
+
+// ----------------SeasonBrand---------
+
+export {default as summerBrand} from './DressMe/summerBrand.svg'
+export {default as autummBrand} from './DressMe/autummBrand.svg'
+export {default as winterBrand} from './DressMe/winterBrand.svg'
+export {default as springBrand} from './DressMe/springBrand.svg'
+
+
+// ----------------SeasonType---------
+
+export {default as summerSeason} from './Season/SummerSeason.svg'
+export {default as autummSeason} from './Season/autummSeason.svg'
+export {default as winterSeason} from './Season/winterSeason.svg'
+export {default as springSeason} from './Season/spirngSeason.svg'
