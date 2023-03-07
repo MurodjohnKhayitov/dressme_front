@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "AeonicProBold";
+  src: url("/src/fonts/._AeonikProTRIAL-Bold.otf") format('otf');
+}
+
+@font-face {
+  font-family: "AeonicProLight";
+  src: url("/src/fonts/._AeonikProTRIAL-Light.otf") format('otf');
+}
+
+@font-face {
+  font-family: "AeonicProRegular";
+  src: url("/src/fonts/._AeonikProTRIAL-Regular.otf") format('otf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+button,
+:focus,
+input,
+textarea,
+select {
+  outline: none;
+}
+
+.openFile {
+  display: none;
+  transform: translateX(-100%);
+  transition: 0.5s;
+  z-index: -1;
+  height: 0;
+  background-color: #fff;
+}
+
+.closeFile {
+  display: block;
+  transform: translateX(0%);
+  transition: 0.5s;
+  z-index: -1;
+  background-color: #fff;
+}

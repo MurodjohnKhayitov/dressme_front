@@ -1,0 +1,63 @@
+.NextArrow button {
+    position: absolute;
+    top: 40%;
+    z-index: 5;
+    right: 10px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 20px;
+    border: 1px solid rgba(118, 121, 127, 0.3);
+    background: #fff;
+    transition: all .3s ease-in-out;
+    opacity: .5;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.PrevArrow button {
+    position: absolute;
+    top: 40%;
+
+
+    z-index: 5;
+    left: 10px;
+
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 20px;
+    border: 1px solid rgba(118, 121, 127, 0.3);
+    background: #fff;
+    transition: all .3s ease-in-out;
+    opacity: .5;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#forwidt {
+    transition: .4s;
+}
+
+#forwidt:hover{
+    
+}
+#forwidt:hover img {
+    transform: scale(1.009);
+
+}
