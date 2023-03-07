@@ -51,6 +51,8 @@ export {default as helpBlack} from './help-black.svg'
 export {default as star} from './Star.svg'
 export {default as logoo} from './logoo.svg'
 export {default as ru} from './russia.svg'
+export {default as home} from './home.svg'
+export {default as catalogBlack} from './catalog-black.svg'
 
 
 // -----Contact--------

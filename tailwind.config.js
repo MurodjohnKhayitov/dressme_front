@@ -21,6 +21,10 @@ module.exports = {
         aeonicProLight: ['AeonicProLight', 'sans-serif'],
         aeonicProRegular: ['AeonicProRegular', 'sans-serif'],
       },
+      boxShadow: {
+        myShadow1: "1px -2px 0 0 rgb(17,24,39)",
+        myShadow2: "-1px -2px 0 0 rgb(17,24,39)"
+      },
     },
     screens: {
       ss: '320px',
