@@ -459,8 +459,8 @@ export default function ClothesSlider() {
 
 
     return (
-        <div className='flex flex-col  box-border mt-28  '>
-            <div className='max-w-[1440px]  h-fit md:px-[80px] flex justify-center  xs:px-[50px] ss:px-[36px]  box-border'>
+        <div className='flex flex-col  box-border mt-28 ss:hidden xs:block '>
+            <div className='max-w-[1440px]  h-fit md:px-[80px] flex justify-center  sm:px-[50px] ss:px-[16px]  box-border'>
 
                 <div className='w-full h-fit   '>
                     <div className=' flex ss:flex-col xs:flex-row xs:justify-between ss:justify-center items-center h-fit py-6 '>
@@ -506,7 +506,7 @@ export default function ClothesSlider() {
             </div>
 
             <div className='w-full h-fit flex flex-col   border-y	border-solid	border-borderColorCard mt-12'>
-                <div className='h-fit md:px-[80px]    max-w-[1440px] xs:px-[50px] ss:px-[36px]  box-border '>
+                <div className='h-fit md:px-[80px]    max-w-[1440px] sm:px-[50px] ss:px-[16px]  box-border '>
                     <div className='w-full flex items-center xs:h-[560px] ss:h-[400px] xs:py-12 ss:py-1 '>
                         <Slider {...settings} className='w-[100%] flex xs:justify-between xs:pl-0'
                         >

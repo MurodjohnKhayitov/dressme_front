@@ -4,7 +4,7 @@ import 'swiper/swiper-bundle.css';
 import "swiper/css";
 import "swiper/css/pagination";
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
-import { next, category, arrowBottomFull, mouse, toBottom, markets } from '../../assets/imgs'
+import { next, category, arrowBottomFull, mouse, toBottom, markets, } from '../../assets/imgs'
 import styles from './clothers.module.css'
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import Slider from "react-slick";
@@ -64,32 +64,30 @@ export default function MainPageSliders() {
     const [carosuelData, setCarosuelData] = useState([
         {
             Category: [
-                { id: 1, type: "Student", count: 123, img: "" },
-                { id: 2, type: "Businiess", count: 223, img: "" },
-                { id: 3, type: "Muslim", count: 80, img: "" },
-                { id: 4, type: "Travel", count: 453, img: "" },
-                { id: 5, type: "Sport", count: 320, img: "" },
-                { id: 6, type: "Classic", count: 40, img: "" },
-                { id: 7, type: "Relaxed", count: 180, img: "" },
-                { id: 8, type: "Dramatic", count: 250, img: "" },
-                { id: 9, type: "Creative", count: 190, img: "" },
-                { id: 10, type: "Rebellious", count: 310, img: "" },
-                { id: 11, type: "Feminine", count: 479, img: "" },
+                { id: 1, type: "Student", count: 123, img:""  },
+                { id: 2, type: "Businiess", count: 223, img:""  },
+                { id: 3, type: "Muslim", count: 80, img:""  },
+                { id: 4, type: "Travel", count: 453, img:""  },
+                { id: 5, type: "Sport", count: 320, img:""  },
+                { id: 6, type: "Classic", count: 40, img:""  },
+                { id: 7, type: "Relaxed", count: 180, img:""  },
+                { id: 8, type: "Dramatic", count: 250, img:""  },
+                { id: 9, type: "Creative", count: 190, img:""  },
+
 
             ],
 
             campany: [
-                { id: 1, type: "Adidas", },
-                { id: 2, type: "Nike", },
-                { id: 3, type: "Puma", },
-                { id: 4, type: "Reebok", },
-                { id: 5, type: "Lotto", },
-                { id: 6, type: "Prince", },
-                { id: 7, type: "H&M", },
-                { id: 8, type: "Zara", },
-                { id: 9, type: "Channel", },
-                { id: 10, type: "LV", },
-                { id: 11, type: "Channel", },
+                { id: 1, type: "Adidas", imgFull:""  },
+                { id: 2, type: "Nike", imgFull:""  },
+                { id: 3, type: "Puma", imgFull:""  },
+                { id: 4, type: "Reebok", imgFull:""  },
+                { id: 5, type: "polo", imgFull:""  },
+                { id: 6, type: "suprime", imgFull:""  },
+                { id: 7, type: "luisVitton", imgFull:""  },
+                { id: 8, type: "locaste", imgFull:""  },
+                { id: 9, type: "loroPiono", imgFull:""  },
+                { id: 10, type: "dolce", imgFull:""  },
 
             ]
         },
@@ -219,7 +217,7 @@ export default function MainPageSliders() {
 
     return (
         <div className='box-border flex flex-col justify-center	'>
-            <div className="h-fit  max-w-[1440px]  md:px-[80px]    xs:px-[50px] ss:px-[36px] ">
+            <div className="h-fit  max-w-[1440px]  md:px-[80px]    sm:px-[50px] ss:px-[16px] ">
                 <div className='w-full 	m-auto	my-5 py-7   ss:hidden xs:block'>
                     <Slider {...settings} className='!w-[100%] flex xs:justify-between'
                     >
@@ -230,7 +228,7 @@ export default function MainPageSliders() {
                                         return (
                                             <div key={data.id} className='ss:!w-[95%]  h-[260px] rounded ml-1 '>
                                                 <div className='w-full h-[230px] bg-bgColor border border-solid	border-borderColorCard '>
-                                                    {data?.img ? <img src={data?.img} alt="student" /> : null}
+                                                    {data?.img ? <img className='h-full w-full' src={data?.img} alt="student" /> : null}
                                                 </div>
                                                 <div className='h-12.5 flex items-center justify-start'>
                                                     <p className='not-italic font-medium text-base leading-4 text-black mt-3 mr-2  '>{data?.type || "type"}
@@ -252,9 +250,9 @@ export default function MainPageSliders() {
                             return (
                                 data.Category.map(data => {
                                     return (
-                                        <div className='w-[100px]' >
+                                        <div className='ll:w-[100px] ss:w-[80px]' >
                                             <div className='w-[100%] h-[80px] rounded bg-bgColor  border border-solid border-borderColorCard'>
-
+                                                <img className='h-full w-full'  src={data?.img} alt=""/>
                                             </div>
                                             <div className='w-full py-1 flex items-center'>
                                                 <p className='not-italic  mr-2 font-medium text-sm leading-6 text-black'>{data?.type || "type"}
@@ -269,7 +267,7 @@ export default function MainPageSliders() {
                     }
 
                 </div>
-                <div className='w-full 	m-auto		my-9 py-7 '>
+                <div className='w-full 	m-auto		my-9 py-7   ss:hidden xs:block'>
                     <Slider {...settings1} className='w-[100%] flex xs:justify-between'
                     >
                         {
@@ -277,9 +275,9 @@ export default function MainPageSliders() {
                                 return (
                                     data.campany.map(data => {
                                         return (
-                                            <div key={data?.id} className='!w-[95%] h-[100px] rounded-lg bg-catalogBg flex items-center justify-center select-none border border-solid border-searchBgColor'>
+                                            <div key={data?.id} className='!w-[95%] h-[100px]  rounded-lg bg-catalogBg flex items-center justify-center select-none border border-solid border-searchBgColor'>
                                                 <p className='w-full h-full flex items-center justify-center not-italic font-medium text-xl leading-6 text-center text-black '>{data?.type || "0"}</p>
-
+                                                {/* <img src={data?.imgFull} alt="" /> */}
                                             </div>
 
                                         )
@@ -292,10 +290,10 @@ export default function MainPageSliders() {
 
                     </Slider>
                 </div>
-             
 
 
-                <div className='flex 	m-auto flex-wrap justify-between items-center ss:mt-3 md:mt-12 gap-y-5 py-7 '>
+
+                <div className='flex 	m-auto flex-wrap justify-between items-center ss:mt-3 md:mt-12 gap-y-5 py-7   ss:hidden xs:block xs:flex'>
                     {/* 1 */}
                     <div className='lg:w-[23%] sm:w-[47%] ss:w-[100%] ss:h-20 py-[20px] px-[16px] xs:h-[100px] bg-bgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-borderColorCard'>
                         <div className='w-full'>

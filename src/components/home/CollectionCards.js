@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { discount, bucket, video, delivery, heart, shirt, addBag, cardImg, shortik, kastyum, star } from '../../assets/imgs'
+import { discount, bucket, video, delivery, heart, shirt, addBag, cardImg, shortik, kastyum, star, category } from '../../assets/imgs'
 import { CiHeart } from 'react-icons/ci';
 
 import StarRatingComponent from 'react-star-rating-component'
@@ -255,7 +255,7 @@ export default function CollectionCards() {
 
     return (
         <div className="flex flex-col box-border">
-            <div className='max-w-[1440px] m-auto h-fit md:px-[80px]  xs:px-[50px] ss:px-[36px] pt-16 pb-4'>
+            <div className='max-w-[1440px] m-auto h-fit md:px-[80px]  sm:px-[50px] ss:px-[16px] pt-16 pb-4 '>
                 <div className="w-full ss:block sm:flex justify-between items-center  md:px-0">
                     <div className="not-italic font-medium lg:w-fit lg:text-2xl xl:text-3xl flex items-center leading-8 text-black">
                         <span>Коллекции одежды,</span> <span className='ss:hidden sm:block'>которые вам подходят</span>
@@ -483,12 +483,13 @@ export default function CollectionCards() {
                     })
                     }
                 </div>
-                <div className='w-[100%] h-fit flex justify-center mt-14'>
-                    <div className='w-1/2 h-[60px] text-center py-5 rounded cursor-pointer  bg-bgColor border border-solid border-borderColorCard'>
+                <div className='w-[100%] h-fit flex flex-col justify-center xs:mt-14'>
+                    <div className='md:w-1/2 xs:w-[80%] m-auto h-[60px] text-center py-5 rounded cursor-pointer  ss:hidden xs:block  bg-bgColor border border-solid border-borderColorCard'>
                         <span className='not-italic font-medium text-base leading-4 text-center text-black'>
                             Показать ещё 20 товаров
                         </span>
                     </div>
+
                 </div>
             </div>
         </div >
