@@ -1,6 +1,7 @@
 import TopHeader from "./top";
 import MediumHeader from "./medium";
 import BottomHeader from "./bottom";
+import NavMenu from "./nav-menu";
 
 const Header = () => {
 
@@ -9,6 +10,7 @@ const Header = () => {
         <TopHeader />
         <MediumHeader />
         <BottomHeader />
+        <NavMenu />
     </header>
   );
 };
