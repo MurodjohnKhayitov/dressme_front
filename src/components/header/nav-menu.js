@@ -18,16 +18,12 @@ const NavMenu = () => {
     const [active, setActive] = useState(0)
 
     return(
-        <div className="bg-blue-300 drop-shadow-2xl fixed bottom-0  px-8 max-h-[4.4rem] w-full rounded-t-xl md:hidden z-50">
+        <div className="bg-white drop-shadow-2xl fixed bottom-0  px-8 max-h-[4.4rem] w-full rounded-t-xl md:hidden z-50">
             <ul className="flex text-[14px] font-medium justify-between py-3">
                 
-                {/* <span className={`bg-blue-500 ${menus[active].dis} duration-500 border-4 border-gray-900 h-14 w-14 absolute -top-4 rounded-full -z-10`}>
-                    <span className="w-3.5 h-3.5 bg-transparent absolute top-[13px] -left-[18px] rounded-tr-[11px] shadow-myShadow1"></span>
-                    <span className="w-3.5 h-3.5 bg-transparent absolute top-[13px] -right-[18px] rounded-tl-[11px] shadow-myShadow2"></span>
-                </span> */}
                 {menus.map((menu, index) => (
                     
-                    <li className="w-12 " key={index}>
+                    <li className="w-16 " key={index}>
                         <Link to="#"  className="flex flex-col text-center pt-3" onClick={()=> {setActive(index)}}>
                             <span className={`${index === active && '-mt-3 text-white' } relative duration-500 mx-auto cursor-pointer`}> 
                                 <img src={menu.icon} width='24'/>

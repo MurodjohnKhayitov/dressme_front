@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { adduser, baby, call, categoryContact, childre, dashborad, downIcons, error, femaleContact, footer, girls, homeTrend, list, locate, logo, man, map, maps, markets, message, privateCheck, russi, toRightIcons, upload } from "../../assets/imgs";
+import { adduser, arrowBottomBlack, arrowBottomRight, baby, business, call, categoryContact, children, dashborad, downIcons, error, feedbackIcon, femaleContact, footer, girls, homeTrend, list, locate, location, logo, logoo, man, map, maps, markets, message, privateCheck, ru, shop, toRightIcons, upload } from "../../assets/imgs";
 import { styles } from "../../util/style";
 import { FiInstagram } from "react-icons/fi";
 import { AiOutlineYoutube } from "react-icons/ai";
@@ -10,227 +10,206 @@ const Footer = () => {
 
     return (
 
-        <div className="w-full h-full  flex flex-col  box-border ">
-            <div className='w-full h-full md:px-[130px] m-auto max-w-[1440px] xs:px-[100px] ss:px-[36px]  '>
-                <div className='w-full h-full  '>
-                    <div className="flex flex-wrap justify-between ss:p-0   py-7 px-10 md:border md:border-solid md:border-searchBgColor  ">
-                        {/* 1 */}
-                        <div className=" lg:w-1/5  ss:py-2   ss:w-full ss:mb-4    ">
-                            <div className="flex items-center justify-between lg:block w-full py-1">
-                                <Link to='#'>
-                                    <img src={logo} alt="logo" />
-                                </Link>
-                                <Link to="#" className="flex items-center  lg:hidden">
-                                    <img src={dashborad} alt="" />
-                                    <span className="not-italic ml-2 font-medium text-sm leading-4">Dashboard</span>
-                                </Link>
+        <div>
+            <div className='w-full h-full m-auto max-w-[1440px] xs:px-[100px] md:px-[80px] ss:bg-btnBgColor md:bg-white'>
+                
+                <div className='rounded-lg ss:px-4 ss:py-6 md:p-10 md:border md:border-searchBgColor'>
+                    
+                    {/* Footer LOGO and Fedback form */}
+                    <div className="flex items-center justify-between mb-4 ss:px-4 md:px-0">
+                        <Link to='#'>
+                            <img src={logoo} alt="logo" />
+                        </Link>
+                        <Link to="#" className="hidden items-center bg-bgColor pl-16 py-[15px] border border-searchBgColor rounded md:flex">
+                            <img src={feedbackIcon} alt="" />
+                            <span className="text-base font-medium leading-4 ml-[12.5px] mr-[32.37px]">Форма для обратной связи</span>
+                            <img src={arrowBottomRight} alt="arrow-right-black" className="mr-5" />
+                        </Link>
+                        <Link to='#' className="flex items-center md:hidden">
+                            <img src={homeTrend} alt="" />
+                            <span className="ml-2 font-medium text-sm">Дашборд</span>
+                        </Link>
+
+                    </div>
+
+                    {/* Address */}
+                    <div className="flex flex-col ss:w-full md:w-[306px] ss:px-4 md:px-0">
+                        <div className="text-textColor mb-[18px] text-sm">Юридический адрес :</div>
+                        <div className="flex items-center mb-[46px]">
+                            <div className="border border-searchBgColor flex items-center justify-center rounded mr-3 w-24 h-12 ss:bg-white md:bg-transparent">
+                                <img src={location} alt="location"/>
                             </div>
-                            <div className="title text-textColor md:my-4 ss:my-2  mb-7 w-[200px] mt-9 lg:text-xs ">Dress.me official address:</div>
-                            <div className="flex  items-center ss:justify-between md:justify-start">
-                                <p className="w-12 h-12 mr-3 lg:hidden flex items-center justify-center rounded bg-white border border-solid border-searchBgColor"><img src={locate} alt="location" /></p>
-                                <p className="not-italic font-normal text-base underline leading-4 lg:py-2 lg:leading-8 text-black">Uzbekistan, Tashkent city, Chilanzar district, N.hood “Mevazor”, 1A</p>
+                            <div className="font-normal text-sm underline underline-offset-4">Мирзо-Улугбекский район, проспект Амира Темура, 60 - Ташкент, 100017</div>
+                        </div>
+                    </div>
+
+                    {/* Categories, menu, social networks */}
+                    <div className="flex-wrap flex-row justify-between mb-[104px] ss:hidden md:flex">
+                        
+                        {/* Categories */}
+                        <div className="md:w-1/5">
+
+                            <div className="font-medium w-fit text-base cursor-pointer ss:mb-4 md:mb-[30px]">
+                                Категории
                             </div>
-                        </div>
-                        {/* 2 */}
-
-                        <div className="lg:w-1/5 sm:py-3 ss:w-6/12  ">
-                            <div className="font-medium w-fit  text-xl cursor-pointer ss:mb-2 ss:text-lg  md:mb-[30px] hover:border-b-2 hover:text-fullBlue hover:border-fullBlue">Menus</div>
-                            <ul>
+                            <ul className="text-sm font-normal">
                                 <li className="ss:mb-1 md:mb-4">
                                     <Link to='#' className="flex items-center">
-                                        <img src={error} alt="" />
-                                        <span className="font-normal ml-2  ss:text-sm md:text-base">About us</span>
+                                        <img src={man} alt="" className="ml-[2px]" />
+                                        <span className="ml-[14px]">Мужчины</span>
                                     </Link>
                                 </li>
                                 <li className="ss:mb-1 md:mb-4">
                                     <Link to='#' className="flex items-center">
-                                        <img src={adduser} alt="" />
-                                        <span className="font-normal ml-2  ss:text-sm md:text-base">Vacancy</span>
+                                        <img src={femaleContact} alt="" className="ml-[2px]" />
+                                        <span className="ml-[14px]">Женщины</span>
                                     </Link>
                                 </li>
                                 <li className="ss:mb-1 md:mb-4">
                                     <Link to='#' className="flex items-center">
-                                        <img src={list} alt="" />
-                                        <span className="font-normal ml-2  ss:text-sm md:text-base">Our Blog</span>
-                                    </Link>
-                                </li>
-                                <li className="ss:mb-1 md:mb-4">
-                                    <Link to='#' className="flex items-center">
-                                        <img src={categoryContact} alt="" />
-                                        <span className="font-normal ml-2  ss:text-sm md:text-base">Catolog</span>
-                                    </Link>
-                                </li>
-                                <li className="ss:mb-1 md:mb-4">
-                                    <Link to='#' className="flex items-center">
-                                        <img src={maps} alt="" />
-                                        <span className="font-normal ml-2  ss:text-sm md:text-base">Cite Maps</span>
-                                    </Link>
-                                </li>
-
-                            </ul>
-                        </div>
-                        {/* 3 */}
-
-
-                        <div className="lg:w-1/5 sm:py-3  ss:w-6/12  ">
-
-                            <div className="font-medium w-fit  text-xl cursor-pointer   ss:mb-4 ss:text-lg md:mb-[30px] hover:border-b-2 hover:text-fullBlue hover:border-fullBlue">Categories</div>
-                            <ul className="">
-                                <li className="ss:mb-1 md:mb-4">
-                                    <Link to='#' className="flex items-center">
-                                        <img src={man} alt="" className="m-0" />
-                                        <span className="font-normal ml-2  ss:text-sm md:text-base">Men</span>
-                                    </Link>
-                                </li>
-                                <li className="ss:mb-1 md:mb-4">
-                                    <Link to='#' className="flex items-center">
-                                        <img src={femaleContact} alt="" className="ml-[6px]" />
-                                        <span className="font-normal ml-4  ss:text-sm md:text-base">Women</span>
-                                    </Link>
-                                </li>
-                                <li className="ss:mb-1 md:mb-4">
-                                    <Link to='#' className="flex items-center">
-                                        <img src={childre} alt="" />
-                                        <span className="font-normal ml-2  ss:text-sm md:text-base">Children</span>
+                                        <img src={children} alt="" />
+                                        <span className="ml-3">Мальчикы</span>
                                     </Link>
                                 </li>
                                 <li className="ss:mb-1 md:mb-4">
                                     <Link to='#' className="flex items-center">
                                         <img src={girls} alt="" />
-                                        <span className="font-normal ml-2  ss:text-sm md:text-base">Girls</span>
+                                        <span className="ml-3">Девочкы</span>
                                     </Link>
                                 </li>
                                 <li className="ss:mb-1 md:mb-4">
                                     <Link to='#' className="flex items-center">
                                         <img src={baby} alt="" />
-                                        <span className="font-normal ml-2  ss:text-sm md:text-base">Baby</span>
+                                        <span className="ml-3">Младенцы</span>
                                     </Link>
                                 </li>
                             </ul>
+
                         </div>
-                        {/* 4 */}
 
-                        <div className="ss:w-full lg:w-1/5">
-
-                            <div className="ss:block lg:hidden w-full h-12 ss:flex items-center justify-center ss:my-4 rounded border border-solid border-borderColorCard ">
-                                <p><img src={upload} alt="" /></p>
-                                <p className="not-italic font-medium mx-2 text-base leading-4 text-black lg:text-xs">Форма для обратной связи</p>
-                                <p><img src={toRightIcons} alt="img" /></p>
-                            </div>
-
-                            <div className="font-medium w-fit cursor-pointer text-xl ss:hidden    lg:block py-3  ss:mb-4 ss:text-lg md:mb-[18px] hover:border-b-2 hover:text-fullBlue hover:border-fullBlue">Feedback Form</div>
-
-
-                            {/* 5 */}
-                            <div className=" w-full h-fit ss:my-0   ">
-                                <ul className="w-full lg:h-fit ss:h-10  lg:block ss:flex items-center justify-between ">
-                                    <li className="lg:w-full ss:w-6/12 h-full  ss:flex items-center md:mb-2">
+                        {/* Menu */}
+                        <div className="md:w-3/5 ">
+                            
+                            <div className="font-medium w-fit cursor-pointer text-base ss:mb-2 md:mb-[30px]">Меню</div>
+                            <ul className="flex flex-row text-sm">
+                                <div className="basis-1/3">
+                                    <li className="ss:mb-1 md:mb-4">
                                         <Link to='#' className="flex items-center">
-                                            <img src={markets} alt="" />
-                                            <span className="font-normal ml-2  ss:text-sm md:text-base">Markets</span>
+                                            <img src={error} alt="" />
+                                            <span className="font-normal ml-2">О нас</span>
                                         </Link>
                                     </li>
-                          <li className="lg:w-full ss:w-6/12 h-full   flex items-center md:mb-2">
+                                    <li className="ss:mb-1 md:mb-4">
                                         <Link to='#' className="flex items-center">
-                                            <img src={message} alt="" />
-                                            <span className="font-normal ml-2  ss:text-sm md:text-base">Message</span>
+                                            <img src={adduser} alt="" />
+                                            <span className="font-normal ml-2">Вакансия</span>
                                         </Link>
                                     </li>
-                                </ul>
-                                <ul className="w-full lg:h-fit ss:h-10 lg:block ss:flex items-center justify-between ">
-
-                                    <li className="lg:w-full ss:w-6/12 h-full flex items-center md:mb-2">
-                                        <Link to='#' className="flex items-center">
-                                            <img src={homeTrend} alt="" />
-                                            <span className="font-normal ml-2  ss:text-sm md:text-base">Business</span>
-                                        </Link>
-                                    </li>
-
-                                    <li className="lg:w-full ss:w-6/12 h-full   lg:block ss:flex items-center md:mb-2">
-                                        <Link to='#' className="flex items-center">
-                                            <img src={call} alt="" />
-                                            <span className="font-normal ml-2  ss:text-sm md:text-base">Contact</span>
-                                        </Link>
-                                    </li>
-                                </ul>
-                                <ul className="w-full lg:h-fit ss:h-10  lg:block ss:flex items-center justify-between ">
-
-                                    <li className="lg:w-full ss:w-6/12 h-full   flex items-center md:mb-2">
-                                        <Link to='#' className="flex items-center">
-                                            <img src={map} alt="" />
-                                            <span className="font-normal ml-2  ss:text-sm md:text-base">Maps</span>
-                                        </Link>
-                                    </li>
-
-
-                                </ul>
-                                <ul className="w-full lg:h-fit ss:h-10  lg:block ss:flex items-center justify-between ">
-
-                                    <li className="lg:w-full ss:w-6/12 h-full   flex items-center md:mb-2">
+                                    <li className="ss:mb-1 md:mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={list} alt="" />
-                                            <span className="font-normal ml-2  ss:text-sm md:text-base">My order</span>
+                                            <span className="font-normal ml-2">Наш блог</span>
                                         </Link>
                                     </li>
-                                </ul>
-                                <ul className="w-full lg:h-fit ss:h-10  lg:block ss:flex items-center justify-between md:mb-2">
-                                    <li className="lg:w-full ss:w-6/12 h-full  flex items-center ">
+                                    <li className="ss:mb-1 md:mb-4">
+                                        <Link to='#' className="flex items-center">
+                                            <img src={categoryContact} alt="" />
+                                            <span className="font-normal ml-2">Каталог</span>
+                                        </Link>
+                                    </li>
+                                    <li className="ss:mb-1 md:mb-4">
+                                        <Link to='#' className="flex items-center">
+                                            <img src={maps} alt="" />
+                                            <span className="font-normal ml-2">Карта сайта</span>
+                                        </Link>
+                                    </li>
+                                </div>
+                                <div className="basis-1/3">
+                                    <li className="ss:mb-1 md:mb-4">
+                                        <Link to='#' className="flex items-center">
+                                            <img src={shop} alt="" />
+                                            <span className="font-normal ml-2">Магазины</span>
+                                        </Link>
+                                    </li>
+                                    <li className="ss:mb-1 md:mb-4">
+                                        <Link to='#' className="flex items-center">
+                                            <img src={homeTrend} alt="" />
+                                            <span className="font-normal ml-2">Бизнес</span>
+                                        </Link>
+                                    </li>
+                                    <li className="ss:mb-1 md:mb-4">
+                                        <Link to='#' className="flex items-center">
+                                            <img src={map} alt="" />
+                                            <span className="font-normal ml-2">Карта</span>
+                                        </Link>
+                                    </li>
+                                    <li className="ss:mb-1 md:mb-4">
+                                        <Link to='#' className="flex items-center">
+                                            <img src={list} alt="" />
+                                            <span className="font-normal ml-2">Мои заказы</span>
+                                        </Link>
+                                    </li>
+                                    <li className="ss:mb-1 md:mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={privateCheck} alt="" />
-                                            <span className="font-normal ml-2  ss:text-sm md:text-base">Privacy Policy
-                                            </span>
+                                            <span className="font-normal ml-2">Политика конфиденциальности</span>
                                         </Link>
                                     </li>
-                                </ul>
-
-                            </div>
-                            {/* 6 */}
-
+                                </div>
+                                <div className="basis-1/3"> 
+                                    <li className="ss:mb-1 md:mb-4">
+                                        <Link to='#' className="flex items-center">
+                                            <img src={homeTrend} alt="" />
+                                            <span className="font-normal ml-2">Дашборд</span>
+                                        </Link>
+                                    </li>
+                                    <li className="ss:mb-1 md:mb-4">
+                                        <Link to='#' className="flex items-center">
+                                            <img src={message} alt="" />
+                                            <span className="font-normal ml-2">Помощь</span>
+                                        </Link>
+                                    </li>
+                                    <li className="ss:mb-1 md:mb-4">
+                                        <Link to='#' className="flex items-center">
+                                            <img src={call} alt="" />
+                                            <span className="font-normal ml-2">Контакты</span>
+                                        </Link>
+                                    </li>
+                                </div>
+                            </ul>
                         </div>
-                        <div className=" w-full h-11 lg:hidden flex items-center justify-between my-4  ">
-                            <div className="w-[47%] h-full  flex items-center justify-center  border border-solid border-borderColorCard rounded">
-                                <p><img src={locate} alt="" /></p>
-                                <p className="not-italic font-medium ll:mx-5 ss:mx-2 ll:text-base ss:text-sm  leading-4 text-black">Toshkent</p>
-                                <p><img src={downIcons} alt="img" /></p>
-                            </div>
-                            <div className="w-[47%] h-full flex items-center justify-center  border border-solid border-borderColorCard rounded">
-                                <p><img src={russi} alt="" /></p>
-                                <p className="not-italic font-medium ll:mx-5  ss:mx-2 ll:text-base ss:text-sm leading-4 text-black">Russia</p>
-                                <p><img src={downIcons} alt="img" /></p>
-                            </div>
-                        </div>
 
-                        {/* 7 */}
-                        <div className="lg:w-1/5 ss:w-full sm:py-3   ">
-                            <div className="font-medium w-fit  text-xl cursor-pointer  ss:mb-4 ss:text-lg md:mb-[30px] hover:border-b-2 hover:text-fullBlue hover:border-fullBlue">Social network</div>
-                            <div className="w-full ss:flex lg:block items-center  ">
-
-                                <ul className="ss:w-6/12 lg:w-full">
+                        {/* Social networks */}
+                        <div className="md:basis-1/5">
+                            
+                            <div className="font-medium w-fit cursor-pointer text-base ss:mb-2 md:mb-[30px]">
+                                Социальная сеть
+                            </div>
+                            
+                            <div className="flex flex-col items-center w-full ss:flex lg:block">
+                                <ul className="ss:w-6/12 lg:w-full text-sm">
                                     <li className="ss:mb-2 md:mb-4">
                                         <Link to='#' className="flex items-center">
                                             <FiInstagram className="text-[20px]" />
-                                            <span className="font-normal ml-2  ss:text-sm md:text-base">Instagram</span>
+                                            <span className="font-normal ml-2">Instagram</span>
                                         </Link>
                                     </li>
                                     <li className="ss:mb-2 md:mb-4">
                                         <Link to='#' className="flex items-center">
                                             <RiFacebookCircleLine className="text-[20px]" />
-                                            <span className="font-normal ml-2  ss:text-sm md:text-base">Facebook</span>
+                                            <span className="font-normal ml-2">Facebook</span>
                                         </Link>
                                     </li>
                                     <li className="ss:mb-2 md:mb-4">
                                         <Link to='#' className="flex items-center">
                                             <RiMessengerLine className="text-[20px]" />
-                                            <span className="font-normal ml-2  ss:text-sm md:text-base">Message</span>
+                                            <span className="font-normal ml-2">Message</span>
                                         </Link>
                                     </li>
-
-                                </ul>
-                                <ul className="text-start h-fit	  ">
                                     <li className="ss:mb-2 md:mb-4">
                                         <Link to='#' className="flex items-center">
                                             <TbBrandTelegram className="text-[20px]" />
-                                            <span className="font-normal ml-2  ss:text-sm md:text-base">Telegram</span>
+                                            <span className="font-normal ml-2">Telegram</span>
                                         </Link>
                                     </li>
                                     <li className="ss:mb-2 md:mb-4">
@@ -239,64 +218,135 @@ const Footer = () => {
                                             <span className="font-normal ml-2  ss:text-sm md:text-base">You Tube</span>
                                         </Link>
                                     </li>
-
                                 </ul>
+                                
                             </div>
                         </div>
+                    </div>
+                    
+                    {/* Categories, menu, social networks for MOBILE*/}
+                    <div className="flex flex-row items-center md:hidden ss:px-4 md:px-0">
 
+                        {/* Menu */}
+                        <div className="basis-1/2 ">
+                            
+                            <div className="font-medium w-fit cursor-pointer text-base ss:mb-2 md:mb-[30px]">Меню</div>
+                            <ul className="text-sm"> 
+                                <li className="ss:mb-1 md:mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={error} alt="" />
+                                        <span className="font-normal ml-2">О нас</span>
+                                    </Link>
+                                </li>
+                                <li className="ss:mb-1 md:mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={adduser} alt="" />
+                                        <span className="font-normal ml-2">Вакансия</span>
+                                    </Link>
+                                </li>
+                                <li className="ss:mb-1 md:mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={list} alt="" />
+                                        <span className="font-normal ml-2">Наш блог</span>
+                                    </Link>
+                                </li>
+                                <li className="ss:mb-1 md:mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={categoryContact} alt="" />
+                                        <span className="font-normal ml-2">Каталог</span>
+                                    </Link>
+                                </li>
+                                <li className="ss:mb-1 md:mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={maps} alt="" />
+                                        <span className="font-normal ml-2">Карта сайта</span>
+                                    </Link>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        {/* Categories */}
+                        <div className="basis-1/2">
+
+                            <div className="font-medium w-fit text-base cursor-pointer ss:mb-4 md:mb-[30px]">
+                                Категории
+                            </div>
+                            <ul className="text-sm font-normal">
+                                <li className="ss:mb-1 md:mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={man} alt="" className="ml-[2px]" />
+                                        <span className="ml-[14px]">Мужчины</span>
+                                    </Link>
+                                </li>
+                                <li className="ss:mb-1 md:mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={femaleContact} alt="" className="ml-[2px]" />
+                                        <span className="ml-[14px]">Женщины</span>
+                                    </Link>
+                                </li>
+                                <li className="ss:mb-1 md:mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={children} alt="" />
+                                        <span className="ml-3">Мальчикы</span>
+                                    </Link>
+                                </li>
+                                <li className="ss:mb-1 md:mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={girls} alt="" />
+                                        <span className="ml-3">Девочкы</span>
+                                    </Link>
+                                </li>
+                                <li className="ss:mb-1 md:mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={baby} alt="" />
+                                        <span className="ml-3">Младенцы</span>
+                                    </Link>
+                                </li>
+                            </ul>
+
+                        </div>
 
                     </div>
-                    <div className=" mb-[30px]  ">
-                        <div className="left">
-                            <div className="w-full flex items-center justify-start mt-10 font-medium text-xl mb-[30px]">Каталоги одежды</div>
-                            <div className="w-full flex items-center flex-wrap ">
+                    <Link to="#" className="flex items-center bg-bgColor pl-16 py-[15px] border border-searchBgColor rounded md:hidden">
+                        <img src={feedbackIcon} alt="" />
+                        <span className="text-base font-medium leading-4 ml-[12.5px] mr-[32.37px]">Форма для обратной связи</span>
+                        <img src={arrowBottomRight} alt="arrow-right-black" className="mr-5" />
+                    </Link>
 
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Students</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Business</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Classic</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Sport</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Free Style</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Muslim</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Travel</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Military</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Home</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Party</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Sneakers</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">T-Shorts</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Shorts</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Jeans</button>
-                            </div>
-                            <div className="w-full flex items-center justify-start mt-10 font-medium text-xl mb-[30px]">Типы одежды</div>
-                            <div className="w-full flex items-center flex-wrap ">
-
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Students</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Business</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Classic</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Sport</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Free Style</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Muslim</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Travel</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Military</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Home</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Party</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Sneakers</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">T-Shorts</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Shorts</button>
-                                <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Jeans</button>
-                            </div>
-
-                            <div className="lg:flex ss:block  lg:justify-between ss:justify-center items-center  mt-10 ">
-                                <div className=" ss:w-full  lg:w-fit flex justify-between  items-center font-medium ">
-                                    <div className="flex justify-between items-center ">
-                                        <img src={footer} alt="" /><span className="sm:text-base ss:text-xs">2022 — Dress.me</span>
-                                    </div>
-                                    <div>
-                                        <span className="ml-6 sm:text-base ss:text-xs">All Rights reserved</span>
-                                    </div>
+                    {/* footer bottom section */}
+                    <div className="flex items-center justify-between">
+                        <div className="lg:flex ss:block  lg:justify-between ss:justify-center items-center ">
+                            <div className=" ss:w-full lg:w-fit flex justify-between  items-center font-medium ">
+                                
+                                <div className="flex justify-between items-center ">
+                                    <img src={footer} alt="" className="mr-2"/>
+                                    <span className="sm:text-base ss:text-xs">2022 — Dress.me</span>
                                 </div>
-                                <div className="font-medium text-center ss:mt-3 lg:m-0 ss:text-xs sm:text-base ">Designed by <Link to='#' className="text-fullBlue border-b border-fullBlue">Prince.UI</Link>
+                                <div>
+                                    <span className="ml-4 mr-4 sm:text-base ss:text-xs">All Rights reserved</span>
                                 </div>
+
+                                <div className="font-medium text-center ss:mt-3 lg:m-0 ss:text-xs sm:text-base">Designed by <Link to='#' className="text-fullBlue border-b border-fullBlue">Prince.UI</Link>
+                                </div>
+
                             </div>
+                        </div>
+                        <div className="flex items-center">
+                            <Link to="#" className="flex items-center bg-bgColor pl-4 py-[15px] border border-searchBgColor rounded">
+                                <span className="text-base font-medium leading-4 mr-[8.78px]">U - Узбекский сум</span>
+                                <img src={arrowBottomBlack} alt="arrow-right-black" className="mr-5" />
+                            </Link>
+                            <Link to="#" className="flex items-center bg-bgColor pl-4 py-[15px] border border-searchBgColor rounded ml-3">
+                                <img src={location} alt="" />
+                                <span className="text-base font-medium leading-4 ml-[12.5px] mr-[32.37px]">Ташкент</span>
+                                <img src={arrowBottomBlack} alt="arrow-right-black" className="mr-[18px]" />
+                            </Link>
+                            <Link to="#" className="flex items-center bg-bgColor pl-4 py-[15px] border border-searchBgColor rounded ml-3">
+                                <img src={ru} alt="" />
+                                <span className="text-base font-medium leading-4 ml-[12.5px] mr-[32.37px]">Русский</span>
+                                <img src={arrowBottomBlack} alt="arrow-right-black" className="mr-[18px]" />
+                            </Link>
                         </div>
                     </div>
                 </div>
