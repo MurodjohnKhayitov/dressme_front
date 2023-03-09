@@ -246,7 +246,6 @@ export default function CollectionCards() {
 
 
     ])
-   
 
     return (
         <div className="flex flex-col box-border">
@@ -267,7 +266,7 @@ export default function CollectionCards() {
                                 <div className='relative w-full  ss:h-[206px] xs:h-[309px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard'>
                                     {
                                         data.ProducImg ?
-                                            <img className='w-full h-full m-auto' src={data.ProducImg} alt="ProducImg" />
+                                            <img className='w-full ss:h-[85%] ls:h-full h-full m-auto hover:scale-105 transition duration-700 ease-in-out' src={data.ProducImg} alt="ProducImg" />
                                             :
                                             <img className='w-full h-fit' src={data.noProductImg} alt="noProductImg" />
                                     }
@@ -276,16 +275,16 @@ export default function CollectionCards() {
 
                                             <p className=' w-fit  px-1 h-8 rounded  bg-white flex items-center justify-center border border-solid border-borderColorCard'>
                                                 <span><img src={discount} alt="" /></span>
-                                                <span className='px-[2px] text-[11px]'>Discount</span>
+                                                <span className='px-[2px] text-[11px] hidden'>Discount</span>
                                                 <span className='text-red-800'>{data?.discount}</span>
                                             </p>
                                             <p className='w-fit px-1 h-8   rounded bg-white flex items-center justify-center border border-solid border-borderColorCard'>
                                                 <span><img src={video} alt="" /></span>
-                                                <span className=' text-[11px] pl-[2px]'>Video</span>
+                                                <span className=' text-[11px] pl-[2px] hidden'>Video</span>
                                             </p>
                                             <p className='w-fit px-1 h-8   rounded bg-white flex items-center justify-center border border-solid border-borderColorCard'>
                                                 <span><img src={delivery} alt="" /></span>
-                                                <span className=' text-[11px] pl-[2px]'>Delivery</span>
+                                                <span className=' text-[11px] pl-[2px] hidden'>Delivery</span>
                                             </p>
                                         </div>
                                         <div className='flex flex-col gap-y-1 '>
@@ -299,22 +298,22 @@ export default function CollectionCards() {
                                         </div>
                                     </div>
                                     <div className="absolute w-full xs:h-[38px] ss:h-[30px] flex justify-between items-center ss:px-1 xs:px-2 md:px-4 bg-white bottom-0  border-t	 border-solid	border-borderColorCard">
-                                        <label className='rounded-full  xs:w-5 xs:h-5 ss:w-4 ss:h-4 bg-purple-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color1">
+                                        <label className='rounded-full  ls:w-[22px] ls:h-[22px] ss:w-5 ss:h-5 bg-purple-500 cursor-pointer  border	 border-solid	border-borderColorCard mr-[3px]' htmlFor="Color1">
                                             <input className="hidden" type="radio" id="Color1" name="colors" value="1" />
                                         </label>
-                                        <label className='rounded-full  xs:w-5 xs:h-5 ss:w-4 ss:h-4 bg-black cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color2">
+                                        <label className='rounded-full  ls:w-[22px] ls:h-[22px] ss:w-5 ss:h-5 bg-black cursor-pointer  border	 border-solid	border-borderColorCard mr-[3px]' htmlFor="Color2">
                                             <input className="hidden" type="radio" id="Color2" name="colors" value="1" />
                                         </label>
-                                        <label className='rounded-full  xs:w-5 xs:h-5 ss:w-4 ss:h-4 bg-white cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color3">
+                                        <label className='rounded-full  ls:w-[22px] ls:h-[22px] ss:w-5 ss:h-5 bg-white cursor-pointer  border	 border-solid	border-borderColorCard mr-[3px]' htmlFor="Color3">
                                             <input className="hidden" type="radio" id="Color3" name="colors" value="1" />
                                         </label>
-                                        <label className='rounded-full  xs:w-5 xs:h-5 ss:w-4 ss:h-4 bg-zinc-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color4">
+                                        <label className='rounded-full  ls:w-[22px] ls:h-[22px] ss:w-5 ss:h-5 bg-zinc-500 cursor-pointer  border	 border-solid	border-borderColorCard mr-[3px]' htmlFor="Color4">
                                             <input className="hidden" type="radio" id="Color4" name="colors" value="1" />
                                         </label>
-                                        <label className='rounded-full  xs:w-5 xs:h-5 ss:w-4 ss:h-4 bg-sky-600 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color5">
+                                        <label className='rounded-full  ls:w-[22px] ls:h-[22px] ss:w-5 ss:h-5 bg-sky-600 cursor-pointer  border	 border-solid	border-borderColorCard mr-[3px]' htmlFor="Color5">
                                             <input className="hidden" type="radio" id="Color5" name="colors" value="1" />
                                         </label>
-                                        <label className='rounded-full  xs:w-5 xs:h-5 ss:w-4 ss:h-4 bg-amber-400 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color6">
+                                        <label className='rounded-full  ls:w-[22px] ls:h-[22px] ss:w-5 ss:h-5 bg-amber-400 cursor-pointer  border	 border-solid	border-borderColorCard mr-[3px]' htmlFor="Color6">
                                             <input className="hidden" type="radio" id="Color6" name="colors" value="1" />
                                         </label>
                                     </div>
@@ -346,7 +345,7 @@ export default function CollectionCards() {
                                                 data.sale ?
                                                     <p className='flex ss:flex-col-reverse	text-start items-start '>
                                                         <p className='text-start m-0 p-0  not-italic font-medium ss:text[xs] xs:text-base xs:leading-4 ss:leading-1 text-red-700'>{data?.sale}</p>
-                                                        <p className='text-start m-0 p-0  ss:text-[10px] line-through not-italic font-normal leading-3 ss:leading-1 text-borderColorCard'>{data?.price}</p>
+                                                        <p className='text-start m-0 p-0  ss:text-[12px] md:text-[14px] line-through not-italic font-normal leading-3 ss:leading-1 text-borderColorCard'>{data?.price}</p>
                                                     </p>
                                                     :
                                                     <p className='not-italic font-medium text-base leading-4' style={{ color: "black" }}>{data?.price} </p>

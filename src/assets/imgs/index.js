@@ -53,6 +53,7 @@ export {default as logoo} from './logoo.svg'
 export {default as ru} from './russia.svg'
 export {default as home} from './home.svg'
 export {default as catalogBlack} from './catalog-black.svg'
+export {default as feedbackIcon} from './feedback-icon.svg'
 
 
 // -----Contact--------
@@ -67,9 +68,9 @@ export {default as maps} from './Contact/map.svg'
 
 export {default as baby} from './Contact/baby.svg'
 export {default as man} from './Contact/man.svg'
-export {default as femaleContact} from './Contact/female.svg'
+export {default as femaleContact} from './Contact/woman.svg'
 export {default as girls} from './Contact/girl.svg'
-export {default as childre} from './Contact/child.svg'
+export {default as children} from './Contact/child.svg'
 
 export {default as upload} from './Contact/upload.svg'
 
