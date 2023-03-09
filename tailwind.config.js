@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -14,9 +15,18 @@ module.exports = {
         searchBgColor: '#F2F2F2',
         borderColor: '#707070',
         borderColor2: '#e2e2e2',
-        borderColorCard:"#c1c1c1",
+        borderColorCard: "#c1c1c1",
+        // season-----
+        borderSpring: "#008F0E",
+        "bgSpring": "rgba(0, 143, 14, 0.1)",
+        borderSummer: "#FBC02D",
+        "bgSummer": "rgba(251, 192, 45, 0.1)",
+        borderAutumm: "#E17A02",
+        "bgAutumm": "rgba(225, 122, 2, 0.1)",
+        borderWinter: "#007DCA",
+        "bgWinter": "rgba(0, 125, 202, 0.1)"
       },
-      fontFamily:  {
+      fontFamily: {
         aeonicProBold: ['AeonicProBold', 'sans-serif'],
         aeonicProLight: ['AeonicProLight', 'sans-serif'],
         aeonicProRegular: ['AeonicProRegular', 'sans-serif'],

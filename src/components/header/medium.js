@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { arrowBottomBlack, arrowBottomRight, autummBrand, autummSeason, blog, booking, brush, bucket, business, businessBlack, catalog, close, clothing, contact, dashboard, dollar, eng, female, heart, help, helpBlack, location, logo, logoo, male, map, menu, search, shop, springBrand, springSeason, summerBrand, summerSeason, topBrands, user, voice, winter, winterBrand, winterSeason, } from "../../assets/imgs";
+import { arrowBottomBlack, arrowBottomRight, autummBrand, autummSeason, autummVolume, blog, booking, brush, bucket, business, businessBlack, catalog, close, clothing, contact, dashboard, dollar, eng, female, heart, help, helpBlack, location, logo, logoo, male, map, menu, search, shop, springBrand, springSeason, springVolume, summerBrand, summerSeason, summerVolume, topBrands, user, voice, winter, winterBrand, winterSeason, winterVolume, } from "../../assets/imgs";
 import { styles } from "../../util/style";
 import { Button, Dropdown } from 'antd';
 import { dressMainData } from "../../ContextHook/ContextMenu";
@@ -12,18 +12,20 @@ const MediumHeader = () => {
 
     // const [changeGenderColor, setChangeGenderColor] = useState(false)
     let dataStyle = ''
-    if (dressInfo?.type === 1111) {
-        dataStyle = "green-800"
+
+    if (dressInfo?.type == 1111) {
+        dataStyle = "bg-bgSpring bg-opacity-10	  text-borderSpring "
     }
-    if (dressInfo?.type === 2222) {
-        dataStyle = "yellow-500"
+    if (dressInfo?.type == 2222) {
+        dataStyle = "bg-bgSummer  bg-opacity-10  text-borderSummer"
     }
-    if (dressInfo?.type === 3333) {
-        dataStyle = "orange-600"
+    if (dressInfo?.type == 3333) {
+        dataStyle = "bg-bgAutumm bg-opacity-10  text-borderAutumm"
     }
-    if (dressInfo?.type === 4444) {
-        dataStyle = "blue-600"
+    if (dressInfo?.type == 4444) {
+        dataStyle = "bg-bgWinter bg-opacity-10  text-borderWinter"
     }
+
 
     const SeasonTypeArray = [
         { id: 1111, type: "Spring", icons: springSeason },
@@ -37,12 +39,16 @@ const MediumHeader = () => {
         { id: 3333, type: "Autumm", icons: autummBrand },
         { id: 4444, type: "Winter", icons: winterBrand },
     ]
-    console.log(dressInfo.type, "dressInfo");
+    const VolumeTypeArray = [
+        { id: 1111, type: "Spring", icons: springVolume },
+        { id: 2222, type: "Summer", icons: summerVolume },
+        { id: 3333, type: "Autumm", icons: autummVolume },
+        { id: 4444, type: "Winter", icons: winterVolume },
+    ]
     const handleSeason = (id) => {
         setDressInfo({
             type: id
         })
-        console.log(id, "HandleSeasonb");
     }
     const items = [
         {
@@ -65,11 +71,8 @@ const MediumHeader = () => {
 
     ];
     const toggleHamburger = () => setHamburgerMenu((val) => !val);
-
     return (
-
         <div className="w-full max-w-[1440px] md:px-[80px] mx-auto px-4">
-
             {/* Starting Full Screen page section */}
             <div className="w-full flex justify-between items-center py-3">
 
@@ -221,7 +224,13 @@ const MediumHeader = () => {
                     {/* Voice section */}
                     <div
                         className={`${styles.flexCenter} bg-bgColor border border-searchBgColor px-4  h-12 rounded cursor-pointer hidden md:flex`}>
-                        <img src={voice} alt="voice" />
+                        {
+                            VolumeTypeArray.filter(data => data.id == dressInfo.type).map(data => {
+                                return (
+                                    <img src={data?.icons} alt="logo" />
+                                )
+                            })
+                        }
                     </div>
 
                     {/* Weather section */}
@@ -244,6 +253,7 @@ const MediumHeader = () => {
                                         arrow={{
                                             pointAtCenter: true,
                                         }}
+                                        trigger={['click']}
                                         className='md:w-[120px] h-full flex items-center justify-center border rounded  ss:w-fit bg-white  cursor-pointer  '
                                     >
                                         <p className='w-full h-full  sm:flex items-center  select-none cursor-pointer' >
@@ -263,9 +273,9 @@ const MediumHeader = () => {
                     {/* Searching section */}
                     <div className="search flex items-center justify-between rounded font-medium h-12 border border-searchBgColor md:border-transparent md:w-[578px] ss:hidden md:flex">
                         {/* Catalog section */}
-                        <button className="items-center bg-catalogBg pl-5 pr-7 h-12 rounded-l cursor-pointer hidden md:flex">
+                        <button className={`items-center  ${dataStyle}  pl-5 pr-7 h-12 rounded-l cursor-pointer hidden md:flex`}>
                             <img src={catalog} alt="catalog" />
-                            <span className={`text-${dataStyle} px-[9.5px] font-medium text-[15px]`}>Каталог</span>
+                            <span className={` px-[9.5px] font-medium text-[15px]`}>Каталог</span>
                         </button>
                         <img src={search} alt="search" className="flex md:hidden" />
                         <input type="text" placeholder="Поиск продуктов или брендов" className="bg-transparent w-full px-3 h-12 text-sm border border-transparent md:border-searchBgColor md:mx-0 md:-ml-[3px] md:px-3 md:h-12" />

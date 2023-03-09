@@ -246,7 +246,6 @@ export default function CollectionCards() {
 
 
     ])
-  
 
     return (
         <div className="flex flex-col box-border">
