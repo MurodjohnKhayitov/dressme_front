@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { discount, bucket, video, delivery, heart, shirt, addBag, cardImg, shortik, kastyum, star, category } from '../../assets/imgs'
 import { CiHeart } from 'react-icons/ci';
 
-import StarRatingComponent from 'react-star-rating-component'
 export default function CollectionCards() {
     const [productList, setProductList] = useState([
         {
@@ -247,11 +246,7 @@ export default function CollectionCards() {
 
 
     ])
-    const [rating, setRating] = useState(0);
-
-    const onStarClick = (nextValue, prevValue, name) => {
-        setRating(nextValue);
-    }
+   
 
     return (
         <div className="flex flex-col box-border">

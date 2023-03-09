@@ -1,18 +1,35 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/swiper-bundle.css';
 import "swiper/css";
 import "swiper/css/pagination";
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
-import { next, category, arrowBottomFull, mouse, toBottom, markets, } from '../../assets/imgs'
+import { next, category, arrowBottomFull, mouse, toBottom, markets, adidas, chanel, dolce, gucci, hm, locate, lacoste, louis, nike, prada, puma, tommy, zara, } from '../../assets/imgs'
 import styles from './clothers.module.css'
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import Slider from "react-slick";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { dressMainData } from '../../ContextHook/ContextMenu';
 // import required modules``
 export default function MainPageSliders() {
+    const [dressInfo, setDressInfo] = useContext(dressMainData)
+
+    let dataStyle = ''
+
+    if (dressInfo?.type == 1111) {
+        dataStyle = "border-borderSpring"
+    }
+    if (dressInfo?.type == 2222) {
+        dataStyle = "border-borderSummer"
+    }
+    if (dressInfo?.type == 3333) {
+        dataStyle = "border-borderAutumm"
+    }
+    if (dressInfo?.type == 4444) {
+        dataStyle = "border-borderWinter"
+    }
     const responsive1 = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -64,30 +81,32 @@ export default function MainPageSliders() {
     const [carosuelData, setCarosuelData] = useState([
         {
             Category: [
-                { id: 1, type: "Student", count: 123, img:""  },
-                { id: 2, type: "Businiess", count: 223, img:""  },
-                { id: 3, type: "Muslim", count: 80, img:""  },
-                { id: 4, type: "Travel", count: 453, img:""  },
-                { id: 5, type: "Sport", count: 320, img:""  },
-                { id: 6, type: "Classic", count: 40, img:""  },
-                { id: 7, type: "Relaxed", count: 180, img:""  },
-                { id: 8, type: "Dramatic", count: 250, img:""  },
-                { id: 9, type: "Creative", count: 190, img:""  },
+                { id: 1, type: "Student", count: 123, img: "" },
+                { id: 2, type: "Businiess", count: 223, img: "" },
+                { id: 3, type: "Muslim", count: 80, img: "" },
+                { id: 4, type: "Travel", count: 453, img: "" },
+                { id: 5, type: "Sport", count: 320, img: "" },
+                { id: 6, type: "Classic", count: 40, img: "" },
+                { id: 7, type: "Relaxed", count: 180, img: "" },
+                { id: 8, type: "Dramatic", count: 250, img: "" },
+                { id: 9, type: "Creative", count: 190, img: "" },
 
 
             ],
 
             campany: [
-                { id: 1, type: "Adidas", imgFull:""  },
-                { id: 2, type: "Nike", imgFull:""  },
-                { id: 3, type: "Puma", imgFull:""  },
-                { id: 4, type: "Reebok", imgFull:""  },
-                { id: 5, type: "polo", imgFull:""  },
-                { id: 6, type: "suprime", imgFull:""  },
-                { id: 7, type: "luisVitton", imgFull:""  },
-                { id: 8, type: "locaste", imgFull:""  },
-                { id: 9, type: "loroPiono", imgFull:""  },
-                { id: 10, type: "dolce", imgFull:""  },
+                { id: 1, imgFull: adidas },
+                { id: 2, imgFull: chanel },
+                { id: 3, imgFull: dolce },
+                { id: 4, imgFull: gucci },
+                { id: 5, imgFull: hm },
+                { id: 6, imgFull: lacoste },
+                { id: 7, imgFull: louis },
+                { id: 8, imgFull: nike },
+                { id: 9, imgFull: prada },
+                { id: 10, imgFull: puma },
+                { id: 11, imgFull: tommy },
+                { id: 12, imgFull: zara },
 
             ]
         },
@@ -227,8 +246,11 @@ export default function MainPageSliders() {
                                     data.Category.map(data => {
                                         return (
                                             <div key={data.id} className='ss:!w-[95%]  h-[260px] rounded ml-1 '>
-                                                <div className='w-full h-[230px] bg-bgColor border border-solid	border-borderColorCard '>
-                                                    {data?.img ? <img className='h-full w-full' src={data?.img} alt="student" /> : null}
+                                                <div className='w-full h-[230px] bg-bgColor p-1  rounded'>
+                                                    <div className={`w-full h-full border border-solid	${dataStyle} rounded`} >
+
+                                                        {data?.img ? <img className='h-full w-full' src={data?.img} alt="student" /> : null}
+                                                    </div>
                                                 </div>
                                                 <div className='h-12.5 flex items-center justify-start'>
                                                     <p className='not-italic font-medium text-base leading-4 text-black mt-3 mr-2  '>{data?.type || "type"}
@@ -252,7 +274,7 @@ export default function MainPageSliders() {
                                     return (
                                         <div className='ll:w-[100px] ss:w-[80px]' >
                                             <div className='w-[100%] h-[80px] rounded bg-bgColor  border border-solid border-borderColorCard'>
-                                                <img className='h-full w-full'  src={data?.img} alt=""/>
+                                                <img className='h-full w-full' src={data?.img} alt="" />
                                             </div>
                                             <div className='w-full py-1 flex items-center'>
                                                 <p className='not-italic  mr-2 font-medium text-sm leading-6 text-black'>{data?.type || "type"}
@@ -276,8 +298,10 @@ export default function MainPageSliders() {
                                     data.campany.map(data => {
                                         return (
                                             <div key={data?.id} className='!w-[95%] h-[100px]  rounded-lg bg-catalogBg flex items-center justify-center select-none border border-solid border-searchBgColor'>
-                                                <p className='w-full h-full flex items-center justify-center not-italic font-medium text-xl leading-6 text-center text-black '>{data?.type || "0"}</p>
-                                                {/* <img src={data?.imgFull} alt="" /> */}
+                                                {/* <p className='w-full h-full flex items-center justify-center not-italic font-medium text-xl leading-6 text-center text-black '>{data?.type || "0"}</p> */}
+                                                <div className=' h-full flex items-center justify-center'>
+                                                    <img className='h-[70px] w-[80%] ' src={data?.imgFull} alt="" />
+                                                </div>
                                             </div>
 
                                         )

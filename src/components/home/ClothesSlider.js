@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { next, category, arrowBottomFull, nextItem, prevItem, star } from '../../assets/imgs'
 import { discount, bucket, video, delivery, heart, shirt, addBag, cardImg, shortik, kastyum } from '../../assets/imgs'
-import StarRatingComponent from 'react-star-rating-component'
 import { CiHeart } from 'react-icons/ci';
 
 import { GrNext, GrPrevious } from 'react-icons/gr';
@@ -257,12 +256,7 @@ export default function ClothesSlider() {
         },
 
     ])
-    const [rating, setRating] = useState(0);
-
-    const onStarClick = (nextValue, prevValue, name) => {
-
-        setRating(nextValue);
-    }
+    
     const [carosuelData, setCarosuelData] = useState([
         {
             Category: [
