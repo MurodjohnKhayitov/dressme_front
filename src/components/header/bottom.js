@@ -8,9 +8,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 const BottomHeader = () => {
     const [dressInfo, setDressInfo] = useContext(dressMainData)
-    const handleChange = (value) => {
-        console.log(value); // { value: "lucy", key: "lucy", label: "Lucy (101)" }
-    };
+  
     let dataStyle = ''
     let genderStyle = ''
     if (dressInfo?.type == 1111) {
