@@ -9,6 +9,35 @@ import { RiFacebookCircleLine, RiMessengerLine } from "react-icons/ri";
 import { dressMainData } from "../../ContextHook/ContextMenu";
 import { BiChevronDown } from "react-icons/bi";
 
+const catalogTypes = [
+    { id: 1, name: 'Students' },
+    { id: 2, name: 'Business' },
+    { id: 3, name: 'Classic' },
+    { id: 4, name: 'Sport' },
+    { id: 5, name: 'Free Style' },
+    { id: 6, name: 'Muslim' },
+    { id: 7, name: 'Travel' },
+    { id: 8, name: 'Military' },
+    { id: 9, name: 'Home' },
+    { id: 10, name: 'Hero' },
+    { id: 11, name: 'Children' },
+    { id: 12, name: 'Party' },
+]
+const clothingTypes = [
+    { id: 1, name: 'T-Shorts' },
+    { id: 2, name: 'Shorts' },
+    { id: 3, name: 'Jeans' },
+    { id: 4, name: 'Shirts' },
+    { id: 5, name: 'Sweater' },
+    { id: 6, name: 'Hoodies' },
+    { id: 7, name: 'Shoes' },
+    { id: 8, name: 'Jackets' },
+    { id: 9, name: 'Sneakers' },
+    { id: 10, name: 'Boots' },
+    { id: 11, name: 'Dress' },
+    { id: 12, name: 'Skirts' },
+]
+
 const Footer = () => {
     const [dressInfo, setDressInfo] = useContext(dressMainData)
 
@@ -63,8 +92,6 @@ const Footer = () => {
 
 
     // Price
-
-
     const [selectPrice, setselectPrice] = useState("Under 100$");
     const handlePriceValue = (value) => {
         setselectPrice(value)
@@ -81,7 +108,7 @@ const Footer = () => {
     return (
 
         <div>
-            <div className='w-full h-full m-auto max-w-[1440px] xs:px-[100px] md:px-[80px] ss:bg-btnBgColor md:bg-white'>
+            <div className='w-full h-full m-auto max-w-[1440px] xs:px-[100px] mb-[80px] md:mb-[60px] md:px-[80px] ss:bg-btnBgColor md:bg-white'>
 
                 <div className='rounded-lg ss:px-4 ss:py-6 md:p-10 md:border md:border-searchBgColor'>
 
@@ -91,7 +118,7 @@ const Footer = () => {
                             {
                                 BrandTypeArray.filter(data => data.id == dressInfo.type).map(data => {
                                     return (
-                                        <img src={data?.icons} alt="logo" />
+                                        <img src={data?.icons} alt="logo" className="ss:w-[85%] ll:w-[90%] sm:w-full"/>
                                     )
                                 })
                             }
@@ -301,40 +328,41 @@ const Footer = () => {
                         </div>
                     </div>
 
-
                     {/* Categories, menu, social networks for MOBILE*/}
-                    <div className="flex flex-row items-center md:hidden ss:px-4 md:px-0">
+                    <div className="flex flex-row items-center md:hidden ss:px-4 md:px-0 mb-[34px] md:mb-0">
 
                         {/* Menu */}
                         <div className="basis-1/2 ">
 
-                            <div className="font-medium w-fit cursor-pointer text-base ss:mb-2 md:mb-[30px]">Меню</div>
+                            <div className="font-medium w-fit cursor-pointer ss:mb-4 md:mb-[30px]">
+                                Меню
+                            </div>
                             <ul className="text-sm">
-                                <li className="ss:mb-1 md:mb-4">
+                                <li className="mb-4">
                                     <Link to='#' className="flex items-center">
                                         <img src={error} alt="" />
                                         <span className="font-normal ml-2">О нас</span>
                                     </Link>
                                 </li>
-                                <li className="ss:mb-1 md:mb-4">
+                                <li className="mb-4">
                                     <Link to='#' className="flex items-center">
                                         <img src={adduser} alt="" />
                                         <span className="font-normal ml-2">Вакансия</span>
                                     </Link>
                                 </li>
-                                <li className="ss:mb-1 md:mb-4">
+                                <li className="mb-4">
                                     <Link to='#' className="flex items-center">
                                         <img src={list} alt="" />
                                         <span className="font-normal ml-2">Наш блог</span>
                                     </Link>
                                 </li>
-                                <li className="ss:mb-1 md:mb-4">
+                                <li className="mb-4">
                                     <Link to='#' className="flex items-center">
                                         <img src={categoryContact} alt="" />
                                         <span className="font-normal ml-2">Каталог</span>
                                     </Link>
                                 </li>
-                                <li className="ss:mb-1 md:mb-4">
+                                <li className="mb-4">
                                     <Link to='#' className="flex items-center">
                                         <img src={maps} alt="" />
                                         <span className="font-normal ml-2">Карта сайта</span>
@@ -345,37 +373,37 @@ const Footer = () => {
                         </div>
 
                         {/* Categories */}
-                        <div className="basis-1/2">
+                        <div className="basis-1/2 pl-4">
 
-                            <div className="font-medium w-fit text-base cursor-pointer ss:mb-4 md:mb-[30px]">
+                            <div className="font-medium w-fit cursor-pointer ss:mb-4 md:mb-[30px]">
                                 Категории
                             </div>
                             <ul className="text-sm font-normal">
-                                <li className="ss:mb-1 md:mb-4">
+                                <li className="mb-[14px] md:mb-4">
                                     <Link to='#' className="flex items-center">
                                         <img src={man} alt="" className="ml-[2px]" />
                                         <span className="ml-[14px]">Мужчины</span>
                                     </Link>
                                 </li>
-                                <li className="ss:mb-1 md:mb-4">
+                                <li className="mb-[14px] md:mb-4">
                                     <Link to='#' className="flex items-center">
                                         <img src={femaleContact} alt="" className="ml-[2px]" />
                                         <span className="ml-[14px]">Женщины</span>
                                     </Link>
                                 </li>
-                                <li className="ss:mb-1 md:mb-4">
+                                <li className="mb-[14px] md:mb-4">
                                     <Link to='#' className="flex items-center">
                                         <img src={children} alt="" />
                                         <span className="ml-3">Мальчикы</span>
                                     </Link>
                                 </li>
-                                <li className="ss:mb-1 md:mb-4">
+                                <li className="mb-[14px] md:mb-4">
                                     <Link to='#' className="flex items-center">
                                         <img src={girls} alt="" />
                                         <span className="ml-3">Девочкы</span>
                                     </Link>
                                 </li>
-                                <li className="ss:mb-1 md:mb-4">
+                                <li className="mb-[14px] md:mb-4">
                                     <Link to='#' className="flex items-center">
                                         <img src={baby} alt="" />
                                         <span className="ml-3">Младенцы</span>
@@ -386,32 +414,257 @@ const Footer = () => {
                         </div>
 
                     </div>
-                    <Link to="#" className="flex items-center bg-bgColor pl-16 py-[15px] border border-searchBgColor rounded md:hidden">
+                    
+                    {/* Feedback for mobile */}
+                    <Link to="#" className="flex items-center bg-bgColor pl-3 py-[15px] border border-searchBgColor rounded mb-[34px] ls:pl-6 md:pl-16 md:mb-0 md:hidden">
                         <img src={feedbackIcon} alt="" />
-                        <span className="text-base font-medium leading-4 ml-[12.5px] mr-[32.37px]">Форма для обратной связи</span>
-                        <img src={arrowBottomRight} alt="arrow-right-black" className="mr-5" />
+                        <span className="text-base font-medium leading-4 ml-[12.5px] mr-2 ls:mr-6 md:mr-[32.37px]">Форма для обратной связи</span>
+                        <img src={arrowBottomRight} alt="arrow-right-black" className="mr-2 ls:mr-3 md:mr-5" />
                     </Link>
 
+                    {/* Menu for Mobile */}
+                    <div className="flex w-full md:hidden px-4 md:px-0 mb-[40px] md:mb-0">
+
+                        <ul className="flex flex-row text-sm">
+                            <div className="basis-1/2">
+                                <li className="mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={shop} alt="" />
+                                        <span className="font-normal ml-2">Магазины</span>
+                                    </Link>
+                                </li>
+                                <li className="mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={homeTrend} alt="" />
+                                        <span className="font-normal ml-2">Бизнес</span>
+                                    </Link>
+                                </li>
+                                <li className="mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={map} alt="" />
+                                        <span className="font-normal ml-2">Карта</span>
+                                    </Link>
+                                </li>
+                                <li className="mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={list} alt="" />
+                                        <span className="font-normal ml-2">Мои заказы</span>
+                                    </Link>
+                                </li>
+                                <li className="mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={privateCheck} alt="" />
+                                        <span className="font-normal ml-2">Политика конфиденциальности</span>
+                                    </Link>
+                                </li>
+                            </div>
+                            <div className="basis-1/2 pl-4">
+                                <li className="mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={message} alt="" />
+                                        <span className="font-normal ml-2">Помощь</span>
+                                    </Link>
+                                </li>
+                                <li className="mb-4">
+                                    <Link to='#' className="flex items-center">
+                                        <img src={call} alt="" />
+                                        <span className="font-normal ml-2">Контакты</span>
+                                    </Link>
+                                </li>
+                            </div>
+                        </ul>
+
+                    </div>
+
+                    {/* Location and Language for mobile */}
+                    <div className="flex flex-row justify-between w-full items-center mb-8 text-sm md:hidden">
+                        <Link to="#" className="basis-[48%] h-[44px] flex items-center py-[8px] px-[14px]  justify-between  bg-bgColor  border border-searchBgColor rounded">
+                            <div className=" font-medium   flex items-center">
+                                <img src={location} alt="" className="mr-3"/>
+                                <div
+                                    onClick={() => setOpenCity(!openCity)}
+                                    className={`  font-medium  text-black      ${!selectCity && "text-gray-700"
+                                        }`}
+                                >
+                                    {selectCity}
+                                </div>
+                                <ul
+                                    className={`bg-white w-[150px] ml-[-1%] overflow-y-auto absolute
+                                                        z-50 rounded shadow-lg 	 ${openCity ? "max-h-60" : "max-h-0"
+                                        } `}
+                                >
+                                    {CityList.map(data => {
+                                        return (
+                                            <li
+                                                key={data?.id}
+                                                className={`p-2 pl-7 text-start hover:bg-bgColor ${dataStyle}`}
+                                                onClick={() => {
+                                                    handleCityValue(data?.type)
+                                                    setOpenCity(false)
+                                                }
+                                                }
+                                            >
+                                                {data?.type}
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            </div>
+                            <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openCity && "rotate-180"} `} />
+
+                            {/* <span className="text-base font-medium leading-4 ml-[12.5px] mr-[32.37px]">Ташкент</span> */}
+                            {/* <img src={arrowBottomBlack} alt="arrow-right-black" className="mr-[18px]" /> */}
+                        </Link>
+                        <div className="basis-[48%] h-[44px] flex items-center py-[8px] px-[14px]  justify-between  bg-bgColor  border border-searchBgColor rounded">
+
+                            <div className="w-full h-[100%] flex items-center rounded  font-medium select-none cursor-pointer">
+                                {
+                                    LanguageList.filter(data => data.id === selectLang).map(data => {
+                                        return (
+                                            <div
+                                                onClick={() => setOpenLanguage(!openLanguage)}
+                                                className={` w-full flex   items-center  ${!selectLang && "text-gray-700"
+                                                    }`}
+                                            >
+                                                <span className="mr-3"><img src={data?.icons} alt="" /></span>
+                                                <span className="font-medium not-italic">{data?.type}</span>
+                                            </div>
+                                        )
+                                    })}
+                                <ul
+                                    className={`bg-white w-[150px] absolute mt-2 overflow-y-auto 
+                                            z-50 rounded shadow-lg 	 ${openLanguage ? "max-h-60" : "max-h-0"
+                                        } `}
+                                >
+                                    {LanguageList.map(data => {
+                                        return (
+                                            <li
+                                                key={data?.id}
+                                                className={`p-2 text-sm hover:bg-bgColor flex items-center justify-center ${dataStyle}`}
+                                                onClick={() => {
+                                                    handleLangValue(data?.id)
+                                                    setOpenLanguage(false)
+                                                }
+                                                }
+                                            >
+                                                <span className="mr-1"><img src={data?.icons} alt="" /></span>
+                                                <span>{data?.type}</span>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            </div>
+                            <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openLanguage && "rotate-180"} `} />
+                        </div>
+                    </div>
+
+                    {/* Social networks */}
+                    <div className="block px-4 md:hidden">
+
+                        <div className="w-full font-medium cursor-pointer text-base mb-6">
+                            Социальная сеть
+                        </div>
+
+                        <div className="w-full">
+                            <ul className="w-full flex items-center text-sm">
+                                <div className="basis-1/2">
+                                    <li className="mb-4">
+                                        <Link to='#' className="flex items-center">
+                                            <FiInstagram className="text-[20px]" />
+                                            <span className="font-normal ml-2">Instagram</span>
+                                        </Link>
+                                    </li>
+                                    <li className="mb-4">
+                                        <Link to='#' className="flex items-center">
+                                            <RiFacebookCircleLine className="text-[20px]" />
+                                            <span className="font-normal ml-2">Facebook</span>
+                                        </Link>
+                                    </li>
+                                    <li className="mb-4">
+                                        <Link to='#' className="flex items-center">
+                                            <RiMessengerLine className="text-[20px]" />
+                                            <span className="font-normal ml-2">Message</span>
+                                        </Link>
+                                    </li>
+                                </div>
+                                <div className="basis-1/2 mb-9 pl-4">              
+                                    <li className="mb-4">
+                                        <Link to='#' className="flex items-center">
+                                            <TbBrandTelegram className="text-[20px]" />
+                                            <span className="font-normal ml-2">Telegram</span>
+                                        </Link>
+                                    </li>
+                                    <li className="mb-4">
+                                        <Link to='#' className="flex items-center">
+                                            <AiOutlineYoutube className="text-[20px]" />
+                                            <span className="font-normal ml-2  ss:text-sm md:text-base">You Tube</span>
+                                        </Link>
+                                    </li>
+                                </div>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    
+                </div>
+                
+                <div className="w-full border border-gray-200"></div>
+
+                <div className='rounded-lg ss:px-4 ss:py-6 md:p-10 md:border md:border-searchBgColor'>
+                    {/* Catalog and Clothes types */}
+                    <div className="mb-[60px] md:hidden">
+                        {/* Catalog Types */}
+                        <div className="w-full block mb-7 md:hidden">
+                            <div className="text-base font-medium mb-5 flex">Каталоги одежды</div>
+                            <ul className="flex flex-row items-center flex-wrap">
+                                {catalogTypes.map((catalog,index) => (
+                                    <li key={index} className="mr-[6px] mb-3 text-sm font-medium">
+                                        <button className="bg-searchBgColor rounded px-4 py-[10px]">{catalog.name}</button>
+                                    </li>    
+                                ))}
+                            </ul>
+                        </div>
+                        
+                        {/* CLothing Types */}
+                        <div className="w-full block md:hidden">
+                            <div className="text-base font-medium mb-5 flex">Типы одежды</div>
+                            <ul className="flex flex-row items-center flex-wrap">
+                                {clothingTypes.map((catalog,index) => (
+                                    <li key={index} className="mr-[6px] mb-3 text-sm font-medium">
+                                        <button className="bg-searchBgColor rounded px-4 py-[10px]">{catalog.name}</button>
+                                    </li>    
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+
                     {/* footer bottom section */}
-                    <div className="flex items-center justify-between">
-                        <div className="lg:flex ss:block  lg:justify-between ss:justify-center items-center ">
-                            <div className=" ss:w-full lg:w-fit flex justify-between  items-center font-medium ">
+                    <div className="w-full flex items-center justify-between">
+                        <div className="w-full block justify-between">
+                            <div className="w-full flex items-center justify-between text-sm font-medium lg:w-fit">
 
                                 <div className="flex justify-between items-center ">
                                     <img src={footer} alt="" className="mr-2" />
-                                    <span className="sm:text-base ss:text-xs">2022 — Dress.me</span>
+                                    <span className="text-sm">2022 — Dress.me</span>
                                 </div>
-                                <div>
-                                    <span className="ml-4 mr-4 sm:text-base ss:text-xs">All Rights reserved</span>
+                                <div className="md:ml-4 md:mr-4">
+                                    <span>All Rights reserved</span>
                                 </div>
-
-                                <div className="font-medium text-center ss:mt-3 lg:m-0 ss:text-xs sm:text-base">Designed by <Link to='#' className="text-fullBlue border-b border-fullBlue">Prince.UI</Link>
+                                <div className="font-medium text-center mt-3 hidden lg:m-0 md:block">
+                                    <span className="ml-auto">Designed by</span> 
+                                    <Link to='#' className="text-fullBlue border-b border-fullBlue ml-2">Prince.UI</Link>
                                 </div>
 
                             </div>
+                            <div className="font-medium text-center mt-3 text-sm block md:hidden">
+                                <span>Designed by</span> 
+                                <Link to='#' className="text-fullBlue border-b border-fullBlue ml-2">Prince.UI</Link>
+                            </div>
+
                         </div>
-                        <div className="flex items-center">
-                            <Link to="#" className="w-[175px] h-[44px] flex items-center py-[8px] px-[14px]  justify-between  bg-bgColor  border border-searchBgColor rounded ">
+                        <div className="flex items-center text-sm">
+                            <Link to="#" className="w-[175px] h-[44px] hidden items-center py-[8px] px-[14px]  justify-between  bg-bgColor  border border-searchBgColor rounded md:flex">
                                 <div className=" font-medium  ">
                                     <div
                                         onClick={() => setOpenPrice(!openPrice)}
@@ -444,7 +697,7 @@ const Footer = () => {
                                 </div>
                                 <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openPrice && "rotate-180"} `} />
                             </Link>
-                            <Link to="#" className="w-[175px] h-[44px] flex items-center py-[8px] px-[14px]  justify-between  bg-bgColor  border border-searchBgColor rounded ml-3">
+                            <Link to="#" className="w-[175px] h-[44px] hidden items-center py-[8px] px-[14px]  justify-between  bg-bgColor  border border-searchBgColor rounded ml-3 md:flex">
                                 <img src={location} alt="" />
                                 <div className=" font-medium   flex items-center">
                                     <div
@@ -481,7 +734,7 @@ const Footer = () => {
                                 {/* <span className="text-base font-medium leading-4 ml-[12.5px] mr-[32.37px]">Ташкент</span> */}
                                 {/* <img src={arrowBottomBlack} alt="arrow-right-black" className="mr-[18px]" /> */}
                             </Link>
-                            <div className="flex items-center w-[175px] h-[44px] py-[8px] px-[14px] rounded  ml-3 bg-bgColor border border-solid border-searchBgColor">
+                            <div className="hidden items-center w-[175px] h-[44px] py-[8px] px-[14px] rounded  ml-3 bg-bgColor border border-solid border-searchBgColor md:flex">
 
                                 <div className="w-full h-[100%] flex items-center rounded  font-medium select-none cursor-pointer">
                                     {
