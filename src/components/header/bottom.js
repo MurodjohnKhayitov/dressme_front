@@ -174,10 +174,10 @@ const BottomHeader = () => {
                     </label>
                 </div>
                 <div className="line h-6 border text-textColor mx-3"></div>
-                <button className={`mr-1 active:${genderStyle} font-medium w-[111px] h-12 border border-searchBgColor rounded`}>
+                <button className={`mr-1 ${genderStyle} font-medium w-[111px] h-12 border border-searchBgColor rounded`}>
                     Женщинам
                 </button>
-                <button className={` font-medium active:${genderStyle} w-[111px] h-12 border  border-searchBgColor mr-1 rounded`}>
+                <button className={` font-medium ${genderStyle} w-[111px] h-12 border  border-searchBgColor mr-1 rounded`}>
                     Мужчинам
                 </button>
                 <button className="bg-bgColor font-medium w-12 h-12 flex items-center justify-center border border-searchBgColor rounded">

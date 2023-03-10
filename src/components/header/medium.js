@@ -6,13 +6,13 @@ import { Button, Dropdown } from 'antd';
 import { dressMainData } from "../../ContextHook/ContextMenu";
 
 const MediumHeader = () => {
-    const [dressInfo, setDressInfo] = useContext(dressMainData)
     const [hamburgerMenu, setHamburgerMenu] = useState(true);
     const [toggle, setToggle] = useState(false);
-
+    
     // const [changeGenderColor, setChangeGenderColor] = useState(false)
+    
+    const [dressInfo, setDressInfo] = useContext(dressMainData)
     let dataStyle = ''
-
     if (dressInfo?.type == 1111) {
         dataStyle = "bg-bgSpring bg-opacity-10	  text-borderSpring "
     }
