@@ -6,9 +6,9 @@ import { Button, Dropdown } from 'antd';
 import { dressMainData } from "../../ContextHook/ContextMenu";
 import { GrClose } from "react-icons/gr";
 const MediumHeader = () => {
-    const [dressInfo, setDressInfo] = useContext(dressMainData)
     const [hamburgerMenu, setHamburgerMenu] = useState(true);
     const [toggle, setToggle] = useState(false);
+
     const [clothesType, setClothesType] = useState(false)
     const [priceToggle, setPriceToggle] = useState(false)
     const [brandToggle, setBrandToggle] = useState(false)
@@ -21,10 +21,18 @@ const MediumHeader = () => {
         }
     }, [clothesType, priceToggle, brandToggle, selectColorToggle])
 
+
+    
+
     // const [changeGenderColor, setChangeGenderColor] = useState(false)
+    
+    const [dressInfo, setDressInfo] = useContext(dressMainData)
     let dataStyle = ''
+
     let genderStyle = ''
     let hoverText = ''
+
+
     if (dressInfo?.type == 1111) {
         dataStyle = "bg-bgSpring bg-opacity-10	  text-borderSpring "
         hoverText = " hover:text-borderSpring "
