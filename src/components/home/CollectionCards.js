@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { discount, bucket, video, delivery, heart, shirt, addBag, cardImg, shortik, kastyum, star, category } from '../../assets/imgs'
 import { CiHeart } from 'react-icons/ci';
 import { dressMainData } from '../../ContextHook/ContextMenu';
-
+import { BsCheck2Square } from "react-icons/bs";
 export default function CollectionCards() {
     const [productList, setProductList] = useState([
         {
@@ -262,6 +262,29 @@ export default function CollectionCards() {
         dataStyle = "focus:text-borderWinter"
     }
 
+    const [changeColor, setChangeColor] = useState([
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" },
+
+    ])
+    const handleGetChecked = (info) => {
+        const newState = changeColor.map(obj => {
+            if (obj.id === info) {
+                if (obj.action) {
+                    return { ...obj, action: false }
+                } else {
+                    return { ...obj, action: true }
+                }
+            }
+            return obj
+        })
+        setChangeColor(newState)
+    }
+    
     return (
         <div className="flex flex-col box-border">
             <div className='max-w-[1440px] m-auto h-fit md:px-[80px]  sm:px-[50px] ss:px-[16px] pt-16 pb-4 '>
@@ -277,7 +300,7 @@ export default function CollectionCards() {
                 <div className="flex justify-between flex-wrap mt-[25px] md:mx-0 md:mt-[50px] gap-y-3 ">
                     {productList.map(data => {
                         return (
-                            <div key={data.id} className="ss:w-[48%] md:w-[24%] lg:w-[19%]   cursor-pointer transition ease-in-out delay-50 hover:shadow-md   xs:h-[456px] border border-solid	borderColorCard overflow-hidden rounded-t-lg	"   >
+                            <div key={data.id} className="group ss:w-[48%] md:w-[24%] lg:w-[19%]   cursor-pointer transition ease-in-out delay-50 hover:shadow-md   xs:h-[456px] border border-solid	borderColorCard overflow-hidden rounded-t-lg	"   >
                                 <div className='relative w-full  ss:h-[206px] xs:h-[309px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard'>
                                     {
                                         data.ProducImg ?
@@ -289,17 +312,17 @@ export default function CollectionCards() {
                                         <div className='ss:hidden xs:block xs:flex flex-col gap-y-1'>
 
                                             <p className=' w-fit  px-1 h-8 rounded  bg-white flex items-center justify-center border border-solid border-borderColorCard'>
-                                                <span><img src={discount} alt="" /></span>
-                                                <span className='px-[2px] text-[11px] hidden'>Discount</span>
+                                                <span><img className='w-5' src={discount} alt="" /></span>
+                                                <span className='px-[2px] text-[14px] '>Discount</span>
                                                 <span className='text-red-800'>{data?.discount}</span>
                                             </p>
-                                            <p className='w-fit px-1 h-8   rounded bg-white flex items-center justify-center border border-solid border-borderColorCard'>
-                                                <span><img src={video} alt="" /></span>
-                                                <span className=' text-[11px] pl-[2px] hidden'>Video</span>
+                                            <p className='w-fit px-1 h-8 ml-[-200px] group-hover:ml-0 duration-500  rounded bg-white flex items-center justify-center border border-solid border-borderColorCard'>
+                                                <span><img className='w-5' src={video} alt="" /></span>
+                                                <span className=' text-[14px] pl-[2px] '>Video</span>
                                             </p>
-                                            <p className='w-fit px-1 h-8   rounded bg-white flex items-center justify-center border border-solid border-borderColorCard'>
-                                                <span><img src={delivery} alt="" /></span>
-                                                <span className=' text-[11px] pl-[2px] hidden'>Delivery</span>
+                                            <p className='w-fit px-1 h-8   ml-[-200px] group-hover:ml-0 duration-500 rounded bg-white flex items-center justify-center border border-solid border-borderColorCard'>
+                                                <span><img className='w-5' src={delivery} alt="" /></span>
+                                                <span className=' text-[14px] pl-[2px] '>Delivery</span>
                                             </p>
                                         </div>
                                         <div className='flex flex-col gap-y-1 '>
@@ -313,24 +336,18 @@ export default function CollectionCards() {
                                         </div>
                                     </div>
                                     <div className="absolute w-full xs:h-[38px] ss:h-[30px] flex justify-between items-center ss:px-1 xs:px-2 md:px-4 bg-white bottom-0  border-t	 border-solid	border-borderColorCard">
-                                        <label className='rounded-full  ls:w-[22px] ls:h-[22px] ss:w-5 ss:h-5 bg-purple-500 cursor-pointer  border	 border-solid	border-borderColorCard mr-[3px]' htmlFor="Color1">
-                                            <input className="hidden" type="radio" id="Color1" name="colors" value="1" />
-                                        </label>
-                                        <label className='rounded-full  ls:w-[22px] ls:h-[22px] ss:w-5 ss:h-5 bg-black cursor-pointer  border	 border-solid	border-borderColorCard mr-[3px]' htmlFor="Color2">
-                                            <input className="hidden" type="radio" id="Color2" name="colors" value="1" />
-                                        </label>
-                                        <label className='rounded-full  ls:w-[22px] ls:h-[22px] ss:w-5 ss:h-5 bg-white cursor-pointer  border	 border-solid	border-borderColorCard mr-[3px]' htmlFor="Color3">
-                                            <input className="hidden" type="radio" id="Color3" name="colors" value="1" />
-                                        </label>
-                                        <label className='rounded-full  ls:w-[22px] ls:h-[22px] ss:w-5 ss:h-5 bg-zinc-500 cursor-pointer  border	 border-solid	border-borderColorCard mr-[3px]' htmlFor="Color4">
-                                            <input className="hidden" type="radio" id="Color4" name="colors" value="1" />
-                                        </label>
-                                        <label className='rounded-full  ls:w-[22px] ls:h-[22px] ss:w-5 ss:h-5 bg-sky-600 cursor-pointer  border	 border-solid	border-borderColorCard mr-[3px]' htmlFor="Color5">
-                                            <input className="hidden" type="radio" id="Color5" name="colors" value="1" />
-                                        </label>
-                                        <label className='rounded-full  ls:w-[22px] ls:h-[22px] ss:w-5 ss:h-5 bg-amber-400 cursor-pointer  border	 border-solid	border-borderColorCard mr-[3px]' htmlFor="Color6">
-                                            <input className="hidden" type="radio" id="Color6" name="colors" value="1" />
-                                        </label>
+                                        {
+                                            changeColor.map(data => {
+                                                return (
+                                                    <label onClick={() => handleGetChecked(data?.id)} className={`rounded-full flex items-center justify-center  ls:w-[22px] ls:h-[22px] ss:w-5 ss:h-5 ${data?.colors} cursor-pointer  border	 border-solid	border-borderColorCard mr-[3px]`} htmlFor="Color1">
+                                                        {data?.action ? <BsCheck2Square size={15} className="text-white" /> : null}
+                                                        <input className="hidden" type="radio" id="Color1" name="colors" value="1" />
+                                                    </label>
+    
+                                                )
+                                            })
+                                        }
+
                                     </div>
                                 </div>
                                 <div className="w-full xs:h-[147px] ss:h-[114px] xs:py-3 ss:py-2 xs:px-2 ss:px-1 rounded-b-1xl bg-white  flex flex-wrap content-between ">
@@ -358,9 +375,9 @@ export default function CollectionCards() {
                                         <div>
                                             {
                                                 data.sale ?
-                                                    <p className='flex ss:flex-col-reverse	text-start items-start '>
+                                                    <p className='flex ss:flex-col-reverse md:flex-row	text-start items-start '>
                                                         <p className='text-start m-0 p-0  not-italic font-medium ss:text[xs] xs:text-base xs:leading-4 ss:leading-1 text-red-700'>{data?.sale}</p>
-                                                        <p className='text-start m-0 p-0  ss:text-[12px] md:text-[14px] line-through not-italic font-normal leading-3 ss:leading-1 text-borderColorCard'>{data?.price}</p>
+                                                        <p className='text-start m-0 p-0  ss:text-[12px] mt-[3px] md:text-[14px] line-through not-italic font-normal leading-3 ss:leading-1 text-borderColorCard'>{data?.price}</p>
                                                     </p>
                                                     :
                                                     <p className='not-italic font-medium text-base leading-4' style={{ color: "black" }}>{data?.price} </p>
