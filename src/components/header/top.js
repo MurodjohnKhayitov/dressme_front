@@ -76,11 +76,11 @@ const TopHeader = () => {
                 <div className={`${styles.container} mx-auto  text-[15px]`}>
                     <div className={`${styles.flexBetween} py-[2px] text-[13px]`}>
                         <div className="left flex items-center">
-                            <Link to="/" className="flex items-center">
+                            <Link to="/" className="flex items-center ">
                                 <img src={location} alt="location" className="mr-2" />
                                 <span className="text-textColor mr-[6px] font-medium">Город:</span>
                                 {/* <span className="font-medium border-b border-slate-900 text-black mr-[45px]">Ташкент</span> */}
-                                <div className="w-fit font-medium   flex items-center">
+                                <div className="w-[70px] font-medium   flex items-center ">
                                     <div
                                         onClick={() => setOpenCity(!openCity)}
                                         className={`w-fit  font-medium border-b border-slate-900 text-black mr-[45px] flex flex-col items-center justify-center ${!selectCity && "text-gray-700"
@@ -112,7 +112,7 @@ const TopHeader = () => {
                                 </div>
                             </Link>
 
-                            <div className="w-[100px] rounded bg-white  mr-3 font-medium select-none cursor-pointer">
+                            <div className="w-[100px] rounded bg-white ml-[58px]  mr-3 font-medium select-none cursor-pointer">
                                 {
                                     LanguageList.filter(data => data.id == selectLang).map(data => {
                                         return (
@@ -159,11 +159,11 @@ const TopHeader = () => {
                         <div className="right flex items-center">
                             <Link to="#" className="flex items-center mr-[25.5px]">
                                 <img src={help} alt="help" className="mr-2" />
-                                <span className="text-textColor font-medium">Помощь</span>
+                                <span className="text-textColor text-[13px] font-medium">Помощь</span>
                             </Link>
                             <Link to="#" className="flex items-center">
                                 <img src={business} alt="business" className="mr-2" />
-                                <span className="text-textColor font-medium">Бизнес</span>
+                                <span className="text-textColor text-[13px] font-medium">Бизнес</span>
                             </Link>
                             <div className="line h-5 border text-textColor ml-6"></div>
                             <Link to="#" className="flex items-center ml-[26.25px]">
