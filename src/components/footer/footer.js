@@ -96,6 +96,7 @@ const Footer = () => {
                                 })
                             }
                         </Link>
+                        
                         <Link to="#" className="hidden items-center bg-bgColor pl-16 py-[15px] border border-searchBgColor rounded md:flex">
                             <img src={feedbackIcon} alt="" />
                             <span className="text-base font-medium leading-4 ml-[12.5px] mr-[32.37px]">Форма для обратной связи</span>
@@ -299,6 +300,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
+
 
                     {/* Categories, menu, social networks for MOBILE*/}
                     <div className="flex flex-row items-center md:hidden ss:px-4 md:px-0">
