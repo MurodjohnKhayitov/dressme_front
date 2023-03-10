@@ -64,12 +64,7 @@ const TopHeader = () => {
     ]
     const [openCity, setOpenCity] = useState(false);
 
-    // if (openCity) {
-    //     window.onClick = function () {
-    //         setOpenCity(false)
-    //         // setOpenLanguage(false)
-    //     }
-    // }
+  
     return (
         <div className="top bg-bgColor hidden md:block">
             <div className="w-full max-w-[1440px] ss:px-4 md:px-[80px] mx-auto ">
@@ -83,10 +78,10 @@ const TopHeader = () => {
                                 <div className="w-fit font-medium   flex items-center">
                                     <div
                                         onClick={() => setOpenCity(!openCity)}
-                                        className={`w-fit  font-medium border-b border-slate-900 text-black mr-[45px] flex flex-col items-center justify-center ${!selectCity && "text-gray-700"
+                                        className={`w-[120px]  font-medium  text-black mr-[45px]      ${!selectCity && "text-gray-700"
                                             }`}
                                     >
-                                        {selectCity}
+                                        <a className="border-b border-slate-900" href="#">{selectCity}</a>
                                     </div>
                                     <ul
                                         className={`bg-white w-[150px] ml-[-5%] mt-[20%] overflow-y-auto absolute

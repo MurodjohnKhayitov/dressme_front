@@ -20,62 +20,21 @@ export default function MainPageSliders() {
 
     if (dressInfo?.type == 1111) {
         dataStyle = "border-borderSpring"
+
     }
     if (dressInfo?.type == 2222) {
         dataStyle = "border-borderSummer"
+
     }
     if (dressInfo?.type == 3333) {
         dataStyle = "border-borderAutumm"
+
     }
     if (dressInfo?.type == 4444) {
         dataStyle = "border-borderWinter"
+
     }
-    const responsive1 = {
-        superLargeDesktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 4000, min: 3000 },
-            items: 6,
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 6,
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 4,
-        },
-        XlMobile: {
-            breakpoint: { max: 768, min: 568 },
-            items: 3,
-        },
-        mobile: {
-            breakpoint: { max: 568, min: 0 },
-            items: 2,
-        },
-    };
-    const responsive2 = {
-        superLargeDesktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 4000, min: 3000 },
-            items: 6,
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 6,
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 768 },
-            items: 4,
-        },
-        XlMobile: {
-            breakpoint: { max: 768, min: 568 },
-            items: 3,
-        },
-        mobile: {
-            breakpoint: { max: 567, min: 0 },
-            items: 2,
-        },
-    };
+
     SwiperCore.use([Navigation, Pagination, Autoplay]);
     const [clothesToggle, setClothesToggle] = useState(true)
     const [carosuelData, setCarosuelData] = useState([
@@ -234,6 +193,7 @@ export default function MainPageSliders() {
         ]
     };
 
+
     return (
         <div className='box-border flex flex-col justify-center	'>
             <div className="h-fit  max-w-[1440px]  md:px-[80px]    sm:px-[50px] ss:px-[16px] ">
@@ -319,9 +279,9 @@ export default function MainPageSliders() {
 
                 <div className='flex 	m-auto flex-wrap justify-between items-center ss:mt-3 md:mt-12 gap-y-5 py-7   ss:hidden xs:block xs:flex'>
                     {/* 1 */}
-                    <div className='lg:w-[23%] sm:w-[47%] ss:w-[100%] ss:h-20 py-[20px] px-[16px] xs:h-[100px] bg-bgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-borderColorCard'>
+                    <div className={`lg:w-[23%]  sm:w-[47%] ss:w-[100%] ss:h-20 py-[20px] px-[16px] xs:h-[100px] bg-bgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-borderColorCard `}>
                         <div className='w-full'>
-                            <p className='not-italic font-normal ss:text-sm xs:text-base leading-4 text-black'>Strengthen Health</p>
+                            <p className={`not-italic font-normal ss:text-sm xs:text-base leading-4 text-black `}>Strengthen Health</p>
                         </div>
                         <div className='w-full flex justify-between items-center'>
                             <p className='nnot-italic font-medium text-xl leading-6 text-black'>Sports clothes</p>

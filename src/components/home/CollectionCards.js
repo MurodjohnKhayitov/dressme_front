@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { discount, bucket, video, delivery, heart, shirt, addBag, cardImg, shortik, kastyum, star, category } from '../../assets/imgs'
 import { CiHeart } from 'react-icons/ci';
+import { dressMainData } from '../../ContextHook/ContextMenu';
 
 export default function CollectionCards() {
     const [productList, setProductList] = useState([
@@ -246,6 +247,20 @@ export default function CollectionCards() {
 
 
     ])
+    const [dressInfo, setDressInfo] = useContext(dressMainData)
+    let dataStyle = ''
+    if (dressInfo?.type == 1111) {
+        dataStyle = "focus:text-borderSpring "
+    }
+    if (dressInfo?.type == 2222) {
+        dataStyle = "focus:text-borderSummer"
+    }
+    if (dressInfo?.type == 3333) {
+        dataStyle = "focus:text-borderAutumm"
+    }
+    if (dressInfo?.type == 4444) {
+        dataStyle = "focus:text-borderWinter"
+    }
 
     return (
         <div className="flex flex-col box-border">
@@ -255,8 +270,8 @@ export default function CollectionCards() {
                         <span>Коллекции одежды,</span> <span className='ss:hidden sm:block'>которые вам подходят</span>
                     </div>
                     <div className="rounded  h-[42px] md:h-[52px] ss:w-full md:w-[308px] md:mx-0 flex justify-between bg-slate-50 border border-solid ss:mt-5 md:mt-0 mx-auto ">
-                        <button className='ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded'>Карты одежды</button>
-                        <button className='ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded'>Наборы</button>
+                        <button className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded ${dataStyle}`}>Карты одежды</button>
+                        <button className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded ${dataStyle}`}>Наборы</button>
                     </div>
                 </div>
                 <div className="flex justify-between flex-wrap mt-[25px] md:mx-0 md:mt-[50px] gap-y-3 ">

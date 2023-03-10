@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { next, category, arrowBottomFull, nextItem, prevItem, star } from '../../assets/imgs'
 import { discount, bucket, video, delivery, heart, shirt, addBag, cardImg, shortik, kastyum } from '../../assets/imgs'
 import { CiHeart } from 'react-icons/ci';
@@ -10,6 +10,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 import styles from './clothers.module.css'
+import { dressMainData } from '../../ContextHook/ContextMenu';
 export default function ClothesSlider() {
     const [productList, setProductList] = useState([
         {
@@ -256,7 +257,7 @@ export default function ClothesSlider() {
         },
 
     ])
-    
+
     const [carosuelData, setCarosuelData] = useState([
         {
             Category: [
@@ -448,9 +449,25 @@ export default function ClothesSlider() {
             }
         ]
     };
-
-
-
+    const [dressInfo, setDressInfo] = useContext(dressMainData)
+    let dataStyle = ''
+    let genderStyle = ''
+    if (dressInfo?.type == 1111) {
+        dataStyle = " hover:text-borderSpring "
+        genderStyle = "hover:text-borderSpring hover:bg-bgSpring hover:border-borderSpring hover:text-borderSpring"
+    }
+    if (dressInfo?.type == 2222) {
+        dataStyle = " hover:text-borderSummer"
+        genderStyle = "hover:text-borderSummer hover:bg-bgSummer hover:border-borderSummer hover:text-borderSummer"
+    }
+    if (dressInfo?.type == 3333) {
+        dataStyle = " hover:text-borderAutumm "
+        genderStyle = "hover:text-borderAutumm hover:bg-bgAutumm hover:border-borderAutumm hover:text-borderAutumm"
+    }
+    if (dressInfo?.type == 4444) {
+        dataStyle = " hover:text-borderWinter "
+        genderStyle = "hover:text-borderWinter hover:bg-bgWinter hover:border-borderWinter hover:text-borderWinter"
+    }
 
     return (
         <div className='flex flex-col  box-border mt-28 ss:hidden xs:block '>
@@ -479,7 +496,7 @@ export default function ClothesSlider() {
                                         data.campany.map(data => {
                                             return (
                                                 <div key={data.id} className='w-full h-full '>
-                                                    <div className='w-[110px] h-[110px] m-auto ss:py-5  ls:p-0 bg-gray-100 rounded-lg flex justify-center items-center cursor-pointer  '>
+                                                    <div className={`${genderStyle} w-[110px] h-[110px]  m-auto ss:py-5  ls:p-0 bg-gray-100 rounded-lg flex justify-center items-center cursor-pointer  border border-searchBgColor  `}>
                                                         <p className='not-italic font-medium text-xs leading-4 text-center text-black'>{data?.type || "0"}</p>
                                                     </div>
                                                     <div >
