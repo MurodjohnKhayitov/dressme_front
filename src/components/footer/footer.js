@@ -609,7 +609,7 @@ const Footer = () => {
                     
                 </div>
                 
-                <div className="w-full border border-gray-200"></div>
+                <div className="w-full border-b border-gray-200"></div>
 
                 <div className='rounded-lg ss:px-4 ss:py-6 md:p-10 md:border md:border-searchBgColor'>
                     {/* Catalog and Clothes types */}

@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { adidas, arrowBottomBlack, arrowBottomRight, autummBrand, autummSeason, autummVolume, blog, booking, brush, bucket, business, businessBlack, catalog, chanel, close, clothing, contact, dashboard, dolce, dollar, eng, female, gucci, heart, help, helpBlack, hm, lacoste, location, logo, logoo, louis, male, map, menu, nike, prada, puma, search, shop, springBrand, springSeason, springVolume, summerBrand, summerSeason, summerVolume, tommy, topBrands, user, voice, winter, winterBrand, winterSeason, winterVolume, zara, } from "../../assets/imgs";
+
 import { styles } from "../../util/style";
 import { Button, Dropdown } from 'antd';
 import { dressMainData } from "../../ContextHook/ContextMenu";
@@ -173,12 +174,12 @@ const MediumHeader = () => {
                 <div className=" w-full flex items-center ss:w-full md:w-fit justify-between ">
 
                     {/* Menu section */}
-                    <div onClick={toggleHamburger} className={`flex items-center justify-center bg-bgColor border  ss:w-12 ss:h-12 rounded cursor-pointer md:hidden  `}>
+                    <div onClick={toggleHamburger} className={`flex items-center justify-center bg-bgColor border  ss:w-12 ss:h-12 rounded cursor-pointer md:hidden `}>
 
                         <img src={!hamburgerMenu ? close : menu} alt="voice" className={`${close ? 'w-6 h-6' : ''} `} />
 
                         {/*Starting of Opened Hamburger menu section */}
-                        <div className={`${!hamburgerMenu ? "hamburger flex flex-col ease-linear duration-500" : "left-[-1000px] ease-linear duration-500"}  top-[62px] left-0 fixed right-0 w-full bg-white z-10 h-full overflow-y-scroll ss:px-[15px] ll:flex-fit`}>
+                        <div className={`${!hamburgerMenu ? "hamburger flex flex-col ease-linear duration-500 overscroll-none" : "left-[-400px] ll:left-[-470px] sm:left-[-800px] ease-linear duration-500"}  top-[62px] left-0 fixed right-0 w-full bg-white z-10 h-full overflow-y-scroll ss:px-[15px] ll:flex-fit`}>
 
                             {/* Searching section */}
                             <div className="search flex items-center justify-between rounded font-medium h-10 mt-3 mb-3 border border-searchBg ss:mt-3 md:hidden w-full">
@@ -573,6 +574,7 @@ const MediumHeader = () => {
                 }
 
             </div>
+
             {/*Starting of Blocked  Hamburger Menu section */}
             <div className={`md:hidden `}>
 
