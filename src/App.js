@@ -1,19 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
-import Footer from "./components/footer/footer";
-import Header from "./components/header/header";
+import React from 'react'
 import RouterList from './views/RouterList'
-const App = () => {
-  return (
-    <div className="font-aeonicPro">
+export default function App(){  return <RouterList />}
 
-        <BrowserRouter>
-            <Header />
-            <RouterList/>
-            <Footer />
-        </BrowserRouter>
-        
-    </div>
-  );
-}
-
-export default App;
