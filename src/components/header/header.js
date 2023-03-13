@@ -1,4 +1,3 @@
-import React from "react";
 import TopHeader from "./top";
 import MediumHeader from "./medium";
 import BottomHeader from "./bottom";
