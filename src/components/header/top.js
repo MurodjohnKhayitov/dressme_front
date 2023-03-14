@@ -1,12 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { business, eng, englishFlag, glasses, help, location, order, ru, russiaFlag, shop, uzbekFlag } from "../../assets/imgs";
 import { dressMainData } from "../../ContextHook/ContextMenu";
 import { styles } from "../../util/style";
 // import { Select, Space } from 'antd';
 import { Button, Divider, Popover, Segmented } from 'antd';
-
 const TopHeader = () => {
+
+
     const [dressInfo, setDressInfo] = useContext(dressMainData)
 
     const SeasonTypeArray = [
@@ -15,9 +16,7 @@ const TopHeader = () => {
         { id: 3, type: "English", icons: englishFlag }
     ]
 
-    const handleChange = (value) => {
-        console.log(`selected ${value}`);
-    };
+
     let dataStyle = ''
     let genderStyle = ''
     if (dressInfo?.type == 1111) {
@@ -126,108 +125,76 @@ const TopHeader = () => {
     );
 
     return (
-        <div className="top bg-bgColor hidden md:block">
-            <div className="w-full max-w-[1440px] ss:px-4 md:px-[80px] mx-auto ">
-                <div className={`${styles.container} mx-auto  text-[15px]`}>
-                    <div className={`${styles.flexBetween} py-[2px] text-[13px]`}>
-                        <div className="left flex items-center">
-                            <Link to="/" className="flex items-center ">
-                                <img src={location} alt="location" className="mr-2" />
-                                <span className="text-textColor mr-[6px] font-medium">Город:</span>
-                                {/* <span className="font-medium border-b border-slate-900 text-black mr-[45px]">Ташкент</span> */}
-                                <div className="w-[70px] font-medium   flex items-center ">
+        <div className="flex flex-col justify-center items-center top bg-bgColor ss:hidden md:block m-0 p-0 box-border">
+            <div className='max-w-[1280px] w-[100%] h-[32px] py-[2px] px-4 flex justify-between items-center m-auto  '>
 
+                <div className="left h-full flex items-center  ">
+                    <Link to="/" className="flex w-fit items-center">
+                        <img src={location} alt="location" className="mr-2" />
+                        <span className="text-textColor text-[13px] mr-[6px] font-medium">Город:</span>
+                        <div className="w-[90px] font-medium   flex items-center ">
+                            <Popover
+                                open={openRegion}
+                                onOpenChange={handleOpenChangeCity}
+                                className=" flex text-[13px] mt-1 items-center  "
+                                trigger="click"
+                                options={['Hide']}
+                                placement="bottom"
+                                content={contentCity} >
+                                <a className="border-b border-slate-900" href="#">{selectCity}</a>
+                            </Popover>
+
+                          
+                        </div>
+                    </Link>
+
+                    <div className="w-[100px] h-full rounded bg-white ml-[15px]  font-medium select-none cursor-pointer">
+
+                        {
+                            LanguageList.filter(data => data.id === selectLang).map(data => {
+                                return (
                                     <Popover
-                                        open={openRegion}
-                                        onOpenChange={handleOpenChangeCity}
-                                        className=" flex  items-center  "
+                                        key={data?.id}
+                                        open={openLang}
+                                        onOpenChange={handleOpenChangeWear}
+                                        className="w-full flex text-[13px] h-full px-3 items-center "
                                         trigger="click"
                                         options={['Hide']}
                                         placement="bottom"
-                                        content={contentCity} >
-                                        <a className="border-b border-slate-900" href="#">{selectCity}</a>
+                                        content={contentLang} >
+                                        <span className="mr-1"><img src={data?.icons} alt="" /></span>
+                                        <span>{data?.type}</span>
                                     </Popover>
+                                )
+                            })
+                        }
 
-                                    {/* <div
-                                        onClick={() => setOpenCity(!openCity)}
-                                        className={`w-[120px]  font-medium  text-black mr-[45px]      ${!selectCity && "text-gray-700"
-                                            }`}
-                                    >
-                                        <a className="border-b border-slate-900" href="#">{selectCity}</a>
-                                    </div>
-                                    <ul
-                                        className={`bg-white w-[150px] ml-[-5%] mt-[20%] overflow-y-auto absolute
-                                                          z-50 rounded shadow-lg 	 ${openCity ? "max-h-60" : "max-h-0"
-                                            } `}
-                                    >
-                                        {CityList.map(data => {
-                                            return (
-                                                <li
-                                                    key={data?.id}
-                                                    className={`p-2 pl-7 text-sm text-start hover:bg-bgColor ${dataStyle}`}
-                                                    onClick={() => {
-                                                        handleCityValue(data?.type)
-                                                        setOpenCity(false)
-                                                    }
-                                                    }
-                                                >
-                                                    {data?.type}
-                                                </li>
-                                            )
-                                        })}
-                                    </ul> */}
-                                </div>
-                            </Link>
-
-                            <div className="w-[100px] rounded bg-white ml-[58px]  mr-3 font-medium select-none cursor-pointer">
-
-                                {
-                                    LanguageList.filter(data => data.id === selectLang).map(data => {
-                                        return (
-                                            <Popover
-                                                key={data?.id}
-                                                open={openLang}
-                                                onOpenChange={handleOpenChangeWear}
-                                                className="w-full flex  py-[5px] px-3 items-center "
-                                                trigger="click"
-                                                options={['Hide']}
-                                                placement="bottom"
-                                                content={contentLang} >
-                                                <span className="mr-1"><img src={data?.icons} alt="" /></span>
-                                                <span>{data?.type}</span>
-                                            </Popover>
-                                        )
-                                    })
-                                }
-
-                            </div>
-
-
-                            <div className="flex items-center bg-white rounded px-3 py-[6px] cursor-pointer mr-3">
-                                <img src={glasses} alt="glasses" className="mr-2" />
-                                <span className="font-medium">Спец. возможности</span>
-                            </div>
-                        </div>
-                        <div className="right flex items-center">
-                            <Link to="#" className="flex items-center mr-[25.5px]">
-                                <img src={help} alt="help" className="mr-2" />
-                                <span className="text-textColor text-[13px] font-medium">Помощь</span>
-                            </Link>
-                            <Link to="#" className="flex items-center">
-                                <img src={business} alt="business" className="mr-2" />
-                                <span className="text-textColor text-[13px] font-medium">Бизнес</span>
-                            </Link>
-                            <div className="line h-5 border text-textColor ml-6"></div>
-                            <Link to="#" className="flex items-center ml-[26.25px]">
-                                <img src={order} alt="my orders" className="mr-2" />
-                                <span className="text-textColor font-medium">Мои заказы</span>
-                            </Link>
-                            <button className="flex items-center bg-white rounded px-3 py-[6px] cursor-pointer ml-6">
-                                <img src={shop} alt="shop" className="mr-2" />
-                                <span className="font-medium">Магазины</span>
-                            </button>
-                        </div>
                     </div>
+
+
+                    <div className="flex h-full px-[11px] items-center bg-white rounded ml-3 cursor-pointer ">
+                        <img src={glasses} alt="glasses" className="mr-2" />
+                        <span className="font-medium text-[13px]">Спец. возможности</span>
+                    </div>
+                </div>
+                <div className="right h-full flex items-center ">
+                    <Link to="#" className="flex items-center h-full ">
+                        <img src={help} alt="help" className="mr-2" />
+                        <span className="text-textColor text-[13px] font-medium">Помощь</span>
+                    </Link>
+                    <Link to="#" className="flex items-center h-full  ml-6">
+                        <img src={business} alt="business" className="mr-2" />
+                        <span className="text-textColor text-[13px] font-medium">Бизнес</span>
+                    </Link>
+                    <div className="line h-5 border text-textColor ml-6"></div>
+                    <Link to="#" className="flex items-center h-full  ml-6">
+                        <img src={order} alt="my orders" className="mr-2" />
+                        <span className="text-textColor  text-[13px] font-medium">Мои заказы</span>
+                    </Link>
+                    <button className="flex items-center bg-white rounded cursor-pointer h-full  ml-6 px-3">
+                        <img src={shop} alt="shop" className="mr-2" />
+                        <span className="font-medium  text-[13px]">Магазины</span>
+                    </button>
                 </div>
             </div>
         </div>

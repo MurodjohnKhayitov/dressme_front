@@ -118,26 +118,25 @@ const BottomHeader = () => {
     // --------------------------------------------
 
     return (
-        <div className={`bottom w-full max-w-[1440px] md:px-[80px] mx-auto my-3 hidden md:block`}>
-
-            <div className="flex items-center justify-between text-sm">
+        <div className="flex flex-col justify-center items-center m-0 p-0 box-border ss:hidden md:block">
+            <div className='max-w-[1280px] w-[100%] flex justify-center px-4 py-3 items-center m-auto '>
 
                 <Popover
                     open={openwear}
                     onOpenChange={handleOpenChangeWear}
-                    className="w-[190px] px-[17px] h-12  rounded bg-bgColor  border-searchBgColor border flex items-center justify-between cursor-pointer select-none group"
+                    className="w-[190px] px-[17px] h-12  rounded-lg bg-bgColor  border-searchBgColor border flex items-center justify-between cursor-pointer select-none group  "
                     trigger="click"
                     options={['Hide']}
                     placement="bottom"
                     content={contentWear} >
                     <span><img src={clothing} alt="clothing" className="" /> </span>
                     <span className="not-italic font-medium text-center text-sm leading-4 text-black">{selectWear}</span>
-                    <span><BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`group-focus:rotate-[-180deg] duration-200`} /> </span>
+                    <span><BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openwear ? "rotate-[-180deg]" : ""} duration-200`} /> </span>
                 </Popover>
                 <Popover
                     open={openPrice}
                     onOpenChange={handleOpenChangePrice}
-                    className="w-[210px]  h-12  rounded bg-bgColor  border-searchBgColor border  flex items-center justify-between  cursor-pointer select-none group "
+                    className="w-[210px]  h-12  rounded-lg bg-bgColor  border-searchBgColor border  flex items-center justify-between  cursor-pointer select-none group ml-2"
                     trigger="click"
                     options={['Hide']}
                     placement="bottom"
@@ -145,12 +144,12 @@ const BottomHeader = () => {
                     <p className="w-[56px] h-full flex items-center justify-center border-r border-borderColorCard"><img src={dollarLogo} alt="dollar full" /> </p>
                     <p className=" w-[154px] h-full flex justify-between items-center px-3">
                         <span className="not-italic font-medium text-center text-sm leading-4 text-black ">{selectPrice}</span>
-                        <span className=""><BiChevronDown size={25} style={{ color: "#c2c2c2" }} className='group-focus:rotate-[-180deg] duration-200' /> </span>
+                        <span className=""><BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openPrice ? "rotate-[-180deg]" : ""} duration-200`} /> </span>
                     </p>
                 </Popover>
 
 
-                <div className="flex items-center justify-between bg-bgColor rounded border-searchBgColor border h-12">
+                <div className="flex items-center justify-between bg-bgColor rounded-lg border-searchBgColor border h-12 ml-2">
                     <img src={colors} alt="" className="px-[18px] py-[14px] border-r h-full mr-3" />
                     <label className="rounded-full w-6 h-6 bg-black cursor-pointer border border-solid mr-3 border-borderColorCard" htmlFor="Color1">
                         <input className="hidden" type="checkbox" id="Color1" name="colors" value="1" />
@@ -189,26 +188,25 @@ const BottomHeader = () => {
                         <input className="hidden" type="radio" id="Color4" name="colors" value="1" />
                     </label>
                 </div>
-                <div className="line h-6 border text-textColor mx-3"></div>
+                <div className="line h-6 border-r-[1px] text-textColor mx-3"></div>
                 {
                     personItems?.filter(value => value.id === dressInfo?.type).map(data => {
                         return (
                             <div key={data?.id} className="w-fit flex items-center ">
-                                <button className={`mr-1 ${genderStyle} font-medium w-[136px] h-12 px-[16px] justify-between flex items-center border border-searchBgColor rounded`}>
+                                <button className={`mr-1 ${genderStyle} font-medium w-[136px] h-12 px-[16px] justify-between mr-2 flex items-center border border-searchBgColor rounded-lg`}>
                                     <img src={data?.woman} alt="female" /><span> Женщинам</span>
                                 </button>
-                                <button className={` font-medium ${genderStyle} w-[136px] h-12 border px-[16px] justify-between flex items-center  border-searchBgColor mr-1 rounded`}>
+                                <button className={` font-medium ${genderStyle} w-[136px] h-12 border px-[16px] justify-between flex items-center  border-searchBgColor mr-2 rounded-lg`}>
                                     <img src={data?.man} alt="male" />    <span>Мужчинам</span>
                                 </button>
                             </div>
                         )
                     })
                 }
-                <button className="bg-bgColor font-medium w-12 h-12 flex items-center justify-center border border-searchBgColor rounded">
+                <button className="bg-bgColor font-medium w-12 h-12 flex items-center justify-center border border-searchBgColor rounded-lg">
                     <img src={plus} alt="" />
                 </button>
             </div >
-
         </div >
     )
 }

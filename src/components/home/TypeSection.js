@@ -1,17 +1,11 @@
-import React, { useState } from 'react'
-import { category, next } from '../../assets/imgs'
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/swiper-bundle.css';
-import "swiper/css";
-import "swiper/css/pagination";
-import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import React, { useContext, useState } from 'react'
+import { AutummSquare, category, next, SpringSquare, SummerSquare, WinterSquare } from '../../assets/imgs'
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import Slider from "react-slick";
-import styles from './clothers.module.css'
+import { dressMainData } from '../../ContextHook/ContextMenu';
+
 export default function TypeSection() {
-    SwiperCore.use([Navigation, Pagination, Autoplay]);
+    const [dressInfo, setDressInfo] = useContext(dressMainData)
     const [typeSectionData, setTypeSectionData] = useState([
         {
             id: 1,
@@ -99,11 +93,16 @@ export default function TypeSection() {
         },
 
     ])
-
+    const service = [
+        { id: 1111, type: "Spring", imgFull: SpringSquare },
+        { id: 2222, type: "Summer", imgFull: SummerSquare },
+        { id: 3333, type: "Autumm", imgFull: AutummSquare },
+        { id: 4444, type: "Winter", imgFull: WinterSquare },
+    ]
     const NextArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className={styles.NextArrow} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[50%] z-10	right-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
                 <button className="next">
                     <GrNext />
                 </button>
@@ -114,7 +113,7 @@ export default function TypeSection() {
     const PrevArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className={styles.PrevArrow} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[50%] z-10	left-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
                 <button className="prev">
                     <GrPrevious />
                 </button>
@@ -157,9 +156,22 @@ export default function TypeSection() {
         ]
     };
 
+    let dataStyle = ''
+    if (dressInfo?.type == 1111) {
+        dataStyle = " hover:text-borderSpring "
+    }
+    if (dressInfo?.type == 2222) {
+        dataStyle = " hover:text-borderSummer"
+    }
+    if (dressInfo?.type == 3333) {
+        dataStyle = " hover:text-borderAutumm "
+    }
+    if (dressInfo?.type == 4444) {
+        dataStyle = " hover:text-borderWinter "
+    }
+
     return (
         <div className='flex flex-col'>
-            {/* <div className='h-[full] md:px-[80px]   max-w-[1440px] sm:px-[50px] ss:px-[16px] xs:py-7 ss:p-3 my-2'> */}
             <div className='w-[100%] h-fit flex flex-col justify-center py-8'>
                 <div className='w-full h-[60px]  ss:block xs:hidden ss:flex items-center justify-center text-center  rounded cursor-pointer  bg-bgColor border border-solid border-borderColorCard cursor-pointer'>
                     <span className='mr-3 not-italic font-medium text-base leading-4 text-center'>Одежды, которые вам подходят</span><span><img src={category} alt="market" /></span>
@@ -172,10 +184,20 @@ export default function TypeSection() {
                         typeSectionData?.map(data => {
                             return (
                                 <div >
-                                    <div key={data.id} className='w-[98%] lg:h-[426px] ll:h-[400px] md:h-[390px] ss:h-[350px] bg-white border border-solid	border-borderColorCard	rounded-lg ss:p-3 lg:ml-1  xl:p-8 flex flex-wrap ss:content-between sm:content-between  '>
+                                    <div key={data?.id} className='w-[98%] lg:h-[426px] ll:h-[400px] md:h-[390px] ss:h-[350px] bg-white border border-solid	border-borderColorCard	rounded-lg ss:p-3 lg:ml-1  xl:p-8 flex flex-wrap ss:content-between sm:content-between  '>
                                         <div className='w-full flex items-center justify-between ss:h-fit sm:h-1/10  '>
                                             <p className='not-italic font-medium md:text-lg ss:text-base ll:text-xl lg:text-xl xl:text-2xl leading-7 text-black'>{data?.type || "type"}</p>
-                                            <p className='flex items-center'><span className='not-italic font-medium md:text-sm xl:text-base lg:text-xs ss:text-xs  ll:text-base leading-4 text-right mr-2 text-black'>See more</span><img src={next} alt="next" /></p>
+                                            <p className='flex items-center cursor-pointer'>
+                                                <span className={`not-italic font-medium md:text-sm xl:text-base lg:text-xs ss:text-xs  ll:text-base leading-4 text-right mr-2 text-black ${dataStyle}`}>
+                                                    See more
+                                                </span>
+                                                {
+                                                    service.filter(data => data.id == dressInfo.type).map(data => {
+                                                        return (
+                                                            <img key={data?.id} src={data?.imgFull} alt="next" />
+                                                        )
+                                                    })}
+                                            </p>
 
                                         </div>
                                         <div className='w-full flex flex-wrap rounded h-4/5'>
@@ -183,9 +205,11 @@ export default function TypeSection() {
                                             {
                                                 data?.group?.map(data => {
                                                     return (
-                                                        <div key={data.id} className='w-6/12 h-1/2 p-2  border border-solid	border-borderColorCard  bg-white flex flex-wrap content-between'>
+                                                        <div key={data?.id} className='w-6/12 h-1/2 p-2  border border-solid	border-borderColorCard  bg-white flex flex-wrap content-between'>
                                                             <div className='w-full h-3/4 bg-bgColor'>
+
                                                                 {data.img ? <img src={data?.img} alt="data" /> : null}
+
 
                                                             </div>
                                                             <div className='w-full h-1/5 flex items-center not-italic font-medium text-base leading-4 text-black justify-start'>
@@ -210,7 +234,7 @@ export default function TypeSection() {
                 {
                     typeSectionData?.map(data => {
                         return (
-                            <div key={data.id} className='w-[98%] lg:h-[426px] ll:h-[400px] md:h-[390px] mt-2 ss:h-[350px] bg-white border border-solid	border-borderColorCard	rounded-lg ss:p-3 lg:ml-1  xl:p-8 flex flex-wrap ss:content-between sm:content-between  '>
+                            <div key={data?.id} className='w-[98%] lg:h-[426px] ll:h-[400px] md:h-[390px] mt-2 ss:h-[350px] bg-white border border-solid	border-borderColorCard	rounded-lg ss:p-3 lg:ml-1  xl:p-8 flex flex-wrap ss:content-between sm:content-between  '>
                                 <div className='w-full flex items-center justify-between ss:h-fit sm:h-1/10  '>
                                     <p className='not-italic font-medium md:text-lg ss:text-base ll:text-xl lg:text-xl xl:text-2xl leading-7 text-black'>{data?.type || "type"}</p>
                                     <p className='flex items-center'><span className='not-italic font-medium md:text-sm xl:text-base lg:text-xs ss:text-xs  ll:text-base leading-4 text-right mr-2 text-black'>See more</span><img src={next} alt="next" /></p>
@@ -221,7 +245,7 @@ export default function TypeSection() {
                                     {
                                         data?.group?.map(data => {
                                             return (
-                                                <div key={data.id} className='w-6/12 h-1/2 p-2  border border-solid	border-borderColorCard  bg-white flex flex-wrap content-between'>
+                                                <div key={data?.id} className='w-6/12 h-1/2 p-2  border border-solid	border-borderColorCard  bg-white flex flex-wrap content-between'>
                                                     <div className='w-full h-3/4 bg-bgColor'>
                                                         {data.img ? <img src={data?.img} alt="data" /> : null}
 
@@ -242,7 +266,6 @@ export default function TypeSection() {
                     })
                 }
             </div>
-            {/* </div> */}
         </div>
     )
 }
