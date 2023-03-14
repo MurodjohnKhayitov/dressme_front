@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 
-import { next, category, arrowBottomFull, mouse, toBottom, markets, adidas, chanel, dolce, gucci, hm, locate, lacoste, louis, nike, prada, puma, tommy, zara, SpringSquare, SummerSquare, AutummSquare, WinterSquare, } from '../../assets/imgs'
-import styles from './clothers.module.css'
+import { category, arrowBottomFull, mouse, toBottom, markets, adidas, chanel, dolce, gucci, hm, locate, lacoste, louis, nike, prada, puma, tommy, zara, SpringSquare, SummerSquare, AutummSquare, WinterSquare, } from '../../assets/imgs'
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import Slider from "react-slick";
 
@@ -28,7 +27,7 @@ export default function MainPageSliders() {
     if (dressInfo?.type == 4444) {
         dataStyle = "border-borderWinter"
 
-    }
+    } 
 
     const [clothesToggle, setClothesToggle] = useState(true)
     const [carosuelData, setCarosuelData] = useState([
@@ -72,7 +71,7 @@ export default function MainPageSliders() {
     const NextArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className={styles.NextArrow} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	right-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
                 <button className="next">
                     <GrNext />
                 </button>
@@ -83,7 +82,28 @@ export default function MainPageSliders() {
     const PrevArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className={styles.PrevArrow} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	left-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
+                <button className="prev">
+                    <GrPrevious />
+                </button>
+            </div>
+        );
+    };
+    const NextArrow1 = (props) => {
+        const { onClick } = props;
+        return (
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[30%] z-10	right-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
+                <button className="next">
+                    <GrNext />
+                </button>
+            </div>
+        );
+    };
+
+    const PrevArrow1 = (props) => {
+        const { onClick } = props;
+        return (
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[30%] z-10	left-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
                 <button className="prev">
                     <GrPrevious />
                 </button>
@@ -142,8 +162,8 @@ export default function MainPageSliders() {
         ]
     };
     let settings1 = {
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
+        nextArrow: <NextArrow1 />,
+        prevArrow: <PrevArrow1 />,
         infinite: true,
         speed: 500,
         slidesToShow: 6,
@@ -194,8 +214,8 @@ export default function MainPageSliders() {
 
 
     return (
-        <div className='box-border flex flex-col justify-center	 border border-solid border-red-500 my-6'>
-            <div className='w-full border border-solid border-red-500 	 ss:hidden xs:block'>
+        <div className='box-border flex flex-col justify-center	 my-6'>
+            <div className='w-full 	 ss:hidden xs:block'>
                 <Slider {...settings} className='w-[100%] flex xs:justify-between flex-wrap  '
                 >
                     {
@@ -203,16 +223,16 @@ export default function MainPageSliders() {
                             return (
                                 data.Category.map(data => {
                                     return (
-                                        <div key={data?.id} className='!w-[95%]  h-[260px] rounded ml-1 '>
-                                            <div className='w-full h-[230px] bg-bgColor p-1  rounded'>
+                                        <div key={data?.id} className='!w-[100%]  h-[260px] rounded  '>
+                                            <div className='w-full h-[230px] bg-btnBgColor p-2  rounded-lg'>
                                                 <div className={`w-full h-full border border-solid	${dataStyle} rounded`} >
 
                                                     {data?.img ? <img className='h-full w-full' src={data?.img} alt="student" /> : null}
                                                 </div>
                                             </div>
                                             <div className='h-12.5 flex items-center justify-start'>
-                                                <p className='not-italic font-medium text-base leading-4 text-black mt-3 mr-2  '>{data?.type || "type"}
-                                                    <span className='not-italic font-normal text-xs leading-4 ml-1.5 text-gray-500'>({data?.count || "0"})</span></p>
+                                                <p className='not-italic font-medium text-base leading-4 text-black mt-3 mr-2   ml-2'>{data?.type || "type"}
+                                                    <span className='not-italic font-normal text-xs leading-4 text-gray-500'>({data?.count || "0"})</span></p>
                                             </div>
                                         </div>
                                     )
@@ -230,7 +250,7 @@ export default function MainPageSliders() {
                         return (
                             data.Category.map(data => {
                                 return (
-                                    <div className='ll:w-[100px] ss:w-[80px]' >
+                                    <div key={data?.id} className='ll:w-[100px] ss:w-[80px]' >
                                         <div className='w-[100%] h-[80px] rounded bg-bgColor  border border-solid border-borderColorCard'>
                                             <img className='h-full w-full' src={data?.img} alt="" />
                                         </div>
@@ -247,7 +267,7 @@ export default function MainPageSliders() {
                 }
 
             </div>
-            <div className='w-full border border-solid border-red-500 	mt-[64px]   ss:hidden xs:block'>
+            <div className='w-full 	mt-[64px]   ss:hidden xs:block'>
                 <Slider {...settings1} className='w-[100%] flex xs:justify-between'
                 >
                     {
@@ -255,7 +275,7 @@ export default function MainPageSliders() {
                             return (
                                 data.campany.map(data => {
                                     return (
-                                        <div key={data?.id} className='!w-[95%] h-[100px]  rounded-lg bg-catalogBg flex items-center justify-center select-none border border-solid border-searchBgColor'>
+                                        <div key={data?.id} className='!w-[100%] h-[100px]  rounded-lg bg-catalogBg flex items-center justify-center select-none border border-solid border-searchBgColor'>
                                             {/* <p className='w-full h-full flex items-center justify-center not-italic font-medium text-xl leading-6 text-center text-black '>{data?.type || "0"}</p> */}
                                             <div className=' h-full flex items-center justify-center'>
                                                 <img className='h-[70px] w-[80%] ' src={data?.imgFull} alt="" />
@@ -278,7 +298,7 @@ export default function MainPageSliders() {
                 return (
                     data?.service?.filter(data => data.id === dressInfo?.type).map(data => {
                         return (
-                            <div className='flex border border-solid border-red-500	mt-[64px] flex-wrap justify-between items-center  gap-y-5    ss:hidden xs:block xs:flex'>
+                            <div key={data?.id} className='flex 	mt-[64px] flex-wrap justify-between items-center  gap-y-5    ss:hidden xs:block xs:flex'>
                                 {/* 1 */}
                                 <div className={`lg:w-[23%]  sm:w-[47%] ss:w-[100%] ss:h-20 py-[20px] px-[16px] xs:h-[100px] bg-bgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-borderColorCard `}>
                                     <div className='w-full'>

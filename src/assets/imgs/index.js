@@ -94,6 +94,7 @@ export { default as summerBrand } from './DressMe/summerBrand.svg'
 export { default as autummBrand } from './DressMe/autummBrand.svg'
 export { default as winterBrand } from './DressMe/winterBrand.svg'
 export { default as springBrand } from './DressMe/springBrand.svg'
+export { default as blackBrand } from './DressMe/blackBrand.svg'
 
 
 // ----------------SeasonType---------
@@ -175,3 +176,7 @@ export { default as SpringSquare } from './SeasonSquare/springSquare.svg'
 export { default as SummerSquare  } from './SeasonSquare/summerSquare.svg'
 export { default as AutummSquare  } from './SeasonSquare/autummSquare.svg'
 export { default as WinterSquare  } from './SeasonSquare/winterSquare.svg'
+
+
+// ------------------------Back Top------------
+export { default as BacktopScroll  } from './backTop/backTop.svg'

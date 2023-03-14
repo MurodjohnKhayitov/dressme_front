@@ -1,0 +1,18 @@
+.navbaritem {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+}
+
+.activeOne {
+    visibility: visible;
+    transition: all 0.5s;
+    z-index: 333;
+}
+
+.hiddenOne {
+    visibility: hidden;
+    transition: all 0.5s;
+    transform: translateY(-100%);
+}
