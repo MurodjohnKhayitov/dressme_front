@@ -28,9 +28,20 @@ module.exports = {
         "bgWinter": "rgba(0, 125, 202, 0.1)"
       },
       fontFamily: {
-        aeonicProBold: ['AeonicProBold', 'sans-serif'],
-        aeonicProLight: ['AeonicProLight', 'sans-serif'],
-        aeonicProRegular: ['AeonicProRegular', 'sans-serif'],
+        AeonicProAir: ['AeonicProAir', 'sans-serif'],
+        AeonicProAirItalic: ['AeonicProAirItalic', 'sans-serif'],
+        AeonicProBlack: ['AeonicProBlack', 'sans-serif'],
+        AeonicProBlackItalic: ['AeonicProBlackItalic', 'sans-serif'],
+        AeonicProBold: ['AeonicProBold', 'sans-serif'],
+        AeonicProBoldItalic: ['AeonicProBoldItalic', 'sans-serif'],
+        AeonicProLight: ['AeonicProLight', 'sans-serif'],
+        AeonicProLightItalic: ['AeonicProLightItalic', 'sans-serif'],
+        AeonicProMedium: ['AeonicProMedium', 'sans-serif'],
+        AeonicProMediumItalic: ['AeonicProMediumItalic', 'sans-serif'],
+        AeonicProRegular: ['AeonicProRegular', 'sans-serif'],
+        AeonicProRegularItalic: ['AeonicProRegularItalic', 'sans-serif'],
+        AeonicProThin: ['AeonicProThin', 'sans-serif'],
+        AeonicProThinItalic: ['AeonicAeonicProThinItalicProMedium', 'sans-serif'],
       },
       boxShadow: {
         myShadow1: "1px -2px 0 0 rgb(17,24,39)",

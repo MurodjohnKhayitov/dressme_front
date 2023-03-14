@@ -286,7 +286,7 @@ export default function CollectionCards() {
     }
 
     return (
-        <div className="flex flex-col box-border mt-[86px] border border-solid border-red-700">
+        <div className="flex flex-col box-border mt-[86px]">
             {/* <div className='max-w-[1440px] m-auto h-fit md:px-[80px]  sm:px-[50px] ss:px-[16px] pt-16 pb-4 '> */}
             <div className="w-full ss:block sm:flex justify-between items-center mb-[25px] md:mb-0 md:px-0">
                 <div className="not-italic font-medium lg:w-fit lg:text-2xl xl:text-3xl flex items-center leading-8 text-black">
@@ -362,7 +362,7 @@ export default function CollectionCards() {
                             </div>
                             <div className="w-full ss:h-[124px] xs:h-[147px] md:h-[134px] xs:py-3 ss:py-2 xs:px-2 ss:px-1 rounded-b-1xl bg-white  flex flex-wrap content-between">
                                 <div className='w-full md-2 md:mb-[14px]'>
-                                    <div className="w-full  not-italic font-normal text-[10px] ls:text-xs md:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
+                                    <div className="w-full  not-italic font-AeonicProLight text-[10px] ls:text-xs md:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
                                         {data?.title || "NoData"}
                                     </div>
                                     <div className="w-full flex justify-between items-center xs:mt-3">

@@ -11,6 +11,7 @@ import "react-multi-carousel/lib/styles.css";
 
 import styles from './clothers.module.css'
 import { dressMainData } from '../../ContextHook/ContextMenu';
+import { Link } from 'react-router-dom';
 export default function ClothesSlider() {
     const [productList, setProductList] = useState([
         {
@@ -426,10 +427,10 @@ export default function ClothesSlider() {
     }
 
     return (
-        <div className='flex flex-col  box-border mt-[64px] ss:hidden xs:block border border-solid border-red-700 '>
+        <div className='flex flex-col  box-border mt-[64px] ss:hidden xs:block'>
             {/* <div className='max-w-[1440px]  h-fit md:px-[80px] flex justify-center  sm:px-[50px] ss:px-[16px]  box-border'> */}
 
-            <div className='w-full h-fit   '>
+            <div className='w-full h-fit'>
                 <div className=' flex ss:flex-col xs:flex-row xs:justify-between ss:justify-center items-center h-fit '>
                     <div className="flex items-center ss:justify-center md:justify-start ss:w-full xs:w-[48%] md:w-fit border ss:border-solid  md:border-none ss:border-borderColorCard ss:h-[44px] rounded ">
                         <p className='flex items-center cursor-pointer select-none'>
@@ -444,14 +445,14 @@ export default function ClothesSlider() {
 
                 </div>
                 <div className='w-full h-fit mt-12  '>
-                    <Slider {...settings1} className='w-[100%] flex xs:justify-between  xs:pl-0 border border-solid border-green-500'
+                    <Slider {...settings1} className='w-[100%] flex xs:justify-between  xs:pl-0'
                     >
                         {
                             carosuelData?.map(data => {
                                 return (
                                     data.campany.map(data => {
                                         return (
-                                            <div key={data.id} className='!w-[100%]   h-full border border-solid border-red-600'>
+                                            <div key={data.id} className='!w-[100%]   h-full'>
                                                 <div className={`${genderStyle} w-full h-[110px]  m-auto ss:py-5  ls:p-0 bg-gray-100 rounded-lg flex justify-center items-center cursor-pointer  border border-searchBgColor  `}>
                                                     <p className='not-italic font-medium text-xs leading-4 text-center text-black'>{data?.type || "0"}</p>
                                                 </div>
@@ -489,10 +490,17 @@ export default function ClothesSlider() {
                                                     <img className='w-full h-fit' src={data.noProductImg} alt="noProductImg" />
                                             }
                                             <div className='w-full flex justify-between absolute top-px p-2'>
-                                                <p className='w-8 h-8 rounded bg-white flex items-center justify-center border border-solid border-searchBgColor'><img src={delivery} alt="" /></p>
-                                                <p className='w-8 h-8 rounded bg-white flex items-center justify-center border border-solid border-searchBgColor'><CiHeart className='text-[20px] text-black hover:text-slate-800 	' /></p>
+                                                <div className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
+                                                    <button href="#" className='nav-link flex items-center justify-center h-full'>
+                                                        <img src={delivery} alt="" />
+                                                    </button>
+                                                    <div className='followers absolute w-[50px] h-8 bg-bgCard font-medium text-[11px] rounded-r pr-[6px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Delivery</div>
+                                                </div>
+                                                <div className='w-8 h-8 rounded flex items-center justify-center border border-solid border-searchBgColor bg-bgCard hover:bg-white transition ease-out duration-500'>
+                                                    <img src={heart} alt="" />
+                                                </div>
                                             </div>
-                                            <div className="absolute w-full xs:h-[38px] ss:h-[30px] flex justify-between items-center ss:px-1 xs:px-2 md:px-4 bg-white bottom-0  border-t	 border-solid	border-borderColorCard">
+                                            <div className="absolute w-full xs:h-[38px] ss:h-[30px] flex justify-between items-center ss:px-1 xs:px-2 md:px-4 backdrop-brightness-125 bg-white/40 bottom-0  border-t	 border-solid	border-borderColorCard">
                                                 <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-purple-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color1">
                                                     <input className="hidden" type="radio" id="Color1" name="colors" value="1" />
                                                 </label>
@@ -516,7 +524,7 @@ export default function ClothesSlider() {
                                         <div className="w-full xs:h-[147px] ss:h-[114px] md:h-[142px] xs:py-3 ss:py-2 xs:px-2 ss:px-1 rounded-b-1xl bg-white  flex flex-wrap content-between ">
                                             <div className='w-full mb-[14px]'>
 
-                                                <div className="w-full  not-italic font-normal ss:text-[10px] xs:text-[11px] md:text-[14px] leading-4 text-black">
+                                                <div className="w-full  not-italic font-AeonicProLight ss:text-[10px] xs:text-[11px] md:text-[14px] leading-4 text-black">
                                                     {data?.title || "NoData"}
                                                 </div>
                                                 <div className="w-full flex justify-between items-center mt-3">
