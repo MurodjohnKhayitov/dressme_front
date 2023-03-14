@@ -16,6 +16,7 @@ module.exports = {
         borderColor: '#707070',
         borderColor2: '#e2e2e2',
         borderColorCard: "#c1c1c1",
+        "bgCard": "rgba(255, 255, 255, 0.4)",
         // season-----
         borderSpring: "#008F0E",
         "bgSpring": "rgba(0, 143, 14, 0.1)",

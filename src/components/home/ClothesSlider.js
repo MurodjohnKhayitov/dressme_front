@@ -480,7 +480,7 @@ export default function ClothesSlider() {
                         {
                             productList.map(data => {
                                 return (
-                                    <div key={data.id} id={styles.forwidt} className="!w-[100%] ss:m-0  ll:ml-1 cursor-pointer transition ease-in-out delay-150 hover:shadow-md ss:h-[320px]  xs:h-[456px] border border-solid	borderColorCard overflow-hidden rounded-t-lg	"   >
+                                    <div key={data.id} id={styles.forwidt} className="!w-[100%] ss:m-0  ll:ml-1 cursor-pointer transition ease-in-out delay-150 hover:shadow-md ss:h-[320px]  xs:h-[456px] border border-solid	borderColorCard overflow-hidden rounded-lg"   >
                                         <div className='relative w-full  ss:h-[206px] xs:h-[309px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard'>
                                             {
                                                 data.ProducImg ?
@@ -493,28 +493,28 @@ export default function ClothesSlider() {
                                                 <p className='w-8 h-8 rounded bg-white flex items-center justify-center border border-solid border-searchBgColor'><CiHeart className='text-[20px] text-black hover:text-slate-800 	' /></p>
                                             </div>
                                             <div className="absolute w-full xs:h-[38px] ss:h-[30px] flex justify-between items-center ss:px-1 xs:px-2 md:px-4 bg-white bottom-0  border-t	 border-solid	border-borderColorCard">
-                                                <label className='rounded-full  xs:w-5 xs:h-5 ss:w-4 ss:h-4 bg-purple-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color1">
+                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-purple-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color1">
                                                     <input className="hidden" type="radio" id="Color1" name="colors" value="1" />
                                                 </label>
-                                                <label className='rounded-full  xs:w-5 xs:h-5 ss:w-4 ss:h-4 bg-black cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color2">
+                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-black cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color2">
                                                     <input className="hidden" type="radio" id="Color2" name="colors" value="1" />
                                                 </label>
-                                                <label className='rounded-full  xs:w-5 xs:h-5 ss:w-4 ss:h-4 bg-white cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color3">
+                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-white cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color3">
                                                     <input className="hidden" type="radio" id="Color3" name="colors" value="1" />
                                                 </label>
-                                                <label className='rounded-full  xs:w-5 xs:h-5 ss:w-4 ss:h-4 bg-zinc-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color4">
+                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-zinc-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color4">
                                                     <input className="hidden" type="radio" id="Color4" name="colors" value="1" />
                                                 </label>
-                                                <label className='rounded-full  xs:w-5 xs:h-5 ss:w-4 ss:h-4 bg-sky-600 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color5">
+                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-sky-600 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color5">
                                                     <input className="hidden" type="radio" id="Color5" name="colors" value="1" />
                                                 </label>
-                                                <label className='rounded-full  xs:w-5 xs:h-5 ss:w-4 ss:h-4 bg-amber-400 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color6">
+                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-amber-400 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color6">
                                                     <input className="hidden" type="radio" id="Color6" name="colors" value="1" />
                                                 </label>
                                             </div>
                                         </div>
-                                        <div className="w-full xs:h-[147px] ss:h-[114px] xs:py-3 ss:py-2 xs:px-2 ss:px-1 rounded-b-1xl bg-white  flex flex-wrap content-between ">
-                                            <div className='w-full'>
+                                        <div className="w-full xs:h-[147px] ss:h-[114px] md:h-[142px] xs:py-3 ss:py-2 xs:px-2 ss:px-1 rounded-b-1xl bg-white  flex flex-wrap content-between ">
+                                            <div className='w-full mb-[14px]'>
 
                                                 <div className="w-full  not-italic font-normal ss:text-[10px] xs:text-[11px] md:text-[14px] leading-4 text-black">
                                                     {data?.title || "NoData"}
