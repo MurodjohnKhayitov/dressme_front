@@ -297,11 +297,11 @@ export default function CollectionCards() {
                     <button className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded ${dataStyle}`}>Наборы</button>
                 </div>
             </div>
-            <div className="flex justify-between flex-wrap  md:mx-0 md:mt-[50px] gap-y-3 md:gap-y-5 ">
+            <div className="flex justify-between flex-wrap  md:mx-0 md:mt-[50px] gap-y-5 lg:gap-y-5 ">
                 {productList.map(data => {
                     return (
-                        <div key={data.id} className=" ss:w-[48%] md:w-[24%] lg:w-[18.7%] transition ease-in-out delay-50 hover:shadow-md   xs:h-[456px] md:h-[443px] border border-solid borderColorCard overflow-hidden rounded-lg">
-                            <div className='relative w-full cursor-pointer ss:h-[206px] xs:h-[309px] flex content-between items-center overflow-hidden border-b border-solid border-borderColorCard flex-nowrap'>
+                        <div key={data.id} className=" ss:w-[48%] md:w-[24%] lg:w-[240px] transition ease-in-out delay-50 hover:shadow-md   xs:h-[456px] lg:h-[400px] border border-solid borderColorCard overflow-hidden rounded-lg">
+                            <div className='relative w-full cursor-pointer ss:h-[206px] xs:h-[309px] lg:h-[282px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap'>
                                 {
                                     data.ProducImg ?
                                         <img className='w-full ss:h-[85%] ls:h-full h-full m-auto hover:scale-105 transition duration-700 ease-in-out' src={data.ProducImg} alt="ProducImg" />
@@ -345,11 +345,12 @@ export default function CollectionCards() {
 
                                     </div>
                                 </div>
-                                <div className="absolute w-full flex justify-between items-center px-1 bottom-0 border-solid xs:h-[38px] ss:h-[30px] xs:px-2 md:px-4 backdrop-brightness-125 bg-white/40">
+
+                                <div className="absolute w-full flex justify-between items-center px-1 bottom-0 border-solid xs:h-[38px] lg:h-8 ss:h-[30px] xs:px-2 md:px-4 bg-white hover:backdrop-brightness-125 hover:bg-white/60 transition ease-out duration-500">
                                     {
                                         changeColor.map(data => {
                                             return (
-                                                <label onClick={() => handleGetChecked(data?.id)} className={`rounded-full flex items-center justify-center  ls:w-[22px] ls:h-[22px] w-5 h-5 md:w-6 md:h-6 ${data?.colors} cursor-pointer  border	 border-solid	border-borderColorCard mr-[3px]`} htmlFor="Color1">
+                                                <label onClick={() => handleGetChecked(data?.id)} className={`rounded-full flex items-center justify-center  ls:w-[22px] ls:h-[22px] w-5 h-5 lg:w-6 lg:h-6 ${data?.colors} cursor-pointer  border border-solid	border-borderColorCard mr-[3px]`} htmlFor="Color1">
                                                     {data?.action ? <BsCheck2Square size={15} className="text-white" /> : null}
                                                     <input className="hidden" type="radio" id="Color1" name="colors" value="1" />
                                                 </label>
@@ -360,9 +361,10 @@ export default function CollectionCards() {
 
                                 </div>
                             </div>
-                            <div className="w-full ss:h-[124px] xs:h-[147px] md:h-[134px] xs:py-3 ss:py-2 xs:px-2 ss:px-1 rounded-b-1xl bg-white  flex flex-wrap content-between">
-                                <div className='w-full md-2 md:mb-[14px]'>
-                                    <div className="w-full  not-italic font-AeonicProLight text-[10px] ls:text-xs md:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
+
+                            <div className="w-full rounded-b-1xl bg-white  flex flex-wrap content-between xs:py-3 lg:p-3 ss:h-[124px] xs:h-[147px] lg:h-[120px] ss:py-2 xs:px-2 ss:px-1">
+                                <div className='w-full'>
+                                    <div className="w-full  not-italic font-AeonicProLight text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
                                         {data?.title || "NoData"}
                                     </div>
                                     <div className="w-full flex justify-between items-center xs:mt-3">
