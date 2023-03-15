@@ -361,7 +361,6 @@ export default function CollectionCards() {
 
                                 </div>
                             </div>
-
                             <div className="w-full rounded-b-1xl bg-white  flex flex-wrap content-between xs:py-3 lg:p-3 ss:h-[124px] xs:h-[147px] lg:h-[120px] ss:py-2 xs:px-2 ss:px-1">
                                 <div className='w-full'>
                                     <div className="w-full  not-italic font-AeonicProLight text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
@@ -416,43 +415,9 @@ export default function CollectionCards() {
                         Показать ещё 20 товаров
                     </span>
                 </div>
-
             </div>
             {/* </div> */}
         </div >
     )
 }
 
-
-//  {/* group-hover:w-fit border border-solid bg-bgCard border-borderColorCard text-center*/}
-// <div className='button inline-block h-8 w-8 float-left bg-bgCard border border-borderColorCard rounded cursor-pointer //hover:w-[80px]'>
-//<div className='icon inline-block h-8 w-8 text-center box-border'>
-//    <img src={discount} alt="" className='text-center'/>
-//</div>
-//{/* ml-[-200px] group-hover:ml-0 duration-700 */}
-//<span className='text-red-800 font-medium text-[11px] ml-[10px]'>{data?.discount}</span>
-//</div>
-
-// <div className='video w-fit px-1 h-8 ml-[-200px] group-hover:ml-0 duration-700  rounded flex items-center justify-center border border-solid border-borderColorCard bg-bgCard'>
-//<span><img className='w-5' src={video} alt="" /></span>
-//<span className=' text-[14px] pl-[2px] '>Video</span>
-//</div>
-//
-//<div className='delivery w-fit px-1 h-8   ml-[-200px] group-hover:ml-0 duration-700 rounded bg-bgCard flex items-center justify-center border border-solid border-borderColorCard'>
-//<span><img className='w-5' src={delivery} alt="" /></span>
-//<span className=' text-[14px] pl-[2px] '>Delivery</span>
-//</div> */}
-
-
-// <li className='nav-list h-8 w-8 bg-bgCard mb-3 relative'>
-// <Link href="#"  className='nav-link flex items-center justify-center h-full'>
-//     <img src={video} alt="" />
-// </Link>
-// <div className='followers absolute w-[70px] h-8 top-0 left-0 -z-10 bg-bgCard flex items-center justify-center transition ease-out duration-500'>Video</div>
-// </li>
-// <li className='nav-list h-8 w-8 bg-bgCard mb-3 relative '>
-// <Link href="#" className='nav-link flex items-center justify-center h-full' >
-//     <img src={delivery} alt="" />
-// </Link>
-// <div className='followers absolute w-[70px] h-8 top-0 left-0 -z-10 bg-bgCard flex items-center justify-center transition ease-out duration-500'>Delivery</div>
-// </li>
