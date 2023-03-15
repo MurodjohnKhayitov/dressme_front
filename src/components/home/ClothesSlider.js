@@ -23,7 +23,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cfrous7hj8j9g698ann0/t_product_540_high.jpg#1677854670106",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "45.000",
@@ -39,7 +39,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cfvjvm7hj8j9g698q1qg/t_product_540_high.jpg#1677854670118",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "45.000",
@@ -54,7 +54,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cee9lmov1htd23aj6gjg/t_product_540_high.jpg#1677855157929",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "",
@@ -69,7 +69,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cfh16dd40v9uauhi42hg/t_product_540_high.jpg#1677855222081",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "45.000",
@@ -84,7 +84,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cfmebc7hgiopn8lcdoh0/t_product_540_high.jpg#1677855264045",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "45.000",
@@ -99,7 +99,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cf557s8l08k0o9qi31gg/t_product_540_high.jpg#1677855329602",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "45.000",
@@ -114,7 +114,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cfmebc7hgiopn8lcdoh0/t_product_540_high.jpg#1677855264045",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "45.000",
@@ -129,7 +129,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cf2h9jqvtie1lhbgt6mg/t_product_540_high.jpg#1677855329588",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "45.000",
@@ -144,7 +144,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cf53ng0v1htd23al4sqg/t_product_540_high.jpg#1677855423341",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "15.000",
@@ -159,7 +159,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cf5vfb2vtie1lhbh7h50/t_product_540_high.jpg#1677855423352",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "45.000",
@@ -174,7 +174,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cf53ng0v1htd23al4sqg/t_product_540_high.jpg#1677855423341",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "",
@@ -189,7 +189,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cf8g3tivtie1lhbhf1p0/t_product_540_high.jpg#1677855423420",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "45.000",
@@ -204,7 +204,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cfcdqlavtie1lhbhs490/t_product_540_high.jpg#1677855423521",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "45.000",
@@ -219,7 +219,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cfcgam8l08k07f16n0ag/t_product_540_high.jpg#1677855423623",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "",
@@ -234,7 +234,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cfcdvh0l08k0o9qiqgcg/t_product_540_high.jpg#1677855423619",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "",
@@ -250,7 +250,7 @@ export default function ClothesSlider() {
             star: "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
             ProducImg: "https://images.uzum.uz/cf9ldv0v1htd23aljs7g/t_product_540_high.jpg#1677855423555",
             noProductImg: cardImg,
-            title: "Erkaklar uchun kompress futbolka-longsliv ",
+            title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
             starCount: 256,
             shirtSize: "M | 3XL",
             sale: "35.000",
@@ -445,8 +445,7 @@ export default function ClothesSlider() {
 
                 </div>
                 <div className='w-full h-fit mt-12  '>
-                    <Slider {...settings1} className='w-[100%] flex xs:justify-between  xs:pl-0'
-                    >
+                    <Slider {...settings1} className='w-[100%] flex xs:justify-between  xs:pl-0'>
                         {
                             carosuelData?.map(data => {
                                 return (
@@ -460,7 +459,6 @@ export default function ClothesSlider() {
                                                     <p className='not-italic font-medium ss:text-sm xs:text-xs leading-4 text-center ls:mt-5 ss:mt-2 text-black '>{data?.name || "type"}</p>
                                                 </div>
                                             </div>
-
                                         )
                                     })
 
@@ -473,16 +471,14 @@ export default function ClothesSlider() {
             </div>
             {/* </div> */}
 
-            <div className='w-full h-fit flex flex-col   border-y	border-solid	border-borderColorCard mt-12 '>
-                {/* <div className='h-fit md:px-[80px]    max-w-[1440px] sm:px-[50px] ss:px-[16px]  box-border '> */}
+            <div className='w-full h-fit flex flex-col border-y	border-solid border-borderColorCard mt-12 '>
                 <div className='w-full flex items-center py-12  '>
-                    <Slider {...settings} className='w-[100%] flex xs:justify-between xs:pl-0 '
-                    >
+                    <Slider {...settings} className='w-[100%] flex xs:justify-between xs:pl-0 '>
                         {
                             productList.map(data => {
                                 return (
-                                    <div key={data.id} id={styles.forwidt} className="!w-[100%] ss:m-0  ll:ml-1 cursor-pointer transition ease-in-out delay-150 hover:shadow-md ss:h-[320px]  xs:h-[456px] border border-solid	borderColorCard overflow-hidden rounded-lg"   >
-                                        <div className='relative w-full  ss:h-[206px] xs:h-[309px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard'>
+                                    <div key={data.id} id={styles.forwidt} className="!w-[100%] ss:m-0  ll:ml-1 cursor-pointer transition ease-in-out delay-150 hover:shadow-md ss:h-[320px]  xs:h-[456px] lg:h-[400px] border border-solid	borderColorCard overflow-hidden rounded-lg"   >
+                                        <div className='relative w-full  ss:h-[206px] xs:h-[309px] lg:h-[278px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard'>
                                             {
                                                 data.ProducImg ?
                                                     <img className='w-full h-full m-auto' src={data.ProducImg} alt="ProducImg" />
@@ -496,11 +492,11 @@ export default function ClothesSlider() {
                                                     </button>
                                                     <div className='followers absolute w-[50px] h-8 bg-bgCard font-medium text-[11px] rounded-r pr-[6px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Delivery</div>
                                                 </div>
-                                                <div className='w-8 h-8 rounded flex items-center justify-center border border-solid border-searchBgColor bg-bgCard hover:bg-white transition ease-out duration-500'>
+                                                <div className='w-8 h-8 rounded flex items-center justify-center border border-solid bg-bgCard border-borderColorCard hover:bg-white transition ease-out duration-500'>
                                                     <img src={heart} alt="" />
                                                 </div>
                                             </div>
-                                            <div className="absolute w-full xs:h-[38px] ss:h-[30px] flex justify-between items-center ss:px-1 xs:px-2 md:px-4 backdrop-brightness-125 bg-white/40 bottom-0  border-t	 border-solid	border-borderColorCard">
+                                            <div className="absolute w-full flex justify-between items-center px-1 bottom-0 border-solid xs:h-[38px] lg:h-8 ss:h-[30px] xs:px-2 md:px-4 bg-white hover:backdrop-brightness-125 hover:bg-white/60 transition ease-out duration-500">
                                                 <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-purple-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color1">
                                                     <input className="hidden" type="radio" id="Color1" name="colors" value="1" />
                                                 </label>
@@ -521,33 +517,30 @@ export default function ClothesSlider() {
                                                 </label>
                                             </div>
                                         </div>
-                                        <div className="w-full xs:h-[147px] ss:h-[114px] md:h-[142px] xs:py-3 ss:py-2 xs:px-2 ss:px-1 rounded-b-1xl bg-white  flex flex-wrap content-between ">
-                                            <div className='w-full mb-[14px]'>
 
-                                                <div className="w-full  not-italic font-AeonicProLight ss:text-[10px] xs:text-[11px] md:text-[14px] leading-4 text-black">
+                                        <div className="w-full rounded-b-1xl bg-white  flex flex-wrap content-between xs:py-3 lg:p-3 ss:h-[124px] xs:h-[147px] lg:h-[120px] ss:py-2 xs:px-2 ss:px-1">
+                                            <div className='w-full'>
+                                                <div className="w-full  not-italic font-AeonicProLight text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
                                                     {data?.title || "NoData"}
                                                 </div>
-                                                <div className="w-full flex justify-between items-center mt-3">
+                                                <div className="w-full flex justify-between items-center xs:mt-3">
                                                     <div className='flex items-center justify-between'>
                                                         <span>   <img src={star} alt="" /></span>
                                                         {/* <span><img src={} alt=""/></span> */}
-                                                        <span className='not-italic font-normal ss:text-[10px] xs:text-xs  sm:text-xs leading-4 text-right text-gray-500 ml-1  flex items-center  '>
-                                                            <span className='font-medium ss:text-[10px] ll:text-xs not-italic mx-[1px] text-black'>5.0 </span>
-                                                            ({data?.starCount || 0} <span className='ss:hidden lg:block'>голосов</span>)
+                                                        <span className='not-italic font-normal text-[10px] ls:text-xs leading-4 text-right text-gray-500 ml-[2px] md:ml-1 flex items-center'>
+                                                            <span className='font-medium text-[10px] ls:text-xs not-italic mx-1 text-black md:mr-[6px] md:text-[13px]'>5.0 </span>
+                                                            ({data?.starCount || 0} <span className='ss:hidden lg:block md:ml-1 md:text-[11px]'>голосов</span>)
                                                         </span>
                                                     </div>
-                                                    <div className="not-italic xs:font-medium ss:font-normal  ss:text-[11px]  sm:text-xs  md:text-sm lg:text-base leading-4 text-black">
+                                                    <div className="not-italic xs:font-medium ss:font-normal leading-4 text-black  ss:text-[11px] sm:text-xs  md:text-[13px] ">
                                                         <b><span>{data?.shirtSize || 0}</span></b>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <div className="w-full flex items-center justify-between">
-                                                <div >
-                                                    <p className='text-black not-italic ss:text-sm font-medium md:text-base lg:text-lg leading-7'>{data?.price}</p>
-                                                </div>
+                                            <div className="w-full flex items-center justify-between ">
+                                                <div className='not-italic font-medium text-base leading-4' style={{ color: "black" }}>{data?.price} </div>
                                                 <div className="flex items-center">
-                                                    <span className='overflow-hidden '><img src={addBag} alt="user" /></span>
+                                                    <span className='ss:w-[25px] xs:w-fit  cursor-pointer' ><img className='w-full' src={addBag} alt="user" /></span>
                                                 </div>
                                             </div>
                                         </div>
