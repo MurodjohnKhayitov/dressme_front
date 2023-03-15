@@ -197,6 +197,7 @@ const MediumHeader = () => {
     <div className="flex flex-col justify-center items-center m-0 p-0 box-border ">
       <div className='max-w-[1280px] w-[100%] ss:block md:flex ss:px-4 md:px-0 md:py-0 justify-center items-center m-auto '>
         <div className="">
+
           <div className="w-full flex justify-center items-center py-3 ">
             <div className=" w-full flex items-center ss:w-full md:w-fit justify-between ">
               {/* Menu section */}
@@ -339,10 +340,12 @@ const MediumHeader = () => {
 
               {/* Logo section */}
               <div className=" flex justify-center items-center rounded h-[44px] md:w-[155px]    ss:ml-2  md:ml-[0px]   md:bg-white  ">
+
                 {
                   BrandTypeArray.filter(data => data.id == dressInfo.type).map(data => {
                     return (
                       <img key={data?.id}
+                        className="w-full"
                         src={data?.icons} alt="logo" />
                     )
                   })
@@ -351,6 +354,7 @@ const MediumHeader = () => {
               {/* Voice section */}
               <div
                 className={` bg-btnBgColor  w-[47px] h-[44px] ml-[25px] rounded-lg cursor-pointer hidden items-center justify-center md:flex`}>
+
                 {
                   VolumeTypeArray.filter(data => data.id == dressInfo.type).map(data => {
                     return (
@@ -364,6 +368,7 @@ const MediumHeader = () => {
 
 
               <div className=' ss:w-12 ss:h-12   md:w-[120px]   bg-btnBgColor  border border-searchBgColor    ss:rounded  md:rounded-lg ml-2'>
+
 
                 {
                   SeasonTypeArray.filter(data => data.id == dressInfo.type).map(data => {
@@ -393,6 +398,7 @@ const MediumHeader = () => {
 
               {/* Searching section */}
               <div className="search flex items-center justify-center rounded-lg font-medium h-[44px] border border-red-600 md:border-transparent md:w-[624px] ml-2 ss:hidden md:flex">
+
                 {/* Catalog section */}
                 <button className={`items-center  ${dataStyle}  pl-5 pr-7 h-[44px] rounded-l-lg cursor-pointer hidden md:flex`}>
                   {CategoryTypeArray.filter(data => data.id === dressInfo?.type).map(data => {
@@ -406,29 +412,33 @@ const MediumHeader = () => {
                 <img src={search} alt="search" className="flex md:hidden" />
                 <input type="text" placeholder="Поиск продуктов или брендов" className="bg-transparent w-full px-3 h-[44px] text-sm border border-transparent md:border-searchBgColor " />
                 <button className="bg-searchBgColor w-[100px]  h-[44px] items-center justify-center rounded-r-lg border border-bgColor hidden md:flex -ml-[2px]">
+
                   <img src={search} alt="search" />
                 </button>
               </div>
 
               {/* Line border */}
-              <div className="line h-6 border-r-[1px] text-textColor ss:hidden md:block mx-3"></div>
+              <div className="line h-5 border-x-[1px]   text-textColor ss:hidden md:block mx-3"></div>
 
               {/* Map section */}
               <Link to="#" className="flex items-center justify-center bg-btnBgColor  rounded-lg    md:h-[44px] ss:text-sm md:w-[100px] md:mt-0 ss:hidden md:flex">
+
                 <img src={map} alt="map" className="pr-[6px]" />
                 <span className="font-medium text-sm">Карта</span>
               </Link>
 
               {/* Line border */}
-              <div className="line h-6 border-r-[1px] text-textColor ss:hidden md:block mx-3"></div>
+              <div className="line h-5 border-x-[1px]   text-textColor ss:hidden md:block mx-3"></div>
 
               {/* User section */}
               <button className=" items-center bg-btnBgColor  rounded-lg px-4 h-[44px] mr-2 hidden md:flex">
+
                 <img src={user} alt="" />
               </button>
 
               {/* Heart section */}
               <button className="items-center bg-btnBgColor  rounded-lg px-4 h-[44px] mr-2 hidden md:flex">
+
                 <img src={heart} alt="heart" />
               </button>
 
@@ -436,6 +446,7 @@ const MediumHeader = () => {
               <button className=" items-center bg-btnBgColor  rounded-lg px-4 h-[44px] relative md:flex ss:hidden">
                 <img src={bucket} alt="bucket" />
                 <span className="count bg-red-700 w-4 h-4 text-white text-[10px] rounded flex items-center justify-center absolute top-0 right-0 font-medium"> 4 </span>
+
               </button>
             </div>
           </div>
