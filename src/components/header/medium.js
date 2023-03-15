@@ -37,22 +37,23 @@ const MediumHeader = () => {
   if (dressInfo?.type == 1111) {
     dataStyle = "bg-bgSpring bg-opacity-10	  text-borderSpring "
     hoverText = " hover:text-borderSpring "
-    genderStyle = "focus:text-borderSpring focus:bg-bgSpring focus:border-borderSpring focus:text-borderSpring"
+    genderStyle = "focus:text-borderSpring focus:bg-bgSpring focus:border focus:border-borderSpring focus:text-borderSpring"
   }
   if (dressInfo?.type == 2222) {
     dataStyle = "bg-bgSummer  bg-opacity-10  text-borderSummer"
     hoverText = " hover:text-borderSummer "
-    genderStyle = "focus:text-borderSummer focus:bg-bgSummer focus:border-borderSummer focus:text-borderSummer"
+    genderStyle = "focus:text-borderSummer focus:bg-bgSummer focus:border focus:border-borderSummer focus:text-borderSummer"
   }
   if (dressInfo?.type == 3333) {
     dataStyle = "bg-bgAutumm bg-opacity-10  text-borderAutumm"
     hoverText = " hover:text-borderAutumm "
-    genderStyle = "focus:text-borderAutumm focus:bg-bgAutumm focus:border-borderAutumm focus:text-borderAutumm"
+    genderStyle = "focus:text-borderAutumm focus:bg-bgAutumm focus:border focus:border-borderAutumm focus:text-borderAutumm"
   }
   if (dressInfo?.type == 4444) {
     dataStyle = "bg-bgWinter bg-opacity-10  text-borderWinter"
     hoverText = " hover:text-borderWinter "
-    genderStyle = "focus:text-borderWinter focus:bg-bgWinter focus:border-borderWinter focus:text-borderWinter"
+    genderStyle = "focus:text-borderWinter focus:bg-bgWinter focus:border focus:border-borderWinter focus:text-borderWinter"
+
   }
 
 
@@ -172,12 +173,14 @@ const MediumHeader = () => {
   }
 
   const contentWear = (
-    <div className="ss:w-fit md:w-[152px] h-fit m-0 p-0 ">
+    <div className="ss:w-fit md:w-[120px] h-fit m-0 p-0 ">
       {
         SeasonTypeArray.map(value => {
           return (
-            <p key={value?.id}
-              className='w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-medium text-sm leading-4 text-center hover:bg-bgColor' onClick={() => handleSeason(value.id)}>
+            <p
+              key={value?.id}
+              className='w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-medium text-sm leading-4 text-center hover:bg-bgColor'
+              onClick={() => handleSeason(value.id)}>
               <span className='mr-3 '><img src={value?.icons} alt="" /></span>
               <span className={`ss:hidden md:inline-block font-medium text-base text-black not-italic ${hoverText}`}>{value?.type}</span>
             </p>
@@ -187,18 +190,17 @@ const MediumHeader = () => {
     </div>
   );
 
-  const [showModal, setShowModal] = useState(false);
 
 
 
   return (
-    <div className="flex flex-col justify-center items-center m-0 p-0 box-border">
-      <div className='max-w-[1280px] w-[100%] px-4 ss:block md:flex justify-center items-center m-auto '>
-        <div>
+    <div className="flex flex-col justify-center items-center m-0 p-0 box-border ">
+      <div className='max-w-[1280px] w-[100%] ss:block md:flex ss:px-4 md:px-0 md:py-0 justify-center items-center m-auto '>
+        <div className="">
           <div className="w-full flex justify-center items-center py-3 ">
             <div className=" w-full flex items-center ss:w-full md:w-fit justify-between ">
               {/* Menu section */}
-              <div onClick={toggleHamburger} className={`flex items-center justify-center bg-bgColor border  ss:w-12 ss:h-12 rounded cursor-pointer md:hidden `}>
+              <div onClick={toggleHamburger} className={`flex items-center justify-center bg-btnBgColor border border-searchBgColor  ss:w-12 ss:h-12 rounded cursor-pointer md:hidden `}>
 
                 <img src={!hamburgerMenu ? close : menu} alt="voice" className={`${close ? 'w-6 h-6' : ''} `} />
 
@@ -336,7 +338,7 @@ const MediumHeader = () => {
               </div>
 
               {/* Logo section */}
-              <div className=" flex justify-center items-center rounded h-12   ss:bg-bgColor border border-searchBgColor ss:px-5 ls:px-6 ll:px-10 ss:w-fit md:bg-white md:px-0 md:border-none ">
+              <div className=" flex justify-center items-center rounded h-[44px] md:w-[155px]    ss:ml-2  md:ml-[0px]   md:bg-white  ">
                 {
                   BrandTypeArray.filter(data => data.id == dressInfo.type).map(data => {
                     return (
@@ -348,11 +350,12 @@ const MediumHeader = () => {
               </div>
               {/* Voice section */}
               <div
-                className={`${styles.flexCenter} bg-bgColor border border-searchBgColor px-4  ml-5 h-12 rounded-lg cursor-pointer hidden md:flex`}>
+                className={` bg-btnBgColor  w-[47px] h-[44px] ml-[25px] rounded-lg cursor-pointer hidden items-center justify-center md:flex`}>
                 {
                   VolumeTypeArray.filter(data => data.id == dressInfo.type).map(data => {
                     return (
                       <img key={data?.id}
+                        className='w-[22px]'
                         src={data?.icons} alt="logo" />
                     )
                   })
@@ -360,7 +363,7 @@ const MediumHeader = () => {
               </div>
 
 
-              <div className=' ss:w-12 ss:h-12   md:w-[120px]  md:mx-4 bg-bgColor   rounded-lg ml-2'>
+              <div className=' ss:w-12 ss:h-12   md:w-[120px]   bg-btnBgColor  border border-searchBgColor    ss:rounded  md:rounded-lg ml-2'>
 
                 {
                   SeasonTypeArray.filter(data => data.id == dressInfo.type).map(data => {
@@ -369,14 +372,14 @@ const MediumHeader = () => {
                         key={data?.id}
                         open={openwear}
                         onOpenChange={handleOpenChangeWear}
-                        className="ss:w-full  h-full flex items-center justify-center border rounded-lg  ss:w-fit   cursor-pointer  "
+                        className="ss:w-full  h-full flex items-center justify-center  rounded-lg  ss:w-fit   cursor-pointer  "
                         trigger="click"
                         options={['Hide']}
                         placement="bottom"
                         content={contentWear} >
                         <p className='w-full h-full  sm:flex items-center  select-none cursor-pointer' >
                           <img src={data?.icons} alt="weather" className="mr-0 md:mr-[5px]" />
-                          <span className="ss:hidden  font-medium hidden md:block text-[15px]">{data?.type}</span>
+                          <span className="ss:hidden  font-medium  hidden md:block text-[15px]">{data?.type}</span>
                         </p>
                       </Popover>
                     )
@@ -389,9 +392,9 @@ const MediumHeader = () => {
 
 
               {/* Searching section */}
-              <div className="search flex items-center justify-center rounded-lg font-medium h-12 border border-red-600 md:border-transparent md:w-[624px] ss:hidden md:flex">
+              <div className="search flex items-center justify-center rounded-lg font-medium h-[44px] border border-red-600 md:border-transparent md:w-[624px] ml-2 ss:hidden md:flex">
                 {/* Catalog section */}
-                <button className={`items-center  ${dataStyle}  pl-5 pr-7 h-12 rounded-l-lg cursor-pointer hidden md:flex`}>
+                <button className={`items-center  ${dataStyle}  pl-5 pr-7 h-[44px] rounded-l-lg cursor-pointer hidden md:flex`}>
                   {CategoryTypeArray.filter(data => data.id === dressInfo?.type).map(data => {
                     return (
                       <img key={data?.id} src={data?.icons} alt={data?.type} className="w-[18px]" />
@@ -401,8 +404,8 @@ const MediumHeader = () => {
                   <span className={` px-[9.5px] not-italic font-medium text-sm leading-4`}>Каталог</span>
                 </button>
                 <img src={search} alt="search" className="flex md:hidden" />
-                <input type="text" placeholder="Поиск продуктов или брендов" className="bg-transparent w-full px-3 h-12 text-sm border border-transparent md:border-searchBgColor md:mx-0 md: md:px-3 md:h-12" />
-                <button className="bg-searchBgColor w-[100px]  h-12 items-center justify-center rounded-r-lg border border-bgColor hidden md:flex -ml-[2px]">
+                <input type="text" placeholder="Поиск продуктов или брендов" className="bg-transparent w-full px-3 h-[44px] text-sm border border-transparent md:border-searchBgColor " />
+                <button className="bg-searchBgColor w-[100px]  h-[44px] items-center justify-center rounded-r-lg border border-bgColor hidden md:flex -ml-[2px]">
                   <img src={search} alt="search" />
                 </button>
               </div>
@@ -411,7 +414,7 @@ const MediumHeader = () => {
               <div className="line h-6 border-r-[1px] text-textColor ss:hidden md:block mx-3"></div>
 
               {/* Map section */}
-              <Link to="#" className="flex items-center justify-center bg-bgColor border border-searchBgColor rounded-lg px-4 h-10  md:h-12 ss:text-sm md:w-[98px] md:mt-0 ss:hidden md:flex">
+              <Link to="#" className="flex items-center justify-center bg-btnBgColor  rounded-lg    md:h-[44px] ss:text-sm md:w-[100px] md:mt-0 ss:hidden md:flex">
                 <img src={map} alt="map" className="pr-[6px]" />
                 <span className="font-medium text-sm">Карта</span>
               </Link>
@@ -420,17 +423,17 @@ const MediumHeader = () => {
               <div className="line h-6 border-r-[1px] text-textColor ss:hidden md:block mx-3"></div>
 
               {/* User section */}
-              <button className=" items-center bg-bgColor border border-searchBgColor rounded-lg px-4 h-12 mr-2 hidden md:flex">
+              <button className=" items-center bg-btnBgColor  rounded-lg px-4 h-[44px] mr-2 hidden md:flex">
                 <img src={user} alt="" />
               </button>
 
               {/* Heart section */}
-              <button className="items-center bg-bgColor border border-searchBgColor rounded-lg px-4 h-12 mr-2 hidden md:flex">
+              <button className="items-center bg-btnBgColor  rounded-lg px-4 h-[44px] mr-2 hidden md:flex">
                 <img src={heart} alt="heart" />
               </button>
 
               {/* Bucket section */}
-              <button className=" items-center bg-bgColor border border-searchBgColor rounded-lg px-4 h-12 relative md:flex ss:hidden">
+              <button className=" items-center bg-btnBgColor  rounded-lg px-4 h-[44px] relative md:flex ss:hidden">
                 <img src={bucket} alt="bucket" />
                 <span className="count bg-red-700 w-4 h-4 text-white text-[10px] rounded flex items-center justify-center absolute top-0 right-0 font-medium"> 4 </span>
               </button>
@@ -565,17 +568,16 @@ const MediumHeader = () => {
             <div className="flex items-center justify-between w-full ">
 
               {/* Searching section */}
-              <div className="search flex items-center rounded font-medium h-10  border ss:w-[65%] ls:w-[70%] ll:w-[72%]">
+              <div className="search flex items-center rounded font-medium h-10  border ss:w-[100%]">
                 <img src={search} alt="search" className="pl-[11.65px]" />
                 <input type="text" placeholder="Search..." className="bg-transparent w-full h-full text-[14px] border border-transparent px-2  " />
               </div>
 
               {/* Map section */}
-              <Link to="#" className="flex items-center w-full justify-center bg-bgColor border border-searchBgColor rounded ss:px-4 h-10  ss:w-[30%] ls:w-[25%] ll:w-[23%]" >
+              <Link to="#" className="flex items-center w-full justify-center bg-btnBgColor border border-searchBgColor rounded ss:px-4 h-10 ml-2  ss:w-[94px] " >
                 <img src={map} alt="map" className="pr-[6px]" />
                 <div className="font-medium">Map</div>
               </Link>
-
             </div>
 
             {/* Gender selection for Mobile */}
@@ -585,11 +587,11 @@ const MediumHeader = () => {
               {
                 personItems?.filter(value => value.id === dressInfo?.type).map(data => {
                   return (
-                    <div key={data?.id} className="w-full flex items-center justify-between border border-bgColor">
-                      <button className={`mr-1 ${genderStyle} font-medium w-[48%] h-12 px-[16px] justify-center flex items-center border border-searchBgColor rounded-lg`}>
+                    <div key={data?.id} className="w-full flex items-center justify-between border rounded bg-btnBgColor  border-borderColorCard">
+                      <button className={` ${genderStyle} font-medium w-[50%] h-[44px] px-[16px] justify-center flex items-center  focus:rounded`}>
                         <img src={data?.woman} alt="female" /><span className="ml-3"> Женщинам</span>
                       </button>
-                      <button className={` font-medium ${genderStyle} w-[48%] h-12 border px-[16px] justify-center flex items-center  border-searchBgColor mr-1 rounded-lg`}>
+                      <button className={` font-medium ${genderStyle} w-[50%] h-[44px]  px-[16px] justify-center flex items-center  focus:rounded`}>
                         <img src={data?.man} alt="male" /><span className="ml-3">Мужчинам</span>
                       </button>
                     </div>
@@ -597,7 +599,7 @@ const MediumHeader = () => {
                 })
               }
 
-              <button onClick={() => { setToggle(!toggle); }} className="flex items-center bg-btnBgColor font-medium h-12 rounded border border-gray-200 px-5 ss:w-full sm:w-[30%] ss:mt-4 sm:m-0">
+              <button onClick={() => { setToggle(!toggle); }} className="flex items-center bg-btnBgColor font-medium h-12 rounded border border-gray-200 px-5 ss:w-full  ss:mt-4 ">
                 <div className="flex items-center ml-auto">
                   <img src={clothing} alt="" />
                   <span className="ml-[11.67px]">Clothing options</span>
@@ -609,17 +611,17 @@ const MediumHeader = () => {
 
             {/* Params for Mobile */}
 
-            <div className={`${toggle ? "h-[300px]" : "h-0"} duration-500  overflow-hidden md:hidden`}>
+            <div className={`${toggle ? "h-[280px]" : "h-0"} duration-500  overflow-hidden md:hidden`}>
 
-              <ul className="ss:w-full my-4 bg-white">
+              <ul className="ss:w-full mt-4 bg-white">
                 <li onClick={() => {
                   setClothesTypeMobile(!clothesTypeMobile)
 
                 }}>
-                  <button className="ss:w-full flex items-center bg-btnBgColor font-medium h-12 border rounded border-gray-300 px-5 mb-3 md:hidden">
+                  <button className="ss:w-full flex items-center bg-btnBgColor font-medium h-12 border rounded border-searchBgColor px-5 mb-3 md:hidden">
 
                     <div className="flex items-center" >
-                      <span className="border-r border-gray-300 py-3 pr-5">
+                      <span className="border-r border-searchBgColor py-3 pr-5">
                         <img src={clothing} alt="" />
                       </span>
                       <span className="ml-[11.67px]">{selectWearMobile}</span>
@@ -629,10 +631,10 @@ const MediumHeader = () => {
                   </button>
                 </li>
                 <li onClick={() => setPriceToggleMobile(!priceToggleMobile)}>
-                  <button className="flex items-center w-full bg-btnBgColor font-medium h-12 border rounded border-gray-300 px-5 mb-3 md:hidden">
+                  <button className="flex items-center w-full bg-btnBgColor font-medium h-12 border rounded border-searchBgColor px-5 mb-3 md:hidden">
 
                     <div className="flex items-center" >
-                      <span className="border-r border-gray-300 py-3 pr-5">
+                      <span className="border-r border-searchBgColor py-3 pr-5">
                         <img src={dollar} alt="" />
                       </span>
                       <span className="ml-[11.67px]">{selectPriceMobile}</span>
@@ -643,9 +645,9 @@ const MediumHeader = () => {
                 </li>
 
                 <li >
-                  <button className="w-full flex items-center bg-btnBgColor font-medium h-12 border rounded border-gray-300 px-5 mb-3 md:hidden">
+                  <button className="w-full flex items-center bg-btnBgColor font-medium h-12 border rounded border-searchBgColor px-5 mb-3 md:hidden">
 
-                    <span className="border-r w-[60px] border-gray-300 py-3 pr-5">
+                    <span className="border-r w-[60px] border-searchBgColor py-3 pr-5">
                       <img src={brush} alt="" />
                     </span>
 
@@ -679,10 +681,10 @@ const MediumHeader = () => {
                   </button>
                 </li>
                 <li onClick={() => setBrandToggleMobile(!brandToggleMobile)}>
-                  <button className="w-full flex items-center bg-btnBgColor font-medium h-12 border rounded border-gray-300 px-5 mb-3 md:hidden">
+                  <button className="w-full flex items-center bg-btnBgColor font-medium h-12 border rounded border-searchBgColor px-5 mb-3 md:hidden">
 
                     <div className="flex items-center">
-                      <span className="border-r border-gray-300 py-3 pr-5">
+                      <span className="border-r border-searchBgColor py-3 pr-5">
                         <img src={topBrands} alt="" />
                       </span>
                       <span className="ml-[11.67px]">Top Brands</span>

@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react'
 import { category, arrowBottomFull, mouse, toBottom, markets, adidas, chanel, dolce, gucci, hm, locate, lacoste, louis, nike, prada, puma, tommy, zara, SpringSquare, SummerSquare, AutummSquare, WinterSquare, } from '../../assets/imgs'
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import Slider from "react-slick";
-
+import { MdKeyboardArrowRight,MdKeyboardArrowLeft } from "react-icons/md";
 
 import { dressMainData } from '../../ContextHook/ContextMenu';
 // import required modules``
@@ -13,7 +13,7 @@ export default function MainPageSliders() {
     let dataStyle = ''
 
     if (dressInfo?.type == 1111) {
-        dataStyle = "border-borderSpring"
+        dataStyle = "border-borderSpring"  
 
     }
     if (dressInfo?.type == 2222) {
@@ -71,9 +71,9 @@ export default function MainPageSliders() {
     const NextArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	right-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[40%] z-10	right-[10px] rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`} onClick={onClick}>
                 <button className="next">
-                    <GrNext />
+                    <MdKeyboardArrowRight />
                 </button>
             </div>
         );
@@ -82,9 +82,9 @@ export default function MainPageSliders() {
     const PrevArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	left-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[40%] z-10	left-[10px] rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`} onClick={onClick}>
                 <button className="prev">
-                    <GrPrevious />
+                    <MdKeyboardArrowLeft />
                 </button>
             </div>
         );
@@ -92,9 +92,9 @@ export default function MainPageSliders() {
     const NextArrow1 = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[30%] z-10	right-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[30%] z-10	right-[10px] rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`} onClick={onClick}>
                 <button className="next">
-                    <GrNext />
+                    <MdKeyboardArrowRight />
                 </button>
             </div>
         );
@@ -103,9 +103,9 @@ export default function MainPageSliders() {
     const PrevArrow1 = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[30%] z-10	left-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[30%] z-10	left-[10px] rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`} onClick={onClick}>
                 <button className="prev">
-                    <GrPrevious />
+                    <MdKeyboardArrowLeft />
                 </button>
             </div>
         );
@@ -251,7 +251,7 @@ export default function MainPageSliders() {
                             data.Category.map(data => {
                                 return (
                                     <div key={data?.id} className='ll:w-[100px] ss:w-[80px]' >
-                                        <div className='w-[100%] h-[80px] rounded bg-bgColor  border border-solid border-borderColorCard'>
+                                        <div className='w-[100%] h-[80px] rounded bg-bgColor  border border-solid border-searchBgColor'>
                                             <img className='h-full w-full' src={data?.img} alt="" />
                                         </div>
                                         <div className='w-full py-1 flex items-center'>
@@ -275,7 +275,7 @@ export default function MainPageSliders() {
                             return (
                                 data.campany.map(data => {
                                     return (
-                                        <div key={data?.id} className='!w-[100%] h-[100px]  rounded-lg bg-catalogBg flex items-center justify-center select-none border border-solid border-searchBgColor'>
+                                        <div key={data?.id} className='!w-[100%] h-[100px]  rounded-lg bg-btnBgColor flex items-center justify-center select-none border border-solid border-searchBgColor'>
                                             {/* <p className='w-full h-full flex items-center justify-center not-italic font-medium text-xl leading-6 text-center text-black '>{data?.type || "0"}</p> */}
                                             <div className=' h-full flex items-center justify-center'>
                                                 <img className='h-[70px] w-[80%] ' src={data?.imgFull} alt="" />
@@ -300,7 +300,7 @@ export default function MainPageSliders() {
                         return (
                             <div key={data?.id} className='flex 	mt-[64px] flex-wrap justify-between items-center  gap-y-5    ss:hidden xs:block xs:flex'>
                                 {/* 1 */}
-                                <div className={`lg:w-[23%]  sm:w-[47%] ss:w-[100%] ss:h-20 py-[20px] px-[16px] xs:h-[100px] bg-bgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-borderColorCard `}>
+                                <div className={`lg:w-[305px]  sm:w-[47%] ss:w-[100%] ss:h-20 py-[20px] px-[16px] xs:h-[100px] bg-btnBgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-searchBgColor `}>
                                     <div className='w-full'>
                                         <p className={`not-italic font-normal ss:text-sm xs:text-base leading-4 text-black `}>Strengthen Health</p>
                                     </div>
@@ -311,7 +311,7 @@ export default function MainPageSliders() {
                                 </div>
                                 {/* 2 */}
 
-                                <div className='lg:w-[23%] sm:w-[47%] ss:w-[100%] ss:h-20 xs:h-[100px] py-[20px] px-[16px] bg-bgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-borderColorCard'>
+                                <div className='lg:w-[305px] sm:w-[47%] ss:w-[100%] ss:h-20 xs:h-[100px] py-[20px] px-[16px] bg-btnBgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-searchBgColor'>
                                     <div className='w-full'>
                                         <p className='not-italic font-normal ss:text-sm xs:text-base leading-4 text-black'>Based on your Interests</p>
                                     </div>
@@ -322,7 +322,7 @@ export default function MainPageSliders() {
                                 </div>
                                 {/* 3*/}
 
-                                <div className='lg:w-[23%] sm:w-[47%] ss:w-[100%] ss:h-20 xs:h-[100px] py-[20px] px-[16px] bg-bgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-borderColorCard'>
+                                <div className='lg:w-[305px] sm:w-[47%] ss:w-[100%] ss:h-20 xs:h-[100px] py-[20px] px-[16px] bg-btnBgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-searchBgColor'>
                                     <div className='w-full'>
                                         <p className='not-italic font-normal ss:text-sm xs:text-base leading-4 text-black'>Sort by your Money</p>
                                     </div>
@@ -333,7 +333,7 @@ export default function MainPageSliders() {
                                 </div>
                                 {/* 4*/}
 
-                                <div className='lg:w-[23%] sm:w-[47%] ss:w-[100%] ss:h-20 xs:h-[100px] py-[20px] px-[16px] bg-bgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-borderColorCard'>
+                                <div className='lg:w-[305px] sm:w-[47%] ss:w-[100%] ss:h-20 xs:h-[100px] py-[20px] px-[16px] bg-btnBgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-searchBgColor'>
                                     <div className='w-full'>
                                         <p className='not-italic font-normal ss:text-sm xs:text-base leading-4 text-black'>Магазины ближе к вам</p>
                                     </div>

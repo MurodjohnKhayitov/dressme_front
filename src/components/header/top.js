@@ -55,9 +55,8 @@ const TopHeader = () => {
         setOpenLang(false);
     }
 
-
     const contentLang = (
-        <div className="w-[132px] h-fit m-0 p-0">
+        <div className="w-[98px] h-fit m-0 p-0">
             {
                 LanguageList.map(data => {
                     return (
@@ -104,13 +103,13 @@ const TopHeader = () => {
 
 
     const contentCity = (
-        <div className="w-[132px] h-fit m-0 p-0">
+        <div className="w-[100px] h-fit m-0 p-0">
             {
                 CityList.map(data => {
                     return (
                         <div
                             key={data?.id}
-                            className={`p-2 pl-7 text-sm text-start hover:bg-bgColor cursor-pointer ${dataStyle}`}
+                            className={`p-2  text-sm text-start hover:bg-bgColor cursor-pointer ${dataStyle}`}
                             onClick={() => {
                                 handleCityValue(data?.type)
                             }
@@ -126,7 +125,7 @@ const TopHeader = () => {
 
     return (
         <div className="flex flex-col justify-center items-center top bg-bgColor ss:hidden md:block m-0 p-0 box-border">
-            <div className='max-w-[1280px] w-[100%] h-[32px] py-[2px] px-4 flex justify-between items-center m-auto  '>
+            <div className='max-w-[1280px] w-[100%] h-[32px] py-[2px] flex justify-between items-center m-auto  '>
 
                 <div className="left h-full flex items-center  ">
                     <Link to="/" className="flex w-fit items-center">
@@ -148,7 +147,7 @@ const TopHeader = () => {
                         </div>
                     </Link>
 
-                    <div className="w-[100px] h-full rounded bg-white ml-[15px]  font-medium select-none cursor-pointer">
+                    <div className="w-[98px] h-full rounded bg-white ml-[15px]  font-medium select-none cursor-pointer">
 
                         {
                             LanguageList.filter(data => data.id === selectLang).map(data => {

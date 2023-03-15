@@ -10,9 +10,11 @@ const Header = () => {
 
   const handleScroll = () => {
     setscrollPost(document.body.getBoundingClientRect().top)
-    setShow(document.body.getBoundingClientRect().top > scrollPost)
-
+    if (parseInt(Math.abs(scrollPost)) > 300) {
+      setShow(document.body.getBoundingClientRect().top > scrollPost)
+    }
   }
+ 
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -21,6 +23,8 @@ const Header = () => {
     }
   }, [show, scrollPost])
 
+  console.log(scrollPost, "scrollPostscrollPost");
+  console.log(show, "showshowshow");
   return (
     <header className="border border-searchBgColor">
       <div className={`ss:block md:hidden `}>
@@ -31,7 +35,7 @@ const Header = () => {
         <TopHeader />
         <MediumHeader />
       </div>
-      <div className='mt-[105px]'>
+      <div className='md:mt-[99px] ss:mt-0'>
         <BottomHeader />
         <NavMenu />
       </div>
