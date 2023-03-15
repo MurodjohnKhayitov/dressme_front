@@ -12,6 +12,7 @@
 }
 @font-face {
   font-family: "AeonicProBlack";
+  font-weight: 900;
   src: url("/src/fonts/AeonikPro-Black.otf") format('otf');
 }
 @font-face {
@@ -20,6 +21,7 @@
 }
 @font-face {
   font-family: "AeonicProBold";
+  font-weight: 700;
   src: url("/src/fonts/AeonikPro-Bold.otf") format('otf');
 }
 @font-face {
@@ -28,6 +30,7 @@
 }
 @font-face {
   font-family: "AeonicProLight";
+  font-weight: 300;
   src: url("/src/fonts/AeonikPro-Light.otf") format('otf');
 }
 @font-face {
@@ -36,6 +39,7 @@
 }
 @font-face {
   font-family: "AeonicProMedium";
+  font-weight: 500;
   src: url("/src/fonts/AeonikPro-Medium.otf") format('otf');
 }
 @font-face {
@@ -44,6 +48,7 @@
 }
 @font-face {
   font-family: "AeonicProRegular";
+  font-weight: 400;
   src: url("/src/fonts/AeonikPro-Regular.otf") format('otf');
 }
 @font-face {
@@ -52,6 +57,7 @@
 }
 @font-face {
   font-family: "AeonicProThin";
+  font-weight: 100;
   src: url("/src/fonts/AeonikPro-Thin.otf") format('otf');
 }
 @font-face {
