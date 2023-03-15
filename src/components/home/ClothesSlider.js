@@ -461,11 +461,9 @@ export default function ClothesSlider() {
                                             </div>
                                         )
                                     })
-
                                 )
                             })
                         }
-
                     </Slider>
                 </div>
             </div>
