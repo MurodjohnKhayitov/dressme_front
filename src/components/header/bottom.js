@@ -149,44 +149,36 @@ const BottomHeader = () => {
                 </Popover>
 
 
-                <div className="flex items-center w-[536px] justify-between bg-btnBgColor rounded-lg border-searchBgColor border h-[44px] ml-2">
-                    <img src={colors} alt="" className="px-[18px] py-[14px]  border-r border-searchBgColor h-full mr-3" />
-                    <label className="rounded-full w-6 h-6 bg-black cursor-pointer border border-solid mr-3 border-borderColorCard" htmlFor="Color1">
-                        <input className="hidden" type="checkbox" id="Color1" name="colors" value="1" />
-                    </label>
-                    <label className="rounded-full w-6 h-6 bg-white cursor-pointer border border-solid mr-2	border-borderColorCard" htmlFor="Color2">
-                        <input className="hidden" type="checkbox" id="Color2" name="colors" value="1" />
-                    </label>
-                    <label className="rounded-full w-6 h-6 bg-zinc-500 cursor-pointer  border border-solid mr-3	border-borderColorCard" htmlFor="Color3">
-                        <input className="hidden" type="radio" id="Color3" name="colors" value="1" />
-                    </label>
-                    <label className="rounded-full w-6 h-6 bg-purple-500 cursor-pointer border border-solid mr-2 border-borderColorCard" htmlFor="Color4">
-                        <input className="hidden" type="radio" id="Color4" name="colors" value="1" />
-                    </label>
-                    <label className="rounded-full w-6 h-6 bg-sky-600 cursor-pointer border border-solid mr-2 border-borderColorCard" htmlFor="Color1">
-                        <input className="hidden" type="checkbox" id="Color1" name="colors" value="1" />
-                    </label>
-                    <label className="rounded-full w-6 h-6 bg-amber-400 cursor-pointer border border-solid mr-2	border-borderColorCard" htmlFor="Color2">
-                        <input className="hidden" type="checkbox" id="Color2" name="colors" value="1" />
-                    </label>
-                    <label className="rounded-full w-6 h-6 bg-green-700 cursor-pointer border border-solid mr-2	border-borderColorCard" htmlFor="Color3">
-                        <input className="hidden" type="radio" id="Color3" name="colors" value="1" />
-                    </label>
-                    <label className="rounded-full w-6 h-6 bg-amber-600 cursor-pointer border border-solid mr-2 border-borderColorCard" htmlFor="Color4">
-                        <input className="hidden" type="radio" id="Color4" name="colors" value="1" />
-                    </label>
-                    <label className="rounded-full w-6 h-6 bg-red-700 cursor-pointer border border-solid mr-3 border-borderColorCard" htmlFor="Color1">
-                        <input className="hidden" type="checkbox" id="Color1" name="colors" value="1" />
-                    </label>
-                    <label className="rounded-full w-6 h-6 bg-purple-800 cursor-pointer border border-solid mr-2 border-borderColorCard" htmlFor="Color2">
-                        <input className="hidden" type="checkbox" id="Color2" name="colors" value="1" />
-                    </label>
-                    <label className="rounded-full  w-6 h-6 bg-blue-900 cursor-pointer border border-solid mr-2 border-borderColorCard" htmlFor="Color3">
-                        <input className="hidden" type="radio" id="Color3" name="colors" value="1" />
-                    </label>
-                    <label className="rounded-full w-6 h-6 bg-yellow-900 cursor-pointer border border-solid mr-3	border-borderColorCard" htmlFor="Color4">
-                        <input className="hidden" type="radio" id="Color4" name="colors" value="1" />
-                    </label>
+                <div className="flex items-center w-[536px] justify-start bg-btnBgColor rounded-lg border-searchBgColor border h-[44px] ml-2">
+                    <div className="w-[48px] h-full border-r border-searchBgColor h-full flex items-center justify-center mr-3" >
+                        <img src={colors} alt="" className="w-[21px]" />
+                    </div>
+                    <div className="w-[90%] h-full flex items-center justify-betwen border border-red-600">
+                        <div className="rounded-full w-6 h-6 bg-black cursor-pointer   mr-3 border-btnBgColor" htmlFor="Color1">
+                        </div>
+                        <div className="rounded-full w-6 h-6 bg-white cursor-pointer   mr-2	border-btnBgColor" htmlFor="Color2">
+                        </div>
+                        <div className="rounded-full w-6 h-6 bg-zinc-500 cursor-pointer    mr-3	border-btnBgColor" htmlFor="Color3">
+                        </div>
+                        <div className="rounded-full w-6 h-6 bg-purple-500 cursor-pointer   mr-2 border-btnBgColor" htmlFor="Color4">
+                        </div>
+                        <div className="rounded-full w-6 h-6 bg-sky-600 cursor-pointer   mr-2 border-btnBgColor" htmlFor="Color1">
+                        </div>
+                        <div className="rounded-full w-6 h-6 bg-amber-400 cursor-pointer   mr-2	border-btnBgColor" htmlFor="Color2">
+                        </div>
+                        <div className="rounded-full w-6 h-6 bg-green-700 cursor-pointer   mr-2	border-btnBgColor" htmlFor="Color3">
+                        </div>
+                        <div className="rounded-full w-6 h-6 bg-amber-600 cursor-pointer   mr-2 border-btnBgColor" htmlFor="Color4">
+                        </div>
+                        <div className="rounded-full w-6 h-6 bg-red-700 cursor-pointer   mr-3 border-btnBgColor" htmlFor="Color1">
+                        </div>
+                        <div className="rounded-full w-6 h-6 bg-purple-800 cursor-pointer   mr-2 border-btnBgColor" htmlFor="Color2">
+                        </div>
+                        <div className="rounded-full  w-6 h-6 bg-blue-900 cursor-pointer   mr-2 border-btnBgColor" htmlFor="Color3">
+                        </div>
+                        <div className="rounded-full w-6 h-6 bg-yellow-900 cursor-pointer   mr-3	border-btnBgColor" htmlFor="Color4">
+                        </div>
+                    </div>
                 </div>
                 <div className="line h-6 border-r-[1px] text-textColor mx-3"></div>
                 {
