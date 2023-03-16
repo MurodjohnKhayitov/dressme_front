@@ -303,7 +303,7 @@ export default function CollectionCards() {
                 {productList.map(data => {
                     return (
                         <div key={data.id} className=" ss:w-[48%] md:w-[24%] lg:w-[240px] transition ease-in-out delay-50 hover:shadow-md   xs:h-[456px] lg:h-[400px] border border-solid borderColorCard overflow-hidden rounded-lg">
-                            <div className='relative w-full cursor-pointer ss:h-[206px] xs:h-[309px] lg:h-[282px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap'>
+                            <div className='relative w-full cursor-pointer ss:h-[206px] xs:h-[309px] lg:h-[278px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap'>
                                 {
                                     data.ProducImg ?
                                         <img className='w-full ss:h-[85%] ls:h-full h-full m-auto hover:scale-105 transition duration-700 ease-in-out' src={data.ProducImg} alt="ProducImg" />
@@ -315,7 +315,7 @@ export default function CollectionCards() {
                                     <ul className='nav-lists flex-col gap-y-1 justify-center h-full ss:hidden xs:flex'>
                                         {/* 
                                         <li className='nav-list w-8 h-8 mb-1 relative bg-bgCard  rounded flex items-center hover:rounded-r-none justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
-                                            <Link href="#" className='nav-link flex items-center justify-center h-full'>
+                                            <Link href="#" className='nav-link w-8 flex items-center justify-center h-full'>
                                                 <img src={discount} alt="" />
                                             </Link>
                                             <div className='followers absolute bg-bgCard w-8 h-8 text-red-700 font-medium text-[11px] rounded-r pr-[6px] border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>-30%</div>
@@ -336,8 +336,12 @@ export default function CollectionCards() {
                                             <span className=' w-0 flex items-center  group-hover:w-[60px] duration-300  font-medium text-[14px]'>Delivery</span>
                                         </p>
 
+
                                         {/* 
                                         <li className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
+
+                                        {/* <li className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
+
                                             <Link href="#" className='w-8 nav-link flex items-center justify-center h-full'>
                                                 <img src={video} alt="" />
                                             </Link>
@@ -350,6 +354,10 @@ export default function CollectionCards() {
                                             </Link>
                                             <div className='followers absolute w-[50px] h-8 bg-bgCard font-medium text-[11px] rounded-r pr-[6px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Delivery</div>
                                         </li> */}
+
+
+
+                                        
 
                                     </ul>
 
@@ -380,7 +388,6 @@ export default function CollectionCards() {
 
                                 </div>
                             </div>
-
                             <div className="w-full rounded-b-1xl bg-white  flex flex-wrap content-between xs:py-3 lg:p-3 ss:h-[124px] xs:h-[147px] lg:h-[120px] ss:py-2 xs:px-2 ss:px-1">
                                 <div className='w-full'>
                                     <div className="w-full  not-italic font-AeonicProLight text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
@@ -404,10 +411,10 @@ export default function CollectionCards() {
                                     <div>
                                         {
                                             data.sale ?
-                                                <p className='flex ss:flex-col-reverse md:flex-row	text-start items-start '>
-                                                    <p className='text-start m-0 p-0  not-italic font-medium text-[18px] md:text-base leading-1 text-red-700 xs:text-base xs:leading-4 mr-1'>{data?.sale}</p>
-                                                    <p className='text-start m-0 p-0 text-[12px] mt-[8px]  line-through not-italic font-normal leading-3  text-borderColorCard ss:leading-1 md:text-[11px]'>{data?.price}</p>
-                                                </p>
+                                                <div className='flex ss:flex-col-reverse md:flex-row	text-start items-start '>
+                                                    <div className='text-start m-0 p-0  not-italic font-medium text-[18px] md:text-base leading-1 text-red-700 xs:text-base xs:leading-4 mr-1'>{data?.sale}</div>
+                                                    <div className='text-start m-0 p-0 text-[12px] mt-[8px]  line-through not-italic font-normal leading-3  text-borderColorCard ss:leading-1 md:text-[11px]'>{data?.price}</div>
+                                                </div>
                                                 :
                                                 <p className='not-italic font-medium text-base leading-4' style={{ color: "black" }}>{data?.price} </p>
                                         }
@@ -435,43 +442,9 @@ export default function CollectionCards() {
                         Показать ещё 20 товаров
                     </span>
                 </div>
-
             </div>
             {/* </div> */}
         </div >
     )
 }
 
-
-//  {/* group-hover:w-fit border border-solid bg-bgCard border-borderColorCard text-center*/}
-// <div className='button inline-block h-8 w-8 float-left bg-bgCard border border-borderColorCard rounded cursor-pointer //hover:w-[80px]'>
-//<div className='icon inline-block h-8 w-8 text-center box-border'>
-//    <img src={discount} alt="" className='text-center'/>
-//</div>
-//{/* ml-[-200px] group-hover:ml-0 duration-700 */}
-//<span className='text-red-800 font-medium text-[11px] ml-[10px]'>{data?.discount}</span>
-//</div>
-
-// <div className='video w-fit px-1 h-8 ml-[-200px] group-hover:ml-0 duration-700  rounded flex items-center justify-center border border-solid border-borderColorCard bg-bgCard'>
-//<span><img className='w-5' src={video} alt="" /></span>
-//<span className=' text-[14px] pl-[2px] '>Video</span>
-//</div>
-//
-//<div className='delivery w-fit px-1 h-8   ml-[-200px] group-hover:ml-0 duration-700 rounded bg-bgCard flex items-center justify-center border border-solid border-borderColorCard'>
-//<span><img className='w-5' src={delivery} alt="" /></span>
-//<span className=' text-[14px] pl-[2px] '>Delivery</span>
-//</div> */}
-
-
-// <li className='nav-list h-8 w-8 bg-bgCard mb-3 relative'>
-// <Link href="#"  className='nav-link flex items-center justify-center h-full'>
-//     <img src={video} alt="" />
-// </Link>
-// <div className='followers absolute w-[70px] h-8 top-0 left-0 -z-10 bg-bgCard flex items-center justify-center transition ease-out duration-500'>Video</div>
-// </li>
-// <li className='nav-list h-8 w-8 bg-bgCard mb-3 relative '>
-// <Link href="#" className='nav-link flex items-center justify-center h-full' >
-//     <img src={delivery} alt="" />
-// </Link>
-// <div className='followers absolute w-[70px] h-8 top-0 left-0 -z-10 bg-bgCard flex items-center justify-center transition ease-out duration-500'>Delivery</div>
-// </li>

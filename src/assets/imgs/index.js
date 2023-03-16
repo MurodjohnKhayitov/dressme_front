@@ -119,6 +119,14 @@ export { default as uzbekFlag } from './Language/uzbekistan.svg'
 export { default as russiaFlag } from './Language/russia (1).svg'
 export { default as englishFlag } from './Language/english.svg'
 
+// ----------------Black icons fon Persons---------
+
+export { default as manBlack } from './PersonBlack/man-black.svg'
+export { default as womanBlack } from './PersonBlack/woman-black.svg'
+export { default as childBlack } from './PersonBlack/child-black.svg'
+export { default as girlBlack } from './PersonBlack/girl-black.svg'
+export { default as babyBlack } from './PersonBlack/baby-black.svg'
+export { default as arrowTop } from './arrow-top.svg'
 
 // ----------------ForBrand---------
 
