@@ -8,6 +8,7 @@ import Slider from "react-slick";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { GrFormNext,GrFormPrevious } from "react-icons/gr";
 
 import styles from './clothers.module.css'
 import { dressMainData } from '../../ContextHook/ContextMenu';
@@ -302,44 +303,48 @@ export default function ClothesSlider() {
     const NextArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[23%] z-10 right-[10px] rounded-full bg-btnBgColor duration-200 border border-solid hover:transform hover:scale-110`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[25%] z-10	right-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard		`} onClick={onClick}>
                 <button className="next">
-                    <GrNext />
-                </button>
-            </div>
-        );
-    };
-    const PrevArrow = (props) => {
-        const { onClick } = props;
-        return (
-            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[23%] z-10 left-[10px] rounded-full bg-btnBgColor duration-200 border border-solid hover:transform hover:scale-110`} onClick={onClick}>
-                <button className="prev">
-                    <GrPrevious />
+                    <GrFormNext size={20} />
                 </button>
             </div>
         );
     };
 
+    const PrevArrow = (props) => {
+        const { onClick } = props;
+        return (
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[25%] z-10	left-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard`} onClick={onClick}>
+                <button className="prev">
+                    <GrFormPrevious size={20} />
+                </button>
+            </div>
+        );
+    };
+
+
     const NextArrow2 = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[40%] z-10 right-[10px] rounded-full bg-btnBgColor duration-200 border border-solid hover:transform hover:scale-110`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	right-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard		`} onClick={onClick}>
                 <button className="next">
-                    <GrNext />
+                    <GrFormNext size={20} />
                 </button>
             </div>
         );
     };
+
     const PrevArrow2 = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[40%] z-10 left-[10px] rounded-full bg-btnBgColor duration-200 border border-solid hover:transform hover:scale-110`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	left-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard`} onClick={onClick}>
                 <button className="prev">
-                    <GrPrevious />
+                    <GrFormPrevious size={20} />
                 </button>
             </div>
         );
     };
+
 
     let settings1 = {
         nextArrow: <NextArrow />,

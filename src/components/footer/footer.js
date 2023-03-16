@@ -290,15 +290,15 @@ const Footer = () => {
 
 
     return (
-        <div className="flex flex-col justify-center items-center m-0 p-0 box-border mt-40 md:mb-[60px] ss:mb-[80px]">
-            <div className="backTopMenu">
+        <div className="flex flex-col justify-center items-center m-0 p-0 ss:px-4 md:px-0 box-border mt-40 md:mb-[60px] ss:mb-[80px]">
+            <div className="backTopMenu border border-red-700 mt-[-100px]">
                 <ScrollToTop
                     smooth
                     top="600"
                     color="#000"
                     component={<MySVG />}
                     style={{ borderRadius: "50%", width: "48px", height: "48px", border: "1px solid #c1c1c1", backgroundColor: "#F2F2F2" }}
-                    className="bg-bgColor rounded-full flex items-center justify-center">H</ScrollToTop>
+                    className="bg-bgColor rounded-full  mt-[-100px] flex items-center justify-center"/>
 
             </div>
             <div className='max-w-[1280px] w-[100%]  flex justify-center items-center m-auto'>
@@ -695,7 +695,7 @@ const Footer = () => {
                             <Popover
                                 open={openRegionMobile}
                                 onOpenChange={handleOpenChangeRegionMobile}
-                                className="basis-[48%] h-[44px] flex items-center  px-[14px] select-none  justify-between  bg-bgColor  border border-red-700 rounded group "
+                                className="basis-[48%] h-[44px] flex items-center  px-[14px] select-none  justify-between  bg-bgColor rounded group "
                                 trigger="click"
                                 options={['Hide']}
                                 placement="bottom"
