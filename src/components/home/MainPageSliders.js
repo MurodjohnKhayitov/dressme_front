@@ -4,6 +4,7 @@ import { category, arrowBottomFull, mouse, toBottom, markets, adidas, chanel, do
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import Slider from "react-slick";
 import { MdKeyboardArrowRight,MdKeyboardArrowLeft } from "react-icons/md";
+import { GrFormNext,GrFormPrevious } from "react-icons/gr";
 
 import { dressMainData } from '../../ContextHook/ContextMenu';
 // import required modules``
@@ -72,9 +73,9 @@ export default function MainPageSliders() {
     const NextArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[40%] z-10	right-[10px] rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	right-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard		`} onClick={onClick}>
                 <button className="next">
-                    <MdKeyboardArrowRight />
+                    <GrFormNext size={20} />
                 </button>
             </div>
         );
@@ -83,9 +84,9 @@ export default function MainPageSliders() {
     const PrevArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[40%] z-10	left-[10px] rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	left-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard`} onClick={onClick}>
                 <button className="prev">
-                    <MdKeyboardArrowLeft />
+                    <GrFormPrevious size={20} />
                 </button>
             </div>
         );
@@ -93,9 +94,9 @@ export default function MainPageSliders() {
     const NextArrow1 = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[30%] z-10	right-[10px] rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[30%] z-10	right-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
                 <button className="next">
-                    <MdKeyboardArrowRight />
+                    <GrFormNext size={20} />
                 </button>
             </div>
         );
@@ -104,9 +105,9 @@ export default function MainPageSliders() {
     const PrevArrow1 = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[30%] z-10	left-[10px] rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[30%] z-10	left-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
                 <button className="prev">
-                    <MdKeyboardArrowLeft />
+                    <GrFormPrevious size={20} />
                 </button>
             </div>
         );

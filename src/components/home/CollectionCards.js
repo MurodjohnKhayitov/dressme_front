@@ -365,7 +365,7 @@ export default function CollectionCards() {
                       <span className="w-8 h-8 flex items-center justify-center  ">
                         <img src={discount} alt="" />
                       </span>
-                      <span className=" w-0 flex items-center -mr-[1px] group-hover:w-10 duration-300  text-red-700 font-medium text-[11px]">
+                      <span className=" w-0 flex items-center -mr-[1px] group-hover:w-10 duration-300  text-red-700 not-italic  font-normal text-[11px]">
                          -30%
                       </span>
                     </p>
@@ -373,7 +373,7 @@ export default function CollectionCards() {
                       <span className="w-8 h-8 flex items-center justify-center">
                         <img src={video} alt="" />
                       </span>
-                      <span className=" w-0 flex items-center -mr-[1px] group-hover:w-10 duration-300 font-medium text-[11px]">
+                      <span className=" w-0 flex items-center -mr-[1px] group-hover:w-10 duration-300 not-italic  font-normal text-[11px]">
                         Video
                       </span>
                     </p>
@@ -381,7 +381,7 @@ export default function CollectionCards() {
                       <span className="w-8 h-8 flex items-center justify-center  ">
                         <img src={delivery} alt="" />
                       </span>
-                      <span className=" w-0 flex items-center  group-hover:w-[40px] duration-300  font-medium text-[11px]">
+                      <span className=" w-0 flex items-center  group-hover:w-[40px] duration-300 not-italic  font-normal text-[11px]">
                         Delivery
                       </span>
                     </p>
@@ -389,8 +389,7 @@ export default function CollectionCards() {
 
                   <div className="flex flex-col gap-y-1">
                     <p className="w-8 h-8  rounded flex items-center bg-bgCard justify-center border border-solid border-borderColorCard hover:bg-white transition ease-out duration-500">
-                      {/* <img src={heart} alt="" /> */}
-                      <FaRegHeart />
+                      <img src={heart} alt="" />
                     </p>
                     <p className="w-8 h-8 ss:hidden rounded bg-bgCard xs:flex items-center justify-center border border-solid border-borderColorCard hover:bg-white transition ease-out duration-500">
                       <img src={bucket} alt="" />
