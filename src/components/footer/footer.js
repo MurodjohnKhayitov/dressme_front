@@ -13,18 +13,18 @@ import ScrollToTop from "react-scroll-to-top";
 import { ReactComponent as MySVG } from "../../assets/imgs/backTop/backTop.svg";
 
 const catalogTypes = [
-    { id: 1, name: 'Students' },
-    { id: 2, name: 'Business' },
-    { id: 3, name: 'Classic' },
-    { id: 4, name: 'Sport' },
-    { id: 5, name: 'Free Style' },
-    { id: 6, name: 'Muslim' },
-    { id: 7, name: 'Travel' },
-    { id: 8, name: 'Military' },
-    { id: 9, name: 'Home' },
-    { id: 10, name: 'Hero' },
-    { id: 11, name: 'Children' },
-    { id: 12, name: 'Party' },
+    { id: 1, name: 'Студент' },
+    { id: 2, name: 'Бизнес' },
+    { id: 3, name: 'Классический' },
+    { id: 4, name: 'Спорт' },
+    { id: 5, name: 'Для дома' },
+    { id: 6, name: 'Мусульманский' },
+    { id: 7, name: 'Путешествие' },
+    { id: 8, name: 'Военный' },
+    { id: 9, name: 'Геройский' },
+    { id: 10, name: 'Детям' },
+    { id: 11, name: 'Вечеринка' },
+    { id: 12, name: 'Футболки' },
 ]
 const clothingTypes = [
     { id: 1, name: 'T-Shorts' },
@@ -51,10 +51,10 @@ const Footer = () => {
         { id: 4444, type: "Winter", icons: winterBrand },
     ]
     const PersonTypeArray = [
-        { id: 1111, man: manBlack, woman: womanBlack, boy: childBlack, girl: girlBlack, childs: babyBlack },
-        { id: 2222, man: manBlack, woman: womanBlack, boy: childBlack, girl: girlBlack, childs: babyBlack },
-        { id: 3333, man: manBlack, woman: womanBlack, boy: childBlack, girl: girlBlack, childs: babyBlack },
-        { id: 4444, man: manBlack, woman: womanBlack, boy: childBlack, girl: girlBlack, childs: babyBlack },
+        { id: 1111, man: SpringMale, woman: SpringFemale, boy: SpringBoy, girl: SpringGirl, childs: SpringChild },
+        { id: 2222, man: SummerMale, woman: SummerFemale, boy: SummerBoy, girl: SummerGirl, childs: SummerChild },
+        { id: 3333, man: AutummMale, woman: AutummFemale, boy: AutummBoy, girl: AutummGirl, childs: AutummChild },
+        { id: 4444, man: WinterMale, woman: WinterFemale, boy: WinterBoy, girl: WinterGirl, childs: WinterChild },
 
     ]
     // -----Language Change-------------------
@@ -69,17 +69,22 @@ const Footer = () => {
     ]
     const [openLanguage, setOpenLanguage] = useState(false);
     let dataStyle = ''
+    let footerTextWeatherColor = ''
     if (dressInfo?.type == 1111) {
         dataStyle = " hover:text-borderSpring "
+        footerTextWeatherColor = "text-green-600 border-green-600"
     }
     if (dressInfo?.type == 2222) {
         dataStyle = " hover:text-borderSummer"
+        footerTextWeatherColor="text-amber-500 border-amber-600"
     }
     if (dressInfo?.type == 3333) {
         dataStyle = " hover:text-borderAutumm "
+        footerTextWeatherColor="text-orange-600 border-orange-600"
     }
     if (dressInfo?.type == 4444) {
         dataStyle = " hover:text-borderWinter "
+        footerTextWeatherColor="text-sky-600 border-sky-600"
     }
 
 
@@ -99,9 +104,6 @@ const Footer = () => {
         { id: 6, type: "Navoiy" },
     ]
     const [openCity, setOpenCity] = useState(false);
-
-
-
 
     // ----------------------Price State Management----------------------
     const [openPriceFooter, setOpenOriceFooter] = useState(false);
@@ -277,22 +279,19 @@ const Footer = () => {
                             className={`p-2 text-sm hover:bg-bgColor cursor-pointer flex items-center justify-center ${dataStyle}`}
                             onClick={() => {
                                 handleLanguageValueMobile(data?.id)
-                            }
-                            }
+                            }}
                         >
                             <span className="mr-1"><img src={data?.icons} alt="" /></span>
                             <span className={`not-italic font-normal text-sm leading-4 text-black ${dataStyle}`}>{data?.type}</span>
                         </div>)
-                })
-            }
+                })}
         </div>
     );
 
 
     return (
-
         <div className="flex flex-col justify-center items-center m-0 p-0 box-border mt-40 md:mb-[60px] ss:mb-[80px]">
-            <div>
+            <div className="backTopMenu">
                 <ScrollToTop
                     smooth
                     top="600"
@@ -796,7 +795,7 @@ const Footer = () => {
                                 </ul>
                             </div>
 
-                            {/* CLothing Types */}
+                            {/* Clothing Types */}
                             <div className="w-full block md:hidden">
                                 <div className="text-base font-medium mb-5 flex">Типы одежды</div>
                                 <ul className="flex flex-row items-center flex-wrap">
@@ -819,11 +818,11 @@ const Footer = () => {
                                         <span className="text-sm">2022 — Dress.me</span>
                                     </div>
                                     <div className="md:ml-4 md:mr-4">
-                                        <span>All Rights reserved</span>
+                                        <span>Все права защищены.</span>
                                     </div>
                                     <div className="font-medium text-center mt-3 hidden lg:m-0 md:block">
-                                        <span className="ml-auto">Designed by</span>
-                                        <Link to='#' className="text-black border-b border-black  ml-2">Prince.UI</Link>
+                                        <span className="ml-auto">Разработано командой</span>
+                                        <Link to='#' className={`${footerTextWeatherColor} border-b ml-1`}>Dressme</Link>
                                     </div>
 
                                 </div>
@@ -875,11 +874,9 @@ const Footer = () => {
                                                 <span className="text-sm font-medium not-italic">{data?.type}</span>
                                                 {/* <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openLanguageFooter ? "rotate-[-180deg]" : ""}`} /> */}
                                                 <img src={arrowTop} className={`${openLanguageFooter ? "rotate-[-180deg]" : ""}`} alt="icon" />
-
                                             </Popover>
                                         )
                                     })}
-
                             </div>
                         </div>
                     </div>
