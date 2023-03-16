@@ -320,17 +320,17 @@ export default function CollectionCards() {
                                             </Link>
                                             <div className='followers absolute bg-bgCard w-8 h-8 text-red-700 font-medium text-[11px] rounded-r pr-[6px] border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>-30%</div>
                                         </li> */}
-                                        <p className='group w-8 hover:w-[75px] bg-bgCard hover:bg-white transition ease-out  h-8 duration-300 rounded overflow-hidden border border-borderColorCard flex items-center'>
+                                        <p className='group w-8 hover:w-[75px] bg-bgCard hover:bg-white  duration-300 rounded overflow-hidden border border-borderColorCard flex items-center'>
                                             <span className='w-8 h-8 flex items-center justify-center  '>
                                                 <img src={discount} alt="" /></span>
                                             <span className=' w-0 flex items-center  group-hover:w-10 duration-300  text-red-700 font-medium text-[14px]'>-30%</span>
                                         </p>
-                                        <p className='group w-8 hover:w-[75px] bg-bgCard hover:bg-white transition ease-out  h-8 duration-300 rounded overflow-hidden border border-borderColorCard flex items-center'>
+                                        <p className='group w-8 hover:w-[75px] bg-bgCard hover:bg-white  duration-300 rounded overflow-hidden border border-borderColorCard flex items-center'>
                                             <span className='w-8 h-8 flex items-center justify-center  '>
                                                 <img src={video} alt="" /></span>
                                             <span className=' w-0 flex items-center  group-hover:w-10 duration-300  font-medium text-[14px]'>Video</span>
                                         </p>
-                                        <p className='group w-8 hover:w-[95px] bg-bgCard hover:bg-white transition ease-out  h-8 duration-300 rounded overflow-hidden border border-borderColorCard flex items-center'>
+                                        <p className='group w-8 hover:w-[95px] bg-bgCard hover:bg-white  duration-300 rounded overflow-hidden border border-borderColorCard flex items-center'>
                                             <span className='w-8 h-8 flex items-center justify-center  '>
                                                 <img src={delivery} alt="" /></span>
                                             <span className=' w-0 flex items-center  group-hover:w-[60px] duration-300  font-medium text-[14px]'>Delivery</span>
