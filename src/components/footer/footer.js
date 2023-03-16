@@ -302,7 +302,7 @@ const Footer = () => {
                     className="bg-bgColor rounded-full flex items-center justify-center">H</ScrollToTop>
 
             </div>
-            <div className='max-w-[1280px] w-[100%] ss:px-4 flex justify-center items-center m-auto'>
+            <div className='max-w-[1280px] w-[100%]  flex justify-center items-center m-auto'>
                 <div className="w-[100%] h-fit ss:p-0 md:p-[30px]  md:border md:border-searchBgColor border-solid rounded-lg">
                     <div className=''>
 
