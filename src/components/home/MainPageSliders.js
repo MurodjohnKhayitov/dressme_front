@@ -44,16 +44,17 @@ export default function MainPageSliders() {
                 { id: 9, type: "Creative", count: 190, img: "" },
             ],
 
+            
             campany: [
                 { id: 1, imgFull: adidas },
                 { id: 2, imgFull: chanel },
-                { id: 3, imgFull: dolce },
-                { id: 4, imgFull: gucci },
+                { id: 3, imgFull: adidas },
+                { id: 4, imgFull: lacoste },
                 { id: 5, imgFull: hm },
                 { id: 6, imgFull: lacoste },
-                { id: 7, imgFull: louis },
+                { id: 7, imgFull: adidas },
                 { id: 8, imgFull: nike },
-                { id: 9, imgFull: prada },
+                { id: 9, imgFull: puma },
                 { id: 10, imgFull: puma },
                 { id: 11, imgFull: tommy },
                 { id: 12, imgFull: zara },
@@ -277,7 +278,7 @@ export default function MainPageSliders() {
                                     return (
                                         <div key={data?.id} className='!w-[100%] h-[100px]  rounded-lg bg-btnBgColor flex items-center justify-center select-none border border-solid border-searchBgColor'>
                                             {/* <p className='w-full h-full flex items-center justify-center not-italic font-medium text-xl leading-6 text-center text-black '>{data?.type || "0"}</p> */}
-                                            <div className=' h-full flex items-center justify-center'>
+                                            <div className=' h-full flex items-center justify-center px-[35px]'>
                                                 <img className='h-[70px] w-[80%] ' src={data?.imgFull} alt="" />
                                             </div>
                                         </div>
