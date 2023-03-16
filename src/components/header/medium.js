@@ -6,7 +6,7 @@ import { dressMainData } from "../../ContextHook/ContextMenu";
 import { GrClose } from "react-icons/gr";
 import { Popover, Modal, Button } from 'antd';
 import { FaRegHeart } from "react-icons/fa";
-  
+
 const MediumHeader = () => {
   const [hamburgerMenu, setHamburgerMenu] = useState(true);
   const [toggle, setToggle] = useState(false);
@@ -30,11 +30,8 @@ const MediumHeader = () => {
 
   const [dressInfo, setDressInfo] = useContext(dressMainData)
   let dataStyle = ''
-
   let genderStyle = ''
   let hoverText = ''
-
-
   if (dressInfo?.type == 1111) {
     dataStyle = "bg-bgSpring bg-opacity-10	  text-borderSpring "
     hoverText = " hover:text-borderSpring "
@@ -123,18 +120,18 @@ const MediumHeader = () => {
   // Mobile Change color Type
   const [changeColor, setChangeColor] = useState([
 
-    { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-    { id: 2, value: 2, action: false, colors: "bg-green-600" },
-    { id: 3, value: 3, action: false, colors: "bg-red-700" },
-    { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-    { id: 5, value: 5, action: false, colors: "bg-black" },
-    { id: 6, value: 6, action: false, colors: "bg-white" },
-    { id: 7, value: 7, action: false, colors: "bg-blue-500" },
-    { id: 8, value: 8, action: false, colors: "bg-orange-600" },
-    { id: 9, value: 9, action: false, colors: "bg-purple-400" },
-    { id: 10, value: 10, action: false, colors: "bg-blue-900" },
-    { id: 11, value: 11, action: false, colors: "bg-yellow-900" },
-    { id: 12, value: 12, action: false, colors: "bg-gray-600" },
+    { id: 1, name: "purple", value: 1, action: false, colors: "bg-purple-700" },
+    { id: 2, name: "green", value: 2, action: false, colors: "bg-green-600" },
+    { id: 3, name: "red", value: 3, action: false, colors: "bg-red-700" },
+    { id: 4, name: "yellow", value: 4, action: false, colors: "bg-yellow-500" },
+    { id: 5, name: "black", value: 5, action: false, colors: "bg-black" },
+    { id: 6, name: "white", value: 6, action: false, colors: "bg-white" },
+    { id: 7, name: "blue", value: 7, action: false, colors: "bg-blue-500" },
+    { id: 8, name: "orange", value: 8, action: false, colors: "bg-orange-600" },
+    { id: 9, name: "purple", value: 9, action: false, colors: "bg-purple-400" },
+    { id: 10, name: "blue", value: 10, action: false, colors: "bg-blue-900" },
+    { id: 11, name: "yellow", value: 11, action: false, colors: "bg-yellow-900" },
+    { id: 12, name: "gray", value: 12, action: false, colors: "bg-gray-600" },
 
   ])
 
@@ -432,20 +429,19 @@ const MediumHeader = () => {
               <div className="line h-5 border-x-[1px]   text-textColor ss:hidden md:block mx-3"></div>
 
               {/* User section */}
-              <button className=" items-center bg-btnBgColor  rounded-lg px-4 h-[44px] mr-2 hidden md:flex">
+              <button className=" items-center bg-btnBgColor  rounded-lg flex items-center justify-center w-[44px] h-[44px] mr-2 hidden md:flex">
 
                 <img src={user} alt="" />
               </button>
 
               {/* Heart section */}
-              <button className="items-center bg-btnBgColor  rounded-lg px-4 h-[44px] mr-2 hidden md:flex">
-              <FaRegHeart/>
-
-                {/* <img src={heart} alt="heart" /> */}
+              <button className="items-center bg-btnBgColor  rounded-lg flex items-center justify-center w-[44px] h-[44px] mr-2 hidden md:flex">
+                {/* <FaRegHeart /> */}
+                <img src={heart} className={"w-5 h-5"} alt="heart" />
               </button>
 
               {/* Bucket section */}
-              <button className=" items-center bg-btnBgColor  rounded-lg px-4 h-[44px] relative md:flex ss:hidden">
+              <button className=" items-center bg-btnBgColor  rounded-lg flex items-center justify-center w-[44px] h-[44px] relative md:flex ss:hidden">
                 <img src={bucket} alt="bucket" />
                 <span className="count bg-red-700 w-4 h-4 text-white text-[10px] rounded flex items-center justify-center absolute top-0 right-0 font-medium"> 4 </span>
 
@@ -573,6 +569,39 @@ const MediumHeader = () => {
             }
 
           </div>
+          <div className={`h-fit top-30  left-[16px] fixed  bg-white shadow-lg  duration-200 z-50 ${selectColorToggleMobile ? "w-[92%]" : "w-0"
+            }  `}>
+            {selectColorToggleMobile &&
+              <div className="fixed inset-0 z-10 ">
+                <div
+                  className="fixed inset-0 w-full h-full bg-black opacity-40"
+                  onClick={() => setSelectColorToggleMobile(false)}
+                ></div>
+                <div className="flex items-center min-h-screen px-4 py-8">
+                  <div className="relative w-full max-w-lg p-4 mx-auto bg-white rounded-md shadow-lg">
+                    <div className="flex items-center justify-end ">
+                      <button type="" onClick={() => setSelectColorToggleMobile(false)}><GrClose size={25} /></button>
+                    </div>
+                    <div className="py-4 flex flex-wrap  gap-5">
+                      {
+                        changeColor?.map(data => {
+                          return (
+                            <span className="w-60px flex items-center cursour-pointer hover:shadow-md p-1 rounded mr-2">
+                              <div className={`rounded-full mr-2 w-6 h-6 ${data?.colors} cursor-pointer `}></div>
+                              <span className="not-italic font-medium text-base leading-4 text-black">{data?.name}</span>
+                            </span>
+                          )
+                        })
+
+                      }
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }
+
+          </div>
 
 
           {/*Starting of Blocked  Hamburger Menu section */}
@@ -597,7 +626,7 @@ const MediumHeader = () => {
             <div className="flex flex-wrap items-center justify-between mt-3 rounded  mb-4 w-full">
 
 
-              { 
+              {
                 personItems?.filter(value => value.id === dressInfo?.type).map(data => {
                   return (
                     <div key={data?.id} className="w-full flex items-center justify-between border rounded bg-btnBgColor  border-borderColorCard">
@@ -634,7 +663,7 @@ const MediumHeader = () => {
                   <button className="ss:w-full flex items-center bg-btnBgColor font-medium h-12 border rounded border-searchBgColor px-5 mb-3 md:hidden">
 
                     <div className="flex items-center" >
-                      <span className="border-r border-searchBgColor py-3 pr-5">
+                      <span className="w-[52px]  border-r border-searchBgColor py-3 pr-5">
                         <img src={clothing} alt="" />
                       </span>
                       <span className="ml-[11.67px]">{selectWearMobile}</span>
@@ -647,7 +676,7 @@ const MediumHeader = () => {
                   <button className="flex items-center w-full bg-btnBgColor font-medium h-12 border rounded border-searchBgColor px-5 mb-3 md:hidden">
 
                     <div className="flex items-center" >
-                      <span className="border-r border-searchBgColor py-3 pr-5">
+                      <span className="w-[52px]  border-r border-searchBgColor py-3 pr-5">
                         <img src={dollar} alt="" />
                       </span>
                       <span className="ml-[11.67px]">{selectPriceMobile}</span>
@@ -658,35 +687,23 @@ const MediumHeader = () => {
                 </li>
 
                 <li >
-                  <button className="w-full flex items-center bg-btnBgColor font-medium h-12 border rounded border-searchBgColor px-5 mb-3 md:hidden">
+                  <button className="w-full flex items-center justify-between bg-btnBgColor font-medium h-12 border rounded border-searchBgColor px-5 mb-3 md:hidden">
 
-                    <span className="border-r w-[60px] border-searchBgColor py-3 pr-5">
+                    <span className="w-[52px] border-r border-searchBgColor py-3 pr-5">
                       <img src={brush} alt="" />
                     </span>
-
-                    <div className="flex items-center overflow-x-scroll">
-                      <div className="ml-[11.67px] flex items-center">
-                        <div className=" w-full h-[48px] flex justify-between items-center px-4   border-t	 border-solid	border-borderColorCard">
-                          <label className="rounded-full mr-1 w-6 h-6 bg-purple-500 cursor-pointer  border border-solid border-borderColorCard" htmlFor="Color1">
-                            <input className="hidden" type="checkbox" id="Color1" name="colors" value="1" />
-                          </label>
-                          <span className="mr-2">purple,</span>
-                          <label className="rounded-full mr-2 w-6 h-6 bg-green-600 cursor-pointer  border	 border-solid	border-borderColorCard" htmlFor="Color2" >
-                            <input className="hidden" type="checkbox" id="Color2" name="colors" value="1" />
-                          </label>
-                          <span className="mr-2">green,</span>
-                          <label className="rounded-full mr-1 w-6 h-6 bg-red-700 cursor-pointer  border	 border-solid	border-borderColorCard" htmlFor="Color3" >
-                            <input className="hidden" type="radio" id="Color3" name="colors" value="1" />
-                          </label>
-                          <span className="mr-2">red,</span>
-                          <label className="rounded-full mr-1 w-6 h-6 bg-yellow-500 cursor-pointer  border	border-solid border-borderColorCard" htmlFor="Color4" >
-                            <input className="hidden" type="radio" id="Color4" name="colors" value="1" />
-                          </label>
-                          <span className="mr-2">yellow,</span>
-                        </div>
-                      </div>
+                    <div onClick={() => setSelectColorToggleMobile(!selectColorToggleMobile)} className="flex w-[80%] h-full items-center overflow-x-scroll ">
+                      {
+                        changeColor?.map(data => {
+                          return (
+                            <span className="w-60px flex items-center mr-2">
+                              <div className={`rounded-full mr-2 w-6 h-6 ${data?.colors} cursor-pointer `}></div>
+                              <span className="not-italic font-medium text-base leading-4 text-black">{data?.name}</span>
+                            </span>
+                          )
+                        })
+                      }
                     </div>
-
                     <span className="w-[40px]">
                       <img src={arrowBottomRight} alt="" className="arrowRotate ml-auto" />
                     </span>
@@ -697,7 +714,7 @@ const MediumHeader = () => {
                   <button className="w-full flex items-center bg-btnBgColor font-medium h-12 border rounded border-searchBgColor px-5 mb-3 md:hidden">
 
                     <div className="flex items-center">
-                      <span className="border-r border-searchBgColor py-3 pr-5">
+                      <span className="w-[52px]  border-r border-searchBgColor py-3 pr-5">
                         <img src={topBrands} alt="" />
                       </span>
                       <span className="ml-[11.67px]">Top Brands</span>

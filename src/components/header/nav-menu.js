@@ -18,7 +18,7 @@ const NavMenu = () => {
     const [active, setActive] = useState(0)
 
     return(
-        <div className="bg-white drop-shadow-2xl fixed bottom-0  px-4 w-full rounded-t-xl md:hidden z-50">
+        <div className="bg-white drop-shadow-2xl    px-4 w-full rounded-t-xl md:hidden z-50">
             <ul className="flex items-center justify-between text-[10px] font-medium py-1">
                 
                 {menus.map((menu, index) => (
