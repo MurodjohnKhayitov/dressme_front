@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { adduser, arrowBottomBlack, arrowBottomRight, AutummBoy, autummBrand, AutummChild, AutummFemale, AutummGirl, AutummMale, baby, BacktopScroll, blackBrand, business, call, categoryContact, children, dashborad, downIcons, englishFlag, error, feedbackIcon, femaleContact, footer, girls, homeTrend, list, locate, location, logo, logoo, man, map, maps, markets, message, privateCheck, ru, russiaFlag, shop, SpringBoy, springBrand, SpringChild, SpringFemale, SpringGirl, SpringMale, SummerBoy, summerBrand, SummerChild, SummerFemale, SummerGirl, SummerMale, toRightIcons, upload, uzbekFlag, WinterBoy, winterBrand, WinterChild, WinterFemale, WinterGirl, WinterMale } from "../../assets/imgs";
+import { adduser, arrowBottomBlack, arrowBottomRight, arrowTop, AutummBoy, autummBrand, AutummChild, AutummFemale, AutummGirl, AutummMale, baby, babyBlack, BacktopScroll, blackBrand, business, call, categoryContact, childBlack, children, dashborad, downIcons, englishFlag, error, feedbackIcon, femaleContact, footer, girlBlack, girls, homeTrend, list, locate, location, logo, logoo, man, manBlack, map, maps, markets, message, privateCheck, ru, russiaFlag, shop, SpringBoy, springBrand, SpringChild, SpringFemale, SpringGirl, SpringMale, SummerBoy, summerBrand, SummerChild, SummerFemale, SummerGirl, SummerMale, toRightIcons, upload, uzbekFlag, WinterBoy, winterBrand, WinterChild, WinterFemale, WinterGirl, WinterMale, womanBlack } from "../../assets/imgs";
 import { styles } from "../../util/style";
 import { FiInstagram } from "react-icons/fi";
 import { AiOutlineYoutube } from "react-icons/ai";
@@ -51,10 +51,10 @@ const Footer = () => {
         { id: 4444, type: "Winter", icons: winterBrand },
     ]
     const PersonTypeArray = [
-        { id: 1111, man: SpringMale, woman: SpringFemale, boy: SpringBoy, girl: SpringGirl, childs: SpringChild },
-        { id: 2222, man: SummerMale, woman: SummerFemale, boy: SummerBoy, girl: SummerGirl, childs: SummerChild },
-        { id: 3333, man: AutummMale, woman: AutummFemale, boy: AutummBoy, girl: AutummGirl, childs: AutummChild },
-        { id: 4444, man: WinterMale, woman: WinterFemale, boy: WinterBoy, girl: WinterGirl, childs: WinterChild },
+        { id: 1111, man: manBlack, woman: womanBlack, boy: childBlack, girl: girlBlack, childs: babyBlack },
+        { id: 2222, man: manBlack, woman: womanBlack, boy: childBlack, girl: girlBlack, childs: babyBlack },
+        { id: 3333, man: manBlack, woman: womanBlack, boy: childBlack, girl: girlBlack, childs: babyBlack },
+        { id: 4444, man: manBlack, woman: womanBlack, boy: childBlack, girl: girlBlack, childs: babyBlack },
 
     ]
     // -----Language Change-------------------
@@ -63,9 +63,9 @@ const Footer = () => {
         setselectLang(value)
     }
     const LanguageList = [
-        { id: 1, type: "Uzbekcha", icons: uzbekFlag },
-        { id: 2, type: "Russian", icons: russiaFlag },
-        { id: 3, type: "English", icons: englishFlag }
+        { id: 1, type: "Uzbekcha", icons: uzbekFlag, img:arrowTop },
+        { id: 2, type: "Russian", icons: russiaFlag, img:arrowTop },
+        { id: 3, type: "English", icons: englishFlag, img:arrowTop }
     ]
     const [openLanguage, setOpenLanguage] = useState(false);
     let dataStyle = ''
@@ -307,12 +307,27 @@ const Footer = () => {
                     <div className=''>
 
                         {/* Footer LOGO and Fedback form */}
-                        <div className="flex items-center justify-between  ss:px-4 md:px-0 ">
-                            <Link to='#'>
-                                <img src={blackBrand} alt="logo" className="ss:w-[85%] ll:w-[90%] sm:w-full" />
-                            </Link>
+                        <div className="flex items-center ss:px-4 md:px-0 ">
+                            <div className="flex flex-col">
+                                <Link to='#' className="mb-[14px]">
+                                    <img src={blackBrand} alt="logo" className="ss:w-[85%] ll:w-[90%] sm:w-full" />
+                                </Link>
+                                <div className="text-textColor mb-[18px] text-sm">Торговая площадка одежды</div>
+                            </div>
 
-                            <Link to="#" className="hidden items-center bg-bgColor pl-16 py-[15px] border border-searchBgColor rounded md:flex">
+                            {/* Address */}
+                            <div className="hidden flex-col ss:w-full md:w-[306px] ss:px-4 md:px-0 mt-[17px] ml-[92px] md:flex">
+                                <div className="text-textColor mb-3 text-sm">Юридический адрес :</div>
+                                <div className="flex items-center mb-[46px]">
+                                    <div className="border border-searchBgColor flex items-center justify-center rounded mr-3 w-24 h-12 ss:bg-white md:bg-transparent">
+                                        <img src={location} alt="location" />
+                                    </div>
+                                    <div className="font-normal text-sm underline underline-offset-4">Мирзо-Улугбекский район, проспект Амира Темура, 60 - Ташкент, 100017</div>
+                                </div>
+                            </div>
+
+
+                            <Link to="#" className="hidden items-center bg-bgColor pl-16 py-[15px] border border-searchBgColor rounded ml-auto md:flex">
                                 <img src={feedbackIcon} alt="" />
                                 <span className="text-base font-medium leading-4 ml-[12.5px] mr-[32.37px]">Форма для обратной связи</span>
                                 <img src={arrowBottomRight} alt="arrow-right-black" className="mr-5" />
@@ -325,7 +340,7 @@ const Footer = () => {
                         </div>
 
                         {/* Address */}
-                        <div className="flex flex-col ss:w-full md:w-[306px] ss:px-4 md:px-0 mt-[17px] ">
+                        <div className="flex flex-col ss:w-full md:w-[306px] ss:px-4 md:px-0 mt-[17px] md:hidden">
                             <div className="text-textColor mb-[18px] text-sm">Юридический адрес :</div>
                             <div className="flex items-center mb-[46px]">
                                 <div className="border border-searchBgColor flex items-center justify-center rounded mr-3 w-24 h-12 ss:bg-white md:bg-transparent">
@@ -766,11 +781,11 @@ const Footer = () => {
 
                     <div className="w-full border-b md:hidden ss:block border-gray-200"></div>
 
-                    <div className=' ss:mt-[40px] md:mt-[90px]'>
+                    <div className=' ss:mt-[40px] md:mt-[62px]'>
                         {/* Catalog and Clothes types */}
-                        <div className="mb-[60px] md:hidden">
+                        <div className="mb-[60px]">
                             {/* Catalog Types */}
-                            <div className="w-full block mb-7 md:hidden">
+                            <div className="w-full block mb-7 md:block">
                                 <div className="text-base font-medium mb-5 flex">Каталоги одежды</div>
                                 <ul className="flex flex-row items-center flex-wrap">
                                     {catalogTypes.map((catalog, index) => (
@@ -808,7 +823,7 @@ const Footer = () => {
                                     </div>
                                     <div className="font-medium text-center mt-3 hidden lg:m-0 md:block">
                                         <span className="ml-auto">Designed by</span>
-                                        <Link to='#' className="text-fullBlue border-b border-fullBlue ml-2">Prince.UI</Link>
+                                        <Link to='#' className="text-black border-b border-black  ml-2">Prince.UI</Link>
                                     </div>
 
                                 </div>
@@ -828,7 +843,8 @@ const Footer = () => {
                                     placement="bottom"
                                     content={contentPrice} >
                                     <span className="not-italic font-medium text-sm leading-4 text-black">{selectPriceFooter}</span>
-                                    <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openPriceFooter ? "rotate-[-180deg]" : ""}`} />
+                                    {/* <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openPriceFooter ? "rotate-[-180deg]" : ""}`} /> */}
+                                    <img src={arrowTop} className={`${openPriceFooter ? "rotate-[-180deg]" : ""}`} alt="icon" />
                                 </Popover>
                                 <Popover
                                     open={openRegionFooter}
@@ -840,7 +856,8 @@ const Footer = () => {
                                     content={contentRegion} >
                                     <img src={location} alt="" />
                                     <span className="not-italic font-medium text-sm leading-4 text-black">{selectRegionFooter}</span>
-                                    <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openRegionFooter ? "rotate-[-180deg]" : ""}`} />
+                                    {/* <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openRegionFooter ? "rotate-[-180deg]" : ""}`} /> */}
+                                    <img src={arrowTop} className={`${openRegionFooter ? "rotate-[-180deg]" : ""}`} alt="icon" />
                                 </Popover>
                                 {
                                     LanguageList.filter(data => data.id === selectLanguageFooter).map(data => {
@@ -856,7 +873,8 @@ const Footer = () => {
                                                 content={contentLanguage} >
                                                 <span className="mr-1"><img src={data?.icons} alt="" /></span>
                                                 <span className="text-sm font-medium not-italic">{data?.type}</span>
-                                                <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openLanguageFooter ? "rotate-[-180deg]" : ""}`} />
+                                                {/* <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openLanguageFooter ? "rotate-[-180deg]" : ""}`} /> */}
+                                                <img src={arrowTop} className={`${openLanguageFooter ? "rotate-[-180deg]" : ""}`} alt="icon" />
 
                                             </Popover>
                                         )
