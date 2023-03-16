@@ -302,24 +302,45 @@ export default function ClothesSlider() {
     const NextArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className={styles.NextArrow} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[23%] z-10 right-[10px] rounded-full bg-btnBgColor duration-200 border border-solid hover:transform hover:scale-110`} onClick={onClick}>
                 <button className="next">
                     <GrNext />
                 </button>
             </div>
         );
     };
-
     const PrevArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className={styles.PrevArrow} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[23%] z-10 left-[10px] rounded-full bg-btnBgColor duration-200 border border-solid hover:transform hover:scale-110`} onClick={onClick}>
                 <button className="prev">
                     <GrPrevious />
                 </button>
             </div>
         );
     };
+
+    const NextArrow2 = (props) => {
+        const { onClick } = props;
+        return (
+            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[40%] z-10 right-[10px] rounded-full bg-btnBgColor duration-200 border border-solid hover:transform hover:scale-110`} onClick={onClick}>
+                <button className="next">
+                    <GrNext />
+                </button>
+            </div>
+        );
+    };
+    const PrevArrow2 = (props) => {
+        const { onClick } = props;
+        return (
+            <div className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[40%] z-10 left-[10px] rounded-full bg-btnBgColor duration-200 border border-solid hover:transform hover:scale-110`} onClick={onClick}>
+                <button className="prev">
+                    <GrPrevious />
+                </button>
+            </div>
+        );
+    };
+
     let settings1 = {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
@@ -339,7 +360,7 @@ export default function ClothesSlider() {
                 }
             },
             {
-                breakpoint: 768,
+                breakpoint: 770,
                 settings: {
                     slidesToShow: 5,
                     slidesToScroll: 1,
@@ -371,8 +392,8 @@ export default function ClothesSlider() {
         ]
     };
     let settings = {
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
+        nextArrow: <NextArrow2 />,
+        prevArrow: <PrevArrow2 />,
         infinite: false,
         speed: 500,
         dots: false,
@@ -408,21 +429,26 @@ export default function ClothesSlider() {
     };
     const [dressInfo, setDressInfo] = useContext(dressMainData)
     let dataStyle = ''
+    let shadowStyle = ''
     let genderStyle = ''
-    if (dressInfo?.type == 1111) {
+    if (dressInfo?.type === 1111) {
         dataStyle = " hover:text-borderSpring "
+        shadowStyle = " hover:shadow-green-300/100 "
         genderStyle = "hover:text-borderSpring hover:bg-bgSpring hover:border-borderSpring hover:text-borderSpring"
     }
-    if (dressInfo?.type == 2222) {
+    if (dressInfo?.type === 2222) {
         dataStyle = " hover:text-borderSummer"
+        shadowStyle = "hover:shadow-amber-200/100 "
         genderStyle = "hover:text-borderSummer hover:bg-bgSummer hover:border-borderSummer hover:text-borderSummer"
     }
-    if (dressInfo?.type == 3333) {
+    if (dressInfo?.type === 3333) {
         dataStyle = " hover:text-borderAutumm "
+        shadowStyle = "hover:shadow-amber-200/100 "
         genderStyle = "hover:text-borderAutumm hover:bg-bgAutumm hover:border-borderAutumm hover:text-borderAutumm"
     }
-    if (dressInfo?.type == 4444) {
+    if (dressInfo?.type === 4444) {
         dataStyle = " hover:text-borderWinter "
+        shadowStyle = "hover:shadow-sky-200/100"
         genderStyle = "hover:text-borderWinter hover:bg-bgWinter hover:border-borderWinter hover:text-borderWinter"
     }
 
@@ -470,13 +496,13 @@ export default function ClothesSlider() {
             {/* </div> */}
 
             <div className='w-full h-fit flex flex-col border-y	border-solid border-borderColorCard mt-12 '>
-                <div className='w-full flex items-center py-12  '>
-                    <Slider {...settings} className='w-[100%] flex xs:justify-between xs:pl-0 '>
+                <div className='w-full flex items-center py-4  '>
+                    <Slider {...settings} className='w-[100%] flex xs:justify-between xs:pl-0  '>
                         {
                             productList.map(data => {
                                 return (
-                                    <div key={data.id} id={styles.forwidt} className="!w-[100%] ss:m-0  ll:ml-1 cursor-pointer transition ease-in-out delay-150 hover:shadow-md ss:h-[320px]  xs:h-[456px] lg:h-[400px] border border-solid	borderColorCard overflow-hidden rounded-lg"   >
-                                        <div className='relative w-full  ss:h-[206px] xs:h-[309px] lg:h-[278px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard'>
+                                    <div key={data.id} id={styles.forwidt} className={`!w-[100%] ss:m-0 md:my-8 cursor-pointer transition ease-in-out delay-150 hover:shadow-lg ${shadowStyle} ss:h-[320px] xs:h-[456px] lg:h-[440px] border border-solid borderColorCard overflow-hidden rounded-lg`}>
+                                        <div className='relative w-full  ss:h-[206px] xs:h-[309px] lg:h-[320px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard'>
                                             {
                                                 data.ProducImg ?
                                                     <img className='w-full h-full m-auto' src={data.ProducImg} alt="ProducImg" />
