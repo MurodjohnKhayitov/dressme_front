@@ -44,6 +44,7 @@ export default function MainPageSliders() {
                 { id: 9, type: "Creative", count: 190, img: "" },
             ],
 
+            
             campany: [
                 { id: 1, imgFull: adidas },
                 { id: 2, imgFull: chanel },
