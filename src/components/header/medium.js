@@ -5,7 +5,8 @@ import { styles } from "../../util/style";
 import { dressMainData } from "../../ContextHook/ContextMenu";
 import { GrClose } from "react-icons/gr";
 import { Popover, Modal, Button } from 'antd';
-
+import { FaRegHeart } from "react-icons/fa";
+  
 const MediumHeader = () => {
   const [hamburgerMenu, setHamburgerMenu] = useState(true);
   const [toggle, setToggle] = useState(false);
@@ -438,8 +439,9 @@ const MediumHeader = () => {
 
               {/* Heart section */}
               <button className="items-center bg-btnBgColor  rounded-lg px-4 h-[44px] mr-2 hidden md:flex">
+              <FaRegHeart/>
 
-                <img src={heart} alt="heart" />
+                {/* <img src={heart} alt="heart" /> */}
               </button>
 
               {/* Bucket section */}
@@ -595,7 +597,7 @@ const MediumHeader = () => {
             <div className="flex flex-wrap items-center justify-between mt-3 rounded  mb-4 w-full">
 
 
-              {
+              { 
                 personItems?.filter(value => value.id === dressInfo?.type).map(data => {
                   return (
                     <div key={data?.id} className="w-full flex items-center justify-between border rounded bg-btnBgColor  border-borderColorCard">

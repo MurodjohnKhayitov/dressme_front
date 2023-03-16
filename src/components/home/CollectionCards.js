@@ -3,6 +3,7 @@ import { discount, bucket, video, delivery, heart, shirt, addBag, cardImg, short
 import { CiHeart } from 'react-icons/ci';
 import { dressMainData } from '../../ContextHook/ContextMenu';
 import { BsCheck2Square } from "react-icons/bs";
+import { FaRegHeart } from "react-icons/fa";
 import Link from 'antd/es/typography/Link';
 export default function CollectionCards() {
     const [productList, setProductList] = useState([
@@ -290,11 +291,12 @@ export default function CollectionCards() {
             {/* <div className='max-w-[1440px] m-auto h-fit md:px-[80px]  sm:px-[50px] ss:px-[16px] pt-16 pb-4 '> */}
             <div className="w-full ss:block sm:flex justify-between items-center mb-[25px] md:mb-0 md:px-0">
                 <div className="not-italic font-medium lg:w-fit lg:text-2xl xl:text-3xl flex items-center leading-8 text-black">
-                    <span>Коллекции одежды,</span> <span className='ss:hidden sm:block'>которые вам подходят</span>
+                    <span>Коллекция одежд,
+                        которые вам подходят</span>
                 </div>
                 <div className="rounded  h-[42px] md:h-[52px] ss:w-full md:w-[308px] md:mx-0 flex justify-between bg-slate-50 border border-solid ss:mt-5 md:mt-0 mx-auto ">
-                    <button className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded ${dataStyle}`}>Карты одежды</button>
-                    <button className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded ${dataStyle}`}>Наборы</button>
+                    <button className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded ${dataStyle}`}> Одежда</button>
+                    <button className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded ${dataStyle}`}>Образы</button>
                 </div>
             </div>
             <div className="flex justify-between flex-wrap  md:mx-0 md:mt-[50px] gap-y-5 lg:gap-y-5 ">
@@ -309,16 +311,32 @@ export default function CollectionCards() {
                                         <img className='w-full h-fit' src={data.noProductImg} alt="noProductImg" />
                                 }
                                 <div className='w-full flex absolute top-px p-[5px] ss:justify-end xs:justify-between'>
-                                    
-                                    <ul className='nav-lists flex-col justify-center h-full ss:hidden xs:flex'>
-                                       
+
+                                    <ul className='nav-lists flex-col gap-y-1 justify-center h-full ss:hidden xs:flex'>
+                                        {/* 
                                         <li className='nav-list w-8 h-8 mb-1 relative bg-bgCard  rounded flex items-center hover:rounded-r-none justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
                                             <Link href="#" className='nav-link flex items-center justify-center h-full'>
                                                 <img src={discount} alt="" />
                                             </Link>
                                             <div className='followers absolute bg-bgCard w-8 h-8 text-red-700 font-medium text-[11px] rounded-r pr-[6px] border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>-30%</div>
-                                        </li>
+                                        </li> */}
+                                        <p className='group w-8 hover:w-[75px] bg-bgCard hover:bg-white transition ease-out  h-8 duration-300 rounded overflow-hidden border border-borderColorCard flex items-center'>
+                                            <span className='w-8 h-8 flex items-center justify-center  '>
+                                                <img src={discount} alt="" /></span>
+                                            <span className=' w-0 flex items-center  group-hover:w-10 duration-300  text-red-700 font-medium text-[14px]'>-30%</span>
+                                        </p>
+                                        <p className='group w-8 hover:w-[75px] bg-bgCard hover:bg-white transition ease-out  h-8 duration-300 rounded overflow-hidden border border-borderColorCard flex items-center'>
+                                            <span className='w-8 h-8 flex items-center justify-center  '>
+                                                <img src={video} alt="" /></span>
+                                            <span className=' w-0 flex items-center  group-hover:w-10 duration-300  font-medium text-[14px]'>Video</span>
+                                        </p>
+                                        <p className='group w-8 hover:w-[95px] bg-bgCard hover:bg-white transition ease-out  h-8 duration-300 rounded overflow-hidden border border-borderColorCard flex items-center'>
+                                            <span className='w-8 h-8 flex items-center justify-center  '>
+                                                <img src={delivery} alt="" /></span>
+                                            <span className=' w-0 flex items-center  group-hover:w-[60px] duration-300  font-medium text-[14px]'>Delivery</span>
+                                        </p>
 
+                                        {/* 
                                         <li className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
                                             <Link href="#" className='w-8 nav-link flex items-center justify-center h-full'>
                                                 <img src={video} alt="" />
@@ -331,13 +349,14 @@ export default function CollectionCards() {
                                                 <img src={delivery} alt="" />
                                             </Link>
                                             <div className='followers absolute w-[50px] h-8 bg-bgCard font-medium text-[11px] rounded-r pr-[6px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Delivery</div>
-                                        </li>
-                                        
+                                        </li> */}
+
                                     </ul>
 
                                     <div className='flex flex-col gap-y-1'>
                                         <p className='w-8 h-8  rounded flex items-center bg-bgCard justify-center border border-solid border-borderColorCard hover:bg-white transition ease-out duration-500'>
-                                            <img src={heart} alt="" />
+                                            {/* <img src={heart} alt="" /> */}
+                                            <FaRegHeart/>
                                         </p>
                                         <p className='w-8 h-8 ss:hidden rounded bg-bgCard xs:flex items-center justify-center border border-solid border-borderColorCard hover:bg-white transition ease-out duration-500'>
                                             <img src={bucket} alt="" />
