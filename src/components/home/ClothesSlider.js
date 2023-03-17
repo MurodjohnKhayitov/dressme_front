@@ -448,7 +448,7 @@ export default function ClothesSlider() {
     }
     if (dressInfo?.type === 3333) {
         dataStyle = " hover:text-borderAutumm "
-        shadowStyle = "hover:shadow-amber-200/100 "
+        shadowStyle = "hover:shadow-orange-200/100"
         genderStyle = "hover:text-borderAutumm hover:bg-bgAutumm hover:border-borderAutumm hover:text-borderAutumm"
     }
     if (dressInfo?.type === 4444) {

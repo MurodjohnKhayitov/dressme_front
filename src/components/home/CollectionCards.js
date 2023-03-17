@@ -288,7 +288,7 @@ export default function CollectionCards() {
   }
   if (dressInfo?.type == 3333) {
     dataStyle = "focus:text-borderAutumm";
-    shadowStyle = "hover:shadow-amber-200/100   ";
+    shadowStyle = "hover:shadow-orange-200/100   ";
   }
   if (dressInfo?.type == 4444) {
     dataStyle = "focus:text-borderWinter";
