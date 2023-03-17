@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { adduser, arrowBottomBlack, arrowBottomRight, arrowTop, AutummBoy, autummBrand, AutummChild, AutummFemale, AutummGirl, AutummMale, baby, babyBlack, BacktopScroll, blackBrand, business, call, categoryContact, childBlack, children, dashborad, downIcons, englishFlag, error, feedbackIcon, femaleContact, footer, girlBlack, girls, homeTrend, list, locate, location, logo, logoo, man, manBlack, map, maps, markets, message, privateCheck, ru, russiaFlag, shop, SpringBoy, springBrand, SpringChild, SpringFemale, SpringGirl, SpringMale, SummerBoy, summerBrand, SummerChild, SummerFemale, SummerGirl, SummerMale, toRightIcons, upload, uzbekFlag, WinterBoy, winterBrand, WinterChild, WinterFemale, WinterGirl, WinterMale, womanBlack } from "../../assets/imgs";
 import { styles } from "../../util/style";
@@ -286,7 +286,7 @@ const Footer = () => {
                         </div>)
                 })}
         </div>
-    );
+    );    
 
 
     return (
@@ -297,9 +297,8 @@ const Footer = () => {
                     top="600"
                     color="#000"
                     component={<MySVG />}
-                    style={{ borderRadius: "50%", width: "48px", height: "48px", border: "1px solid #c1c1c1", backgroundColor: "#F2F2F2" }}
-                    className="bg-bgColor rounded-full mt-[-100px] flex items-center justify-center ss:bottom-[75px] ss:right-[15px] md:bottom-10 md:right-10"/>
-
+                    style={{ borderRadius: "50%", scrollBehavior:"smooth", transitionDuration: '0.5s',transitionTimingFunction:'ease-out', transitionDelay: '0.5s', bottom:70, right: 30, width: "48px", height: "48px", border:"1px solid #c1c1c1", backgroundColor: "#fafafa"}}
+                    className={`rounded-full flex items-center scroll-my-9 justify-center opacity-70`}/>
             </div>
             <div className='max-w-[1280px] w-[100%]  flex justify-center items-center m-auto'>
                 <div className="w-[100%] h-fit ss:p-0 md:p-[30px]  md:border md:border-searchBgColor border-solid rounded-lg">

@@ -448,7 +448,7 @@ export default function ClothesSlider() {
     }
     if (dressInfo?.type === 3333) {
         dataStyle = " hover:text-borderAutumm "
-        shadowStyle = "hover:shadow-amber-200/100 "
+        shadowStyle = "hover:shadow-orange-200/100 "
         genderStyle = "hover:text-borderAutumm hover:bg-bgAutumm hover:border-borderAutumm hover:text-borderAutumm"
     }
     if (dressInfo?.type === 4444) {
@@ -515,11 +515,13 @@ export default function ClothesSlider() {
                                                     <img className='w-full h-fit' src={data.noProductImg} alt="noProductImg" />
                                             }
                                             <div className='w-full flex justify-between absolute top-px p-2'>
-                                                <div className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
-                                                    <button href="#" className='nav-link flex items-center justify-center h-full'>
+                                                <div className="group w-8 hover:w-[85px] bg-bgCard hover:bg-white  duration-300 rounded overflow-hidden border border-borderColorCard flex items-center">
+                                                    <span className="w-8 h-8 flex items-center justify-center  ">
                                                         <img src={delivery} alt="" />
-                                                    </button>
-                                                    <div className='followers absolute w-[50px] h-8 bg-bgCard font-medium text-[11px] rounded-r pr-[6px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Delivery</div>
+                                                    </span>
+                                                    <span className=" w-0 flex items-center  group-hover:w-[40px] duration-300 not-italic  font-normal text-[11px]">
+                                                        Delivery
+                                                    </span>
                                                 </div>
                                                 <div className='w-8 h-8 rounded flex items-center justify-center border border-solid bg-bgCard border-borderColorCard hover:bg-white transition ease-out duration-500'>
                                                     <img src={heart} alt="" />

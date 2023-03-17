@@ -77,19 +77,11 @@ select {
   background-color: #fff;
 }
 
-
-.followers {
-  /* top: -1px; */
-  left: 0;
-  z-index: -30;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all .5s ease-out;
-}
-
-
 .nav-link:hover+.followers {
   left: 31px;
   z-index: 10;
+}
+
+.scroll-to-top {
+  bottom: 100px;
 }

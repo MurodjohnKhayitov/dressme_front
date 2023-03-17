@@ -5,6 +5,7 @@ import BottomHeader from "./bottom";
 import NavMenu from "./nav-menu";
 import './header.css'
 const Header = () => {
+  
   // ----------------NavBar----------------
   const [show, setShow] = useState(true)
   const [scrollPost, setscrollPost] = useState(0)
