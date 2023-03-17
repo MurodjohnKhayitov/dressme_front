@@ -204,7 +204,7 @@ const MediumHeader = () => {
                 <img src={!hamburgerMenu ? close : menu} alt="voice" className={`${close ? 'w-6 h-6' : ''} `} />
 
                 {/*Starting of Opened Hamburger menu section */}
-                <div className={`${!hamburgerMenu ? "hamburger flex flex-col ease-linear duration-500 overscroll-none" : "left-[-1000px] sm:left-[-1000px] ease-linear duration-500"}  top-[62px] left-0 fixed right-0 w-full bg-white z-10 h-full overflow-y-scroll ss:px-[15px] ll:flex-fit`}>
+                <div className={`${!hamburgerMenu ? "hamburger flex flex-col ease-linear duration-500 overscroll-none" : "left-[-450px] ll:-left-[500px] sm:left-[800px] ease-linear duration-500"}  top-[62px] left-0 fixed right-0 w-full bg-white z-10 h-full overflow-y-scroll ss:px-[15px] ll:flex-fit`}>
 
                   {/* Searching section */}
                   <div className="search flex items-center justify-between rounded font-medium h-10 mt-3 mb-3 border border-searchBg ss:mt-3 md:hidden w-full">

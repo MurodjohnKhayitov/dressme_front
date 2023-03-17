@@ -297,8 +297,8 @@ const Footer = () => {
                     top="600"
                     color="#000"
                     component={<MySVG />}
-                    style={{ borderRadius: "50%", width: "48px", height: "48px", border: "1px solid #c1c1c1", backgroundColor: "#F2F2F2" }}
-                    className="bg-bgColor rounded-full mt-[-100px] flex items-center justify-center ss:bottom-[75px] ss:right-[15px] md:bottom-10 md:right-10"/>
+                    style={{ borderRadius: "50%", bottom:70, right:25, width: "48px", height: "48px", border: "1px solid #c1c1c1", backgroundColor: "#fafafa" }}
+                    className="bg-bgColor rounded-full mt-[-100px] flex items-center opacity-70 justify-center ss:bottom-[75px] ss:right-[15px] md:bottom-10 md:right-10"/>
 
             </div>
             <div className='max-w-[1280px] w-[100%]  flex justify-center items-center m-auto'>
