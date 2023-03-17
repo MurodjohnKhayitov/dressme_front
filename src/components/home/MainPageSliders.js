@@ -246,7 +246,7 @@ export default function MainPageSliders() {
                 </Slider>
             </div>
             {/* carosuel hidden bloack */}
-            <div className="w-full h-fit ss:block xs:hidden ss:flex  flex-wrap gap-y-1	 justify-between   	my-5 py-7 ">
+            <div className="w-full h-fit xs:hidden flex  flex-wrap gap-y-1 justify-between  my-0 py-0 md:my-5 md:py-7 ">
                 {
                     carosuelData?.map(data => {
                         return (
