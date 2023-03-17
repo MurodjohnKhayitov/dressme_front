@@ -298,7 +298,7 @@ const Footer = () => {
                     color="#000"
                     component={<MySVG />}
                     style={{ borderRadius: "50%", width: "48px", height: "48px", border: "1px solid #c1c1c1", backgroundColor: "#F2F2F2" }}
-                    className="bg-bgColor rounded-full  mt-[-100px] flex items-center justify-center"/>
+                    className="bg-bgColor rounded-full mt-[-100px] flex items-center justify-center ss:bottom-[75px] ss:right-[15px] md:bottom-10 md:right-10"/>
 
             </div>
             <div className='max-w-[1280px] w-[100%]  flex justify-center items-center m-auto'>
@@ -308,10 +308,10 @@ const Footer = () => {
                         {/* Footer LOGO and Fedback form */}
                         <div className="flex items-center ss:px-4 md:px-0 ">
                             <div className="flex flex-col">
-                                <Link to='#' className="mb-[14px]">
+                                <Link to='#' className="md:mb-[14px]">
                                     <img src={blackBrand} alt="logo" className="ss:w-[85%] ll:w-[90%] sm:w-full" />
                                 </Link>
-                                <div className="text-textColor mb-[18px] text-sm">Торговая площадка одежды</div>
+                                <div className="text-textColor mb-[18px] text-sm hidden md:flex">Торговая площадка одежды</div>
                             </div>
 
                             {/* Address */}
@@ -331,7 +331,7 @@ const Footer = () => {
                                 <span className="text-base font-medium leading-4 ml-[12.5px] mr-[32.37px]">Форма для обратной связи</span>
                                 <img src={arrowBottomRight} alt="arrow-right-black" className="mr-5" />
                             </Link>
-                            <Link to='#' className="flex items-center md:hidden">
+                            <Link to='#' className="flex items-center ml-auto md:hidden">
                                 <img src={homeTrend} alt="" />
                                 <span className="ml-2 font-medium text-sm">Дашборд</span>
                             </Link>
@@ -730,7 +730,7 @@ const Footer = () => {
                         {/* Social networks */}
                         <div className="block  md:hidden">
 
-                            <div className="w-full font-medium cursor-pointer text-base ">
+                            <div className="w-full font-medium cursor-pointer text-base mb-5">
                                 Социальная сеть
                             </div>
 
@@ -828,7 +828,7 @@ const Footer = () => {
                                 </div>
                                 <div className="font-medium text-center mt-3 text-sm block md:hidden">
                                     <span>Designed by</span>
-                                    <Link to='#' className="text-fullBlue border-b border-fullBlue ml-2">Prince.UI</Link>
+                                    <Link to='#' className={`${footerTextWeatherColor} border-b ml-2`}>Prince.UI</Link>
                                 </div>
 
                             </div>
