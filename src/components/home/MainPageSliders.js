@@ -233,8 +233,8 @@ export default function MainPageSliders() {
                                                 </div>
                                             </div>
                                             <div className='h-12.5 flex items-center justify-start'>
-                                                <p className='not-italic font-medium text-base leading-4 text-black mt-3 mr-2   ml-2'>{data?.type || "type"}
-                                                    <span className='not-italic font-normal text-xs leading-4 text-gray-500'>({data?.count || "0"})</span></p>
+                                                <p className='not-italic font-AeonikProMedium text-base leading-4 text-black mt-3 mr-2   ml-2'>{data?.type || "type"}
+                                                    <span className='not-italic font-AeonikProRegular text-xs leading-4 text-gray-500'>({data?.count || "0"})</span></p>
                                             </div>
                                         </div>
                                     )
@@ -257,8 +257,8 @@ export default function MainPageSliders() {
                                             <img className='h-full w-full' src={data?.img} alt="" />
                                         </div>
                                         <div className='w-full py-1 flex items-center'>
-                                            <p className='not-italic  mr-2 font-medium text-sm leading-6 text-black'>{data?.type || "type"}
-                                                <span className='not-italic font-normal text-xs leading-4 text-gray-500'>({data?.count || "0"})</span></p>
+                                            <p className='not-italic  mr-2 font-AeonikProMedium text-sm leading-6 text-black'>{data?.type || "type"}
+                                                <span className='not-italic font-AeonikProRegular text-xs leading-4 text-gray-500'>({data?.count || "0"})</span></p>
                                         </div>
                                     </div>
                                 )
@@ -278,7 +278,7 @@ export default function MainPageSliders() {
                                 data.campany.map(data => {
                                     return (
                                         <div key={data?.id} className='!w-[100%] h-[100px]  rounded-lg bg-btnBgColor flex items-center justify-center select-none border border-solid border-searchBgColor'>
-                                            {/* <p className='w-full h-full flex items-center justify-center not-italic font-medium text-xl leading-6 text-center text-black '>{data?.type || "0"}</p> */}
+                                            {/* <p className='w-full h-full flex items-center justify-center not-italic font-AeonikProMedium text-xl leading-6 text-center text-black '>{data?.type || "0"}</p> */}
                                             <div className=' h-full flex items-center justify-center px-[35px]'>
                                                 <img className='h-[70px] w-[80%] ' src={data?.imgFull} alt="" />
                                             </div>
@@ -304,10 +304,10 @@ export default function MainPageSliders() {
                                 {/* 1 */}
                                 <div className={`lg:w-[305px]  sm:w-[47%] ss:w-[100%] ss:h-20 py-[20px] px-[16px] xs:h-[100px] bg-btnBgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-searchBgColor `}>
                                     <div className='w-full'>
-                                        <p className={`not-italic font-normal ss:text-sm xs:text-base leading-4 text-black `}>Strengthen Health</p>
+                                        <p className={`not-italic font-AeonikProRegular ss:text-sm xs:text-base leading-4 text-black `}>Strengthen Health</p>
                                     </div>
                                     <div className='w-full flex justify-between items-center'>
-                                        <p className='nnot-italic font-medium text-xl leading-6 text-black'>Sports clothes</p>
+                                        <p className='nnot-italic font-AeonikProMedium text-xl leading-6 text-black'>Sports clothes</p>
                                         <p><img src={data?.imgFull} alt="next" className='ss:w-[70%] xs:w-[100%]' /></p>
                                     </div>
                                 </div>
@@ -315,10 +315,10 @@ export default function MainPageSliders() {
 
                                 <div className='lg:w-[305px] sm:w-[47%] ss:w-[100%] ss:h-20 xs:h-[100px] py-[20px] px-[16px] bg-btnBgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-searchBgColor'>
                                     <div className='w-full'>
-                                        <p className='not-italic font-normal ss:text-sm xs:text-base leading-4 text-black'>Based on your Interests</p>
+                                        <p className='not-italic font-AeonikProRegular ss:text-sm xs:text-base leading-4 text-black'>Based on your Interests</p>
                                     </div>
                                     <div className='w-full flex justify-between items-center'>
-                                        <p className='not-italic font-medium text-xl leading-6 text-black'>Muslim clothes</p>
+                                        <p className='not-italic font-AeonikProMedium text-xl leading-6 text-black'>Muslim clothes</p>
                                         <p><img src={data?.imgFull} alt="next" className='ss:w-[70%] xs:w-[100%]' /></p>
                                     </div>
                                 </div>
@@ -326,10 +326,10 @@ export default function MainPageSliders() {
 
                                 <div className='lg:w-[305px] sm:w-[47%] ss:w-[100%] ss:h-20 xs:h-[100px] py-[20px] px-[16px] bg-btnBgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-searchBgColor'>
                                     <div className='w-full'>
-                                        <p className='not-italic font-normal ss:text-sm xs:text-base leading-4 text-black'>Sort by your Money</p>
+                                        <p className='not-italic font-AeonikProRegular ss:text-sm xs:text-base leading-4 text-black'>Sort by your Money</p>
                                     </div>
                                     <div className='w-full flex justify-between items-center'>
-                                        <p className='flex items-end'><span className='not-italic font-normal text-base text-gray-500 mr-2'>ниже</span><span className='not-italic font-medium text-xl leading-6 text-black'>40$</span><span><img src={arrowBottomFull} alt="arrowBottomFull" /></span></p>
+                                        <p className='flex items-end'><span className='not-italic font-AeonikProRegular text-base text-gray-500 mr-2'>ниже</span><span className='not-italic font-AeonikProMedium text-xl leading-6 text-black'>40$</span><span><img src={arrowBottomFull} alt="arrowBottomFull" /></span></p>
                                         <p><img src={data?.imgFull} alt="next" className='ss:w-[70%] xs:w-[100%]' /></p>
                                     </div>
                                 </div>
@@ -337,10 +337,10 @@ export default function MainPageSliders() {
 
                                 <div className='lg:w-[305px] sm:w-[47%] ss:w-[100%] ss:h-20 xs:h-[100px] py-[20px] px-[16px] bg-btnBgColor rounded-lg  flex flex-wrap content-between cursor-pointer select-none border border-solid	border-searchBgColor'>
                                     <div className='w-full'>
-                                        <p className='not-italic font-normal ss:text-sm xs:text-base leading-4 text-black'>Магазины ближе к вам</p>
+                                        <p className='not-italic font-AeonikProRegular ss:text-sm xs:text-base leading-4 text-black'>Магазины ближе к вам</p>
                                     </div>
                                     <div className='w-full flex justify-between items-center'>
-                                        <p className='flex mr-2 items-center'><span><img src={markets} alt="arrowBottomFull" className='mr-2' /></span><span className='not-italic font-medium ss:tex-tlg ll:text-xl leading-6 text-black'>Найти магазина</span></p>
+                                        <p className='flex mr-2 items-center'><span><img src={markets} alt="arrowBottomFull" className='mr-2' /></span><span className='not-italic font-AeonikProMedium ss:tex-tlg ll:text-xl leading-6 text-black'>Найти магазина</span></p>
                                         <p><img src={data?.imgFull} alt="next" /></p>
                                     </div>
                                 </div>

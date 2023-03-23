@@ -35,6 +35,14 @@ export default function CollectionCards() {
       shirtSize: "M | 3XL",
       sale: "258.000",
       price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
     {
       id: 2,
@@ -47,11 +55,18 @@ export default function CollectionCards() {
         "https://images.uzum.uz/cfvjvm7hj8j9g698q1qg/t_product_540_high.jpg#1677854670118",
       noProductImg: cardImg,
       title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-
       starCount: 256,
       shirtSize: "M | 3XL",
       sale: "258.000",
       price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
     {
       id: 3,
@@ -69,6 +84,14 @@ export default function CollectionCards() {
       shirtSize: "M | 3XL",
       sale: "",
       price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
     {
       id: 4,
@@ -86,6 +109,14 @@ export default function CollectionCards() {
       shirtSize: "M | 3XL",
       sale: "258.000",
       price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
     {
       id: 5,
@@ -103,6 +134,14 @@ export default function CollectionCards() {
       shirtSize: "M | 3XL",
       sale: "258.000",
       price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
     {
       id: 6,
@@ -120,6 +159,14 @@ export default function CollectionCards() {
       shirtSize: "M | 3XL",
       sale: "258.000",
       price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
     {
       id: 7,
@@ -137,6 +184,14 @@ export default function CollectionCards() {
       shirtSize: "M | 3XL",
       sale: "258.000",
       price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
     {
       id: 8,
@@ -154,6 +209,14 @@ export default function CollectionCards() {
       shirtSize: "M | 3XL",
       sale: "258.000",
       price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
     {
       id: 9,
@@ -171,6 +234,14 @@ export default function CollectionCards() {
       shirtSize: "M | 3XL",
       sale: "15.000",
       price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
     {
       id: 10,
@@ -188,6 +259,14 @@ export default function CollectionCards() {
       shirtSize: "M | 3XL",
       sale: "258.000",
       price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
     {
       id: 11,
@@ -205,6 +284,14 @@ export default function CollectionCards() {
       shirtSize: "M | 3XL",
       sale: "",
       price: "75.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
     {
       id: 12,
@@ -222,6 +309,14 @@ export default function CollectionCards() {
       shirtSize: "M | 3XL",
       sale: "258.000",
       price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
     {
       id: 13,
@@ -239,6 +334,14 @@ export default function CollectionCards() {
       shirtSize: "M | 3XL",
       sale: "258.000",
       price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
     {
       id: 14,
@@ -256,6 +359,14 @@ export default function CollectionCards() {
       shirtSize: "M | 3XL",
       sale: "",
       price: "140.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
     {
       id: 15,
@@ -273,6 +384,14 @@ export default function CollectionCards() {
       shirtSize: "M | 3XL",
       sale: "",
       price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" }
+      ]
     },
   ]);
   const [dressInfo, setDressInfo] = useContext(dressMainData);
@@ -295,54 +414,100 @@ export default function CollectionCards() {
     shadowStyle = "hover:shadow-sky-200/100  ";
   }
 
-  const [changeColor, setChangeColor] = useState([
-    { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-    { id: 2, value: 2, action: false, colors: "bg-green-600" },
-    { id: 3, value: 3, action: false, colors: "bg-red-700" },
-    { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-    { id: 5, value: 5, action: false, colors: "bg-black" },
-    { id: 6, value: 6, action: false, colors: "bg-sky-500" },
-  ]);
-  const handleGetChecked = (info) => {
-    const newState = changeColor.map((obj) => {
-      if (obj.id === info) {
-        if (obj.action) {
-          return { ...obj, action: false };
-        } else {
-          return { ...obj, action: true };
-        }
-      }
-      return obj;
-    });
-    setChangeColor(newState);
-  };
+
+  const [handleChecked, setHandleChecked] = useState(null)
+
+  const handleGetCardId = (data) => {
+    // setProductList(current => {
+    //   current?.filter(data => data.id == data)?.map(value => {
+    //     value?.changeColor?.map(item => {
+    //       if (item?.id == handleChecked) {
+    //         return { ...item, action: true }
+    //       }
+    //       return item
+
+    //     })
+
+    //   }
+    //   )
+    // })
+
+    // setProductList(current => {...current, changeColor: {
+    //   ...current.changeColor, action: true
+    // }}
+    // )
+    // productList?.filter(value => value.id == data)?.map(item => {
+    //   setProductList({
+    //     changeColor: item?.changeColor?.map(obj => {
+    //       if (obj?.id == handleChecked) {
+    //         return { ...obj, action: true }
+    //       }
+    //     })
+    //   })
+
+    // })
+    // console.log(data, "datadata");
+  }
+
+  // const handleGetCardId = (data) => {
+  //   productList?.filter(value => value.id == data)?.map(item => {
+  //     const newState = item?.changeColor?.map(obj => {
+  //       if (obj?.id == handleChecked) {
+  //         if (obj?.action) {
+  //           return { ...obj, action: false }
+  //         } else {
+  //           return { ...obj, action: true }
+  //         }
+  //       }
+  //       return obj
+  //     })
+  //     setProductList({ changeColor: newState })
+  //   })
+  //   console.log(data, "datadata");
+  // }
+  // const handleGetChecked = (info) => {
+  //   console.log(info, "infoID");
+  // const newState = changeColor.map((obj) => {
+  //   if (obj.id === info) {
+  //     if (obj.action) {
+  //       return { ...obj, action: false };
+  //     } else {
+  //       return { ...obj, action: true };
+  //     }
+  //   }
+  //   return obj;
+  // });
+  // setChangeColor(newState);
+  // };
 
   return (
     <div className="flex flex-col box-border mt-[86px]">
       {/* <div className='max-w-[1440px] m-auto h-fit md:px-[80px]  sm:px-[50px] ss:px-[16px] pt-16 pb-4 '> */}
       <div className="w-full ss:block sm:flex justify-between items-center mb-[25px] md:mb-0 md:px-0">
-        <div className="not-italic font-medium lg:w-fit lg:text-2xl xl:text-3xl flex items-center leading-8 text-black">
+        <div className="not-italic font-AeonikProMedium lg:w-fit lg:text-2xl xl:text-3xl flex items-center leading-8 text-black">
           <span>Коллекция одежд, которые вам подходят</span>
         </div>
         <div className="rounded  h-[42px] md:h-[52px] ss:w-full md:w-[308px] md:mx-0 flex justify-between bg-slate-50 border border-solid ss:mt-5 md:mt-0 mx-auto ">
           <button
-            className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded ${dataStyle}`}
+            className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-AeonikProRegular not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded ${dataStyle}`}
           >
             {" "}
             Одежда
           </button>
           <button
-            className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded ${dataStyle}`}
+            className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-AeonikProRegular not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded ${dataStyle}`}
           >
             Образы
           </button>
         </div>
       </div>
+
       <div className="flex justify-between flex-wrap  md:mx-0 md:mt-[50px] gap-y-5 lg:gap-y-5 ">
         {productList.map((data) => {
           return (
             <div
               key={data.id}
+              onClick={() => handleGetCardId(data?.id)}
               className={` ss:w-[48%] md:w-[24%] lg:w-[240px] transition ease-in-out delay-50 hover:shadow-lg ${shadowStyle} summer xs:h-[456px] lg:h-[440px] border border-solid borderColorCard overflow-hidden rounded-lg`}
             >
               <div className="relative w-full cursor-pointer ss:h-[206px] xs:h-[309px] lg:h-[320px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap">
@@ -365,15 +530,15 @@ export default function CollectionCards() {
                       <span className="w-8 h-8 flex items-center justify-center  ">
                         <img src={discount} alt="" />
                       </span>
-                      <span className=" w-0 flex items-center -mr-[1px] group-hover:w-10 duration-300  text-red-700 not-italic  font-normal text-[11px]">
-                         -30%
+                      <span className=" w-0 flex items-center -mr-[1px] group-hover:w-10 duration-300  text-red-700 not-italic  font-AeonikProRegular text-[11px]">
+                        -30%
                       </span>
                     </p>
                     <p className="group w-8 hover:w-[70px] bg-bgCard hover:bg-white  duration-300 rounded overflow-hidden border border-borderColorCard flex items-center">
                       <span className="w-8 h-8 flex items-center justify-center">
                         <img src={video} alt="" />
                       </span>
-                      <span className=" w-0 flex items-center -mr-[1px] group-hover:w-10 duration-300 not-italic  font-normal text-[11px]">
+                      <span className=" w-0 flex items-center -mr-[1px] group-hover:w-10 duration-300 not-italic  font-AeonikProRegular text-[11px]">
                         Video
                       </span>
                     </p>
@@ -381,7 +546,7 @@ export default function CollectionCards() {
                       <span className="w-8 h-8 flex items-center justify-center  ">
                         <img src={delivery} alt="" />
                       </span>
-                      <span className=" w-0 flex items-center  group-hover:w-[40px] duration-300 not-italic  font-normal text-[11px]">
+                      <span className=" w-0 flex items-center  group-hover:w-[40px] duration-300 not-italic  font-AeonikProRegular text-[11px]">
                         Delivery
                       </span>
                     </p>
@@ -398,24 +563,17 @@ export default function CollectionCards() {
                 </div>
 
                 <div className="absolute w-full flex justify-between items-center px-1 bottom-0 border-solid xs:h-[38px] lg:h-8 ss:h-[30px] xs:px-2 md:px-4 bg-white hover:backdrop-brightness-125 hover:bg-white/60 transition ease-out duration-500">
-                  {changeColor.map((data) => {
+                  {data?.changeColor.map((itemValue) => {
                     return (
-                      <label
-                        onClick={() => handleGetChecked(data?.id)}
-                        className={`rounded-full flex items-center justify-center  ls:w-[22px] ls:h-[22px] w-5 h-5 lg:w-6 lg:h-6 ${data?.colors} cursor-pointer  border border-solid	border-borderColorCard mr-[3px]`}
+                      <div
+                        onClick={() => setHandleChecked(itemValue?.id)}
+                        className={`rounded-full flex items-center justify-center  ls:w-[22px] ls:h-[22px] w-5 h-5 lg:w-6 lg:h-6 ${itemValue?.colors} cursor-pointer  border border-solid	border-borderColorCard mr-[3px]`}
                         htmlFor="Color1"
                       >
-                        {data?.action ? (
+                        {itemValue?.action ? (
                           <BsCheck2Square size={15} className="text-white" />
                         ) : null}
-                        <input
-                          className="hidden"
-                          type="radio"
-                          id="Color1"
-                          name="colors"
-                          value="1"
-                        />
-                      </label>
+                      </div>
                     );
                   })}
                 </div>
@@ -432,8 +590,8 @@ export default function CollectionCards() {
                         <img src={star} alt="" />
                       </span>
                       {/* <span><img src={} alt=""/></span> */}
-                      <span className="not-italic font-normal text-[10px] ls:text-xs leading-4 text-right text-gray-500 ml-[2px] md:ml-1 flex items-center">
-                        <span className="font-medium text-[10px] ls:text-xs not-italic mx-1 text-black md:mr-[6px] md:text-[13px]">
+                      <span className="not-italic font-AeonikProRegular text-[10px] ls:text-xs leading-4 text-right text-gray-500 ml-[2px] md:ml-1 flex items-center">
+                        <span className="font-AeonikProMedium text-[10px] ls:text-xs not-italic mx-1 text-black md:mr-[6px] md:text-[13px]">
                           5.0{" "}
                         </span>
                         ({data?.starCount || 0}{" "}
@@ -443,7 +601,7 @@ export default function CollectionCards() {
                         )
                       </span>
                     </div>
-                    <div className="not-italic xs:font-medium ss:font-normal leading-4 text-black  ss:text-[11px] sm:text-xs  md:text-[13px] ">
+                    <div className="not-italic xs:font-AeonikProMedium ss:font-AeonikProRegular leading-4 text-black  ss:text-[11px] sm:text-xs  md:text-[13px] ">
                       <b>
                         <span>{data?.shirtSize || 0}</span>
                       </b>
@@ -454,16 +612,16 @@ export default function CollectionCards() {
                   <div>
                     {data.sale ? (
                       <div className="flex ss:flex-col-reverse md:flex-row	text-start items-start ">
-                        <div className="text-start m-0 p-0  not-italic font-medium text-[18px] md:text-base leading-1 text-red-700 xs:text-base xs:leading-4 mr-1">
+                        <div className="text-start m-0 p-0  not-italic font-AeonikProMedium text-[18px] md:text-base leading-1 text-red-700 xs:text-base xs:leading-4 mr-1">
                           {data?.sale}
                         </div>
-                        <div className="text-start m-0 p-0 text-[12px] mt-[8px]  line-through not-italic font-normal leading-3  text-borderColorCard ss:leading-1 md:text-[11px]">
+                        <div className="text-start m-0 p-0 text-[12px] mt-[8px]  line-through not-italic font-AeonikProRegular leading-3  text-borderColorCard ss:leading-1 md:text-[11px]">
                           {data?.price}
                         </div>
                       </div>
                     ) : (
                       <p
-                        className="not-italic font-medium text-base leading-4"
+                        className="not-italic font-AeonikProMedium text-base leading-4"
                         style={{ color: "black" }}
                       >
                         {data?.price}{" "}
@@ -492,7 +650,7 @@ export default function CollectionCards() {
       </div>
       <div className="w-[100%] h-fit flex flex-col justify-center xs:mt-14">
         <div className="md:w-1/2 xs:w-[80%] m-auto h-[60px] text-center py-5 rounded cursor-pointer  ss:hidden xs:block  bg-bgColor border border-solid border-borderColorCard">
-          <span className="not-italic font-medium text-base leading-4 text-center text-black">
+          <span className="not-italic font-AeonikProMedium text-base leading-4 text-center text-black">
             Показать ещё 20 товаров
           </span>
         </div>
@@ -503,7 +661,7 @@ export default function CollectionCards() {
 }
 
 
-// {/* 
+// {/*
 // <li className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
 
 // {/* <li className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
@@ -511,12 +669,12 @@ export default function CollectionCards() {
 // <Link href="#" className='w-8 nav-link flex items-center justify-center h-full'>
 //     <img src={video} alt="" />
 // </Link>
-// <div className='followers absolute bg-bgCard w-[40px] h-8 font-medium rounded-r pr-[6px] text-[11px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Video</div>
+// <div className='followers absolute bg-bgCard w-[40px] h-8 font-AeonikProMedium rounded-r pr-[6px] text-[11px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Video</div>
 // </li>
 
 // <li className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
 // <Link href="#" className='nav-link flex items-center justify-center h-full'>
 //     <img src={delivery} alt="" />
 // </Link>
-// <div className='followers absolute w-[50px] h-8 bg-bgCard font-medium text-[11px] rounded-r pr-[6px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Delivery</div>
+// <div className='followers absolute w-[50px] h-8 bg-bgCard font-AeonikProMedium text-[11px] rounded-r pr-[6px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Delivery</div>
 // </li> */}

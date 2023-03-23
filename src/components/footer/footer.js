@@ -135,7 +135,7 @@ const Footer = () => {
                                 handlePriceValueFooter(data?.type)
                             }
                             }
-                            className={`w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-medium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
+                            className={`w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
                     )
                 })
             }
@@ -172,7 +172,7 @@ const Footer = () => {
                                 handleRegionValueFooter(data?.type)
                             }
                             }
-                            className={`w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-medium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
+                            className={`w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
                     )
                 })
             }
@@ -208,7 +208,7 @@ const Footer = () => {
                                 handleRegionValueMobile(data?.type)
                             }
                             }
-                            className={`w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-medium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
+                            className={`w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
                     )
                 })
             }
@@ -246,7 +246,7 @@ const Footer = () => {
                             }
                         >
                             <span className="mr-1"><img src={data?.icons} alt="" /></span>
-                            <span className="not-italic font-normal text-sm leading-4 text-black">{data?.type}</span>
+                            <span className="not-italic font-AeonikProRegular text-sm leading-4 text-black">{data?.type}</span>
                         </div>)
                 })
             }
@@ -282,7 +282,7 @@ const Footer = () => {
                             }}
                         >
                             <span className="mr-1"><img src={data?.icons} alt="" /></span>
-                            <span className={`not-italic font-normal text-sm leading-4 text-black ${dataStyle}`}>{data?.type}</span>
+                            <span className={`not-italic font-AeonikProRegular text-sm leading-4 text-black ${dataStyle}`}>{data?.type}</span>
                         </div>)
                 })}
         </div>
@@ -321,19 +321,19 @@ const Footer = () => {
                                     <div className="border border-searchBgColor flex items-center justify-center rounded mr-3 w-24 h-12 ss:bg-white md:bg-transparent">
                                         <img src={location} alt="location" />
                                     </div>
-                                    <div className="font-normal text-sm underline underline-offset-4">Мирзо-Улугбекский район, проспект Амира Темура, 60 - Ташкент, 100017</div>
+                                    <div className="font-AeonikProRegular text-sm underline underline-offset-4">Мирзо-Улугбекский район, проспект Амира Темура, 60 - Ташкент, 100017</div>
                                 </div>
                             </div>
 
 
                             <Link to="#" className="hidden items-center bg-bgColor pl-16 py-[15px] border border-searchBgColor rounded ml-auto md:flex">
                                 <img src={feedbackIcon} alt="" />
-                                <span className="text-base font-medium leading-4 ml-[12.5px] mr-[32.37px]">Форма для обратной связи</span>
+                                <span className="text-base font-AeonikProMedium leading-4 ml-[12.5px] mr-[32.37px]">Форма для обратной связи</span>
                                 <img src={arrowBottomRight} alt="arrow-right-black" className="mr-5" />
                             </Link>
                             <Link to='#' className="flex items-center ml-auto md:hidden">
                                 <img src={homeTrend} alt="" />
-                                <span className="ml-2 font-medium text-sm">Дашборд</span>
+                                <span className="ml-2 font-AeonikProMedium text-sm">Дашборд</span>
                             </Link>
 
                         </div>
@@ -345,7 +345,7 @@ const Footer = () => {
                                 <div className="border border-searchBgColor flex items-center justify-center rounded mr-3 w-24 h-12 ss:bg-white md:bg-transparent">
                                     <img src={location} alt="location" />
                                 </div>
-                                <div className="font-normal text-sm underline underline-offset-4">Мирзо-Улугбекский район, проспект Амира Темура, 60 - Ташкент, 100017</div>
+                                <div className="font-AeonikProRegular text-sm underline underline-offset-4">Мирзо-Улугбекский район, проспект Амира Темура, 60 - Ташкент, 100017</div>
                             </div>
                         </div>
 
@@ -355,13 +355,13 @@ const Footer = () => {
                             {/* Categories */}
                             <div className="md:w-1/5">
 
-                                <div className="font-medium w-fit text-base cursor-pointer ss:mb-4 md:mb-[30px]">
+                                <div className="font-AeonikProMedium w-fit text-base cursor-pointer ss:mb-4 md:mb-[30px]">
                                     Категории
                                 </div>
                                 {
                                     PersonTypeArray?.filter(data => data.id == dressInfo.type).map(data => {
                                         return (
-                                            <ul key={data?.id} className="text-sm font-normal">
+                                            <ul key={data?.id} className="text-sm font-AeonikProRegular">
                                                 <li className="ss:mb-1 md:mb-4">
                                                     <Link to='#' className="flex items-center">
                                                         <img src={data?.man} alt="" className="ml-[2px]" />
@@ -402,37 +402,37 @@ const Footer = () => {
                             {/* Menu */}
                             <div className="md:w-3/5 ">
 
-                                <div className="font-medium w-fit cursor-pointer text-base ss:mb-2 md:mb-[30px]">Меню</div>
+                                <div className="font-AeonikProMedium w-fit cursor-pointer text-base ss:mb-2 md:mb-[30px]">Меню</div>
                                 <ul className="flex flex-row text-sm">
                                     <div className="basis-1/3">
                                         <li className="ss:mb-1 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <img src={error} alt="" />
-                                                <span className="font-normal ml-2">О нас</span>
+                                                <span className="font-AeonikProRegular ml-2">О нас</span>
                                             </Link>
                                         </li>
                                         <li className="ss:mb-1 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <img src={adduser} alt="" />
-                                                <span className="font-normal ml-2">Вакансия</span>
+                                                <span className="font-AeonikProRegular ml-2">Вакансия</span>
                                             </Link>
                                         </li>
                                         <li className="ss:mb-1 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <img src={list} alt="" />
-                                                <span className="font-normal ml-2">Наш блог</span>
+                                                <span className="font-AeonikProRegular ml-2">Наш блог</span>
                                             </Link>
                                         </li>
                                         <li className="ss:mb-1 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <img src={categoryContact} alt="" />
-                                                <span className="font-normal ml-2">Каталог</span>
+                                                <span className="font-AeonikProRegular ml-2">Каталог</span>
                                             </Link>
                                         </li>
                                         <li className="ss:mb-1 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <img src={maps} alt="" />
-                                                <span className="font-normal ml-2">Карта сайта</span>
+                                                <span className="font-AeonikProRegular ml-2">Карта сайта</span>
                                             </Link>
                                         </li>
                                     </div>
@@ -440,31 +440,31 @@ const Footer = () => {
                                         <li className="ss:mb-1 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <img src={shop} alt="" />
-                                                <span className="font-normal ml-2">Магазины</span>
+                                                <span className="font-AeonikProRegular ml-2">Магазины</span>
                                             </Link>
                                         </li>
                                         <li className="ss:mb-1 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <img src={homeTrend} alt="" />
-                                                <span className="font-normal ml-2">Бизнес</span>
+                                                <span className="font-AeonikProRegular ml-2">Бизнес</span>
                                             </Link>
                                         </li>
                                         <li className="ss:mb-1 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <img src={map} alt="" />
-                                                <span className="font-normal ml-2">Карта</span>
+                                                <span className="font-AeonikProRegular ml-2">Карта</span>
                                             </Link>
                                         </li>
                                         <li className="ss:mb-1 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <img src={list} alt="" />
-                                                <span className="font-normal ml-2">Мои заказы</span>
+                                                <span className="font-AeonikProRegular ml-2">Мои заказы</span>
                                             </Link>
                                         </li>
                                         <li className="ss:mb-1 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <img src={privateCheck} alt="" />
-                                                <span className="font-normal ml-2">Политика конфиденциальности</span>
+                                                <span className="font-AeonikProRegular ml-2">Политика конфиденциальности</span>
                                             </Link>
                                         </li>
                                     </div>
@@ -472,19 +472,19 @@ const Footer = () => {
                                         <li className="ss:mb-1 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <img src={homeTrend} alt="" />
-                                                <span className="font-normal ml-2">Дашборд</span>
+                                                <span className="font-AeonikProRegular ml-2">Дашборд</span>
                                             </Link>
                                         </li>
                                         <li className="ss:mb-1 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <img src={message} alt="" />
-                                                <span className="font-normal ml-2">Помощь</span>
+                                                <span className="font-AeonikProRegular ml-2">Помощь</span>
                                             </Link>
                                         </li>
                                         <li className="ss:mb-1 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <img src={call} alt="" />
-                                                <span className="font-normal ml-2">Контакты</span>
+                                                <span className="font-AeonikProRegular ml-2">Контакты</span>
                                             </Link>
                                         </li>
                                     </div>
@@ -494,7 +494,7 @@ const Footer = () => {
                             {/* Social networks */}
                             <div className="md:basis-1/5">
 
-                                <div className="font-medium w-fit cursor-pointer text-base ss:mb-2 md:mb-[30px]">
+                                <div className="font-AeonikProMedium w-fit cursor-pointer text-base ss:mb-2 md:mb-[30px]">
                                     Социальная сеть
                                 </div>
 
@@ -503,31 +503,31 @@ const Footer = () => {
                                         <li className="ss:mb-2 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <FiInstagram className="text-[20px]" />
-                                                <span className="font-normal ml-2">Instagram</span>
+                                                <span className="font-AeonikProRegular ml-2">Instagram</span>
                                             </Link>
                                         </li>
                                         <li className="ss:mb-2 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <RiFacebookCircleLine className="text-[20px]" />
-                                                <span className="font-normal ml-2">Facebook</span>
+                                                <span className="font-AeonikProRegular ml-2">Facebook</span>
                                             </Link>
                                         </li>
                                         <li className="ss:mb-2 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <RiMessengerLine className="text-[20px]" />
-                                                <span className="font-normal ml-2">Message</span>
+                                                <span className="font-AeonikProRegular ml-2">Message</span>
                                             </Link>
                                         </li>
                                         <li className="ss:mb-2 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <TbBrandTelegram className="text-[20px]" />
-                                                <span className="font-normal ml-2">Telegram</span>
+                                                <span className="font-AeonikProRegular ml-2">Telegram</span>
                                             </Link>
                                         </li>
                                         <li className="ss:mb-2 md:mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <AiOutlineYoutube className="text-[20px]" />
-                                                <span className="font-normal ml-2  ss:text-sm md:text-base">You Tube</span>
+                                                <span className="font-AeonikProRegular ml-2  ss:text-sm md:text-base">You Tube</span>
                                             </Link>
                                         </li>
                                     </ul>
@@ -542,38 +542,38 @@ const Footer = () => {
                             {/* Menu */}
                             <div className="basis-1/2 ">
 
-                                <div className="font-medium w-fit cursor-pointer ss:mb-4 md:mb-[30px]">
+                                <div className="font-AeonikProMedium w-fit cursor-pointer ss:mb-4 md:mb-[30px]">
                                     Меню
                                 </div>
                                 <ul className="text-sm">
                                     <li className="mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={error} alt="" />
-                                            <span className="font-normal ml-2">О нас</span>
+                                            <span className="font-AeonikProRegular ml-2">О нас</span>
                                         </Link>
                                     </li>
                                     <li className="mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={adduser} alt="" />
-                                            <span className="font-normal ml-2">Вакансия</span>
+                                            <span className="font-AeonikProRegular ml-2">Вакансия</span>
                                         </Link>
                                     </li>
                                     <li className="mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={list} alt="" />
-                                            <span className="font-normal ml-2">Наш блог</span>
+                                            <span className="font-AeonikProRegular ml-2">Наш блог</span>
                                         </Link>
                                     </li>
                                     <li className="mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={categoryContact} alt="" />
-                                            <span className="font-normal ml-2">Каталог</span>
+                                            <span className="font-AeonikProRegular ml-2">Каталог</span>
                                         </Link>
                                     </li>
                                     <li className="mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={maps} alt="" />
-                                            <span className="font-normal ml-2">Карта сайта</span>
+                                            <span className="font-AeonikProRegular ml-2">Карта сайта</span>
                                         </Link>
                                     </li>
 
@@ -583,13 +583,13 @@ const Footer = () => {
                             {/* Categories */}
                             <div className="basis-1/2 pl-4">
 
-                                <div className="font-medium w-fit cursor-pointer ss:mb-4 md:mb-[30px]">
+                                <div className="font-AeonikProMedium w-fit cursor-pointer ss:mb-4 md:mb-[30px]">
                                     Категории
                                 </div>
                                 {
                                     PersonTypeArray?.filter(data => data.id == dressInfo?.type).map(data => {
                                         return (
-                                            <ul key={data?.id} className="text-sm font-normal">
+                                            <ul key={data?.id} className="text-sm font-AeonikProRegular">
                                                 <li className="mb-[14px] md:mb-4">
                                                     <Link to='#' className="flex items-center">
                                                         <img src={data?.man} alt="" className="ml-[2px]" />
@@ -631,7 +631,7 @@ const Footer = () => {
                         {/* Feedback for mobile */}
                         <Link to="#" className="flex items-center bg-bgColor pl-3 py-[15px] border border-searchBgColor rounded ss:my-[35px] md:my-0 ls:pl-6 md:pl-16 md:mb-0 md:hidden">
                             <img src={feedbackIcon} alt="" />
-                            <span className="text-base font-medium leading-4 ml-[12.5px] mr-2 ls:mr-6 md:mr-[32.37px]">Форма для обратной связи</span>
+                            <span className="text-base font-AeonikProMedium leading-4 ml-[12.5px] mr-2 ls:mr-6 md:mr-[32.37px]">Форма для обратной связи</span>
                             <img src={arrowBottomRight} alt="arrow-right-black" className="mr-2 ls:mr-3 md:mr-5" />
                         </Link>
 
@@ -643,31 +643,31 @@ const Footer = () => {
                                     <li className="mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={shop} alt="" />
-                                            <span className="font-normal ml-2">Магазины</span>
+                                            <span className="font-AeonikProRegular ml-2">Магазины</span>
                                         </Link>
                                     </li>
                                     <li className="mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={homeTrend} alt="" />
-                                            <span className="font-normal ml-2">Бизнес</span>
+                                            <span className="font-AeonikProRegular ml-2">Бизнес</span>
                                         </Link>
                                     </li>
                                     <li className="mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={map} alt="" />
-                                            <span className="font-normal ml-2">Карта</span>
+                                            <span className="font-AeonikProRegular ml-2">Карта</span>
                                         </Link>
                                     </li>
                                     <li className="mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={list} alt="" />
-                                            <span className="font-normal ml-2">Мои заказы</span>
+                                            <span className="font-AeonikProRegular ml-2">Мои заказы</span>
                                         </Link>
                                     </li>
                                     <li className="mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={privateCheck} alt="" />
-                                            <span className="font-normal ml-2">Политика конфиденциальности</span>
+                                            <span className="font-AeonikProRegular ml-2">Политика конфиденциальности</span>
                                         </Link>
                                     </li>
                                 </div>
@@ -675,13 +675,13 @@ const Footer = () => {
                                     <li className="mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={message} alt="" />
-                                            <span className="font-normal ml-2">Помощь</span>
+                                            <span className="font-AeonikProRegular ml-2">Помощь</span>
                                         </Link>
                                     </li>
                                     <li className="mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={call} alt="" />
-                                            <span className="font-normal ml-2">Контакты</span>
+                                            <span className="font-AeonikProRegular ml-2">Контакты</span>
                                         </Link>
                                     </li>
                                 </div>
@@ -701,7 +701,7 @@ const Footer = () => {
                                 placement="bottom"
                                 content={contentMobile} >
                                 <img src={location} alt="" />
-                                <span className="not-italic font-medium text-sm leading-4 text-black">{selectRegionMobile}</span>
+                                <span className="not-italic font-AeonikProMedium text-sm leading-4 text-black">{selectRegionMobile}</span>
                                 <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openRegionMobile ? "rotate-[-180deg]" : ""}`} />
                             </Popover>
                             {/* </Link> */}
@@ -718,7 +718,7 @@ const Footer = () => {
                                             placement="bottom"
                                             content={contentLanguageMobile} >
                                             <span className="mr-1"><img src={data?.icons} alt="" /></span>
-                                            <span className="text-sm font-medium not-italic">{data?.type}</span>
+                                            <span className="text-sm font-AeonikProMedium not-italic">{data?.type}</span>
                                             <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openLanguageMobile ? "rotate-[-180deg]" : ""}`} />
 
                                         </Popover>
@@ -730,7 +730,7 @@ const Footer = () => {
                         {/* Social networks */}
                         <div className="block  md:hidden">
 
-                            <div className="w-full font-medium cursor-pointer text-base mb-5">
+                            <div className="w-full font-AeonikProMedium cursor-pointer text-base mb-5">
                                 Социальная сеть
                             </div>
 
@@ -740,19 +740,19 @@ const Footer = () => {
                                         <li className="mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <FiInstagram className="text-[20px]" />
-                                                <span className="font-normal ml-2">Instagram</span>
+                                                <span className="font-AeonikProRegular ml-2">Instagram</span>
                                             </Link>
                                         </li>
                                         <li className="mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <RiFacebookCircleLine className="text-[20px]" />
-                                                <span className="font-normal ml-2">Facebook</span>
+                                                <span className="font-AeonikProRegular ml-2">Facebook</span>
                                             </Link>
                                         </li>
                                         <li className="mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <RiMessengerLine className="text-[20px]" />
-                                                <span className="font-normal ml-2">Message</span>
+                                                <span className="font-AeonikProRegular ml-2">Message</span>
                                             </Link>
                                         </li>
                                     </div>
@@ -760,13 +760,13 @@ const Footer = () => {
                                         <li className="mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <TbBrandTelegram className="text-[20px]" />
-                                                <span className="font-normal ml-2">Telegram</span>
+                                                <span className="font-AeonikProRegular ml-2">Telegram</span>
                                             </Link>
                                         </li>
                                         <li className="mb-4">
                                             <Link to='#' className="flex items-center">
                                                 <AiOutlineYoutube className="text-[20px]" />
-                                                <span className="font-normal ml-2  ss:text-sm md:text-base">You Tube</span>
+                                                <span className="font-AeonikProRegular ml-2  ss:text-sm md:text-base">You Tube</span>
                                             </Link>
                                         </li>
                                     </div>
@@ -785,10 +785,10 @@ const Footer = () => {
                         <div className="mb-[60px]">
                             {/* Catalog Types */}
                             <div className="w-full block mb-7 md:block">
-                                <div className="text-base font-medium mb-5 flex">Каталоги одежды</div>
+                                <div className="text-base font-AeonikProMedium mb-5 flex">Каталоги одежды</div>
                                 <ul className="flex flex-row items-center flex-wrap">
                                     {catalogTypes.map((catalog, index) => (
-                                        <li key={index} className="mr-[6px] mb-3 text-sm font-medium">
+                                        <li key={index} className="mr-[6px] mb-3 text-sm font-AeonikProMedium">
                                             <button className="bg-searchBgColor rounded px-4 py-[10px]">{catalog.name}</button>
                                         </li>
                                     ))}
@@ -797,10 +797,10 @@ const Footer = () => {
 
                             {/* Clothing Types */}
                             <div className="w-full block md:hidden">
-                                <div className="text-base font-medium mb-5 flex">Типы одежды</div>
+                                <div className="text-base font-AeonikProMedium mb-5 flex">Типы одежды</div>
                                 <ul className="flex flex-row items-center flex-wrap">
                                     {clothingTypes.map((catalog, index) => (
-                                        <li key={index} className="mr-[6px] mb-3 text-sm font-medium">
+                                        <li key={index} className="mr-[6px] mb-3 text-sm font-AeonikProMedium">
                                             <button className="bg-searchBgColor rounded px-4 py-[10px]">{catalog.name}</button>
                                         </li>
                                     ))}
@@ -811,7 +811,7 @@ const Footer = () => {
                         {/* footer bottom section */}
                         <div className="w-full flex items-center justify-between">
                             <div className="w-full block justify-between">
-                                <div className="w-full flex items-center justify-between text-sm font-medium lg:w-fit">
+                                <div className="w-full flex items-center justify-between text-sm font-AeonikProMedium lg:w-fit">
 
                                     <div className="flex justify-between items-center ">
                                         <img src={footer} alt="" className="mr-2" />
@@ -820,13 +820,13 @@ const Footer = () => {
                                     <div className="md:ml-4 md:mr-4">
                                         <span>Все права защищены.</span>
                                     </div>
-                                    <div className="font-medium text-center mt-3 hidden lg:m-0 md:block">
+                                    <div className="font-AeonikProMedium text-center mt-3 hidden lg:m-0 md:block">
                                         <span className="ml-auto">Разработано командой</span>
                                         <Link to='#' className={`${footerTextWeatherColor} border-b ml-1`}>Dressme</Link>
                                     </div>
 
                                 </div>
-                                <div className="font-medium text-center mt-3 text-sm block md:hidden">
+                                <div className="font-AeonikProMedium text-center mt-3 text-sm block md:hidden">
                                     <span>Designed by</span>
                                     <Link to='#' className={`${footerTextWeatherColor} border-b ml-2`}>Prince.UI</Link>
                                 </div>
@@ -841,7 +841,7 @@ const Footer = () => {
                                     options={['Hide']}
                                     placement="bottom"
                                     content={contentPrice} >
-                                    <span className="not-italic font-medium text-sm leading-4 text-black">{selectPriceFooter}</span>
+                                    <span className="not-italic font-AeonikProMedium text-sm leading-4 text-black">{selectPriceFooter}</span>
                                     {/* <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openPriceFooter ? "rotate-[-180deg]" : ""}`} /> */}
                                     <img src={arrowTop} className={`${openPriceFooter ? "rotate-[-180deg]" : ""}`} alt="icon" />
                                 </Popover>
@@ -854,7 +854,7 @@ const Footer = () => {
                                     placement="bottom"
                                     content={contentRegion} >
                                     <img src={location} alt="" />
-                                    <span className="not-italic font-medium text-sm leading-4 text-black">{selectRegionFooter}</span>
+                                    <span className="not-italic font-AeonikProMedium text-sm leading-4 text-black">{selectRegionFooter}</span>
                                     {/* <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openRegionFooter ? "rotate-[-180deg]" : ""}`} /> */}
                                     <img src={arrowTop} className={`${openRegionFooter ? "rotate-[-180deg]" : ""}`} alt="icon" />
                                 </Popover>
@@ -871,7 +871,7 @@ const Footer = () => {
                                                 placement="bottom"
                                                 content={contentLanguage} >
                                                 <span className="mr-1"><img src={data?.icons} alt="" /></span>
-                                                <span className="text-sm font-medium not-italic">{data?.type}</span>
+                                                <span className="text-sm font-AeonikProMedium not-italic">{data?.type}</span>
                                                 {/* <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openLanguageFooter ? "rotate-[-180deg]" : ""}`} /> */}
                                                 <img src={arrowTop} className={`${openLanguageFooter ? "rotate-[-180deg]" : ""}`} alt="icon" />
                                             </Popover>

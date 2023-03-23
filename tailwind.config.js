@@ -25,37 +25,27 @@ module.exports = {
         borderAutumm: "#E17A02",
         "bgAutumm": "rgba(225, 122, 2, 0.1)",
         borderWinter: "#007DCA",
-        "bgWinter": "rgba(0, 125, 202, 0.1)"
+        "bgWinter": "rgba(0, 125, 202, 0.1)",
+
       },
       fontFamily: {
-        // Noto: ['Noto ', 'sans serif'], // 100
-        // Rubik: ['Rubik'], // 100
-        // Climatess: ['Climatess'], // 100
-        // LilitaOne: ['Lilita One',], // 100
-        // RoboBlackItalc: ['RoboBlackItalc'], // 100
-        // RoboBold: ['RoboBold'], // 100
-        // RoboBoldItalc: ['RoboBoldItalc'], // 100
-        // RoboMedium: ['RoboMediumItalc'], // 100
-        // RoboMediumItalc: ['RoboMediumItalc'], // 100
-        // AeonicProThin: ['AeonicProThin', 'sans-serif'], // 100
-        // AeonicProLight: ['AeonicProLight', 'sans-serif'], // 300
-        // AeonicProRegular: ['AeonicProRegular', 'sans-serif'], // 400
-        // AeonicProMedium: ['AeonicProMedium', 'sans-serif'], // 500
-        // AeonicProBold: ['AeonicProBold', 'sans-serif'], // 700
-        // AeonicProBlack: ['AeonicProBlack', 'sans-serif'], // 900
-        // AeonicProAir: ['AeonicProAir', 'sans-serif'],
-        // AeonicProAirItalic: ['AeonicProAirItalic', 'sans-serif'],
-        // AeonicProBlackItalic: ['AeonicProBlackItalic', 'sans-serif'],
-        // AeonicProBoldItalic: ['AeonicProBoldItalic', 'sans-serif'],
-        // AeonicProLightItalic: ['AeonicProLightItalic', 'sans-serif'],
-        // AeonicProMediumItalic: ['AeonicProMediumItalic', 'sans-serif'],
-        // AeonicProRegularItalic: ['AeonicProRegularItalic', 'sans-serif'],
-        // AeonicProThinItalic: ['AeonicAeonicProThinItalicProMedium', 'sans-serif'],
+        // 300
+        AeonikProLight: ['AeonikProLight', 'sans-serif'], // 300
+        AeonikProLightItalic: ['AeonikProLightItalic', 'sans-serif'], // 300
+        // 400
+        AeonikProRegular: ['AeonikProRegular', 'sans-serif'], // 400
+        AeonikProRegularItalic: ['AeonikProRegularItalic', 'sans-serif'], // 400
+        // 500
+        AeonikProMedium: ['AeonikProMedium', 'sans-serif'], // 500
+        AeonikProMediumItalic: ['AeonikProMediumItalic', 'sans-serif'], // 500
+        // 700
+        AeonikProBold: ['AeonikProBold', 'sans-serif'],
+        AeonikProBoldItalic: ['AeonikProBoldItalic', 'sans-serif'], // 700
       },
       boxShadow: {
         myShadow1: "1px -2px 0 0 rgb(17,24,39)",
-        myShadow2: "-1px -2px 0 0 rgb(17,24,39)"
-      },
+        myShadow2: "-1px -2px 0 0 rgb(17,24,39)",
+        },
     },
     screens: {
       ss: '320px',
