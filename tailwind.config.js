@@ -20,8 +20,8 @@ module.exports = {
         // season-----
         borderSpring: "#008F0E",
         "bgSpring": "rgba(0, 143, 14, 0.1)",
-        borderSummer: "#FBC02D",
-        "bgSummer": "rgba(251, 192, 45, 0.1)",
+        borderSummer: "#EAA700",
+        "bgSummer": "rgba(234, 167, 0, 0.1)",
         borderAutumm: "#E17A02",
         "bgAutumm": "rgba(225, 122, 2, 0.1)",
         borderWinter: "#007DCA",

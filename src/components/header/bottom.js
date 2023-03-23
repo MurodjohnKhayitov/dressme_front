@@ -1,10 +1,12 @@
 import React, { useContext, useState, useMemo } from "react";
-import { arrowBottom, AutummFemale, AutummMale, clothing, colors, dollarLogo, plus, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale, SummerFemale, SummerMale, WinterFemale, WinterMale } from "../../assets/imgs";
+import { arrowBottom, AutummFemale, AutummMale, clothing, colors, dollarLogo, DotIcon, plus, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale, SummerFemale, SummerMale, WinterFemale, WinterMale } from "../../assets/imgs";
 import { dressMainData } from "../../ContextHook/ContextMenu";
 import { styles } from "../../util/style";
 import { Dropdown } from 'antd';
 import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineSearch } from "react-icons/ai";
+import { BsCheck2Square } from "react-icons/bs";
+
 import { Button, Divider, Popover, Segmented } from 'antd';
 const BottomHeader = () => {
     const [dressInfo, setDressInfo] = useContext(dressMainData)
@@ -113,9 +115,35 @@ const BottomHeader = () => {
             }
         </div>
     );
-
-
+    const [changeColor, setChangeColor] = useState([
+        { id: 1, value: 1, action: false, colors: "bg-black" },
+        { id: 2, value: 2, action: false, colors: "bg-white" },
+        { id: 3, value: 3, action: false, colors: "bg-zinc-500" },
+        { id: 4, value: 4, action: false, colors: "bg-purple-500" },
+        { id: 5, value: 5, action: false, colors: "bg-sky-600" },
+        { id: 6, value: 6, action: false, colors: "bg-amber-400 " },
+        { id: 7, value: 7, action: false, colors: "bg-green-700 " },
+        { id: 8, value: 8, action: false, colors: "bg-amber-600 " },
+        { id: 9, value: 9, action: false, colors: "bg-red-700  " },
+        { id: 10, value: 10, action: false, colors: "bg-purple-800 " },
+        { id: 11, value: 11, action: false, colors: "bg-blue-900  " },
+        { id: 12, value: 12, action: false, colors: "bg-yellow-900 " },
+    ]);
+    const handleGetChecked = (info) => {
+        const newState = changeColor.map((obj) => {
+            if (obj.id === info) {
+                if (obj.action) {
+                    return { ...obj, action: false };
+                } else {
+                    return { ...obj, action: true };
+                }
+            }
+            return obj;
+        });
+        setChangeColor(newState);
+    };
     // --------------------------------------------
+    const [textToColor, setTextToColor] = useState(false)
 
     return (
         <div className="flex flex-col justify-center items-center m-0 p-0 box-border ss:hidden md:block">
@@ -149,35 +177,47 @@ const BottomHeader = () => {
                 </Popover>
 
 
-                <div className="flex items-center w-[536px] justify-start bg-btnBgColor rounded-lg border-searchBgColor border h-[44px] ml-2">
-                    <div className="w-[48px] h-full border-r border-searchBgColor h-full flex items-center justify-center mr-3" >
-                        <img src={colors} alt="" className="w-[21px]" />
+                <div className="flex items-center w-[536px] justify-start bg-btnBgColor overflow-hidden rounded-lg border-searchBgColor border h-[44px] ml-2">
+                    <div onClick={() => setTextToColor(!textToColor)} className="w-[48px] cursor-pointer border-r border-searchBgColor h-full flex items-center justify-center" >
+                        {/* <img src={colors} alt="" className="w-[21px]" /> */}
+                        <div className=" w-fit h-fit flex items-center justify-center select-none ">
+                            <div className={`w-[8px] h-[20px] flex items-end justify-center  py-[2px] border border-black  rounded-[3px] z-[25] bg-white rounded-b-[5px]`}>
+                                <img src={DotIcon} alt="DotIcon" />
+                            </div>
+                            <div className={`w-[8px] h-[20px] border left-[-3px] top-[2px] z-[24] bg-white relative border-black rounded-[3px] duration-200  rounded-b-[5px] ${!textToColor ? "rotate-[45deg] " : "left-[-8px] top-[0.2px] rotate-[0deg]"}`}>
+                            </div>
+                            <div className={`w-[8px] h-[20px] border relative left-[-10px] top-[6px] z-[23] bg-white border-black rounded-[3px] duration-200  rounded-b-[5px] ${!textToColor ? "rotate-[90deg]" : "left-[-16px] top-[0.2px] rotate-[0deg]"}`}>
+                            </div>
+                        </div>
                     </div>
-                    <div className="w-[90%] h-full flex items-center justify-betwen border border-red-600">
-                        <div className="rounded-full w-6 h-6 bg-black cursor-pointer   mr-3 border-btnBgColor" htmlFor="Color1">
-                        </div>
-                        <div className="rounded-full w-6 h-6 bg-white cursor-pointer   mr-2	border-btnBgColor" htmlFor="Color2">
-                        </div>
-                        <div className="rounded-full w-6 h-6 bg-zinc-500 cursor-pointer    mr-3	border-btnBgColor" htmlFor="Color3">
-                        </div>
-                        <div className="rounded-full w-6 h-6 bg-purple-500 cursor-pointer   mr-2 border-btnBgColor" htmlFor="Color4">
-                        </div>
-                        <div className="rounded-full w-6 h-6 bg-sky-600 cursor-pointer   mr-2 border-btnBgColor" htmlFor="Color1">
-                        </div>
-                        <div className="rounded-full w-6 h-6 bg-amber-400 cursor-pointer   mr-2	border-btnBgColor" htmlFor="Color2">
-                        </div>
-                        <div className="rounded-full w-6 h-6 bg-green-700 cursor-pointer   mr-2	border-btnBgColor" htmlFor="Color3">
-                        </div>
-                        <div className="rounded-full w-6 h-6 bg-amber-600 cursor-pointer   mr-2 border-btnBgColor" htmlFor="Color4">
-                        </div>
-                        <div className="rounded-full w-6 h-6 bg-red-700 cursor-pointer   mr-3 border-btnBgColor" htmlFor="Color1">
-                        </div>
-                        <div className="rounded-full w-6 h-6 bg-purple-800 cursor-pointer   mr-2 border-btnBgColor" htmlFor="Color2">
-                        </div>
-                        <div className="rounded-full  w-6 h-6 bg-blue-900 cursor-pointer   mr-2 border-btnBgColor" htmlFor="Color3">
-                        </div>
-                        <div className="rounded-full w-6 h-6 bg-yellow-900 cursor-pointer   mr-3	border-btnBgColor" htmlFor="Color4">
-                        </div>
+
+                    <div className={`${textToColor ? "w-0 px-0" : "w-[480px] px-3"} duration-500  h-full flex items-center justify-between  `}>
+                        {changeColor?.map(data => {
+                            return (
+                                <div
+                                    onClick={() => handleGetChecked(data?.id)}
+                                    className={`rounded-full w-6 h-6 ${data?.colors} cursor-pointer flex items-center justify-center ${!textToColor && "border"}  border-borderColorCard	`} >
+                                    {data?.action ? (
+                                        <BsCheck2Square size={15} className={`text-white ${textToColor ? "hidden" : "block"}`} />
+                                    ) : null}
+                                </div>
+                            )
+                        })
+                        }
+                        {/* <div className="rounded-full w-6 h-6 bg-white cursor-pointer   border	border-gray-100	" ></div>
+                        <div className="rounded-full w-6 h-6 bg-zinc-500 cursor-pointer    border	border-gray-100	" ></div>
+                        <div className="rounded-full w-6 h-6 bg-purple-500 cursor-pointer   border border-gray-100	" ></div>
+                        <div className="rounded-full w-6 h-6 bg-sky-600 cursor-pointer   border border-gray-100	" ></div>
+                        <div className="rounded-full w-6 h-6 bg-amber-400 cursor-pointer   border	border-gray-100	" ></div>
+                        <div className="rounded-full w-6 h-6 bg-green-700 cursor-pointer   border	border-gray-100	" ></div>
+                        <div className="rounded-full w-6 h-6 bg-amber-600 cursor-pointer   border border-gray-100	" ></div>
+                        <div className="rounded-full w-6 h-6 bg-red-700 cursor-pointer   border border-gray-100	" ></div>
+                        <div className="rounded-full w-6 h-6 bg-purple-800 cursor-pointer   border border-gray-100	" ></div>
+                        <div className="rounded-full w-6 h-6 bg-blue-900 cursor-pointer   border border-gray-100	" ></div>
+                        <div className="rounded-full w-6 h-6 bg-yellow-900 cursor-pointer   border	border-gray-100	" ></div> */}
+                    </div>
+                    <div className={`${textToColor ? "w-[480px] " : " mr-[-500px]"} duration-500 px-3 overflow-hidden h-full  flex items-center `}>
+                        Не давай своей гардеробной шкафной жизни стать скучной.
                     </div>
                 </div>
                 <div className="line h-6 border-r-[1px] text-textColor mx-3"></div>
