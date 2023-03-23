@@ -278,30 +278,30 @@ export default function CollectionCards() {
   const [dressInfo, setDressInfo] = useContext(dressMainData);
   let dataStyle = "";
   let shadowStyle = "";
-  if (dressInfo?.type == 1111) {
+  if (dressInfo?.type === 1111) {
     dataStyle = "focus:text-borderSpring ";
     shadowStyle = "hover:shadow-green-300/100 ";
   }
-  if (dressInfo?.type == 2222) {
+  if (dressInfo?.type === 2222) {
     dataStyle = "focus:text-borderSummer";
     shadowStyle = "hover:shadow-amber-200/100  ";
   }
-  if (dressInfo?.type == 3333) {
+  if (dressInfo?.type === 3333) {
     dataStyle = "focus:text-borderAutumm";
     shadowStyle = "hover:shadow-orange-200/100   ";
   }
-  if (dressInfo?.type == 4444) {
+  if (dressInfo?.type === 4444) {
     dataStyle = "focus:text-borderWinter";
     shadowStyle = "hover:shadow-sky-200/100  ";
   }
 
   const [changeColor, setChangeColor] = useState([
-    { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-    { id: 2, value: 2, action: false, colors: "bg-green-600" },
-    { id: 3, value: 3, action: false, colors: "bg-red-700" },
-    { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-    { id: 5, value: 5, action: false, colors: "bg-black" },
-    { id: 6, value: 6, action: false, colors: "bg-sky-500" },
+    { id: 1, value: 1, action: false, colors: "bg-purple-700"},
+    { id: 2, value: 2, action: false, colors: "bg-green-600"},
+    { id: 3, value: 3, action: false, colors: "bg-red-700"},
+    { id: 4, value: 4, action: false, colors: "bg-yellow-500"},
+    { id: 5, value: 5, action: false, colors: "bg-black"},
+    { id: 6, value: 6, action: false, colors: "bg-sky-500"},
   ]);
   const handleGetChecked = (info) => {
     const newState = changeColor.map((obj) => {
@@ -319,7 +319,7 @@ export default function CollectionCards() {
 
   return (
     <div className="flex flex-col box-border mt-[86px]">
-      {/* <div className='max-w-[1440px] m-auto h-fit md:px-[80px]  sm:px-[50px] ss:px-[16px] pt-16 pb-4 '> */}
+      
       <div className="w-full ss:block sm:flex justify-between items-center mb-[25px] md:mb-0 md:px-0">
         <div className="not-italic font-medium lg:w-fit lg:text-2xl xl:text-3xl flex items-center leading-8 text-black">
           <span>Коллекция одежд, которые вам подходят</span>
@@ -338,26 +338,16 @@ export default function CollectionCards() {
           </button>
         </div>
       </div>
-      <div className="flex justify-between flex-wrap  md:mx-0 md:mt-[50px] gap-y-5 lg:gap-y-5 ">
+      <div className="flex justify-between flex-wrap  md:mx-0 md:mt-[50px] gap-y-3 md:gap-y-5 ">
         {productList.map((data) => {
           return (
-            <div
-              key={data.id}
-              className={` ss:w-[48%] md:w-[24%] lg:w-[240px] transition ease-in-out delay-50 hover:shadow-lg ${shadowStyle} summer xs:h-[456px] lg:h-[440px] border border-solid borderColorCard overflow-hidden rounded-lg`}
+            <div key={data.id} className={`${shadowStyle} transition ease-in-out delay-50 hover:shadow-lg summer border border-solid borderColorCard overflow-hidden rounded-lg w-[49%] md:w-[48%] lg:w-[240px] xs:h-[456px] lg:h-[440px]`}
             >
-              <div className="relative w-full cursor-pointer ss:h-[206px] xs:h-[309px] lg:h-[320px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap">
+              <div className="relative w-full cursor-pointer ss:h-[206px] ls:h-[238px] xs:h-[309px] lg:h-[320px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap">
                 {data.ProducImg ? (
-                  <img
-                    className="w-full ss:h-[85%] ls:h-full h-full m-auto hover:scale-105 transition duration-700 ease-in-out"
-                    src={data.ProducImg}
-                    alt="ProducImg"
-                  />
+                  <img className="w-full h-full m-auto hover:scale-105 transition duration-700 ease-in-out" src={data.ProducImg} alt="ProducImg" />
                 ) : (
-                  <img
-                    className="w-full h-fit"
-                    src={data.noProductImg}
-                    alt="noProductImg"
-                  />
+                  <img className="w-full h-fit" src={data.noProductImg} alt="noProductImg" />
                 )}
                 <div className="w-full flex absolute top-px p-[5px] ss:justify-end xs:justify-between">
                   <ul className="nav-lists flex-col gap-y-1 justify-center h-full ss:hidden xs:flex">
@@ -400,21 +390,11 @@ export default function CollectionCards() {
                 <div className="absolute w-full flex justify-between items-center px-1 bottom-0 border-solid xs:h-[38px] lg:h-8 ss:h-[30px] xs:px-2 md:px-4 bg-white hover:backdrop-brightness-125 hover:bg-white/60 transition ease-out duration-500">
                   {changeColor.map((data) => {
                     return (
-                      <label
-                        onClick={() => handleGetChecked(data?.id)}
-                        className={`rounded-full flex items-center justify-center  ls:w-[22px] ls:h-[22px] w-5 h-5 lg:w-6 lg:h-6 ${data?.colors} cursor-pointer  border border-solid	border-borderColorCard mr-[3px]`}
-                        htmlFor="Color1"
-                      >
+                      <label onClick={() => handleGetChecked(data?.id)} className={`rounded-full flex items-center justify-center  ls:w-[22px] ls:h-[22px] w-5 h-5 lg:w-6 lg:h-6 ${data?.colors} cursor-pointer  border border-solid	border-borderColorCard mr-[3px]`} htmlFor={data.colors}>
                         {data?.action ? (
                           <BsCheck2Square size={15} className="text-white" />
                         ) : null}
-                        <input
-                          className="hidden"
-                          type="radio"
-                          id="Color1"
-                          name="colors"
-                          value="1"
-                        />
+                        <input className="hidden" type="radio" id={data.id} name={data.colors} value={data.value} />
                       </label>
                     );
                   })}
@@ -431,7 +411,6 @@ export default function CollectionCards() {
                         {" "}
                         <img src={star} alt="" />
                       </span>
-                      {/* <span><img src={} alt=""/></span> */}
                       <span className="not-italic font-normal text-[10px] ls:text-xs leading-4 text-right text-gray-500 ml-[2px] md:ml-1 flex items-center">
                         <span className="font-medium text-[10px] ls:text-xs not-italic mx-1 text-black md:mr-[6px] md:text-[13px]">
                           5.0{" "}
@@ -454,10 +433,10 @@ export default function CollectionCards() {
                   <div>
                     {data.sale ? (
                       <div className="flex ss:flex-col-reverse md:flex-row	text-start items-start ">
-                        <div className="text-start m-0 p-0  not-italic font-medium text-[18px] md:text-base leading-1 text-red-700 xs:text-base xs:leading-4 mr-1">
+                        <div className="text-start m-0 p-0  not-italic font-medium text-sm ls:text-[18px] leading-1 text-red-700 xs:text-base xs:leading-4 mr-1">
                           {data?.sale}
                         </div>
-                        <div className="text-start m-0 p-0 text-[12px] mt-[8px]  line-through not-italic font-normal leading-3  text-borderColorCard ss:leading-1 md:text-[11px]">
+                        <div className="text-start m-0 p-0 text-[11px] ls:text-[12px] mt-[3px]  line-through not-italic font-normal leading-3  text-borderColorCard ss:leading-1 md:text-[11px]">
                           {data?.price}
                         </div>
                       </div>
@@ -474,13 +453,13 @@ export default function CollectionCards() {
                     {data.sale ? (
                       <>
                         {" "}
-                        <span className="ss:w-[13px] xs:w-fit">
+                        <span className="w-[25px] xs:w-fit">
                           <img className="w-full" src={shirt} alt="user" />
                         </span>
                         <span className="px-1">+</span>
                       </>
                     ) : null}
-                    <span className="ss:w-[25px] xs:w-fit  cursor-pointer">
+                    <span className="w-[25px] xs:w-fit  cursor-pointer">
                       <img className="w-full" src={addBag} alt="user" />
                     </span>
                   </div>
@@ -497,26 +476,8 @@ export default function CollectionCards() {
           </span>
         </div>
       </div>
-      {/* </div> */}
+    
     </div>
   );
 }
 
-
-// {/* 
-// <li className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
-
-// {/* <li className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
-
-// <Link href="#" className='w-8 nav-link flex items-center justify-center h-full'>
-//     <img src={video} alt="" />
-// </Link>
-// <div className='followers absolute bg-bgCard w-[40px] h-8 font-medium rounded-r pr-[6px] text-[11px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Video</div>
-// </li>
-
-// <li className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
-// <Link href="#" className='nav-link flex items-center justify-center h-full'>
-//     <img src={delivery} alt="" />
-// </Link>
-// <div className='followers absolute w-[50px] h-8 bg-bgCard font-medium text-[11px] rounded-r pr-[6px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Delivery</div>
-// </li> */}
