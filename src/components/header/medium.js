@@ -156,18 +156,15 @@ const MediumHeader = () => {
 
   // ----------------Wear state management----------------------------
   const [openwear, setOpenwear] = useState(false);
-
   const handleOpenChangeWear = (newOpen) => {
     setOpenwear(newOpen);
   };
-
 
   const handleSeason = (id) => {
     setDressInfo({
       type: id
     })
     setOpenwear(false);
-
   }
 
   const contentWear = (
@@ -220,7 +217,7 @@ const MediumHeader = () => {
                             <img key={data?.id} src={data?.icons} alt="misic" />
                           )
                         })}
-                      <span className="ml-[10px]">Music</span>
+                      <span className=" ml-[10px]">Music</span>
                     </button>
                     <Link to="#" className="right px-10 py-[9px] rounded flex items-center justify-center font-medium border border-gray-300 bg-bgColor ss:w-[48%]">
                       <img src={map} alt="map" />
@@ -365,7 +362,7 @@ const MediumHeader = () => {
               </div>
 
 
-              <div className=' ss:w-12 ss:h-12   md:w-[120px]   bg-btnBgColor  border border-searchBgColor    ss:rounded  md:rounded-lg ml-2'>
+              <div className=' ss:w-12 ss:h-[44px]   md:w-[120px]   bg-btnBgColor  border border-searchBgColor    ss:rounded  md:rounded-lg ml-2'>
 
 
                 {

@@ -252,8 +252,8 @@ export default function MainPageSliders() {
                         return (
                             data.Category.map(data => {
                                 return (
-                                    <div key={data?.id} className='ll:w-[100px] ss:w-[80px]' >
-                                        <div className='w-[100%] h-[80px] rounded bg-bgColor  border border-solid border-searchBgColor'>
+                                    <div key={data?.id} className='ll:w-[100px] ss:w-[80px] ' >
+                                        <div className='w-[100%] h-[80px] rounded	 bg-bgColor overflow-hidden	 border border-solid border-searchBgColor'>
                                             <img className='h-full w-full' src={data?.img} alt="" />
                                         </div>
                                         <div className='w-full py-1 flex items-center'>
