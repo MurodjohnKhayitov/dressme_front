@@ -39,9 +39,9 @@ const TopHeader = () => {
     const [selectLang, setselectLang] = useState(1);
 
     const LanguageList = [
-        { id: 1, type: "Uzbekcha", icons: uzbekFlag },
-        { id: 2, type: "Russian", icons: russiaFlag },
-        { id: 3, type: "English", icons: englishFlag }
+        { id: 1, type: "English", icons: englishFlag },
+        { id: 2, type: "Русский", icons: russiaFlag },
+        { id: 3, type: "O'zbekcha", icons: uzbekFlag }
     ]
 
     const [openLang, setOpenLang] = useState(false);
@@ -56,20 +56,20 @@ const TopHeader = () => {
     }
 
     const contentLang = (
-        <div className="w-[98px] h-fit m-0 p-0">
+        <div className="w-fit h-fit m-0 p-0">
             {
                 LanguageList.map(data => {
                     return (
                         <div
                             key={data?.id}
-                            className={`p-2 text-sm cursor-pointer hover:bg-bgColor flex items-center justify-center ${dataStyle}`}
+                            className={`p-2 text-sm cursor-pointer hover:bg-bgColor flex items-center justify-center  ${dataStyle}`}
                             onClick={() => {
                                 handleLangValue(data?.id)
                             }
                             }
                         >
-                            <span className="mr-1"><img src={data?.icons} alt="" /></span>
-                            <span className={`not-italic font-normal text-sm leading-4 text-black ${dataStyle}`}>{data?.type}</span>
+                            <p className="mr-[6px]  w-5 h-5"><img className="w-full h-full" src={data?.icons} alt="" /></p>
+                            <p className={`not-italic flex items-center font-AeonikProMedium text-sm leading-4 text-black mt-1 ${dataStyle}`}>{data?.type}</p>
                         </div>
                     )
                 })
@@ -130,8 +130,8 @@ const TopHeader = () => {
                 <div className="left h-full flex items-center  ">
                     <Link to="/" className="flex w-fit items-center">
                         <img src={location} alt="location" className="mr-2" />
-                        <span className="text-textColor text-[13px] mr-[6px] font-medium">Город:</span>
-                        <div className="w-[90px] font-medium   flex items-center ">
+                        <span className="text-textColor text-[13px] mr-[6px] font-AeonikProMedium">Город:</span>
+                        <div className="w-[90px] font-AeonikProMedium   flex items-center ">
                             <Popover
                                 open={openRegion}
                                 onOpenChange={handleOpenChangeCity}
@@ -143,11 +143,11 @@ const TopHeader = () => {
                                 <a className="border-b border-slate-900" href="#">{selectCity}</a>
                             </Popover>
 
-                          
+
                         </div>
                     </Link>
 
-                    <div className="w-[98px] h-full rounded bg-white ml-[15px]  font-medium select-none cursor-pointer">
+                    <div className="w-fit h-full rounded bg-white ml-[15px]  font-AeonikProMedium select-none cursor-pointer">
 
                         {
                             LanguageList.filter(data => data.id === selectLang).map(data => {
@@ -156,13 +156,13 @@ const TopHeader = () => {
                                         key={data?.id}
                                         open={openLang}
                                         onOpenChange={handleOpenChangeWear}
-                                        className="w-full flex text-[13px] h-full px-3 items-center "
+                                        className="w-full flex text-[13px] items-center h-full px-3 "
                                         trigger="click"
                                         options={['Hide']}
                                         placement="bottom"
                                         content={contentLang} >
-                                        <span className="mr-1"><img src={data?.icons} alt="" /></span>
-                                        <span>{data?.type}</span>
+                                        <p className="mr-[6px] "><img src={data?.icons} alt="" /></p>
+                                        <p className="not-italic flex items-center font-AeonikProMedium text-sm leading-4 text-black mt-1">{data?.type}</p>
                                     </Popover>
                                 )
                             })
@@ -173,26 +173,26 @@ const TopHeader = () => {
 
                     <div className="flex h-full px-[11px] items-center bg-white rounded ml-3 cursor-pointer ">
                         <img src={glasses} alt="glasses" className="mr-2" />
-                        <span className="font-medium text-[13px]">Спец. возможности</span>
+                        <span className="h-full flex items-center font-AeonikProMedium text-[13px] ">Спец. возможности</span>
                     </div>
                 </div>
                 <div className="right h-full flex items-center ">
                     <Link to="#" className="flex items-center h-full ">
                         <img src={help} alt="help" className="mr-2" />
-                        <span className="text-textColor text-[13px] font-medium">Помощь</span>
+                        <span className="text-textColor text-[13px]  mt-1 font-AeonikProMedium  ">Помощь</span>
                     </Link>
-                    <Link to="#" className="flex items-center h-full  ml-6">
+                    <Link to="#" className="flex items-center h-full  ml-6 ">
                         <img src={business} alt="business" className="mr-2" />
-                        <span className="text-textColor text-[13px] font-medium">Бизнес</span>
+                        <span className="text-textColor text-[13px]  mt-1 font-AeonikProMedium  ">Бизнес</span>
                     </Link>
                     <div className="line h-5 border text-textColor ml-6"></div>
-                    <Link to="#" className="flex items-center h-full  ml-6">
+                    <Link to="#" className="flex items-center h-full  ml-6 ">
                         <img src={order} alt="my orders" className="mr-2" />
-                        <span className="text-textColor  text-[13px] font-medium">Мои заказы</span>
+                        <span className="text-textColor  text-[13px]  mt-1 font-AeonikProMedium  ">Мои заказы</span>
                     </Link>
                     <button className="flex items-center bg-white rounded cursor-pointer h-full  ml-6 px-3">
                         <img src={shop} alt="shop" className="mr-2" />
-                        <span className="font-medium  text-[13px]">Магазины</span>
+                        <span className="font-AeonikProMedium  text-[13px]  mt-1  ">Магазины</span>
                     </button>
                 </div>
             </div>
