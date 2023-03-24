@@ -397,19 +397,19 @@ export default function CollectionCards() {
   const [dressInfo, setDressInfo] = useContext(dressMainData);
   let dataStyle = "";
   let shadowStyle = "";
-  if (dressInfo?.type == 1111) {
+  if (dressInfo?.type === 1111) {
     dataStyle = "focus:text-borderSpring ";
     shadowStyle = "hover:shadow-green-300/100 ";
   }
-  if (dressInfo?.type == 2222) {
+  if (dressInfo?.type === 2222) {
     dataStyle = "focus:text-borderSummer";
     shadowStyle = "hover:shadow-amber-200/100  ";
   }
-  if (dressInfo?.type == 3333) {
+  if (dressInfo?.type === 3333) {
     dataStyle = "focus:text-borderAutumm";
     shadowStyle = "hover:shadow-orange-200/100   ";
   }
-  if (dressInfo?.type == 4444) {
+  if (dressInfo?.type === 4444) {
     dataStyle = "focus:text-borderWinter";
     shadowStyle = "hover:shadow-sky-200/100  ";
   }
@@ -480,9 +480,10 @@ export default function CollectionCards() {
   // setChangeColor(newState);
   // };
 
+
   return (
     <div className="flex flex-col box-border mt-[86px]">
-      {/* <div className='max-w-[1440px] m-auto h-fit md:px-[80px]  sm:px-[50px] ss:px-[16px] pt-16 pb-4 '> */}
+      
       <div className="w-full ss:block sm:flex justify-between items-center mb-[25px] md:mb-0 md:px-0">
         <div className="not-italic font-AeonikProMedium lg:w-fit lg:text-2xl xl:text-3xl flex items-center leading-8 text-black">
           <span>Коллекция одежд, которые вам подходят</span>
@@ -509,20 +510,13 @@ export default function CollectionCards() {
               key={data.id}
               onClick={() => handleGetCardId(data?.id)}
               className={` ss:w-[48%] md:w-[24%] lg:w-[240px] transition ease-in-out delay-50 hover:shadow-lg ${shadowStyle} summer xs:h-[456px] lg:h-[440px] border border-solid borderColorCard overflow-hidden rounded-lg`}
+
             >
-              <div className="relative w-full cursor-pointer ss:h-[206px] xs:h-[309px] lg:h-[320px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap">
+              <div className="relative w-full cursor-pointer ss:h-[206px] ls:h-[238px] xs:h-[309px] lg:h-[320px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap">
                 {data.ProducImg ? (
-                  <img
-                    className="w-full ss:h-[85%] ls:h-full h-full m-auto hover:scale-105 transition duration-700 ease-in-out"
-                    src={data.ProducImg}
-                    alt="ProducImg"
-                  />
+                  <img className="w-full h-full m-auto hover:scale-105 transition duration-700 ease-in-out" src={data.ProducImg} alt="ProducImg" />
                 ) : (
-                  <img
-                    className="w-full h-fit"
-                    src={data.noProductImg}
-                    alt="noProductImg"
-                  />
+                  <img className="w-full h-fit" src={data.noProductImg} alt="noProductImg" />
                 )}
                 <div className="w-full flex absolute top-px p-[5px] ss:justify-end xs:justify-between">
                   <ul className="nav-lists flex-col gap-y-1 justify-center h-full ss:hidden xs:flex">
@@ -574,6 +568,7 @@ export default function CollectionCards() {
                           <BsCheck2Square size={15} className="text-white" />
                         ) : null}
                       </div>
+
                     );
                   })}
                 </div>
@@ -592,6 +587,7 @@ export default function CollectionCards() {
                       {/* <span><img src={} alt=""/></span> */}
                       <span className="not-italic font-AeonikProRegular text-[10px] ls:text-xs leading-4 text-right text-gray-500 ml-[2px] md:ml-1 flex items-center">
                         <span className="font-AeonikProMedium text-[10px] ls:text-xs not-italic mx-1 text-black md:mr-[6px] md:text-[13px]">
+
                           5.0{" "}
                         </span>
                         ({data?.starCount || 0}{" "}
@@ -616,6 +612,7 @@ export default function CollectionCards() {
                           {data?.sale}
                         </div>
                         <div className="text-start m-0 p-0 text-[12px] mt-[8px]  line-through not-italic font-AeonikProRegular leading-3  text-borderColorCard ss:leading-1 md:text-[11px]">
+
                           {data?.price}
                         </div>
                       </div>
@@ -632,13 +629,13 @@ export default function CollectionCards() {
                     {data.sale ? (
                       <>
                         {" "}
-                        <span className="ss:w-[13px] xs:w-fit">
+                        <span className="w-[25px] xs:w-fit">
                           <img className="w-full" src={shirt} alt="user" />
                         </span>
                         <span className="px-1">+</span>
                       </>
                     ) : null}
-                    <span className="ss:w-[25px] xs:w-fit  cursor-pointer">
+                    <span className="w-[25px] xs:w-fit  cursor-pointer">
                       <img className="w-full" src={addBag} alt="user" />
                     </span>
                   </div>
@@ -655,7 +652,7 @@ export default function CollectionCards() {
           </span>
         </div>
       </div>
-      {/* </div> */}
+    
     </div>
   );
 }
@@ -678,3 +675,4 @@ export default function CollectionCards() {
 // </Link>
 // <div className='followers absolute w-[50px] h-8 bg-bgCard font-AeonikProMedium text-[11px] rounded-r pr-[6px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Delivery</div>
 // </li> */}
+
