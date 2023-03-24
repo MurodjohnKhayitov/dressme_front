@@ -228,11 +228,11 @@ const BottomHeader = () => {
                         return (
                             <div key={data?.id} className="w-fit flex items-center ">
                                 
-                                <button className={`mr-1 ${genderStyle} font-medium w-[136px] h-[44px] px-[16px] justify-between mr-2 flex items-center border border-searchBgColor bg-btnBgColor rounded-lg`}>
-                                    <img className={`mr-3`} src={data?.woman} alt="female" /><span> Женщинам</span>
+                                <button className={`mr-1 ${genderStyle} font-medium w-[136px] h-[44px] px-[16px] mr-2 flex items-center justify-between border border-searchBgColor bg-btnBgColor rounded-lg`}>
+                                    <img className={`mr-[10px]`} src={data?.woman} alt="female" /><span> Женщинам</span>
                                 </button>
-                                <button className={` font-medium ${genderStyle} w-[136px] h-[44px]  px-[16px] justify-between flex items-center bg-btnBgColor border border-searchBgColor mr-2 rounded-lg`}>
-                                    <img className="mr-3" src={data?.man} alt="male" /><span>Мужчинам</span>
+                                <button className={` font-medium ${genderStyle} w-[136px] h-[44px]  px-[16px] flex items-center justify-between bg-btnBgColor border border-searchBgColor mr-2 rounded-lg`}>
+                                    <img className="mr-[10px]" src={data?.man} alt="male" /><span>Мужчинам</span>
                                 </button>
                             </div>
                         )
