@@ -1,18 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import {
-  discount,
-  bucket,
-  video,
-  delivery,
-  heart,
-  shirt,
-  addBag,
-  cardImg,
-  shortik,
-  kastyum,
-  star,
-  category,
-} from "../../assets/imgs";
+import { discount, bucket, video, delivery, heart, shirt, addBag, cardImg, shortik, kastyum, star, category,} from "../../assets/imgs";
 import { CiHeart } from "react-icons/ci";
 import { dressMainData } from "../../ContextHook/ContextMenu";
 import { BsCheck2Square } from "react-icons/bs";
@@ -352,7 +339,7 @@ export default function CollectionCards() {
       like: true,
       buy: true,
       ProducImg:
-        "https://images.uzum.uz/cfcgam8l08k07f16n0ag/t_product_540_high.jpg#1677855423623",
+        "https://images.uzum.uz/cfmebc7hgiopn8lcdoh0/t_product_540_high.jpg#1677855264045",
       noProductImg: cardImg,
       title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
 
@@ -657,6 +644,7 @@ export default function CollectionCards() {
                   Показать ещё 20 товаров
                 </span>
               </div>
+
             </div>
           </>
           :
@@ -668,22 +656,4 @@ export default function CollectionCards() {
   );
 }
 
-
-// {/*
-// <li className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
-
-// {/* <li className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
-
-// <Link href="#" className='w-8 nav-link flex items-center justify-center h-full'>
-//     <img src={video} alt="" />
-// </Link>
-// <div className='followers absolute bg-bgCard w-[40px] h-8 font-AeonikProMedium rounded-r pr-[6px] text-[11px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Video</div>
-// </li>
-
-// <li className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
-// <Link href="#" className='nav-link flex items-center justify-center h-full'>
-//     <img src={delivery} alt="" />
-// </Link>
-// <div className='followers absolute w-[50px] h-8 bg-bgCard font-AeonikProMedium text-[11px] rounded-r pr-[6px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Delivery</div>
-// </li> */}
 

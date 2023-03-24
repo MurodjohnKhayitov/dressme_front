@@ -454,7 +454,6 @@ export default function ClothesSlider() {
 
     return (
         <div className='flex flex-col  box-border mt-[64px] ss:hidden xs:block'>
-            {/* <div className='max-w-[1440px]  h-fit md:px-[80px] flex justify-center  sm:px-[50px] ss:px-[16px]  box-border'> */}
 
             <div className='w-full h-fit'>
                 <div className=' flex ss:flex-col xs:flex-row xs:justify-between ss:justify-center items-center h-fit '>
@@ -493,7 +492,6 @@ export default function ClothesSlider() {
                     </Slider>
                 </div>
             </div>
-            {/* </div> */}
 
             <div className='w-full h-fit flex flex-col border-y	border-solid border-borderColorCard mt-12 '>
                 <div className='w-full flex items-center py-4  '>
@@ -501,8 +499,8 @@ export default function ClothesSlider() {
                         {
                             productList.map(data => {
                                 return (
-                                    <div key={data.id} id={styles.forwidt} className={`!w-[100%] ss:m-0 md:my-8 cursor-pointer transition ease-in-out delay-150 hover:shadow-lg ${shadowStyle} ss:h-[320px] xs:h-[456px] lg:h-[440px] border border-solid borderColorCard overflow-hidden rounded-lg`}>
-                                        <div className='relative w-full  ss:h-[206px] xs:h-[309px] lg:h-[320px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard'>
+                                    <div key={data.id} id={styles.forwidt} className={`!w-[100%] ss:m-0 md:my-8 cursor-pointer transition ease-in-out delay-150 hover:shadow-cardShadow ${shadowStyle} ss:h-[320px] xs:h-[456px] lg:h-[440px] border border-solid borderColorCard overflow-hidden rounded-lg`}>
+                                        <div className='relative w-full  h-[206px] ls:h-[220px] ll:h-[234px] xs:h-[309px] lg:h-[320px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard'>
                                             {
                                                 data.ProducImg ?
                                                     <img className='w-full h-full m-auto' src={data.ProducImg} alt="ProducImg" />
@@ -510,11 +508,13 @@ export default function ClothesSlider() {
                                                     <img className='w-full h-fit' src={data.noProductImg} alt="noProductImg" />
                                             }
                                             <div className='w-full flex justify-between absolute top-px p-2'>
-                                                <div className='nav-list w-8 h-8 mb-1 relative bg-bgCard hover:rounded-r-none rounded flex items-center justify-center border border-solid border-borderColorCard hover:border-r-0 hover:bg-white transition ease-in duration-500'>
-                                                    <button href="#" className='nav-link flex items-center justify-center h-full'>
+                                                <div className="group w-8 hover:w-[85px] bg-bgCard hover:bg-white  duration-300 rounded overflow-hidden border border-borderColorCard flex items-center justify-center">
+                                                    <span className="w-8 h-8 flex items-center justify-center  ">
                                                         <img src={delivery} alt="" />
-                                                    </button>
-                                                    <div className='followers absolute w-[50px] h-8 bg-bgCard font-AeonikProMedium text-[11px] rounded-r pr-[6px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Delivery</div>
+                                                    </span>
+                                                    <span className=" w-0 flex items-center mt-1 group-hover:w-[40px] duration-300 not-italic  font-AeonikProRegular text-[11px]">
+                                                        Delivery
+                                                    </span>
                                                 </div>
                                                 <div className='w-8 h-8 rounded flex items-center justify-center border border-solid bg-bgCard border-borderColorCard hover:bg-white transition ease-out duration-500'>
                                                     <img src={heart} alt="" />
@@ -542,9 +542,9 @@ export default function ClothesSlider() {
                                             </div>
                                         </div>
 
-                                        <div className="w-full rounded-b-1xl bg-white   flex flex-wrap content-between xs:py-3  ss:h-[124px] xs:h-[147px] lg:h-[120px] ss:py-2  ">
+                                        <div className="w-full rounded-b-1xl bg-white   flex flex-wrap content-between xs:py-3 h-[120px] xs:h-[147px] lg:h-[120px] ss:py-2  ">
                                             <div className='w-full   px-3'>
-                                                <div className="w-full  not-italic font-AeonicProLight text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
+                                                <div className="w-full  not-italic font-AeonikProRegular text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
                                                     {data?.title || "NoData"}
                                                 </div>
                                                 <div className="w-full flex justify-between items-center xs:mt-3 ">
@@ -554,11 +554,11 @@ export default function ClothesSlider() {
                                                         </span>
                                                         <span className='not-italic flex items-center  font-AeonikProRegular mt-[2px] text-[10px] ls:text-xs leading-4 text-right text-gray-500 ml-[2px] md:ml-1 '>
                                                             <span className='flex items-center font-AeonikProMedium text-[10px] ls:text-xs not-italic mx-1 text-black md:mr-[6px] md:text-[13px]'>5.0 </span>
-                                                            ({data?.starCount || 0} <span className='flex items-center ss:hidden lg:block md:ml-1 md:text-[11px]'>голосов</span>
+                                                            ({data?.starCount || 0} <span className='flex items-center ss:hidden lg:block md:ml-1 md:text-[11px] font-AeonikProRegular'>голосов</span>
                                                             )
                                                         </span>
                                                     </div>
-                                                    <div className="not-italic xs:font-AeonikProMedium ss:font-AeonikProRegular leading-4 text-black  ss:text-[11px] sm:text-xs  md:text-[13px] ">
+                                                    <div className="not-italic xs:font-AeonikProRegular ss:font-AeonikProRegular leading-4 text-black text-[11px] sm:text-xs  md:text-[13px] ">
                                                         <b><span>{data?.shirtSize || 0}</span></b>
                                                     </div>
                                                 </div>
