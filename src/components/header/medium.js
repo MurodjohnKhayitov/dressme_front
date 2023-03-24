@@ -618,11 +618,11 @@ const MediumHeader = () => {
               {
                 personItems?.filter(value => value.id === dressInfo?.type).map(data => {
                   return (
-                    <div key={data?.id} className="w-full flex items-center justify-between border rounded bg-btnBgColor  border-borderColorCard">
-                      <button className={` ${genderStyle} font-AeonikProMedium w-[50%] h-[44px] px-[16px] justify-center flex items-center  focus:rounded`}>
+                    <div key={data?.id} className="w-full flex items-center justify-between ">
+                      <button className={` ${genderStyle} border rounded bg-btnBgColor  border-borderColorCard font-AeonikProMedium w-[48%] h-[44px] px-[16px] justify-center flex items-center  focus:rounded`}>
                         <img src={data?.woman} alt="female" /><span className="ml-3"> Женщинам</span>
                       </button>
-                      <button className={` font-AeonikProMedium ${genderStyle} w-[50%] h-[44px]  px-[16px] justify-center flex items-center  focus:rounded`}>
+                      <button className={` font-AeonikProMedium ${genderStyle} border rounded bg-btnBgColor  border-borderColorCard w-[48%] h-[44px]  px-[16px] justify-center flex items-center  focus:rounded`}>
 
                         <img src={data?.man} alt="male" /><span className="ml-3">Мужчинам</span>
                       </button>
