@@ -45,6 +45,7 @@ module.exports = {
       boxShadow: {
         myShadow1: "1px -2px 0 0 rgb(17,24,39)",
         myShadow2: "-1px -2px 0 0 rgb(17,24,39)",
+        cardShadow: "0px 2px 10px -2px rgba(0,0,0,0.06)",
         },
     },
     screens: {
