@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { discount, bucket, video, delivery, heart, shirt, addBag, cardImg, shortik, kastyum, star, category,} from "../../assets/imgs";
+import { discount, bucket, video, delivery, heart, shirt, addBag, cardImg, shortik, kastyum, star, category, } from "../../assets/imgs";
 import { CiHeart } from "react-icons/ci";
 import { dressMainData } from "../../ContextHook/ContextMenu";
 import { BsCheck2Square } from "react-icons/bs";
@@ -480,14 +480,14 @@ export default function CollectionCards() {
         <div className="rounded  h-[42px] md:h-[52px] ss:w-full md:w-[308px] md:mx-0 flex justify-between bg-slate-50 border border-solid ss:mt-5 md:mt-0 mx-auto ">
           <button
             onClick={() => setClothesSetWear(true)}
-            className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-AeonikProRegular not-italic ${clothesSetWear ? " bg-white border  border-searchBgColor rounded text-borderSummer " : ""} `}
+            className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-AeonikProRegular not-italic ${clothesSetWear ? ` bg-white border  border-searchBgColor rounded  ${dataStyle}` : ""} `}
           >
             {" "}
             Одежда
           </button>
           <button
             onClick={() => setClothesSetWear(false)}
-            className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-AeonikProRegular not-italic ${!clothesSetWear ? " bg-white border  border-searchBgColor rounded text-borderSummer " : ""} `}
+            className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-AeonikProRegular not-italic ${!clothesSetWear ? ` bg-white border  border-searchBgColor rounded  ${dataStyle} ` : ""} `}
           >
             Образы
           </button>
