@@ -125,7 +125,7 @@ const Footer = () => {
         { id: 6, type: "Under 50$" },
     ]
     const contentPrice = (
-        <div className="w-[175px] h-fit m-0 p-0">
+        <div className="w-[150px] h-fit m-0 p-0">
             {
                 priceListFooter.map(data => {
                     return (
@@ -135,7 +135,7 @@ const Footer = () => {
                                 handlePriceValueFooter(data?.type)
                             }
                             }
-                            className={`w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
+                            className={`w-full h-[42px] flex items-center justify-start pl-6 not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
                     )
                 })
             }
@@ -162,7 +162,7 @@ const Footer = () => {
         { id: 6, type: "Navoiy" },
     ]
     const contentRegion = (
-        <div className="w-[175px] h-fit m-0 p-0">
+        <div className="w-[150px] h-fit m-0 p-0">
             {
                 RegionListFooter.map(data => {
                     return (
@@ -172,12 +172,13 @@ const Footer = () => {
                                 handleRegionValueFooter(data?.type)
                             }
                             }
-                            className={`w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
+                            className={`w-full h-[42px] flex items-center justify-start pl-9 not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
                     )
                 })
             }
         </div>
     );
+
     // ----------------------Region State Management Mobile----------------------
     const [openRegionMobile, setOpenRegionMobile] = useState(false);
 
@@ -198,7 +199,7 @@ const Footer = () => {
         { id: 6, type: "Navoiy" },
     ]
     const contentMobile = (
-        <div className="w-[130px] h-fit m-0 p-0">
+        <div className="w-[150px] h-fit m-0 p-0">
             {
                 RegionListMobile.map(data => {
                     return (
@@ -208,7 +209,7 @@ const Footer = () => {
                                 handleRegionValueMobile(data?.type)
                             }
                             }
-                            className={`w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
+                            className={`w-full h-[42px] flex items-center justify-start pl-9 not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
                     )
                 })
             }
@@ -233,13 +234,13 @@ const Footer = () => {
         { id: 3, type: "English", icons: englishFlag }
     ]
     const contentLanguage = (
-        <div className="w-[175px] h-fit m-0 p-0">
+        <div className="w-[150px] h-fit m-0 p-0">
             {
                 LanguageFooter.map(data => {
                     return (
                         <div
                             key={data?.id}
-                            className={`p-2 text-sm hover:bg-bgColor cursor-pointer flex items-center justify-center ${dataStyle}`}
+                            className={`p-2 text-sm hover:bg-bgColor cursor-pointer flex items-center justify-start pl-8 ${dataStyle}`}
                             onClick={() => {
                                 handleLanguageValueFooter(data?.id)
                             }
@@ -252,6 +253,7 @@ const Footer = () => {
             }
         </div>
     );
+
     // ----------------------Language State Management Mobile----------------------
     const [openLanguageMobile, setOpenLanguageMobile] = useState(false);
 
@@ -270,13 +272,13 @@ const Footer = () => {
         { id: 3, type: "English", icons: englishFlag }
     ]
     const contentLanguageMobile = (
-        <div className="w-[130px] h-fit m-0 p-0">
+        <div className="w-[150px] h-fit m-0 p-0">
             {
                 LanguageMobile.map(data => {
                     return (
                         <div
                             key={data?.id}
-                            className={`p-2 text-sm hover:bg-bgColor cursor-pointer flex items-center justify-center ${dataStyle}`}
+                            className={`p-2 text-sm hover:bg-bgColor cursor-pointer flex items-center justify-start pl-8 ${dataStyle}`}
                             onClick={() => {
                                 handleLanguageValueMobile(data?.id)
                             }}
@@ -290,7 +292,7 @@ const Footer = () => {
 
 
     return (
-        <div className="flex flex-col justify-center items-center m-0 p-0 ss:px-4 md:px-0 box-border mt-40 md:mb-[60px] ss:mb-[80px]">
+        <div className="flex flex-col justify-center items-center m-0 p-0 ss:px-4 md:px-0 box-border mt-40 mb-[40px] md:mb-[60px]">
             <div className="backTopMenu  mt-[-100px]">
                 <ScrollToTop
                     smooth
@@ -695,14 +697,14 @@ const Footer = () => {
                             <Popover
                                 open={openRegionMobile}
                                 onOpenChange={handleOpenChangeRegionMobile}
-                                className="basis-[48%] h-[44px] flex items-center  px-[14px] select-none  justify-between  bg-bgColor rounded group "
+                                className="basis-[48%] h-[44px] flex items-center px-[14px] select-none  justify-between  bg-bgColor rounded group "
                                 trigger="click"
                                 options={['Hide']}
                                 placement="bottom"
                                 content={contentMobile} >
                                 <img src={location} alt="" />
                                 <span className="not-italic font-AeonikProMedium text-sm leading-4 text-black">{selectRegionMobile}</span>
-                                <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openRegionMobile ? "rotate-[-180deg]" : ""}`} />
+                                <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openRegionMobile ? "rotate-[-180deg] transition ease-linear duration-200" : "transition ease-linear duration-200"}`} />
                             </Popover>
                             {/* </Link> */}
                             {
@@ -719,7 +721,7 @@ const Footer = () => {
                                             content={contentLanguageMobile} >
                                             <span className="mr-1"><img src={data?.icons} alt="" /></span>
                                             <span className="text-sm font-AeonikProMedium not-italic">{data?.type}</span>
-                                            <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openLanguageMobile ? "rotate-[-180deg]" : ""}`} />
+                                            <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openLanguageMobile ? "rotate-[-180deg] transition ease-linear duration-200" : "transition ease-linear duration-200"}`} />
 
                                         </Popover>
                                     )
@@ -729,11 +731,9 @@ const Footer = () => {
 
                         {/* Social networks */}
                         <div className="block  md:hidden">
-
                             <div className="w-full font-AeonikProMedium cursor-pointer text-base mb-5">
                                 Социальная сеть
                             </div>
-
                             <div className="w-full">
                                 <ul className="w-full flex items-center text-sm">
                                     <div className="basis-1/2">
@@ -773,14 +773,13 @@ const Footer = () => {
                                 </ul>
 
                             </div>
-
                         </div>
-
                     </div>
 
                     <div className="w-full border-b md:hidden ss:block border-gray-200"></div>
 
                     <div className=' ss:mt-[40px] md:mt-[62px]'>
+                        
                         {/* Catalog and Clothes types */}
                         <div className="mb-[60px]">
                             {/* Catalog Types */}
@@ -789,7 +788,7 @@ const Footer = () => {
                                 <ul className="flex flex-row items-center flex-wrap">
                                     {catalogTypes.map((catalog, index) => (
                                         <li key={index} className="mr-[6px] mb-3 text-sm font-AeonikProMedium">
-                                            <button className="bg-searchBgColor rounded px-4 py-[10px]">{catalog.name}</button>
+                                            <button className="bg-searchBgColor rounded-lg px-4 py-[10px]">{catalog.name}</button>
                                         </li>
                                     ))}
                                 </ul>
@@ -842,8 +841,7 @@ const Footer = () => {
                                     placement="bottom"
                                     content={contentPrice} >
                                     <span className="not-italic font-AeonikProMedium text-sm leading-4 text-black">{selectPriceFooter}</span>
-                                    {/* <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openPriceFooter ? "rotate-[-180deg]" : ""}`} /> */}
-                                    <img src={arrowTop} className={`${openPriceFooter ? "rotate-[-180deg]" : ""}`} alt="icon" />
+                                    <img src={arrowTop} className={`${openPriceFooter ? "rotate-[-180deg] transition ease-linear duration-200" : "transition ease-linear duration-200"}`} alt="icon" />
                                 </Popover>
                                 <Popover
                                     open={openRegionFooter}
@@ -855,8 +853,7 @@ const Footer = () => {
                                     content={contentRegion} >
                                     <img src={location} alt="" />
                                     <span className="not-italic font-AeonikProMedium text-sm leading-4 text-black">{selectRegionFooter}</span>
-                                    {/* <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openRegionFooter ? "rotate-[-180deg]" : ""}`} /> */}
-                                    <img src={arrowTop} className={`${openRegionFooter ? "rotate-[-180deg]" : ""}`} alt="icon" />
+                                    <img src={arrowTop} className={`${openRegionFooter ? "rotate-[-180deg] transition ease-linear duration-200" : "transition ease-linear duration-200"}`} alt="icon" />
                                 </Popover>
                                 {
                                     LanguageList.filter(data => data.id === selectLanguageFooter).map(data => {
@@ -872,13 +869,14 @@ const Footer = () => {
                                                 content={contentLanguage} >
                                                 <span className="mr-1"><img src={data?.icons} alt="" /></span>
                                                 <span className="text-sm font-AeonikProMedium not-italic">{data?.type}</span>
-                                                {/* <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openLanguageFooter ? "rotate-[-180deg]" : ""}`} /> */}
-                                                <img src={arrowTop} className={`${openLanguageFooter ? "rotate-[-180deg]" : ""}`} alt="icon" />
+                                                <img src={arrowTop} className={`${openLanguageFooter ? "rotate-[-180deg] transition ease-linear duration-200" : "transition ease-linear duration-200"}`} alt="icon" />
                                             </Popover>
                                         )
-                                    })}
+                                    })
+                                }
                             </div>
                         </div>
+                    
                     </div>
                 </div>
             </div>
