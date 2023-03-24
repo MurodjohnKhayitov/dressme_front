@@ -69,7 +69,7 @@ const TopHeader = () => {
                             }
                         >
                             <p className="mr-[6px]  w-5 h-5"><img className="w-full h-full" src={data?.icons} alt="" /></p>
-                            <p className={`not-italic flex items-center font-AeonikProMedium text-sm leading-4 text-black mt-1 ${dataStyle}`}>{data?.type}</p>
+                            <p className={`not-italic flex items-center font-AeonikProMedium text-sm leading-4 text-black  ${dataStyle}`}>{data?.type}</p>
                         </div>
                     )
                 })
@@ -135,7 +135,7 @@ const TopHeader = () => {
                             <Popover
                                 open={openRegion}
                                 onOpenChange={handleOpenChangeCity}
-                                className=" flex text-[13px] mt-1 items-center  "
+                                className=" flex text-[13px]  items-center  "
                                 trigger="click"
                                 options={['Hide']}
                                 placement="bottom"
@@ -162,7 +162,7 @@ const TopHeader = () => {
                                         placement="bottom"
                                         content={contentLang} >
                                         <p className="mr-[6px] "><img src={data?.icons} alt="" /></p>
-                                        <p className="not-italic flex items-center font-AeonikProMedium text-sm leading-4 text-black mt-1">{data?.type}</p>
+                                        <p className="not-italic flex items-center font-AeonikProMedium text-sm leading-4 text-black ">{data?.type}</p>
                                     </Popover>
                                 )
                             })
@@ -179,20 +179,20 @@ const TopHeader = () => {
                 <div className="right h-full flex items-center ">
                     <Link to="#" className="flex items-center h-full ">
                         <img src={help} alt="help" className="mr-2" />
-                        <span className="text-textColor text-[13px]  mt-1 font-AeonikProMedium  ">Помощь</span>
+                        <span className="text-textColor text-[13px]   font-AeonikProMedium  ">Помощь</span>
                     </Link>
                     <Link to="#" className="flex items-center h-full  ml-6 ">
                         <img src={business} alt="business" className="mr-2" />
-                        <span className="text-textColor text-[13px]  mt-1 font-AeonikProMedium  ">Бизнес</span>
+                        <span className="text-textColor text-[13px]   font-AeonikProMedium  ">Бизнес</span>
                     </Link>
                     <div className="line h-5 border text-textColor ml-6"></div>
                     <Link to="#" className="flex items-center h-full  ml-6 ">
                         <img src={order} alt="my orders" className="mr-2" />
-                        <span className="text-textColor  text-[13px]  mt-1 font-AeonikProMedium  ">Мои заказы</span>
+                        <span className="text-textColor  text-[13px]   font-AeonikProMedium  ">Мои заказы</span>
                     </Link>
                     <button className="flex items-center bg-white rounded cursor-pointer h-full  ml-6 px-3">
                         <img src={shop} alt="shop" className="mr-2" />
-                        <span className="font-AeonikProMedium  text-[13px]  mt-1  ">Магазины</span>
+                        <span className="font-AeonikProMedium  text-[13px]    ">Магазины</span>
                     </button>
                 </div>
             </div>

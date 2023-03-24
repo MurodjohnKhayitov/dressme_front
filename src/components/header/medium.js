@@ -377,7 +377,7 @@ const MediumHeader = () => {
                         content={contentWear} >
                         <p className='w-full h-full  sm:flex items-center  select-none cursor-pointer  ' >
                           <img src={data?.icons} alt="weather" className="mr-0 md:mr-[5px] " />
-                          <div className="ss:hidden  font-AeonikProMedium  hidden md:block md:flex items-center text-[15px] mt-1">{data?.type}</div>
+                          <div className="ss:hidden  font-AeonikProMedium  hidden md:block md:flex items-center text-[15px] ">{data?.type}</div>
                         </p>
                       </Popover>
                     )
@@ -396,7 +396,7 @@ const MediumHeader = () => {
                     )
                   })
                   }
-                  <span className={` px-[9.5px] not-italic font-AeonikProMedium text-sm leading-4  mt-1`}>Каталог</span>
+                  <span className={` px-[9.5px] not-italic font-AeonikProMedium text-sm leading-4  `}>Каталог</span>
                 </button>
                 <img src={search} alt="search" className="flex md:hidden" />
                 <input type="text" placeholder="Поиск продуктов или брендов" className="bg-transparent w-full px-3 h-[44px] text-sm border border-transparent md:border-searchBgColor " />
@@ -413,7 +413,7 @@ const MediumHeader = () => {
               <Link to="#" className="flex items-center justify-center bg-btnBgColor  rounded-lg    md:h-[44px] ss:text-sm md:w-[100px] md:mt-0 ss:hidden md:flex">
 
                 <img src={map} alt="map" className="pr-[6px]" />
-                <span className="font-AeonikProMedium text-sm  mt-1">Карта</span>
+                <span className="font-AeonikProMedium text-sm  ">Карта</span>
               </Link>
 
               {/* Line border */}
