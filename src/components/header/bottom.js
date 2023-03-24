@@ -12,21 +12,23 @@ const BottomHeader = () => {
     const [dressInfo, setDressInfo] = useContext(dressMainData)
     let dataStyle = ''
     let genderStyle = ''
+    // let genderType = ''
     if (dressInfo?.type == 1111) {
         dataStyle = " hover:text-borderSpring "
-        genderStyle = "focus:text-borderSpring focus:bg-bgSpring focus:border-borderSpring focus:text-borderSpring"
+        genderStyle = "focus:text-borderSpring focus:bg-bgSpring focus:border-borderSpring"
+        // genderType = "ring-1 ring-inset text-borderSpring ring-borderSpring bg-bgSpring"
     }
     if (dressInfo?.type == 2222) {
         dataStyle = " hover:text-borderSummer"
-        genderStyle = "focus:text-borderSummer focus:bg-bgSummer focus:border-borderSummer focus:text-borderSummer"
+        genderStyle = "focus:text-borderSummer focus:bg-bgSummer focus:border-borderSummer"
     }
     if (dressInfo?.type == 3333) {
         dataStyle = " hover:text-borderAutumm "
-        genderStyle = "focus:text-borderAutumm focus:bg-bgAutumm focus:border-borderAutumm focus:text-borderAutumm"
+        genderStyle = "focus:text-borderAutumm focus:bg-bgAutumm focus:border-borderAutumm"
     }
     if (dressInfo?.type == 4444) {
         dataStyle = " hover:text-borderWinter "
-        genderStyle = "focus:text-borderWinter focus:bg-bgWinter focus:border-borderWinter focus:text-borderWinter"
+        genderStyle = "focus:text-borderWinter focus:bg-bgWinter focus:border-borderWinter"
     }
 
     const [personItems, setPersonItems] = useState([
@@ -229,6 +231,7 @@ return (
             <button className="bg-btnBgColor font-AeonikProMedium w-[44px] h-[44px] flex items-center justify-center border border-searchBgColor rounded-lg">
                 <img src={plus} alt="" />
             </button>
+
         </div >
     </div >
 )

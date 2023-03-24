@@ -195,6 +195,7 @@ const MediumHeader = () => {
 
           <div className="w-full flex justify-center items-center py-3 ">
             <div className=" w-full flex items-center ss:w-full md:w-fit justify-between ">
+              
               {/* Menu section */}
               <div onClick={toggleHamburger} className={`flex items-center justify-center bg-btnBgColor border border-searchBgColor  ss:w-12 ss:h-12 rounded cursor-pointer md:hidden `}>
 
@@ -330,7 +331,6 @@ const MediumHeader = () => {
                   </div>
                 </div>
                 {/*Ending of Opened Hamburger menu section */}
-
               </div>
 
               {/* Logo section */}
@@ -346,6 +346,7 @@ const MediumHeader = () => {
                   })
                 }
               </div>
+              
               {/* Voice section */}
               <div
                 className={` bg-btnBgColor  w-[47px] h-[44px] ml-[25px] rounded-lg cursor-pointer hidden items-center justify-center md:flex`}>
@@ -361,10 +362,7 @@ const MediumHeader = () => {
                 }
               </div>
 
-
-              <div className=' ss:w-12 ss:h-[44px]   md:w-[120px]   bg-btnBgColor  border border-searchBgColor    ss:rounded  md:rounded-lg ml-2'>
-
-
+             <div className=' ss:w-12 ss:h-[44px]   md:w-[120px]   bg-btnBgColor  border border-searchBgColor    ss:rounded  md:rounded-lg ml-2'>
                 {
                   SeasonTypeArray.filter(data => data.id == dressInfo.type).map(data => {
                     return (
@@ -386,10 +384,6 @@ const MediumHeader = () => {
                   })
                 }
               </div>
-
-
-
-
 
               {/* Searching section */}
               <div className="search flex items-center justify-center rounded-lg font-AeonikProMedium h-[44px] border border-red-600 md:border-transparent md:w-[624px] ml-2 ss:hidden md:flex">
@@ -621,8 +615,6 @@ const MediumHeader = () => {
 
             {/* Gender selection for Mobile */}
             <div className="flex flex-wrap items-center justify-between mt-3 rounded  mb-4 w-full">
-
-
               {
                 personItems?.filter(value => value.id === dressInfo?.type).map(data => {
                   return (
@@ -631,6 +623,7 @@ const MediumHeader = () => {
                         <img src={data?.woman} alt="female" /><span className="ml-3"> Женщинам</span>
                       </button>
                       <button className={` font-AeonikProMedium ${genderStyle} w-[50%] h-[44px]  px-[16px] justify-center flex items-center  focus:rounded`}>
+
                         <img src={data?.man} alt="male" /><span className="ml-3">Мужчинам</span>
                       </button>
                     </div>
@@ -649,9 +642,7 @@ const MediumHeader = () => {
             </div>
 
             {/* Params for Mobile */}
-
             <div className={`${toggle ? "h-[280px]" : "h-0"} duration-500  overflow-hidden md:hidden`}>
-
               <ul className="ss:w-full mt-4 bg-white">
                 <li onClick={() => {
                   setClothesTypeMobile(!clothesTypeMobile)
@@ -666,7 +657,6 @@ const MediumHeader = () => {
                       <span className="ml-[11.67px]">{selectWearMobile}</span>
                     </div>
                     <img src={arrowBottomRight} alt="" className="arrowRotate ml-auto" />
-
                   </button>
                 </li>
                 <li onClick={() => setPriceToggleMobile(!priceToggleMobile)}>
@@ -685,6 +675,7 @@ const MediumHeader = () => {
 
                 <li >
                   <button className="w-full flex items-center justify-between bg-btnBgColor font-AeonikProMedium h-12 border rounded border-searchBgColor px-5 mb-3 md:hidden">
+
 
                     <span className="w-[52px] border-r border-searchBgColor py-3 pr-5">
                       <img src={brush} alt="" />
