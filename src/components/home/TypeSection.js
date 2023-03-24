@@ -174,7 +174,7 @@ export default function TypeSection() {
         <div className='flex flex-col'>
             <div className='w-[100%] h-fit flex flex-col justify-center py-8'>
                 <div className='w-full h-[60px]  ss:block xs:hidden ss:flex items-center justify-center text-center  rounded cursor-pointer  bg-bgColor border border-solid border-borderColorCard cursor-pointer'>
-                    <span className='mr-3 not-italic font-medium text-base leading-4 text-center'>Одежды, которые вам подходят</span><span><img src={category} alt="market" /></span>
+                    <span className='mr-3 not-italic font-AeonikProMedium text-base leading-4 text-center'>Одежды, которые вам подходят</span><span><img src={category} alt="market" /></span>
                 </div>
             </div>
             <div className='w-[100%] h-full flex justify-between  ss:hidden sm:block '>
@@ -186,9 +186,9 @@ export default function TypeSection() {
                                 <div >
                                     <div key={data?.id} className='w-[98%] lg:h-[426px] ll:h-[400px] md:h-[390px] ss:h-[350px] bg-white border border-solid	border-borderColorCard	rounded-lg ss:p-3 lg:ml-1  xl:p-8 flex flex-wrap ss:content-between sm:content-between  '>
                                         <div className='w-full flex items-center justify-between ss:h-fit sm:h-1/10  '>
-                                            <p className='not-italic font-medium md:text-lg ss:text-base ll:text-xl lg:text-xl xl:text-2xl leading-7 text-black'>{data?.type || "type"}</p>
+                                            <p className='not-italic font-AeonikProMedium md:text-lg ss:text-base ll:text-xl lg:text-xl xl:text-2xl leading-7 text-black'>{data?.type || "type"}</p>
                                             <p className='flex items-center cursor-pointer'>
-                                                <span className={`not-italic font-medium md:text-sm xl:text-base lg:text-xs ss:text-xs  ll:text-base leading-4 text-right mr-2 text-black ${dataStyle}`}>
+                                                <span className={`not-italic font-AeonikProMedium md:text-sm xl:text-base lg:text-xs ss:text-xs  ll:text-base leading-4 text-right mr-2 text-black ${dataStyle}`}>
                                                     See more
                                                 </span>
                                                 {
@@ -212,7 +212,7 @@ export default function TypeSection() {
 
 
                                                             </div>
-                                                            <div className='w-full h-1/5 flex items-center not-italic font-medium text-base leading-4 text-black justify-start'>
+                                                            <div className='w-full h-1/5 flex items-center not-italic font-AeonikProMedium text-base leading-4 text-black justify-start'>
                                                                 {data?.title || "title"}
                                                             </div>
 
@@ -236,8 +236,8 @@ export default function TypeSection() {
                         return (
                             <div key={data?.id} className='w-[98%] lg:h-[426px] ll:h-[400px] md:h-[390px] mt-2 ss:h-[350px] bg-white border border-solid	border-borderColorCard	rounded-lg ss:p-3 lg:ml-1  xl:p-8 flex flex-wrap ss:content-between sm:content-between  '>
                                 <div className='w-full flex items-center justify-between ss:h-fit sm:h-1/10  '>
-                                    <p className='not-italic font-medium md:text-lg ss:text-base ll:text-xl lg:text-xl xl:text-2xl leading-7 text-black'>{data?.type || "type"}</p>
-                                    <p className='flex items-center'><span className='not-italic font-medium md:text-sm xl:text-base lg:text-xs ss:text-xs  ll:text-base leading-4 text-right mr-2 text-black'>See more</span><img src={next} alt="next" /></p>
+                                    <p className='not-italic font-AeonikProMedium md:text-lg ss:text-base ll:text-xl lg:text-xl xl:text-2xl leading-7 text-black'>{data?.type || "type"}</p>
+                                    <p className='flex items-center'><span className='not-italic font-AeonikProMedium md:text-sm xl:text-base lg:text-xs ss:text-xs  ll:text-base leading-4 text-right mr-2 text-black'>See more</span><img src={next} alt="next" /></p>
 
                                 </div>
                                 <div className='w-full flex flex-wrap rounded h-4/5'>
@@ -250,7 +250,7 @@ export default function TypeSection() {
                                                         {data.img ? <img src={data?.img} alt="data" /> : null}
 
                                                     </div>
-                                                    <div className='w-full h-1/5 flex items-center not-italic font-medium text-base leading-4 text-black justify-start'>
+                                                    <div className='w-full h-1/5 flex items-center not-italic font-AeonikProMedium text-base leading-4 text-black justify-start'>
                                                         {data?.title || "title"}
                                                     </div>
 

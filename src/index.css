@@ -1,13 +1,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import '../src//fonts//font.css';
+/* @import '../src//fonts//font.css'; */
 
-@layer base {
+
+
+
+@font-face {
+  font-family: "AeonikProBold";
+  src: url("/src/fonts/AeonikPro-Bold.woff") format('woff');
+}
+
+@font-face {
+  font-family: "AeonikProBoldItalic";
+  src: url("/src/fonts/AeonikPro-BoldItalic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "AeonikProLight";
+  src: url("/src/fonts/AeonikPro-Light.woff") format('woff');
+}
+
+@font-face {
+  font-family: "AeonikProLightItalic";
+  src: url("/src/fonts/AeonikPro-LightItalic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "AeonikProMedium";
+  src: url("/src/fonts/AeonikPro-Medium.woff") format('woff');
+}
+
+@font-face {
+  font-family: "AeonikProMediumItalic";
+  src: url("/src/fonts/AeonikPro-MediumItalic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "AeonikProRegular";
+  src: url("/src/fonts/AeonikPro-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: "AeonikProRegularItalic";
+  src: url("/src/fonts/AeonikPro-RegularItalic.woff") format('woff');
+}
+
+
+/* @layer base {
   html {
     font-family: 'Rubik', sans-serif;
   }
-}
+} */
 
 * {
   margin: 0;

@@ -8,7 +8,7 @@ import Slider from "react-slick";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { GrFormNext,GrFormPrevious } from "react-icons/gr";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 import styles from './clothers.module.css'
 import { dressMainData } from '../../ContextHook/ContextMenu';
@@ -433,26 +433,21 @@ export default function ClothesSlider() {
         ]
     };
     const [dressInfo, setDressInfo] = useContext(dressMainData)
-    let dataStyle = ''
     let shadowStyle = ''
     let genderStyle = ''
     if (dressInfo?.type === 1111) {
-        dataStyle = " hover:text-borderSpring "
         shadowStyle = " hover:shadow-green-300/100 "
         genderStyle = "hover:text-borderSpring hover:bg-bgSpring hover:border-borderSpring hover:text-borderSpring"
     }
     if (dressInfo?.type === 2222) {
-        dataStyle = " hover:text-borderSummer"
         shadowStyle = "hover:shadow-amber-200/100 "
         genderStyle = "hover:text-borderSummer hover:bg-bgSummer hover:border-borderSummer hover:text-borderSummer"
     }
     if (dressInfo?.type === 3333) {
-        dataStyle = " hover:text-borderAutumm "
         shadowStyle = "hover:shadow-orange-200/100"
         genderStyle = "hover:text-borderAutumm hover:bg-bgAutumm hover:border-borderAutumm hover:text-borderAutumm"
     }
     if (dressInfo?.type === 4444) {
-        dataStyle = " hover:text-borderWinter "
         shadowStyle = "hover:shadow-sky-200/100"
         genderStyle = "hover:text-borderWinter hover:bg-bgWinter hover:border-borderWinter hover:text-borderWinter"
     }
@@ -465,12 +460,12 @@ export default function ClothesSlider() {
                 <div className=' flex ss:flex-col xs:flex-row xs:justify-between ss:justify-center items-center h-fit '>
                     <div className="flex items-center ss:justify-center md:justify-start ss:w-full xs:w-[48%] md:w-fit border ss:border-solid  md:border-none ss:border-borderColorCard ss:h-[44px] rounded ">
                         <p className='flex items-center cursor-pointer select-none'>
-                            <span className='not-italic font-normal xs:text-base md:text-base ss:text-base leading-7 text-black'>Deals under:</span>
-                            <span className='flex items-center not-italic font-medium text-xl leading-6 text-black'>100$<img className='mt-1' src={arrowBottomFull} alt="next" /></span> </p>
+                            <span className='not-italic font-AeonikProRegular xs:text-base md:text-base ss:text-base leading-7 text-black'>Deals under:</span>
+                            <span className='flex items-center not-italic font-AeonikProMedium text-xl leading-6 text-black ml-3 mr-2'>100$<img className='mt-[1px] ' src={arrowBottomFull} alt="next" /></span> </p>
                     </div>
                     <div className="flex items-center ss:justify-center md:justify-end ss:w-full xs:w-[48%]  md:w-fit ss:mt-4 xs:mt-0 border ss:border-solid  md:border-none ss:border-borderColorCard ss:h-[44px] rounded">
                         <p className='flex items-center cursor-pointer select-none'>
-                            <span className='not-italic font-medium mr-2 md:text-base ss:text-base xs:text-sm leading-4 text-right text-black'>Stores closest to you</span>
+                            <span className='not-italic font-AeonikProMedium mr-2 md:text-base ss:text-base xs:text-sm leading-4 text-right text-black'>Stores closest to you</span>
                             <span><img src={next} alt="next" /></span> </p>
                     </div>
 
@@ -484,10 +479,10 @@ export default function ClothesSlider() {
                                         return (
                                             <div key={data.id} className='!w-[100%]   h-full'>
                                                 <div className={`${genderStyle} w-full h-[110px]  m-auto ss:py-5  ls:p-0 bg-gray-100 rounded-lg flex justify-center items-center cursor-pointer  border border-searchBgColor  `}>
-                                                    <p className='not-italic font-medium text-xs leading-4 text-center text-black'>{data?.type || "0"}</p>
+                                                    <p className='not-italic font-AeonikProMedium text-xs leading-4 text-center text-black'>{data?.type || "0"}</p>
                                                 </div>
                                                 <div >
-                                                    <p className='not-italic font-medium ss:text-sm xs:text-xs leading-4 text-center ls:mt-5 ss:mt-2 text-black '>{data?.name || "type"}</p>
+                                                    <p className='not-italic font-AeonikProMedium ss:text-sm xs:text-xs leading-4 text-center ls:mt-5 ss:mt-2 text-black '>{data?.name || "type"}</p>
                                                 </div>
                                             </div>
                                         )
@@ -519,7 +514,7 @@ export default function ClothesSlider() {
                                                     <button href="#" className='nav-link flex items-center justify-center h-full'>
                                                         <img src={delivery} alt="" />
                                                     </button>
-                                                    <div className='followers absolute w-[50px] h-8 bg-bgCard font-medium text-[11px] rounded-r pr-[6px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Delivery</div>
+                                                    <div className='followers absolute w-[50px] h-8 bg-bgCard font-AeonikProMedium text-[11px] rounded-r pr-[6px]  border border-solid border-borderColorCard border-l-0 bg-white transition ease-in duration-500'>Delivery</div>
                                                 </div>
                                                 <div className='w-8 h-8 rounded flex items-center justify-center border border-solid bg-bgCard border-borderColorCard hover:bg-white transition ease-out duration-500'>
                                                     <img src={heart} alt="" />
@@ -547,30 +542,32 @@ export default function ClothesSlider() {
                                             </div>
                                         </div>
 
-                                        <div className="w-full rounded-b-1xl bg-white  flex flex-wrap content-between xs:py-3 lg:p-3 ss:h-[124px] xs:h-[147px] lg:h-[120px] ss:py-2 xs:px-2 ss:px-1">
-                                            <div className='w-full'>
+                                        <div className="w-full rounded-b-1xl bg-white   flex flex-wrap content-between xs:py-3  ss:h-[124px] xs:h-[147px] lg:h-[120px] ss:py-2  ">
+                                            <div className='w-full   px-3'>
                                                 <div className="w-full  not-italic font-AeonicProLight text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
                                                     {data?.title || "NoData"}
                                                 </div>
-                                                <div className="w-full flex justify-between items-center xs:mt-3">
+                                                <div className="w-full flex justify-between items-center xs:mt-3 ">
                                                     <div className='flex items-center justify-between'>
-                                                        <span>   <img src={star} alt="" /></span>
-                                                        {/* <span><img src={} alt=""/></span> */}
-                                                        <span className='not-italic font-normal text-[10px] ls:text-xs leading-4 text-right text-gray-500 ml-[2px] md:ml-1 flex items-center'>
-                                                            <span className='font-medium text-[10px] ls:text-xs not-italic mx-1 text-black md:mr-[6px] md:text-[13px]'>5.0 </span>
-                                                            ({data?.starCount || 0} <span className='ss:hidden lg:block md:ml-1 md:text-[11px]'>голосов</span>)
+                                                        <span className='flex items-center w-[14px] h-[14px] '>
+                                                            <img className='w-full h-full mt-[-4px]' src={star} alt="" />
+                                                        </span>
+                                                        <span className='not-italic flex items-center  font-AeonikProRegular mt-[2px] text-[10px] ls:text-xs leading-4 text-right text-gray-500 ml-[2px] md:ml-1 '>
+                                                            <span className='flex items-center font-AeonikProMedium text-[10px] ls:text-xs not-italic mx-1 text-black md:mr-[6px] md:text-[13px]'>5.0 </span>
+                                                            ({data?.starCount || 0} <span className='flex items-center ss:hidden lg:block md:ml-1 md:text-[11px]'>голосов</span>
+                                                            )
                                                         </span>
                                                     </div>
-                                                    <div className="not-italic xs:font-medium ss:font-normal leading-4 text-black  ss:text-[11px] sm:text-xs  md:text-[13px] ">
+                                                    <div className="not-italic xs:font-AeonikProMedium ss:font-AeonikProRegular leading-4 text-black  ss:text-[11px] sm:text-xs  md:text-[13px] ">
                                                         <b><span>{data?.shirtSize || 0}</span></b>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="w-full flex items-center justify-between ">
-                                                <div className='not-italic font-medium text-base leading-4' style={{ color: "black" }}>{data?.price} </div>
-                                                <div className="flex items-center">
-                                                    <span className='ss:w-[25px] xs:w-fit  cursor-pointer' ><img className='w-full' src={addBag} alt="user" /></span>
-                                                </div>
+                                            <div className="w-full flex items-center justify-between mt-1 pl-3 pr-[6px]">
+                                                <div className='not-italic font-AeonikProMedium text-base leading-4  ' style={{ color: "black" }}>{data?.price} </div>
+                                                <span className="ss:w-fit h-fit p-[6px] bg-btnBgColor ml-2 border border-searchBgColor rounded xs:w-fit flex items-center justify-center  cursor-pointer ">
+                                                    <img className="w-5 h-5" src={addBag} alt="user" />
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
