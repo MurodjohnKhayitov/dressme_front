@@ -4,6 +4,7 @@ import MediumHeader from "./medium";
 import BottomHeader from "./bottom";
 import NavMenu from "./nav-menu";
 import './header.css'
+import DataItem from './data';
 const Header = () => {
   // ----------------NavBar----------------
   const [show, setShow] = useState(true)
@@ -54,6 +55,9 @@ const Header = () => {
           <NavMenu />
         </div>
       </div>
+      {/* <div>
+        <DataItem/>
+      </div> */}
     </header>
   );
 };

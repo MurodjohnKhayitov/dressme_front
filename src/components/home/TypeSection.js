@@ -123,7 +123,7 @@ export default function TypeSection() {
     let settings = {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
-        infinite: false,
+        infinite: true,
         speed: 500,
         dots: false,
         slidesToShow: 3,

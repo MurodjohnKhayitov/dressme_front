@@ -322,11 +322,10 @@ export default function ClothesSlider() {
         );
     };
 
-
     const NextArrow2 = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	right-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard		`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	right-[18px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard		`} onClick={onClick}>
                 <button className="next">
                     <GrFormNext size={20} />
                 </button>
@@ -337,7 +336,7 @@ export default function ClothesSlider() {
     const PrevArrow2 = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	left-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	left-[18px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard`} onClick={onClick}>
                 <button className="prev">
                     <GrFormPrevious size={20} />
                 </button>
@@ -345,11 +344,10 @@ export default function ClothesSlider() {
         );
     };
 
-
     let settings1 = {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
-        infinite: false,
+        infinite: true,
         speed: 500,
         dots: false,
         slidesToShow: 8,
@@ -399,7 +397,7 @@ export default function ClothesSlider() {
     let settings = {
         nextArrow: <NextArrow2 />,
         prevArrow: <PrevArrow2 />,
-        infinite: false,
+        infinite: true,
         speed: 500,
         dots: false,
 
@@ -432,6 +430,7 @@ export default function ClothesSlider() {
             }
         ]
     };
+
     const [dressInfo, setDressInfo] = useContext(dressMainData)
     let shadowStyle = ''
     let genderStyle = ''
@@ -494,8 +493,8 @@ export default function ClothesSlider() {
             </div>
 
             <div className='w-full h-fit flex flex-col border-y	border-solid border-borderColorCard mt-12 '>
-                <div className='w-full flex items-center py-4  '>
-                    <Slider {...settings} className='w-[100%] flex xs:justify-between xs:pl-0  '>
+                <div className='w-full flex items-center py-4'>
+                    <Slider {...settings} className='w-[100%] flex xs:justify-between px-3'>
                         {
                             productList.map(data => {
                                 return (

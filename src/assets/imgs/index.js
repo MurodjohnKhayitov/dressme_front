@@ -189,3 +189,4 @@ export { default as WinterSquare  } from './SeasonSquare/winterSquare.svg'
 // ------------------------Back Top------------
 export { default as BacktopScroll  } from './backTop/backTop.svg'
 export { default as DotIcon  } from './backTop/dot.svg'
+export { default as InputCheck  } from './backTop/inputCheck.svg'
