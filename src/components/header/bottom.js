@@ -1,5 +1,5 @@
 import React, { useContext, useState, useMemo } from "react";
-import { arrowBottom, AutummFemale, AutummMale, clothing, colors, dollarLogo, DotIcon, plus, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale, SummerFemale, SummerMale, WinterFemale, WinterMale } from "../../assets/imgs";
+import { arrowBottom, AutummFemale, AutummMale, clothing, colors, dollarLogo, DotIcon, InputCheck, plus, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale, SummerFemale, SummerMale, WinterFemale, WinterMale } from "../../assets/imgs";
 import { dressMainData } from "../../ContextHook/ContextMenu";
 import { styles } from "../../util/style";
 import { Dropdown } from 'antd';
@@ -10,7 +10,6 @@ import { BsCheck2Square } from "react-icons/bs";
 import { Button, Divider, Popover, Segmented } from 'antd';
 const BottomHeader = () => {
     const [dressInfo, setDressInfo] = useContext(dressMainData)
-
     let dataStyle = ''
     let genderStyle = ''
     if (dressInfo?.type == 1111) {
@@ -70,7 +69,7 @@ const BottomHeader = () => {
                                 handleWearValue(data?.type)
                             }
                             }
-                            className={`w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-medium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
+                            className={`w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
                     )
                 })
             }
@@ -109,138 +108,130 @@ const BottomHeader = () => {
                                 handlePriceValue(data?.type)
                             }
                             }
-                            className={`w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-medium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
+                            className={`w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
                     )
                 })
             }
         </div>
     );
     const [changeColor, setChangeColor] = useState([
-        { id: 1, value: 1, action: false, colors: "bg-black" },
-        { id: 2, value: 2, action: false, colors: "bg-white" },
-        { id: 3, value: 3, action: false, colors: "bg-zinc-500" },
-        { id: 4, value: 4, action: false, colors: "bg-purple-500" },
-        { id: 5, value: 5, action: false, colors: "bg-sky-600" },
-        { id: 6, value: 6, action: false, colors: "bg-amber-400 " },
-        { id: 7, value: 7, action: false, colors: "bg-green-700 " },
-        { id: 8, value: 8, action: false, colors: "bg-amber-600 " },
-        { id: 9, value: 9, action: false, colors: "bg-red-700  " },
-        { id: 10, value: 10, action: false, colors: "bg-purple-800 " },
-        { id: 11, value: 11, action: false, colors: "bg-blue-900  " },
-        { id: 12, value: 12, action: false, colors: "bg-yellow-900 " },
+        { id: 1, data: 1, icons: InputCheck, action: false, colors: "bg-black" },
+        { id: 2, data: 2, icons: InputCheck, action: false, colors: "bg-white" },
+        { id: 3, data: 3, icons: InputCheck, action: false, colors: "bg-zinc-500" },
+        { id: 4, data: 4, icons: InputCheck, action: false, colors: "bg-purple-500" },
+        { id: 5, data: 5, icons: InputCheck, action: false, colors: "bg-sky-600" },
+        { id: 6, data: 6, icons: InputCheck, action: false, colors: "bg-amber-400 " },
+        { id: 7, data: 7, icons: InputCheck, action: false, colors: "bg-green-700 " },
+        { id: 8, data: 8, icons: InputCheck, action: false, colors: "bg-amber-600 " },
+        { id: 9, data: 9, icons: InputCheck, action: false, colors: "bg-red-700  " },
+        { id: 10, data: 10, icons: InputCheck, action: false, colors: "bg-purple-800 " },
+        { id: 11, data: 11, icons: InputCheck, action: false, colors: "bg-blue-900  " },
+        { id: 12, data: 12, icons: InputCheck, action: false, colors: "bg-yellow-900 " },
     ]);
-    const handleGetChecked = (info) => {
-        const newState = changeColor.map((obj) => {
-            if (obj.id === info) {
-                if (obj.action) {
-                    return { ...obj, action: false };
-                } else {
-                    return { ...obj, action: true };
-                }
-            }
-            return obj;
-        });
-        setChangeColor(newState);
-    };
-    // --------------------------------------------
-    const [textToColor, setTextToColor] = useState(false)
+    const [getRadio, setGetRadio] = useState('')
+   
+// --------------------------------------------
+const [textToColor, setTextToColor] = useState(false)
 
-    return (
-        <div className="flex flex-col justify-center items-center m-0 p-0 box-border ss:hidden md:block">
-            <div className='max-w-[1280px] w-[100%] flex justify-center  py-3 items-center m-auto   '>
+return (
+    <div className="flex flex-col justify-center items-center m-0 p-0 box-border ss:hidden md:block">
+        <div className='max-w-[1280px] w-[100%] flex justify-center  py-3 items-center m-auto   '>
 
-                <Popover
-                    open={openwear}
-                    onOpenChange={handleOpenChangeWear}
-                    className="w-[190px] px-[17px] h-[44px]  rounded-lg bg-btnBgColor  border-searchBgColor border flex items-center justify-between cursor-pointer select-none group  "
-                    trigger="click"
-                    options={['Hide']}
-                    placement="bottom"
-                    content={contentWear} >
-                    <span><img src={clothing} alt="clothing" className="" /> </span>
-                    <span className="not-italic font-medium text-center text-sm leading-4 text-black">{selectWear}</span>
-                    <span><BiChevronDown size={20} style={{ color: "#c2c2c2" }} className={`${openwear ? "rotate-[-180deg]" : ""} duration-200`} /> </span>
-                </Popover>
-                <Popover
-                    open={openPrice}
-                    onOpenChange={handleOpenChangePrice}
-                    className="w-[190px]  h-[44px]  rounded-lg bg-btnBgColor  border-searchBgColor border  flex items-center justify-between  cursor-pointer select-none group ml-2"
-                    trigger="click"
-                    options={['Hide']}
-                    placement="bottom"
-                    content={contentPrice} >
-                    <p className="w-[48px] h-full flex items-center justify-center border-r border-searchBgColor"><img src={dollarLogo} alt="dollar full" /> </p>
-                    <p className=" w-[142px] h-full flex justify-between items-center px-3">
-                        <span className="not-italic font-medium text-center text-sm leading-4 text-black ">{selectPrice}</span>
-                        <span className=""><BiChevronDown size={20} style={{ color: "#c2c2c2" }} className={`${openPrice ? "rotate-[-180deg]" : ""} duration-200`} /> </span>
-                    </p>
-                </Popover>
+            <Popover
+                open={openwear}
+                onOpenChange={handleOpenChangeWear}
+                className="w-[190px] px-[17px] h-[44px]  rounded-lg bg-btnBgColor  border-searchBgColor border flex items-center justify-between cursor-pointer select-none group  "
+                trigger="click"
+                options={['Hide']}
+                placement="bottom"
+                content={contentWear} >
+                <span><img src={clothing} alt="clothing" className="" /> </span>
+                <span className="not-italic font-AeonikProMedium text-center text-sm leading-4 text-black mt-1">{selectWear}</span>
+                <span><BiChevronDown size={20} style={{ color: "#c2c2c2" }} className={`${openwear ? "rotate-[-180deg]" : ""} duration-200`} /> </span>
+            </Popover>
+            <Popover
+                open={openPrice}
+                onOpenChange={handleOpenChangePrice}
+                className="w-[190px]  h-[44px]  rounded-lg bg-btnBgColor  border-searchBgColor border  flex items-center justify-between  cursor-pointer select-none group ml-2"
+                trigger="click"
+                options={['Hide']}
+                placement="bottom"
+                content={contentPrice} >
+                <p className="w-[48px] h-full flex items-center justify-center border-r border-searchBgColor"><img src={dollarLogo} alt="dollar full" /> </p>
+                <p className=" w-[142px] h-full flex justify-between items-center px-3">
+                    <span className="not-italic font-AeonikProMedium text-center text-sm leading-4 text-black  mt-1">{selectPrice}</span>
+                    <span className=""><BiChevronDown size={20} style={{ color: "#c2c2c2" }} className={`${openPrice ? "rotate-[-180deg]" : ""} duration-200`} /> </span>
+                </p>
+            </Popover>
 
 
-                <div className="flex items-center w-[536px] justify-start bg-btnBgColor overflow-hidden rounded-lg border-searchBgColor border h-[44px] ml-2">
-                    <div onClick={() => setTextToColor(!textToColor)} className="w-[48px] cursor-pointer border-r border-searchBgColor h-full flex items-center justify-center" >
-                        {/* <img src={colors} alt="" className="w-[21px]" /> */}
-                        <div className=" w-fit h-fit flex items-center justify-center select-none ">
-                            <div className={`w-[8px] h-[20px] flex items-end justify-center  py-[2px] border border-black  rounded-[3px] z-[25] bg-white rounded-b-[5px]`}>
-                                <img src={DotIcon} alt="DotIcon" />
-                            </div>
-                            <div className={`w-[8px] h-[20px] border left-[-3px] top-[2px] z-[24] bg-white relative border-black rounded-[3px] duration-200  rounded-b-[5px] ${!textToColor ? "rotate-[45deg] " : "left-[-8px] top-[0px] rotate-[0deg]"}`}>
-                            </div>
-                            <div className={`w-[8px] h-[20px] border relative left-[-10px] top-[6px] z-[23] bg-white border-black rounded-[3px] duration-200  rounded-b-[5px] ${!textToColor ? "rotate-[90deg]" : "left-[-16px] top-[0px] rotate-[0deg]"}`}>
-                            </div>
+            <div className="flex items-center w-[536px] justify-start bg-btnBgColor overflow-hidden rounded-lg border-searchBgColor border h-[44px] ml-2">
+                <div onClick={() => setTextToColor(!textToColor)} className="w-[48px] cursor-pointer border-r border-searchBgColor h-full flex items-center justify-center" >
+                    {/* <img src={colors} alt="" className="w-[21px]" /> */}
+                    <div className=" w-fit h-fit flex items-center justify-center select-none ">
+                        <div className={`w-[8px] h-[20px] flex items-end justify-center  py-[2px] border border-black  rounded-[3px] z-[25] bg-white rounded-b-[5px]`}>
+                            <img src={DotIcon} alt="DotIcon" />
+                        </div>
+                        <div className={`w-[8px] h-[20px] border left-[-3px] top-[2px] z-[24] bg-white relative border-black rounded-[3px] duration-200  rounded-b-[5px] ${!textToColor ? "rotate-[45deg] " : "left-[-8px] top-[-1px] rotate-[0deg]"}`}>
+                        </div>
+                        <div className={`w-[8px] h-[20px] border relative left-[-10px] top-[6px] z-[23] bg-white border-black rounded-[3px] duration-200  rounded-b-[5px] ${!textToColor ? "rotate-[90deg]" : "left-[-16px] top-[-1px] rotate-[0deg]"}`}>
                         </div>
                     </div>
-
-                    <div className={`${textToColor ? "w-0 px-0" : "w-[480px] px-3"} duration-500  h-full flex items-center justify-between  `}>
+                </div>
+                <div className="w-[480px] h-full  overflow-hidden flex items-center justify-between">
+                    <div className={`${textToColor ? "ml-[-500px] " : "ml-[0px] "} px-3 w-full duration-500  h-full flex items-center justify-between  `}>
                         {changeColor?.map(data => {
                             return (
-                                <div
-                                    onClick={() => handleGetChecked(data?.id)}
-                                    className={`rounded-full w-6 h-6 ${data?.colors} cursor-pointer flex items-center justify-center ${!textToColor && "border"}  border-borderColorCard	`} >
-                                    {data?.action ? (
-                                        <BsCheck2Square size={15} className={`text-white ${textToColor ? "hidden" : "block"}`} />
-                                    ) : null}
-                                </div>
+                                <>
+                                    <label
+                                        key={data?.id}
+                                        htmlFor={data?.id}
+                                        // onClick={() => handleGetChecked(data?.id)}
+                                        className={`rounded-full w-6 h-6 ${data?.colors} cursor-pointer flex items-center justify-center ${!textToColor && "border"}  border-borderColorCard	`} >
+                                        {data?.id == getRadio ? <img className="w-[14px]" src={InputCheck} alt="" /> : null}
+                                    </label>
+                                    <input
+                                        type="radio"
+                                        id={data?.id}
+                                        name="checkStatus"
+                                        value={data?.id}
+                                        onChange={(e) => setGetRadio(e.target.value)}
+                                        className={"hidden  w-full h-full"}
+                                    /></>
                             )
                         })
                         }
-                        {/* <div className="rounded-full w-6 h-6 bg-white cursor-pointer   border	border-gray-100	" ></div>
-                        <div className="rounded-full w-6 h-6 bg-zinc-500 cursor-pointer    border	border-gray-100	" ></div>
-                        <div className="rounded-full w-6 h-6 bg-purple-500 cursor-pointer   border border-gray-100	" ></div>
-                        <div className="rounded-full w-6 h-6 bg-sky-600 cursor-pointer   border border-gray-100	" ></div>
-                        <div className="rounded-full w-6 h-6 bg-amber-400 cursor-pointer   border	border-gray-100	" ></div>
-                        <div className="rounded-full w-6 h-6 bg-green-700 cursor-pointer   border	border-gray-100	" ></div>
-                        <div className="rounded-full w-6 h-6 bg-amber-600 cursor-pointer   border border-gray-100	" ></div>
-                        <div className="rounded-full w-6 h-6 bg-red-700 cursor-pointer   border border-gray-100	" ></div>
-                        <div className="rounded-full w-6 h-6 bg-purple-800 cursor-pointer   border border-gray-100	" ></div>
-                        <div className="rounded-full w-6 h-6 bg-blue-900 cursor-pointer   border border-gray-100	" ></div>
-                        <div className="rounded-full w-6 h-6 bg-yellow-900 cursor-pointer   border	border-gray-100	" ></div> */}
+
+
                     </div>
-                    <div className={`${textToColor ? "w-[480px] " : " mr-[-500px]"} duration-500 px-3 overflow-hidden h-full  flex items-center `}>
+                    <div className={`${textToColor ? " mr-0" : " mr-[-500px]"} w-full duration-500 px-3 overflow-hidden h-full  flex items-center `}>
                         Не давай своей гардеробной шкафной жизни стать скучной.
                     </div>
+
                 </div>
-                <div className="line h-6 border-r-[1px] text-textColor mx-3"></div>
-                {
-                    personItems?.filter(value => value.id === dressInfo?.type).map(data => {
-                        return (
-                            <div key={data?.id} className="w-fit flex items-center ">
-                                <button className={`mr-1 ${genderStyle} font-medium w-[136px] h-[44px] px-[16px] justify-between mr-2 flex items-center bg-btnBgColor border border-searchBgColor rounded-lg`}>
-                                    <img className="mr-3" src={data?.woman} alt="female" /><span> Женщинам</span>
-                                </button>
-                                <button className={` font-medium ${genderStyle} w-[136px] h-[44px]  px-[16px] justify-between flex items-center bg-btnBgColor border border-searchBgColor mr-2 rounded-lg`}>
-                                    <img className="mr-3" src={data?.man} alt="male" />    <span>Мужчинам</span>
-                                </button>
-                            </div>
-                        )
-                    })
-                }
-                <button className="bg-btnBgColor font-medium w-[44px] h-[44px] flex items-center justify-center border border-searchBgColor rounded-lg">
-                    <img src={plus} alt="" />
-                </button>
-            </div >
+
+            </div>
+            <div className="line h-6 border-r-[1px] text-textColor mx-3"></div>
+            {
+                personItems?.filter(value => value.id === dressInfo?.type).map(data => {
+                    return (
+                        <div key={data?.id} className="w-fit flex items-center ">
+                            <button className={`mr-1 ${genderStyle} font-AeonikProMedium w-[136px] h-[44px] px-[16px] justify-between mr-2 flex items-center bg-btnBgColor border border-searchBgColor rounded-lg`}>
+                                <img className="mr-3" src={data?.woman} alt="female" /><span className="mt-1"> Женщинам</span>
+                            </button>
+                            <button className={` font-AeonikProMedium ${genderStyle} w-[136px] h-[44px]  px-[16px] justify-between flex items-center bg-btnBgColor border border-searchBgColor mr-2 rounded-lg`}>
+                                <img className="mr-3" src={data?.man} alt="male" />    <span className="mt-1">Мужчинам</span>
+                            </button>
+                        </div>
+                    )
+                })
+            }
+            <button className="bg-btnBgColor font-AeonikProMedium w-[44px] h-[44px] flex items-center justify-center border border-searchBgColor rounded-lg">
+                <img src={plus} alt="" />
+            </button>
         </div >
-    )
+    </div >
+)
 }
 
 export default BottomHeader

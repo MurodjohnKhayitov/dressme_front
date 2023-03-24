@@ -19,7 +19,7 @@ const NavMenu = () => {
 
     return(
         <div className="bg-white drop-shadow-2xl    px-4 w-full rounded-t-xl md:hidden z-50">
-            <ul className="flex items-center justify-between text-[10px] font-medium py-1">
+            <ul className="flex items-center justify-between text-[10px] font-AeonikProMedium py-1">
                 
                 {menus.map((menu, index) => (
                     
@@ -29,7 +29,7 @@ const NavMenu = () => {
                             
                             <span className={`relative mx-auto cursor-pointer`}> 
                                 <img src={menu.icon} className=" w-5 h-5 mb-[6px]"/>
-                                <span className={`${index === 2 ? 'count bg-red-700 w-4 h-4 text-white text-[10px] rounded flex items-center justify-center absolute -top-[10px] -right-[10px] font-medium' : 'hidden'}`}>4</span>
+                                <span className={`${index === 2 ? 'count bg-red-700 w-4 h-4 text-white text-[10px] rounded flex items-center justify-center absolute -top-[10px] -right-[10px] font-AeonikProMedium' : 'hidden'}`}>4</span>
                             </span>
                             <span >
                                 <div>{menu.name}</div>

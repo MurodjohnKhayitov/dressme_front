@@ -72,7 +72,7 @@ const Footer = () => {
     let footerTextWeatherColor = ''
     if (dressInfo?.type == 1111) {
         dataStyle = " hover:text-borderSpring "
-        footerTextWeatherColor = "text-green-600 border-green-600"
+        footerTextWeatherColor = "text-green-600 border-green-600 "
     }
     if (dressInfo?.type == 2222) {
         dataStyle = " hover:text-borderSummer"
@@ -291,7 +291,7 @@ const Footer = () => {
 
     return (
         <div className="flex flex-col justify-center items-center m-0 p-0 ss:px-4 md:px-0 box-border mt-40 md:mb-[60px] ss:mb-[80px]">
-            <div className="backTopMenu border border-red-700 mt-[-100px]">
+            <div className="backTopMenu  mt-[-100px]">
                 <ScrollToTop
                     smooth
                     top="600"
