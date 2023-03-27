@@ -142,13 +142,13 @@ const BottomHeader = () => {
                 <Popover
                     open={openwear}
                     onOpenChange={handleOpenChangeWear}
-                    className="w-[190px] px-[17px] h-[44px]  rounded-lg bg-btnBgColor  border-searchBgColor border flex items-center justify-between cursor-pointer select-none group  "
+                    className="w-[190px] px-[17px] h-[44px] rounded-lg bg-btnBgColor  border-searchBgColor border flex items-center justify-between cursor-pointer select-none group  "
                     trigger="click"
                     options={['Hide']}
                     placement="bottom"
                     content={contentWear} >
                     <span><img src={clothing} alt="clothing" className="" /> </span>
-                    <span className="not-italic font-AeonikProMedium text-center text-sm leading-4 text-black">{selectWear}</span>
+                    <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">{selectWear}</span>
                     <span><BiChevronDown size={20} style={{ color: "#c2c2c2" }} className={`${openwear ? "rotate-[-180deg]" : ""} duration-200`} /> </span>
                 </Popover>
                 <Popover
@@ -161,7 +161,7 @@ const BottomHeader = () => {
                     content={contentPrice} >
                     <p className="w-[48px] h-full flex items-center justify-center border-r border-searchBgColor"><img src={dollarLogo} alt="dollar full" /> </p>
                     <p className=" w-[142px] h-full flex justify-between items-center px-3">
-                        <span className="not-italic font-AeonikProMedium text-center text-sm leading-4 text-black ">{selectPrice}</span>
+                        <span className="not-italic font-AeonikProMedium text-center text-sm mt-1 leading-4 text-black ">{selectPrice}</span>
                         <span className=""><BiChevronDown size={20} style={{ color: "#c2c2c2" }} className={`${openPrice ? "rotate-[-180deg]" : ""} duration-200`} /> </span>
                     </p>
                 </Popover>
@@ -180,7 +180,7 @@ const BottomHeader = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-[480px] h-full  overflow-hidden flex items-center justify-between">
+                    <div className="w-[480px] h-full overflow-hidden flex items-center justify-between">
                         <div className={`${textToColor ? "ml-[-500px] " : "ml-[0px] "} px-3 w-full duration-500  h-full flex items-center justify-between  `}>
                             {changeColor?.map(data => {
                                 return (
@@ -219,7 +219,7 @@ const BottomHeader = () => {
                         return (
                             <div key={data?.id} className="w-fit flex items-center ">
                                 <button className={`mr-1 ${genderStyle} font-AeonikProMedium w-[136px] h-[44px] px-[16px] justify-between mr-2 flex items-center bg-btnBgColor border border-searchBgColor rounded-lg`}>
-                                    <img className="mr-3" src={data?.woman} alt="female" /><span className="mt-1"> Женщинам</span>
+                                    <img className="mr-3" src={data?.woman} alt="female" /><span className="mt-1">Женщинам</span>
                                 </button>
                                 <button className={` font-AeonikProMedium ${genderStyle} w-[136px] h-[44px]  px-[16px] justify-between flex items-center bg-btnBgColor border border-searchBgColor mr-2 rounded-lg`}>
                                     <img className="mr-3" src={data?.man} alt="male" />    <span className="mt-1">Мужчинам</span>
