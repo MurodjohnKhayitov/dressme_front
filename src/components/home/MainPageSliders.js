@@ -228,13 +228,15 @@ export default function MainPageSliders() {
                                         <div key={data?.id} className='!w-[100%]  h-[260px] rounded  '>
                                             <div className='w-full h-[230px] bg-btnBgColor p-2  rounded-lg'>
                                                 <div className={`w-full h-full border border-solid	${dataStyle} rounded`} >
-
                                                     {data?.img ? <img className='h-full w-full' src={data?.img} alt="student" /> : null}
                                                 </div>
                                             </div>
                                             <div className='h-12.5 flex items-center justify-start'>
                                                 <p className='not-italic font-AeonikProMedium text-base leading-4 text-black mt-3 mr-2   ml-2'>{data?.type || "type"}
-                                                    <span className='not-italic font-AeonikProRegular text-xs leading-4 text-gray-500'>({data?.count || "0"})</span></p>
+                                                    <span className='not-italic ml-2 font-AeonikProRegular text-xs leading-4 text-gray-500'>
+                                                        ({data?.count || "0"})
+                                                    </span>
+                                                </p>
                                             </div>
                                         </div>
                                     )
@@ -270,8 +272,7 @@ export default function MainPageSliders() {
 
             </div>
             <div className='w-full 	mt-[64px]   ss:hidden xs:block'>
-                <Slider {...settings1} className='w-[100%] flex xs:justify-between'
-                >
+                <Slider {...settings1} className='w-[100%] flex xs:justify-between'>
                     {
                         carosuelData?.map(data => {
                             return (
@@ -290,8 +291,6 @@ export default function MainPageSliders() {
                             )
                         })
                     }
-
-
                 </Slider>
             </div>
 
