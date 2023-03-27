@@ -78,7 +78,6 @@ const BottomHeader = () => {
         </div>
     );
 
-
     // --------------------------------------------
     // ----------------------Price State Management----------------------
     const [openPrice, setOpenOrice] = useState(false);
@@ -169,7 +168,7 @@ const BottomHeader = () => {
 
                 <div className="flex items-center w-[536px] justify-start bg-btnBgColor overflow-hidden rounded-lg border-searchBgColor border h-[44px] ml-2">
                     <div onClick={() => setTextToColor(!textToColor)} className="w-[48px] cursor-pointer border-r border-searchBgColor h-full flex items-center justify-center" >
-                        {/* <img src={colors} alt="" className="w-[21px]" /> */}
+
                         <div className=" w-fit h-fit flex items-center justify-center relative select-none ">
                             <div className={`w-[8px] h-[20px] flex items-end justify-center  py-[2px] border border-black  rounded-[3px] z-[25] bg-white rounded-b-[5px]`}>
                                 <img src={DotIcon} alt="DotIcon" />
@@ -178,6 +177,7 @@ const BottomHeader = () => {
                             </div>
                             <div className={`w-[8px] h-[20px] border relative left-[-10px] top-[6px] z-[23] bg-white border-black rounded-[3px] duration-200  rounded-b-[5px] ${!textToColor ? "rotate-[90deg]" : "left-[-16px] top-[0px] rotate-[0deg]"}`}>
                             </div>
+                            
                         </div>
                     </div>
                     <div className="w-[480px] h-full overflow-hidden flex items-center justify-between">

@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react'
-import { AutummSquare, category, next, SpringSquare, SummerSquare, WinterSquare } from '../../assets/imgs'
+import { AutummSquare, category, next, SpringSquare, SummerSquare, WinterSquare } from '../../../assets/imgs'
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import Slider from "react-slick";
-import { dressMainData } from '../../ContextHook/ContextMenu';
+import { dressMainData } from '../../../ContextHook/ContextMenu';
 
 export default function TypeSection() {
     const [dressInfo, setDressInfo] = useContext(dressMainData)

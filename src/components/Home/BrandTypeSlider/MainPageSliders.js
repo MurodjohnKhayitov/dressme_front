@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react'
 
-import { category, arrowBottomFull, mouse, toBottom, markets, adidas, chanel, dolce, gucci, hm, locate, lacoste, louis, nike, prada, puma, tommy, zara, SpringSquare, SummerSquare, AutummSquare, WinterSquare, } from '../../assets/imgs'
+import { category, arrowBottomFull, mouse, toBottom, markets, adidas, chanel, dolce, gucci, hm, locate, lacoste, louis, nike, prada, puma, tommy, zara, SpringSquare, SummerSquare, AutummSquare, WinterSquare, } from '../../../assets/imgs'
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import Slider from "react-slick";
 import { MdKeyboardArrowRight,MdKeyboardArrowLeft } from "react-icons/md";
 import { GrFormNext,GrFormPrevious } from "react-icons/gr";
 
-import { dressMainData } from '../../ContextHook/ContextMenu';
+import { dressMainData } from '../../../ContextHook/ContextMenu';
 // import required modules``
 export default function MainPageSliders() {
     const [dressInfo, setDressInfo] = useContext(dressMainData)

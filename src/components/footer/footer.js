@@ -693,7 +693,6 @@ const Footer = () => {
 
                         {/* Location and Language for mobile */}
                         <div className="flex flex-row justify-between w-full  items-center ss:my-[35px] md:my-0  text-sm md:hidden">
-                            {/* <Link to="#" className="basis-[48%] h-[44px] flex items-center  justify-between  bg-bgColor  border border-searchBgColor rounded"> */}
                             <Popover
                                 open={openRegionMobile}
                                 onOpenChange={handleOpenChangeRegionMobile}
@@ -706,7 +705,6 @@ const Footer = () => {
                                 <span className="not-italic font-AeonikProMedium text-sm leading-4 text-black">{selectRegionMobile}</span>
                                 <BiChevronDown size={25} style={{ color: "#c2c2c2" }} className={`${openRegionMobile ? "rotate-[-180deg] transition ease-linear duration-200" : "transition ease-linear duration-200"}`} />
                             </Popover>
-                            {/* </Link> */}
                             {
                                 LanguageMobile.filter(data => data.id == selectLanguageMobile).map(data => {
                                     return (
