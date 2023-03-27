@@ -128,6 +128,14 @@ export { default as girlBlack } from './PersonBlack/girl-black.svg'
 export { default as babyBlack } from './PersonBlack/baby-black.svg'
 export { default as arrowTop } from './arrow-top.svg'
 
+// -------------- Registration FORM Icons-------------
+export {default as formUser} from './formImgs/form-user.svg'
+export {default as formDate} from './formImgs/form-date.svg'
+export {default as formEmail} from './formImgs/form-gmail.svg'
+export {default as formPhone} from './formImgs/form-phone.svg'
+export {default as formArrowRightCircle} from './formImgs/form-arrow-right-circle.svg'
+export {default as formArrowBottom} from './formImgs/form-arrow-bottom.svg'
+
 // ----------------ForBrand---------
 
 export { default as adidas } from './BrandType/Item/adidas.svg'
