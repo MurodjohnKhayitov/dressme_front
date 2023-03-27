@@ -78,7 +78,6 @@ const BottomHeader = () => {
         </div>
     );
 
-
     // --------------------------------------------
     // ----------------------Price State Management----------------------
     const [openPrice, setOpenOrice] = useState(false);

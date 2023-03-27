@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
-import { next, category, arrowBottomFull, nextItem, prevItem, star } from '../../assets/imgs'
-import { discount, bucket, video, delivery, heart, shirt, addBag, cardImg, shortik, kastyum } from '../../assets/imgs'
+import { next, category, arrowBottomFull, nextItem, prevItem, star } from '../../../assets/imgs'
+import { discount, bucket, video, delivery, heart, shirt, addBag, cardImg, shortik, kastyum } from '../../../assets/imgs'
 import { CiHeart } from 'react-icons/ci';
 
 import { GrNext, GrPrevious } from 'react-icons/gr';
@@ -10,8 +10,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
-import styles from './clothers.module.css'
-import { dressMainData } from '../../ContextHook/ContextMenu';
+import { dressMainData } from '../../../ContextHook/ContextMenu';
 import { Link } from 'react-router-dom';
 export default function ClothesSlider() {
     const [productList, setProductList] = useState([
@@ -498,11 +497,11 @@ export default function ClothesSlider() {
                         {
                             productList.map(data => {
                                 return (
-                                    <div key={data.id} id={styles.forwidt} className={`!w-[100%] ss:m-0 md:my-8 cursor-pointer transition ease-in-out delay-150 hover:shadow-cardShadow ${shadowStyle} ss:h-[320px] xs:h-[456px] lg:h-[440px] border border-solid borderColorCard overflow-hidden rounded-lg`}>
+                                    <div key={data.id} className={`!w-[100%] ss:m-0 md:my-8 cursor-pointer transition ease-in-out delay-150 hover:shadow-cardShadow ${shadowStyle} ss:h-[320px] xs:h-[456px] lg:h-[440px] border border-solid borderColorCard overflow-hidden rounded-lg`}>
                                         <div className='relative w-full  h-[206px] ls:h-[220px] ll:h-[234px] xs:h-[309px] lg:h-[320px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard'>
                                             {
                                                 data.ProducImg ?
-                                                    <img className='w-full h-full m-auto' src={data.ProducImg} alt="ProducImg" />
+                                                    <img className='w-full h-full m-auto  hover:scale-105 transition duration-700 ease-in-out' src={data.ProducImg} alt="ProducImg" />
                                                     :
                                                     <img className='w-full h-fit' src={data.noProductImg} alt="noProductImg" />
                                             }
