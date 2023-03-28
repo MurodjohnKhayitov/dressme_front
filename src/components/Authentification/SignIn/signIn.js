@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { AutummBoy, AutummChild, AutummFemale, AutummGirl, AutummMale, formArrowRight, formArrowRightCircle, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale,  SummerBoy,  SummerChild,  SummerFemale, SummerGirl, SummerMale, user, WinterBoy, WinterChild, WinterFemale, WinterGirl, WinterMale, } from "../../../assets/imgs";
+import { AutummBoy, AutummChild, AutummFemale, AutummGirl, AutummMale, formArrowRight, formArrowRightCircle, formDate, formEmail, formPhone, formUser, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale,  SummerBoy,  SummerChild,  SummerFemale, SummerGirl, SummerMale, user, WinterBoy, WinterChild, WinterFemale, WinterGirl, WinterMale, } from "../../../assets/imgs";
 import { dressMainData } from "../../../ContextHook/ContextMenu";
 
 const SignIn = () => {
@@ -67,27 +67,30 @@ const SignIn = () => {
                                         <label htmlFor="firstname" className="mb-[6px] font-AeonikProRegular text-sm">Имя</label>
                                         <div className="flex items-center justify-between border border-solid border-searchBgColor p-4 rounded-lg bg-btnBgColor mb-4">
                                             <input type="text" name="firstname" id="firstname" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base" />
-                                            <img src={user} alt="" />
+                                            <img src={formUser} alt="" />
                                         </div>
                                         <label htmlFor="lastname" className="mb-[6px] font-AeonikProRegular text-sm">Фамилия</label>
                                         <div className="flex items-center justify-between border border-solid border-searchBgColor p-[15px] rounded-lg bg-btnBgColor mb-4">
                                             <input type="text" name="lastname" id="lastname" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
-                                            <img src={user} alt="" />
+                                            <img src={formUser} alt="" />
                                         </div>
                                         <label htmlFor="bdate" className="mb-[6px] font-AeonikProRegular text-sm">Дата рождения</label>
                                         <div className="flex items-center justify-between border border-solid border-searchBgColor p-[15px] rounded-lg bg-btnBgColor mb-4">
                                             <input type="date" name="bdate" id="bdate" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
-                                            <img src={user} alt="" />
+                                            <input type="text" name="bdate" id="bdate" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
+                                            <input type="month" name="bdate" id="bdate" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
+                                            <input type="date" name="bdate" id="bdate" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
+                                            <img src={formDate} alt="" />
                                         </div>
                                         <label htmlFor="phone" className="mb-[6px] font-AeonikProRegular text-sm">Номер телефона</label>
                                         <div className="flex items-center justify-between border border-solid border-searchBgColor p-[15px] rounded-lg bg-btnBgColor mb-4">
                                             <input type="number" name="phone" id="phone" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
-                                            <img src={user} alt="" />
+                                            <img src={formPhone} alt="" />
                                         </div>
                                         <label htmlFor="email" className="mb-[6px] font-AeonikProRegular text-sm">Электронная почта</label>
                                         <div className="flex items-center justify-between border border-solid border-searchBgColor p-[15px] rounded-lg bg-btnBgColor mb-8">
                                             <input type="email" name="email" id="email" className="w-[90%] bg-btnBgColor font-AeonikProRegular text-base" placeholder="Адрес электронной почты"/>
-                                            <img src={user} alt="" />
+                                            <img src={formEmail} alt="" />
                                         </div>
                                         <button className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4">
                                             <span className="mr-[10px]">Следующий шаг</span>
