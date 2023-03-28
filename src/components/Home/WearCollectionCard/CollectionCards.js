@@ -386,7 +386,7 @@ export default function CollectionCards() {
   const [dressInfo, setDressInfo] = useContext(dressMainData);
   let dataStyle = "";
   let shadowStyle = "";
-  if (dressInfo?.type === 1111) {
+  if (dressInfo?.type === 1111) { 
     dataStyle = "text-borderSpring ";
     shadowStyle = "hover:shadow-green-300/100 ";
   }
