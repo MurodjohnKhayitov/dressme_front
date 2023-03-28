@@ -16,6 +16,11 @@ module.exports = {
         borderColor: '#707070',
         borderColor2: '#e2e2e2',
         borderColorCard: "#c1c1c1",
+        // set wear
+        setButtonColor:"#E8E8E8",
+        setTexOpacity:"#A1A1A1",
+        setPriceRed:"#D50000",
+
         "bgCard": "rgba(255, 255, 255, 0.4)",
         // season-----
         borderSpring: "#008F0E",
@@ -46,7 +51,7 @@ module.exports = {
         myShadow1: "1px -2px 0 0 rgb(17,24,39)",
         myShadow2: "-1px -2px 0 0 rgb(17,24,39)",
         cardShadow: "0px 3px 10px 0px rgba(0,0,0,0.06)",
-        },
+      },
     },
     screens: {
       ss: '320px',

@@ -181,12 +181,20 @@ export { default as WinterCategory } from './SeasonCategory/winterCategory.svg'
 
 // ------------------------Square Type Array------------
 export { default as SpringSquare } from './SeasonSquare/springSquare.svg'
-export { default as SummerSquare  } from './SeasonSquare/summerSquare.svg'
-export { default as AutummSquare  } from './SeasonSquare/autummSquare.svg'
-export { default as WinterSquare  } from './SeasonSquare/winterSquare.svg'
+export { default as SummerSquare } from './SeasonSquare/summerSquare.svg'
+export { default as AutummSquare } from './SeasonSquare/autummSquare.svg'
+export { default as WinterSquare } from './SeasonSquare/winterSquare.svg'
 
 
 // ------------------------Back Top------------
-export { default as BacktopScroll  } from './backTop/backTop.svg'
-export { default as DotIcon  } from './backTop/dot.svg'
-export { default as InputCheck  } from './backTop/inputCheck.svg'
+export { default as BacktopScroll } from './backTop/backTop.svg'
+export { default as DotIcon } from './backTop/dot.svg'
+export { default as InputCheck } from './backTop/inputCheck.svg'
+
+
+// ------------------------Set Wear------------
+export { default as checkTrue } from './Set/checkTrue.svg'
+export { default as checkFalse } from './Set/checkFalse.svg'
+export { default as Liked } from './Set/Liked.svg'
+export { default as LikedAfterRed } from './Set/LikedAfterRed.svg'
+export { default as nextInfo } from './Set/nextInfo.svg'
