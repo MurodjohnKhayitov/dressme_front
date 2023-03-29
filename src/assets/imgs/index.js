@@ -137,6 +137,7 @@ export {default as formArrowRightCircle} from './formImgs/form-arrow-right-circl
 export {default as formArrowBottom} from './formImgs/form-arrow-bottom.svg'
 export {default as formCalendar} from './formImgs/form-calendar.svg'
 export {default as formUzFlag} from './formImgs/form-uz-flag.svg'
+export {default as person3D} from './formImgs/person3d.svg'
 
 
 // ----------------ForBrand---------
