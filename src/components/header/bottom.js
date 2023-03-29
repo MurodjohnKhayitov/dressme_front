@@ -176,7 +176,7 @@ const BottomHeader = () => {
                                 <img src={DotIcon} alt="DotIcon" />
                             </div>
                             {/* <div className={`w-[8px] h-[20px] border left-[-3px] top-[2px] z-[24] bg-white relative border-black rounded-[3px] duration-200  rounded-b-[5px] ${!textToColor ? "rotate-[45deg] " : "left-[-8px] top-[0px] rotate-[0deg]"}`}> */}
-                            <div className={textToColor ? style.mainTwo : style.mainTworotate}>
+                            <div className={ style.mainTwo}>
                             </div>
                             {/* <div className={`w-[8px] h-[20px] border relative left-[-10px] top-[6px] z-[23] bg-white border-black rounded-[3px] duration-200  rounded-b-[5px] ${!textToColor ? "rotate-[90deg]" : "left-[-16px] top-[0px] rotate-[0deg]"}`}> */}
                             <div className={textToColor ? style.MainHtree : style.mainThreerotate}>
@@ -198,7 +198,7 @@ const BottomHeader = () => {
                                         </label>
                                         <input
                                             type="radio"
-                                            id={data?.id}
+                                            id={data?.id} 
                                             name="checkStatus"
                                             value={data?.id}
                                             onChange={(e) => setGetRadio(e.target.value)}
@@ -222,11 +222,11 @@ const BottomHeader = () => {
                     personItems?.filter(value => value.id === dressInfo?.type).map(data => {
                         return (
                             <div key={data?.id} className="w-fit flex items-center ">
-                                <button className={`mr-1 ${genderStyle} font-AeonikProMedium w-[136px] h-[44px] px-[16px] justify-between mr-2 flex items-center bg-btnBgColor border border-searchBgColor rounded-lg`}>
-                                    <img className="mr-3" src={data?.woman} alt="female" /><span className="mt-1">Женщинам</span>
+                                <button className={`mr-1 ${genderStyle}  w-[136px] h-[44px] px-[16px] justify-between mr-2 flex items-center bg-btnBgColor border border-searchBgColor rounded-lg`}>
+                                    <img className="mr-3" src={data?.woman} alt="female" /><span className="mt-1 font-AeonikProMedium">Женщинам</span>
                                 </button>
-                                <button className={` font-AeonikProMedium ${genderStyle} w-[136px] h-[44px]  px-[16px] justify-between flex items-center bg-btnBgColor border border-searchBgColor mr-2 rounded-lg`}>
-                                    <img className="mr-3" src={data?.man} alt="male" />    <span className="mt-1">Мужчинам</span>
+                                <button className={`  ${genderStyle} w-[136px] h-[44px]  px-[16px] justify-between flex items-center bg-btnBgColor border border-searchBgColor mr-2 rounded-lg`}>
+                                    <img className="mr-3" src={data?.man} alt="male" />    <span className="mt-1 font-AeonikProMedium">Мужчинам</span>
                                 </button>
                             </div>
                         )
@@ -235,7 +235,6 @@ const BottomHeader = () => {
                 <button className="bg-btnBgColor font-AeonikProMedium w-[44px] h-[44px] flex items-center justify-center border border-searchBgColor rounded-lg">
                     <img src={plus} alt="" />
                 </button>
-
             </div >
         </div >
     )

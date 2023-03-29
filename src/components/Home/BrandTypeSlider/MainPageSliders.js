@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
 
-import { category, arrowBottomFull, mouse, toBottom, markets, adidas, chanel, dolce, gucci, hm, locate, lacoste, louis, nike, prada, puma, tommy, zara, SpringSquare, SummerSquare, AutummSquare, WinterSquare, } from '../../../assets/imgs'
+import { category, arrowBottomFull, mouse, toBottom, markets, adidas, chanel, dolce, gucci, hm, locate, lacoste, louis, nike, prada, puma, tommy, zara, SpringSquare, SummerSquare, AutummSquare, WinterSquare, noProductImg, } from '../../../assets/imgs'
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import Slider from "react-slick";
-import { MdKeyboardArrowRight,MdKeyboardArrowLeft } from "react-icons/md";
-import { GrFormNext,GrFormPrevious } from "react-icons/gr";
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 import { dressMainData } from '../../../ContextHook/ContextMenu';
 // import required modules``
@@ -14,7 +14,7 @@ export default function MainPageSliders() {
     let dataStyle = ''
 
     if (dressInfo?.type == 1111) {
-        dataStyle = "border-borderSpring"  
+        dataStyle = "border-borderSpring"
 
     }
     if (dressInfo?.type == 2222) {
@@ -28,7 +28,7 @@ export default function MainPageSliders() {
     if (dressInfo?.type == 4444) {
         dataStyle = "border-borderWinter"
 
-    } 
+    }
 
     const [clothesToggle, setClothesToggle] = useState(true)
     const [carosuelData, setCarosuelData] = useState([
@@ -45,7 +45,7 @@ export default function MainPageSliders() {
                 { id: 9, type: "Creative", count: 190, img: "" },
             ],
 
-            
+
             campany: [
                 { id: 1, imgFull: adidas },
                 { id: 2, imgFull: chanel },
@@ -248,15 +248,15 @@ export default function MainPageSliders() {
                 </Slider>
             </div>
             {/* carosuel hidden bloack */}
-            <div className="w-full h-fit xs:hidden flex  flex-wrap gap-y-1 justify-between  my-0 py-0 md:my-5 md:py-7 ">
+            <div className="w-full h-fit xs:hidden flex  flex-wrap gap-y-1 justify-between overflow-hidden  my-0 py-0 md:my-5 md:py-7 ">
                 {
                     carosuelData?.map(data => {
                         return (
                             data.Category.map(data => {
                                 return (
                                     <div key={data?.id} className='ll:w-[100px] ss:w-[80px] ' >
-                                        <div className='w-[100%] h-[80px] rounded-lg	 bg-bgColor overflow-hidden	 border border-solid border-searchBgColor'>
-                                            <img className='h-full w-full' src={data?.img} alt="" />
+                                        <div className='w-[100%] h-[80px] flex items-center justify-center	p-1 bg-btnBgColor border border-searchBgColor	rounded-lg '>
+                                            <img className='border-0 w-fit h-fit	' src={data?.img || noProductImg} alt="." />
                                         </div>
                                         <div className='w-full py-1 flex items-center'>
                                             <p className='not-italic  mr-2 font-AeonikProMedium text-sm leading-6 text-black'>{data?.type || "type"}

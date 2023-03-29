@@ -34,12 +34,14 @@ module.exports = {
 
       },
       fontFamily: {
-  
+
+        // Chrome for
         // 400
-        AeonikProRegular: ['AeonikProRegular', 'sans-serif'], // 400
+        AeonikProRegular: ['OTFAeonikProRegular', 'sans-serif'],  
         // 500
-        AeonikProMedium: ['AeonikProMedium', 'sans-serif'], // 500
+        AeonikProMedium: ['OTFAeonikProMedium', 'sans-serif'], 
        
+        
       },
       boxShadow: {
         myShadow1: "1px -2px 0 0 rgb(17,24,39)",

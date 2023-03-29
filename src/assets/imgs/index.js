@@ -83,6 +83,7 @@ export { default as message } from './Contact/message.svg'
 export { default as privateCheck } from './Contact/konfidelnos.svg'
 export { default as homeTrend } from './Contact/home-trend-up.svg'
 export { default as pictureframa } from './Contact/picture-frame.svg'
+export { default as setpersonIcons } from './human.svg'
 
 
 
@@ -216,3 +217,4 @@ export { default as statusFalse } from './Set/statusFalse.svg'
 
 // ------------------------Weather------------
 export { default as weatherBrandIcon } from './Weather/weatherBrandIcon.svg'
+export { default as noProductImg } from './Weather/noImg.svg'

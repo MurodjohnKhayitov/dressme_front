@@ -15,6 +15,20 @@
   src: url("/src/fonts/AeonikPro-Regular.woff") format('woff');
 }
 
+/* otf */
+
+@font-face {
+  font-family: "OTFAeonikProMedium"; 
+  /* font-family: "Aeoniok Pro"; */
+  src:  url("/src/fonts/AeonikPro-Medium.otf") format('truetype');
+}
+
+@font-face {
+  font-family: "OTFAeonikProRegular";
+  /* font-family: "Aeoniok Pro"; */
+  src:  url("/src/fonts/AeonikPro-Regular.otf") format('truetype');
+}
+
 
 
 

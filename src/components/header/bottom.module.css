@@ -17,7 +17,7 @@
 }
 
 .mainTwo {
-    width: 9px;
+    width:8px;
     height: 20px;
     position: absolute;
     border: 1px solid black;
@@ -28,42 +28,30 @@
     border-bottom-right-radius: 5px;
     z-index: 30;
     transform: rotate(45deg);
-    left: 0.5px;
+    left: 0.5px;    
 }
 
-.mainTworotate {
-    width: 9px;
-    height: 20px;
-    position: absolute;
-    border: 1px solid black;
-    border-radius: 2px;
-    background-color: white;
-
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    z-index: 30;
-    transform: rotate(45deg);
-    left: 0.5px;
-
-}
 
 .MainHtree {
-    width: 9px;
+    width: 8px;
     height: 20px;
     position: absolute;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 2px;
     background-color: white;
 
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     z-index: 20;
-    display: none;
-
+    transition: .3s;
+    /* display: none; */
+    transform: rotate(45deg);
+    left: 1px;
+    top: -9px;
 }
 
 .mainThreerotate {
-    width: 9px;
+    width: 8px;
     height: 20px;
     position: absolute;
     border: 1px solid black;
@@ -76,5 +64,7 @@
     transform: rotate(90deg);
     left: 3px;
     top: -4px;
+    transition: .3s;
+
 
 }
