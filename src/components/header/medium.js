@@ -6,7 +6,7 @@ import { dressMainData } from "../../ContextHook/ContextMenu";
 import { GrClose } from "react-icons/gr";
 import { Popover, Modal, Button } from 'antd';
 import { FaRegHeart } from "react-icons/fa";
-
+ 
 const MediumHeader = () => {
   const [hamburgerMenu, setHamburgerMenu] = useState(true);
   const [toggle, setToggle] = useState(false);
@@ -196,7 +196,7 @@ const MediumHeader = () => {
                 <div className=" w-full flex items-center ss:w-full md:w-fit justify-between ">
                 
                 {/* Menu section */}
-                <div onClick={toggleHamburger} className={`flex items-center justify-center bg-btnBgColor border border-searchBgColor w-12 h-12 rounded cursor-pointer md:hidden `}>
+                <div onClick={toggleHamburger} className={`flex items-center justify-center bg-btnBgColor border border-searchBgColor w-12 h-12 -lg-lg cursor-pointer md:hidden `}>
 
                     <img src={!hamburgerMenu ? close : menu} alt="voice" className={`${close ? 'w-6 h-6' : ''} `} />
 
@@ -204,13 +204,13 @@ const MediumHeader = () => {
                     <div className={`${!hamburgerMenu ? "hamburger flex flex-col ease-linear duration-500 overscroll-none" : "left-[-450px] ll:-left-[500px] sm:left-[800px] ease-linear duration-500"}  top-[62px] left-0 fixed right-0 w-full bg-white z-10 h-full overflow-y-scroll px-[15px] ll:flex-fit`}>
 
                     {/* Searching section */}
-                    <div className="search flex items-center justify-between rounded font-AeonikProMedium h-10 mt-3 mb-3 border border-searchBg ss:mt-3 md:hidden w-full">
+                    <div className="search flex items-center justify-between rounded-lg font-AeonikProMedium h-10 mt-3 mb-3 border border-searchBg ss:mt-3 md:hidden w-full">
                         <img src={search} alt="search" className=" flex ss:pl-[11.65px] md:hidden" />
                         <input type="text" placeholder="Search products or brands" className="bg-transparent w-full px-3 h-10 text-[14px] border border-transparent md:border-searchBgColor md:mx-0 md:-ml-[3px] md:px-3 md:h-12" />
                     </div>
                     {/* Music and Map selection for Mobile */}
                     <div className="flex items-center justify-between h-11 mb-3">
-                        <button className="left py-[9px] px-10 rounded flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
+                        <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
                         {
                             VolumeTypeArray.filter(data => data?.id == dressInfo?.type).map(data => {
                             return (
@@ -219,7 +219,7 @@ const MediumHeader = () => {
                             })}
                         <span className=" ml-[10px]">Music</span>
                         </button>
-                        <Link to="#" className="right px-10 py-[9px] rounded flex items-center justify-center font-AeonikProMedium border border-gray-300 bg-bgColor ss:w-[48%]">
+                        <Link to="#" className="right px-10 py-[9px] rounded-lg flex items-center justify-center font-AeonikProMedium border border-gray-300 bg-bgColor ss:w-[48%]">
                         <img src={map} alt="map" />
                         <span className="ml-[10px]">Map</span>
                         </Link>
@@ -228,7 +228,7 @@ const MediumHeader = () => {
                     {/* Categories */}
                     <ul className="flex flex-col">
                         <li>
-                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded border-gray-300 px-5 mb-3 w-full">
+                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
                             <div className="flex items-center">
                             <span className="border-r border-gray-300 py-3 pr-5">
                                 <img src={dashboard} alt="" />
@@ -239,7 +239,7 @@ const MediumHeader = () => {
                         </button>
                         </li>
                         <li>
-                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded border-gray-300 px-5 mb-3 w-full">
+                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
                             <div className="flex items-center">
                             <span className="border-r border-gray-300 py-3 pr-5">
                                 <img src={businessBlack} alt="" />
@@ -254,7 +254,7 @@ const MediumHeader = () => {
                         </button>
                         </li>
                         <li>
-                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded border-gray-300 px-5 mb-3 w-full">
+                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
                             <div className="flex items-center">
                             <span className="border-r border-gray-300 py-3 pr-5">
                                 <img src={booking} alt="" />
@@ -269,7 +269,7 @@ const MediumHeader = () => {
                         </button>
                         </li>
                         <li>
-                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded border-gray-300 px-5 mb-3 w-full">
+                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
                             <div className="flex items-center">
                             <span className="border-r border-gray-300 py-3 pr-5">
                                 <img src={shop} alt="" />
@@ -284,7 +284,7 @@ const MediumHeader = () => {
                         </button>
                         </li>
                         <li>
-                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded border-gray-300 px-5 mb-3 w-full">
+                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
                             <div className="flex items-center">
                             <span className="border-r border-gray-300 py-3 pr-5">
                                 <img src={blog} alt="" />
@@ -302,11 +302,11 @@ const MediumHeader = () => {
 
                     {/*Help and Contact selection for Mobile */}
                     <div className="flex items-center justify-between h-11 mb-3">
-                        <button className="left py-[9px] px-10 rounded flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
+                        <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
                         <img src={helpBlack} alt="misic" />
                         <span className="ml-[10px]">Help</span>
                         </button>
-                        <Link to="#" className="left py-[9px] px-10 rounded flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
+                        <Link to="#" className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
                         <img src={contact} alt="map" />
                         <span className="ml-[10px]">Contact</span>
                         </Link>
@@ -317,12 +317,12 @@ const MediumHeader = () => {
 
                     {/* Location and Language */}
                     <div className="flex items-center justify-between h-11 mb-3">
-                        <button className="left py-[9px] px-10 rounded flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
+                        <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
                         <img src={location} alt="music" />
                         <span className="ml-[10px] mr-5">Tashkent</span>
                         <img src={arrowBottomBlack} alt="" />
                         </button>
-                        <Link to="#" className="left py-[9px] px-10 rounded flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
+                        <Link to="#" className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
                         <img src={eng} alt="map" />
                         <span className="ml-[10px] mr-5">English</span>
                         <img src={arrowBottomBlack} alt="map" />
@@ -333,7 +333,7 @@ const MediumHeader = () => {
                 </div>
 
                 {/* Logo section */}
-                <div className="flex justify-center items-center rounded h-[44px] md:w-[155px] ss:ml-2 md:ml-[0px] md:bg-white  ">
+                <div className="flex justify-center items-center rounded-lg h-[44px] md:w-[155px] ss:ml-2 md:ml-[0px] md:bg-white  ">
 
                     {
                     BrandTypeArray.filter(data => data.id == dressInfo.type).map(data => {
@@ -362,7 +362,7 @@ const MediumHeader = () => {
                 </div>
                 
                 {/* Weather seection */}
-                <div className=' ss:w-12 ss:h-[44px] md:w-[120px] bg-btnBgColor border border-searchBgColor rounded  md:rounded-lg ml-2'>
+                <div className=' ss:w-12 ss:h-[44px] md:w-[120px] bg-btnBgColor border border-searchBgColor rounded-lg  md:rounded-lg ml-2'>
                     {
                     SeasonTypeArray.filter(data => data.id == dressInfo.type).map(data => {
                         return (
@@ -434,7 +434,7 @@ const MediumHeader = () => {
                 {/* Bucket section */}
                 <button className=" bg-btnBgColor  rounded-lg flex items-center justify-center w-[44px] h-[44px] relative md:flex ss:hidden">
                     <img src={bucket} alt="bucket" />
-                    <span className="count bg-red-700 w-4 h-4 text-white text-[10px] rounded flex items-center justify-center absolute top-0 right-0 font-AeonikProMedium"> 4 </span>
+                    <span className="count bg-red-700 w-4 h-4 text-white text-[10px] rounded-lg flex items-center justify-center absolute top-0 right-0 font-AeonikProMedium"> 4 </span>
 
                 </button>
                 </div>
@@ -542,7 +542,7 @@ const MediumHeader = () => {
                         {
                             campany?.map(data => {
                             return (
-                                <div className='w-[80px] h-[80px] rounded bg-bgColor  border border-solid border-borderColorCard'>
+                                <div className='w-[80px] h-[80px] rounded-lg bg-bgColor  border border-solid border-borderColorCard'>
                                 <img className='h-full w-full' src={data?.imgFull} alt="" />
                                 </div>
                             )
@@ -573,7 +573,7 @@ const MediumHeader = () => {
                                     {
                                         changeColor?.map(data => {
                                         return (
-                                            <span className="w-60px flex items-center cursour-pointer hover:shadow-md p-1 rounded mr-2">
+                                            <span className="w-60px flex items-center cursour-pointer hover:shadow-md p-1 rounded-lg mr-2">
                                             <div className={`rounded-full mr-2 w-6 h-6 ${data?.colors} cursor-pointer `}></div>
                                             <span className="not-italic font-AeonikProMedium text-base leading-4 text-black">{data?.name}</span>
                                             </span>
@@ -594,28 +594,28 @@ const MediumHeader = () => {
                 <div className="flex items-center justify-between w-full ">
 
                 {/* Searching section */}
-                <div className="search flex items-center rounded font-AeonikProMedium h-10  border ss:w-[100%]">
+                <div className="search flex items-center rounded-lg font-AeonikProMedium h-10  border ss:w-[100%]">
                     <img src={search} alt="search" className="pl-[11.65px]" />
                     <input type="text" placeholder="Search..." className="bg-transparent w-full h-full text-[14px] border border-transparent px-2  " />
                 </div>
 
                 {/* Map section */}
-                <Link to="#" className="flex items-center w-full justify-center bg-btnBgColor border border-searchBgColor rounded ss:px-4 h-10 ml-2  ss:w-[94px] " >
+                <Link to="#" className="flex items-center w-full justify-center bg-btnBgColor border border-searchBgColor rounded-lg ss:px-4 h-10 ml-2  ss:w-[94px] " >
                     <img src={map} alt="map" className="pr-[6px]" />
                     <div className="font-AeonikProMedium">Map</div>
                 </Link>
                 </div>
 
                 {/* Gender selection for Mobile */}
-                <div className="flex flex-wrap items-center justify-between mt-3 rounded  mb-4 w-full">
+                <div className="flex flex-wrap items-center justify-between mt-3 rounded-lg  mb-4 w-full">
                 {
                     personItems?.filter(value => value.id === dressInfo?.type).map(data => {
                     return (
                         <div key={data?.id} className="w-full flex items-center justify-between ">
-                            <button className={` ${genderStyle} border rounded bg-btnBgColor  border-borderColorCard font-AeonikProMedium w-[48%] h-[44px] px-4 flex items-center  focus:rounded`}>
+                            <button className={` ${genderStyle} border rounded-lg bg-btnBgColor  border-searchBgColor font-AeonikProMedium w-[48%] h-[44px] px-4 flex items-center  focus:rounded-lg`}>
                                 <img src={data?.woman} alt="female" /><span className="ml-3">Женщинам</span>
                             </button>
-                            <button className={` font-AeonikProMedium ${genderStyle} border rounded bg-btnBgColor  border-borderColorCard w-[48%] h-[44px]  px-4 justify-center flex items-center  focus:rounded`}>
+                            <button className={` font-AeonikProMedium ${genderStyle} border rounded-lg bg-btnBgColor  border-searchBgColor w-[48%] h-[44px]  px-4 justify-center flex items-center  focus:rounded`}>
                                 <img src={data?.man} alt="male" /><span className="ml-3"> Мужчинам</span>
                             </button>
                         </div>
@@ -623,7 +623,7 @@ const MediumHeader = () => {
                     })
                 }
 
-                <button onClick={() => { setToggle(!toggle); }} className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 rounded border border-gray-200 px-5 ss:w-full  ss:mt-4 ">
+                <button onClick={() => { setToggle(!toggle); }} className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 rounded-lg border border-gray-200 px-5 ss:w-full  ss:mt-4 ">
                         <div className="flex items-center ml-auto">
                             <img src={clothing} alt="" />
                             <span className="ml-[11.67px]">Clothing options</span>
@@ -638,7 +638,7 @@ const MediumHeader = () => {
                     <ul className="ss:w-full mt-4 bg-white">
                         <li onClick={() => {
                         setClothesTypeMobile(!clothesTypeMobile)}}>
-                            <button className="ss:w-full flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded border-searchBgColor px-5 mb-3 md:hidden">
+                            <button className="ss:w-full flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 md:hidden">
                                 <div className="flex items-center" >
                                 <span className="w-[52px]  border-r border-searchBgColor py-3 pr-5">
                                     <img src={clothing} alt="" />
@@ -649,7 +649,7 @@ const MediumHeader = () => {
                             </button>
                         </li>
                         <li onClick={() => setPriceToggleMobile(!priceToggleMobile)}>
-                            <button className="flex items-center w-full bg-btnBgColor font-AeonikProMedium h-12 border rounded border-searchBgColor px-5 mb-3 md:hidden">
+                            <button className="flex items-center w-full bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 md:hidden">
                                 <div className="flex items-center" >
                                 <span className="w-[52px]  border-r border-searchBgColor py-3 pr-5">
                                     <img src={dollar} alt="" />
@@ -661,7 +661,7 @@ const MediumHeader = () => {
                         </li>
 
                         <li >
-                            <button className="w-full flex items-center justify-between bg-btnBgColor font-AeonikProMedium h-12 border rounded border-searchBgColor px-5 mb-3 md:hidden">
+                            <button className="w-full flex items-center justify-between bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 md:hidden">
                                 <span className="w-[52px] border-r border-searchBgColor py-3 pr-5">
                                 <img src={brush} alt="" />
                                 </span>
@@ -683,7 +683,7 @@ const MediumHeader = () => {
                             </button>
                         </li>
                         <li onClick={() => setBrandToggleMobile(!brandToggleMobile)}>
-                            <button className="w-full flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded border-searchBgColor px-5 mb-3 md:hidden">
+                            <button className="w-full flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 md:hidden">
 
                                 <div className="flex items-center">
                                 <span className="w-[52px]  border-r border-searchBgColor py-3 pr-5">

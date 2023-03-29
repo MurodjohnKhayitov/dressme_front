@@ -135,7 +135,7 @@ const Footer = () => {
                                 handlePriceValueFooter(data?.type)
                             }
                             }
-                            className={`w-full h-[42px] flex items-center justify-start pl-6 not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
+                            className={`w-full h-[42px] flex items-center justify-center  not-italic cursor-pointer tracking-[1%] font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
                     )
                 })
             }
@@ -172,7 +172,7 @@ const Footer = () => {
                                 handleRegionValueFooter(data?.type)
                             }
                             }
-                            className={`w-full h-[42px] flex items-center justify-start pl-9 not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
+                            className={`w-full h-[42px] flex items-center justify-center not-italic cursor-pointer tracking-[1%] font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
                     )
                 })
             }
@@ -209,7 +209,7 @@ const Footer = () => {
                                 handleRegionValueMobile(data?.type)
                             }
                             }
-                            className={`w-full h-[42px] flex items-center justify-start pl-9 not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
+                            className={`w-full h-[42px] flex items-center justify-center  not-italic cursor-pointer tracking-[1%] font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor ${dataStyle}`}>{data?.type}</p>
                     )
                 })
             }
@@ -240,14 +240,14 @@ const Footer = () => {
                     return (
                         <div
                             key={data?.id}
-                            className={`p-2 text-sm hover:bg-bgColor cursor-pointer flex items-center justify-start pl-8 ${dataStyle}`}
+                            className={`p-2 text-sm hover:bg-bgColor cursor-pointer flex items-center justify-center  ${dataStyle}`}
                             onClick={() => {
                                 handleLanguageValueFooter(data?.id)
                             }
                             }
                         >
                             <span className="mr-1"><img src={data?.icons} alt="" /></span>
-                            <span className="not-italic font-AeonikProRegular text-sm leading-4 text-black">{data?.type}</span>
+                            <span className="not-italic font-AeonikProMedium text-sm leading-4 tracking-[1%]">{data?.type}</span>
                         </div>)
                 })
             }
@@ -278,7 +278,7 @@ const Footer = () => {
                     return (
                         <div
                             key={data?.id}
-                            className={`p-2 text-sm hover:bg-bgColor cursor-pointer flex items-center justify-start pl-8 ${dataStyle}`}
+                            className={`p-2 text-sm hover:bg-bgColor cursor-pointer flex items-center justify-center ${dataStyle}`}
                             onClick={() => {
                                 handleLanguageValueMobile(data?.id)
                             }}
