@@ -17,9 +17,9 @@ module.exports = {
         borderColor2: '#e2e2e2',
         borderColorCard: "#c1c1c1",
         // set wear
-        setButtonColor:"#E8E8E8",
-        setTexOpacity:"#A1A1A1",
-        setPriceRed:"#D50000",
+        setButtonColor: "#E8E8E8",
+        setTexOpacity: "#A1A1A1",
+        setPriceRed: "#D50000",
 
         "bgCard": "rgba(255, 255, 255, 0.4)",
         // season-----
@@ -34,24 +34,23 @@ module.exports = {
 
       },
       fontFamily: {
-        // 300
-        AeonikProLight: ['AeonikProLight', 'sans-serif'], // 300
-        AeonikProLightItalic: ['AeonikProLightItalic', 'sans-serif'], // 300
+  
         // 400
         AeonikProRegular: ['AeonikProRegular', 'sans-serif'], // 400
-        AeonikProRegularItalic: ['AeonikProRegularItalic', 'sans-serif'], // 400
         // 500
         AeonikProMedium: ['AeonikProMedium', 'sans-serif'], // 500
-        AeonikProMediumItalic: ['AeonikProMediumItalic', 'sans-serif'], // 500
-        // 700
-        AeonikProBold: ['AeonikProBold', 'sans-serif'],
-        AeonikProBoldItalic: ['AeonikProBoldItalic', 'sans-serif'], // 700
+       
       },
       boxShadow: {
         myShadow1: "1px -2px 0 0 rgb(17,24,39)",
         myShadow2: "-1px -2px 0 0 rgb(17,24,39)",
         cardShadow: "0px 3px 10px 0px rgba(0,0,0,0.06)",
+
       },
+    },
+    letterSpacing: {
+      '1': '0.01em',
+
     },
     screens: {
       ss: '320px',

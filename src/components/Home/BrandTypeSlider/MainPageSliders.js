@@ -225,7 +225,7 @@ export default function MainPageSliders() {
                             return (
                                 data.Category.map(data => {
                                     return (
-                                        <div key={data?.id} className='!w-[100%]  h-[260px] rounded  '>
+                                        <div key={data?.id} className='!w-[100%]  h-[260px] rounded-lg  '>
                                             <div className='w-full h-[230px] bg-btnBgColor p-2  rounded-lg'>
                                                 <div className={`w-full h-full border border-solid	${dataStyle} rounded`} >
                                                     {data?.img ? <img className='h-full w-full' src={data?.img} alt="student" /> : null}
@@ -255,7 +255,7 @@ export default function MainPageSliders() {
                             data.Category.map(data => {
                                 return (
                                     <div key={data?.id} className='ll:w-[100px] ss:w-[80px] ' >
-                                        <div className='w-[100%] h-[80px] rounded	 bg-bgColor overflow-hidden	 border border-solid border-searchBgColor'>
+                                        <div className='w-[100%] h-[80px] rounded-lg	 bg-bgColor overflow-hidden	 border border-solid border-searchBgColor'>
                                             <img className='h-full w-full' src={data?.img} alt="" />
                                         </div>
                                         <div className='w-full py-1 flex items-center'>

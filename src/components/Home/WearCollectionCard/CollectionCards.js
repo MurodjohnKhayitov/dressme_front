@@ -382,11 +382,10 @@ export default function CollectionCards() {
       ]
     },
   ]);
-  console.log(productList, "productList");
   const [dressInfo, setDressInfo] = useContext(dressMainData);
   let dataStyle = "";
   let shadowStyle = "";
-  if (dressInfo?.type === 1111) { 
+  if (dressInfo?.type === 1111) {
     dataStyle = "text-borderSpring ";
     shadowStyle = "hover:shadow-green-300/100 ";
   }
@@ -436,7 +435,7 @@ export default function CollectionCards() {
         <div className="not-italic font-AeonikProMedium lg:w-fit lg:text-2xl xl:text-3xl flex items-center leading-8 text-black">
           <span>Коллекция одежд, которые вам подходят</span>
         </div>
-        <div className="rounded  h-[42px] md:h-[52px] ss:w-full md:w-[308px] md:mx-0 flex justify-between bg-slate-50 border border-solid ss:mt-5 md:mt-0 mx-auto ">
+        <div className="rounded-lg overflow-hidden  h-[42px] md:h-[52px] ss:w-full md:w-[308px] md:mx-0 flex justify-between bg-slate-50 border border-solid ss:mt-5 md:mt-0 mx-auto ">
           <button
             onClick={() => setClothesSetWear(true)}
             className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-AeonikProRegular not-italic ${clothesSetWear ? ` bg-white border  border-searchBgColor rounded  ${dataStyle}` : ""} `}
@@ -461,7 +460,7 @@ export default function CollectionCards() {
                   <div
                     key={data.id}
                     // onClick={() => handleGetCardId(data?.id)}
-                    className={` ss:w-[48%] md:w-[24%] lg:w-[240px] transition ease-in-out delay-50 hover:shadow-lg ${shadowStyle} summer xs:h-[456px] lg:h-[440px] border border-solid borderColorCard overflow-hidden rounded-lg`}
+                    className={` ss:w-[48%] md:w-[24%] lg:w-[240px] transition ease-in-out delay-50 hover:shadow-cardShadow ${shadowStyle} summer xs:h-[456px] lg:h-[440px] border border-solid borderColorCard overflow-hidden rounded-lg`}
 
                   >
                     <div className="relative w-full cursor-pointer ss:h-[206px] ls:h-[238px] xs:h-[309px] lg:h-[320px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap">
@@ -597,11 +596,10 @@ export default function CollectionCards() {
                 );
               })}
             </div>
-            <div className="w-[100%] h-fit flex flex-col justify-center xs:mt-14">
-              <div className="md:w-1/2 xs:w-[80%] m-auto h-[60px] text-center py-5 rounded cursor-pointer  ss:hidden xs:block  bg-bgColor border border-solid border-borderColorCard">
-                <span className="not-italic font-AeonikProMedium text-base leading-4 text-center text-black">
-                  Показать ещё 20 товаров
-                </span>
+
+            <div className='w-full h-fit flex items-center justify-center mt-14'>
+              <div className='w-[760px] h-[60px] cursor-pointer not-italic font-AeonikProMedium text-base leading-4 text-center text-black flex items-center justify-center rounded-lg border border-searchBgColor bg-btnBgColor'>
+                Показать ещё 12 наборов
               </div>
 
             </div>
