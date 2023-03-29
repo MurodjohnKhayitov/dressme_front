@@ -135,7 +135,11 @@ export {default as formEmail} from './formImgs/form-gmail.svg'
 export {default as formPhone} from './formImgs/form-phone.svg'
 export {default as formArrowRightCircle} from './formImgs/form-arrow-right-circle.svg'
 export {default as formArrowBottom} from './formImgs/form-arrow-bottom.svg'
+export {default as formCalendar} from './formImgs/form-calendar.svg'
+export {default as formUzFlag} from './formImgs/form-uz-flag.svg'
 
+
+// ----------------ForBrand---------
 // ----------------ForBrand---------
 
 export { default as adidas } from './BrandType/Item/adidas.svg'
