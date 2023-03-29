@@ -240,7 +240,7 @@ const Footer = () => {
                     return (
                         <div
                             key={data?.id}
-                            className={`p-2 text-sm hover:bg-bgColor cursor-pointer flex items-center justify-center  ${dataStyle}`}
+                            className={`p-2 text-sm hover:bg-bgColor cursor-pointer flex items-center justify-start  ${dataStyle}`}
                             onClick={() => {
                                 handleLanguageValueFooter(data?.id)
                             }
@@ -278,7 +278,7 @@ const Footer = () => {
                     return (
                         <div
                             key={data?.id}
-                            className={`p-2 text-sm hover:bg-bgColor cursor-pointer flex items-center justify-center ${dataStyle}`}
+                            className={`p-2 text-sm hover:bg-bgColor cursor-pointer flex items-center justify-start ${dataStyle}`}
                             onClick={() => {
                                 handleLanguageValueMobile(data?.id)
                             }}

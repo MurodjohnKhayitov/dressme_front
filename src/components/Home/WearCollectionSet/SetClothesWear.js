@@ -10,7 +10,7 @@ export default function SetClothesWear() {
     const [productList, setProductList] = useState([
         {
             id: 1,
-            category_name: "Business",
+            category_name: "Business", 
             category: [
                 { id: 1, name: "Business Wear (Man)", market: "Patek Business Wear" }
             ],
@@ -399,52 +399,7 @@ export default function SetClothesWear() {
         accessoryPrice: 0
     })
 
-    // productList?.map(data => {
-    //     data?.headWear?.filter(e => e?.id === getSliderId?.headWearId)?.map(value => {
-    //         if (value?.active) {
-    //             setGetSliderId({ ...getSliderId, headWearPrice: value?.amount })
-    //         } else {
-    //             setGetSliderId({ ...getSliderId, headWearPrice: 0 })
-    //         }
 
-    //     })
-
-    //     data?.outWear?.filter(e => e?.id === getSliderId?.outWearId)?.map(value => {
-    //         if (value?.active) {
-    //             setGetSliderId({ ...getSliderId, outWearPrice: value?.amount })
-    //         } else {
-    //             setGetSliderId({ ...getSliderId, outWearPrice: 0 })
-    //         }
-
-    //     })
-
-    //     data?.underWear?.filter(e => e?.id === getSliderId?.underWearId)?.map(value => {
-    //         if (value?.active) {
-    //             setGetSliderId({ ...getSliderId, underWearPrice: value?.amount })
-    //         } else {
-    //             setGetSliderId({ ...getSliderId, underWearPrice: 0 })
-    //         }
-
-    //     })
-
-    //     data?.legWear?.filter(e => e?.id === getSliderId?.legWearId)?.map(value => {
-    //         if (value?.active) {
-    //             setGetSliderId({ ...getSliderId, legWearPrice: value?.amount })
-    //         } else {
-    //             setGetSliderId({ ...getSliderId, legWearPrice: 0 })
-    //         }
-
-    //     })
-    //     data?.Accessory?.filter(e => e?.id === getSliderId?.accessoryId)?.map(value => {
-    //         if (value?.active) {
-    //             setGetSliderId({ ...getSliderId, accessoryPrice: value?.amount })
-    //         } else {
-    //             setGetSliderId({ ...getSliderId, accessoryPrice: 0 })
-    //         }
-
-    //     })
-
-    // })
     let headWear = {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
@@ -518,12 +473,12 @@ export default function SetClothesWear() {
 
                                 <div className='w-full h-full flex  flex-wrap content-center gap-y-1	  justify-center '>
                                     <div className="w-full h-fit">
-                                        <Slider {...headWear} className={`w-full h-[60px]`}>
+                                        <Slider {...headWear} className={`w-full h-[60px] `}>
                                             {
                                                 producListMap?.headWear?.map(item => {
                                                     return (
-                                                        <div key={item?.id} className={` !w-[192px] box-border headWear ml-[84px] flex items-center justify-center h-[60px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}>
-                                                            <div className='w-full h-full headWear'>
+                                                        <div key={item?.id} className={` !w-[192px] box-border  ml-[84px] flex items-center justify-center h-[60px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}>
+                                                            <div className='w-full h-full data'>
                                                                 <img className='w-[100px]  h-full m-auto' src={item?.head_wear_img} alt="head_wear_img" />
                                                             </div>
                                                             <div className={`absolute top-1 px-1 flex ${!item?.active ? "justify-between" : "justify-end"}  w-[190px] `}>
@@ -536,8 +491,8 @@ export default function SetClothesWear() {
                                                                     <img src={Liked} alt="Liked" />
                                                                 </div>
                                                             </div>
-                                                            <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end'>
-                                                                <div className='w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                            <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end  '>
+                                                                <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor data-hover:bg-red-500 bg-white rounded flex items-center justify-center'>
                                                                     <img src={nextInfo} alt="nextInfo" />
                                                                 </div>
                                                             </div>

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { next, category, arrowBottomFull, nextItem, prevItem, star } from '../../../assets/imgs'
+import { next, category, arrowBottomFull, nextItem, prevItem, star, setpersonIcons } from '../../../assets/imgs'
 import { discount, bucket, video, delivery, heart, shirt, addBag, cardImg, shortik, kastyum } from '../../../assets/imgs'
 import { CiHeart } from 'react-icons/ci';
 
@@ -518,6 +518,7 @@ export default function ClothesSlider() {
                                                     <img src={heart} alt="" />
                                                 </div>
                                             </div>
+                                           
                                             <div className="absolute w-full flex justify-between items-center px-1 bottom-0 border-solid xs:h-[38px] lg:h-8 ss:h-[30px] xs:px-2 md:px-4 bg-white hover:backdrop-brightness-125 hover:bg-white/60 transition ease-out duration-500">
                                                 <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-purple-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color1">
                                                     <input className="hidden" type="radio" id="Color1" name="colors" value="1" />
