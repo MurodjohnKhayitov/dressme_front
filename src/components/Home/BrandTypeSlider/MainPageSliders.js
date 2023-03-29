@@ -73,7 +73,7 @@ export default function MainPageSliders() {
     const NextArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	right-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard		`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	right-[20px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard		`} onClick={onClick}>
                 <button className="next">
                     <GrFormNext size={20} />
                 </button>
@@ -84,7 +84,7 @@ export default function MainPageSliders() {
     const PrevArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	left-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	left-[20px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard`} onClick={onClick}>
                 <button className="prev">
                     <GrFormPrevious size={20} />
                 </button>

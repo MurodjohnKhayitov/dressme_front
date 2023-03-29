@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { adidas, arrowBottomBlack, arrowBottomRight, autummBrand, AutummCategory, AutummFemale, AutummMale, autummSeason, autummVolume, blog, booking, brush, bucket, business, businessBlack, catalog, chanel, close, clothing, contact, dashboard, dolce, dollar, eng, female, gucci, heart, help, helpBlack, hm, lacoste, location, logo, logoo, louis, male, map, menu, nike, prada, puma, search, shop, springBrand, SpringCategory, SpringFemale, SpringMale, springSeason, springVolume, summerBrand, SummerCategory, SummerFemale, SummerMale, summerSeason, summerVolume, tommy, topBrands, user, voice, winter, winterBrand, WinterCategory, WinterFemale, WinterMale, winterSeason, winterVolume, zara, } from "../../assets/imgs";
 import { styles } from "../../util/style";
 import { dressMainData } from "../../ContextHook/ContextMenu";
@@ -333,7 +333,7 @@ const MediumHeader = () => {
                 </div>
 
                 {/* Logo section */}
-                <div className="flex justify-center items-center rounded-lg h-[44px] md:w-[155px] ss:ml-2 md:ml-[0px] md:bg-white  ">
+                <NavLink to="/home" className="flex justify-center items-center rounded-lg h-[44px] md:w-[155px] ss:ml-2 md:ml-[0px] md:bg-white  ">
 
                     {
                     BrandTypeArray.filter(data => data.id == dressInfo.type).map(data => {
@@ -344,7 +344,7 @@ const MediumHeader = () => {
                         )
                     })
                     }
-                </div>
+                </NavLink >
                 
                 {/* Voice section */}
                 <div
