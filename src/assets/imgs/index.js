@@ -211,3 +211,7 @@ export { default as Liked } from './Set/Liked.svg'
 export { default as LikedAfterRed } from './Set/LikedAfterRed.svg'
 export { default as nextInfo } from './Set/nextInfo.svg'
 export { default as statusFalse } from './Set/statusFalse.svg'
+
+
+// ------------------------Weather------------
+export { default as weatherBrandIcon } from './Weather/weatherBrandIcon.svg'

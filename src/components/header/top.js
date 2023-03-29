@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { business, eng, englishFlag, glasses, help, location, order, ru, russiaFlag, shop, uzbekFlag } from "../../assets/imgs";
+import { Link, NavLink } from "react-router-dom";
+import { business, eng, englishFlag, glasses, help, location, order, ru, russiaFlag, shop, uzbekFlag, weatherBrandIcon } from "../../assets/imgs";
 import { dressMainData } from "../../ContextHook/ContextMenu";
 import { styles } from "../../util/style";
 // import { Select, Space } from 'antd';
@@ -62,7 +62,7 @@ const TopHeader = () => {
                     return (
                         <div
                             key={data?.id}
-                            className={`p-2 text-sm cursor-pointer hover:bg-bgColor flex items-center justify-center  ${dataStyle}`}
+                            className={`p-2 text-sm cursor-pointer hover:bg-bgColor flex items-center justify-start  ${dataStyle}`}
                             onClick={() => {
                                 handleLangValue(data?.id)
                             }
@@ -146,8 +146,17 @@ const TopHeader = () => {
 
                         </div>
                     </Link>
+                    <div className="flex items-center mx-[40px]  ">
+                        <NavLink to='/weather' className={'flex items-center cursor-pointer'}>
+                            <span className="mr-[6px]">
+                                <img src={weatherBrandIcon} alt="weatherBrandIcon" />
+                            </span>
+                            <span className="not-italic font-AeonikProMedium text-base  leading-4 text-black after:content-['\00B0'] after:font-AeonikProMedium  mt-[3px]">16</span><span className="not-italic font-AeonikProRegular text-base  mt-[3px] leading-4 text-black">C</span>
 
-                    <div className="w-fit h-full rounded bg-white ml-[15px]  font-AeonikProMedium select-none cursor-pointer">
+                        </NavLink>
+                    </div>
+
+                    <div className="w-fit h-full rounded bg-white font-AeonikProMedium select-none cursor-pointer">
 
                         {
                             LanguageList.filter(data => data.id === selectLang).map(data => {
