@@ -420,10 +420,10 @@ const MediumHeader = () => {
                 <div className="line h-5 border-x-[1px]   text-textColor ss:hidden md:block mx-3"></div>
 
                 {/* User section */}
-                <button className=" bg-btnBgColor  rounded-lg flex items-center justify-center w-[44px] h-[44px] mr-2 hidden md:flex">
+                <Link to="/signin_stepone" className=" bg-btnBgColor  rounded-lg flex items-center justify-center w-[44px] h-[44px] mr-2 hidden md:flex">
 
                     <img src={user} alt="" />
-                </button>
+                </Link>
 
                 {/* Heart section */}
                 <button className="bg-btnBgColor  rounded-lg flex items-center justify-center w-[44px] h-[44px] mr-2 hidden md:flex">
