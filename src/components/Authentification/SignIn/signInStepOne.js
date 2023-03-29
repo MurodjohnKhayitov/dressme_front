@@ -3,22 +3,27 @@ import { Link } from "react-router-dom";
 import { AutummBoy, AutummChild, AutummFemale, AutummGirl, AutummMale, formArrowBottom, formArrowRight, formArrowRightCircle, formCalendar, formDate, formEmail, formPhone, formUser, formUzFlag, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale,  SummerBoy,  SummerChild,  SummerFemale, SummerGirl, SummerMale, user, uzbekFlag, WinterBoy, WinterChild, WinterFemale, WinterGirl, WinterMale, } from "../../../assets/imgs";
 import { dressMainData } from "../../../ContextHook/ContextMenu";
 
-const SignIn = () => {
+const SignInStepOne = () => {
 
     const [dressInfo, setDressInfo] = useContext(dressMainData)
     
     let genderStyle = ''
+    let emailColor = ''
     if (dressInfo?.type == 1111) {
       genderStyle = "focus:text-borderSpring focus:bg-bgSpring focus:border focus:border-borderSpring focus:text-borderSpring"
+      emailColor = "text-green-600"
     }
     if (dressInfo?.type == 2222) {
       genderStyle = "focus:text-borderSummer focus:bg-bgSummer focus:border focus:border-borderSummer focus:text-borderSummer"
+      emailColor = "text-amber-500"
     }
     if (dressInfo?.type == 3333) {
       genderStyle = "focus:text-borderAutumm focus:bg-bgAutumm focus:border focus:border-borderAutumm focus:text-borderAutumm"
+      emailColor = "text-orange-600"
     }
     if (dressInfo?.type == 4444) {
       genderStyle = "focus:text-borderWinter focus:bg-bgWinter focus:border focus:border-borderWinter focus:text-borderWinter"
+      emailColor = "text-sky-600"
     }
 
     const PersonTypeArray = [
@@ -98,17 +103,20 @@ const SignIn = () => {
                                                 <img src={formPhone} alt="" className="w-12 h-12"/>
                                             </button>
                                         </div>
-                                        <label htmlFor="email" className="mb-[6px] font-AeonikProRegular text-sm">Электронная почта</label>
+                                        <div className="flex items-center justify-between ">
+                                            <label htmlFor="email" className="mb-[6px] font-AeonikProRegular text-sm">Электронная почта</label>
+                                            <label htmlFor="email" className="mb-[6px] font-AeonikProRegular text-sm"><span className={`${emailColor} font-AeonikProMedium`}>*</span>необязательная</label>
+                                        </div>
                                         <div className="flex items-center justify-between border border-solid border-searchBgColor p-[15px] rounded-lg bg-btnBgColor mb-8">
                                             <input type="email" name="email" id="email" className="w-[90%] bg-btnBgColor font-AeonikProRegular text-base" placeholder="Адрес электронной почты"/>
                                             <button>
                                                 <img src={formEmail} alt="" />
                                             </button>
                                         </div>
-                                        <button className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4">
+                                        <Link to="/signin_steptwo" className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4">
                                             <span className="mr-[10px]">Следующий шаг</span>
                                             <img src={formArrowRightCircle} alt="" />
-                                        </button>
+                                        </Link>
                                     </form>
                                 </div>
                                 
@@ -120,4 +128,4 @@ const SignIn = () => {
         </main>
     )
 }
-export default SignIn
+export default SignInStepOne
