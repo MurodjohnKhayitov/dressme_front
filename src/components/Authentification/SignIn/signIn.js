@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { AutummBoy, AutummChild, AutummFemale, AutummGirl, AutummMale, formArrowRight, formArrowRightCircle, formDate, formEmail, formPhone, formUser, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale,  SummerBoy,  SummerChild,  SummerFemale, SummerGirl, SummerMale, user, WinterBoy, WinterChild, WinterFemale, WinterGirl, WinterMale, } from "../../../assets/imgs";
+import { AutummBoy, AutummChild, AutummFemale, AutummGirl, AutummMale, formArrowBottom, formArrowRight, formArrowRightCircle, formCalendar, formDate, formEmail, formPhone, formUser, formUzFlag, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale,  SummerBoy,  SummerChild,  SummerFemale, SummerGirl, SummerMale, user, uzbekFlag, WinterBoy, WinterChild, WinterFemale, WinterGirl, WinterMale, } from "../../../assets/imgs";
 import { dressMainData } from "../../../ContextHook/ContextMenu";
 
 const SignIn = () => {
@@ -76,15 +76,19 @@ const SignIn = () => {
                                         </div>
                                         <label htmlFor="bdate" className="mb-[6px] font-AeonikProRegular text-sm">Дата рождения</label>
                                         <div className="flex items-center justify-between border border-solid border-searchBgColor p-[15px] rounded-lg bg-btnBgColor mb-4">
+                                            <span className="h-full w-20"><img src={formCalendar} alt="" /></span>
+                                            <input type="text" name="day" placeholder="День" id="day" className="w-[90%] bg-btnBgColor font-AeonikProRegular text-base"/>
                                             <input type="date" name="bdate" id="bdate" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
-                                            <input type="text" name="bdate" id="bdate" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
                                             <input type="month" name="bdate" id="bdate" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
-                                            <input type="date" name="bdate" id="bdate" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
-                                            <img src={formDate} alt="" />
                                         </div>
                                         <label htmlFor="phone" className="mb-[6px] font-AeonikProRegular text-sm">Номер телефона</label>
-                                        <div className="flex items-center justify-between border border-solid border-searchBgColor p-[15px] rounded-lg bg-btnBgColor mb-4">
-                                            <input type="number" name="phone" id="phone" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
+                                        <div className="flex items-center justify-between border border-solid border-searchBgColor px-[15px] rounded-lg bg-btnBgColor mb-4">
+                                            <div className="flex items-center w-[45%] pr-[50px] h-full border-r py-[13px] border-r-searchBgColor">
+                                                <img src={formUzFlag} alt="" />
+                                                <label htmlFor="" className="font-AeonikProMedium text-base ml-2 mr-4 flex items-center mt-1">+998</label>
+                                                <img src={formArrowBottom} alt="form-arrow-bottom"/>
+                                            </div>
+                                            <input type="number" name="phone" id="phone" placeholder="(90) 123 455 67" className="bg-btnBgColor font-AeonikProRegular text-base ml-4 appearance-none"/>
                                             <img src={formPhone} alt="" />
                                         </div>
                                         <label htmlFor="email" className="mb-[6px] font-AeonikProRegular text-sm">Электронная почта</label>
