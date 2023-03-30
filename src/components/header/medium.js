@@ -174,9 +174,9 @@ const MediumHeader = () => {
           return (
             <p
               key={value?.id}
-              className='w-full h-[42px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor'
+              className='w-full h-[42px] flex items-center justify-center md:justify-start md:pl-3 not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor'
               onClick={() => handleSeason(value.id)}>
-              <span className='mr-3 '><img src={value?.icons} alt="" /></span>
+              <span className='md:mr-3'><img src={value?.icons} alt="" /></span>
               <span className={`ss:hidden md:inline-block font-AeonikProMedium text-base text-black not-italic ${hoverText}`}>{value?.type}</span>
             </p>
           )
@@ -196,138 +196,139 @@ const MediumHeader = () => {
                 <div className=" w-full flex items-center ss:w-full md:w-fit justify-between ">
                 
                 {/* Menu section */}
-                <div onClick={toggleHamburger} className={`flex items-center justify-center bg-btnBgColor border border-searchBgColor w-12 h-12 -lg-lg cursor-pointer md:hidden `}>
+                <div onClick={toggleHamburger} className={`flex items-center justify-center bg-btnBgColor border border-searchBgColor w-12 h-12 cursor-pointer md:hidden rounded-lg`}>
 
                     <img src={!hamburgerMenu ? close : menu} alt="voice" className={`${close ? 'w-6 h-6' : ''} `} />
 
                     {/*Starting of Opened Hamburger menu section */}
                     <div className={`${!hamburgerMenu ? "hamburger flex flex-col ease-linear duration-500 overscroll-none" : "left-[-450px] ll:-left-[500px] sm:left-[800px] ease-linear duration-500"}  top-[62px] left-0 fixed right-0 w-full bg-white z-10 h-full overflow-y-scroll px-[15px] ll:flex-fit`}>
 
-                    {/* Searching section */}
-                    <div className="search flex items-center justify-between rounded-lg font-AeonikProMedium h-10 mt-3 mb-3 border border-searchBg ss:mt-3 md:hidden w-full">
-                        <img src={search} alt="search" className=" flex ss:pl-[11.65px] md:hidden" />
-                        <input type="text" placeholder="Search products or brands" className="bg-transparent w-full px-3 h-10 text-[14px] border border-transparent md:border-searchBgColor md:mx-0 md:-ml-[3px] md:px-3 md:h-12" />
-                    </div>
-                    {/* Music and Map selection for Mobile */}
-                    <div className="flex items-center justify-between h-11 mb-3">
-                        <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
-                        {
-                            VolumeTypeArray.filter(data => data?.id == dressInfo?.type).map(data => {
-                            return (
-                                <img key={data?.id} src={data?.icons} alt="misic" />
-                            )
-                            })}
-                        <span className=" ml-[10px]">Music</span>
-                        </button>
-                        <Link to="#" className="right px-10 py-[9px] rounded-lg flex items-center justify-center font-AeonikProMedium border border-gray-300 bg-bgColor ss:w-[48%]">
-                        <img src={map} alt="map" />
-                        <span className="ml-[10px]">Map</span>
-                        </Link>
-                    </div>
+                        {/* Searching section */}
+                        <div className="search flex items-center justify-between rounded-lg font-AeonikProMedium h-10 mt-3 mb-3 border border-searchBg ss:mt-3 md:hidden w-full">
+                            <img src={search} alt="search" className=" flex ss:pl-[11.65px] md:hidden" />
+                            <input type="text" placeholder="Search products or brands" className="bg-transparent w-full px-3 h-10 text-[14px] border border-transparent md:border-searchBgColor md:mx-0 md:-ml-[3px] md:px-3 md:h-12" />
+                        </div>
+                        
+                        {/* Music and Map selection for Mobile */}
+                        <div className="flex items-center justify-between h-11 mb-3">
+                            <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
+                            {
+                                VolumeTypeArray.filter(data => data?.id == dressInfo?.type).map(data => {
+                                return (
+                                    <img key={data?.id} src={data?.icons} alt="misic" />
+                                )
+                                })}
+                            <span className=" ml-[10px]">Music</span>
+                            </button>
+                            <Link to="#" className="right px-10 py-[9px] rounded-lg flex items-center justify-center font-AeonikProMedium border border-gray-300 bg-bgColor ss:w-[48%]">
+                            <img src={map} alt="map" />
+                            <span className="ml-[10px]">Map</span>
+                            </Link>
+                        </div>
 
-                    {/* Categories */}
-                    <ul className="flex flex-col">
-                        <li>
-                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
-                            <div className="flex items-center">
-                            <span className="border-r border-gray-300 py-3 pr-5">
-                                <img src={dashboard} alt="" />
-                            </span>
-                            <span className="ml-[11.67px]">Dashboard (demo)</span>
-                            </div>
-                            <img src={arrowBottomRight} alt="" className="arrowRotate ml-auto" />
-                        </button>
-                        </li>
-                        <li>
-                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
-                            <div className="flex items-center">
-                            <span className="border-r border-gray-300 py-3 pr-5">
-                                <img src={businessBlack} alt="" />
-                            </span>
-                            <span className="ml-[11.67px]">Business</span>
-                            </div>
-                            <img
-                            src={arrowBottomRight}
-                            alt=""
-                            className="arrowRotate ml-auto"
-                            />
-                        </button>
-                        </li>
-                        <li>
-                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
-                            <div className="flex items-center">
-                            <span className="border-r border-gray-300 py-3 pr-5">
-                                <img src={booking} alt="" />
-                            </span>
-                            <span className="ml-[11.67px]">My orders</span>
-                            </div>
-                            <img
-                            src={arrowBottomRight}
-                            alt=""
-                            className="arrowRotate ml-auto"
-                            />
-                        </button>
-                        </li>
-                        <li>
-                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
-                            <div className="flex items-center">
-                            <span className="border-r border-gray-300 py-3 pr-5">
-                                <img src={shop} alt="" />
-                            </span>
-                            <span className="ml-[11.67px]">Shop</span>
-                            </div>
-                            <img
-                            src={arrowBottomRight}
-                            alt=""
-                            className="arrowRotate ml-auto"
-                            />
-                        </button>
-                        </li>
-                        <li>
-                        <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
-                            <div className="flex items-center">
-                            <span className="border-r border-gray-300 py-3 pr-5">
-                                <img src={blog} alt="" />
-                            </span>
-                            <span className="ml-[11.67px]">My blog</span>
-                            </div>
-                            <img
-                            src={arrowBottomRight}
-                            alt=""
-                            className="arrowRotate ml-auto"
-                            />
-                        </button>
-                        </li>
-                    </ul>
+                        {/* Categories */}
+                        <ul className="flex flex-col">
+                            <li>
+                            <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
+                                <div className="flex items-center">
+                                <span className="border-r border-gray-300 py-3 pr-5">
+                                    <img src={dashboard} alt="" />
+                                </span>
+                                <span className="ml-[11.67px]">Dashboard (demo)</span>
+                                </div>
+                                <img src={arrowBottomRight} alt="" className="arrowRotate ml-auto" />
+                            </button>
+                            </li>
+                            <li>
+                            <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
+                                <div className="flex items-center">
+                                <span className="border-r border-gray-300 py-3 pr-5">
+                                    <img src={businessBlack} alt="" />
+                                </span>
+                                <span className="ml-[11.67px]">Business</span>
+                                </div>
+                                <img
+                                src={arrowBottomRight}
+                                alt=""
+                                className="arrowRotate ml-auto"
+                                />
+                            </button>
+                            </li>
+                            <li>
+                            <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
+                                <div className="flex items-center">
+                                <span className="border-r border-gray-300 py-3 pr-5">
+                                    <img src={booking} alt="" />
+                                </span>
+                                <span className="ml-[11.67px]">My orders</span>
+                                </div>
+                                <img
+                                src={arrowBottomRight}
+                                alt=""
+                                className="arrowRotate ml-auto"
+                                />
+                            </button>
+                            </li>
+                            <li>
+                            <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
+                                <div className="flex items-center">
+                                <span className="border-r border-gray-300 py-3 pr-5">
+                                    <img src={shop} alt="" />
+                                </span>
+                                <span className="ml-[11.67px]">Shop</span>
+                                </div>
+                                <img
+                                src={arrowBottomRight}
+                                alt=""
+                                className="arrowRotate ml-auto"
+                                />
+                            </button>
+                            </li>
+                            <li>
+                            <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
+                                <div className="flex items-center">
+                                <span className="border-r border-gray-300 py-3 pr-5">
+                                    <img src={blog} alt="" />
+                                </span>
+                                <span className="ml-[11.67px]">My blog</span>
+                                </div>
+                                <img
+                                src={arrowBottomRight}
+                                alt=""
+                                className="arrowRotate ml-auto"
+                                />
+                            </button>
+                            </li>
+                        </ul>
 
-                    {/*Help and Contact selection for Mobile */}
-                    <div className="flex items-center justify-between h-11 mb-3">
-                        <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
-                        <img src={helpBlack} alt="misic" />
-                        <span className="ml-[10px]">Help</span>
-                        </button>
-                        <Link to="#" className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
-                        <img src={contact} alt="map" />
-                        <span className="ml-[10px]">Contact</span>
-                        </Link>
-                    </div>
+                        {/*Help and Contact selection for Mobile */}
+                        <div className="flex items-center justify-between h-11 mb-3">
+                            <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
+                            <img src={helpBlack} alt="misic" />
+                            <span className="ml-[10px]">Help</span>
+                            </button>
+                            <Link to="#" className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
+                            <img src={contact} alt="map" />
+                            <span className="ml-[10px]">Contact</span>
+                            </Link>
+                        </div>
 
-                    {/* Line */}
-                    <div className="line border-b w-[300px] border-gray-300 mb-3 ls:w-full"></div>
+                        {/* Line */}
+                        <div className="line border-b w-[300px] border-gray-300 mb-3 ls:w-full"></div>
 
-                    {/* Location and Language */}
-                    <div className="flex items-center justify-between h-11 mb-3">
-                        <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
-                        <img src={location} alt="music" />
-                        <span className="ml-[10px] mr-5">Tashkent</span>
-                        <img src={arrowBottomBlack} alt="" />
-                        </button>
-                        <Link to="#" className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
-                        <img src={eng} alt="map" />
-                        <span className="ml-[10px] mr-5">English</span>
-                        <img src={arrowBottomBlack} alt="map" />
-                        </Link>
-                    </div>
+                        {/* Location and Language */}
+                        <div className="flex items-center justify-between h-11 mb-3">
+                            <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
+                            <img src={location} alt="music" />
+                            <span className="ml-[10px] mr-5">Tashkent</span>
+                            <img src={arrowBottomBlack} alt="" />
+                            </button>
+                            <Link to="#" className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
+                            <img src={eng} alt="map" />
+                            <span className="ml-[10px] mr-5">English</span>
+                            <img src={arrowBottomBlack} alt="map" />
+                            </Link>
+                        </div>
                     </div>
                     {/*Ending of Opened Hamburger menu section */}
                 </div>
@@ -347,9 +348,7 @@ const MediumHeader = () => {
                 </NavLink >
                 
                 {/* Voice section */}
-                <div
-                    className={` bg-btnBgColor  w-[47px] h-[44px] ml-[25px] rounded-lg cursor-pointer hidden items-center justify-center md:flex`}>
-
+                <div className={` bg-btnBgColor border border-searchBgColor w-[47px] h-[44px] ml-[25px] rounded-lg cursor-pointer hidden items-center justify-center md:flex`}>
                     {
                     VolumeTypeArray.filter(data => data.id == dressInfo.type).map(data => {
                         return (
@@ -362,7 +361,7 @@ const MediumHeader = () => {
                 </div>
                 
                 {/* Weather seection */}
-                <div className=' ss:w-12 ss:h-[44px] md:w-[120px] bg-btnBgColor border border-searchBgColor rounded-lg  md:rounded-lg ml-2'>
+                <div className=' w-12 h-12 md:w-[120px] md:h-11 bg-btnBgColor border border-searchBgColor rounded-lg  md:rounded-lg ml-2'>
                     {
                     SeasonTypeArray.filter(data => data.id == dressInfo.type).map(data => {
                         return (
@@ -370,7 +369,7 @@ const MediumHeader = () => {
                             key={data?.id}
                             open={openwear}
                             onOpenChange={handleOpenChangeWear}
-                            className="ss:w-full h-full flex items-center justify-center rounded-lg ss:w-fit cursor-pointer  "
+                            className="w-12 h-12 flex items-center justify-center rounded-lg cursor-pointer  "
                             trigger="click"
                             options={['Hide']}
                             placement="bottom"
@@ -389,7 +388,7 @@ const MediumHeader = () => {
                 <div className="search flex items-center justify-center rounded-lg font-AeonikProMedium h-[44px] border border-red-600 md:border-transparent md:w-[624px] ml-2 ss:hidden md:flex">
 
                     {/* Catalog section */}
-                    <button className={`items-center  ${dataStyle}  pl-5 pr-7 h-[44px] rounded-l-lg cursor-pointer hidden md:flex`}>
+                    <button className={`items-center border border-searchBgColor border-r-0 ${dataStyle}  pl-5 pr-7 h-[44px] rounded-l-lg cursor-pointer hidden md:flex`}>
                     {CategoryTypeArray.filter(data => data.id === dressInfo?.type).map(data => {
                         return (
                         <img key={data?.id} src={data?.icons} alt={data?.type} className="w-[18px]" />
@@ -400,17 +399,17 @@ const MediumHeader = () => {
                     </button>
                     <img src={search} alt="search" className="flex md:hidden" />
                     <input type="text" placeholder="Поиск продуктов или брендов" className="bg-transparent w-full px-3 h-[44px] text-sm border border-transparent md:border-searchBgColor " />
-                    <button className="bg-searchBgColor w-[100px]  h-[44px] items-center justify-center rounded-r-lg border border-bgColor hidden md:flex -ml-[2px]">
+                    <button className="bg-searchBgColor w-[100px]  h-[44px] items-center justify-center rounded-r-lg  border border-searchBgColor hidden md:flex -ml-[2px]">
 
                     <img src={search} alt="search" />
                     </button>
                 </div>
 
                 {/* Line border */}
-                <div className="line h-5 border-x-[1px]   text-textColor ss:hidden md:block mx-3"></div>
+                <div className="line h-5 border-x-[1px] text-textColor ss:hidden md:block mx-3"></div>
 
                 {/* Map section */}
-                <Link to="#" className="flex items-center justify-center bg-btnBgColor  rounded-lg    md:h-[44px] ss:text-sm md:w-[100px] md:mt-0 ss:hidden md:flex">
+                <Link to="#" className="flex items-center justify-center bg-btnBgColor border border-searchBgColor rounded-lg md:h-[44px] ss:text-sm md:w-[100px] md:mt-0 ss:hidden md:flex">
 
                     <img src={map} alt="map" className="pr-[6px]" />
                     <span className="font-AeonikProMedium text-sm  ">Карта</span>
@@ -420,19 +419,19 @@ const MediumHeader = () => {
                 <div className="line h-5 border-x-[1px]   text-textColor ss:hidden md:block mx-3"></div>
 
                 {/* User section */}
-                <Link to="/signin_stepone" className=" bg-btnBgColor  rounded-lg flex items-center justify-center w-[44px] h-[44px] mr-2 hidden md:flex">
+                <Link to="/signin_stepone" className="bg-btnBgColor border border-searchBgColor rounded-lg items-center justify-center w-[44px] h-[44px] mr-2 hidden md:flex">
 
                     <img src={user} alt="" />
                 </Link>
 
                 {/* Heart section */}
-                <button className="bg-btnBgColor  rounded-lg flex items-center justify-center w-[44px] h-[44px] mr-2 hidden md:flex">
+                <button className="bg-btnBgColor  border border-searchBgColor  rounded-lg items-center justify-center w-[44px] h-[44px] mr-2 hidden md:flex">
                     {/* <FaRegHeart /> */}
                     <img src={heart} className={"w-5 h-5"} alt="heart" />
                 </button>
 
                 {/* Bucket section */}
-                <button className=" bg-btnBgColor  rounded-lg flex items-center justify-center w-[44px] h-[44px] relative md:flex ss:hidden">
+                <button className=" bg-btnBgColor  border border-searchBgColor rounded-lg flex items-center justify-center w-[44px] h-[44px] relative md:flex ss:hidden">
                     <img src={bucket} alt="bucket" />
                     <span className="count bg-red-700 w-4 h-4 text-white text-[10px] rounded-lg flex items-center justify-center absolute top-0 right-0 font-AeonikProMedium"> 4 </span>
 
@@ -592,18 +591,17 @@ const MediumHeader = () => {
             <div className={`md:hidden `}>
 
                 <div className="flex items-center justify-between w-full ">
+                    {/* Searching section */}
+                    <div className="search flex items-center rounded-lg font-AeonikProMedium h-10  border ss:w-[100%]">
+                        <img src={search} alt="search" className="pl-[11.65px]" />
+                        <input type="text" placeholder="Search..." className="bg-transparent w-full h-full text-[14px] border border-transparent px-2  " />
+                    </div>
 
-                {/* Searching section */}
-                <div className="search flex items-center rounded-lg font-AeonikProMedium h-10  border ss:w-[100%]">
-                    <img src={search} alt="search" className="pl-[11.65px]" />
-                    <input type="text" placeholder="Search..." className="bg-transparent w-full h-full text-[14px] border border-transparent px-2  " />
-                </div>
-
-                {/* Map section */}
-                <Link to="#" className="flex items-center w-full justify-center bg-btnBgColor border border-searchBgColor rounded-lg ss:px-4 h-10 ml-2  ss:w-[94px] " >
-                    <img src={map} alt="map" className="pr-[6px]" />
-                    <div className="font-AeonikProMedium">Map</div>
-                </Link>
+                    {/* Map section */}
+                    <Link to="#" className="flex items-center w-full justify-center bg-btnBgColor border border-searchBgColor rounded-lg ss:px-4 h-10 ml-2  ss:w-[94px] " >
+                        <img src={map} alt="map" className="pr-[6px]" />
+                        <div className="font-AeonikProMedium">Map</div>
+                    </Link>
                 </div>
 
                 {/* Gender selection for Mobile */}
@@ -612,10 +610,10 @@ const MediumHeader = () => {
                     personItems?.filter(value => value.id === dressInfo?.type).map(data => {
                     return (
                         <div key={data?.id} className="w-full flex items-center justify-between ">
-                            <button className={` ${genderStyle} border rounded-lg bg-btnBgColor  border-searchBgColor font-AeonikProMedium w-[48%] h-[44px] px-4 flex items-center  focus:rounded-lg`}>
+                            <button className={` ${genderStyle} border rounded-lg bg-btnBgColor  border-searchBgColor font-AeonikProMedium w-[49%] h-[44px] px-4 flex items-center  focus:rounded-lg`}>
                                 <img src={data?.woman} alt="female" /><span className="ml-3">Женщинам</span>
                             </button>
-                            <button className={` font-AeonikProMedium ${genderStyle} border rounded-lg bg-btnBgColor  border-searchBgColor w-[48%] h-[44px]  px-4 justify-center flex items-center  focus:rounded`}>
+                            <button className={` font-AeonikProMedium ${genderStyle} border rounded-lg bg-btnBgColor  border-searchBgColor w-[49%] h-[44px]  px-4 justify-center flex items-center  focus:rounded-lg`}>
                                 <img src={data?.man} alt="male" /><span className="ml-3"> Мужчинам</span>
                             </button>
                         </div>
