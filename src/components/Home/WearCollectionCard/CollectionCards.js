@@ -438,14 +438,14 @@ export default function CollectionCards() {
         <div className="rounded-lg overflow-hidden  h-[42px] md:h-[52px] ss:w-full md:w-[308px] md:mx-0 flex justify-between bg-slate-50 border border-solid ss:mt-5 md:mt-0 mx-auto ">
           <button
             onClick={() => setClothesSetWear(true)}
-            className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-AeonikProRegular not-italic ${clothesSetWear ? ` bg-white border  border-searchBgColor rounded  ${dataStyle}` : ""} `}
+            className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-AeonikProRegular not-italic ${clothesSetWear ? ` bg-white border  border-searchBgColor rounded-lg  ${dataStyle}` : ""} `}
           >
             {" "}
             Одежда
           </button>
           <button
             onClick={() => setClothesSetWear(false)}
-            className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-AeonikProRegular not-italic ${!clothesSetWear ? ` bg-white border  border-searchBgColor rounded  ${dataStyle} ` : ""} `}
+            className={`ss:w-1/2 md:w-[152px] md:h-[50px]  h-[42px] text-base text-black text-center font-AeonikProRegular not-italic ${!clothesSetWear ? ` bg-white border  border-searchBgColor rounded-lg  ${dataStyle} ` : ""} `}
           >
             Образы
           </button>
@@ -471,7 +471,7 @@ export default function CollectionCards() {
                       )}
                       <div className="w-full flex absolute top-px p-[5px] ss:justify-end xs:justify-between">
                         <ul className="nav-lists flex-col gap-y-1 justify-center h-full ss:hidden xs:flex">
-                          <p className="group w-8 hover:w-[70px] bg-bgCard hover:bg-white  duration-300 rounded overflow-hidden border border-borderColorCard flex items-center">
+                          <p className="group w-8 hover:w-[70px] bg-bgCard hover:bg-white  duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center">
                             <span className="w-8 h-8 flex items-center justify-center  ">
                               <img src={discount} alt="" />
                             </span>
@@ -479,7 +479,7 @@ export default function CollectionCards() {
                               -30%
                             </span>
                           </p>
-                          <p className="group w-8 hover:w-[70px] bg-bgCard hover:bg-white  duration-300 rounded overflow-hidden border border-borderColorCard flex items-center">
+                          <p className="group w-8 hover:w-[70px] bg-bgCard hover:bg-white  duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center">
                             <span className="w-8 h-8 flex items-center justify-center">
                               <img src={video} alt="" />
                             </span>
@@ -487,7 +487,7 @@ export default function CollectionCards() {
                               Video
                             </span>
                           </p>
-                          <p className="group w-8 hover:w-[85px] bg-bgCard hover:bg-white  duration-300 rounded overflow-hidden border border-borderColorCard flex items-center">
+                          <p className="group w-8 hover:w-[85px] bg-bgCard hover:bg-white  duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center">
                             <span className="w-8 h-8 flex items-center justify-center  ">
                               <img src={delivery} alt="" />
                             </span>
@@ -498,10 +498,10 @@ export default function CollectionCards() {
                         </ul>
 
                         <div className="flex flex-col gap-y-1">
-                          <p className="w-8 h-8  rounded flex items-center bg-bgCard justify-center border border-solid border-borderColorCard hover:bg-white transition ease-out duration-500">
+                          <p className="w-8 h-8  rounded-lg flex items-center bg-bgCard justify-center border border-solid border-borderColorCard hover:bg-white transition ease-out duration-500">
                             <img src={heart} alt="" />
                           </p>
-                          <p className="w-8 h-8 ss:hidden rounded bg-bgCard xs:flex items-center justify-center border border-solid border-borderColorCard hover:bg-white transition ease-out duration-500">
+                          <p className="w-8 h-8 ss:hidden rounded-lg bg-bgCard xs:flex items-center justify-center border border-solid border-borderColorCard hover:bg-white transition ease-out duration-500">
                             <img src={bucket} alt="" />
                           </p>
                         </div>
@@ -510,7 +510,7 @@ export default function CollectionCards() {
 
                         <p
                           onClick={() => setClothesSetWear(false)}
-                          className="group w-8 hover:w-[138px] bg-bgCard hover:bg-white   duration-300 rounded overflow-hidden border border-borderColorCard flex items-center justify-between">
+                          className="group w-8 hover:w-[138px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center justify-between">
                           <span className="  flex flex-nowrap items-center ml-[-100px] group-hover:ml-[10px] w-[92px]   not-italic overflow-hidden    duration-300   font-AeonikProMedium leading-3  text-black text-[11px] ">
                             Страница образа
                           </span>
