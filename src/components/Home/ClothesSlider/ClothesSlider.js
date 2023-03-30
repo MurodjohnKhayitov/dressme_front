@@ -491,7 +491,7 @@ export default function ClothesSlider() {
                 </div>
             </div>
 
-            <div className='w-full h-fit flex flex-col border-y	border-solid border-borderColorCard mt-12 '>
+            <div className='w-full h-fit flex flex-col border-t border-searchBgColor border-solid mt-12 '>
                 <div className='w-full flex items-center py-4'>
                     <Slider {...settings} className='w-[100%] flex xs:justify-between px-3'>
                         {

@@ -180,7 +180,7 @@ export default function TypeSection() {
     return (
         <div className='flex flex-col'>
             <div className='w-[100%] h-fit flex flex-col justify-center py-8'>
-                <div className='w-full h-[60px]  ss:block xs:hidden ss:flex items-center justify-center text-center  rounded cursor-pointer  bg-bgColor border border-solid border-borderColorCard cursor-pointer'>
+                <div className='w-full h-[60px]  block xs:hidden items-center justify-center text-center  rounded cursor-pointer  bg-bgColor border border-solid border-searchBgColor'>
                     <span className='mr-3 not-italic font-AeonikProMedium text-base leading-4 text-center'>Одежды, которые вам подходят</span><span><img src={category} alt="market" /></span>
                 </div>
             </div>
@@ -191,7 +191,7 @@ export default function TypeSection() {
                         typeSectionData?.map(data => {
                             return (
                                 <div >
-                                    <div key={data?.id} className='w-[98%]  lg:h-[426px] ll:h-[400px] md:h-[390px] ss:h-[350px] bg-white border border-solid	border-borderColorCard	rounded-lg ss:p-3 lg:ml-1  xl:p-[20px] flex flex-wrap ss:content-between sm:content-between  '>
+                                    <div key={data?.id} className='w-[98%]  lg:h-[426px] ll:h-[400px] md:h-[390px] ss:h-[350px] bg-white border border-solid border-searchBgColor rounded-lg ss:p-3 lg:ml-1  xl:p-[20px] flex flex-wrap ss:content-between sm:content-between  '>
                                         <div className='w-full flex items-center justify-between ss:h-fit sm:h-1/10  '>
                                             <p className='not-italic font-AeonikProMedium md:text-lg ss:text-base  lg:text-xl  leading-7 text-black'>{data?.type || "type"}</p>
                                             <p className='flex items-center cursor-pointer'>
@@ -212,7 +212,7 @@ export default function TypeSection() {
                                             {
                                                 data?.group?.map(data => {
                                                     return (
-                                                        <div key={data?.id} className='w-[177px] h-[168px] p-[10px] bg-btnBgColor border	border-searchBgColor rounded-lg   flex flex-wrap content-between'>
+                                                        <div key={data?.id} className='w-[177px] h-[168px] p-[10px] bg-btnBgColor border border-searchBgColor rounded-lg   flex flex-wrap content-between'>
                                                             <div className='w-full h-3/4 rounded-lg  border border-searchBgColor flex items-center justify-center'>
 
                                                                 <img src={data?.img || noProductImg} alt="data" />
@@ -241,7 +241,7 @@ export default function TypeSection() {
                 {
                     typeSectionData?.map(data => {
                         return (
-                            <div key={data?.id} className='w-[98%] lg:h-[426px] ll:h-[400px] md:h-[390px] mt-2 ss:h-[350px] bg-white border border-solid	border-borderColorCard	rounded-lg ss:p-3 lg:ml-1  xl:p-8 flex flex-wrap ss:content-between sm:content-between  '>
+                            <div key={data?.id} className='w-[98%] lg:h-[426px] ll:h-[400px] md:h-[390px] mt-2 ss:h-[350px] bg-white border border-solid	border-searchBgColor	rounded-lg ss:p-3 lg:ml-1  xl:p-8 flex flex-wrap ss:content-between sm:content-between  '>
                                 <div className='w-full flex items-center justify-between ss:h-fit sm:h-1/10  '>
                                     <p className='not-italic font-AeonikProMedium md:text-lg ss:text-base ll:text-xl lg:text-xl xl:text-2xl leading-7 text-black'>{data?.type || "type"}</p>
                                     <p className='flex items-center'><span className='not-italic font-AeonikProMedium md:text-sm xl:text-base lg:text-xs ss:text-xs  ll:text-base leading-4 text-right mr-2 text-black'>See more</span><img src={next} alt="next" /></p>
@@ -252,7 +252,7 @@ export default function TypeSection() {
                                     {
                                         data?.group?.map(data => {
                                             return (
-                                                <div key={data?.id} className='w-6/12 h-1/2 p-2  border border-solid	border-borderColorCard  bg-white flex flex-wrap content-between'>
+                                                <div key={data?.id} className='w-6/12 h-1/2 p-2  border border-solid	border-searchBgColor  bg-white flex flex-wrap content-between'>
                                                     <div className='w-full h-3/4 bg-bgColor'>
                                                         {data.img ? <img src={data?.img} alt="data" /> : null}
 
@@ -262,11 +262,9 @@ export default function TypeSection() {
                                                     </div>
 
                                                 </div>
-
                                             )
                                         })
                                     }
-
                                 </div>
                             </div>
                         )
