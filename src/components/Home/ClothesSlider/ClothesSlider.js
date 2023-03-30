@@ -468,13 +468,13 @@ export default function ClothesSlider() {
 
                 </div>
                 <div className='w-full h-fit mt-12  '>
-                    <Slider {...settings1} className='w-[100%] flex xs:justify-between  xs:pl-0'>
+                    <Slider {...settings1} className='w-[100%] flex xs:justify-between xs:pl-0'>
                         {
                             carosuelData?.map(data => {
                                 return (
                                     data.campany.map(data => {
                                         return (
-                                            <div key={data.id} className='!w-[100%]   h-full'>
+                                            <div key={data.id} className='!w-[97.5%]  h-full'>
                                                 <div className={`${genderStyle} w-full h-[110px]  m-auto ss:py-5  ls:p-0 bg-gray-100 rounded-lg flex justify-center items-center cursor-pointer  border border-searchBgColor  `}>
                                                     <p className='not-italic font-AeonikProMedium text-xs leading-4 text-center text-black'>{data?.type || "0"}</p>
                                                 </div>
@@ -491,7 +491,7 @@ export default function ClothesSlider() {
                 </div>
             </div>
 
-            <div className='w-full h-fit flex flex-col border-y	border-solid border-borderColorCard mt-12 '>
+            <div className='w-full h-fit flex flex-col border-t	 border-searchBgColor mt-12 '>
                 <div className='w-full flex items-center py-4'>
                     <Slider {...settings} className='w-[100%] flex xs:justify-between px-3'>
                         {
@@ -518,7 +518,7 @@ export default function ClothesSlider() {
                                                     <img src={heart} alt="" />
                                                 </div>
                                             </div>
-                                           
+
                                             <div className="absolute w-full flex justify-between items-center px-1 bottom-[-0.2px] border-b border-searchBgColor xs:h-[38px] lg:h-8 ss:h-[30px] xs:px-2 md:px-4 bg-white hover:backdrop-brightness-125 hover:bg-white/60 transition ease-out duration-500">
                                                 <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-purple-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color1">
                                                     <input className="hidden" type="radio" id="Color1" name="colors" value="1" />
