@@ -29,8 +29,20 @@ export default function MainPageSliders() {
         dataStyle = "border-borderWinter"
 
     }
-
-    const [clothesToggle, setClothesToggle] = useState(true)
+    const changeColor = [
+        { id: 1, data: 1, action: false, colors: "border-black" },
+        { id: 2, data: 2, action: false, colors: "border-white" },
+        { id: 3, data: 3, action: false, colors: "border-zinc-500" },
+        { id: 4, data: 4, action: false, colors: "border-purple-500" },
+        { id: 5, data: 5, action: false, colors: "border-sky-600" },
+        { id: 6, data: 6, action: false, colors: "border-amber-400 " },
+        { id: 7, data: 7, action: false, colors: "border-green-700 " },
+        { id: 8, data: 8, action: false, colors: "border-amber-600 " },
+        { id: 9, data: 9, action: false, colors: "border-red-700  " },
+        { id: 10, data: 10, action: false, colors: "border-purple-800 " },
+        { id: 11, data: 11, action: false, colors: "border-blue-900  " },
+        { id: 12, data: 12, action: false, colors: "border-yellow-900 " },
+    ]
     const [carosuelData, setCarosuelData] = useState([
         {
             Category: [
@@ -94,7 +106,7 @@ export default function MainPageSliders() {
     const NextArrow1 = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[30%] z-10	right-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[30%] z-10	right-[20px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
                 <button className="next">
                     <GrFormNext size={20} />
                 </button>
@@ -105,7 +117,7 @@ export default function MainPageSliders() {
     const PrevArrow1 = (props) => {
         const { onClick } = props;
         return (
-            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[30%] z-10	left-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
+            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[30%] z-10	left-[20px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
                 <button className="prev">
                     <GrFormPrevious size={20} />
                 </button>
@@ -225,11 +237,17 @@ export default function MainPageSliders() {
                             return (
                                 data.Category.map(data => {
                                     return (
-                                        <div key={data?.id} className='!w-[100%]  h-[260px] rounded-lg  '>
-                                            <div className='w-full h-[230px] bg-btnBgColor p-2  rounded-lg'>
-                                                <div className={`w-full h-full border border-solid	${dataStyle} rounded`} >
-                                                    {data?.img ? <img className='h-full w-full' src={data?.img} alt="student" /> : null}
-                                                </div>
+                                        <div key={data?.id} className='!w-[99%]  h-[260px] rounded-lg  '>
+                                            <div className='w-full h-[230px] bg-btnBgColor p-2 ml-[0.5px]  rounded-lg'>
+                                                {
+                                                    changeColor.filter(e => e.id === dressInfo?.ClothesBorder).map(value => {
+                                                        return (
+                                                            <div key={value?.id} className={`w-full h-full border border-solid	${value?.colors} rounded-lg`} >
+                                                                {data?.img ? <img className='h-full w-full' src={data?.img} alt="student" /> : null}
+                                                            </div>
+                                                        )
+                                                    })
+                                                }
                                             </div>
                                             <div className='h-12.5 flex items-center justify-start'>
                                                 <p className='not-italic font-AeonikProMedium text-base leading-4 text-black mt-3 mr-2   ml-2'>{data?.type || "type"}
@@ -248,7 +266,7 @@ export default function MainPageSliders() {
                 </Slider>
             </div>
             {/* carosuel hidden bloack */}
-            <div className="w-full h-fit xs:hidden   grid grid-cols-3 gap-4  overflow-hidden  my-0 py-0 md:my-5 md:py-7 ">
+            <div className="w-full h-fit xs:hidden   grid grid-cols-3  gap-4 ll:gap-x-[38px] ls:gap-x-[35px] overflow-hidden  my-0 py-0 md:my-5 md:py-7 ">
                 {
                     carosuelData?.map(data => {
                         return (
@@ -273,13 +291,13 @@ export default function MainPageSliders() {
 
             </div>
             <div className='w-full 	mt-[64px]   ss:hidden xs:block'>
-                <Slider {...settings1} className='w-[100%] flex xs:justify-between'>
+                <Slider {...settings1} className='w-[100%] flex xs:justify-between  px-[1px]'>
                     {
                         carosuelData?.map(data => {
                             return (
                                 data.campany.map(data => {
                                     return (
-                                        <div key={data?.id} className='!w-[100%] h-[100px]  rounded-lg bg-btnBgColor flex items-center justify-center select-none border border-solid border-searchBgColor'>
+                                        <div key={data?.id} className='!w-[99%] h-[100px]  rounded-lg bg-btnBgColor flex items-center justify-center select-none border border-solid border-searchBgColor'>
                                             {/* <p className='w-full h-full flex items-center justify-center not-italic font-AeonikProMedium text-xl leading-6 text-center text-black '>{data?.type || "0"}</p> */}
                                             <div className=' h-full flex items-center justify-center px-[35px]'>
                                                 <img className='h-[70px] w-[80%] ' src={data?.imgFull} alt="" />
