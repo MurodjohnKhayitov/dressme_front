@@ -310,7 +310,7 @@ const Footer = () => {
                         {/* Footer LOGO and Fedback form */}
                         <div className="flex items-center ss:px-4 md:px-0 ">
                             <div className="flex flex-col">
-                                <Link to='#' className="md:mb-[14px]">
+                                <Link to='/' className="md:mb-[14px]">
                                     <img src={blackBrand} alt="logo" className="ss:w-[85%] ll:w-[90%] sm:w-full" />
                                 </Link>
                                 <div className="text-textColor mb-[18px] text-sm hidden md:flex">Торговая площадка одежды</div>

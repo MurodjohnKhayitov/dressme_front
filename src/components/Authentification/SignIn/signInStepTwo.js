@@ -152,13 +152,13 @@ const SignInStepTwo = () => {
                                 </div>    
                             </div>
                             
-                            <Link to="/signin_steptwo" className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4 my-8">
+                            <Link to="/" className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4 my-8">
                                 <span className="mr-[10px]">Следующий шаг</span>
                                 <img src={formArrowRightCircle} alt="" />
                             </Link>
                         </div>
                     </form>
-                    <Link to="/signin_steptwo" className="w-[360px] mx-auto bg-gray-400 flex items-center justify-center rounded-lg text-white py-4">
+                    <Link to="/" className="w-[360px] mx-auto bg-gray-400 flex items-center justify-center rounded-lg text-white py-4">
                         <span className="mr-[10px]">Следующий шаг</span>
                         <img src={formArrowRightCircle} alt="" />
                     </Link>

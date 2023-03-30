@@ -237,7 +237,7 @@ const BottomHeader = () => {
                         )
                     })
                 }
-                <Link to="/signin_stepone" className="bg-btnBgColor font-AeonikProMedium w-[44px] h-[44px] flex items-center justify-center border border-searchBgColor rounded-lg">
+                <Link to="/signInStepOne" className="bg-btnBgColor font-AeonikProMedium w-[44px] h-[44px] flex items-center justify-center border border-searchBgColor rounded-lg">
                     <img src={plus} alt="" />
                 </Link>
             </div >
