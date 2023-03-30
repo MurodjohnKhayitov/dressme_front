@@ -131,7 +131,9 @@ const BottomHeader = () => {
         { id: 12, data: 12, icons: InputCheck, action: false, colors: "bg-yellow-900 " },
     ]);
     const [getRadio, setGetRadio] = useState('')
-
+    const colorIdPushContext = (id) => {
+        setDressInfo({ ...dressInfo, ClothesBorder: id })
+    }
     // --------------------------------------------
     const [textToColor, setTextToColor] = useState(false)
 
@@ -176,7 +178,7 @@ const BottomHeader = () => {
                                 <img src={DotIcon} alt="DotIcon" />
                             </div>
                             {/* <div className={`w-[8px] h-[20px] border left-[-3px] top-[2px] z-[24] bg-white relative border-black rounded-[3px] duration-200  rounded-b-[5px] ${!textToColor ? "rotate-[45deg] " : "left-[-8px] top-[0px] rotate-[0deg]"}`}> */}
-                            <div className={ style.mainTwo}>
+                            <div className={style.mainTwo}>
                             </div>
                             {/* <div className={`w-[8px] h-[20px] border relative left-[-10px] top-[6px] z-[23] bg-white border-black rounded-[3px] duration-200  rounded-b-[5px] ${!textToColor ? "rotate-[90deg]" : "left-[-16px] top-[0px] rotate-[0deg]"}`}> */}
                             <div className={textToColor ? style.MainHtree : style.mainThreerotate}>
@@ -188,22 +190,24 @@ const BottomHeader = () => {
                         <div className={`${textToColor ? "ml-[-500px] " : "ml-[0px] "} px-3 w-full duration-500  h-full flex items-center justify-between  `}>
                             {changeColor?.map(data => {
                                 return (
-                                    <>
+                                    <div key={data?.id}>
                                         <label
                                             key={data?.id}
                                             htmlFor={data?.id}
+                                            onClick={() => colorIdPushContext(data?.id)}
                                             // onClick={() => handleGetChecked(data?.id)}
                                             className={`rounded-full w-6 h-6 ${data?.colors} cursor-pointer flex items-center justify-center ${!textToColor && "border"}  border-borderColorCard	`} >
                                             {data?.id == getRadio ? <img className="w-[14px]" src={InputCheck} alt="" /> : null}
                                         </label>
                                         <input
                                             type="radio"
-                                            id={data?.id} 
+                                            id={data?.id}
                                             name="checkStatus"
                                             value={data?.id}
                                             onChange={(e) => setGetRadio(e.target.value)}
                                             className={"hidden  w-full h-full"}
-                                        /></>
+                                        />
+                                    </div>
                                 )
                             })
                             }
