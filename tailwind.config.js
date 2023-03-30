@@ -46,7 +46,7 @@ module.exports = {
       boxShadow: {
         myShadow1: "1px -2px 0 0 rgb(17,24,39)",
         myShadow2: "-1px -2px 0 0 rgb(17,24,39)",
-        cardShadow: "0px 3px 10px 0px rgba(0,0,0,0.06)",
+        cardShadow: "0px 1px 10px 0px rgba(0,0,0,0.59)",
         navbarShadow: "0px -4px 14px -4px rgba(0,0,0,0.75)"
       },
     },
