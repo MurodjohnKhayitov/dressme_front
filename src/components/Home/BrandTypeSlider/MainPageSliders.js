@@ -248,7 +248,7 @@ export default function MainPageSliders() {
                 </Slider>
             </div>
             {/* carosuel hidden bloack */}
-            <div className="w-full h-fit xs:hidden flex  flex-wrap gap-y-1 justify-between overflow-hidden  my-0 py-0 md:my-5 md:py-7 ">
+            <div className="w-full h-fit xs:hidden   grid grid-cols-3 gap-4  overflow-hidden  my-0 py-0 md:my-5 md:py-7 ">
                 {
                     carosuelData?.map(data => {
                         return (
@@ -259,8 +259,9 @@ export default function MainPageSliders() {
                                             <img className='border-0 w-fit h-fit	' src={data?.img || noProductImg} alt="." />
                                         </div>
                                         <div className='w-full py-1 flex items-center'>
-                                            <p className='not-italic  mr-2 font-AeonikProMedium text-sm leading-6 text-black'>{data?.type || "type"}
-                                                <span className='not-italic font-AeonikProRegular text-xs leading-4 text-gray-500'>({data?.count || "0"})</span></p>
+                                            <p className='not-italic font-AeonikProMedium text-sm leading-6 text-black'>{data?.type || "type"}
+                                                <span className='not-italic font-AeonikProRegular text-xs leading-4 text-gray-500 ml-1'>({data?.count || "0"})</span>
+                                            </p>
                                         </div>
                                     </div>
                                 )

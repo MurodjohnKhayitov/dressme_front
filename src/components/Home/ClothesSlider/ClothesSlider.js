@@ -455,12 +455,12 @@ export default function ClothesSlider() {
 
             <div className='w-full h-fit'>
                 <div className=' flex ss:flex-col xs:flex-row xs:justify-between ss:justify-center items-center h-fit '>
-                    <div className="flex items-center ss:justify-center md:justify-start ss:w-full xs:w-[48%] md:w-fit border ss:border-solid  md:border-none ss:border-borderColorCard ss:h-[44px] rounded ">
+                    <div className="flex items-center ss:justify-center md:justify-start ss:w-full xs:w-[48%] md:w-fit border ss:border-solid  md:border-none ss:border-borderColorCard ss:h-[44px] rounded-lg ">
                         <p className='flex items-center cursor-pointer select-none'>
                             <span className='not-italic font-AeonikProRegular xs:text-base md:text-base ss:text-base leading-7 text-black'>Deals under:</span>
                             <span className='flex items-center not-italic font-AeonikProMedium text-xl leading-6 text-black ml-3 mr-2'>100$<img className='mt-[1px] ' src={arrowBottomFull} alt="next" /></span> </p>
                     </div>
-                    <div className="flex items-center ss:justify-center md:justify-end ss:w-full xs:w-[48%]  md:w-fit ss:mt-4 xs:mt-0 border ss:border-solid  md:border-none ss:border-borderColorCard ss:h-[44px] rounded">
+                    <div className="flex items-center ss:justify-center md:justify-end ss:w-full xs:w-[48%]  md:w-fit ss:mt-4 xs:mt-0 border ss:border-solid  md:border-none ss:border-borderColorCard ss:h-[44px] rounded-lg">
                         <p className='flex items-center cursor-pointer select-none'>
                             <span className='not-italic font-AeonikProMedium mr-2 md:text-base ss:text-base xs:text-sm leading-4 text-right text-black'>Stores closest to you</span>
                             <span><img src={next} alt="next" /></span> </p>
@@ -506,7 +506,7 @@ export default function ClothesSlider() {
                                                     <img className='w-full h-fit' src={data.noProductImg} alt="noProductImg" />
                                             }
                                             <div className='w-full flex justify-between absolute top-px p-2'>
-                                                <div className="group w-8 hover:w-[85px] bg-bgCard hover:bg-white  duration-300 rounded overflow-hidden border border-borderColorCard flex items-center justify-center">
+                                                <div className="group w-8 hover:w-[85px] bg-bgCard hover:bg-white  duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center justify-center">
                                                     <span className="w-8 h-8 flex items-center justify-center  ">
                                                         <img src={delivery} alt="" />
                                                     </span>
@@ -514,12 +514,12 @@ export default function ClothesSlider() {
                                                         Delivery
                                                     </span>
                                                 </div>
-                                                <div className='w-8 h-8 rounded flex items-center justify-center border border-solid bg-bgCard border-borderColorCard hover:bg-white transition ease-out duration-500'>
+                                                <div className='w-8 h-8 rounded-lg flex items-center justify-center border border-solid bg-bgCard border-borderColorCard hover:bg-white transition ease-out duration-500'>
                                                     <img src={heart} alt="" />
                                                 </div>
                                             </div>
                                            
-                                            <div className="absolute w-full flex justify-between items-center px-1 bottom-0 border-solid xs:h-[38px] lg:h-8 ss:h-[30px] xs:px-2 md:px-4 bg-white hover:backdrop-brightness-125 hover:bg-white/60 transition ease-out duration-500">
+                                            <div className="absolute w-full flex justify-between items-center px-1 bottom-[-0.2px] border-b border-searchBgColor xs:h-[38px] lg:h-8 ss:h-[30px] xs:px-2 md:px-4 bg-white hover:backdrop-brightness-125 hover:bg-white/60 transition ease-out duration-500">
                                                 <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-purple-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color1">
                                                     <input className="hidden" type="radio" id="Color1" name="colors" value="1" />
                                                 </label>
@@ -564,7 +564,7 @@ export default function ClothesSlider() {
                                             </div>
                                             <div className="w-full flex items-center justify-between mt-1 pl-3 pr-[6px]">
                                                 <div className='not-italic font-AeonikProMedium text-base leading-4  ' style={{ color: "black" }}>{data?.price} </div>
-                                                <span className="ss:w-fit h-fit p-[6px] bg-btnBgColor ml-2 border border-searchBgColor rounded xs:w-fit flex items-center justify-center  cursor-pointer ">
+                                                <span className="ss:w-fit h-fit p-[6px] bg-btnBgColor ml-2 border border-searchBgColor rounded-lg xs:w-fit flex items-center justify-center  cursor-pointer ">
                                                     <img className="w-5 h-5" src={addBag} alt="user" />
                                                 </span>
                                             </div>

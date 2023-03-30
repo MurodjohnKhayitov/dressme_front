@@ -320,7 +320,7 @@ const Footer = () => {
                             <div className="hidden flex-col ss:w-full md:w-[306px] ss:px-4 md:px-0 mt-[17px] ml-[92px] md:flex">
                                 <div className="text-textColor mb-3 text-sm">Юридический адрес :</div>
                                 <div className="flex items-center mb-[46px]">
-                                    <div className="border border-searchBgColor flex items-center justify-center rounded mr-3 w-24 h-12 ss:bg-white md:bg-transparent">
+                                    <div className="border border-searchBgColor flex items-center justify-center rounded-lg mr-3 w-24 h-12 ss:bg-white md:bg-transparent">
                                         <img src={location} alt="location" />
                                     </div>
                                     <div className="font-AeonikProRegular text-sm underline underline-offset-4">Мирзо-Улугбекский район, проспект Амира Темура, 60 - Ташкент, 100017</div>
@@ -328,7 +328,7 @@ const Footer = () => {
                             </div>
 
 
-                            <Link to="#" className="hidden items-center bg-bgColor pl-16 py-[15px] border border-searchBgColor rounded ml-auto md:flex">
+                            <Link to="#" className="hidden items-center bg-bgColor pl-16 py-[15px] border border-searchBgColor rounded-lg ml-auto md:flex">
                                 <img src={feedbackIcon} alt="" />
                                 <span className="text-base font-AeonikProMedium leading-4 ml-[12.5px] mr-[32.37px]">Форма для обратной связи</span>
                                 <img src={arrowBottomRight} alt="arrow-right-black" className="mr-5" />
@@ -344,7 +344,7 @@ const Footer = () => {
                         <div className="flex flex-col ss:w-full md:w-[306px] ss:px-4 md:px-0 mt-[17px] md:hidden">
                             <div className="text-textColor mb-[18px] text-sm">Юридический адрес :</div>
                             <div className="flex items-center mb-[46px]">
-                                <div className="border border-searchBgColor flex items-center justify-center rounded mr-3 w-24 h-12 ss:bg-white md:bg-transparent">
+                                <div className="border border-searchBgColor flex items-center justify-center rounded-lg mr-3 w-24 h-12 ss:bg-white md:bg-transparent">
                                     <img src={location} alt="location" />
                                 </div>
                                 <div className="font-AeonikProRegular text-sm underline underline-offset-4">Мирзо-Улугбекский район, проспект Амира Темура, 60 - Ташкент, 100017</div>
@@ -631,7 +631,7 @@ const Footer = () => {
                         </div>
 
                         {/* Feedback for mobile */}
-                        <Link to="#" className="flex items-center bg-bgColor pl-3 py-[15px] border border-searchBgColor rounded ss:my-[35px] md:my-0 ls:pl-6 md:pl-16 md:mb-0 md:hidden">
+                        <Link to="#" className="flex items-center bg-bgColor pl-3 py-[15px] border border-searchBgColor rounded-lg ss:my-[35px] md:my-0 ls:pl-6 md:pl-16 md:mb-0 md:hidden">
                             <img src={feedbackIcon} alt="" />
                             <span className="text-base font-AeonikProMedium leading-4 ml-[12.5px] mr-2 ls:mr-6 md:mr-[32.37px]">Форма для обратной связи</span>
                             <img src={arrowBottomRight} alt="arrow-right-black" className="mr-2 ls:mr-3 md:mr-5" />
@@ -696,7 +696,7 @@ const Footer = () => {
                             <Popover
                                 open={openRegionMobile}
                                 onOpenChange={handleOpenChangeRegionMobile}
-                                className="basis-[48%] h-[44px] flex items-center px-[14px] select-none  justify-between  bg-bgColor rounded group "
+                                className="basis-[48%] h-[44px] flex items-center px-[14px] select-none  justify-between  bg-bgColor rounded-lg group "
                                 trigger="click"
                                 options={['Hide']}
                                 placement="bottom"
@@ -712,7 +712,7 @@ const Footer = () => {
                                         key={data?.id}
                                             open={openLanguageMobile}
                                             onOpenChange={handleOpenChangeLanguageMobile}
-                                            className="basis-[48%] h-[44px] flex items-center select-none px-[14px]  justify-between  bg-bgColor  border border-searchBgColor rounded group "
+                                            className="basis-[48%] h-[44px] flex items-center select-none px-[14px]  justify-between  bg-bgColor  border border-searchBgColor rounded-lg group "
                                             trigger="click"
                                             options={['Hide']}
                                             placement="bottom"
@@ -798,7 +798,7 @@ const Footer = () => {
                                 <ul className="flex flex-row items-center flex-wrap">
                                     {clothingTypes.map((catalog, index) => (
                                         <li key={index} className="mr-[6px] mb-3 text-sm font-AeonikProMedium">
-                                            <button className="bg-searchBgColor rounded px-4 py-[10px]">{catalog.name}</button>
+                                            <button className="bg-searchBgColor rounded-lg px-4 py-[10px]">{catalog.name}</button>
                                         </li>
                                     ))}
                                 </ul>

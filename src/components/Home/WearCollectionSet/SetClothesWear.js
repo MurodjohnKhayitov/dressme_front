@@ -513,16 +513,16 @@ export default function SetClothesWear() {
                                                             </div>
                                                             <div className={`absolute top-1 px-1 flex ${!item?.active ? "justify-between" : "justify-end"}  w-[190px] `}>
                                                                 {
-                                                                    !item?.active ? <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                                    !item?.active ? <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center'>
                                                                         <img src={statusFalse} alt="" />
                                                                     </div> : null
                                                                 }
-                                                                <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                                <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center'>
                                                                     <img src={Liked} alt="" />
                                                                 </div>
                                                             </div>
                                                             <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end'>
-                                                                <div className='w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                                <div className='w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center'>
                                                                     <img src={nextInfo} alt="nextInfo" />
                                                                 </div>
                                                             </div>

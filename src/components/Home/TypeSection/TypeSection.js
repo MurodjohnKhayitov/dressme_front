@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { AutummSquare, category, next, SpringSquare, SummerSquare, WinterSquare } from '../../../assets/imgs'
+import { AutummSquare, category, next, noProductImg, SpringSquare, SummerSquare, WinterSquare } from '../../../assets/imgs'
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import Slider from "react-slick";
 import { dressMainData } from '../../../ContextHook/ContextMenu';
@@ -9,43 +9,47 @@ export default function TypeSection() {
     const [typeSectionData, setTypeSectionData] = useState([
         {
             id: 1,
-            type: "Sport Wear",
+            type: "Спортивная одежда",
+            buy: "Купить",
             locat: "/wears",
             group: [
-                { id: 1, img: "", title: "T-Short" },
-                { id: 2, img: "", title: "Shirt" },
-                { id: 3, img: "", title: "Shapka" },
-                { id: 4, img: "", title: "glasses" },
+                { id: 1, img: "", title: "Футболка" },
+                { id: 2, img: "", title: "Кроссовки" },
+                { id: 3, img: "", title: "Спорт 3" },
+                { id: 4, img: "", title: "Спорт 4" },
             ]
 
         },
         {
             id: 2,
-            type: "Business Wear",
+            type: "Бизнесмен",
+            buy: "Узнать больше",
             locat: "/wears",
             group: [
-                { id: 1, img: "", title: "T-Short" },
-                { id: 2, img: "", title: "Shirt" },
-                { id: 3, img: "", title: "Shapka" },
-                { id: 4, img: "", title: "glasses" },
+                { id: 1, img: "", title: "Брюки" },
+                { id: 2, img: "", title: "Обувь" },
+                { id: 3, img: "", title: "Бизнес 3" },
+                { id: 4, img: "", title: "Бизнес 4" },
             ]
 
         },
         {
             id: 3,
-            type: "Classic Wear",
+            type: "Классическая",
+            buy: "Узнать больше",
             locat: "/wears",
             group: [
-                { id: 1, img: "", title: "T-Short" },
-                { id: 2, img: "", title: "Shirt" },
-                { id: 3, img: "", title: "Shapka" },
-                { id: 4, img: "", title: "glasses" },
+                { id: 1, img: "", title: "Костюм" },
+                { id: 2, img: "", title: "Обувь" },
+                { id: 3, img: "", title: "Обувь" },
+                { id: 4, img: "", title: "Галстук" },
             ]
 
         },
         {
             id: 4,
             type: "Muslim Wear",
+            buy: "Купить",
             locat: "/wears",
             group: [
                 { id: 1, img: "", title: "T-Short" },
@@ -58,6 +62,7 @@ export default function TypeSection() {
         {
             id: 5,
             type: "Student Wear",
+            buy: "Купить",
             locat: "/wears",
             group: [
                 { id: 1, img: "", title: "T-Short" },
@@ -70,6 +75,7 @@ export default function TypeSection() {
         {
             id: 6,
             type: "Travel Wear",
+            buy: "Купить",
             locat: "/wears",
             group: [
                 { id: 1, img: "", title: "T-Short" },
@@ -82,6 +88,7 @@ export default function TypeSection() {
         {
             id: 7,
             type: "Relaxed Wear",
+            buy: "Купить",
             locat: "/wears",
             group: [
                 { id: 1, img: "", title: "T-Short" },
@@ -184,12 +191,12 @@ export default function TypeSection() {
                         typeSectionData?.map(data => {
                             return (
                                 <div >
-                                    <div key={data?.id} className='w-[98%] lg:h-[426px] ll:h-[400px] md:h-[390px] ss:h-[350px] bg-white border border-solid	border-borderColorCard	rounded-lg ss:p-3 lg:ml-1  xl:p-8 flex flex-wrap ss:content-between sm:content-between  '>
+                                    <div key={data?.id} className='w-[98%]  lg:h-[426px] ll:h-[400px] md:h-[390px] ss:h-[350px] bg-white border border-solid	border-borderColorCard	rounded-lg ss:p-3 lg:ml-1  xl:p-[20px] flex flex-wrap ss:content-between sm:content-between  '>
                                         <div className='w-full flex items-center justify-between ss:h-fit sm:h-1/10  '>
-                                            <p className='not-italic font-AeonikProMedium md:text-lg ss:text-base ll:text-xl lg:text-xl xl:text-2xl leading-7 text-black'>{data?.type || "type"}</p>
+                                            <p className='not-italic font-AeonikProMedium md:text-lg ss:text-base  lg:text-xl  leading-7 text-black'>{data?.type || "type"}</p>
                                             <p className='flex items-center cursor-pointer'>
-                                                <span className={`not-italic font-AeonikProMedium md:text-sm xl:text-base lg:text-xs ss:text-xs  ll:text-base leading-4 text-right mr-2 text-black ${dataStyle}`}>
-                                                    See more
+                                                <span className={`not-italic font-AeonikProMedium md:text-sm ss:text-base lg:text-base  leading-4 text-right mr-2 text-black ${dataStyle}`}>
+                                                    {data?.buy}
                                                 </span>
                                                 {
                                                     service.filter(data => data.id == dressInfo.type).map(data => {
@@ -200,15 +207,15 @@ export default function TypeSection() {
                                             </p>
 
                                         </div>
-                                        <div className='w-full flex flex-wrap rounded h-4/5'>
+                                        <div className='w-full flex flex-wrap gap-y-2 justify-between mt-4'>
 
                                             {
                                                 data?.group?.map(data => {
                                                     return (
-                                                        <div key={data?.id} className='w-6/12 h-1/2 p-2  border border-solid	border-borderColorCard  bg-white flex flex-wrap content-between'>
-                                                            <div className='w-full h-3/4 bg-bgColor'>
+                                                        <div key={data?.id} className='w-[177px] h-[168px] p-[10px] bg-btnBgColor border	border-searchBgColor rounded-lg   flex flex-wrap content-between'>
+                                                            <div className='w-full h-3/4 rounded-lg  border border-searchBgColor flex items-center justify-center'>
 
-                                                                {data.img ? <img src={data?.img} alt="data" /> : null}
+                                                                <img src={data?.img || noProductImg} alt="data" />
 
 
                                                             </div>
