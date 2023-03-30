@@ -113,7 +113,7 @@ const SignInStepOne = () => {
                                                 <img src={formEmail} alt="" />
                                             </button>
                                         </div>
-                                        <Link to="/signin_steptwo" className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4">
+                                        <Link to="/signInStepTwo" className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4">
                                             <span className="mr-[10px]">Следующий шаг</span>
                                             <img src={formArrowRightCircle} alt="" />
                                         </Link>
