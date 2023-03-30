@@ -435,6 +435,7 @@ const MediumHeader = () => {
                                 <span className="count bg-red-700 w-4 h-4 text-white text-[10px] rounded-lg flex items-center justify-center absolute top-0 right-0 font-AeonikProMedium"> 4 </span>
 
                             </button>
+
                         </div>
                     </div>
                     {/* Ending of Full Screen page sesction */}
@@ -606,6 +607,7 @@ const MediumHeader = () => {
                                 <img src={map} alt="map" className="pr-[6px]" />
                                 <div className="font-AeonikProMedium">Map</div>
                             </Link>
+
                         </div>
 
                         {/* Gender selection for Mobile */}

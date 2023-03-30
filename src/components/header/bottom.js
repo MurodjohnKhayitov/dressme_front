@@ -9,6 +9,7 @@ import { BsCheck2Square } from "react-icons/bs";
 
 import { Button, Divider, Popover, Segmented } from 'antd';
 import style from './bottom.module.css'
+import { Link } from "react-router-dom";
 const BottomHeader = () => {
     const [dressInfo, setDressInfo] = useContext(dressMainData)
     let dataStyle = ''
@@ -236,9 +237,9 @@ const BottomHeader = () => {
                         )
                     })
                 }
-                <button className="bg-btnBgColor font-AeonikProMedium w-[44px] h-[44px] flex items-center justify-center border border-searchBgColor rounded-lg">
+                <Link to="/signin_stepone" className="bg-btnBgColor font-AeonikProMedium w-[44px] h-[44px] flex items-center justify-center border border-searchBgColor rounded-lg">
                     <img src={plus} alt="" />
-                </button>
+                </Link>
             </div >
         </div >
     )

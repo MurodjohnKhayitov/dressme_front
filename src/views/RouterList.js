@@ -4,6 +4,8 @@ import MoonLoader from "react-spinners/MoonLoader";
 import '../index.css'
 import Header from "../components/header/header";
 import Footer from '../components/footer/footer'
+import SignInStepTwo from "../components/Authentification/SignIn/signInStepTwo";
+import SignInStepOne from "../components/Authentification/SignIn/signInStepOne";
 const HomePage = React.lazy(() => import('../Page/Home/Home'))
 const Weather = React.lazy(() => import('../Page/Weather/Weather'))
 const RouterList = () => {
@@ -23,6 +25,8 @@ const RouterList = () => {
                     </React.Suspense>
                 } />
                 <Route path='/' element={<HomePage />} />
+                <Route path='/signin_stepone' element={<SignInStepOne />} />
+                <Route path='/signin_steptwo' element={<SignInStepTwo />} />
                 
             </Routes>
             <Footer />
