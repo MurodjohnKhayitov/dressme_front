@@ -1,6 +1,7 @@
 import React from 'react'
 import MainPageSliders from './BrandTypeSlider/MainPageSliders'
 import ClothesSlider from './ClothesSlider/ClothesSlider'
+import SkeletonHome from './Skeleton/SkeletonHome'
 import TypeSection from './TypeSection/TypeSection'
 import CollectionCards from './WearCollectionCard/CollectionCards'
 

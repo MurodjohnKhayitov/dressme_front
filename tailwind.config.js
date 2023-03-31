@@ -20,7 +20,8 @@ module.exports = {
         setButtonColor: "#E8E8E8",
         setTexOpacity: "#A1A1A1",
         setPriceRed: "#D50000",
-
+        // Skeleton Color
+        skeltonColor: "#F4F4F4",
         "bgCard": "rgba(255, 255, 255, 0.4)",
         // season-----
         borderSpring: "#008F0E",
@@ -37,11 +38,11 @@ module.exports = {
 
         // Chrome for
         // 400
-        AeonikProRegular: ['OTFAeonikProRegular', 'sans-serif'],  
+        AeonikProRegular: ['OTFAeonikProRegular', 'sans-serif'],
         // 500
-        AeonikProMedium: ['OTFAeonikProMedium', 'sans-serif'], 
-       
-        
+        AeonikProMedium: ['OTFAeonikProMedium', 'sans-serif'],
+
+
       },
       boxShadow: {
         myShadow1: "1px -2px 0 0 rgb(17,24,39)",

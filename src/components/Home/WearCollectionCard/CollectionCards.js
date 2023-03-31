@@ -420,7 +420,7 @@ export default function CollectionCards() {
           return { ...data, changeColor: [...newDataColor] }
         } else return data
       })
-    })
+    }) 
 
 
   }
