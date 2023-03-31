@@ -5,6 +5,9 @@ import '../index.css';
 import Header from "../components/header/header";
 import Footer from '../components/footer/footer';
 import AddUserNavbar from '../components/header/AuthenNavbar/AthenIndex';
+import WeatherInfo from "../components/Weather/WeatherInfo";
+import SkeletonHome from "../components/Home/Skeleton/SkeletonHome";
+import SkletonIndex from "../components/Home/Skeleton/SkletonIndex";
 
 const HomePage = React.lazy(() => import('../Page/Home/Home'));
 const Weather = React.lazy(() => import('../Page/Weather/Weather'));
@@ -16,12 +19,18 @@ const RouterList = () => {
             <Routes >
                 <Route element={<Header />}>
                     <Route path='/' element={
-                        <React.Suspense fallback={<div className={"MoonLoad"} ><MoonLoader size={100} color="#0d263b" /></div>}>
+                        <React.Suspense fallback={
+                            <div >
+                                <SkletonIndex />
+                            </div>}>
                             <HomePage />
                         </React.Suspense>
                     } />
                     <Route path='/weather' element={
-                        <React.Suspense fallback={<div className={"MoonLoad"} ><MoonLoader size={100} color="#0d263b" /></div>}>
+                        <React.Suspense fallback={
+                            <div >
+                                <WeatherInfo />
+                            </div>}>
                             <Weather />
                         </React.Suspense>
                     } />
@@ -29,7 +38,12 @@ const RouterList = () => {
                 </Route>
                 <Route element={<AddUserNavbar />}>
                     <Route path='/signInStepOne' element={
-                        <React.Suspense fallback={<div className={"MoonLoad"} ><MoonLoader size={100} color="#0d263b" /></div>}>
+                        <React.Suspense fallback={
+                            <div className={"MoonLoad"} >
+                                {/* <MoonLoader size={100} color="#0d263b" /> */}
+                                <WeatherInfo />
+
+                            </div>}>
                             <SignInStepOne />
                         </React.Suspense>
                     } />
