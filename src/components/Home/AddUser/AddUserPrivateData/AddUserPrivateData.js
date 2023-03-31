@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { AutummBoy, AutummChild, AutummFemale, AutummGirl, AutummMale, formArrowBottom, formArrowRight, formArrowRightCircle, formCalendar, formDate, formEmail, formPhone, formUser, formUzFlag, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale,  SummerBoy,  SummerChild,  SummerFemale, SummerGirl, SummerMale, user, uzbekFlag, WinterBoy, WinterChild, WinterFemale, WinterGirl, WinterMale, } from "../../../assets/imgs";
-import { dressMainData } from "../../../ContextHook/ContextMenu";
-
-const SignInStepOne = () => {
+import { dressMainData } from "../../../../ContextHook/ContextMenu";
+import { AutummBoy, AutummChild, AutummFemale, AutummGirl, AutummMale, formArrowBottom, formArrowRight, formArrowRightCircle, formCalendar, formDate, formEmail, formPhone, formUser, formUzFlag, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale,  SummerBoy,  SummerChild,  SummerFemale, SummerGirl, SummerMale, user, uzbekFlag, WinterBoy, WinterChild, WinterFemale, WinterGirl, WinterMale, } from "../../../../assets/imgs";
+import AddUserPrivateSkeleton from '../Skeleton/AddUserPrivateSkeleton'
+const AddUserPrivateInfo = () => {
 
     const [dressInfo, setDressInfo] = useContext(dressMainData)
     
@@ -34,8 +34,8 @@ const SignInStepOne = () => {
     ]
 
     return(
-        <main>
-            <div className="flex flex-col px-10 py-6 w-[440px] rounded-lg border border-solid border-searchBgColor mt-8 mx-auto">
+        <main className="">
+            <div className="flex flex-col px-10 py-6 w-[440px] rounded-lg border border-solid border-searchBgColor my-8 mx-auto">
                 <div className="text-[20px] font-AeonikProMedium mb-3">Добавить персонаж</div>
                 <p className="text-textColor font-AeonikProRegular mb-6">Добавляйте информацию о себе или близких людей в качестве персонажа</p>
                 <div>
@@ -113,7 +113,7 @@ const SignInStepOne = () => {
                                                 <img src={formEmail} alt="" />
                                             </button>
                                         </div>
-                                        <Link to="/signInStepTwo" className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4">
+                                        <Link to="/add_user_body_data" className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4">
                                             <span className="mr-[10px]">Следующий шаг</span>
                                             <img src={formArrowRightCircle} alt="" />
                                         </Link>
@@ -128,4 +128,4 @@ const SignInStepOne = () => {
         </main>
     )
 }
-export default SignInStepOne
+export default AddUserPrivateInfo

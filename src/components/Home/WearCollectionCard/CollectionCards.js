@@ -541,7 +541,7 @@ export default function CollectionCards() {
                     </div>
                     <div className="w-full rounded-b-1xl bg-white  flex flex-wrap content-between xs:py-3 lg:p-3 ss:h-[124px] xs:h-[147px] lg:h-[120px] ss:py-2 xs:px-2 ss:px-1">
                       <div className="w-full">
-                        <div className="w-full  not-italic font-AeonicProLight text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
+                        <div className="w-full  not-italic font-AeonikProRegular text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
                           {data?.title || "NoData"}
                         </div>
                         <div className="w-full flex justify-between items-center xs:mt-3">

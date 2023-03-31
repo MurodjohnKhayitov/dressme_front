@@ -1,7 +1,7 @@
 import React from 'react'
 import SkeletonHome from './SkeletonHome'
 
-export default function SkletonIndex() {
+export default function SkeletonHomeIndex() {
     return (
         <div>
             <div className="flex flex-col justify-center items-center m-0 p-0 box-border">
