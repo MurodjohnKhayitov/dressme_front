@@ -345,7 +345,7 @@ const MediumHeader = () => {
                             </NavLink >
 
                             {/* Voice section */}
-                            <div className={` bg-btnBgColor border border-searchBgColor w-11 h-11 ml-[25px] rounded-lg cursor-pointer hidden items-center justify-center md:flex`}>
+                            <div className={` bg-btnBgColor w-11 h-11 ml-[25px] rounded-lg cursor-pointer hidden items-center justify-center md:flex`}>
 
                                 {
                                     VolumeTypeArray.filter(data => data.id == dressInfo.type).map(data => {
@@ -386,7 +386,7 @@ const MediumHeader = () => {
                             <div className="search flex items-center justify-center rounded-lg font-AeonikProMedium h-[44px] border border-red-600 md:border-transparent md:w-[622px] ml-2 ss:hidden md:flex">
 
                                 {/* Catalog section */}
-                                <button className={`items-center border border-searchBgColor border-r-0 ${dataStyle}  pl-5 pr-7 h-[44px] rounded-l-lg cursor-pointer hidden md:flex`}>
+                                <button className={`items-center ${dataStyle}  pl-5 pr-7 h-[44px] rounded-l-lg cursor-pointer hidden md:flex`}>
                                     {CategoryTypeArray.filter(data => data.id === dressInfo?.type).map(data => {
                                         return (
                                             <img key={data?.id} src={data?.icons} alt={data?.type} className="w-[18px]" />
@@ -407,7 +407,7 @@ const MediumHeader = () => {
                             <div className="line h-5 border-x-[1px]   text-textColor ss:hidden md:block mx-3"></div>
 
                             {/* Map section */}
-                            <Link to="#" className="items-center justify-center bg-btnBgColor border border-searchBgColor rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex">
+                            <Link to="#" className="items-center justify-center bg-btnBgColor rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex">
 
                                 <img src={map} alt="map" className="pr-[6px]" />
                                 <span className="font-AeonikProMedium text-sm  ">Карта</span>
@@ -417,19 +417,19 @@ const MediumHeader = () => {
                             <div className="line h-5 border-x-[1px]   text-textColor ss:hidden md:block mx-3"></div>
 
                             {/* User section */}
-                            <button className=" bg-btnBgColor border border-searchBgColor rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex">
+                            <button className=" bg-btnBgColor rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex">
 
                                 <img src={user} alt="" />
                             </button>
 
                             {/* Heart section */}
-                            <button className="bg-btnBgColor border border-searchBgColor rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex">
+                            <button className="bg-btnBgColor rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex">
                                 {/* <FaRegHeart /> */}
                                 <img src={heart} className={"w-5 h-5"} alt="heart" />
                             </button>
 
                             {/* Bucket section */}
-                            <button className=" bg-btnBgColor border border-searchBgColor rounded-lg flex items-center justify-center w-11 h-11 relative md:flex ss:hidden">
+                            <button className=" bg-btnBgColor rounded-lg flex items-center justify-center w-11 h-11 relative md:flex ss:hidden">
                                 <img src={bucket} alt="bucket" />
                                 <span className="count bg-red-700 w-4 h-4 text-white text-[10px] rounded-lg flex items-center justify-center absolute top-0 right-0 font-AeonikProMedium"> 4 </span>
 
