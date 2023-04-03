@@ -54,6 +54,7 @@ export { default as ru } from './russia.svg'
 export { default as home } from './home.svg'
 export { default as catalogBlack } from './catalog-black.svg'
 export { default as feedbackIcon } from './feedback-icon.svg'
+export { default as inputCheckBlack } from './checked-black.svg'
 
 
 // -----Contact--------
