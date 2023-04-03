@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import MoonLoader from "react-spinners/MoonLoader";
 import '../index.css';
+
+// -------Navbar VS Footer
 import Header from "../components/header/header";
 import Footer from '../components/footer/footer';
-import AddUserNavbar from '../components/header/AuthenNavbar/AthenIndex';
-import WeatherInfo from "../components/Weather/WeatherInfo";
-import SkeletonHome from "../components/Home/Skeleton/SkeletonHome";
-import SkletonIndex from "../components/Home/Skeleton/SkletonIndex";
+import AddUserNavbar from "../components/header/AddUserNavbar/AddUserNavbar";
 
+// -------Without Lazy
+import WeatherInfo from "../components/Weather/WeatherInfo";
+
+// ---------Only Skeleton
+import SkeletonHomeIndex from "../components/Home/Skeleton/SkeletonHomeIndex";
+import AddUserPrivateSkeleton from '../components/Home/AddUser/Skeleton/AddUserPrivateSkeleton'
+import AddUserBodySkeleton from "../components/Home/AddUser/Skeleton/AddUserPrivateSkeleton";
+
+// --------With lazy component
 const HomePage = React.lazy(() => import('../Page/Home/Home'));
 const Weather = React.lazy(() => import('../Page/Weather/Weather'));
-const SignInStepOne = React.lazy(() => import('../components//Authentification/SignIn/signInStepOne'));
-const SignInStepTwo = React.lazy(() => import('../components/Authentification/SignIn/signInStepTwo'));
+const AddUserPrivateInfo = React.lazy(() => import('../components/Home/AddUser/AddUserPrivateData/AddUserPrivateData'));
+const AddUserBodyData = React.lazy(() => import('../components/Home/AddUser/AddUserBodyData/AddUserBodyData'));
 const RouterList = () => {
+
+
     return (
         <>
             <Routes >
@@ -21,7 +31,7 @@ const RouterList = () => {
                     <Route path='/' element={
                         <React.Suspense fallback={
                             <div >
-                                <SkletonIndex />
+                                <SkeletonHomeIndex />
                             </div>}>
                             <HomePage />
                         </React.Suspense>
@@ -34,33 +44,30 @@ const RouterList = () => {
                             <Weather />
                         </React.Suspense>
                     } />
-
                 </Route>
                 <Route element={<AddUserNavbar />}>
-                    <Route path='/signInStepOne' element={
+                    <Route path='/add_user_private_data' element={
                         <React.Suspense fallback={
-                            <div className={"MoonLoad"} >
-                                {/* <MoonLoader size={100} color="#0d263b" /> */}
-                                <WeatherInfo />
+                            <div  >
+                                <AddUserPrivateSkeleton />
 
                             </div>}>
-                            <SignInStepOne />
+                            <AddUserPrivateInfo />
                         </React.Suspense>
                     } />
-                    <Route path='/signInStepTwo' element={
-                        <React.Suspense fallback={<div className={"MoonLoad"} ><MoonLoader size={100} color="#0d263b" /></div>}>
-                            <SignInStepTwo />
+                    <Route path='/add_user_body_data' element={
+                        <React.Suspense fallback={
+                            <div  >
+                                <AddUserBodySkeleton />
+                            </div>}>
+                            <AddUserBodyData />
                         </React.Suspense>
                     } />
 
                 </Route>
-                {/* <Route path='/' element={<Navigate to={<HomePage />} />} /> */}
-
-
-
 
             </Routes>
-            <Footer />
+            {window.location.pathname !== "/add_user_private_data" || window.location.pathname !== "/add_user_private_data" ? <Footer /> : null}
         </>
     )
 }

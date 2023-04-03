@@ -104,13 +104,10 @@ export default function SkeletonHome() {
                                         </div>
                                         <div className='w-full flex items-center justify-between'>
                                             <div className='w-[30%] h-4 bg-skeltonColor rounded'>
-
                                             </div>
-                                            <div className='w-[30px] h-[30px] rounded-full bg-skeltonColor rounded'>
-
+                                            <div className='w-[30px] h-[30px] rounded-full bg-skeltonColor '>
                                             </div>
-
-                                        </div>
+                                        </div>  
                                     </div>
                                 </div>
                             )

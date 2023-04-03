@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { arrowBottom, AutummBoy, AutummChild, AutummFemale, AutummGirl, AutummMale, formArrowBottom, formArrowRight, formArrowRightCircle, formCalendar, formDate, formEmail, formPhone, formUser, formUzFlag, person3D, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale,  SummerBoy,  SummerChild,  SummerFemale, SummerGirl, SummerMale, user, uzbekFlag, WinterBoy, WinterChild, WinterFemale, WinterGirl, WinterMale, } from "../../../assets/imgs";
-import { dressMainData } from "../../../ContextHook/ContextMenu";
+import { arrowBottom, AutummBoy, AutummChild, AutummFemale, AutummGirl, AutummMale, formArrowBottom, formArrowRight, formArrowRightCircle, formCalendar, formDate, formEmail, formPhone, formUser, formUzFlag, person3D, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale,  SummerBoy,  SummerChild,  SummerFemale, SummerGirl, SummerMale, user, uzbekFlag, WinterBoy, WinterChild, WinterFemale, WinterGirl, WinterMale, } from "../../../../assets/imgs";
+import { dressMainData } from "../../../../ContextHook/ContextMenu";
 
-const SignInStepTwo = () => {
+const AddUserBodyData = () => {
 
     const [dressInfo, setDressInfo] = useContext(dressMainData)
     
@@ -35,7 +35,7 @@ const SignInStepTwo = () => {
 
     return(
         <main>  
-            <div className="flex justify-center mt-8 gap-x-8">
+            <div className="flex justify-center  my-8 gap-x-8">
                 <div>
                     <img src={person3D} alt="" className="border border-solid border-searchBgColor rounded-lg pb-[50px]"/>
                 </div>
@@ -168,4 +168,4 @@ const SignInStepTwo = () => {
         </main>
     )
 }
-export default SignInStepTwo
+export default AddUserBodyData
