@@ -1,5 +1,5 @@
 import React, { useContext, useState, useMemo } from "react";
-import { arrowBottom, AutummFemale, AutummMale, clothing, colors, dollarLogo, DotIcon, InputCheck, plus, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale, SummerFemale, SummerMale, WinterFemale, WinterMale } from "../../assets/imgs";
+import { arrowBottom, AutummFemale, AutummMale, clothing, colors, dollarLogo, DotIcon, InputCheck, inputCheckBlack, plus, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale, SummerFemale, SummerMale, WinterFemale, WinterMale } from "../../assets/imgs";
 import { dressMainData } from "../../ContextHook/ContextMenu";
 import { styles } from "../../util/style";
 import { Dropdown } from 'antd';
@@ -179,8 +179,7 @@ const BottomHeader = () => {
                                 <img src={DotIcon} alt="DotIcon" />
                             </div>
                             {/* <div className={`w-[8px] h-[20px] border left-[-3px] top-[2px] z-[24] bg-white relative border-black rounded-[3px] duration-200  rounded-b-[5px] ${!textToColor ? "rotate-[45deg] " : "left-[-8px] top-[0px] rotate-[0deg]"}`}> */}
-                            <div className={style.mainTwo}>
-                            </div>
+                            <div className={style.mainTwo}></div>
                             {/* <div className={`w-[8px] h-[20px] border relative left-[-10px] top-[6px] z-[23] bg-white border-black rounded-[3px] duration-200  rounded-b-[5px] ${!textToColor ? "rotate-[90deg]" : "left-[-16px] top-[0px] rotate-[0deg]"}`}> */}
                             <div className={textToColor ? style.MainHtree : style.mainThreerotate}>
                             </div>
@@ -198,7 +197,10 @@ const BottomHeader = () => {
                                             onClick={() => colorIdPushContext(data?.id)}
                                             // onClick={() => handleGetChecked(data?.id)}
                                             className={`rounded-full w-6 h-6 ${data?.colors} cursor-pointer flex items-center justify-center ${!textToColor && "border"}  border-borderColorCard	`} >
-                                            {data?.id == getRadio ? <img className="w-[14px]" src={InputCheck} alt="" /> : null}
+
+                                            {data?.id == 2 ? <img className="w-[14px]" src={inputCheckBlack} alt="" /> : null}
+                                            {data?.id == getRadio && data.id !== 2 ? <img className="w-[14px]" src={InputCheck} alt="" /> : null}
+                                        
                                         </label>
                                         <input
                                             type="radio"
@@ -212,8 +214,6 @@ const BottomHeader = () => {
                                 )
                             })
                             }
-
-
                         </div>
                         <div className={`${textToColor ? " mr-0" : " mr-[-500px]"} w-full duration-500 px-3 overflow-hidden h-full  flex items-center not-italic font-AeonikProMedium text-sm leading-4 text-center text-black  tracking-[1%] `}>
                             Не давай своей гардеробной шкафной жизни стать скучной.
