@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { dressMainData } from "../../../../ContextHook/ContextMenu";
 import { AutummBoy, AutummChild, AutummFemale, AutummGirl, AutummMale, formArrowBottom, formArrowRight, formArrowRightCircle, formCalendar, formDate, formEmail, formPhone, formUser, formUzFlag, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale,  SummerBoy,  SummerChild,  SummerFemale, SummerGirl, SummerMale, user, uzbekFlag, WinterBoy, WinterChild, WinterFemale, WinterGirl, WinterMale, } from "../../../../assets/imgs";
 import AddUserPrivateSkeleton from '../Skeleton/AddUserPrivateSkeleton'
+import { Popover } from "antd";
+import { BiChevronDown } from "react-icons/bi";
 const AddUserPrivateInfo = () => {
 
     const [dressInfo, setDressInfo] = useContext(dressMainData)
@@ -32,6 +34,50 @@ const AddUserPrivateInfo = () => {
         { id: 3333, man: AutummMale, woman: AutummFemale, boy: AutummBoy, girl: AutummGirl, childs: AutummChild },
         { id: 4444, man: WinterMale, woman: WinterFemale, boy: WinterBoy, girl: WinterGirl, childs: WinterChild },
     ]
+
+    const monthsList = [
+        { id: 1, type: "January" },
+        { id: 2, type: "February" },
+        { id: 3, type: "March" },
+        { id: 4, type: "April" },
+        { id: 5, type: "May" },
+        { id: 6, type: "June" },
+        { id: 7, type: "July" },
+        { id: 8, type: "August" },
+        { id: 9, type: "September" },
+        { id: 10, type: "October" },
+        { id: 11, type: "November" },
+        { id: 12, type: "December" },
+      ];
+      const contentMonth = (
+        <div className="w-[110px] h-32 overflow-y-auto m-0 p-0">
+          {monthsList.map((data) => {
+            return (
+              <p
+                key={data?.id}
+                onClick={() => {
+                  handleWearValue(data?.type);
+                }}
+                className={`w-full h-[30px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor`}
+              >
+                {data?.type}
+              </p>
+            );
+          })}
+        </div>
+      );
+
+    const [openMonth, setOpenMonth] = useState(false);
+
+    const handleOpenChangeWear = (newOpen) => {
+        setOpenMonth(newOpen);
+    };
+
+    const [selectMonth, setSelectMonth] = useState("Месяц");
+    const handleWearValue = (value) => {
+        setSelectMonth(value);
+        setOpenMonth(false);
+    };
 
     return(
         <main className="">
@@ -85,11 +131,43 @@ const AddUserPrivateInfo = () => {
                                             </button>
                                         </div>
                                         <label htmlFor="bdate" className="mb-[6px] font-AeonikProRegular text-sm">Дата рождения</label>
-                                        <div className="flex items-center justify-between border border-solid border-searchBgColor px-4 py-[15px] rounded-lg bg-btnBgColor mb-4">
-                                            <span className="h-full w-20"><img src={formCalendar} alt="" /></span>
-                                            <input type="text" name="day" placeholder="День" id="day" className="w-[90%] bg-btnBgColor font-AeonikProRegular text-base"/>
-                                            <input type="date" name="bdate" id="bdate" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
-                                            <input type="month" name="bdate" id="bdate" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
+                                        <div className="flex items-center justify-start border border-solid border-searchBgColor rounded-lg bg-btnBgColor mb-4 h-full">
+                                            <div className="w-[17%] h-full py-[15px] border-r border-searchBgColor">
+                                                <img src={formCalendar} alt="" className="h-full mx-5 cursor-pointer"/>
+                                            </div>
+                                            {/* <div className="w-[2px] h-full bg-black mx-5"></div> */}
+
+                                            {/* <div className="w-[20%] h-full">
+                                                <input type="text" name="day" placeholder="День" id="day" className="bg-transparent font-AeonikProRegular text-base px-[14px] border-r border-searchBgColor"/>
+                                            </div> */}
+                                            <div className="w-[20%] py-[12px] border-r border-searchBgColor">
+                                                <input type="text" name="day" placeholder="День" id="day" className="w-full bg-transparent font-AeonikProRegular text-base px-[14px] "/>
+                                            </div>
+                                            <div className="w-[38%]">
+                                                {/* <input type="month" name="bdate" id="bdate" className=" bg-transparent font-AeonikProMedium text-base appearance-none"/> */}
+                                                <Popover
+                                                    open={openMonth}
+                                                    onOpenChange={handleOpenChangeWear}
+                                                    className=" px-[14px] h-[44px] border-r border-searchBgColor flex items-center justify-between cursor-pointer select-none group"
+                                                    trigger="click"
+                                                    options={["Hide"]}
+                                                    placement="bottom"
+                                                    content={contentMonth}
+                                                    >
+                                                    <span className="not-italic font-AeonikProMedium text-center mt-1 text-base leading-4 text-black">
+                                                        {selectMonth}
+                                                    </span>
+                                                    <span>
+                                                        <BiChevronDown
+                                                        size={20}
+                                                        style={{ color: "#c2c2c2" }}
+                                                        className={`${openMonth ? "rotate-[-180deg]" : ""} duration-200`}
+                                                        />{" "}
+                                                    </span>
+                                                </Popover>
+                                            </div>
+                                            {/* <input type="date" name="bdate" id="bdate" className=" bg-btnBgColor font-AeonikProMedium text-base"/>
+                                            <input type="month" name="bdate" id="bdate" className=" bg-btnBgColor font-AeonikProMedium text-base"/> */}
                                         </div>
                                         {/* <label htmlFor="phone" className="mb-[6px] font-AeonikProRegular text-sm">Номер телефона</label>
                                         <div className="flex items-center justify-between border border-solid border-searchBgColor px-[16px] rounded-lg bg-btnBgColor mb-4">
