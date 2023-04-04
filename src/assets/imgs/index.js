@@ -219,3 +219,6 @@ export { default as statusFalse } from './Set/statusFalse.svg'
 // ------------------------Weather------------
 export { default as weatherBrandIcon } from './Weather/weatherBrandIcon.svg'
 export { default as noProductImg } from './Weather/noImg.svg'
+
+// ------------------------Yandex Maps------------
+export { default as markerIcons } from './maps/markerIcons.svg'
