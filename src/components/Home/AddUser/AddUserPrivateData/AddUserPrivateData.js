@@ -35,6 +35,7 @@ import {
   WinterMale,
 } from "../../../../assets/imgs";
 import AddUserPrivateSkeleton from "../Skeleton/AddUserPrivateSkeleton";
+
 const AddUserPrivateInfo = () => {
   const [dressInfo, setDressInfo] = useContext(dressMainData);
 
@@ -287,6 +288,7 @@ const AddUserPrivateInfo = () => {
                       <img src={formArrowRightCircle} alt="" />
                     </Link>
                   </form>
+
                 </div>
               );
             }
