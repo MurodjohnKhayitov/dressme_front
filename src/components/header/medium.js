@@ -407,7 +407,7 @@ const MediumHeader = () => {
                             <div className="line h-5 border-x-[1px]   text-textColor ss:hidden md:block mx-3"></div>
 
                             {/* Map section */}
-                            <Link to="#" className="items-center justify-center bg-btnBgColor rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex">
+                            <Link to="/delivery-points" className="items-center justify-center bg-btnBgColor rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex">
 
                                 <img src={map} alt="map" className="pr-[6px]" />
                                 <span className="font-AeonikProMedium text-sm  ">Карта</span>

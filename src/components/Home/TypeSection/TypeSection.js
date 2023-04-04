@@ -106,62 +106,7 @@ export default function TypeSection() {
         { id: 3333, type: "Autumm", imgFull: AutummSquare },
         { id: 4444, type: "Winter", imgFull: WinterSquare },
     ]
-    const NextArrow = (props) => {
-        const { onClick } = props;
-        return (
-            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[50%] z-10	right-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
-                <button className="next">
-                    <GrNext />
-                </button>
-            </div>
-        );
-    };
-
-    const PrevArrow = (props) => {
-        const { onClick } = props;
-        return (
-            <div className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[50%] z-10	left-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard	`} onClick={onClick}>
-                <button className="prev">
-                    <GrPrevious />
-                </button>
-            </div>
-        );
-    };
-    let settings = {
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
-        infinite: true,
-        speed: 500,
-        dots: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        initialSlide: 0,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 640,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    };
+ 
 
     let dataStyle = ''
     if (dressInfo?.type == 1111) {
