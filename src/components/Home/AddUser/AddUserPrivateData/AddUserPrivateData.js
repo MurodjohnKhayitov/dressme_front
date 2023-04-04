@@ -45,16 +45,16 @@ const AddUserPrivateInfo = () => {
                                 <div>
                                     <div className="flex flex-col gap-y-2 gap-x-2 mb-7">
                                         <div className="w-full flex-row flex items-center justify-between gap-x-2">
-                                            <button className="w-[176px] bg-btnBgColor border border-solid border-searchBgColor rounded-lg px-[55px] py-3">
+                                            <button className={`w-[176px] ${genderStyle} bg-btnBgColor border border-solid border-searchBgColor rounded-lg px-[55px] py-3`}>
                                                 <img src={data?.man} alt="" className="mb-[10px] mx-auto" />
                                                 <span>Мужчина</span>
                                             </button>
-                                            <button className="w-[176px] bg-btnBgColor border border-solid border-searchBgColor rounded-lg px-[55px] py-3">
+                                            <button className={`w-[176px] ${genderStyle} bg-btnBgColor border border-solid border-searchBgColor rounded-lg px-[55px] py-3`}>
                                                 <img src={data?.woman} alt="" className="mb-[10px] mx-auto" />
                                                 <span>Женщина</span>
                                             </button>
                                         </div>
-                                        <div className="flex flex-row items-center gap-x-2">
+                                        {/* <div className="flex flex-row items-center gap-x-2">
                                             <button className="w-[114px] bg-btnBgColor flex-col items-center justify-center border border-solid border-searchBgColor rounded-lg px-[28px] py-3">
                                                 <img src={data?.boy} alt="" className="mb-[10px] mx-auto"/>
                                                 <span>Мальчик</span>
@@ -67,31 +67,31 @@ const AddUserPrivateInfo = () => {
                                                 <img src={data?.childs} alt="" className="mb-[10px] mx-auto"/>
                                                 <span>Младенец</span>
                                             </button>
-                                        </div> 
+                                        </div>  */}
                                     </div>
                                     <form>
                                         <label htmlFor="firstname" className="mb-[6px] font-AeonikProRegular text-sm">Имя</label>
                                         <div className="flex items-center justify-between border border-solid border-searchBgColor p-4 rounded-lg bg-btnBgColor mb-4">
-                                            <input type="text" name="firstname" id="firstname" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base" />
+                                            <input type="text" name="firstname" id="firstname" className="w-[90%] bg-transparent font-AeonikProMedium text-base" />
                                             <button>
                                                 <img src={formUser} alt="" />
                                             </button>
                                         </div>
                                         <label htmlFor="lastname" className="mb-[6px] font-AeonikProRegular text-sm">Фамилия</label>
-                                        <div className="flex items-center justify-between border border-solid border-searchBgColor p-[15px] rounded-lg bg-btnBgColor mb-4">
-                                            <input type="text" name="lastname" id="lastname" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
+                                        <div className="flex items-center justify-between border border-solid border-searchBgColor px-4 py-[15px] rounded-lg bg-btnBgColor mb-4">
+                                            <input type="text" name="lastname" id="lastname" className="w-[90%] bg-transparent font-AeonikProMedium text-base"/>
                                             <button>
                                                 <img src={formUser} alt=""/>
                                             </button>
                                         </div>
                                         <label htmlFor="bdate" className="mb-[6px] font-AeonikProRegular text-sm">Дата рождения</label>
-                                        <div className="flex items-center justify-between border border-solid border-searchBgColor p-[15px] rounded-lg bg-btnBgColor mb-4">
+                                        <div className="flex items-center justify-between border border-solid border-searchBgColor px-4 py-[15px] rounded-lg bg-btnBgColor mb-4">
                                             <span className="h-full w-20"><img src={formCalendar} alt="" /></span>
                                             <input type="text" name="day" placeholder="День" id="day" className="w-[90%] bg-btnBgColor font-AeonikProRegular text-base"/>
                                             <input type="date" name="bdate" id="bdate" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
                                             <input type="month" name="bdate" id="bdate" className="w-[90%] bg-btnBgColor font-AeonikProMedium text-base"/>
                                         </div>
-                                        <label htmlFor="phone" className="mb-[6px] font-AeonikProRegular text-sm">Номер телефона</label>
+                                        {/* <label htmlFor="phone" className="mb-[6px] font-AeonikProRegular text-sm">Номер телефона</label>
                                         <div className="flex items-center justify-between border border-solid border-searchBgColor px-[16px] rounded-lg bg-btnBgColor mb-4">
                                             <div className="flex items-center w-[45%] pr-[50px] h-full border-r py-[13px] border-r-searchBgColor">
                                                 <img src={formUzFlag} alt="" />
@@ -112,7 +112,7 @@ const AddUserPrivateInfo = () => {
                                             <button>
                                                 <img src={formEmail} alt="" />
                                             </button>
-                                        </div>
+                                        </div> */}
                                         <Link to="/add_user_body_data" className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4">
                                             <span className="mr-[10px]">Следующий шаг</span>
                                             <img src={formArrowRightCircle} alt="" />
