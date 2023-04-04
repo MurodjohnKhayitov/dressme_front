@@ -437,7 +437,7 @@ const MediumHeader = () => {
 
                         </div>
                     </div>
-                    {/* Ending of Full Screen page sesction */}
+                    {/* Ending of Full Screen page sesction Map*/}
 
                     <div className={`h-fit top-30  left-[16px] fixed  bg-white   shadow-lg duration-200 z-50 ${clothesTypeMobile ? "w-[92%]" : "w-0"
                         }  `}>
@@ -602,7 +602,7 @@ const MediumHeader = () => {
                             </div>
 
                             {/* Map section */}
-                            <Link to="#" className="flex items-center w-full justify-center bg-btnBgColor border border-searchBgColor rounded-lg ss:px-4 h-10 ml-2  ss:w-[94px] " >
+                            <Link to="/delivery-points" className="flex items-center w-full justify-center bg-btnBgColor border border-searchBgColor rounded-lg ss:px-4 h-10 ml-2  ss:w-[94px] " >
                                 <img src={map} alt="map" className="pr-[6px]" />
                                 <div className="font-AeonikProMedium">Map</div>
                             </Link>
