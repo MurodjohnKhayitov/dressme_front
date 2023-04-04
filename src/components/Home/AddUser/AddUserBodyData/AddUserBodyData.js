@@ -37,7 +37,7 @@ const AddUserBodyData = () => {
         <main>  
             <div className="flex justify-center  my-8 gap-x-8">
                 <div>
-                    <img src={person3D} alt="" className="border border-solid border-searchBgColor rounded-lg pb-[50px]"/>
+                    <img src={person3D} alt="" className="border border-solid border-searchBgColor rounded-lg"/>
                 </div>
                 <div>
                     <form className="rounded-lg border border-solid border-searchBgColor mb-6">
@@ -124,14 +124,12 @@ const AddUserBodyData = () => {
                             <div className="flex items-center px-4 bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor rounded-lg h-12 mb-2">
                                 <div className="flex items-center font-AeonikProMedium w-[75%] border-r border-searchBgColor h-12 bg-transparent pr-4">Нижняя одежда <span className="font-AeonikProRegular ml-1">(брюки)</span></div>
                                 <div className="flex items-center justify-between font-AeonikProMedium">
-                                    <select name="caps" id="caps" className="appearance-none px-4 bg-transparent cursor-pointer h-12">
+                                    <select name="caps" id="caps" className="w-full appearance-none px-4 bg-transparent cursor-pointer h-12">
                                         <option value="30">30</option>
                                         <option value="31">31</option>
                                         <option value="32">32</option>
                                         <option value="33">33</option>
                                         <option value="34">34</option>
-                                        <option value="35">35</option>
-                                        <option value="36">36</option>
                                     </select>
                                     <img src={formArrowBottom} alt="" className="cursor-pointer"/> 
                                 </div>    
@@ -152,16 +150,17 @@ const AddUserBodyData = () => {
                                 </div>    
                             </div>
                             
-                            <Link to="/" className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4 my-8">
+                            <Link to="/" className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4 mb-4 mt-6">
+                                <span className="mr-[10px]">Следующий шаг</span>
+                                <img src={formArrowRightCircle} alt="" />
+                            </Link>
+                            <Link to="/" className="w-[360px] mx-auto bg-gray-400 flex items-center justify-center rounded-lg text-white mb-6 py-4">
                                 <span className="mr-[10px]">Следующий шаг</span>
                                 <img src={formArrowRightCircle} alt="" />
                             </Link>
                         </div>
                     </form>
-                    <Link to="/" className="w-[360px] mx-auto bg-gray-400 flex items-center justify-center rounded-lg text-white py-4">
-                        <span className="mr-[10px]">Следующий шаг</span>
-                        <img src={formArrowRightCircle} alt="" />
-                    </Link>
+
                 </div>
                 
             </div>
