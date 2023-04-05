@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         bgColor: '#fafafa',
         textColor: '#707070',
+        textColor2: '#a1a1a1',
         btnBgColor: '#fcfcfc',
         catalogBg: '#F2F2FD',
         fullBlue: '#007DCA',
