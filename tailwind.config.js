@@ -17,6 +17,9 @@ module.exports = {
         borderColor: '#707070',
         borderColor2: '#e2e2e2',
         borderColorCard: "#c1c1c1",
+        // SignIn
+        SignInBgColor:"#0077B6",
+        OpacitySignIn:"#E8E8E8",
         // set wear
         setButtonColor: "#E8E8E8",
         setTexOpacity: "#A1A1A1",
