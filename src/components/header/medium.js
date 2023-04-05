@@ -407,20 +407,20 @@ const MediumHeader = () => {
                             <div className="line h-5 border-x-[1px]   text-textColor ss:hidden md:block mx-3"></div>
 
                             {/* Map section */}
-                            <Link to="/delivery-points" className="items-center justify-center bg-btnBgColor rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex">
+                            <NavLink to="/delivery-points" className="items-center justify-center bg-btnBgColor rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex">
 
                                 <img src={map} alt="map" className="pr-[6px]" />
                                 <span className="font-AeonikProMedium text-sm  ">Карта</span>
-                            </Link>
+                            </NavLink>
 
                             {/* Line border */}
                             <div className="line h-5 border-x-[1px]   text-textColor ss:hidden md:block mx-3"></div>
 
                             {/* User section */}
-                            <button className=" bg-btnBgColor rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex">
+                            <NavLink to="/sign_in"  className=" bg-btnBgColor rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex">
 
                                 <img src={user} alt="" />
-                            </button>
+                            </NavLink>
 
                             {/* Heart section */}
                             <button className="bg-btnBgColor rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex">

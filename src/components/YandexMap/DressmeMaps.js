@@ -55,12 +55,7 @@ function DressmeMaps() {
             modules={["control.ZoomControl", "control.FullscreenControl"]}
           >
             {/* ---------- */}
-            {/* <Clusterer
-            options={{
-              preset: "islands#invertedVioletClusterIcons",
-              groupByCoordinates: false,
-            }}
-          > */}
+          
             {points.map((coordinates, index) => (
               <Placemark
                 key={index}
