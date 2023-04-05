@@ -12,17 +12,17 @@ import InputMask from "react-input-mask";
 import { dressMainData } from "../../../ContextHook/ContextMenu";
 
 export default function SignUp() {
+  const [phone, setPhone] = useState("");
   const [state, setState] = useState({
     firstName: "",
     lastName: "",
     phoneCode: "+998",
-    phoneNumber: "",
     email: "",
     password: "",
     eyesShow: true,
   });
 
-  let data = state.phoneNumber.split("-");
+  let data = phone.split("-");
   let arr = data.join("");
   let data1 = arr.split("(");
   let arr1 = data1.join("");
@@ -104,12 +104,10 @@ export default function SignUp() {
             <div className="ss:w-[65%] md:w-[70%] h-12 overflow-hidden">
               <InputMask
                 mask="(99)999-99-99"
-                value={state?.phoneNumber}
-                onChange={(e) =>
-                  setState(...state, { phoneNumber: e.target.value })
-                }
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
                 className={`w-full px-4  h-full not-italic ${
-                  state?.phoneNumber ? "font-AeonikProMedium" : null
+                  phone ? "font-AeonikProMedium" : null
                 } text-base leading-4 text-black`}
                 placeholder={"(77) 777-77-77"}
               ></InputMask>
