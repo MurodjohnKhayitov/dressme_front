@@ -13,6 +13,7 @@ module.exports = {
         searchBgColor: "#F2F2F2",
         borderColor: "#707070",
         borderColor2: "#e2e2e2",
+
         borderColorCard: "#c1c1c1",
         yandexText: "#868695",
         // SignIn
