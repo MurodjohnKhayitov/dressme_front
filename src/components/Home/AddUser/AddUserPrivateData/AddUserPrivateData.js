@@ -4,7 +4,7 @@ import { dressMainData } from "../../../../ContextHook/ContextMenu";
 import { AutummBoy, AutummChild, AutummFemale, AutummGirl, AutummMale, formArrowBottom, formArrowRight, formArrowRightCircle, formCalendar, formDate, formEmail, formPhone, formUser, formUzFlag, SpringBoy, SpringChild, SpringFemale, SpringGirl, SpringMale, SummerBoy, SummerChild, SummerFemale, SummerGirl, SummerMale, user, uzbekFlag, WinterBoy, WinterChild, WinterFemale, WinterGirl, WinterMale } from "../../../../assets/imgs";
 import AddUserPrivateSkeleton from "../Skeleton/AddUserPrivateSkeleton";
 import { DatePicker, Popover, Space } from "antd";
-import { BiChevronDown } from "react-icons/bi";
+import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 
 const AddUserPrivateInfo = () => {
   const [dressInfo, setDressInfo] = useContext(dressMainData);
@@ -124,35 +124,57 @@ const AddUserPrivateInfo = () => {
                                     <span className="h-full w-[15%] py-[14px] border-r border-searchBgColor">
                                         <img src={formCalendar} alt="" className="mx-4"/>
                                     </span>
-                                    <input type="number" name="day" placeholder="День" id="day" className="w-[19%] h-12 flex items-center bg-btnBgColor font-AeonikProRegular text-base px-[14px] border-r border-searchBgColor [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"/>
+                                    <input type="number" name="day" placeholder="День" id="day" className="w-[19%] h-12 flex items-center bg-btnBgColor font-AeonikProRegular text-[15px] px-[14px] border-r border-searchBgColor [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"/>
 
-                                    <Space 
-                                        className="border-r h-12 border-searchBgColor flex items-center w-[38%]"
+                                    {/* <Space 
+                                        className="border-r h-12 border-searchBgColor flex items-center w-[40%] cursor-pointer"
                                         direction="horizontal"
                                         size={"200px"}
                                       >
                                         <div className="flex items-center">
                                             <span>
                                                 <DatePicker 
+                                                    className="font-AeonikProRegular text-base"
                                                     picker="month" 
                                                     bordered={false} 
-                                                    placeholder="Month"
+                                                    placeholder="Месяц"
+                                                    mode={"month"}
                                                     suffixIcon
-                                                    className="font-AeonikProMedium text-base"
                                                 />
                                             </span>
                                             <span>
-                                                <BiChevronDown
+                                                <BiChevronUp
                                                     size={20}
                                                     style={{ color: "#c2c2c2" }}
                                                     className="mr-2"
                                                 />{" "}
                                             </span>
                                         </div>
-                                    </Space>
+                                    </Space> */}
+
+                                    <Popover
+                                      open={openMonth}
+                                      onOpenChange={handleOpenChangeWear}
+                                      className="w-[40%] px-[17px] h-12 bg-btnBgColor border-r flex items-center justify-between cursor-pointer select-none group  "
+                                      trigger="click"
+                                      options={["Hide"]}
+                                      placement="bottom"
+                                      content={contentWear}
+                                    >
+                                      <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                                        {selectMonth}
+                                      </span>
+                                      <span>
+                                        <BiChevronUp
+                                          size={20}
+                                          style={{ color: "#c2c2c2" }}
+                                          className={`${openMonth ? "rotate-[180deg]" : ""} duration-200`}
+                                        />{" "}
+                                      </span>
+                                    </Popover>
 
                                     <Space 
-                                        className="w-[28%]"
+                                        className="w-[26%] cursor-pointer"
                                         direction="vertical" 
                                         size={12}
                                         options={["Hide"]}
@@ -161,15 +183,15 @@ const AddUserPrivateInfo = () => {
                                        <div className="flex items-center">
                                             <span>
                                                 <DatePicker 
-                                                    className="font-AeonikProMedium text-base flex items-center"
-                                                    placeholder="Year"
-                                                    picker="year" 
+                                                    className="font-AeonikProRegular text-base flex items-center"
+                                                    placeholder="Год"
+                                                    picker="year"
                                                     bordered={false} 
                                                     suffixIcon
                                                 />
                                             </span>
                                             <span>
-                                                <BiChevronDown
+                                                <BiChevronUp
                                                     size={20}
                                                     style={{ color: "#c2c2c2" }}
                                                     className="mr-2"
