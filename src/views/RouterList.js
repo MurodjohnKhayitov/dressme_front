@@ -18,6 +18,7 @@ import AddUserBodySkeleton from "../components/Home/AddUser/Skeleton/AddUserPriv
 import SignInSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import SignUpSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import AuthenIndex from "../components/header/AuthenticationNavbar/AuthenIndex";
+import YandexMapsIndex from "../components/header/YandexMapsNavbar/YandexMapsIndex";
 
 // --------With lazy component
 const HomePage = React.lazy(() => import("../Page/Home/Home"));
@@ -73,6 +74,10 @@ const RouterList = () => {
               </React.Suspense>
             }
           />
+        </Route>
+
+        {/* Yandex Maps */}
+        <Route element={<YandexMapsIndex />}>
           <Route
             path="/delivery-points"
             element={
