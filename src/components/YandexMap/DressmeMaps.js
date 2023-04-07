@@ -1,11 +1,5 @@
 import React from "react";
-// import {
-//   YMaps,
-//   Map,
-//   ObjectManager,
-//   Placemark,
-//   Button,
-// } from "react-yandex-maps";
+
 import {
   YMaps,
   Map,
@@ -20,8 +14,7 @@ import {
   Placemark,
   Clusterer,
 } from "react-yandex-maps";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { addBag, markerIcons } from "../../assets/imgs";
+import {  markerIcons } from "../../assets/imgs";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";

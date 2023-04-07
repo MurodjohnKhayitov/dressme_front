@@ -19,6 +19,7 @@ import SignInSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import SignUpSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import AuthenIndex from "../components/header/AuthenticationNavbar/AuthenIndex";
 import YandexMapsIndex from "../components/header/YandexMapsNavbar/YandexMapsIndex";
+import YandexSkeletonIndex from "../components/YandexMap/YandexMapsSkeleton/YandexSkeletonIndex";
 
 // --------With lazy component
 const HomePage = React.lazy(() => import("../Page/Home/Home"));
@@ -81,7 +82,13 @@ const RouterList = () => {
           <Route
             path="/delivery-points"
             element={
-              <React.Suspense fallback={<div>Kechikish....</div>}>
+              <React.Suspense
+                fallback={
+                  <div>
+                    <YandexSkeletonIndex />
+                  </div>
+                }
+              >
                 <YandexMapDressMe />
               </React.Suspense>
             }
