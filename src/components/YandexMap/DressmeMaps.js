@@ -14,7 +14,7 @@ import {
   Placemark,
   Clusterer,
 } from "react-yandex-maps";
-import {  markerIcons } from "../../assets/imgs";
+import { markerIcons } from "../../assets/imgs";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
@@ -180,25 +180,22 @@ function DressmeMaps() {
                   }}
                   modules={["geoObject.addon.balloon"]}
                   properties={{
-                    balloonContentHeader:
-                    
-                      `<a class="title" href = "#">Пункт выдачи</a><br>` +
-                      `<span class="description11">${data?.address}</span>`,
+                    balloonContentHeader: `<div class="balloonContentHeader"><a class="title" href = "#">Пункт выдачи</a><br><span class="description11">${data?.address}</span></div>`,
+
                     // // Зададим содержимое основной части балуна.
                     balloonContentBody:
-                      `<div class="bodySpace"><img  className="data" src="https://images.wbstatic.net/PickupOffice/Img154040_Photo1.jpg"/><img  className="data" src="https://images.wbstatic.net/PickupOffice/Img154040_Photo1.jpg"/> </div><br/>` +
-                      `<b class='text'>Режим работы:<span>${data?.workTime}</span></b> <br/>` +
-                      `<b class='text'>Примерочные: <span>${data?.imgs.length} шт</span></b><br/>` +
+                      `<div class="bodyImgs"><img  className="data" src="https://images.wbstatic.net/PickupOffice/Img154040_Photo1.jpg"/><img  className="data" src="https://images.wbstatic.net/PickupOffice/Img154040_Photo1.jpg"/> </div><br/>` +
+                      // `<div class="bodySana"><span class='text'>Режим работы:<span>${data?.workTime}</span></span></div><br/>` +
+                      // `<div class="bodySana"><span class='text'>Примерочные: <span>${data?.imgs.length} шт</span></span></div><br/>` +
+                    
+                      `<div class="bodySana">
+                          <span class='text'>Режим работы:<span>${data?.workTime}</span></span><br/>
+                          <span class='text'>Примерочные: <span>${data?.imgs.length} шт</span></span>
+                      </div><br/>` +
+
                       `<div class="BtnUzGroup"><div class='BtnUz'>Выбрать</div></div>`,
 
                     balloonContentFooter: `<div class="footerText"><span>Directions:</span> ${data?.direction}</div>`,
-                    // // Зададим содержимое всплывающей подсказки.
-                    hintContent: "Рога и копыта",
-
-                    // balloonContent: "<div>balloonContent</div>",
-                    // balloonContentHeader: `<div className="w-[400px] h-[100px] border border-red-300">balloonContentHeader </div>`,
-                    // balloonContentBody: <div>balloonContentBody</div>,
-                    // balloonContentFooter: <div>balloonContentFooter </div>,
                   }}
                 />
               ))}
@@ -219,12 +216,12 @@ function DressmeMaps() {
               <div
                 className={`${
                   openMenuYandex ? " ml-[0px]" : "  ml-[-1000px]"
-                } absolute cursor-pointer top-[0px] left-0 z-50 h-[550px] w-[380px] p-4 duration-500 bg-white   border-r border-searchBgColor`}
+                } absolute cursor-pointer top-[0px] left-0 z-50 h-[550px] overflow-hidden w-[380px] p-4 duration-500 bg-white   border-r border-searchBgColor`}
               >
                 <div className="w-full py-2 not-italic font-AeonikProMedium text-xl leading-8 text-black">
                   Выберите адрес доставки
                 </div>
-                <div className="w-full h-[90%] mt-3 overflow-y-auto">
+                <div className="w-full h-[85%] mt-3 pr-1 overflow-y-auto   YandexListScroll">
                   {points?.map((data) => {
                     return (
                       <div
