@@ -146,8 +146,8 @@ function DressmeMaps() {
     },
   ];
   return (
-    <div className="my-8 h-fit w-full flex justify-center  ">
-      <div className="w-[100%] h-[550px] border border-searchBgColor rounded-lg overflow-hidden">
+    <div className=" h-fit w-full flex justify-center  ">
+      <div className="w-[100%] h-[550px] border-b border-searchBgColor overflow-hidden">
         <YMaps
           className="w-full"
           query={{ apikey: "8b56a857-f05f-4dc6-a91b-bc58f302ff21" }}
@@ -167,6 +167,18 @@ function DressmeMaps() {
               options={{
                 preset: "islands#invertedVioletClusterIcons",
                 groupByCoordinates: false,
+                strokeStyle: "dot",
+                iconColor: "red",
+                color: "red",
+                strokeColor: "#F00",
+                // strokeColor: '#FF0000',
+                // strokeColor: '#FF0000AA',
+                // strokeColor: 'rgba(255,0,0,1)'
+                strokeStyle: {
+                  style: "dot",
+                  offset: 10,
+                  color: "red",
+                },
               }}
             >
               {points.map((data, index) => (
@@ -187,12 +199,11 @@ function DressmeMaps() {
                       `<div class="bodyImgs"><img  className="data" src="https://images.wbstatic.net/PickupOffice/Img154040_Photo1.jpg"/><img  className="data" src="https://images.wbstatic.net/PickupOffice/Img154040_Photo1.jpg"/> </div><br/>` +
                       // `<div class="bodySana"><span class='text'>Режим работы:<span>${data?.workTime}</span></span></div><br/>` +
                       // `<div class="bodySana"><span class='text'>Примерочные: <span>${data?.imgs.length} шт</span></span></div><br/>` +
-                    
+
                       `<div class="bodySana">
                           <span class='text'>Режим работы:<span>${data?.workTime}</span></span><br/>
                           <span class='text'>Примерочные: <span>${data?.imgs.length} шт</span></span>
                       </div><br/>` +
-
                       `<div class="BtnUzGroup"><div class='BtnUz'>Выбрать</div></div>`,
 
                     balloonContentFooter: `<div class="footerText"><span>Directions:</span> ${data?.direction}</div>`,
@@ -265,12 +276,7 @@ function DressmeMaps() {
                 float: "left",
               }}
             />
-            <TrafficControl
-              options={{ float: "none", position: { top: 10, right: 190 } }}
-            />
-            <TypeSelector
-              options={{ float: "none", position: { top: 10, right: 90 } }}
-            />
+
             <RulerControl options={{ float: "right" }} />
           </Map>
         </YMaps>
