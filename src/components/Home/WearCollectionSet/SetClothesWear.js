@@ -1068,7 +1068,7 @@ export default function SetClothesWear() {
                     )
                 })
             }
-
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, in? Sint architecto autem unde eligendi magni, natus explicabo impedit iusto perferendis mollitia, repellat tempore? Laborum ullam libero, dolorum non recusandae assumenda necessitatibus, aut, ut architecto consectetur neque culpa eligendi facilis. Error quia eius excepturi optio modi saepe porro quasi aliquid!</p>
                             
             <div className='w-full h-fit flex items-center justify-center mt-14'>
                 <div className='w-[760px] h-[60px] cursor-pointer not-italic font-AeonikProMedium text-base leading-4 text-center text-black flex items-center justify-center rounded-lg border border-searchBgColor bg-btnBgColor'>
