@@ -157,8 +157,12 @@ export default function SetClothesWear() {
                 { id: 10, product_id: 10, name: "Аксессуары", gender: "Male", quality: "semi-original", composition: "cotton 100%", wear_size: "51", make_country: "china", amount: "15000", currensy: "UZB", active: true, accessor_wear_img: "https://images.uzum.uz/cgcqktvg49devoab8of0/t_product_540_high.jpg#1679984868477" },
                 { id: 11, product_id: 11, name: "Аксессуары", gender: "Male", quality: "semi-original", composition: "cotton 100%", wear_size: "51", make_country: "china", amount: "60000", currensy: "UZB", active: true, accessor_wear_img: "https://images.uzum.uz/cgfhtfnhj8j9g69avkag/t_product_540_high.jpg#1679984914878" },
             ],
-
-
+            modelsList: [
+                {id:1, modelImg:require('../../../assets/imgs/Models/model1.svg')},
+                {id:2, modelImg:require('../../../assets/imgs/Models/model2.svg')},
+                {id:3, modelImg:require('../../../assets/imgs/Models/model3.svg')},
+                {id:4, modelImg:require('../../../assets/imgs/Models/model4.svg')}
+            ]
         },
         {
             id: 3,
@@ -231,7 +235,12 @@ export default function SetClothesWear() {
                 { id: 10, product_id: 10, name: "Аксессуары", gender: "Male", quality: "semi-original", composition: "cotton 100%", wear_size: "51", make_country: "china", amount: "15000", currensy: "UZB", active: true, accessor_wear_img: "https://images.uzum.uz/cgcqktvg49devoab8of0/t_product_540_high.jpg#1679984868477" },
                 { id: 11, product_id: 11, name: "Аксессуары", gender: "Male", quality: "semi-original", composition: "cotton 100%", wear_size: "51", make_country: "china", amount: "60000", currensy: "UZB", active: true, accessor_wear_img: "https://images.uzum.uz/cgfhtfnhj8j9g69avkag/t_product_540_high.jpg#1679984914878" },
             ],
-
+            modelsList: [
+                {id:1, modelImg:require('../../../assets/imgs/Models/model1.svg')},
+                {id:2, modelImg:require('../../../assets/imgs/Models/model2.svg')},
+                {id:3, modelImg:require('../../../assets/imgs/Models/model3.svg')},
+                {id:4, modelImg:require('../../../assets/imgs/Models/model4.svg')}
+            ]
 
         },
         {
@@ -305,7 +314,12 @@ export default function SetClothesWear() {
                 { id: 10, product_id: 10, name: "Аксессуары", gender: "Male", quality: "semi-original", composition: "cotton 100%", wear_size: "51", make_country: "china", amount: "15000", currensy: "UZB", active: true, accessor_wear_img: "https://images.uzum.uz/cgcqktvg49devoab8of0/t_product_540_high.jpg#1679984868477" },
                 { id: 11, product_id: 11, name: "Аксессуары", gender: "Male", quality: "semi-original", composition: "cotton 100%", wear_size: "51", make_country: "china", amount: "60000", currensy: "UZB", active: true, accessor_wear_img: "https://images.uzum.uz/cgfhtfnhj8j9g69avkag/t_product_540_high.jpg#1679984914878" },
             ],
-
+            modelsList: [
+                {id:1, modelImg:require('../../../assets/imgs/Models/model1.svg')},
+                {id:2, modelImg:require('../../../assets/imgs/Models/model2.svg')},
+                {id:3, modelImg:require('../../../assets/imgs/Models/model3.svg')},
+                {id:4, modelImg:require('../../../assets/imgs/Models/model4.svg')}
+            ]
 
         },
 
@@ -417,7 +431,6 @@ export default function SetClothesWear() {
         dots: false,
         afterChange: current => setGetSliderId({ ...getSliderId, headWearId: current + 1 })
     };
-
     let outWear = {
         nextArrow: <NextArrow1 />,
         prevArrow: <PrevArrow1 />,
@@ -472,361 +485,361 @@ export default function SetClothesWear() {
     return (
         <div className='w-full flex flex-row flex-wrap box-border gap-y-5 gap-x-5 h-fit justify-between'>
             {
-                // productList?.map(producListMap => {
-                //     return (
-                //         <div key={producListMap?.id} className='w-[630px] h-[480px] flex overflow-hidden border border-searchBgColor rounded-lg '>
+                productList?.map(producListMap => {
+                    return (
+                        <div key={producListMap?.id} className='w-[630px] h-[480px] flex overflow-hidden border border-searchBgColor rounded-lg '>
                             
-                //             <div className='w-[360px] border-r bg-white border-searchBgColor'>
+                            <div className='w-[360px] border-r bg-white border-searchBgColor'>
                                 
-                //                 <div className='w-full h-full flex  flex-wrap content-center gap-y-1 justify-center'>
-                //                     {/* HeadWear */}
-                //                     <div className="w-full h-fit">
-                //                         <Slider {...headWear} className={`w-full h-[60px] `}>
-                //                             {
-                //                                 producListMap?.headWear?.map(item => {
-                //                                     return (
-                //                                         <div key={item?.id} className={` !w-[192px] box-border  ml-[84px] flex items-center justify-center h-[60px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}>
-                //                                             <div className='w-full h-full data'>
-                //                                                 <img className='w-[100px]  h-full m-auto' src={item?.head_wear_img} alt="head_wear_img" />
-                //                                             </div>
-                //                                             <div className={`absolute top-1 px-1 flex ${!item?.active ? "justify-between" : "justify-end"}  w-[190px] `}>
-                //                                                 {
-                //                                                     !item?.active ? <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
-                //                                                         <img src={statusFalse} alt="statusFalse" />
-                //                                                     </div> : null
-                //                                                 }
-                //                                                 <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
-                //                                                     <img src={Liked} alt="Liked" />
-                //                                                 </div>
-                //                                             </div>
-                //                                             <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end  '>
-                //                                                 <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor data-hover:bg-red-500 bg-white rounded flex items-center justify-center'>
-                //                                                     <img src={nextInfo} alt="nextInfo" />
-                //                                                 </div>
-                //                                             </div>
-                //                                         </div>
-                //                                     )
-                //                                 })
-                //                             }
-                //                         </Slider>
-                //                     </div>
+                                <div className='w-full h-full flex  flex-wrap content-center gap-y-1 justify-center'>
+                                    {/* HeadWear */}
+                                    <div className="w-full h-fit">
+                                        <Slider {...headWear} className={`w-full h-[60px] `}>
+                                            {
+                                                producListMap?.headWear?.map(item => {
+                                                    return (
+                                                        <div key={item?.id} className={` !w-[192px] box-border  ml-[84px] flex items-center justify-center h-[60px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}>
+                                                            <div className='w-full h-full data'>
+                                                                <img className='w-[100px]  h-full m-auto' src={item?.head_wear_img} alt="head_wear_img" />
+                                                            </div>
+                                                            <div className={`absolute top-1 px-1 flex ${!item?.active ? "justify-between" : "justify-end"}  w-[190px] `}>
+                                                                {
+                                                                    !item?.active ? <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                                        <img src={statusFalse} alt="statusFalse" />
+                                                                    </div> : null
+                                                                }
+                                                                <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                                    <img src={Liked} alt="Liked" />
+                                                                </div>
+                                                            </div>
+                                                            <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end  '>
+                                                                <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor data-hover:bg-red-500 bg-white rounded flex items-center justify-center'>
+                                                                    <img src={nextInfo} alt="nextInfo" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                        </Slider>
+                                    </div>
 
-                //                     {/* OutWear */}
-                //                     <div className="w-full h-fit">
-                //                         <Slider {...outWear} className={`w-full h-[148px]`}>
-                //                             {
-                //                                 producListMap?.outWear.map(item => {
-                //                                     return (
-                //                                         <div key={item?.id} className={`!w-[192px] flex justify-center items-center  ml-[84px] h-[148px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}>
-                //                                             <div className='w-full h-full'>
-                //                                                 <img className=' h-full m-auto' src={item?.out_wear_img} alt="out_wear_img" />
-                //                                             </div>
-                //                                             <div className={`absolute top-1 px-1 flex ${!item?.active ? "justify-between" : "justify-end"}  w-[190px] `}>
-                //                                                 {
-                //                                                     !item?.active ? <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center'>
-                //                                                         <img src={statusFalse} alt="" />
-                //                                                     </div> : null
-                //                                                 }
-                //                                                 <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center'>
-                //                                                     <img src={Liked} alt="" />
-                //                                                 </div>
-                //                                             </div>
-                //                                             <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end'>
-                //                                                 <div className='w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center'>
-                //                                                     <img src={nextInfo} alt="nextInfo" />
-                //                                                 </div>
-                //                                             </div>
-                //                                         </div>
-                //                                     )
-                //                                 })
-                //                             }
-                //                         </Slider>
-                //                     </div>
+                                    {/* OutWear */}
+                                    <div className="w-full h-fit">
+                                        <Slider {...outWear} className={`w-full h-[148px]`}>
+                                            {
+                                                producListMap?.outWear.map(item => {
+                                                    return (
+                                                        <div key={item?.id} className={`!w-[192px] flex justify-center items-center  ml-[84px] h-[148px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}>
+                                                            <div className='w-full h-full'>
+                                                                <img className=' h-full m-auto' src={item?.out_wear_img} alt="out_wear_img" />
+                                                            </div>
+                                                            <div className={`absolute top-1 px-1 flex ${!item?.active ? "justify-between" : "justify-end"}  w-[190px] `}>
+                                                                {
+                                                                    !item?.active ? <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center'>
+                                                                        <img src={statusFalse} alt="" />
+                                                                    </div> : null
+                                                                }
+                                                                <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center'>
+                                                                    <img src={Liked} alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end'>
+                                                                <div className='w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center'>
+                                                                    <img src={nextInfo} alt="nextInfo" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                        </Slider>
+                                    </div>
 
-                //                     {/* UnderWear */}
-                //                     <div className="w-full h-fit">
-                //                         <Slider {...underWear} className={`w-full h-[168px]`}>
-                //                             {
-                //                                 producListMap?.underWear.map(item => {
-                //                                     return (
-                //                                         <div key={item?.id} className={`!w-[192px] flex justify-center items-center   ml-[84px] h-[168px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}>
-                //                                             <div className='w-full h-full'>
-                //                                                 <img className=' h-full m-auto' src={item?.under_wear_img} alt="under_wear_img" />
-                //                                             </div>
-                //                                             <div className={`absolute top-1 px-1 flex ${!item?.active ? "justify-between" : "justify-end"}  w-[190px] `}>
-                //                                                 {
-                //                                                     !item?.active ? <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
-                //                                                         <img src={statusFalse} alt="" />
-                //                                                     </div> : null
-                //                                                 }
-                //                                                 <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
-                //                                                     <img src={Liked} alt="" />
-                //                                                 </div>
-                //                                             </div>
-                //                                             <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end'>
-                //                                                 <div className='w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
-                //                                                     <img src={nextInfo} alt="nextInfo" />
-                //                                                 </div>
-                //                                             </div>
-                //                                         </div>
-                //                                     )
-                //                                 })
-                //                             }
-                //                         </Slider>
-                //                     </div>
+                                    {/* UnderWear */}
+                                    <div className="w-full h-fit">
+                                        <Slider {...underWear} className={`w-full h-[168px]`}>
+                                            {
+                                                producListMap?.underWear.map(item => {
+                                                    return (
+                                                        <div key={item?.id} className={`!w-[192px] flex justify-center items-center   ml-[84px] h-[168px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}>
+                                                            <div className='w-full h-full'>
+                                                                <img className=' h-full m-auto' src={item?.under_wear_img} alt="under_wear_img" />
+                                                            </div>
+                                                            <div className={`absolute top-1 px-1 flex ${!item?.active ? "justify-between" : "justify-end"}  w-[190px] `}>
+                                                                {
+                                                                    !item?.active ? <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                                        <img src={statusFalse} alt="" />
+                                                                    </div> : null
+                                                                }
+                                                                <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                                    <img src={Liked} alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end'>
+                                                                <div className='w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                                    <img src={nextInfo} alt="nextInfo" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                        </Slider>
+                                    </div>
 
-                //                     {/* LegWear */}
-                //                     <div className="w-full h-fit">
-                //                         <Slider {...legWear} className={`w-full h-[60px]`}>
-                //                             {
-                //                                 producListMap?.legWear.map(item => {
-                //                                     return (
-                //                                         <div key={item?.id} className={`!w-[192px] flex justify-center items-center  ml-[84px] h-[60px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}>
-                //                                             <div className='w-full h-full'>
-                //                                                 <img className=' h-full m-auto' src={item?.leg_wear_img} alt="leg_wear_img" />
-                //                                             </div>
-                //                                             <div className={`absolute top-1 px-1 flex ${!item?.active ? "justify-between" : "justify-end"}  w-[190px] `}>
-                //                                                 {
-                //                                                     !item?.active ? <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
-                //                                                         <img src={statusFalse} alt="" />
-                //                                                     </div> : null
-                //                                                 }
-                //                                                 <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
-                //                                                     <img src={Liked} alt="" />
-                //                                                 </div>
-                //                                             </div>
-                //                                             <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end'>
-                //                                                 <div className='w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
-                //                                                     <img src={nextInfo} alt="nextInfo" />
-                //                                                 </div>
-                //                                             </div>
-                //                                         </div>
-                //                                     )
-                //                                 })
-                //                             }
-                //                         </Slider>
-                //                     </div>
+                                    {/* LegWear */}
+                                    <div className="w-full h-fit">
+                                        <Slider {...legWear} className={`w-full h-[60px]`}>
+                                            {
+                                                producListMap?.legWear.map(item => {
+                                                    return (
+                                                        <div key={item?.id} className={`!w-[192px] flex justify-center items-center  ml-[84px] h-[60px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}>
+                                                            <div className='w-full h-full'>
+                                                                <img className=' h-full m-auto' src={item?.leg_wear_img} alt="leg_wear_img" />
+                                                            </div>
+                                                            <div className={`absolute top-1 px-1 flex ${!item?.active ? "justify-between" : "justify-end"}  w-[190px] `}>
+                                                                {
+                                                                    !item?.active ? <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                                        <img src={statusFalse} alt="" />
+                                                                    </div> : null
+                                                                }
+                                                                <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                                    <img src={Liked} alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end'>
+                                                                <div className='w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                                    <img src={nextInfo} alt="nextInfo" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                        </Slider>
+                                    </div>
 
-                //                 </div>
+                                </div>
 
-                //             </div>
-                //             <div className='w-[270px] flex flex-wrap content-between bg-white'>
-                //                 {
-                //                     producListMap?.category.map(item => {
-                //                         return (
-                //                             <div key={item?.id} className='w-full h-[76px] border-b border-searchBgColor p-4'>
-                //                                 <div className='not-italic font-AeonikProRegular text-sm leading-4 text-gray-500'>Набор: <span className='not-italic font-AeonikProMedium text-base text-black ml-2'>{item?.name}</span></div>
-                //                                 <div className='not-italic font-AeonikProRegular text-sm leading-4 text-gray-500'>Магазин: <span className='not-italic font-AeonikProMedium text-base text-black ml-2'>{item?.market}</span></div>
-                //                             </div>
-                //                         )
-                //                     })
-                //                 }
+                            </div>
+                            <div className='w-[270px] flex flex-wrap content-between bg-white'>
+                                {
+                                    producListMap?.category.map(item => {
+                                        return (
+                                            <div key={item?.id} className='w-full h-[76px] border-b border-searchBgColor p-4'>
+                                                <div className='not-italic font-AeonikProRegular text-sm leading-4 text-gray-500'>Набор: <span className='not-italic font-AeonikProMedium text-base text-black ml-2'>{item?.name}</span></div>
+                                                <div className='not-italic font-AeonikProRegular text-sm leading-4 text-gray-500'>Магазин: <span className='not-italic font-AeonikProMedium text-base text-black ml-2'>{item?.market}</span></div>
+                                            </div>
+                                        )
+                                    })
+                                }
 
-                //                 <div className='w-full h-[212px] flex flex-wrap content-between border-b border-searchBgColor p-4'>
-                //                     {
-                //                         producListMap?.headWear.filter(e => e.product_id == getSliderId.headWearId).map(item => {
-                //                             return (
-                //                                 <>
-                //                                     {
-                //                                         item?.active ?
-                //                                             <div key={item?.id} className='w-full flex justify-between items-center'>
-                //                                                 <div className='flex items-center'>
-                //                                                     <span><img src={checkTrue} alt="checkTrue" /></span>
-                //                                                     <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
-                //                                                 <div>
-                //                                                     <span className='not-italic font-AeonikProMedium text-base leading-4 text-right text-black'>{item?.amount}</span>
-                //                                                 </div>
-                //                                             </div> :
-                //                                             <div className='w-full flex justify-between items-center'>
-                //                                                 <div className='flex items-center'>
-                //                                                     <span><img src={checkFalse} alt="checkTrue" /></span>
-                //                                                     <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
-                //                                                 <div>
-                //                                                     <span className='not-italic font-AeonikProMedium line-through	 text-base leading-4 text-right text-setTexOpacity'>{item?.amount}</span>
-                //                                                 </div>
-                //                                             </div>
-                //                                     }
-                //                                 </>
-                //                             )
-                //                         })
-                //                     }
-                //                     {
-                //                         producListMap?.outWear.filter(e => e.product_id == getSliderId.outWearId).map(item => {
-                //                             return (
-                //                                 <>
-                //                                     {
-                //                                         item?.active ?
-                //                                             <div key={item?.id} className='w-full flex justify-between items-center'>
-                //                                                 <div className='flex items-center'>
-                //                                                     <span><img src={checkTrue} alt="checkTrue" /></span>
-                //                                                     <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
-                //                                                 <div>
-                //                                                     <span className='not-italic font-AeonikProMedium text-base leading-4 text-right text-black'>{item?.amount}</span>
-                //                                                 </div>
-                //                                             </div> :
-                //                                             <div className='w-full flex justify-between items-center'>
-                //                                                 <div className='flex items-center'>
-                //                                                     <span><img src={checkFalse} alt="checkTrue" /></span>
-                //                                                     <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
-                //                                                 <div>
-                //                                                     <span className='not-italic font-AeonikProMedium line-through	 text-base leading-4 text-right text-setTexOpacity'>{item?.amount}</span>
-                //                                                 </div>
-                //                                             </div>
-                //                                     }
-                //                                 </>
-                //                             )
-                //                         })
-                //                     }
-                //                     {
-                //                         producListMap?.underWear.filter(e => e.product_id == getSliderId.underWearId).map(item => {
-                //                             return (
-                //                                 <>
-                //                                     {
-                //                                         item?.active ?
-                //                                             <div key={item?.id} className='w-full flex justify-between items-center'>
-                //                                                 <div className='flex items-center'>
-                //                                                     <span><img src={checkTrue} alt="checkTrue" /></span>
-                //                                                     <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
-                //                                                 <div>
-                //                                                     <span className='not-italic font-AeonikProMedium text-base leading-4 text-right text-black'>{item?.amount}</span>
-                //                                                 </div>
-                //                                             </div> :
-                //                                             <div className='w-full flex justify-between items-center'>
-                //                                                 <div className='flex items-center'>
-                //                                                     <span><img src={checkFalse} alt="checkTrue" /></span>
-                //                                                     <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
-                //                                                 <div>
-                //                                                     <span className='not-italic font-AeonikProMedium line-through	 text-base leading-4 text-right text-setTexOpacity'>{item?.amount}</span>
-                //                                                 </div>
-                //                                             </div>
-                //                                     }
-                //                                 </>
-                //                             )
-                //                         })
-                //                     }
-                //                     {
-                //                         producListMap?.legWear.filter(e => e.product_id == getSliderId.legWearId).map(item => {
-                //                             return (
-                //                                 <>
-                //                                     {
-                //                                         item?.active ?
-                //                                             <div key={item?.id} className='w-full flex justify-between items-center'>
-                //                                                 <div className='flex items-center'>
-                //                                                     <span><img src={checkTrue} alt="checkTrue" /></span>
-                //                                                     <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
-                //                                                 <div>
-                //                                                     <span className='not-italic font-AeonikProMedium text-base leading-4 text-right text-black'>{item?.amount}</span>
-                //                                                 </div>
-                //                                             </div> :
-                //                                             <div className='w-full flex justify-between items-center'>
-                //                                                 <div className='flex items-center'>
-                //                                                     <span><img src={checkFalse} alt="checkTrue" /></span>
-                //                                                     <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
-                //                                                 <div>
-                //                                                     <span className='not-italic font-AeonikProMedium line-through	 text-base leading-4 text-right text-setTexOpacity'>{item?.amount}</span>
-                //                                                 </div>
-                //                                             </div>
-                //                                     }
-                //                                 </>
-                //                             )
-                //                         })
-                //                     }
-                //                     {
-                //                         producListMap?.Accessory.filter(e => e.product_id == getSliderId.accessoryId).map(item => {
-                //                             return (
-                //                                 <>
-                //                                     {
-                //                                         item?.active ?
-                //                                             <div key={item?.id} className='w-full flex justify-between items-center'>
-                //                                                 <div className='flex items-center'>
-                //                                                     <span><img src={checkTrue} alt="checkTrue" /></span>
-                //                                                     <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
-                //                                                 <div>
-                //                                                     <span className='not-italic font-AeonikProMedium text-base leading-4 text-right text-black'>{item?.amount}</span>
-                //                                                 </div>
-                //                                             </div> :
-                //                                             <div className='w-full flex justify-between items-center'>
-                //                                                 <div className='flex items-center'>
-                //                                                     <span><img src={checkFalse} alt="checkTrue" /></span>
-                //                                                     <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
-                //                                                 <div>
-                //                                                     <span className='not-italic font-AeonikProMedium line-through	 text-base leading-4 text-right text-setTexOpacity'>{item?.amount}</span>
-                //                                                 </div>
-                //                                             </div>
-                //                                     }
-                //                                 </>
-                //                             )
-                //                         })
-                //                     }
+                                <div className='w-full h-[212px] flex flex-wrap content-between border-b border-searchBgColor p-4'>
+                                    {
+                                        producListMap?.headWear.filter(e => e.product_id == getSliderId.headWearId).map(item => {
+                                            return (
+                                                <>
+                                                    {
+                                                        item?.active ?
+                                                            <div key={item?.id} className='w-full flex justify-between items-center'>
+                                                                <div className='flex items-center'>
+                                                                    <span><img src={checkTrue} alt="checkTrue" /></span>
+                                                                    <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
+                                                                <div>
+                                                                    <span className='not-italic font-AeonikProMedium text-base leading-4 text-right text-black'>{item?.amount}</span>
+                                                                </div>
+                                                            </div> :
+                                                            <div className='w-full flex justify-between items-center'>
+                                                                <div className='flex items-center'>
+                                                                    <span><img src={checkFalse} alt="checkTrue" /></span>
+                                                                    <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
+                                                                <div>
+                                                                    <span className='not-italic font-AeonikProMedium line-through	 text-base leading-4 text-right text-setTexOpacity'>{item?.amount}</span>
+                                                                </div>
+                                                            </div>
+                                                    }
+                                                </>
+                                            )
+                                        })
+                                    }
+                                    {
+                                        producListMap?.outWear.filter(e => e.product_id == getSliderId.outWearId).map(item => {
+                                            return (
+                                                <>
+                                                    {
+                                                        item?.active ?
+                                                            <div key={item?.id} className='w-full flex justify-between items-center'>
+                                                                <div className='flex items-center'>
+                                                                    <span><img src={checkTrue} alt="checkTrue" /></span>
+                                                                    <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
+                                                                <div>
+                                                                    <span className='not-italic font-AeonikProMedium text-base leading-4 text-right text-black'>{item?.amount}</span>
+                                                                </div>
+                                                            </div> :
+                                                            <div className='w-full flex justify-between items-center'>
+                                                                <div className='flex items-center'>
+                                                                    <span><img src={checkFalse} alt="checkTrue" /></span>
+                                                                    <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
+                                                                <div>
+                                                                    <span className='not-italic font-AeonikProMedium line-through	 text-base leading-4 text-right text-setTexOpacity'>{item?.amount}</span>
+                                                                </div>
+                                                            </div>
+                                                    }
+                                                </>
+                                            )
+                                        })
+                                    }
+                                    {
+                                        producListMap?.underWear.filter(e => e.product_id == getSliderId.underWearId).map(item => {
+                                            return (
+                                                <>
+                                                    {
+                                                        item?.active ?
+                                                            <div key={item?.id} className='w-full flex justify-between items-center'>
+                                                                <div className='flex items-center'>
+                                                                    <span><img src={checkTrue} alt="checkTrue" /></span>
+                                                                    <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
+                                                                <div>
+                                                                    <span className='not-italic font-AeonikProMedium text-base leading-4 text-right text-black'>{item?.amount}</span>
+                                                                </div>
+                                                            </div> :
+                                                            <div className='w-full flex justify-between items-center'>
+                                                                <div className='flex items-center'>
+                                                                    <span><img src={checkFalse} alt="checkTrue" /></span>
+                                                                    <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
+                                                                <div>
+                                                                    <span className='not-italic font-AeonikProMedium line-through	 text-base leading-4 text-right text-setTexOpacity'>{item?.amount}</span>
+                                                                </div>
+                                                            </div>
+                                                    }
+                                                </>
+                                            )
+                                        })
+                                    }
+                                    {
+                                        producListMap?.legWear.filter(e => e.product_id == getSliderId.legWearId).map(item => {
+                                            return (
+                                                <>
+                                                    {
+                                                        item?.active ?
+                                                            <div key={item?.id} className='w-full flex justify-between items-center'>
+                                                                <div className='flex items-center'>
+                                                                    <span><img src={checkTrue} alt="checkTrue" /></span>
+                                                                    <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
+                                                                <div>
+                                                                    <span className='not-italic font-AeonikProMedium text-base leading-4 text-right text-black'>{item?.amount}</span>
+                                                                </div>
+                                                            </div> :
+                                                            <div className='w-full flex justify-between items-center'>
+                                                                <div className='flex items-center'>
+                                                                    <span><img src={checkFalse} alt="checkTrue" /></span>
+                                                                    <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
+                                                                <div>
+                                                                    <span className='not-italic font-AeonikProMedium line-through	 text-base leading-4 text-right text-setTexOpacity'>{item?.amount}</span>
+                                                                </div>
+                                                            </div>
+                                                    }
+                                                </>
+                                            )
+                                        })
+                                    }
+                                    {
+                                        producListMap?.Accessory.filter(e => e.product_id == getSliderId.accessoryId).map(item => {
+                                            return (
+                                                <>
+                                                    {
+                                                        item?.active ?
+                                                            <div key={item?.id} className='w-full flex justify-between items-center'>
+                                                                <div className='flex items-center'>
+                                                                    <span><img src={checkTrue} alt="checkTrue" /></span>
+                                                                    <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
+                                                                <div>
+                                                                    <span className='not-italic font-AeonikProMedium text-base leading-4 text-right text-black'>{item?.amount}</span>
+                                                                </div>
+                                                            </div> :
+                                                            <div className='w-full flex justify-between items-center'>
+                                                                <div className='flex items-center'>
+                                                                    <span><img src={checkFalse} alt="checkTrue" /></span>
+                                                                    <span className='not-italic font-AeonikProRegular text-sm leading-4 text-setTexOpacity ml-2'>{item?.name}</span></div>
+                                                                <div>
+                                                                    <span className='not-italic font-AeonikProMedium line-through	 text-base leading-4 text-right text-setTexOpacity'>{item?.amount}</span>
+                                                                </div>
+                                                            </div>
+                                                    }
+                                                </>
+                                            )
+                                        })
+                                    }
 
 
 
-                //                 </div>
-                //                 <div className='w-full h-[104px] flex items-center border-b border-searchBgColor '>
-                //                     {/* Accessory */}
-                //                     <div className="w-full h-fit ">
-                //                         <Slider {...Accessory} className={`w-full h-[72px]`}>
-                //                             {
-                //                                 producListMap?.Accessory.map(item => {
-                //                                     return (
-                //                                         <div key={item?.id} className={`!w-[174px] flex items-center justify-center ml-[48px] h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}>
-                //                                             {/* <img className='w-[100px] h-full 	 m-auto' src={item?.accessor_wear_img} alt="" /> */}
-                //                                             <div className='w-full h-full'>
-                //                                                 <img className='w-[100px] h-full m-auto' src={item?.accessor_wear_img} alt="accessor_wear_img" />
-                //                                             </div>
-                //                                             <div className={`absolute top-1 px-1 flex ${!item?.active ? "justify-between" : "justify-end"}  w-[174px] `}>
-                //                                                 {
-                //                                                     !item?.active ? <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
-                //                                                         <img src={statusFalse} alt="" />
-                //                                                     </div> : null
-                //                                                 }
-                //                                                 <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
-                //                                                     <img src={Liked} alt="" />
-                //                                                 </div>
-                //                                             </div>
-                //                                             <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[174px]  flex justify-end'>
-                //                                                 <div className='w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
-                //                                                     <img src={nextInfo} alt="nextInfo" />
-                //                                                 </div>
-                //                                             </div>
-                //                                         </div>
-                //                                     )
-                //                                 })
-                //                             }
-                //                         </Slider>
-                //                     </div>
+                                </div>
+                                <div className='w-full h-[104px] flex items-center border-b border-searchBgColor '>
+                                    {/* Accessory */}
+                                    <div className="w-full h-fit ">
+                                        <Slider {...Accessory} className={`w-full h-[72px]`}>
+                                            {
+                                                producListMap?.Accessory.map(item => {
+                                                    return (
+                                                        <div key={item?.id} className={`!w-[174px] flex items-center justify-center ml-[48px] h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}>
+                                                            {/* <img className='w-[100px] h-full 	 m-auto' src={item?.accessor_wear_img} alt="" /> */}
+                                                            <div className='w-full h-full'>
+                                                                <img className='w-[100px] h-full m-auto' src={item?.accessor_wear_img} alt="accessor_wear_img" />
+                                                            </div>
+                                                            <div className={`absolute top-1 px-1 flex ${!item?.active ? "justify-between" : "justify-end"}  w-[174px] `}>
+                                                                {
+                                                                    !item?.active ? <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                                        <img src={statusFalse} alt="" />
+                                                                    </div> : null
+                                                                }
+                                                                <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                                    <img src={Liked} alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[174px]  flex justify-end'>
+                                                                <div className='w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center'>
+                                                                    <img src={nextInfo} alt="nextInfo" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                        </Slider>
+                                    </div>
 
-                //                 </div>
-                //                 <div className='w-full h-[88px] pt-4 pl-4 pr-2 pb-2  flex flex-wrap content-between'>
-                //                     <div className='flex w-full justify-between items-center'>
-                //                         <div className='flex'>
-                //                             <span className='mr-[6px] flex  items-center'>
-                //                                 <img src={star} alt="star" /></span>
-                //                             <span className='not-italic font-AeonikProMedium text-base leading-4 text-black'>2.5 <span className='mr-1 not-italic font-AeonikProRegular text-xs leading-3 text-setTexOpacity'>(20 голосов)</span></span>
-                //                         </div>
-                //                         <div className='w-[100px] h-[24px]  rounded bg-setButtonColor flex items-center justify-center'>
-                //                             <span className='not-italic flex  items-center font-AeonikProRegular text-center text-black text-[10px]'>
-                //                                 Страница набора
-                //                             </span>
-                //                         </div>
-                //                     </div>
-                //                     <div className='flex items-center w-full justify-between'>
-                //                         <div >
-                //                             <span className='not-italic font-AeonikProMedium text-2xl leading-7 text-setPriceRed mr-[6px]'>828000</span>
-                //                             <span className='not-italic font-AeonikProRegular line-through	 text-sm leading-4 text-setTexOpacity'>828000</span>
-                //                         </div>
-                //                         <div className='w-[36px] h-[36px] rounded bg-btnBgColor flex items-center justify-center'>
-                //                             <img src={addBag} alt="addbag" />
-                //                         </div>
-                //                     </div>
+                                </div>
+                                <div className='w-full h-[88px] pt-4 pl-4 pr-2 pb-2  flex flex-wrap content-between'>
+                                    <div className='flex w-full justify-between items-center'>
+                                        <div className='flex'>
+                                            <span className='mr-[6px] flex  items-center'>
+                                                <img src={star} alt="star" /></span>
+                                            <span className='not-italic font-AeonikProMedium text-base leading-4 text-black'>2.5 <span className='mr-1 not-italic font-AeonikProRegular text-xs leading-3 text-setTexOpacity'>(20 голосов)</span></span>
+                                        </div>
+                                        <div className='w-[100px] h-[24px]  rounded bg-setButtonColor flex items-center justify-center'>
+                                            <span className='not-italic flex  items-center font-AeonikProRegular text-center text-black text-[10px]'>
+                                                Страница набора
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className='flex items-center w-full justify-between'>
+                                        <div >
+                                            <span className='not-italic font-AeonikProMedium text-2xl leading-7 text-setPriceRed mr-[6px]'>828000</span>
+                                            <span className='not-italic font-AeonikProRegular line-through	 text-sm leading-4 text-setTexOpacity'>828000</span>
+                                        </div>
+                                        <div className='w-[36px] h-[36px] rounded bg-btnBgColor flex items-center justify-center'>
+                                            <img src={addBag} alt="addbag" />
+                                        </div>
+                                    </div>
 
-                //                 </div>
+                                </div>
 
-                //             </div>
+                            </div>
 
-                //         </div >
-                //     )
-                // })
+                        </div >
+                    )
+                })
             }
 
             {
@@ -842,26 +855,30 @@ export default function SetClothesWear() {
                                         {
                                             producListMap?.headWear?.map(item => {
                                                 return (
-                                                    <div key={item?.id} className={`!w-[192px] box-border ml-[56px] flex items-center justify-center h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}>
-                                                        <div className='w-full h-full'>
-                                                            <img className='w-[100px] h-full m-auto' src={item?.head_wear_img} alt="head_wear_img" />
-                                                        </div>
-                                                        <div className={`absolute w-[190px] top-1 px-1 flex ${!item?.active ? "justify-between" : "justify-end"} `}>
-                                                            {
-                                                                !item?.active ? <div className='w-6 h-6 cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center'>
-                                                                    <img src={statusFalse} alt="statusFalse" />
-                                                                </div> : null
-                                                            }
-                                                            <div className='w-6 h-6 flex items-center justify-center top-1 cursor-pointer border border-searchBgColor bg-white rounded-lg'>
-                                                                <img src={Liked} alt="Liked" />
+                                                    item.id ? (
+                                                        <div key={item?.id} className={`!w-[192px] box-border ml-[56px] flex items-center justify-center h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}>
+                                                            <div className='w-full h-full'>
+                                                                <img className='w-[100px] h-full m-auto' src={item?.head_wear_img} alt="head_wear_img" />
+                                                            </div>
+                                                            <div className={`absolute w-[190px] top-1 px-1 flex ${!item?.active ? "justify-between" : "justify-end"} `}>
+                                                                {
+                                                                    !item?.active ? <div className='w-6 h-6 cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center'>
+                                                                        <img src={statusFalse} alt="statusFalse" />
+                                                                    </div> : null
+                                                                }
+                                                                <div className='w-6 h-6 flex items-center justify-center top-1 cursor-pointer border border-searchBgColor bg-white rounded-lg'>
+                                                                    <img src={Liked} alt="Liked" />
+                                                                </div>
+                                                            </div>
+                                                            <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px] flex justify-end'>
+                                                                <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor data-hover:bg-red-500 bg-white rounded-lg flex items-center justify-center'>
+                                                                    <img src={nextInfo} alt="nextInfo" />
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div className='absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end  '>
-                                                            <div className='w-[24px] h-[24px] cursor-pointer border border-searchBgColor data-hover:bg-red-500 bg-white rounded-lg flex items-center justify-center'>
-                                                                <img src={nextInfo} alt="nextInfo" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    ) : (
+                                                       <div className='w-0 h-0'></div>
+                                                    )
                                                 )
                                             })
                                         }
@@ -1029,7 +1046,7 @@ export default function SetClothesWear() {
                                             <span className='group-hover:text-white flex  items-center font-AeonikProRegular text-center text-black text-[12px] mr-2'>
                                                 Страница набора
                                             </span>
-                                            <svg className='stroke-black group-hover:stroke-white' xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" class="bi bi-arrow-right-circle" viewBox="-1 -1 20 20"> <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/> </svg>
+                                            <svg className='group-hover:fill-white group-hover:stroke-white stroke-black' opacity={100}  viewBox="-3 -3 36 36"  width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z"/></svg>
                                         </button>
                                     
                                     </div>
@@ -1052,88 +1069,7 @@ export default function SetClothesWear() {
                 })
             }
 
-            {/* {
-                productList.map((producListMap) => {
-                    return(
-                        <div key={productList?.id} className='w-[305px] flex flex-row overflow-hidden'>
-                             
-                             <div className='w-full border bg-white border-searchBgColor pt-4 rounded-lg'>
-                                    
-                              {
-                                producListMap.map(model => {
-                                    return(
-                                        <div key={model.id}>
-                                            <img src={model.modelImg} alt="model-img" />
-                                        </div>
-                                    )
-                                })
-                              }
-
-                                {
-                                    producListMap?.category.map(item => {
-                                        return (
-                                            <div key={item?.id} className='w-full relative border-y border-searchBgColor px-4 py-3'>
-                                                <div className='font-AeonikProRegular text-sm leading-4 text-gray-500'>Набор: 
-                                                    <span className='not-italic font-AeonikProMedium text-base text-black ml-2'>{item?.name}</span>
-                                                </div>
-                                                <button onClick={() => setClothesSetWear(false)} className="absolute top-[7px] right-2 group w-8 hover:w-[98px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center justify-between">
-                                                    <span className="  flex flex-nowrap items-center ml-[-100px] group-hover:ml-[14px]  not-italic overflow-hidden  duration-300   font-AeonikProRegular leading-3  text-black text-sm ">
-                                                    Модель
-                                                    </span>
-                                                    <span className="w-8 h-8 flex items-center justify-center">
-                                                        <img className="ml-[2px]" src={setpersonIcons} alt="setpersonIcons" />
-                                                    </span>
-                                                </button>
-                                            </div>
-                                        )
-                                    })
-                                }
-
-                                <div className='w-full pr-2 pl-4 pb-2 pt-2 flex flex-wrap content-between'>
-                                    <div className='relative flex w-full justify-between items-center'>
-                                        <div className='flex items-center mt-4 mb-3'>
-                                            <span className='mr-[6px] flex  items-center'>
-                                                <img src={star} alt="star" /></span>
-                                            <span className='not-italic font-AeonikProMedium text-base leading-4 text-black'>2.5 <span className='mr-1 not-italic font-AeonikProRegular text-xs leading-3 text-setTexOpacity'>(20 голосов)</span></span>
-                                        </div>
-                                        <button className='btnModel absolute -top-1 right-0 rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center px-[11px] py-[7px] hover:bg-SignInBgColor hover:fill-white transition ease-in duration-300'>
-                                            <span className='btnModelTxt not-italic flex  items-center font-AeonikProRegular text-center text-black text-[12px] mr-2'>
-                                                Страница набора
-                                            </span>
-                                            <img src={arrowRightCircle} alt="arrow-right-circle"/>
-                                        </button>
-                                    </div>
-                                    <div className='flex items-center w-full justify-between'>
-                                        <div >
-                                            <span className='not-italic font-AeonikProMedium text-2xl leading-7 text-setPriceRed mr-[6px]'>828000</span>
-                                            <span className='not-italic font-AeonikProRegular line-through	 text-sm leading-4 text-setTexOpacity'>1054000</span>
-                                        </div>
-                                        <button className='w-[36px] h-[36px] rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center'>
-                                            <img src={addBag} alt="addbag" />
-                                        </button>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                    )
-                })
-            } */}
-            
-
-
-            {/* 
-            <div className='w-[630px] h-[480px] border border-searchBgColor rounded-lg '>
-                <div>
-                    <p>  getSliderId.headWearId: <strong>{getSliderId.headWearId}</strong></p>
-                    <p>  getSliderId.outWearId: <strong>{getSliderId.outWearId}</strong></p>
-                    <p>  getSliderId.underWearId: <strong>{getSliderId.underWearId}</strong></p>
-                    <p>  getSliderId.legWearId: <strong>{getSliderId.legWearId}</strong></p>
-                    <p>  getSliderId.accessoryId: <strong>{getSliderId.accessoryId}</strong></p>
-                </div>
-            </div> */}
+                            
             <div className='w-full h-fit flex items-center justify-center mt-14'>
                 <div className='w-[760px] h-[60px] cursor-pointer not-italic font-AeonikProMedium text-base leading-4 text-center text-black flex items-center justify-center rounded-lg border border-searchBgColor bg-btnBgColor'>
                     Показать ещё 12 наборов
