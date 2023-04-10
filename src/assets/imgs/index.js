@@ -223,3 +223,15 @@ export { default as noProductImg } from './Weather/noImg.svg'
 
 // ------------------------Yandex Maps------------
 export { default as markerIcons } from './maps/markerIcons.svg'
+
+// ------------------------SignIn------------
+export { default as SignInSpring } from './formImgs/Signin/SignInSpring.svg'
+export { default as SignInAutumm } from './formImgs/Signin/SignInAutumm.svg'
+export { default as SignInSummer } from './formImgs/Signin/SignInSummer.svg'
+export { default as SignInWinter } from './formImgs/Signin/SignInWinter.svg'
+
+// ------------------------SignUp------------
+export { default as SignUpSpring } from './formImgs/SignUp/SingUpSpring.svg'
+export { default as SignUpAutumm } from './formImgs//SignUp/SignUpAutumm.svg'
+export { default as SignUpSummer } from './formImgs/SignUp/SignUpSummer.svg'
+export { default as SignUpWinter } from './formImgs/SignUp/SignUpWinter.svg'

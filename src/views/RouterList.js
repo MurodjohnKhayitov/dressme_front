@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import MoonLoader from "react-spinners/MoonLoader";
 import "../index.css";
 
@@ -20,6 +20,8 @@ import SignUpSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import AuthenIndex from "../components/header/AuthenticationNavbar/AuthenIndex";
 import YandexMapsIndex from "../components/header/YandexMapsNavbar/YandexMapsIndex";
 import YandexSkeletonIndex from "../components/YandexMap/YandexMapsSkeleton/YandexSkeletonIndex";
+import ForgetPasswordIndex from "../components/Authentication/ForgetPassword";
+import ConfirmPassword from "../components/Authentication/ConfirmPassword/ConfirmPassword";
 
 // --------With lazy component
 const HomePage = React.lazy(() => import("../Page/Home/Home"));
@@ -40,7 +42,12 @@ const SignUp = React.lazy(() =>
   import("../components/Authentication/SignUp/index")
 );
 const RouterList = () => {
-  const match = useRef(window.location.pathname);
+  const location = useLocation();
+
+  const [locationWindow, setLocationWindow] = useState("");
+  useEffect(() => {
+    setLocationWindow(location.pathname);
+  }, [location.pathname]);
 
   return (
     <>
@@ -156,12 +163,55 @@ const RouterList = () => {
               </React.Suspense>
             }
           />
+          <Route
+            path="/forget_password"
+            element={
+              <React.Suspense
+                fallback={
+                  <div>
+                    <SignUpSkeletonIndex />
+                  </div>
+                }
+              >
+                <ForgetPasswordIndex />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="/confirm_password"
+            element={
+              <React.Suspense
+                fallback={
+                  <div>
+                    <SignUpSkeletonIndex />
+                  </div>
+                }
+              >
+                <ConfirmPassword />
+              </React.Suspense>
+            }
+          />
         </Route>
       </Routes>
-      {match.current !== "/add_user_private_data" ||
-      match.current !== "/add_user_private_data" ? (
+    
+      {locationWindow !== "/add_user_private_data" &&
+      locationWindow !== "/add_user_body_data" &&
+      locationWindow !== "/confirm_password" &&
+      locationWindow !== "/forget_password" &&
+      locationWindow !== "/sign_up" &&
+      locationWindow !== "/sign_in" &&
+      locationWindow !== "/delivery-points" ? (
         <Footer />
       ) : null}
+      {/* {locationWindow !== "/add_user_private_data" ||
+      locationWindow !== "/add_user_body_data" ||
+      locationWindow !== "/confirm_password" ||
+      locationWindow !== "/forget_password" ||
+      locationWindow !== "/sign_up" ||
+      locationWindow !== "/sign_in" ||
+      locationWindow !== "/delivery-points" ? (
+        <Footer />
+      ) : null} */}
     </>
   );
 };
