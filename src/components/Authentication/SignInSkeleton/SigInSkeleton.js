@@ -4,11 +4,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 
 export default function SignInSkeleton() {
-  const [state, setState] = useState({
-    eyesShow: true,
-    password: "",
-    phoneNumber: "",
-  });
+  
   return (
     <div className=" py-8 w-full h-full flex justify-center">
       <div className="w-[440px] h-fit  md:px-[40px] md:py-[32px] ss:p-5 border border-searchBgColor rounded-lg">
@@ -19,11 +15,7 @@ export default function SignInSkeleton() {
 
           <div className="mt-[6px] h-12 px-[16px] w-full flex items-center bg-skeltonColor border border-searchBgColor rounded-lg "></div>
         </div>
-        <div className="mt-4 w-full h-fit">
-          <div className=" w-[70%] h-4 mt-1 mb-7 rounded bg-skeltonColor"></div>
-
-          <div className="mt-[6px] h-12 px-[16px] w-full flex items-center bg-skeltonColor border border-searchBgColor rounded-lg "></div>
-        </div>
+        
 
         <div className="my-5 flex items-center justify-between w-full">
           <div className="rounded bg-skeltonColor w-[35%] h-4"></div>

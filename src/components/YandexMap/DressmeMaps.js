@@ -145,6 +145,7 @@ function DressmeMaps() {
       cordinate: [41.282263, 69.216182],
     },
   ];
+
   return (
     <div className=" h-fit w-full flex justify-center  ">
       <div className="w-[100%] h-[550px] border-b border-searchBgColor overflow-hidden">
@@ -164,25 +165,23 @@ function DressmeMaps() {
           >
             {/* ---------- */}
             <Clusterer
+              // className="bg-green-500 text-red-500"
+              className={"placemarkCLuster"}
               options={{
                 preset: "islands#invertedVioletClusterIcons",
                 groupByCoordinates: false,
-                strokeStyle: "dot",
-                iconColor: "red",
-                color: "red",
-                strokeColor: "#F00",
-                // strokeColor: '#FF0000',
-                // strokeColor: '#FF0000AA',
-                // strokeColor: 'rgba(255,0,0,1)'
-                strokeStyle: {
-                  style: "dot",
-                  offset: 10,
-                  color: "red",
-                },
+
               }}
+              clusterTextColor={"#00B386"}
+              clusterColor={"#FF0000"}
+              pinColor={"#91c000"}
+              
             >
+              
               {points.map((data, index) => (
                 <Placemark
+                  className={"placemarkCLuster"}
+                  // className="bg-green-500 text-red-500 p-2 border border-red-500"
                   key={index}
                   geometry={data?.cordinate}
                   options={{
@@ -209,6 +208,7 @@ function DressmeMaps() {
                     balloonContentFooter: `<div class="footerText"><span>Directions:</span> ${data?.direction}</div>`,
                   }}
                 />
+                
               ))}
             </Clusterer>
             <div className="relative">
@@ -284,5 +284,31 @@ function DressmeMaps() {
     </div>
   );
 }
-
+// ClusteredMapView.defaultProps = {
+//   clusteringEnabled: true,
+//   spiralEnabled: true,
+//   animationEnabled: true,
+//   preserveClusterPressBehavior: false,
+//   layoutAnimationConf: LayoutAnimation.Presets.spring,
+//   tracksViewChanges: false,
+//   // SuperCluster parameters
+//   radius: Dimensions.get("window").width * 0.06,
+//   maxZoom: 20,
+//   minZoom: 1,
+//   minPoints: 2,
+//   extent: 512,
+//   nodeSize: 64,
+//   // Map parameters
+//   edgePadding: { top: 50, left: 50, right: 50, bottom: 50 },
+//   // Cluster styles
+//   clusterColor: "#00B386",
+//   clusterTextColor: "#FFFFFF",
+//   spiderLineColor: "#FF0000",
+//   // Callbacks
+//   onRegionChangeComplete: () => {},
+//   onClusterPress: () => {},
+//   onMarkersChange: () => {},
+//   superClusterRef: {},
+//   mapRef: () => {},
+// };
 export default React.memo(DressmeMaps);

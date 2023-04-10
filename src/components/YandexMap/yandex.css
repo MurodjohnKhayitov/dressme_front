@@ -1,6 +1,6 @@
 .balloonContentHeader {
 
-    padding-top: 20px ;
+    padding-top: 20px;
 }
 
 .title {
@@ -33,7 +33,7 @@
     line-height: 18px;
     color: #A1A1A1;
     margin-top: 10px;
-  
+
 }
 
 .text span {
@@ -116,4 +116,10 @@
     background-color: #E8E8F0;
     height: 50px;
     border-radius: 8px
+}
+
+.placemarkCLuster {
+
+    background-color: red;
+    color: green;
 }
