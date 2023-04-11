@@ -35,6 +35,9 @@ module.exports = {
         bgAutumm: "rgba(225, 122, 2, 0.1)",
         borderWinter: "#007DCA",
         bgWinter: "rgba(0, 125, 202, 0.1)",
+        // yandex navbar
+        yandexNavbar: " rgba(255, 255, 255, 0.6)",
+        yandexWhite: " #FFFFFF",
       },
       fontFamily: {
         // Chrome for
