@@ -10,7 +10,7 @@ export default function SetClothesWear() {
     const [productList, setProductList] = useState([
         {
             id: 1,
-            SetToModel: true,
+            SetToModel: false,
             category_name: "Business",
             category: [
                 { id: 1, name: "Business Wear (Man)", market: "Patek Business Wear" }
@@ -691,9 +691,9 @@ export default function SetClothesWear() {
                                                 <button
                                                     onClick={() => {
                                                         setClothesSetWear(false)
-                                                        setOpenToModel(true)
+                                                        setOpenToModel(false)
                                                     }} 
-                                                    className="absolute top-[7px] right-2 group w-8 hover:w-[120px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center justify-between">
+                                                    className={` absolute top-[7px] right-2 group w-8 hover:w-[120px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center justify-between`}>
                                                     <span className="  flex flex-nowrap items-center ml-[-100px] group-hover:ml-[12px]  not-italic overflow-hidden p-[1px] duration-300   font-AeonikProRegular leading-3  text-black text-sm ">
                                                     Структура
                                                     </span>
@@ -704,10 +704,10 @@ export default function SetClothesWear() {
                                             ):(
                                                 <button
                                                     onClick={() => {
-                                                        setClothesSetWear(false)
+                                                        setClothesSetWear(true)
                                                         setOpenToModel(true)
-                                                    }} 
-                                                    className="absolute top-[7px] right-2 group w-8 hover:w-[98px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center justify-between">
+                                                    }}
+                                                    className={`absolute top-[7px] right-2 group w-8 hover:w-[98px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center justify-between`}>
                                                     <span className="  flex flex-nowrap items-center ml-[-100px] group-hover:ml-[14px]  not-italic overflow-hidden  duration-300   font-AeonikProRegular leading-3  text-black text-sm ">
                                                     Модель
                                                     </span>
