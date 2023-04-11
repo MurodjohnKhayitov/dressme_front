@@ -526,7 +526,7 @@ export default function CollectionCards() {
                         return (
                             <div
                             onClick={() => onColorChecked(data?.id, itemValue?.id)}
-                            className={`rounded-full flex items-center justify-center  ls:w-[22px] ls:h-[22px] w-5 h-5 lg:w-6 lg:h-6 ${itemValue?.colors} cursor-pointer  border border-solid	border-borderColorCard mr-[3px]`}
+                            className={`rounded-full flex items-center justify-center hover:scale-110 duration-300 ls:w-[22px] ls:h-[22px] w-5 h-5 lg:w-6 lg:h-6 ${itemValue?.colors} cursor-pointer  border border-solid border-borderColorCard mr-[3px]`}
                             htmlFor="Color1"
                             >
                             {itemValue?.action ? (

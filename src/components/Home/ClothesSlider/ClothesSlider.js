@@ -521,22 +521,22 @@ export default function ClothesSlider() {
                                             </div>
 
                                             <div className="absolute w-full flex justify-between items-center px-1 bottom-[-0.2px] border-b border-searchBgColor xs:h-[38px] lg:h-8 ss:h-[30px] xs:px-2 md:px-4 bg-white hover:backdrop-brightness-125 hover:bg-white/60 transition ease-out duration-500">
-                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-purple-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color1">
+                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-purple-500 cursor-pointer  border border-solid	border-borderColorCard hover:scale-110 duration-300' htmlFor="Color1">
                                                     <input className="hidden" type="radio" id="Color1" name="colors" value="1" />
                                                 </label>
-                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-black cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color2">
+                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-black cursor-pointer border border-solid border-borderColorCard hover:scale-110 duration-300' htmlFor="Color2">
                                                     <input className="hidden" type="radio" id="Color2" name="colors" value="1" />
                                                 </label>
-                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-white cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color3">
+                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-white cursor-pointer border border-solid	border-borderColorCard hover:scale-110 duration-300' htmlFor="Color3">
                                                     <input className="hidden" type="radio" id="Color3" name="colors" value="1" />
                                                 </label>
-                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-zinc-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color4">
+                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-zinc-500 cursor-pointer border border-solid	border-borderColorCard hover:scale-110 duration-300' htmlFor="Color4">
                                                     <input className="hidden" type="radio" id="Color4" name="colors" value="1" />
                                                 </label>
-                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-sky-600 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color5">
+                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-sky-600 cursor-pointer border border-solid	border-borderColorCard hover:scale-110 duration-300' htmlFor="Color5">
                                                     <input className="hidden" type="radio" id="Color5" name="colors" value="1" />
                                                 </label>
-                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-amber-400 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color6">
+                                                <label className='rounded-full w-5 h-5 md:w-6 md:h-6 bg-amber-400 cursor-pointer border border-solid border-borderColorCard hover:scale-110 duration-300' htmlFor="Color6">
                                                     <input className="hidden" type="radio" id="Color6" name="colors" value="1" />
                                                 </label>
                                             </div>
