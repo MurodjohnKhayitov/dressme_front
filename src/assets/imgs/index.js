@@ -65,6 +65,9 @@ export { default as locate } from './Contact/location.svg'
 
 // ------- Models --------
 export {default as model1} from './Models/model1.svg'
+export {default as model2} from './Models/model2.svg'
+export {default as model3} from './Models/model3.svg'
+export {default as model4} from './Models/model4.svg'
 
 export { default as error } from './Contact/error.svg'
 export { default as adduser } from './Contact/Add User - 1.svg'
