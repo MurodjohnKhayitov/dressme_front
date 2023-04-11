@@ -18,7 +18,7 @@ import AddUserBodySkeleton from "../components/Home/AddUser/Skeleton/AddUserPriv
 import SignInSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import SignUpSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import AuthenIndex from "../components/header/AuthenticationNavbar/AuthenIndex";
-import YandexMapsIndex from "../components/header/YandexMapsNavbar/YandexMapsIndex";
+// import YandexMapsIndex from "../components";
 import YandexSkeletonIndex from "../components/YandexMap/YandexMapsSkeleton/YandexSkeletonIndex";
 import ForgetPasswordIndex from "../components/Authentication/ForgetPassword";
 import ConfirmPassword from "../components/Authentication/ConfirmPassword/ConfirmPassword";
@@ -85,7 +85,7 @@ const RouterList = () => {
         </Route>
 
         {/* Yandex Maps */}
-        <Route element={<YandexMapsIndex />}>
+        <Route>
           <Route
             path="/delivery-points"
             element={
@@ -193,7 +193,7 @@ const RouterList = () => {
           />
         </Route>
       </Routes>
-    
+
       {locationWindow !== "/add_user_private_data" &&
       locationWindow !== "/add_user_body_data" &&
       locationWindow !== "/confirm_password" &&
