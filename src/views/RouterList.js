@@ -9,7 +9,6 @@ import Footer from "../components/footer/footer";
 import AddUserNavbar from "../components/header/AddUserNavbar/AddUserNavbar";
 
 // -------Without Lazy
-import WeatherInfo from "../components/Weather/WeatherInfo";
 
 // ---------Only Skeleton
 import SkeletonHomeIndex from "../components/Home/Skeleton/SkeletonHomeIndex";
@@ -25,7 +24,6 @@ import ConfirmPassword from "../components/Authentication/ConfirmPassword/Confir
 
 // --------With lazy component
 const HomePage = React.lazy(() => import("../Page/Home/Home"));
-const Weather = React.lazy(() => import("../Page/Weather/Weather"));
 const AddUserPrivateInfo = React.lazy(() =>
   import("../components/Home/AddUser/AddUserPrivateData/AddUserPrivateData")
 );
@@ -68,20 +66,7 @@ const RouterList = () => {
               </React.Suspense>
             }
           />
-          <Route
-            path="/weather"
-            element={
-              <React.Suspense
-                fallback={
-                  <div>
-                    <WeatherInfo />
-                  </div>
-                }
-              >
-                <Weather />
-              </React.Suspense>
-            }
-          />
+          
         </Route>
 
         {/* Yandex Maps */}
