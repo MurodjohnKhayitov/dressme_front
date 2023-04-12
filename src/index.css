@@ -131,3 +131,7 @@ select {
 .btnModel:hover  .btnModel img{
    fill: #fff;
 }
+
+.ant-modal, .ant-modal-content {
+  padding: 0 !important;
+ }
