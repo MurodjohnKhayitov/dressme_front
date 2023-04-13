@@ -1,19 +1,14 @@
 import React, { useContext, useState, useMemo } from "react";
 import {
-  arrowBottom,
   AutummFemale,
   AutummMale,
   clothing,
-  colors,
   dollarLogo,
   DotIcon,
   InputCheck,
   inputCheckBlack,
   plus,
-  SpringBoy,
-  SpringChild,
   SpringFemale,
-  SpringGirl,
   SpringMale,
   SummerFemale,
   SummerMale,
@@ -21,25 +16,27 @@ import {
   WinterMale,
 } from "../../assets/imgs";
 import { dressMainData } from "../../ContextHook/ContextMenu";
-import { styles } from "../../util/style";
-import { Dropdown } from "antd";
 import { BiChevronDown } from "react-icons/bi";
-import { AiOutlineSearch } from "react-icons/ai";
-import { BsCheck2Square } from "react-icons/bs";
+import { Popover } from "antd";
 
-import { Button, Divider, Popover, Segmented } from "antd";
 import style from "./bottom.module.css";
 import { Link } from "react-router-dom";
+
 const BottomHeader = () => {
   const [dressInfo, setDressInfo] = useContext(dressMainData);
+
+  const [state, setState] = useState({
+    openwear: false,
+    openPrice: false,
+    textToColor: false,
+  });
+
   let dataStyle = "";
   let genderStyle = "";
-  // let genderType = ''
   if (dressInfo?.type == 1111) {
     dataStyle = " hover:text-borderSpring ";
     genderStyle =
       "focus:text-borderSpring focus:bg-bgSpring focus:border-borderSpring";
-    // genderType = "ring-1 ring-inset text-borderSpring ring-borderSpring bg-bgSpring"
   }
   if (dressInfo?.type == 2222) {
     dataStyle = " hover:text-borderSummer";
@@ -57,25 +54,25 @@ const BottomHeader = () => {
       "focus:text-borderWinter focus:bg-bgWinter focus:border-borderWinter";
   }
 
-  const [personItems, setPersonItems] = useState([
-    // { id: 1111, male: SpringMale, female: SpringFemale, boy: SpringBoy, girls: SpringGirl, childs: SpringChild },
+  const personItems = [
     { id: 1111, man: SpringMale, woman: SpringFemale },
     { id: 2222, man: SummerMale, woman: SummerFemale },
     { id: 3333, man: AutummMale, woman: AutummFemale },
     { id: 4444, man: WinterMale, woman: WinterFemale },
-  ]);
+  ];
 
   // ----------------Wear state management----------------------------
-  const [openwear, setOpenwear] = useState(false);
 
   const handleOpenChangeWear = (newOpen) => {
-    setOpenwear(newOpen);
+    setState({ ...state, openwear: newOpen });
   };
   const [selectWear, setselectWear] = useState("Clothing type");
+
   const handleWearValue = (value) => {
     setselectWear(value);
-    setOpenwear(false);
+    setState({ ...state, openwear: false });
   };
+
   const wearList = [
     { id: 1, type: "All Clothing types" },
     { id: 2, type: "Headwear" },
@@ -102,17 +99,15 @@ const BottomHeader = () => {
     </div>
   );
 
-  // --------------------------------------------
   // ----------------------Price State Management----------------------
-  const [openPrice, setOpenOrice] = useState(false);
 
   const handleOpenChangePrice = (newOpen) => {
-    setOpenOrice(newOpen);
+    setState({ ...state, openPrice: newOpen });
   };
   const [selectPrice, setselectPrice] = useState("Under 100$");
   const handlePriceValue = (value) => {
     setselectPrice(value);
-    setOpenOrice(false);
+    setState({ ...state, openPrice: false });
   };
   const priceList = [
     { id: 1, type: "At all prices" },
@@ -139,7 +134,7 @@ const BottomHeader = () => {
       })}
     </div>
   );
-  const [changeColor, setChangeColor] = useState([
+  const changeColor = [
     { id: 1, data: 1, icons: InputCheck, action: false, colors: "bg-black" },
     { id: 2, data: 2, icons: InputCheck, action: false, colors: "bg-white" },
     { id: 3, data: 3, icons: InputCheck, action: false, colors: "bg-zinc-500" },
@@ -200,19 +195,17 @@ const BottomHeader = () => {
       action: false,
       colors: "bg-yellow-900 ",
     },
-  ]);
+  ];
   const [getRadio, setGetRadio] = useState("");
   const colorIdPushContext = (id) => {
     setDressInfo({ ...dressInfo, ClothesBorder: id });
   };
-  // --------------------------------------------
-  const [textToColor, setTextToColor] = useState(false);
 
   return (
     <div className="flex flex-col justify-center items-center m-0 p-0 box-border ss:hidden md:block">
       <div className="max-w-[1280px] w-[100%] flex justify-center  py-3 items-center m-auto   ">
         <Popover
-          open={openwear}
+          open={state?.openwear}
           onOpenChange={handleOpenChangeWear}
           className="w-[190px] px-[17px] h-[44px] rounded-lg bg-btnBgColor  border-searchBgColor border flex items-center justify-between cursor-pointer select-none group  "
           trigger="click"
@@ -230,12 +223,14 @@ const BottomHeader = () => {
             <BiChevronDown
               size={20}
               style={{ color: "#c2c2c2" }}
-              className={`${openwear ? "rotate-[-180deg]" : ""} duration-200`}
+              className={`${
+                state?.openwear ? "rotate-[-180deg]" : ""
+              } duration-200`}
             />{" "}
           </span>
         </Popover>
         <Popover
-          open={openPrice}
+          open={state?.openPrice}
           onOpenChange={handleOpenChangePrice}
           className="w-[190px]  h-[44px]  rounded-lg bg-btnBgColor  border-searchBgColor border  flex items-center justify-between  cursor-pointer select-none group ml-2"
           trigger="click"
@@ -255,7 +250,7 @@ const BottomHeader = () => {
                 size={20}
                 style={{ color: "#c2c2c2" }}
                 className={`${
-                  openPrice ? "rotate-[-180deg]" : ""
+                  state?.openPrice ? "rotate-[-180deg]" : ""
                 } duration-200`}
               />{" "}
             </span>
@@ -264,7 +259,9 @@ const BottomHeader = () => {
 
         <div className="flex items-center w-[536px] justify-start bg-btnBgColor overflow-hidden rounded-lg border-searchBgColor border h-[44px] ml-2">
           <div
-            onClick={() => setTextToColor(!textToColor)}
+            onClick={() =>
+              setState({ ...state, textToColor: !state.textToColor })
+            }
             className="w-[48px] cursor-pointer border-r border-searchBgColor h-full flex items-center justify-center"
           >
             <div className=" w-fit h-fit flex items-center justify-center relative  select-none ">
@@ -277,7 +274,7 @@ const BottomHeader = () => {
               {/* <div className={`w-[8px] h-[20px] border relative left-[-10px] top-[6px] z-[23] bg-white border-black rounded-[3px] duration-200  rounded-b-[5px] ${!textToColor ? "rotate-[90deg]" : "left-[-16px] top-[0px] rotate-[0deg]"}`}> */}
               <div
                 className={
-                  textToColor ? style.MainHtree : style.mainThreerotate
+                  state?.textToColor ? style.MainHtree : style.mainThreerotate
                 }
               ></div>
             </div>
@@ -285,7 +282,7 @@ const BottomHeader = () => {
           <div className="w-[480px] h-full overflow-hidden flex items-center justify-between">
             <div
               className={`${
-                textToColor ? "ml-[-500px] " : "ml-[0px] "
+                state?.textToColor ? "ml-[-500px] " : "ml-[0px] "
               } px-3 w-full duration-500  h-full flex items-center justify-between  `}
             >
               {changeColor?.map((data) => {
@@ -299,7 +296,7 @@ const BottomHeader = () => {
                       className={`rounded-full w-6 h-6 ${
                         data?.colors
                       } cursor-pointer flex items-center justify-center hover:scale-110 duration-300 ${
-                        !textToColor && "border"
+                        !state?.textToColor && "border"
                       }  border-borderColorCard	`}
                     >
                       {data?.id == getRadio && data?.id == 2 ? (
@@ -313,7 +310,6 @@ const BottomHeader = () => {
                       {data?.id == getRadio && data?.id !== 2 ? (
                         <img className="w-[14px]" src={InputCheck} alt="" />
                       ) : null}
-                      
                     </label>
                     <input
                       type="radio"
@@ -329,7 +325,7 @@ const BottomHeader = () => {
             </div>
             <div
               className={`${
-                textToColor ? " mr-0" : " mr-[-500px]"
+                state?.textToColor ? " mr-0" : " mr-[-500px]"
               } w-full duration-500 px-3 overflow-hidden h-full  flex items-center not-italic font-AeonikProMedium text-sm leading-4 text-center text-black  tracking-[1%] `}
             >
               Не давай своей гардеробной шкафной жизни стать скучной.

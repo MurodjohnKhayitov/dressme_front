@@ -23,7 +23,7 @@ import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { dressMainData } from "../../../ContextHook/ContextMenu";
 // import required modules``
 export default function MainPageSliders() {
-  const [dressInfo, setDressInfo] = useContext(dressMainData);
+  const [dressInfo] = useContext(dressMainData);
 
  
   const changeColor = [

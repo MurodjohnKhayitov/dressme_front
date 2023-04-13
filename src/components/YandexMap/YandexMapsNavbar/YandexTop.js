@@ -1,52 +1,38 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
   business,
-  eng,
   englishFlag,
   glasses,
   help,
   location,
   order,
-  ru,
   russiaFlag,
   shop,
   uzbekFlag,
   weatherBrandIcon,
 } from "../../../assets/imgs";
 import { dressMainData } from "../../../ContextHook/ContextMenu";
-// import { Select, Space } from 'antd';
-import { Button, Divider, Popover, Segmented } from "antd";
+import { Popover } from "antd";
 const YandexTop = () => {
-  const [dressInfo, setDressInfo] = useContext(dressMainData);
+  const [dressInfo] = useContext(dressMainData);
 
-  const SeasonTypeArray = [
-    { id: 1, type: "Uzbekcha", icons: uzbekFlag },
-    { id: 2, type: "Russian", icons: russiaFlag },
-    { id: 3, type: "English", icons: englishFlag },
-  ];
+  const [state, setState] = useState({
+    openLang: false,
+    openRegion: false,
+  });
 
   let dataStyle = "";
-  let genderStyle = "";
-  if (dressInfo?.type == 1111) {
+  if (dressInfo?.type === 1111) {
     dataStyle = " hover:text-borderSpring ";
-    genderStyle =
-      "focus:text-borderSpring focus:bg-bgSpring focus:border-borderSpring focus:text-borderSpring";
   }
-  if (dressInfo?.type == 2222) {
-    dataStyle = " hover:text-borderSummer";
-    genderStyle =
-      "focus:text-borderSummer focus:bg-bgSummer focus:border-borderSummer focus:text-borderSummer";
+  if (dressInfo?.type === 2222) {
   }
-  if (dressInfo?.type == 3333) {
+  if (dressInfo?.type === 3333) {
     dataStyle = " hover:text-borderAutumm ";
-    genderStyle =
-      "focus:text-borderAutumm focus:bg-bgAutumm focus:border-borderAutumm focus:text-borderAutumm";
   }
-  if (dressInfo?.type == 4444) {
+  if (dressInfo?.type === 4444) {
     dataStyle = " hover:text-borderWinter ";
-    genderStyle =
-      "focus:text-borderWinter focus:bg-bgWinter focus:border-borderWinter focus:text-borderWinter";
   }
   // -----Language Change-------------------
   const [selectLang, setselectLang] = useState(1);
@@ -57,15 +43,13 @@ const YandexTop = () => {
     { id: 3, type: "O'zbekcha", icons: uzbekFlag },
   ];
 
-  const [openLang, setOpenLang] = useState(false);
-
   const handleOpenChangeWear = (newOpen) => {
-    setOpenLang(newOpen);
+    setState({ ...state, openLang: newOpen });
   };
 
   const handleLangValue = (value) => {
     setselectLang(value);
-    setOpenLang(false);
+    setState({ ...state, openLang: false });
   };
 
   const contentLang = (
@@ -95,15 +79,14 @@ const YandexTop = () => {
 
   // -------City Change -------------
   const [selectCity, setSelectCity] = useState("Tashkent");
-  const [openRegion, setOpenRegion] = useState(false);
 
   const handleOpenChangeCity = (newOpen) => {
-    setOpenRegion(newOpen);
+    setState({ ...state, openRegion: newOpen });
   };
 
   const handleCityValue = (value) => {
     setSelectCity(value);
-    setOpenRegion(false);
+    setState({ ...state, openRegion: false });
   };
 
   const CityList = [
@@ -136,14 +119,14 @@ const YandexTop = () => {
   return (
     <div className="  flex justify-between items-center m-auto ">
       <div className="left h-full flex items-center  ">
-        <div  className="flex w-fit items-center">
+        <div className="flex w-fit items-center">
           <img src={location} alt="location" className="mr-2" />
           <span className="text-textColor text-[13px] mr-[6px] font-AeonikProMedium">
             Город:
           </span>
           <div className="w-[90px] font-AeonikProMedium   flex items-center ">
             <Popover
-              open={openRegion}
+              open={state?.openRegion}
               onOpenChange={handleOpenChangeCity}
               className=" flex text-[13px]  items-center  "
               trigger="click"
@@ -151,9 +134,9 @@ const YandexTop = () => {
               placement="bottom"
               content={contentCity}
             >
-              <a className="border-b border-slate-900" href="#">
+              <span className="border-b border-slate-900" href="#">
                 {selectCity}
-              </a>
+              </span>
             </Popover>
           </div>
         </div>
@@ -176,7 +159,7 @@ const YandexTop = () => {
             return (
               <Popover
                 key={data?.id}
-                open={openLang}
+                open={state?.openLang}
                 onOpenChange={handleOpenChangeWear}
                 className="w-full flex text-[13px] items-center h-[32px] px-3 rounded-lg"
                 trigger="click"

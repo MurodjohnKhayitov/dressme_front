@@ -71,60 +71,59 @@ import {
 } from "../../../assets/imgs";
 import { dressMainData } from "../../../ContextHook/ContextMenu";
 import { GrClose } from "react-icons/gr";
-import { Popover, Modal, Button } from "antd";
-import { FaRegHeart } from "react-icons/fa";
+import { Popover } from "antd";
 
 const YandexMedium = () => {
-  const [hamburgerMenu, setHamburgerMenu] = useState(true);
-  const [toggle, setToggle] = useState(false);
+  const [state, setState] = useState({
+    hamburgerMenu: true,
+    toggle: false,
+    clothesTypeMobile: false,
+    priceToggleMobile: false,
+    brandToggleMobile: false,
+    selectColorToggleMobile: false,
+  });
 
-  const [clothesTypeMobile, setClothesTypeMobile] = useState(false);
-  const [priceToggleMobile, setPriceToggleMobile] = useState(false);
-  const [brandToggleMobile, setBrandToggleMobile] = useState(false);
-  const [selectColorToggleMobile, setSelectColorToggleMobile] = useState(false);
   useEffect(() => {
     if (
-      clothesTypeMobile ||
-      priceToggleMobile ||
-      brandToggleMobile ||
-      selectColorToggleMobile
+      state?.clothesTypeMobile ||
+      state?.priceToggleMobile ||
+      state?.brandToggleMobile ||
+      state?.selectColorToggleMobile
     ) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
   }, [
-    clothesTypeMobile,
-    priceToggleMobile,
-    brandToggleMobile,
-    selectColorToggleMobile,
+    state?.clothesTypeMobile,
+    state?.priceToggleMobile,
+    state?.brandToggleMobile,
+    state?.selectColorToggleMobile,
   ]);
-
-  // const [changeGenderColor, setChangeGenderColor] = useState(false)
 
   const [dressInfo, setDressInfo] = useContext(dressMainData);
   let dataStyle = "";
   let genderStyle = "";
   let hoverText = "";
-  if (dressInfo?.type == 1111) {
+  if (dressInfo?.type === 1111) {
     dataStyle = "bg-bgSpring bg-opacity-10	  text-borderSpring ";
     hoverText = " hover:text-borderSpring ";
     genderStyle =
       "focus:text-borderSpring focus:bg-bgSpring focus:border focus:border-borderSpring focus:text-borderSpring";
   }
-  if (dressInfo?.type == 2222) {
+  if (dressInfo?.type === 2222) {
     dataStyle = "bg-bgSummer  bg-opacity-10  text-borderSummer";
     hoverText = " hover:text-borderSummer ";
     genderStyle =
       "focus:text-borderSummer focus:bg-bgSummer focus:border focus:border-borderSummer focus:text-borderSummer";
   }
-  if (dressInfo?.type == 3333) {
+  if (dressInfo?.type === 3333) {
     dataStyle = "bg-bgAutumm bg-opacity-10  text-borderAutumm";
     hoverText = " hover:text-borderAutumm ";
     genderStyle =
       "focus:text-borderAutumm focus:bg-bgAutumm focus:border focus:border-borderAutumm focus:text-borderAutumm";
   }
-  if (dressInfo?.type == 4444) {
+  if (dressInfo?.type === 4444) {
     dataStyle = "bg-bgWinter bg-opacity-10  text-borderWinter";
     hoverText = " hover:text-borderWinter ";
     genderStyle =
@@ -155,16 +154,17 @@ const YandexMedium = () => {
     { id: 3333, type: "Autumm", icons: AutummCategory },
     { id: 4444, type: "Winter", icons: WinterCategory },
   ];
-  const [personItems, setPersonItems] = useState([
+  const personItems = [
     // { id: 1111, male: SpringMale, female: SpringFemale, boy: SpringBoy, girls: SpringGirl, childs: SpringChild },
     { id: 1111, man: SpringMale, woman: SpringFemale },
     { id: 2222, man: SummerMale, woman: SummerFemale },
     { id: 3333, man: AutummMale, woman: AutummFemale },
     { id: 4444, man: WinterMale, woman: WinterFemale },
-  ]);
+  ];
   //------------------------------------------------------------------------------------------------
-  const toggleHamburger = () => setHamburgerMenu((val) => !val);
-
+  const toggleHamburger = () => {
+    setState({ ...state, hamburgerMenu: !state.hamburgerMenu });
+  };
   // Mobile Wear Brand Type
   const [selectWearMobile, setSelectWearMobile] = useState("Clothing type");
   const handleWearMobile = (value) => {
@@ -194,13 +194,19 @@ const YandexMedium = () => {
   ];
 
   // Mobile Change color Type
-  const [changeColor, setChangeColor] = useState([
+  const changeColor = [
     { id: 1, name: "purple", value: 1, action: false, colors: "bg-purple-700" },
     { id: 2, name: "green", value: 2, action: false, colors: "bg-green-600" },
     { id: 3, name: "red", value: 3, action: false, colors: "bg-red-700" },
     { id: 4, name: "yellow", value: 4, action: false, colors: "bg-yellow-500" },
     { id: 5, name: "black", value: 5, action: false, colors: "bg-black" },
-    { id: 6, name: "yandexWhite", value: 6, action: false, colors: "bg-yandexWhite" },
+    {
+      id: 6,
+      name: "yandexWhite",
+      value: 6,
+      action: false,
+      colors: "bg-yandexWhite",
+    },
     { id: 7, name: "blue", value: 7, action: false, colors: "bg-blue-500" },
     { id: 8, name: "orange", value: 8, action: false, colors: "bg-orange-600" },
     { id: 9, name: "purple", value: 9, action: false, colors: "bg-purple-400" },
@@ -213,7 +219,7 @@ const YandexMedium = () => {
       colors: "bg-yellow-900",
     },
     { id: 12, name: "gray", value: 12, action: false, colors: "bg-gray-600" },
-  ]);
+  ];
 
   // Mobile top Branding Data Lists
   const campany = [
@@ -277,7 +283,7 @@ const YandexMedium = () => {
             className={`flex items-center justify-center bg-yandexWhite border border-searchBgColor w-12 h-12 -lg-lg cursor-pointer md:hidden rounded-lg`}
           >
             <img
-              src={!hamburgerMenu ? close : menu}
+              src={!state?.hamburgerMenu ? close : menu}
               alt="voice"
               className={`${close ? "w-6 h-6" : ""} `}
             />
@@ -285,7 +291,7 @@ const YandexMedium = () => {
             {/*Starting of Opened Hamburger menu section */}
             <div
               className={`${
-                !hamburgerMenu
+                !state?.hamburgerMenu
                   ? "hamburger flex flex-col ease-linear duration-500 overscroll-none"
                   : "left-[-450px] ll:-left-[500px] sm:left-[800px] ease-linear duration-500"
               }  top-[62px] left-0 fixed right-0 w-full bg-yandexWhite z-10 h-full overflow-y-scroll px-[15px] ll:flex-fit`}
@@ -585,19 +591,23 @@ const YandexMedium = () => {
 
       <div
         className={`h-fit top-30  left-[16px] fixed  bg-yandexWhite   shadow-lg duration-200 z-50 ${
-          clothesTypeMobile ? "w-[92%]" : "w-0"
+          state?.clothesTypeMobile ? "w-[92%]" : "w-0"
         }  `}
       >
-        {clothesTypeMobile && (
+        {state?.clothesTypeMobile && (
           <div className="fixed inset-0 z-10 ">
             <div
               className="fixed inset-0 w-full h-full bg-black opacity-40"
-              onClick={() => setClothesTypeMobile(false)}
+              onClick={() => setState({ ...state, clothesTypeMobile: false })}
             ></div>
             <div className="flex items-center min-h-screen px-4 py-8">
               <div className="relative w-full max-w-lg p-4 mx-auto bg-yandexWhite rounded-md shadow-lg">
                 <div className="flex items-center justify-end ">
-                  <button type="" onClick={() => setClothesTypeMobile(false)}>
+                  <button
+                    onClick={() =>
+                      setState({ ...state, clothesTypeMobile: false })
+                    }
+                  >
                     <GrClose size={25} />
                   </button>
                 </div>
@@ -608,7 +618,7 @@ const YandexMedium = () => {
                         key={data?.id}
                         onClick={() => {
                           handleWearMobile(data?.type);
-                          setClothesTypeMobile(false);
+                          setState({ ...state, clothesTypeMobile: false });
                         }}
                         className={`${hoverText} text-base font-AeonikProMedium hover:bg-bgColor w-full h-12 border border-solid border-searchBgColor flex items-center justify-center`}
                       >
@@ -624,85 +634,77 @@ const YandexMedium = () => {
       </div>
       <div
         className={`h-fit top-30  left-[16px] fixed  bg-yandexWhite shadow-lg  duration-200 z-50 ${
-          priceToggleMobile ? "w-[92%]" : "w-0"
+          state?.priceToggleMobile ? "w-[92%]" : "w-0"
         }  `}
       >
-        {
-          priceToggleMobile && (
-            <div className="fixed inset-0 z-10 ">
-              <div
-                className="fixed inset-0 w-full h-full bg-black opacity-40"
-                onClick={() => setPriceToggleMobile(false)}
-              ></div>
-              <div className="flex items-center min-h-screen px-4 py-8">
-                <div className="relative w-full max-w-lg p-4 mx-auto bg-yandexWhite rounded-md shadow-lg">
-                  <div className="flex items-center justify-end ">
-                    <button type="" onClick={() => setPriceToggleMobile(false)}>
-                      <GrClose size={25} />
-                    </button>
-                  </div>
-                  <div className="py-4">
-                    {PriceMobileList?.map((data) => {
-                      return (
-                        <div
-                          onClick={() => {
-                            handlePriceMobile(data?.type);
-                            setPriceToggleMobile(false);
-                          }}
-                          className={` ${hoverText}  text-base font-AeonikProMedium hover:bg-bgColor w-full h-12 border border-solid border-searchBgColor flex items-center justify-center`}
-                        >
-                          {data?.type}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
-          )
-          // <div className="p-3 rounded bg-yandexWhite w-full h-full ">
-          //   <div className="flex items-center justify-end ">
-          //     <button type="" onClick={() => setPriceToggleMobile(false)}><GrClose size={25} /></button>
-          //   </div>
-          //   <div className="py-4">
-          //     {
-          //       PriceMobileList?.map(data => {
-          //         return (
-          //           <div onClick={() => {
-          //             handlePriceMobile(data?.type)
-          //             setPriceToggleMobile(false)
-          //           }} className={` ${hoverText}  text-base font-AeonikProMedium hover:bg-bgColor w-full h-12 border border-solid border-searchBgColor flex items-center justify-center`}>
-          //             {data?.type}
-          //           </div>
-          //         )
-          //       })
-          //     }
-          //   </div>
-          // </div>
-        }
-      </div>
-      <div
-        className={`h-fit top-30  left-[16px] fixed  bg-yandexWhite shadow-lg  duration-200 z-50 ${
-          brandToggleMobile ? "w-[92%]" : "w-0"
-        }  `}
-      >
-        {brandToggleMobile && (
+        {state?.priceToggleMobile && (
           <div className="fixed inset-0 z-10 ">
             <div
               className="fixed inset-0 w-full h-full bg-black opacity-40"
-              onClick={() => setBrandToggleMobile(false)}
+              onClick={() => setState({ ...state, priceToggleMobile: false })}
             ></div>
             <div className="flex items-center min-h-screen px-4 py-8">
               <div className="relative w-full max-w-lg p-4 mx-auto bg-yandexWhite rounded-md shadow-lg">
                 <div className="flex items-center justify-end ">
-                  <button type="" onClick={() => setBrandToggleMobile(false)}>
+                  <button
+                    type=""
+                    onClick={() =>
+                      setState({ ...state, priceToggleMobile: false })
+                    }
+                  >
+                    <GrClose size={25} />
+                  </button>
+                </div>
+                <div className="py-4">
+                  {PriceMobileList?.map((data) => {
+                    return (
+                      <div
+                        key={data?.id}
+                        onClick={() => {
+                          handlePriceMobile(data?.type);
+                          setState({ ...state, priceToggleMobile: false });
+                        }}
+                        className={` ${hoverText}  text-base font-AeonikProMedium hover:bg-bgColor w-full h-12 border border-solid border-searchBgColor flex items-center justify-center`}
+                      >
+                        {data?.type}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+      <div
+        className={`h-fit top-30  left-[16px] fixed  bg-yandexWhite shadow-lg  duration-200 z-50 ${
+          state?.brandToggleMobile ? "w-[92%]" : "w-0"
+        }  `}
+      >
+        {state?.brandToggleMobile && (
+          <div className="fixed inset-0 z-10 ">
+            <div
+              className="fixed inset-0 w-full h-full bg-black opacity-40"
+              onClick={() => setState({ ...state, brandToggleMobile: false })}
+            ></div>
+            <div className="flex items-center min-h-screen px-4 py-8">
+              <div className="relative w-full max-w-lg p-4 mx-auto bg-yandexWhite rounded-md shadow-lg">
+                <div className="flex items-center justify-end ">
+                  <button
+                    onClick={() =>
+                      setState({ ...state, brandToggleMobile: false })
+                    }
+                  >
                     <GrClose size={25} />
                   </button>
                 </div>
                 <div className="py-4 flex flex-wrap justify-between gap-y-5">
                   {campany?.map((data) => {
                     return (
-                      <div className="w-[80px] h-[80px] rounded-lg bg-bgColor  border border-solid border-borderColorCard">
+                      <div
+                        key={data?.id}
+                        className="w-[80px] h-[80px] rounded-lg bg-bgColor  border border-solid border-borderColorCard"
+                      >
                         <img
                           className="h-full w-full"
                           src={data?.imgFull}
@@ -719,21 +721,24 @@ const YandexMedium = () => {
       </div>
       <div
         className={`h-fit top-30  left-[16px] fixed  bg-yandexWhite shadow-lg  duration-200 z-50 ${
-          selectColorToggleMobile ? "w-[92%]" : "w-0"
+          state?.selectColorToggleMobile ? "w-[92%]" : "w-0"
         }`}
       >
-        {selectColorToggleMobile && (
+        {state?.selectColorToggleMobile && (
           <div className="fixed inset-0 z-10 ">
             <div
               className="fixed inset-0 w-full h-full bg-black opacity-40"
-              onClick={() => setSelectColorToggleMobile(false)}
+              onClick={() =>
+                setState({ ...state, selectColorToggleMobile: false })
+              }
             ></div>
             <div className="flex items-center min-h-screen px-4 py-8">
               <div className="relative w-full max-w-lg p-4 mx-auto bg-yandexWhite rounded-md shadow-lg">
                 <div className="flex items-center justify-end ">
                   <button
-                    type=""
-                    onClick={() => setSelectColorToggleMobile(false)}
+                    onClick={() =>
+                      setState({ ...state, selectColorToggleMobile: false })
+                    }
                   >
                     <GrClose size={25} />
                   </button>
@@ -741,7 +746,10 @@ const YandexMedium = () => {
                 <div className="py-4 flex flex-wrap  gap-5">
                   {changeColor?.map((data) => {
                     return (
-                      <span className="w-60px flex items-center cursour-pointer hover:shadow-md p-1 rounded-lg mr-2">
+                      <span
+                        key={data?.id}
+                        className="w-60px flex items-center cursour-pointer hover:shadow-md p-1 rounded-lg mr-2"
+                      >
                         <div
                           className={`rounded-full mr-2 w-6 h-6 ${data?.colors} cursor-pointer `}
                         ></div>
@@ -809,7 +817,7 @@ const YandexMedium = () => {
 
           <button
             onClick={() => {
-              setToggle(!toggle);
+              setState({ ...state, toggle: !state.toggle });
             }}
             className="flex items-center bg-yandexWhite font-AeonikProMedium h-12 rounded-lg border border-gray-200 px-5 ss:w-full  ss:mt-4 "
           >
@@ -821,7 +829,7 @@ const YandexMedium = () => {
               src={arrowBottomBlack}
               alt=""
               className={`arrowRotate ml-auto ${
-                toggle ? "rotate-180" : ""
+                state?.toggle ? "rotate-180" : ""
               } duration-500`}
             />
           </button>
@@ -830,13 +838,16 @@ const YandexMedium = () => {
         {/* Params for Mobile */}
         <div
           className={`${
-            toggle ? "h-[280px]" : "h-0"
+            state?.toggle ? "h-[280px]" : "h-0"
           } duration-500  overflow-hidden md:hidden`}
         >
           <ul className="ss:w-full mt-4 bg-yandexWhite">
             <li
               onClick={() => {
-                setClothesTypeMobile(!clothesTypeMobile);
+                setState({
+                  ...state,
+                  clothesTypeMobile: !state.clothesTypeMobile,
+                });
               }}
             >
               <button className="ss:w-full flex items-center bg-yandexWhite font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 md:hidden">
@@ -853,7 +864,14 @@ const YandexMedium = () => {
                 />
               </button>
             </li>
-            <li onClick={() => setPriceToggleMobile(!priceToggleMobile)}>
+            <li
+              onClick={() =>
+                setState({
+                  ...state,
+                  priceToggleMobile: !state.priceToggleMobile,
+                })
+              }
+            >
               <button className="flex items-center w-full bg-yandexWhite font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 md:hidden">
                 <div className="flex items-center">
                   <span className="w-[52px]  border-r border-searchBgColor py-3 pr-5">
@@ -876,13 +894,19 @@ const YandexMedium = () => {
                 </span>
                 <div
                   onClick={() =>
-                    setSelectColorToggleMobile(!selectColorToggleMobile)
+                    setState({
+                      ...state,
+                      selectColorToggleMobile: !state.selectColorToggleMobile,
+                    })
                   }
                   className="flex w-[80%] h-full items-center overflow-x-scroll "
                 >
                   {changeColor?.map((data) => {
                     return (
-                      <span className="w-60px flex items-center mr-2">
+                      <span
+                        key={data?.id}
+                        className="w-60px flex items-center mr-2"
+                      >
                         <div
                           className={`rounded-full mr-2 w-6 h-6 ${data?.colors} cursor-pointer `}
                         ></div>
@@ -902,7 +926,14 @@ const YandexMedium = () => {
                 </span>
               </button>
             </li>
-            <li onClick={() => setBrandToggleMobile(!brandToggleMobile)}>
+            <li
+              onClick={() =>
+                setState({
+                  ...state,
+                  brandToggleMobile: !state.brandToggleMobile,
+                })
+              }
+            >
               <button className="w-full flex items-center bg-yandexWhite font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 md:hidden">
                 <div className="flex items-center">
                   <span className="w-[52px]  border-r border-searchBgColor py-3 pr-5">
