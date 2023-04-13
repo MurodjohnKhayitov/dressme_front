@@ -15,6 +15,7 @@ import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 import { dressMainData } from "../../../ContextHook/ContextMenu";
 export default function ClothesSlider() {
+
   const productList = [
     {
       id: 1,

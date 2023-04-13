@@ -11,6 +11,8 @@ import {
 import { dressMainData } from "../../../ContextHook/ContextMenu";
 
 export default function TypeSection() {
+
+
   const [dressInfo] = useContext(dressMainData);
   const typeSectionData = [
     {

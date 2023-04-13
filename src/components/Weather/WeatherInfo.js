@@ -4,8 +4,10 @@ import { AreaChart, Area, XAxis, Tooltip } from "recharts";
 import moment from "moment";
 
 export default function WeatherInfo() {
-  const [weatherSet, setWeatherSet] = useState("");
-  const [cilciyToGradus, setCilciyToGradus] = useState(true);
+  const [state, setState] = useState({
+    weatherSet: "",
+    cilciyToGradus: true,
+  });
   useQuery(
     ["Weather"],
     () => {
@@ -15,14 +17,13 @@ export default function WeatherInfo() {
     },
     {
       onSuccess: (res) => {
-        setWeatherSet(res);
+        setState({ ...state, weatherSet: res });
       },
       onError: (err) => {
         console.log(err, "errpr");
       },
     }
   );
-
   const data1 = [
     {
       name: "09:00",
@@ -61,6 +62,7 @@ export default function WeatherInfo() {
       amt: 50,
     },
   ];
+
   return (
     <div className="w-full  flex justify-center items-center">
       <div className="w-[750px] h-fit p-2 ">
@@ -69,34 +71,38 @@ export default function WeatherInfo() {
             <div className="w-[70px] h-[70px] rounded-full overflow-hidden ">
               <img
                 className="w-full h-full"
-                src={weatherSet?.current?.condition?.icon}
+                src={state?.weatherSet?.current?.condition?.icon}
                 alt="icon"
               />
             </div>
             <div className="flex items-start gap-x-2">
               <div className=" mt-[10px]">
                 <span className="text-[60px]  not-italic font-AeonikProMedium  leading-10 text-black">
-                  {cilciyToGradus ? (
-                    <span>{weatherSet?.current?.temp_c}</span>
+                  {state?.cilciyToGradus ? (
+                    <span>{state?.weatherSet?.current?.temp_c}</span>
                   ) : (
-                    <span>{parseInt(weatherSet?.current?.temp_f)}</span>
+                    <span>{parseInt(state?.weatherSet?.current?.temp_f)}</span>
                   )}
                 </span>
               </div>
               <div className="">
                 <span
-                  onClick={() => setCilciyToGradus(true)}
+                  onClick={() => setState({ ...state, cilciyToGradus: true })}
                   className={` not-italic select-none cursor-pointer font-AeonikProMedium text-base leading-4 ${
-                    cilciyToGradus ? "text-black " : "text-borderColorCard"
+                    state?.cilciyToGradus
+                      ? "text-black "
+                      : "text-borderColorCard"
                   }   `}
                 >
                   <span className="before:content-['\00B0'] "></span>C
                 </span>
                 <span className="h-[2px] mx-2 border border-black w-[1px]"></span>
                 <span
-                  onClick={() => setCilciyToGradus(false)}
+                  onClick={() => setState({ ...state, cilciyToGradus: false })}
                   className={`not-italic select-none cursor-pointer font-AeonikProMedium text-base leading-4 ${
-                    cilciyToGradus ? "text-borderColorCard" : "text-black"
+                    state?.cilciyToGradus
+                      ? "text-borderColorCard"
+                      : "text-black"
                   }  `}
                 >
                   <span className="before:content-['\00B0'] "></span> F
@@ -107,20 +113,20 @@ export default function WeatherInfo() {
               <div className="not-italic font-AeonikProRegular ml-1 text-base leading-4 text-black">
                 Опасность осадки:
                 <span className="ml-1">
-                  {weatherSet?.current?.precip_mm} %
+                  {state?.weatherSet?.current?.precip_mm} %
                 </span>{" "}
               </div>
               <div className="not-italic font-AeonikProRegular ml-1 text-base leading-4 my-1 text-black">
                 влажность:
                 <span className="ml-1">
                   {" "}
-                  {weatherSet?.current?.cloud}%
+                  {state?.weatherSet?.current?.cloud}%
                 </span>{" "}
               </div>
               <div className="not-italic font-AeonikProRegular ml-1 text-base leading-4 text-black">
                 ветер:
                 <span className="ml-1">
-                  {weatherSet?.current?.wind_mph} km/h
+                  {state?.weatherSet?.current?.wind_mph} km/h
                 </span>{" "}
               </div>
             </div>
@@ -134,15 +140,14 @@ export default function WeatherInfo() {
             </div>
             <div className="text-end">
               <span className="not-italic font-AeonikProMedium text-[16px] leading-4 text-borderColorCard">
-               
                 {moment(
-                  weatherSet?.current?.last_updated_epoch?.date_epoch
+                  state?.weatherSet?.current?.last_updated_epoch?.date_epoch
                 ).format(" dddd  LT")}{" "}
               </span>
             </div>
             <div className="text-end">
               <span className="not-italic font-AeonikProMedium text-[16px] leading-4 text-borderColorCard">
-                {weatherSet?.current?.condition?.text}
+                {state?.weatherSet?.current?.condition?.text}
               </span>
             </div>
           </div>
@@ -151,17 +156,16 @@ export default function WeatherInfo() {
         <div className="flex items-center justify-between  mt-5">
           <div>
             <span className="text-[20px] not-italic font-AeonikProMedium  leading-7 text-black">
-              {weatherSet?.location?.region || "Region"}
+              {state?.weatherSet?.location?.region || "Region"}
             </span>
           </div>
           <div className="flex gap-x-1 items-center">
             <div className="text-[20px] not-italic font-AeonikProMedium ml-1 mr-4  leading-7 text-black">
-              {moment(weatherSet?.location?.localtime).format("LLL")}
+              {moment(state?.weatherSet?.location?.localtime).format("LLL")}
             </div>
           </div>
         </div>
 
-       
         <div className="w-full h-400px  mt-5">
           <AreaChart
             width={750}
@@ -187,9 +191,12 @@ export default function WeatherInfo() {
           </AreaChart>
         </div>
         <div className="w-full h-fit flex justify-between  mt-5 ">
-          {weatherSet?.forecast?.forecastday?.map((data) => {
+          {state?.weatherSet?.forecast?.forecastday?.map((data) => {
             return (
-              <div className="w-[13%] h-fit py-[8px] hover:bg-searchBgColor rounded-lg cursor-pointer">
+              <div
+                key={data?.date}
+                className="w-[13%] h-fit py-[8px] hover:bg-searchBgColor rounded-lg cursor-pointer"
+              >
                 <div className="not-italic font-AeonikProMedium  text-[18px] leading-4 text-black flex justify-center  ">
                   {moment(data?.date).format(" ddd")}{" "}
                 </div>

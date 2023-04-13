@@ -198,7 +198,6 @@ const TopHeader = () => {
             )}
           </div>
           <Modal
-            title="Weather"
             className="!w-fit !h-fit"
             open={state?.isModalOpen}
             onOk={handleOk}
