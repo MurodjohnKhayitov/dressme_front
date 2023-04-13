@@ -5,6 +5,12 @@ import { addBag, adidas, arrowRightCircle, checkFalse, checkTrue, Liked, model1,
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Button, Modal } from "antd";
+
+import modelImg1 from '../../../assets/imgs/Models/model1.svg';
+import modelImg2 from '../../../assets/imgs/Models/model1.svg';
+import modelImg3 from '../../../assets/imgs/Models/model1.svg';
+import modelImg4 from '../../../assets/imgs/Models/model1.svg';
+
 export default function SetClothesWear() {
   const [productList, setProductList] = useState([
     {
@@ -846,10 +852,10 @@ export default function SetClothesWear() {
         },
       ],
       modelsList: [
-        { id: 1, modelImg: require("../../../assets/imgs/Models/model1.svg") },
-        { id: 2, modelImg: require("../../../assets/imgs/Models/model2.svg") },
-        { id: 3, modelImg: require("../../../assets/imgs/Models/model3.svg") },
-        { id: 4, modelImg: require("../../../assets/imgs/Models/model4.svg") },
+        { id: 1, modelImg: modelImg1 },
+        { id: 2, modelImg: modelImg2 },
+        { id: 3, modelImg: modelImg3 },
+        { id: 4, modelImg: modelImg4 },
       ],
     },
     {
@@ -3386,6 +3392,13 @@ export default function SetClothesWear() {
     },
   ]);
 
+  let modelsList = [
+    { id: 1, modelImg: modelImg1 },
+    { id: 2, modelImg: modelImg2 },
+    { id: 3, modelImg: modelImg3 },
+    { id: 4, modelImg: modelImg4 },
+  ]
+
   const NextArrow = (props) => {
     const { onClick } = props;
     return (
@@ -3478,6 +3491,29 @@ export default function SetClothesWear() {
     );
   };
 
+  const NextArrowModalSlider = (props) => {
+    const { onClick } = props;
+    return (
+      <div
+        className={`absolute right-3 top-[25%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        onClick={onClick}
+      >
+        <GrFormNext size={15} />
+      </div>
+    );
+  };
+  const PrevArrowModalSlider = (props) => {
+    const { onClick } = props;
+    return (
+      <div
+        className={`absolute left-3 top-[25%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        onClick={onClick}
+      >
+        <GrFormPrevious size={15} />
+      </div>
+    );
+  };
+
   const [getSliderId, setGetSliderId] = useState({
     headWearId: 1,
     headWearPrice: 0,
@@ -3559,6 +3595,15 @@ export default function SetClothesWear() {
     dots: false,
     afterChange: (current) =>
       setGetSliderId({ ...getSliderId, accessoryId: current + 1 }),
+  };
+  let modalSlider = {
+    // nextArrow: <NextArrowModalSlider />,
+    // prevArrow: <PrevArrowModalSlider />,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
   };
 
   const [clothesSetWear, setClothesSetWear] = useState(true);
@@ -3928,179 +3973,9 @@ export default function SetClothesWear() {
                                     <span className="group-hover:text-white flex  items-center font-AeonikProRegular text-center text-black text-[12px] mr-1">
                                     Обзор набора
                                     </span>
-                                    <svg className="group-hover:fill-white group-hover:stroke-white stroke-black" opacity={100} viewBox="-6 -6 36 36" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" > <path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z" />
+                                    <svg className="group-hover:fill-white group-hover:stroke-white stroke-black" opacity={100} viewBox="-6 -6 36 36" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd" > <path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z" />
                                     </svg>
-                                </Button>
-                                <Modal
-                                    centered
-                                    open={open}
-                                    onCancel={() => setOpen(false)}
-                                    width={1000}
-                                    footer={null}
-                                    className="overscroll-y-none"
-                                >
-                                    <div className="w-full flex frex-row h-[800px]">
-                                        <div className="basis-7/12 flex items-center justify-center border-r border-searchBgColor">
-                                            <Slider {...headWear} >
-                                                {productList.modelsList?.map((item) => {
-                                                    return (
-                                                    <div key={item?.id}>
-                                                        <img src={item.modelImg} alt="" />
-                                                    </div>
-                                                    )
-                                                })}
-                                            </Slider>
-                                            <img src={model1} alt="" />
-                                        </div>
-                                        <div className="basis-5/12 flex flex-col justify-items-end">
-                                            
-                                            <div className="relative h-full py-6 overflow-auto">
-                                                <div className="sticky border-b border-searchBgColor mb-6">
-                                                    <div className="px-5 font-AeonikProMedium text-2xl mb-3">Business Wear (Man)</div>
-                                                    <div className="px-5 font-AeonikProRegular text-base mb-6">
-                                                        <span className="text-setTexOpacity mr-2">Магазин:</span>
-                                                        Patek Business Wear
-                                                    </div>
-                                                </div>
-
-                                                <div className="mb-6">
-
-                                                    <div className="px-3 mb-[22px]">
-                                                        <div className="font-AeonikProMedium text-sm mb-2">Головной убор</div>
-                                                        <div className="border rounded-lg p-3">
-                                                            
-                                                            <div className="flex relative mb-2">
-                                                                <div className="w-[92px] h-[120px] bg-slate-200 rounded-lg mr-4">
-                                                                    <img src="" alt="" />
-                                                                </div>
-                                                                <div className="py-3">
-                                                                    <div className="font-AeonikProRegular text-sm mb-[54px]">Eleganza Шарф</div>
-                                                                    <div className=" font-AeonikProMedium text-base">
-                                                                        <span className="text-xl">149 000</span> сум
-                                                                    </div>
-                                                                </div>
-                                                                <button className="absolute top-5 right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
-                                                                    <img src={Liked} alt="addbag" className="w-5"/>
-                                                                </button>
-                                                                <button className="absolute top-[72px] right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
-                                                                    <img src={addBag} alt="addbag" className="w-8"/>
-                                                                </button>
-                                                            </div>
-
-                                                            <div className="flex relative">
-                                                                <div className="w-[92px] h-[120px] bg-slate-200 rounded-lg mr-4">
-                                                                    <img src="" alt="" />
-                                                                </div>
-                                                                <div className="py-3">
-                                                                    <div className="font-AeonikProRegular text-sm mb-[54px]">Eleganza Шапка CHERLO Style</div>
-                                                                    <div className="relative font-AeonikProMedium text-base text-red-700">
-                                                                        <span className="absolute bottom-6 font-AeonikProRegular text-sm text-setTexOpacity">359 000</span>
-                                                                        <span className="text-xl">124 000</span> сум
-                                                                    </div>
-                                                                </div>
-                                                                <button className="absolute top-5 right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
-                                                                    <img src={Liked} alt="addbag" className="w-5"/>
-                                                                </button>
-                                                                <button className="absolute top-[72px] right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
-                                                                    <img src={addBag} alt="addbag" className="w-8"/>
-                                                                </button>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="px-3">
-                                                        <div className="font-AeonikProMedium text-sm mb-2">Верхняя одежда</div>
-                                                        <div className="px-3">
-                                                            <div className="flex relative mb-2">
-                                                                <div className="w-[92px] h-[120px] bg-slate-200 rounded-lg mr-4">
-                                                                    <img src="" alt="" />
-                                                                </div>
-                                                                <div className="py-3">
-                                                                    <div className="font-AeonikProRegular text-sm mb-[54px] w-[80%]">Mango Man футболка CHERLO Style</div>
-                                                                    <div className=" font-AeonikProMedium text-base">
-                                                                        <span className="text-xl">279 000</span> сум
-                                                                    </div>
-                                                                </div>
-                                                                <button className="absolute top-5 right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
-                                                                    <img src={Liked} alt="addbag" className="w-5"/>
-                                                                </button>
-                                                                <button className="absolute top-[72px] right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
-                                                                    <img src={addBag} alt="addbag" className="w-8"/>
-                                                                </button>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="px-3">
-                                                        <div className="font-AeonikProMedium text-sm mb-2">Верхняя одежда</div>
-                                                        <div className="px-3">
-                                                            <div className="flex relative mb-2">
-                                                                <div className="w-[92px] h-[120px] bg-slate-200 rounded-lg mr-4">
-                                                                    <img src="" alt="" />
-                                                                </div>
-                                                                <div className="py-3">
-                                                                    <div className="font-AeonikProRegular text-sm mb-[54px] w-[80%]">Mango Man футболка CHERLO Style</div>
-                                                                    <div className=" font-AeonikProMedium text-base">
-                                                                        <span className="text-xl">279 000</span> сум
-                                                                    </div>
-                                                                </div>
-                                                                <button className="absolute top-5 right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
-                                                                    <img src={Liked} alt="addbag" className="w-5"/>
-                                                                </button>
-                                                                <button className="absolute top-[72px] right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
-                                                                    <img src={addBag} alt="addbag" className="w-8"/>
-                                                                </button>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>  
-                                                </div>
-                                            </div>
-                                            
-                                            <div className="shadow-navMenuShadov px-3 py-4">
-                                                
-                                                <div className="mb-3 flex items-center justify-between">
-                                                    <div className="font-AeonikProRegular text-setTexOpacity text-sm">
-                                                        <span className="font-AeonikProMedium text-red-700 text-2xl mr-[11px]">814 000</span>
-                                                        1 054 000
-                                                    </div>
-                                                    <div className="flex items-center">
-                                                        <span className="mr-[6px] flex items-center">
-                                                            <img src={star} alt="star" />
-                                                        </span>
-                                                        <span className="not-italic font-AeonikProMedium text-base leading-4 text-black">
-                                                        2.5{" "}
-                                                        <span className="mr-1 not-italic font-AeonikProRegular text-xs leading-3 text-setTexOpacity">
-                                                            (20 голосов)
-                                                        </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div className="flex items-center justify-between">
-                                                    <button className="group w-[49%] rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[10px] pr-[5px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300">
-                                                        <span className="group-hover:text-white flex  items-center font-AeonikProRegular text-center text-black text-[14px] mr-2">
-                                                        Страница набора
-                                                        </span>
-                                                        <svg className="group-hover:fill-white group-hover:stroke-white stroke-black" opacity={100} viewBox="-6 -6 36 36" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" > <path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z" />
-                                                        </svg> 
-                                                    </button>   
-                                                    <button className="group w-[49%] rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[10px] pr-[5px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300">
-                                                        <span className="group-hover:text-white flex  items-center font-AeonikProRegular text-center text-black text-[14px] mr-2">
-                                                        Набор в корзину
-                                                        </span>
-                                                        <img src={addBag} alt="" className="hover:bg-transparent" />
-                                                        {/* <svg className="group-hover:fill-white group-hover:stroke-white stroke-black" opacity={100} viewBox="-6 -6 36 36" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" > <path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z" />
-                                                        </svg>     */}
-                                                    </button>     
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Modal>
+                                </Button>                             
                             </div>
                             <div className="flex items-center w-full justify-between">
                                 <div>
@@ -4122,11 +3997,185 @@ export default function SetClothesWear() {
             )
         })}
 
+        <Modal
+            centered
+            open={open}
+            onCancel={() => setOpen(false)}
+            width={1000}
+            footer={null}
+            className="overscroll-y-none"
+        >
+            <div className="w-full flex frex-row h-[800px]">
+                <div className=" w-[55%] flex items-center justify-center border-r border-searchBgColor">
+                      <Slider {...modalSlider}>
+                          {modelsList?.map((item) => {
+                            return (
+                                <div key={item?.id}>
+                                    <img src={item.modelImg} alt="" />
+                                </div>
+                            )
+                          })}
+                          
+                      </Slider>
+                    {/* <img src={model1} alt="" /> */}
+                </div>
+                <div className="w-[45%] flex flex-col justify-items-end">
+                    
+                    <div className="relative h-full py-6 overflow-auto">
+                        <div className="sticky border-b border-searchBgColor mb-6">
+                            <div className="px-5 font-AeonikProMedium text-2xl mb-3">Business Wear (Man)</div>
+                            <div className="px-5 font-AeonikProRegular text-base mb-6">
+                                <span className="text-setTexOpacity mr-2">Магазин:</span>
+                                Patek Business Wear
+                            </div>
+                        </div>
+
+                        <div className="mb-6">
+
+                            <div className="px-3 mb-[22px]">
+                                <div className="font-AeonikProMedium text-sm mb-2">Головной убор</div>
+                                <div className="border rounded-lg p-3">
+                                    
+                                    <div className="flex relative mb-2">
+                                        <div className="w-[92px] h-[120px] bg-slate-200 rounded-lg mr-4">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="py-3">
+                                            <div className="font-AeonikProRegular text-sm mb-[54px]">Eleganza Шарф</div>
+                                            <div className=" font-AeonikProMedium text-base">
+                                                <span className="text-xl">149 000</span> сум
+                                            </div>
+                                        </div>
+                                        <button className="absolute top-5 right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                                            <img src={Liked} alt="addbag" className="w-5"/>
+                                        </button>
+                                        <button className="absolute top-[72px] right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                                            <img src={addBag} alt="addbag" className="w-8"/>
+                                        </button>
+                                    </div>
+
+                                    <div className="flex relative">
+                                        <div className="w-[92px] h-[120px] bg-slate-200 rounded-lg mr-4">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="py-3">
+                                            <div className="font-AeonikProRegular text-sm mb-[54px]">Eleganza Шапка CHERLO Style</div>
+                                            <div className="relative font-AeonikProMedium text-base text-red-700">
+                                                <span className="absolute bottom-6 font-AeonikProRegular text-sm text-setTexOpacity">359 000</span>
+                                                <span className="text-xl">124 000</span> сум
+                                            </div>
+                                        </div>
+                                        <button className="absolute top-5 right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                                            <img src={Liked} alt="addbag" className="w-5"/>
+                                        </button>
+                                        <button className="absolute top-[72px] right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                                            <img src={addBag} alt="addbag" className="w-8"/>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div className="px-3">
+                                <div className="font-AeonikProMedium text-sm mb-2">Верхняя одежда</div>
+                                <div className="px-3">
+                                    <div className="flex relative mb-2">
+                                        <div className="w-[92px] h-[120px] bg-slate-200 rounded-lg mr-4">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="py-3">
+                                            <div className="font-AeonikProRegular text-sm mb-[54px] w-[80%]">Mango Man футболка CHERLO Style</div>
+                                            <div className=" font-AeonikProMedium text-base">
+                                                <span className="text-xl">279 000</span> сум
+                                            </div>
+                                        </div>
+                                        <button className="absolute top-5 right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                                            <img src={Liked} alt="addbag" className="w-5"/>
+                                        </button>
+                                        <button className="absolute top-[72px] right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                                            <img src={addBag} alt="addbag" className="w-8"/>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div className="px-3">
+                                <div className="font-AeonikProMedium text-sm mb-2">Верхняя одежда</div>
+                                <div className="px-3">
+                                    <div className="flex relative mb-2">
+                                        <div className="w-[92px] h-[120px] bg-slate-200 rounded-lg mr-4">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="py-3">
+                                            <div className="font-AeonikProRegular text-sm mb-[54px] w-[80%]">Mango Man футболка CHERLO Style</div>
+                                            <div className=" font-AeonikProMedium text-base">
+                                                <span className="text-xl">279 000</span> сум
+                                            </div>
+                                        </div>
+                                        <button className="absolute top-5 right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                                            <img src={Liked} alt="addbag" className="w-5"/>
+                                        </button>
+                                        <button className="absolute top-[72px] right-0 w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                                            <img src={addBag} alt="addbag" className="w-8"/>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                    
+                    <div className="shadow-navMenuShadov px-3 py-4">
+                        
+                        <div className="mb-3 flex items-center justify-between">
+                            <div className="font-AeonikProRegular text-setTexOpacity text-sm">
+                                <span className="font-AeonikProMedium text-red-700 text-2xl mr-[11px]">814 000</span>
+                                1 054 000
+                            </div>
+                            <div className="flex items-center">
+                                <span className="mr-[6px] flex items-center">
+                                    <img src={star} alt="star" />
+                                </span>
+                                <span className="not-italic font-AeonikProMedium text-base leading-4 text-black">
+                                2.5{" "}
+                                <span className="mr-1 not-italic font-AeonikProRegular text-xs leading-3 text-setTexOpacity">
+                                    (20 голосов)
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div className="flex items-center justify-between">
+                            <button className="group w-[49%] rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[10px] pr-[5px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300">
+                                <span className="group-hover:text-white flex  items-center font-AeonikProRegular text-center text-black text-[14px] mr-2">
+                                Страница набора
+                                </span>
+                                <svg className="group-hover:fill-white group-hover:stroke-white stroke-black" opacity={100} viewBox="-6 -6 36 36" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd" > <path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z" />
+                                </svg> 
+                            </button>   
+                            <button className="group w-[49%] rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[10px] pr-[5px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300">
+                                <span className="group-hover:text-white flex  items-center font-AeonikProRegular text-center text-black text-[14px] mr-2">
+                                Набор в корзину
+                                </span>
+                                <img src={addBag} alt="" className="hover:bg-transparent" />
+                                {/* <svg className="group-hover:fill-white group-hover:stroke-white stroke-black" opacity={100} viewBox="-6 -6 36 36" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd" > <path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z" />
+                                </svg>     */}
+                            </button>     
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </Modal>
+
         <div className="w-full h-fit flex items-center justify-center mt-14">
             <div className="w-[760px] h-[60px] cursor-pointer not-italic font-AeonikProMedium text-base leading-4 text-center text-black flex items-center justify-center rounded-lg border border-searchBgColor bg-btnBgColor">
             Показать ещё 12 наборов
             </div>
         </div>
     </div>
+
     );
 }
+
