@@ -122,3 +122,16 @@ select {
   left: 31px;
   z-index: 10;
 }
+
+.btnModel:hover .btnModelTxt {
+  color: #fff;
+  transition: all ease-in 0.3s;
+}
+
+.btnModel:hover  .btnModel img{
+   fill: #fff;
+}
+
+.ant-modal, .ant-modal-content {
+  padding: 0 !important;
+ }

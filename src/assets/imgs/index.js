@@ -55,11 +55,19 @@ export { default as home } from './home.svg'
 export { default as catalogBlack } from './catalog-black.svg'
 export { default as feedbackIcon } from './feedback-icon.svg'
 export { default as inputCheckBlack } from './checked-black.svg'
+export { default as arrowRightCircle } from './arrow-right-circle.svg'
+export { default as modelToSet } from './model-to-set.svg'
 
 
 // -----Contact--------
 export { default as dashborad } from './Contact/dashboard.svg'
 export { default as locate } from './Contact/location.svg'
+
+// ------- Models --------
+export {default as model1} from './Models/model1.svg'
+export {default as model2} from './Models/model2.svg'
+export {default as model3} from './Models/model3.svg'
+export {default as model4} from './Models/model4.svg'
 
 export { default as error } from './Contact/error.svg'
 export { default as adduser } from './Contact/Add User - 1.svg'

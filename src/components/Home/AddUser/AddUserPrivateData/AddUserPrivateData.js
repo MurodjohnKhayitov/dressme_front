@@ -57,7 +57,7 @@ const AddUserPrivateInfo = () => {
     { id: 12, type: "Декабрь" },
   ];
   const contentWear = (
-    <div className="w-[125px] h-44 overflow-y-scroll">
+    <div className="w-[125px] h-44 overflow-auto scrollbar dark:scrollbarkdark">
       {monthList.map((data) => {
         return (
           <p
@@ -155,10 +155,8 @@ const AddUserPrivateInfo = () => {
                                     <Popover
                                       open={openMonth}
                                       onOpenChange={handleOpenChangeWear}
-                                      className="w-[40%] px-[17px] h-12 bg-btnBgColor border-r flex items-center justify-between cursor-pointer select-none group  "
+                                      className="w-[40%] px-[17px] h-12 bg-btnBgColor border-r flex items-center justify-between cursor-pointer select-none group"
                                       trigger="click"
-                                      options={["Hide"]}
-                                      placement="bottom"
                                       content={contentWear}
                                     >
                                       <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">

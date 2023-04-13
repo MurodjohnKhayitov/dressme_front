@@ -298,7 +298,7 @@ const BottomHeader = () => {
                       // onClick={() => handleGetChecked(data?.id)}
                       className={`rounded-full w-6 h-6 ${
                         data?.colors
-                      } cursor-pointer flex items-center justify-center ${
+                      } cursor-pointer flex items-center justify-center hover:scale-110 duration-300 ${
                         !textToColor && "border"
                       }  border-borderColorCard	`}
                     >
