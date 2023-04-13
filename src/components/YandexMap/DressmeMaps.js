@@ -7,10 +7,8 @@ import {
   FullscreenControl,
   GeolocationControl,
   SearchControl,
-  TrafficControl,
-  TypeSelector,
+ 
   RulerControl,
-  ObjectManager,
   Placemark,
   Clusterer,
 } from "react-yandex-maps";
@@ -165,8 +163,6 @@ function DressmeMaps() {
           >
             {/* ---------- */}
             <Clusterer
-              // className="bg-green-500 text-red-500"
-              className={"placemarkCLuster"}
               options={{
                 preset: "islands#invertedVioletClusterIcons",
                 groupByCoordinates: false,
@@ -180,8 +176,6 @@ function DressmeMaps() {
               
               {points.map((data, index) => (
                 <Placemark
-                  className={"placemarkCLuster"}
-                  // className="bg-green-500 text-red-500 p-2 border border-red-500"
                   key={index}
                   geometry={data?.cordinate}
                   options={{
@@ -284,31 +278,5 @@ function DressmeMaps() {
     </div>
   );
 }
-// ClusteredMapView.defaultProps = {
-//   clusteringEnabled: true,
-//   spiralEnabled: true,
-//   animationEnabled: true,
-//   preserveClusterPressBehavior: false,
-//   layoutAnimationConf: LayoutAnimation.Presets.spring,
-//   tracksViewChanges: false,
-//   // SuperCluster parameters
-//   radius: Dimensions.get("window").width * 0.06,
-//   maxZoom: 20,
-//   minZoom: 1,
-//   minPoints: 2,
-//   extent: 512,
-//   nodeSize: 64,
-//   // Map parameters
-//   edgePadding: { top: 50, left: 50, right: 50, bottom: 50 },
-//   // Cluster styles
-//   clusterColor: "#00B386",
-//   clusterTextColor: "#FFFFFF",
-//   spiderLineColor: "#FF0000",
-//   // Callbacks
-//   onRegionChangeComplete: () => {},
-//   onClusterPress: () => {},
-//   onMarkersChange: () => {},
-//   superClusterRef: {},
-//   mapRef: () => {},
-// };
+
 export default React.memo(DressmeMaps);

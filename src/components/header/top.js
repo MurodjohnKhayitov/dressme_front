@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   business,
@@ -10,27 +10,29 @@ import {
   russiaFlag,
   shop,
   uzbekFlag,
-  weatherBrandIcon,
 } from "../../assets/imgs";
 import { dressMainData } from "../../ContextHook/ContextMenu";
-import { Button, Modal, Popover } from "antd";
+import { Modal, Popover } from "antd";
 import { useQuery } from "@tanstack/react-query";
 import WeatherInfo from "../Weather/WeatherInfo";
 const TopHeader = () => {
-  const [dressInfo, setDressInfo] = useContext(dressMainData);
+  const [dressInfo] = useContext(dressMainData);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [state, setState] = useState({
+    isModalOpen: false,
+    weatherSet: "",
+  });
+
   const showModal = () => {
-    setIsModalOpen(true);
+    setState({ ...state, isModalOpen: true });
   };
   const handleOk = () => {
-    setIsModalOpen(false);
+    setState({ ...state, isModalOpen: false });
   };
   const handleCancel = () => {
-    setIsModalOpen(false);
+    setState({ ...state, isModalOpen: false });
   };
 
-  const [weatherSet, setWeatherSet] = useState("");
   useQuery(
     ["Weather"],
     () => {
@@ -40,7 +42,7 @@ const TopHeader = () => {
     },
     {
       onSuccess: (res) => {
-        setWeatherSet(res);
+        setState({ ...state, weatherSet: res });
         // console.log(res);
       },
       onError: (err) => {
@@ -50,27 +52,19 @@ const TopHeader = () => {
   );
 
   let dataStyle = "";
-  let genderStyle = "";
   if (dressInfo?.type == 1111) {
     dataStyle = " hover:text-borderSpring ";
-    genderStyle =
-      "focus:text-borderSpring focus:bg-bgSpring focus:border-borderSpring focus:text-borderSpring";
   }
   if (dressInfo?.type == 2222) {
     dataStyle = " hover:text-borderSummer";
-    genderStyle =
-      "focus:text-borderSummer focus:bg-bgSummer focus:border-borderSummer focus:text-borderSummer";
   }
   if (dressInfo?.type == 3333) {
     dataStyle = " hover:text-borderAutumm ";
-    genderStyle =
-      "focus:text-borderAutumm focus:bg-bgAutumm focus:border-borderAutumm focus:text-borderAutumm";
   }
   if (dressInfo?.type == 4444) {
     dataStyle = " hover:text-borderWinter ";
-    genderStyle =
-      "focus:text-borderWinter focus:bg-bgWinter focus:border-borderWinter focus:text-borderWinter";
   }
+
   // -----Language Change-------------------
   const [selectLang, setselectLang] = useState(1);
 
@@ -144,7 +138,7 @@ const TopHeader = () => {
         return (
           <div
             key={data?.id}
-            className={`p-2  text-sm text-start hover:bg-bgColor cursor-pointer ${dataStyle}`}
+            className={`p-2 not-italic flex items-center font-AeonikProMedium text-sm leading-4 text-black  hover:bg-bgColor cursor-pointer ${dataStyle}`}
             onClick={() => {
               handleCityValue(data?.type);
             }}
@@ -175,36 +169,38 @@ const TopHeader = () => {
                 placement="bottom"
                 content={contentCity}
               >
-                <a className="border-b border-slate-900" href="#">
-                  {selectCity}
-                </a>
+                <span className="border-b border-slate-900">{selectCity}</span>
               </Popover>
             </div>
           </Link>
           <div className="flex items-center mx-[40px]  ">
-            <div
-              onClick={showModal}
-              className={"flex items-center cursor-pointer"}
-            >
-              <span className="mr-[6px]">
-                <img
-                  className="w-[28px] h-[28px]"
-                  src={weatherSet?.current?.condition?.icon}
-                  alt="icon"
-                />
-              </span>
-              <span className="not-italic font-AeonikProMedium text-base  leading-4 text-black after:content-['\00B0'] after:font-AeonikProMedium  mt-[3px]">
-                {weatherSet?.current?.temp_c}
-              </span>
-              <span className="not-italic font-AeonikProRegular text-base  mt-[3px] leading-4 text-black">
-                C
-              </span>
-            </div>
+            {state?.weatherSet?.current?.condition?.icon ? (
+              <div
+                onClick={showModal}
+                className={"flex items-center cursor-pointer"}
+              >
+                <span className="mr-[6px]">
+                  <img
+                    className="w-[28px] h-[28px]"
+                    src={state?.weatherSet?.current?.condition?.icon}
+                    alt="icon"
+                  />
+                </span>
+                <span className="not-italic font-AeonikProMedium text-base  leading-4 text-black after:content-['\00B0'] after:font-AeonikProMedium  mt-[3px]">
+                  {state?.weatherSet?.current?.temp_c}
+                </span>
+                <span className="not-italic font-AeonikProRegular text-base  mt-[3px] leading-4 text-black">
+                  C
+                </span>
+              </div>
+            ) : (
+              <span className="w-[70px] h-[28px] bg-borderColorCard rounded"></span>
+            )}
           </div>
           <Modal
             title="Weather"
             className="!w-fit !h-fit"
-            open={isModalOpen}
+            open={state?.isModalOpen}
             onOk={handleOk}
             onCancel={handleCancel}
             footer={null}
