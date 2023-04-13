@@ -7,9 +7,9 @@ import "react-multi-carousel/lib/styles.css";
 import { Button, Modal } from "antd";
 
 import modelImg1 from '../../../assets/imgs/Models/model1.svg';
-import modelImg2 from '../../../assets/imgs/Models/model1.svg';
-import modelImg3 from '../../../assets/imgs/Models/model1.svg';
-import modelImg4 from '../../../assets/imgs/Models/model1.svg';
+import modelImg2 from '../../../assets/imgs/Models/model2.svg';
+import modelImg3 from '../../../assets/imgs/Models/model3.svg';
+import modelImg4 from '../../../assets/imgs/Models/model4.svg';
 
 export default function SetClothesWear() {
   const [productList, setProductList] = useState([
@@ -3495,7 +3495,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-3 top-[25%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-3 top-[48%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormNext size={15} />
@@ -3506,7 +3506,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-3 top-[25%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute left-3 top-[48%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormPrevious size={15} />
@@ -3597,8 +3597,8 @@ export default function SetClothesWear() {
       setGetSliderId({ ...getSliderId, accessoryId: current + 1 }),
   };
   let modalSlider = {
-    // nextArrow: <NextArrowModalSlider />,
-    // prevArrow: <PrevArrowModalSlider />,
+    nextArrow: <NextArrowModalSlider />,
+    prevArrow: <PrevArrowModalSlider />,
     dots: true,
     infinite: true,
     speed: 500,
@@ -3913,7 +3913,7 @@ export default function SetClothesWear() {
                                         className={` absolute top-[7px] right-2 group w-9 h-9 hover:w-[120px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
                                     >
                                         <span className="  flex flex-nowrap items-center ml-[-100px] group-hover:ml-[12px]  not-italic overflow-hidden p-[1px] duration-300   font-AeonikProRegular leading-3  text-black text-sm ">
-                                        Структура
+                                        Строение
                                         </span>
                                         <span className="w-8 h-8 flex items-center justify-center">
                                         <img
@@ -4006,18 +4006,17 @@ export default function SetClothesWear() {
             className="overscroll-y-none"
         >
             <div className="w-full flex frex-row h-[800px]">
-                <div className=" w-[55%] flex items-center justify-center border-r border-searchBgColor">
-                      <Slider {...modalSlider}>
+                <div className="w-[55%] flex items-center justify-center  border-r border-searchBgColor">
+                      <Slider {...modalSlider} className="h-full flex items-center">
                           {modelsList?.map((item) => {
                             return (
-                                <div key={item?.id}>
+                                <div key={item?.id} className="ml-[180px]">
                                     <img src={item.modelImg} alt="" />
                                 </div>
                             )
                           })}
                           
                       </Slider>
-                    {/* <img src={model1} alt="" /> */}
                 </div>
                 <div className="w-[45%] flex flex-col justify-items-end">
                     
