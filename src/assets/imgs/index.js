@@ -230,6 +230,14 @@ export { default as noProductImg } from './Weather/noImg.svg'
 
 // ------------------------Yandex Maps------------
 export { default as markerIcons } from './maps/markerIcons.svg'
+export { default as searchIcons } from './maps/SearchMaps.svg'
+export { default as locationIcons } from './maps/locationMaps.svg'
+export { default as MenuOpen } from './maps/MenuOpen.svg'
+export { default as MenuClose } from './maps/MenuClose.svg'
+export { default as ColorLessLocation } from './maps/locationColorLess.svg'
+export { default as ClothesHang } from './maps/clothes hanger.svg'
+export { default as Clock } from './maps//clock.svg'
+export { default as shirtMaps } from './maps/shirtsMaps.svg'
 
 // ------------------------SignIn------------
 export { default as SignInSpring } from './formImgs/Signin/SignInSpring.svg'

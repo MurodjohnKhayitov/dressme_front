@@ -38,6 +38,9 @@ module.exports = {
         // yandex navbar
         yandexNavbar: " rgba(255, 255, 255, 0.8)",
         yandexWhite: " #FFFFFF",
+
+        // Icons Colors
+        Alyuminy: "#4D4D4D",
       },
       fontFamily: {
         // Chrome for

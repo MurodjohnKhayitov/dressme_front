@@ -44,12 +44,7 @@ const clothingTypes = [
 const Footer = () => {
     const [dressInfo, setDressInfo] = useContext(dressMainData)
 
-    const BrandTypeArray = [
-        { id: 1111, type: "Spring", icons: springBrand },
-        { id: 2222, type: "Summer", icons: summerBrand },
-        { id: 3333, type: "Autumm", icons: autummBrand },
-        { id: 4444, type: "Winter", icons: winterBrand },
-    ]
+  
     const PersonTypeArray = [
         { id: 1111, man: SpringMale, woman: SpringFemale, boy: SpringBoy, girl: SpringGirl, childs: SpringChild },
         { id: 2222, man: SummerMale, woman: SummerFemale, boy: SummerBoy, girl: SummerGirl, childs: SummerChild },
