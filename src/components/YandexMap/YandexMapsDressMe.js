@@ -14,20 +14,35 @@ import {
   Placemark,
   Clusterer,
 } from "react-yandex-maps";
-import { markerIcons } from "../../assets/imgs";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { MdClose } from "react-icons/md";
+import {
+  Clock,
+  ClothesHang,
+  ColorLessLocation,
+  MenuClose,
+  MenuOpen,
+  locationIcons,
+  markerIcons,
+  searchIcons,
+  shirtMaps,
+  shop,
+  star,
+} from "../../assets/imgs";
+
 import { useState } from "react";
 import "./yandex.css";
 import YandexMapsIndex from "./YandexMapsNavbar/YandexMapsIndex";
 import { dressMainData } from "../../ContextHook/ContextMenu";
+import { GrFormDown } from "react-icons/gr";
+import NavbarTopOpenMenu from "./YandexMapsNavbar/NavbarTopOpenMenu";
 function YandexMapsDressMe() {
-  const [openMenuYandex, setOpenMenuYandex] = useState(false);
+  // const [openMenuYandex, setOpenMenuYandex] = useState(false);
+
   const map = React.createRef();
   const ymaps = React.createRef();
-  const points = [
+  const [points, setPoints] = useState([
     {
       id: 1,
+      accordion: false,
       address: "Ильинское-Усово (Московская область) Заповедная улица",
       workTime: "Ежедневно 08:00-22:00",
       star: "4.55",
@@ -38,6 +53,7 @@ function YandexMapsDressMe() {
     },
     {
       id: 2,
+      accordion: false,
       address: "Ильинское-Усово (Московская область) Заповедная улица",
       workTime: "Ежедневно 08:00-22:00",
       star: "4.55",
@@ -48,6 +64,7 @@ function YandexMapsDressMe() {
     },
     {
       id: 3,
+      accordion: false,
       address: "Ильинское-Усово (Московская область) Заповедная улица",
       workTime: "Ежедневно 08:00-22:00",
       star: "4.55",
@@ -58,6 +75,7 @@ function YandexMapsDressMe() {
     },
     {
       id: 4,
+      accordion: false,
       address: "Ильинское-Усово (Московская область) Заповедная улица",
       workTime: "Ежедневно 08:00-22:00",
       star: "4.55",
@@ -68,6 +86,7 @@ function YandexMapsDressMe() {
     },
     {
       id: 5,
+      accordion: false,
       address: "Ильинское-Усово (Московская область) Заповедная улица",
       workTime: "Ежедневно 08:00-22:00",
       star: "4.55",
@@ -78,6 +97,7 @@ function YandexMapsDressMe() {
     },
     {
       id: 6,
+      accordion: false,
       address: "Ильинское-Усово (Московская область) Заповедная улица",
       workTime: "Ежедневно 08:00-22:00",
       star: "4.55",
@@ -88,6 +108,7 @@ function YandexMapsDressMe() {
     },
     {
       id: 7,
+      accordion: false,
       address: "Ильинское-Усово (Московская область) Заповедная улица",
       workTime: "Ежедневно 08:00-22:00",
       star: "4.55",
@@ -98,6 +119,7 @@ function YandexMapsDressMe() {
     },
     {
       id: 8,
+      accordion: false,
       address: "Ильинское-Усово (Московская область) Заповедная улица",
       workTime: "Ежедневно 08:00-22:00",
       star: "4.55",
@@ -108,6 +130,7 @@ function YandexMapsDressMe() {
     },
     {
       id: 9,
+      accordion: false,
       address: "Ильинское-Усово (Московская область) Заповедная улица",
       workTime: "Ежедневно 08:00-22:00",
       star: "4.55",
@@ -118,6 +141,7 @@ function YandexMapsDressMe() {
     },
     {
       id: 10,
+      accordion: false,
       address: "Ильинское-Усово (Московская область) Заповедная улица",
       workTime: "Ежедневно 08:00-22:00",
       star: "4.55",
@@ -128,6 +152,7 @@ function YandexMapsDressMe() {
     },
     {
       id: 11,
+      accordion: false,
       address: "Ильинское-Усово (Московская область) Заповедная улица",
       workTime: "Ежедневно 08:00-22:00",
       star: "4.55",
@@ -138,6 +163,7 @@ function YandexMapsDressMe() {
     },
     {
       id: 12,
+      accordion: false,
       address: "Ильинское-Усово (Московская область) Заповедная улица",
       workTime: "Ежедневно 08:00-22:00",
       star: "4.55",
@@ -146,29 +172,40 @@ function YandexMapsDressMe() {
         'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
       cordinate: [41.282263, 69.216182],
     },
-  ];
+  ]);
   const [dressInfo, setDressInfo] = useContext(dressMainData);
 
-  let hoverText = "";
-
-  if (dressInfo?.type === 1111) {
-    hoverText = " borderSpring ";
-  }
-  if (dressInfo?.type === 2222) {
-    hoverText = " borderSummer ";
-  }
-  if (dressInfo?.type === 3333) {
-    hoverText = " borderAutumm ";
-  }
-  if (dressInfo?.type === 4444) {
-    hoverText = " borderWinter ";
-  }
+  const handleToggleMenu = () => {
+    setDressInfo({ ...dressInfo, yandexOpenMenu: !dressInfo?.yandexOpenMenu });
+    // setOpenMenuYandex(!dressInfo);
+  };
+  console.log(dressInfo?.yandexOpenMenu, "dressInfo");
+  const handleAccordion = (value) => {
+    setPoints((current) => {
+      return current?.map((data) => {
+        if (data?.id == value) {
+          return { ...data, accordion: !data.accordion };
+        } else return data;
+      });
+    });
+  };
 
   return (
-    <div className=" h-fit w-full flex justify-center  ">
+    <div className=" h-fit w-full flex justify-center overflow-x-none  ">
       <div className="w-[100%] h-[100vh] border-b border-searchBgColor overflow-hidden">
-        <div className="absolute z-50 top-0  w-full">
+        <div
+          className={`absolute z-50  ${
+            !dressInfo?.yandexOpenMenu ? "top-0 duration-300 " : "top-[-250px] duration-300 "
+          }  duration-300 w-full`}
+        >
           <YandexMapsIndex />
+        </div>
+        <div
+          className={`absolute z-50  ${
+            dressInfo?.yandexOpenMenu ? "top-2 duration-300 " : "top-[-250px] duration-300 "
+          }  duration-300 w-full ml-[450px]`}
+        >
+          <NavbarTopOpenMenu />
         </div>
         <YMaps
           className="w-full"
@@ -226,47 +263,211 @@ function YandexMapsDressMe() {
               ))}
             </Clusterer>
             <div className="relative">
-              <div
-                onClick={() => setOpenMenuYandex(!openMenuYandex)}
-                className="absolute cursor-pointer top-[9px] right-2 z-20 bg-white overflow-hidden rounded w-[30px] h-[30px] border border-searchBgColor shadow-md"
-              >
-                <div className="flex items-center justify-center w-full h-full">
-                  {openMenuYandex ? (
-                    <MdClose size={20} />
-                  ) : (
-                    <RxHamburgerMenu size={20} />
-                  )}
+              <div className="absolute cursor-pointer top-[16px] left-[16px] z-50 bg-white shadow-lg overflow-hidden rounded w-[141px] h-[40px] ">
+                <div
+                  onClick={handleToggleMenu}
+                  className="flex items-center justify-center  cursor-pointer w-full h-full "
+                >
+                  <div className="w-full h-full  select-none cursor-pointer flex items-center justify-around ">
+                    <span>
+                      {" "}
+                      <img src={MenuOpen} alt="" />
+                    </span>
+                    <span className="not-italic font-AeonikProMedium text-[16px] leading-[120%] text-black tracking-[1%]">
+                      Магазины
+                    </span>
+                  </div>
                 </div>{" "}
               </div>
               <div
                 className={`${
-                  openMenuYandex ? " ml-[0px]" : "  ml-[-1000px]"
-                } absolute cursor-pointer top-[0px] left-0 z-20 h-[550px] overflow-hidden w-[380px] p-4 duration-500 bg-white   border-r border-searchBgColor`}
+                  dressInfo?.yandexOpenMenu ? " ml-[0px]" : "  ml-[-1000px]"
+                } absolute cursor-pointer top-2 left-2 z-50 h-[100vh] rounded-lg overflow-hidden w-[436px] p-2 duration-500 bg-yandexNavbar backdrop-blur-sm	   border border-searchBgColor`}
               >
-                <div className="w-full py-2 not-italic font-AeonikProMedium text-xl leading-8 text-black">
-                  Выберите адрес доставки
+                <div
+                  onClick={handleToggleMenu}
+                  className="w-full h-[42px] flex items-center justify-center  "
+                >
+                  {" "}
+                  <div className="absolute left-2 top-2 w-[40px] h-[40px] rounded-lg bg-white  border border-searchBgColor flex items-center justify-center">
+                    <img src={MenuClose} alt="" />
+                  </div>
+                  <div className="w-fit ">
+                    <span className="not-italic font-AeonikProMedium text-xl leading-6 text-center tracking-[1%] text-black">
+                      Магазины
+                    </span>
+                  </div>
                 </div>
-                <div className="w-full h-[85%] mt-3 pr-1 overflow-y-auto   YandexListScroll">
+                <div className="w-full h-12 flex items-center justify-between px-3 rounded-lg bg-white mt-3 border border-searchBgColor">
+                  <div className="w-fit pr-3">
+                    <img src={shop} alt="" className="w-6 h-6" />
+                  </div>
+                  <div className="w-[82%] h-full  ">
+                    <input
+                      className="w-[100%] h-full "
+                      type="text"
+                      name="search"
+                      placeholder="Поиск магазина (имя или район)"
+                    />
+                  </div>
+                  <div className="w-fit border-l pl-3 border-searchBgColor">
+                    <button type="button">
+                      <svg
+                        width="19"
+                        height="19"
+                        viewBox="0 0 19 19"
+                        // className=" fill-Alyuminy "
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M7.50019 9.11702e-08C6.33057 0.000275652 5.17723 0.274097 4.13231 0.799587C3.0874 1.32508 2.17986 2.08767 1.48222 3.02644C0.78457 3.96521 0.316154 5.05413 0.114389 6.20621C-0.0873753 7.35829 -0.0168949 8.54159 0.320199 9.66157C0.657294 10.7816 1.25166 11.8072 2.05581 12.6565C2.85995 13.5058 3.8516 14.1553 4.9515 14.553C6.05141 14.9508 7.2291 15.0857 8.39048 14.9472C9.55186 14.8086 10.6647 14.4004 11.6402 13.755L15.5862 18.415C15.772 18.6007 15.9926 18.748 16.2353 18.8484C16.4781 18.9488 16.7382 19.0005 17.0009 19.0004C17.2636 19.0003 17.5237 18.9485 17.7664 18.8479C18.009 18.7472 18.2295 18.5998 18.4152 18.414C18.6009 18.2282 18.7481 18.0076 18.8486 17.7649C18.949 17.5221 19.0007 17.262 19.0006 16.9993C19.0005 16.7366 18.9487 16.4765 18.848 16.2338C18.7474 15.9912 18.6 15.7707 18.4142 15.585L13.7552 11.64C14.5034 10.5097 14.9314 9.19773 14.9935 7.84362C15.0556 6.48951 14.7495 5.14389 14.1079 3.94984C13.4662 2.75579 12.513 1.75796 11.3495 1.06246C10.186 0.366956 8.85572 -0.000211234 7.50019 9.11702e-08ZM2.00019 7.5C2.00019 6.04131 2.57965 4.64236 3.6111 3.61091C4.64255 2.57946 6.0415 2 7.50019 2C8.95888 2 10.3578 2.57946 11.3893 3.61091C12.4207 4.64236 13.0002 6.04131 13.0002 7.5C13.0002 8.95869 12.4207 10.3576 11.3893 11.3891C10.3578 12.4205 8.95888 13 7.50019 13C6.0415 13 4.64255 12.4205 3.6111 11.3891C2.57965 10.3576 2.00019 8.95869 2.00019 7.5Z"
+                          fill="#4D4D4D"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div className="w-full h-[80vh] mt-3 py-1 flex flex-col gap-y-2 overflow-auto   YandexListScroll ">
                   {points?.map((data) => {
                     return (
                       <div
                         key={data?.id}
-                        className="w-full h-[100px]  hover:bg-bgColor p-[6px] hover:rounded-lg focus:border border-searchBgColor"
+                        className={`w-full ${
+                          data?.accordion ? "!h-[426px]" : "!h-[202px]"
+                        }  p-4 flex flex-col gap-y-[11px] rounded-lg  bg-white border border-searchBgColor`}
                       >
-                        <div>
-                          <span className="not-italic font-AeonikProRegular text-[15px] leading-4 text-black tracking-wide">
-                            {data?.address}{" "}
+                        <div className="w-full flex justify-between">
+                          <span className="not-italic font-AeonikProMedium text-lg leading-5 text-black tracking-[1%]">
+                            Button (Чиланзар)
+                          </span>
+                          <span className="flex">
+                            <span>
+                              <img src={star} alt="" />
+                            </span>
+                            <span className="not-italic ml-[6px] flex font-AeonikProMedium text-lg leading-5 text-black tracking-[1%]">
+                              4.8
+                            </span>
                           </span>
                         </div>
-                        <div>
-                          {" "}
-                          <span className="not-italic font-AeonikProRegular leading-3 text-yandexText text-[15px]">
-                            {data?.workTime}
+                        <div className="w-full flex">
+                          <span>
+                            <img src={ColorLessLocation} alt="" />
                           </span>
-                          <span className="not-italic font-AeonikProRegular leading-3 text-yandexText text-[15px] ml-4">
-                            Примерочные: {data?.imgs.length}
+                          <span className="w-[70%] not-italic ml-4 font-AeonikProRegular text-base leading-5 text-setTexOpacity">
+                            г. Ташкент, Чиланзарский район, квартал-7, д 45б
+                            (Катартал)
                           </span>
                         </div>
+                        <div className="w-full flex items-center">
+                          <span>
+                            <img src={ClothesHang} alt="" />
+                          </span>
+                          <span className="not-italic ml-4 font-AeonikProRegular text-base leading-4 text-black tracking-[1%]">
+                            Есть примерочная
+                          </span>
+                        </div>
+                        <div
+                          onClick={() => handleAccordion(data.id)}
+                          className="w-full flex items-center justify-between"
+                        >
+                          <div className="flex items-center ">
+                            <span>
+                              <img src={Clock} alt="" />
+                            </span>
+                            <span className="not-italic ml-4 font-AeonikProRegular text-base leading-4 text-black tracking-[1%]">
+                              10:00 - 20:00, без выходных
+                            </span>
+                          </div>{" "}
+                          <div className="flex items-center justify-end">
+                            <span
+                              className={`${
+                                data?.accordion
+                                  ? "rotate-[-180deg]"
+                                  : "rotate-0"
+                              } duration-300`}
+                            >
+                              <GrFormDown size={20} />
+                            </span>
+                          </div>
+                        </div>
+                        {data?.accordion ? (
+                          <div className="h-fit  flex flex-col justify-center w-full">
+                            <div className="w-[80%] h-[2px] bg-OpacitySignIn mx-auto  mb-6 mt-4"></div>
+                            <div className="flex flex-col gap-y-5">
+                              <div className=" flex justify-between items-center">
+                                <div className="flex items-center">
+                                  <span>
+                                    <img src={shirtMaps} alt="" />
+                                  </span>
+                                  <span className="ml-4 not-italic font-AeonikProMedium text-base leading-4 text-black">
+                                    Футболки
+                                  </span>
+                                </div>
+                                <div className="flex justify-end items-center">
+                                  <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-setTexOpacity">
+                                    от
+                                    <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-black">
+                                      {" "}
+                                      59 000{" "}
+                                    </span>
+                                    сум
+                                  </span>
+                                </div>
+                              </div>
+                              <div className=" flex justify-between items-center">
+                                <div className="flex items-center">
+                                  <span>
+                                    <img src={shirtMaps} alt="" />
+                                  </span>
+                                  <span className="ml-4 not-italic font-AeonikProMedium text-base leading-4 text-black">
+                                    Футболки
+                                  </span>
+                                </div>
+                                <div className="flex justify-end items-center">
+                                  <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-setTexOpacity">
+                                    от
+                                    <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-black">
+                                      {" "}
+                                      59 000{" "}
+                                    </span>
+                                    сум
+                                  </span>
+                                </div>
+                              </div>
+                              <div className=" flex justify-between items-center">
+                                <div className="flex items-center">
+                                  <span>
+                                    <img src={shirtMaps} alt="" />
+                                  </span>
+                                  <span className="ml-4 not-italic font-AeonikProMedium text-base leading-4 text-black">
+                                    Футболки
+                                  </span>
+                                </div>
+                                <div className="flex justify-end items-center">
+                                  <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-setTexOpacity">
+                                    от
+                                    <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-black">
+                                      {" "}
+                                      59 000{" "}
+                                    </span>
+                                    сум
+                                  </span>
+                                </div>
+                              </div>{" "}
+                            </div>
+                            <div className="w-[80%] h-[2px] bg-OpacitySignIn mx-auto  mt-6"></div>
+                            <div className="w-full h-12 mt-3 flex justify-center items-center rounded-lg bg-searchBgColor border border-OpacitySignIn">
+                              <span>
+                                <img src={shop} alt="" />
+                              </span>
+                              <span className="ml-3 not-italic font-AeonikProMedium text-base leading-4 text-right text-black">
+                                Посетит страницу магазина
+                              </span>
+                            </div>
+                          </div>
+                        ) : null}
                       </div>
                     );
                   })}
@@ -274,89 +475,56 @@ function YandexMapsDressMe() {
               </div>
             </div>
             {/* <div className="absolute border border-red-500 bottom-0 w-full border "> */}
-            <div className="absolute bottom-[24px] left-1/2 right-1/2 translate-x-[-50%] translate-y-[-50%] rounded-lg overflow-hidden z-50 bg-yandexNavbar backdrop-blur-sm rounded-lg h-[48px] w-[400px] shadow-lg">
-              <div className="w-full h-full border border-black flex justify-between border border-green-500">
-                <div className="w-[80%] h-full flex gap-x-2 items-center border border-red-400">
-                  <svg
-                    width="22"
-                    height="22"
-                    viewBox="0 0 22 22"
-                    className="group fill-green-500 hover:fill-black"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10.986 14.0673C7.4407 14.0673 4.41309 14.6034 4.41309 16.7501C4.41309 18.8969 7.4215 19.4521 10.986 19.4521C14.5313 19.4521 17.5581 18.9152 17.5581 16.7693C17.5581 14.6235 14.5505 14.0673 10.986 14.0673Z"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+            <div
+              className="absolute bottom-[24px] left-1/2 right-1/2 translate-x-[-50%] translate-y-[-50%]  overflow-hidden z-50 bg-yandexNavbar backdrop-blur-sm rounded-lg
+             h-[48px] w-fit shadow-lg"
+            >
+              <div className="w-full h-full flex justify-between ">
+                <div className="w-[100%] h-full flex gap-x-2 items-center px-3">
+                  <div>
+                    <img src={locationIcons} alt="" />
+                  </div>
+                  <div className="h-full flex items-center w-[240px] mx-3">
+                    <input
+                      type="text"
+                      name="search"
+                      className="h-full  w-full bg-transparent"
+                      placeholder="Поиск мест и адресов"
                     />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10.9861 11.0054C13.3126 11.0054 15.1984 9.11883 15.1984 6.79224C15.1984 4.46565 13.3126 2.57994 10.9861 2.57994C8.65946 2.57994 6.77285 4.46565 6.77285 6.79224C6.76502 9.11097 8.63851 10.9976 10.9564 11.0054H10.9861Z"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    className={`group fill-yellow-500 hover:fill-black`}
-                  >
-                    <path d="M5,20.5A3.5,3.5 0 0,1 1.5,17A3.5,3.5 0 0,1 5,13.5A3.5,3.5 0 0,1 8.5,17A3.5,3.5 0 0,1 5,20.5M5,12A5,5 0 0,0 0,17A5,5 0 0,0 5,22A5,5 0 0,0 10,17A5,5 0 0,0 5,12M14.8,10H19V8.2H15.8L13.86,4.93C13.57,4.43 13,4.1 12.4,4.1C11.93,4.1 11.5,4.29 11.2,4.6L7.5,8.29C7.19,8.6 7,9 7,9.5C7,10.13 7.33,10.66 7.85,10.97L11.2,13V18H13V11.5L10.75,9.85L13.07,7.5M19,20.5A3.5,3.5 0 0,1 15.5,17A3.5,3.5 0 0,1 19,13.5A3.5,3.5 0 0,1 22.5,17A3.5,3.5 0 0,1 19,20.5M19,12A5,5 0 0,0 14,17A5,5 0 0,0 19,22A5,5 0 0,0 24,17A5,5 0 0,0 19,12M16,4.8C17,4.8 17.8,4 17.8,3C17.8,2 17,1.2 16,1.2C15,1.2 14.2,2 14.2,3C14.2,4 15,4.8 16,4.8Z"></path>
-                  </svg>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    className={`group fill-${hoverText}`}
-                  >
-                    <path d="M11.5,22C11.64,22 11.77,22 11.9,21.96C12.55,21.82 13.09,21.38 13.34,20.78C13.44,20.54 13.5,20.27 13.5,20H9.5A2,2 0 0,0 11.5,22M18,10.5C18,7.43 15.86,4.86 13,4.18V3.5A1.5,1.5 0 0,0 11.5,2A1.5,1.5 0 0,0 10,3.5V4.18C7.13,4.86 5,7.43 5,10.5V16L3,18V19H20V18L18,16M19.97,10H21.97C21.82,6.79 20.24,3.97 17.85,2.15L16.42,3.58C18.46,5 19.82,7.35 19.97,10M6.58,3.58L5.15,2.15C2.76,3.97 1.18,6.79 1,10H3C3.18,7.35 4.54,5 6.58,3.58Z"></path>
-                  </svg>
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    className="group fill-yellow-500 hover:fill-black"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12.224 6.37335L8.74667 9.85069C8.336 10.2614 7.664 10.2614 7.25333 9.85069L3.776 6.37335"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    className="group fill-yellow-500 hover:fill-black"
-                  >
-                    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
-                  </svg>
+                  </div>
+                  <button type="button">
+                    <svg
+                      width="19"
+                      height="19"
+                      viewBox="0 0 19 19"
+                      // className=" fill-Alyuminy "
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M7.50019 9.11702e-08C6.33057 0.000275652 5.17723 0.274097 4.13231 0.799587C3.0874 1.32508 2.17986 2.08767 1.48222 3.02644C0.78457 3.96521 0.316154 5.05413 0.114389 6.20621C-0.0873753 7.35829 -0.0168949 8.54159 0.320199 9.66157C0.657294 10.7816 1.25166 11.8072 2.05581 12.6565C2.85995 13.5058 3.8516 14.1553 4.9515 14.553C6.05141 14.9508 7.2291 15.0857 8.39048 14.9472C9.55186 14.8086 10.6647 14.4004 11.6402 13.755L15.5862 18.415C15.772 18.6007 15.9926 18.748 16.2353 18.8484C16.4781 18.9488 16.7382 19.0005 17.0009 19.0004C17.2636 19.0003 17.5237 18.9485 17.7664 18.8479C18.009 18.7472 18.2295 18.5998 18.4152 18.414C18.6009 18.2282 18.7481 18.0076 18.8486 17.7649C18.949 17.5221 19.0007 17.262 19.0006 16.9993C19.0005 16.7366 18.9487 16.4765 18.848 16.2338C18.7474 15.9912 18.6 15.7707 18.4142 15.585L13.7552 11.64C14.5034 10.5097 14.9314 9.19773 14.9935 7.84362C15.0556 6.48951 14.7495 5.14389 14.1079 3.94984C13.4662 2.75579 12.513 1.75796 11.3495 1.06246C10.186 0.366956 8.85572 -0.000211234 7.50019 9.11702e-08ZM2.00019 7.5C2.00019 6.04131 2.57965 4.64236 3.6111 3.61091C4.64255 2.57946 6.0415 2 7.50019 2C8.95888 2 10.3578 2.57946 11.3893 3.61091C12.4207 4.64236 13.0002 6.04131 13.0002 7.5C13.0002 8.95869 12.4207 10.3576 11.3893 11.3891C10.3578 12.4205 8.95888 13 7.50019 13C6.0415 13 4.64255 12.4205 3.6111 11.3891C2.57965 10.3576 2.00019 8.95869 2.00019 7.5Z"
+                        fill="#4D4D4D"
+                      />
+                    </svg>
+                  </button>
                 </div>
-                <div className="w-[20%] h-full flex items-center border border-red-400">
-                  <RouteEditor
-                    options={{
-                      position: { bottom: "auto", right: "auto" },
-                    }}
-                  />
-                </div>
+                {/* <div className="w-[20%] h-full flex items-center border border-red-400"></div> */}
               </div>
             </div>
             {/* </div> */}
             {/* ---------- */}
             <GeolocationControl
-              options={{ float: "right", position: { bottom: 40, right: 10 } }}
+              options={{
+                float: "right",
+                position: { bottom: 250, right: 10 },
+              }}
             />
             <ZoomControl
-              options={{ float: "right", position: { bottom: 100, right: 10 } }}
+              options={{
+                float: "right",
+                position: { bottom: 300, right: 10 },
+              }}
             />
 
             {/* <SearchControl
