@@ -56,6 +56,7 @@ export { default as catalogBlack } from './catalog-black.svg'
 export { default as feedbackIcon } from './feedback-icon.svg'
 export { default as inputCheckBlack } from './checked-black.svg'
 export { default as arrowRightCircle } from './arrow-right-circle.svg'
+export { default as arrowLeftCircle } from './arrow-left-circle.svg'
 export { default as modelToSet } from './model-to-set.svg'
 
 
