@@ -852,10 +852,10 @@ export default function SetClothesWear() {
         },
       ],
       modelsList: [
-        { id: 1, modelImg: modelImg1 },
-        { id: 2, modelImg: modelImg2 },
-        { id: 3, modelImg: modelImg3 },
-        { id: 4, modelImg: modelImg4 },
+        { id: 1, modelImg: modelImg1, text:"hello world" },
+        { id: 2, modelImg: modelImg2, text:"hello world" },
+        { id: 3, modelImg: modelImg3, text:"hello world" },
+        { id: 4, modelImg: modelImg4, text:"hello world" },
       ],
     },
     {
@@ -1696,10 +1696,10 @@ export default function SetClothesWear() {
         },
       ],
       modelsList: [
-        { id: 1, modelImg: require("../../../assets/imgs/Models/model1.svg") },
-        { id: 2, modelImg: require("../../../assets/imgs/Models/model2.svg") },
-        { id: 3, modelImg: require("../../../assets/imgs/Models/model3.svg") },
-        { id: 4, modelImg: require("../../../assets/imgs/Models/model4.svg") },
+        { id: 1, modelImg: modelImg1 },
+        { id: 2, modelImg: modelImg2 },
+        { id: 3, modelImg: modelImg3 },
+        { id: 4, modelImg: modelImg4 },
       ],
     },
     {
@@ -2540,10 +2540,10 @@ export default function SetClothesWear() {
         },
       ],
       modelsList: [
-        // { id: 1, modelImg: require("../../../assets/imgs/Models/model1.svg") },
-        // { id: 2, modelImg: require("../../../assets/imgs/Models/model2.svg") },
-        // { id: 3, modelImg: require("../../../assets/imgs/Models/model3.svg") },
-        // { id: 4, modelImg: require("../../../assets/imgs/Models/model4.svg") },
+        { id: 1, modelImg: modelImg1 },
+        { id: 2, modelImg: modelImg2 },
+        { id: 3, modelImg: modelImg3 },
+        { id: 4, modelImg: modelImg4 },
       ],
     },
     {
@@ -3384,10 +3384,10 @@ export default function SetClothesWear() {
         },
       ],
       modelsList: [
-        // { id: 1, modelImg: require("../../../assets/imgs/Models/model1.svg") },
-        // { id: 2, modelImg: require("../../../assets/imgs/Models/model2.svg") },
-        // { id: 3, modelImg: require("../../../assets/imgs/Models/model3.svg") },
-        // { id: 4, modelImg: require("../../../assets/imgs/Models/model4.svg") },
+        { id: 1, modelImg: modelImg1 },
+        { id: 2, modelImg: modelImg2 },
+        { id: 3, modelImg: modelImg3 },
+        { id: 4, modelImg: modelImg4 },
       ],
     },
   ]);
@@ -3596,7 +3596,7 @@ export default function SetClothesWear() {
     afterChange: (current) =>
       setGetSliderId({ ...getSliderId, accessoryId: current + 1 }),
   };
-  let modalSlider = {
+  let modelsSlider = {
     nextArrow: <NextArrowModalSlider />,
     prevArrow: <PrevArrowModalSlider />,
     dots: true,
@@ -4005,18 +4005,23 @@ export default function SetClothesWear() {
             footer={null}
             className="overscroll-y-none"
         >
-            <div className="w-full flex frex-row h-[800px]">
+            <div className="modelSlider w-full flex frex-row h-[800px]">
                 <div className="w-[55%] flex items-center justify-center  border-r border-searchBgColor">
-                      <Slider {...modalSlider} className="h-full flex items-center">
-                          {modelsList?.map((item) => {
+                      {modelsList.length >= 2 ? (
+                        <Slider {...modelsSlider} className="w-full h-full flex items-center">
+                          {modelsList?.map((data,index) => {
                             return (
-                                <div key={item?.id} className="ml-[180px]">
-                                    <img src={item.modelImg} alt="" />
+                                <div key={index} className="ml-[180px]">
+                                    {/* <img src={data.modelImg} alt="img" /> */}
+                                    <div>{data.text}</div>
                                 </div>
                             )
-                          })}
-                          
-                      </Slider>
+                          })}  
+                        </Slider>
+                      ) : (
+                          <img src={model1} alt="img" /> 
+                      )}         
+                      
                 </div>
                 <div className="w-[45%] flex flex-col justify-items-end">
                     
