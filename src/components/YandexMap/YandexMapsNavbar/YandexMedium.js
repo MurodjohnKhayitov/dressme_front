@@ -105,26 +105,37 @@ const YandexMedium = () => {
   let dataStyle = "";
   let genderStyle = "";
   let hoverText = "";
+
+  let IconsColor = "";
+
   if (dressInfo?.type === 1111) {
     dataStyle = "bg-bgSpring bg-opacity-10	  text-borderSpring ";
     hoverText = " hover:text-borderSpring ";
+    IconsColor =
+      "items-center justify-center bg-white rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex border border-borderSpring text-borderSpring";
     genderStyle =
       "focus:text-borderSpring focus:bg-bgSpring focus:border focus:border-borderSpring focus:text-borderSpring";
   }
   if (dressInfo?.type === 2222) {
     dataStyle = "bg-bgSummer  bg-opacity-10  text-borderSummer";
+    IconsColor =
+      "items-center justify-center bg-white rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex border border-borderSummer text-borderSummer";
     hoverText = " hover:text-borderSummer ";
     genderStyle =
       "focus:text-borderSummer focus:bg-bgSummer focus:border focus:border-borderSummer focus:text-borderSummer";
   }
   if (dressInfo?.type === 3333) {
     dataStyle = "bg-bgAutumm bg-opacity-10  text-borderAutumm";
+    IconsColor =
+      "items-center justify-center bg-white rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex border border-borderAutumm text-borderAutumm";
     hoverText = " hover:text-borderAutumm ";
     genderStyle =
       "focus:text-borderAutumm focus:bg-bgAutumm focus:border focus:border-borderAutumm focus:text-borderAutumm";
   }
   if (dressInfo?.type === 4444) {
     dataStyle = "bg-bgWinter bg-opacity-10  text-borderWinter";
+    IconsColor =
+      "items-center justify-center bg-white rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex border border-borderWinter text-borderWinter";
     hoverText = " hover:text-borderWinter ";
     genderStyle =
       "focus:text-borderWinter focus:bg-bgWinter focus:border focus:border-borderWinter focus:text-borderWinter";
@@ -554,7 +565,12 @@ const YandexMedium = () => {
           {/* Map section */}
           <NavLink
             to="/delivery-points"
-            className="items-center justify-center bg-white rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex"
+            className={({ isActive }) =>
+              isActive
+                ? IconsColor
+                : "items-center justify-center bg-white rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex"
+            }
+            // className={`items-center justify-center bg-white rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex`}
           >
             <img src={map} alt="map" className="pr-[6px]" />
             <span className="font-AeonikProMedium text-sm  ">Карта</span>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import {
   YMaps,
@@ -10,7 +10,7 @@ import {
   TrafficControl,
   TypeSelector,
   RulerControl,
-  ObjectManager,
+  RouteEditor,
   Placemark,
   Clusterer,
 } from "react-yandex-maps";
@@ -20,6 +20,7 @@ import { MdClose } from "react-icons/md";
 import { useState } from "react";
 import "./yandex.css";
 import YandexMapsIndex from "./YandexMapsNavbar/YandexMapsIndex";
+import { dressMainData } from "../../ContextHook/ContextMenu";
 function YandexMapsDressMe() {
   const [openMenuYandex, setOpenMenuYandex] = useState(false);
   const map = React.createRef();
@@ -146,6 +147,22 @@ function YandexMapsDressMe() {
       cordinate: [41.282263, 69.216182],
     },
   ];
+  const [dressInfo, setDressInfo] = useContext(dressMainData);
+
+  let hoverText = "";
+
+  if (dressInfo?.type === 1111) {
+    hoverText = " borderSpring ";
+  }
+  if (dressInfo?.type === 2222) {
+    hoverText = " borderSummer ";
+  }
+  if (dressInfo?.type === 3333) {
+    hoverText = " borderAutumm ";
+  }
+  if (dressInfo?.type === 4444) {
+    hoverText = " borderWinter ";
+  }
 
   return (
     <div className=" h-fit w-full flex justify-center  ">
@@ -211,7 +228,7 @@ function YandexMapsDressMe() {
             <div className="relative">
               <div
                 onClick={() => setOpenMenuYandex(!openMenuYandex)}
-                className="absolute cursor-pointer top-[9px] right-2 z-50 bg-white overflow-hidden rounded w-[30px] h-[30px] border border-searchBgColor shadow-md"
+                className="absolute cursor-pointer top-[9px] right-2 z-20 bg-white overflow-hidden rounded w-[30px] h-[30px] border border-searchBgColor shadow-md"
               >
                 <div className="flex items-center justify-center w-full h-full">
                   {openMenuYandex ? (
@@ -224,7 +241,7 @@ function YandexMapsDressMe() {
               <div
                 className={`${
                   openMenuYandex ? " ml-[0px]" : "  ml-[-1000px]"
-                } absolute cursor-pointer top-[0px] left-0 z-50 h-[550px] overflow-hidden w-[380px] p-4 duration-500 bg-white   border-r border-searchBgColor`}
+                } absolute cursor-pointer top-[0px] left-0 z-20 h-[550px] overflow-hidden w-[380px] p-4 duration-500 bg-white   border-r border-searchBgColor`}
               >
                 <div className="w-full py-2 not-italic font-AeonikProMedium text-xl leading-8 text-black">
                   Выберите адрес доставки
@@ -256,25 +273,99 @@ function YandexMapsDressMe() {
                 </div>
               </div>
             </div>
+            {/* <div className="absolute border border-red-500 bottom-0 w-full border "> */}
+            <div className="absolute bottom-[24px] left-1/2 right-1/2 translate-x-[-50%] translate-y-[-50%] rounded-lg overflow-hidden z-50 bg-yandexNavbar backdrop-blur-sm rounded-lg h-[48px] w-[400px] shadow-lg">
+              <div className="w-full h-full border border-black flex justify-between border border-green-500">
+                <div className="w-[80%] h-full flex gap-x-2 items-center border border-red-400">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 22 22"
+                    className="group fill-green-500 hover:fill-black"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10.986 14.0673C7.4407 14.0673 4.41309 14.6034 4.41309 16.7501C4.41309 18.8969 7.4215 19.4521 10.986 19.4521C14.5313 19.4521 17.5581 18.9152 17.5581 16.7693C17.5581 14.6235 14.5505 14.0673 10.986 14.0673Z"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10.9861 11.0054C13.3126 11.0054 15.1984 9.11883 15.1984 6.79224C15.1984 4.46565 13.3126 2.57994 10.9861 2.57994C8.65946 2.57994 6.77285 4.46565 6.77285 6.79224C6.76502 9.11097 8.63851 10.9976 10.9564 11.0054H10.9861Z"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    className={`group fill-yellow-500 hover:fill-black`}
+                  >
+                    <path d="M5,20.5A3.5,3.5 0 0,1 1.5,17A3.5,3.5 0 0,1 5,13.5A3.5,3.5 0 0,1 8.5,17A3.5,3.5 0 0,1 5,20.5M5,12A5,5 0 0,0 0,17A5,5 0 0,0 5,22A5,5 0 0,0 10,17A5,5 0 0,0 5,12M14.8,10H19V8.2H15.8L13.86,4.93C13.57,4.43 13,4.1 12.4,4.1C11.93,4.1 11.5,4.29 11.2,4.6L7.5,8.29C7.19,8.6 7,9 7,9.5C7,10.13 7.33,10.66 7.85,10.97L11.2,13V18H13V11.5L10.75,9.85L13.07,7.5M19,20.5A3.5,3.5 0 0,1 15.5,17A3.5,3.5 0 0,1 19,13.5A3.5,3.5 0 0,1 22.5,17A3.5,3.5 0 0,1 19,20.5M19,12A5,5 0 0,0 14,17A5,5 0 0,0 19,22A5,5 0 0,0 24,17A5,5 0 0,0 19,12M16,4.8C17,4.8 17.8,4 17.8,3C17.8,2 17,1.2 16,1.2C15,1.2 14.2,2 14.2,3C14.2,4 15,4.8 16,4.8Z"></path>
+                  </svg>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    className={`group fill-${hoverText}`}
+                  >
+                    <path d="M11.5,22C11.64,22 11.77,22 11.9,21.96C12.55,21.82 13.09,21.38 13.34,20.78C13.44,20.54 13.5,20.27 13.5,20H9.5A2,2 0 0,0 11.5,22M18,10.5C18,7.43 15.86,4.86 13,4.18V3.5A1.5,1.5 0 0,0 11.5,2A1.5,1.5 0 0,0 10,3.5V4.18C7.13,4.86 5,7.43 5,10.5V16L3,18V19H20V18L18,16M19.97,10H21.97C21.82,6.79 20.24,3.97 17.85,2.15L16.42,3.58C18.46,5 19.82,7.35 19.97,10M6.58,3.58L5.15,2.15C2.76,3.97 1.18,6.79 1,10H3C3.18,7.35 4.54,5 6.58,3.58Z"></path>
+                  </svg>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    className="group fill-yellow-500 hover:fill-black"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.224 6.37335L8.74667 9.85069C8.336 10.2614 7.664 10.2614 7.25333 9.85069L3.776 6.37335"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    className="group fill-yellow-500 hover:fill-black"
+                  >
+                    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+                  </svg>
+                </div>
+                <div className="w-[20%] h-full flex items-center border border-red-400">
+                  <RouteEditor
+                    options={{
+                      position: { bottom: "auto", right: "auto" },
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+            {/* </div> */}
             {/* ---------- */}
-            <ZoomControl
-              options={{ float: "none", position: { top: 100, left: 10 } }}
-            />
-            <FullscreenControl
-              options={{ float: "none", position: { top: 10, right: 45 } }}
-            />
             <GeolocationControl
-              options={{
-                float: "left",
-              }}
+              options={{ float: "right", position: { bottom: 40, right: 10 } }}
             />
+            <ZoomControl
+              options={{ float: "right", position: { bottom: 100, right: 10 } }}
+            />
+
             {/* <SearchControl
               options={{
                 float: "left",
               }}
             /> */}
 
-            <RulerControl options={{ float: "right" }} />
+            {/* <RulerControl options={{ float: "right" }} /> */}
           </Map>
         </YMaps>
       </div>

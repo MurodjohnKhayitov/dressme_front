@@ -36,7 +36,7 @@ module.exports = {
         borderWinter: "#007DCA",
         bgWinter: "rgba(0, 125, 202, 0.1)",
         // yandex navbar
-        yandexNavbar: " rgba(255, 255, 255, 0.6)",
+        yandexNavbar: " rgba(255, 255, 255, 0.8)",
         yandexWhite: " #FFFFFF",
       },
       fontFamily: {
