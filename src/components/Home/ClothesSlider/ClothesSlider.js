@@ -15,7 +15,6 @@ import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 import { dressMainData } from "../../../ContextHook/ContextMenu";
 export default function ClothesSlider() {
-
   const productList = [
     {
       id: 1,
@@ -577,7 +576,7 @@ export default function ClothesSlider() {
                         alt="noProductImg"
                       />
                     )}
-                    <div className="w-full flex justify-between absolute top-px p-2">
+                    <div className="w-full flex justify-between absolute top-px p-[5px]">
                       <div className="group w-8 hover:w-[85px] bg-bgCard hover:bg-white  duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center justify-center">
                         <span className="w-8 h-8 flex items-center justify-center  ">
                           <img src={delivery} alt="" />
@@ -667,9 +666,8 @@ export default function ClothesSlider() {
                     </div>
                   </div>
 
-
-                  <div className="w-full rounded-b-1xl bg-white   flex flex-wrap content-between xs:py-3 h-[120px] xs:h-[147px] lg:h-[120px] ss:py-2  ">
-                    <div className="w-full   px-3">
+                  <div className="w-full rounded-b-1xl bg-white   flex flex-wrap   h-[120px] xs:h-[147px] lg:h-[120px]   ">
+                    <div className="w-full   xs:px-3 ss:px-3 xs:mt-3 ss:mt-2">
                       <div className="w-full  not-italic font-AeonikProRegular text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
                         {data?.title || "NoData"}
                       </div>
@@ -700,16 +698,18 @@ export default function ClothesSlider() {
                         </div>
                       </div>
                     </div>
-                    <div className="w-full flex items-center justify-between mt-1 pl-3 pr-[6px]">
+                    <div className="w-full flex items-center justify-between mt-1 pl-3 pr-[5px]">
                       <div
                         className="not-italic font-AeonikProMedium text-base leading-4  "
                         style={{ color: "black" }}
                       >
                         {data?.price}{" "}
                       </div>
-                      <span className="ss:w-fit h-fit p-[6px] bg-btnBgColor ml-2 border border-searchBgColor rounded-lg xs:w-fit flex items-center justify-center  cursor-pointer ">
-                        <img className="w-5 h-5" src={addBag} alt="user" />
-                      </span>
+                      <div className="flex items-center">
+                        <button className="w-[32px] h-[32px] mb-[4px]  rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                          <img src={addBag} alt="addbag" className="w-8" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

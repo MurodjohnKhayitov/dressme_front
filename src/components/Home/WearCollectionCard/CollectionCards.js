@@ -17,7 +17,7 @@ import { dressMainData } from "../../../ContextHook/ContextMenu";
 import SetClothesWear from "../WearCollectionSet/SetClothesWear";
 
 export default function CollectionCards() {
-    console.log("CollectionCards Page");
+  console.log("CollectionCards Page");
 
   const [productList, setProductList] = useState([
     {
@@ -394,7 +394,9 @@ export default function CollectionCards() {
       ],
     },
   ]);
+
   const [dressInfo] = useContext(dressMainData);
+
   let dataStyle = "";
   let shadowStyle = "";
   if (dressInfo?.type === 1111) {
@@ -485,7 +487,7 @@ export default function CollectionCards() {
                         alt="noProductImg"
                       />
                     )}
-                    <div className="w-full flex absolute top-px p-[5px] ss:justify-end xs:justify-between">
+                    <div className="w-full flex absolute top-px p-[5px]  ss:justify-end xs:justify-between">
                       <ul className="nav-lists flex-col gap-y-1 justify-center h-full ss:hidden xs:flex">
                         <p className="group w-8 hover:w-[70px] bg-bgCard hover:bg-white  duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center">
                           <span className="w-8 h-8 flex items-center justify-center  ">
@@ -513,7 +515,7 @@ export default function CollectionCards() {
                         </p>
                       </ul>
 
-                      <div className="flex flex-col gap-y-1">
+                      <div className="flex flex-col gap-y-1" >
                         <p className="w-8 h-8  rounded-lg flex items-center bg-bgCard justify-center border border-solid border-borderColorCard hover:bg-white transition ease-out duration-500">
                           <img src={heart} alt="" />
                         </p>
@@ -522,7 +524,7 @@ export default function CollectionCards() {
                         </p>
                       </div>
                     </div>
-                    <div className="w-full  flex absolute bottom-[31px] pb-[6px] pr-[4px] justify-end ">
+                    <div className="w-full  flex absolute bottom-[31px] pb-[6px] pr-[5px] justify-end ">
                       <p
                         onClick={() => setClothesSetWear(false)}
                         className="group w-8 hover:w-[138px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center justify-between"
@@ -563,9 +565,9 @@ export default function CollectionCards() {
                       })}
                     </div>
                   </div>
-                  <div className="w-full rounded-b-1xl bg-white  flex flex-wrap content-between xs:py-3 lg:p-3 ss:h-[124px] xs:h-[147px] lg:h-[120px] ss:py-2 xs:px-2 ss:px-1">
-                    <div className="w-full">
-                      <div className="w-full  not-italic font-AeonikProRegular text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
+                  <div className="w-full rounded-b-1xl bg-white  flex flex-wrap   ss:h-[124px] xs:h-[147px] lg:h-[120px] ">
+                    <div className="w-full  xs:px-3 ss:px-3 xs:mt-3 ss:mt-2">
+                      <div className="w-full  not-italic font-AeonikProRegular text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-2 md:mb-0  cursor-pointer">
                         {data?.title || "NoData"}
                       </div>
                       <div className="w-full flex justify-between items-center xs:mt-3">
@@ -593,8 +595,8 @@ export default function CollectionCards() {
                         </div>
                       </div>
                     </div>
-                    <div className="w-full flex items-center justify-between ">
-                      <div>
+                    <div className="w-full flex items-center justify-between  pl-3 pr-[5px]">
+                      <div className="flex items-center ">
                         {data.sale ? (
                           <div className="flex ss:flex-col-reverse md:flex-row	text-start items-start ">
                             <div className="text-start m-0 p-0  not-italic font-AeonikProMedium text-[18px] md:text-base leading-1 text-red-700 xs:text-base xs:leading-4 mr-1">
@@ -614,18 +616,9 @@ export default function CollectionCards() {
                         )}
                       </div>
                       <div className="flex items-center">
-                        {data.sale ? (
-                          <>
-                            {" "}
-                            <span className="w-[25px] xs:w-fit">
-                              <img className="w-full" src={shirt} alt="user" />
-                            </span>
-                            <span className="px-1">+</span>
-                          </>
-                        ) : null}
-                        <span className="w-[25px] xs:w-fit  cursor-pointer">
-                          <img className="w-full" src={addBag} alt="user" />
-                        </span>
+                        <button className="w-[32px] h-[32px] mb-[4px]  rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                          <img src={addBag} alt="addbag" className="w-8" />
+                        </button>
                       </div>
                     </div>
                   </div>

@@ -12,7 +12,7 @@ export default function WeatherInfo() {
     ["Weather"],
     () => {
       return fetch(
-        `https://api.weatherapi.com/v1/forecast.json?key=aec6a76815144405ac3125132232903&q=Toshkent&days=7`
+        `https://api.weatherapi.com/v1/forecast.json?key=aec6a76815144405ac3125132232903&q=Toshkent&days=8`
       ).then((res) => res.json());
     },
     {

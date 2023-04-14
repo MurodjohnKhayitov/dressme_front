@@ -24,7 +24,7 @@ export default function YandexFilter() {
           return (
             <span
               key={data?.id}
-              className="px-4 py-[10px] cursor-pointer rounded-lg bg-white not-italic font-AeonikProMedium text-sm text-black tracking-[0.16px] leading-[120%]"
+              className="px-4 py-[10px] cursor-pointer rounded-lg bg-white not-italic font-AeonikProMedium text-sm text-black tracking-[0.16px] leading-[120%] border border-searchBgColor"
             >
               {data?.name || "none"}{" "}
             </span>
