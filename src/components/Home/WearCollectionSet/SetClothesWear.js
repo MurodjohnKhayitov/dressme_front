@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-import { addBag, adidas, arrowRightCircle, checkFalse, checkTrue, Liked, model1, model2, modelToSet, nextInfo, setHuman, setpersonIcons, star, statusFalse} from "../../../assets/imgs";
+import { addBag, adidas, arrowLeftCircle, arrowRightCircle, checkFalse, checkTrue, Liked, model1, model2, modelToSet, nextInfo, setHuman, setpersonIcons, star, statusFalse} from "../../../assets/imgs";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Button, Modal } from "antd";
@@ -3396,7 +3396,7 @@ export default function SetClothesWear() {
     { id: 1, modelImg: modelImg1 },
     { id: 2, modelImg: modelImg2 },
     { id: 3, modelImg: modelImg3 },
-    { id: 4, modelImg: modelImg4 },
+    // { id: 4, modelImg: modelImg4 },
   ]
 
   const NextArrow = (props) => {
@@ -3495,10 +3495,10 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-3 top-[48%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-[120px] top-[93%] z-10 text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center  rounded-lg bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
-        <GrFormNext size={15} />
+        <img src={arrowRightCircle} alt="" className="w-5 h-5"/>
       </div>
     );
   };
@@ -3506,10 +3506,10 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-3 top-[48%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute left-[120px] top-[93%] z-10 text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center rounded-lg bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
-        <GrFormPrevious size={15} />
+        <img src={arrowLeftCircle} alt="" className="w-5 h-5"/>
       </div>
     );
   };
@@ -4012,7 +4012,7 @@ export default function SetClothesWear() {
                           {modelsList?.map((data,index) => {
                             return (
                                 <div key={index} className="ml-[180px]">
-                                    {/* <img src={data.modelImg} alt="img" /> */}
+                                    <img src={data.modelImg} alt="img" />
                                     <div>{data.text}</div>
                                 </div>
                             )
