@@ -17,6 +17,7 @@ import {
   star,
   statusFalse,
 } from "../../../assets/imgs";
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Button, Modal } from "antd";
@@ -3402,6 +3403,7 @@ export default function SetClothesWear() {
     },
   ]);
 
+
   const NextArrow = (props) => {
     const { onClick } = props;
     return (
@@ -3493,6 +3495,7 @@ export default function SetClothesWear() {
       </div>
     );
   };
+
 
   const [getSliderId, setGetSliderId] = useState({
     headWearId: 1,
@@ -3734,6 +3737,7 @@ export default function SetClothesWear() {
                               <div className="w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
                                 <img src={nextInfo} alt="nextInfo" />
                               </div>
+
                             </div>
                           </div>
                         );
