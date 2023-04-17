@@ -106,6 +106,7 @@ select {
   background-color: #fff;
 }
 
+
 .followers {
   /* top: -1px; */
   left: 0;
@@ -115,6 +116,7 @@ select {
   justify-content: center;
   transition: all .5s ease-out;
 }
+
 
 .nav-link:hover+.followers {
   left: 31px;
@@ -132,6 +134,7 @@ select {
 
 .ant-modal, .ant-modal-content {
   padding: 0 !important;
+
  }
 
 .modelSlider .slick-dots {

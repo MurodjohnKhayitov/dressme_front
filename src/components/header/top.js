@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import {
+  MenuClose,
   business,
   englishFlag,
   glasses,
@@ -198,14 +199,21 @@ const TopHeader = () => {
             )}
           </div>
           <Modal
-            title="5"
-            className="!w-fit !h-fit"
+            closable={false}
+            // keyboard={false}
+            className="!w-fit !h-fit "
             open={state?.isModalOpen}
-            onOk={handleOk}
-            onCancel={handleCancel}
+            // onOk={handleOk}
+            // onCancel={handleCancel}
             footer={null}
           >
-            <WeatherInfo />
+            <div onClick={handleOk} className="flex justify-end p-2 cursor-pointer">
+              <img src={MenuClose} alt="" />
+            </div>
+            <div className="w-fit h-fit  ">
+              {" "}
+              <WeatherInfo />
+            </div>
           </Modal>
 
           <div className="w-fit h-full rounded bg-white font-AeonikProMedium select-none cursor-pointer">

@@ -37,8 +37,12 @@ import NavbarTopOpenMenu from "./YandexMapsNavbar/NavbarTopOpenMenu";
 function YandexMapsDressMe() {
   // const [openMenuYandex, setOpenMenuYandex] = useState(false);
 
-  const map = React.createRef();
-  const ymaps = React.createRef();
+  const [coords, setCoords] = useState("");
+  const onMapClick = (e) => {
+    const coord = e.get("coords");
+    setCoords({ ...coords, coords: coord });
+  };
+  console.log(coords.coords, "coords");
   const [points, setPoints] = useState([
     {
       id: 1,
@@ -191,19 +195,23 @@ function YandexMapsDressMe() {
   };
 
   return (
-    <div className=" h-fit w-full flex justify-center overflow-x-none  ">
+    <div className=" h-fit w-full flex justify-center overflow-hidden  ">
       <div className="w-[100%] h-[100vh] border-b border-searchBgColor overflow-hidden">
         <div
           className={`absolute z-50  ${
-            !dressInfo?.yandexOpenMenu ? "top-0 duration-300 " : "top-[-250px] duration-300 "
+            !dressInfo?.yandexOpenMenu
+              ? "top-0 duration-300 "
+              : "top-[-250px] duration-300 "
           }  duration-300 w-full`}
         >
           <YandexMapsIndex />
         </div>
         <div
-          className={`absolute z-50  ${
-            dressInfo?.yandexOpenMenu ? "top-2 duration-300 " : "top-[-250px] duration-300 "
-          }  duration-300 w-full ml-[450px]`}
+          className={`absolute z-50   right-2  ${
+            dressInfo?.yandexOpenMenu
+              ? "top-2  right-2 duration-300 "
+              : "top-[-250px]  right-2 duration-300 "
+          }  duration-300 w-[74%] `}
         >
           <NavbarTopOpenMenu />
         </div>
@@ -212,15 +220,28 @@ function YandexMapsDressMe() {
           query={{ apikey: "8b56a857-f05f-4dc6-a91b-bc58f302ff21" }}
         >
           <Map
-            state={{ center: [41.311153, 69.279729], zoom: 11 }}
-            instanceRef={map}
-            onLoad={(ymapsInstance) => {
-              ymaps.current = ymapsInstance;
+            state={{
+              center: coords.coords ? coords.coords : [41.311153, 69.279729],
+              zoom: 11,
             }}
+            onClick={onMapClick}
             width="100%"
             height="100%"
             modules={["control.ZoomControl", "control.FullscreenControl"]}
+           
           >
+            <GeolocationControl
+              options={{
+                float: "right",
+                position: { bottom: 250, right: 10 },
+              }}
+            />
+            <ZoomControl
+              options={{
+                float: "right",
+                position: { bottom: 300, right: 10,size:"small" },
+              }}
+            />
             {/* ---------- */}
             <Clusterer
               // className="bg-green-500 text-red-500"
@@ -263,26 +284,34 @@ function YandexMapsDressMe() {
               ))}
             </Clusterer>
             <div className="relative">
-              <div className="absolute cursor-pointer top-[16px] left-[16px] z-50 bg-white shadow-lg overflow-hidden rounded w-[141px] h-[40px] ">
+              {!dressInfo?.yandexOpenMenu ? (
                 <div
-                  onClick={handleToggleMenu}
-                  className="flex items-center justify-center  cursor-pointer w-full h-full "
+                  className={` overflow-hidden duration-300 h-[40px] absolute cursor-pointer top-[8px] left-[8px] z-50 bg-white shadow-lg overflow-hidden rounded-lg  `}
                 >
-                  <div className="w-full h-full  select-none cursor-pointer flex items-center justify-around ">
-                    <span>
-                      {" "}
-                      <img src={MenuOpen} alt="" />
-                    </span>
-                    <span className="not-italic font-AeonikProMedium text-[16px] leading-[120%] text-black tracking-[1%]">
-                      Магазины
-                    </span>
-                  </div>
-                </div>{" "}
-              </div>
+                  <div
+                    onClick={handleToggleMenu}
+                    className="w-fit flex items-center justify-between  cursor-pointer roundedn-lg h-full  "
+                  >
+                    <div className="group w-10 hover:w-[138px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden  flex items-center justify-between ">
+                      <span className="w-[36px] h-8 flex items-center justify-center">
+                        <img
+                          className="ml-[2px]"
+                          src={MenuOpen}
+                          alt="setpersonIcons"
+                        />
+                      </span>
+                      <span className=" flex flex-nowrap items-center mr-[-100px] group-hover:mr-[10px] w-[92px] duration-300 pt-1 justify-center text-center  cursor-pointer bg-white not-italic font-AeonikProMedium text-sm text-black tracking-[1%] ">
+                        Магазины
+                      </span>
+                    </div>
+                  </div>{" "}
+                </div>
+              ) : null}
+
               <div
                 className={`${
                   dressInfo?.yandexOpenMenu ? " ml-[0px]" : "  ml-[-1000px]"
-                } absolute cursor-pointer top-2 left-2 z-50 h-[100vh] rounded-lg overflow-hidden w-[436px] p-2 duration-500 bg-yandexNavbar backdrop-blur-sm	   border border-searchBgColor`}
+                } absolute cursor-pointer top-2 left-0 z-50 h-[100vh] rounded-lg overflow-hidden w-[25%] p-2 duration-500 bg-yandexNavbar backdrop-blur-sm	   border border-searchBgColor`}
               >
                 <div
                   onClick={handleToggleMenu}
@@ -514,57 +543,11 @@ function YandexMapsDressMe() {
             </div>
             {/* </div> */}
             {/* ---------- */}
-            <GeolocationControl
-              options={{
-                float: "right",
-                position: { bottom: 250, right: 10 },
-              }}
-            />
-            <ZoomControl
-              options={{
-                float: "right",
-                position: { bottom: 300, right: 10 },
-              }}
-            />
-
-            {/* <SearchControl
-              options={{
-                float: "left",
-              }}
-            /> */}
-
-            {/* <RulerControl options={{ float: "right" }} /> */}
           </Map>
         </YMaps>
       </div>
     </div>
   );
 }
-// ClusteredMapView.defaultProps = {
-//   clusteringEnabled: true,
-//   spiralEnabled: true,
-//   animationEnabled: true,
-//   preserveClusterPressBehavior: false,
-//   layoutAnimationConf: LayoutAnimation.Presets.spring,
-//   tracksViewChanges: false,
-//   // SuperCluster parameters
-//   radius: Dimensions.get("window").width * 0.06,
-//   maxZoom: 20,
-//   minZoom: 1,
-//   minPoints: 2,
-//   extent: 512,
-//   nodeSize: 64,
-//   // Map parameters
-//   edgePadding: { top: 50, left: 50, right: 50, bottom: 50 },
-//   // Cluster styles
-//   clusterColor: "#00B386",
-//   clusterTextColor: "#FFFFFF",
-//   spiderLineColor: "#FF0000",
-//   // Callbacks
-//   onRegionChangeComplete: () => {},
-//   onClusterPress: () => {},
-//   onMarkersChange: () => {},
-//   superClusterRef: {},
-//   mapRef: () => {},
-// };
+
 export default React.memo(YandexMapsDressMe);

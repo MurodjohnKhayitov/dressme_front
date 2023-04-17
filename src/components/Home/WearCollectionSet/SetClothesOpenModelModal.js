@@ -1,28 +1,9 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
+import { Liked, addBag, model1, star } from "../../../assets/imgs";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-import {
-  addBag,
-  adidas,
-  arrowRightCircle,
-  checkFalse,
-  checkTrue,
-  Liked,
-  model1,
-  model2,
-  modelToSet,
-  nextInfo,
-  setHuman,
-  setpersonIcons,
-  star,
-  statusFalse,
-} from "../../../assets/imgs";
-
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import { Button, Modal } from "antd";
-import SetClothesOpenModelModal from "./SetClothesOpenModelModal";
-export default function SetClothesWear() {
+import "./yandex.css";
+export default function SetClothesOpenModelModal() {
   const [productList, setProductList] = useState([
     {
       id: 1,
@@ -3402,13 +3383,11 @@ export default function SetClothesWear() {
       ],
     },
   ]);
-
-
   const NextArrow = (props) => {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-3 top-[20%] z-10 text-center cursor-pointer no-underline w-8 h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-3 top-[50%] z-50 text-center cursor-pointer no-underline w-8 h-8 flex items-center justify-center  rounded-full bg-red-400 duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormNext size={15} />
@@ -3419,83 +3398,13 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-3 top-[20%] z-10 text-center cursor-pointer no-underline w-8 h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor`}
+        className={`absolute top-[50%] z-50 text-center cursor-pointer no-underline w-8 h-8 flex items-center justify-center rounded-full bg-red-400 duration-200 border border-solid border-searchBgColor`}
         onClick={onClick}
       >
         <GrFormPrevious size={15} />
       </div>
     );
   };
-
-  const NextArrow1 = (props) => {
-    const { onClick } = props;
-    return (
-      <div
-        className={`absolute right-3 top-[40%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
-        onClick={onClick}
-      >
-        <GrFormNext size={15} />
-      </div>
-    );
-  };
-  const PrevArrow1 = (props) => {
-    const { onClick } = props;
-    return (
-      <div
-        className={`absolute left-3 top-[40%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
-        onClick={onClick}
-      >
-        <GrFormPrevious size={15} />
-      </div>
-    );
-  };
-
-  const NextArrowshoesWear = (props) => {
-    const { onClick } = props;
-    return (
-      <div
-        className={`absolute right-3 top-[25%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
-        onClick={onClick}
-      >
-        <GrFormNext size={15} />
-      </div>
-    );
-  };
-  const PrevArrowshoesWear = (props) => {
-    const { onClick } = props;
-    return (
-      <div
-        className={`absolute left-3 top-[25%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
-        onClick={onClick}
-      >
-        <GrFormPrevious size={15} />
-      </div>
-    );
-  };
-
-  const NextArrowAccessory = (props) => {
-    const { onClick } = props;
-    return (
-      <div
-        className={`absolute right-3 top-[25%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
-        onClick={onClick}
-      >
-        <GrFormNext size={15} />
-      </div>
-    );
-  };
-  const PrevArrowAccessory = (props) => {
-    const { onClick } = props;
-    return (
-      <div
-        className={`absolute left-3 top-[25%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
-        onClick={onClick}
-      >
-        <GrFormPrevious size={15} />
-      </div>
-    );
-  };
-
 
   const [getSliderId, setGetSliderId] = useState({
     headWearId: 1,
@@ -3523,485 +3432,212 @@ export default function SetClothesWear() {
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
-    dots: false,
+    dots: true,
     afterChange: (current) =>
       setGetSliderId({ ...getSliderId, headWearId: current + 1 }),
   };
-  let outWear = {
-    nextArrow: <NextArrow1 />,
-    prevArrow: <PrevArrow1 />,
-    infinite: true,
-    fade: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    dots: false,
-    afterChange: (current) =>
-      setGetSliderId({ ...getSliderId, outWearId: current + 1 }),
-  };
-  let underWear = {
-    nextArrow: <NextArrow1 />,
-    prevArrow: <PrevArrow1 />,
-    infinite: true,
-    fade: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    dots: false,
-    afterChange: (current) =>
-      setGetSliderId({ ...getSliderId, underWearId: current + 1 }),
-  };
-  let legWear = {
-    nextArrow: <NextArrowshoesWear />,
-    prevArrow: <PrevArrowshoesWear />,
-    infinite: true,
-    fade: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    dots: false,
-    afterChange: (current) =>
-      setGetSliderId({ ...getSliderId, legWearId: current + 1 }),
-  };
-  let Accessory = {
-    nextArrow: <NextArrowAccessory />,
-    prevArrow: <PrevArrowAccessory />,
-    infinite: true,
-    fade: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    dots: false,
-    afterChange: (current) =>
-      setGetSliderId({ ...getSliderId, accessoryId: current + 1 }),
-  };
-
-  const [clothesSetWear, setClothesSetWear] = useState(true);
-  const [openToModel, setOpenToModel] = useState(false);
-
-  const OpenShowModel = (modelId) => {
-    setProductList((current) => {
-      return current?.map((data) => {
-        if (data?.id == modelId) {
-          return { ...data, SetToModel: !data.SetToModel };
-        } else {
-          return data;
-        }
-      });
-    });
-  };
-
-  const [open, setOpen] = useState(false);
-
   return (
-    <div className="w-full flex flex-row flex-wrap box-border gap-y-5 gap-x-5 h-fit justify-between">
-      {productList.map((producListMap) => {
-        return (
-          <div
-            key={productList?.id}
-            className="w-[305px] flex flex-row overflow-hidden"
-          >
-            <div className="w-full  border bg-white border-searchBgColor pt-4 rounded-lg">
-              {producListMap?.SetToModel ? (
-                <div className="w-full h-[572px] flex justify-center">
+    <div>
+      <div className="w-full flex frex-row h-[100vh] ">
+        <div className="basis-7/12 flex items-center justify-center border-r border-searchBgColor">
+          <Slider {...headWear}>
+            {productList?.map((item) => {
+              return (
+                <div key={item?.id}>
                   <img src={model1} alt="" />
                 </div>
-              ) : (
-                <div>
-                  {/* HeadWear */}
-                  <div className="w-full h-fit">
-                    {producListMap?.headWear?.length >= 2 ? (
-                      <Slider {...headWear} className={`w-full h-[72px] mb-3`}>
-                        {producListMap?.headWear?.map((item) => {
-                          return item.id ? (
-                            <div
-                              key={item?.id}
-                              className={`!w-[192px] box-border ml-[56px] flex items-center justify-center h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
-                            >
-                              <div className="w-full h-full">
-                                <img
-                                  className="w-[100px] h-full m-auto"
-                                  src={item?.head_wear_img}
-                                  alt="head_wear_img"
-                                />
-                              </div>
-                              <div
-                                className={`absolute w-[190px] top-1 px-1 flex ${
-                                  !item?.active
-                                    ? "justify-between"
-                                    : "justify-end"
-                                }`}
-                              >
-                                {!item?.active ? (
-                                  <div className="w-6 h-6 cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                    <img src={statusFalse} alt="statusFalse" />
-                                  </div>
-                                ) : null}
-                                <div className="w-6 h-6 flex items-center justify-center top-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
-                                  <img src={Liked} alt="Liked" />
-                                </div>
-                              </div>
-                              <div className="absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px] flex justify-end">
-                                <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor data-hover:bg-red-500 bg-white rounded-lg flex items-center justify-center">
-                                  <img src={nextInfo} alt="nextInfo" />
-                                </div>
-                              </div>
-                            </div>
-                          ) : (
-                            <div className="w-0 h-0"></div>
-                          );
-                        })}
-                      </Slider>
-                    ) : (
-                      <div className={`w-full h-[72px] mb-3`}>
-                        {producListMap?.headWear?.map((item) => {
-                          return item.id ? (
-                            <div
-                              key={item?.id}
-                              className={`!w-[192px] box-border ml-[56px] flex items-center justify-center h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
-                            >
-                              <div className="w-full h-full">
-                                <img
-                                  className="w-[100px] h-full m-auto"
-                                  src={item?.head_wear_img}
-                                  alt="head_wear_img"
-                                />
-                              </div>
-                              <div
-                                className={`absolute w-[190px] top-1 px-1 flex ${
-                                  !item?.active
-                                    ? "justify-between"
-                                    : "justify-end"
-                                } `}
-                              >
-                                {!item?.active ? (
-                                  <div className="w-6 h-6 cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                    <img src={statusFalse} alt="statusFalse" />
-                                  </div>
-                                ) : null}
-                                <div className="w-6 h-6 flex items-center justify-center top-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
-                                  <img src={Liked} alt="Liked" />
-                                </div>
-                              </div>
-                              <div className="absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px] flex justify-end">
-                                <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor data-hover:bg-red-500 bg-white rounded-lg flex items-center justify-center">
-                                  <img src={nextInfo} alt="nextInfo" />
-                                </div>
-                              </div>
-                            </div>
-                          ) : (
-                            <div className="w-0 h-0"></div>
-                          );
-                        })}
+              );
+            })}
+          </Slider>
+          {/* <img src={model1} alt="" /> */}
+        </div>
+        <div className="w-[420px]   flex flex-wrap content-between">
+          <div className="h-[100px] px-2  flex flex-wrap content-center w-full border-b border-searchBgColor">
+            <div className="px-3 w-full font-AeonikProMedium text-2xl">
+              Business Wear (Man)
+            </div>
+            <div className="px-3 w-full font-AeonikProRegular text-base">
+              <span className="text-setTexOpacity mr-2">Магазин:</span>
+              Patek Business Wear
+            </div>
+          </div>
+
+          <div className="h-[calc(100%-216px)] pt-3 px-2  w-full  cursor-pointer  overflow-auto YandexListScroll">
+            <div className="px-3 mb-[22px] ">
+              <div className="font-AeonikProMedium text-sm mb-2">
+                Головной убор
+              </div>
+              <div className="border rounded-lg p-3">
+                {/* ----- */}
+                <div className=" mb-5">
+                  <div className="">
+                    <div className="flex justify-between">
+                      <div className="w-[92px] border border-searchBgColor h-[120px] bg-btnBgColor rounded-lg ">
+                        <img src="" alt="" />
                       </div>
-                    )}
+                      <div className="py-3 w-[60%] flex flex-wrap content-between mx-2">
+                        <div className="w-full font-AeonikProRegular text-sm  ">
+                          Eleganza Шарф
+                        </div>
+                        <div className="  w-full font-AeonikProMedium text-base">
+                          <span className="text-xl">149 000</span> сум
+                        </div>
+                      </div>
+                      <div className="w-12 flex flex-wrap content-end ">
+                        <button className=" w-12 h-12 mb-1 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                          <img src={Liked} alt="addbag" className="w-5 " />
+                        </button>
+                        <button className=" w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                          <img src={addBag} alt="addbag" className="w-8" />
+                        </button>
+                      </div>
+                    </div>
                   </div>
-
-                  {/* OutWear */}
-                  <div className="w-full h-fit -mt-2">
-                    <Slider {...outWear} className={`w-full h-[160px]`}>
-                      {producListMap?.outWear.map((item) => {
-                        return (
-                          <div
-                            key={item?.id}
-                            className={`!w-[192px] flex justify-center items-center ml-[56px] h-[148px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
-                          >
-                            <div className="w-full h-full">
-                              <img
-                                className=" h-full m-auto"
-                                src={item?.out_wear_img}
-                                alt="out_wear_img"
-                              />
-                            </div>
-                            <div
-                              className={`absolute top-1 px-1 flex ${
-                                !item?.active
-                                  ? "justify-between"
-                                  : "justify-end"
-                              }  w-[190px] `}
-                            >
-                              {!item?.active ? (
-                                <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                  <img src={statusFalse} alt="" />
-                                </div>
-                              ) : null}
-                              <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={Liked} alt="" />
-                              </div>
-                            </div>
-                            <div className="absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end">
-                              <div className="w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={nextInfo} alt="nextInfo" />
-                              </div>
-
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </Slider>
+                </div>{" "}
+                {/* ----- */}
+                {/* ----- */}
+                <div className=" mb-5">
+                  <div className="">
+                    <div className="flex justify-between">
+                      <div className="w-[92px] border border-searchBgColor h-[120px] bg-btnBgColor rounded-lg ">
+                        <img src="" alt="" />
+                      </div>
+                      <div className="py-3 w-[60%] flex flex-wrap content-between mx-2">
+                        <div className="w-full font-AeonikProRegular text-sm  ">
+                          Eleganza Шапка CHERLO Style
+                        </div>
+                        <div className="flex flex-col font-AeonikProMedium text-base text-red-700">
+                          <span className="  font-AeonikProRegular text-sm text-setTexOpacity">
+                            359 000
+                          </span>
+                          <span className="text-xl">
+                            124 000 <span>сум</span>
+                          </span>
+                        </div>
+                      </div>
+                      <div className="w-12 flex flex-wrap content-end ">
+                        <button className=" w-12 h-12 mb-1 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                          <img src={Liked} alt="addbag" className="w-5 " />
+                        </button>
+                        <button className=" w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                          <img src={addBag} alt="addbag" className="w-8" />
+                        </button>
+                      </div>
+                    </div>
                   </div>
+                </div>{" "}
+                
+              </div>
+            </div>
 
-                  {/* UnderWear */}
-                  <div className="w-full h-fit -mt-2">
-                    <Slider {...underWear} className={`w-full h-[180px]`}>
-                      {producListMap?.underWear.map((item) => {
-                        return (
-                          <div
-                            key={item?.id}
-                            className={`!w-[192px] flex justify-center items-center ml-[56px] h-[168px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
-                          >
-                            <div className="w-full h-full">
-                              <img
-                                className=" h-full m-auto"
-                                src={item?.under_wear_img}
-                                alt="under_wear_img"
-                              />
-                            </div>
-                            <div
-                              className={`absolute top-1 px-1 flex ${
-                                !item?.active
-                                  ? "justify-between"
-                                  : "justify-end"
-                              }  w-[190px] `}
-                            >
-                              {!item?.active ? (
-                                <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center">
-                                  <img src={statusFalse} alt="" />
-                                </div>
-                              ) : null}
-                              <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={Liked} alt="" />
-                              </div>
-                            </div>
-                            <div className="absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end">
-                              <div className="w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={nextInfo} alt="nextInfo" />
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </Slider>
+            <div className="px-3 mb-8">
+              <div className="font-AeonikProMedium text-sm mb-2">
+                Верхняя одежда
+              </div>
+              <div className="px-3">
+                <div className="flex justify-between">
+                  <div className="w-[92px] border border-searchBgColor h-[120px] bg-btnBgColor rounded-lg ">
+                    <img src="" alt="" />
                   </div>
-
-                  {/* LegWear */}
-                  <div className="w-full h-fit -mt-2">
-                    <Slider {...legWear} className={`w-full h-[72px]`}>
-                      {producListMap?.legWear.map((item) => {
-                        return (
-                          <div
-                            key={item?.id}
-                            className={`!w-[192px] flex justify-center items-center  ml-[56px] h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
-                          >
-                            <div className="w-full h-full">
-                              <img
-                                className=" h-full m-auto"
-                                src={item?.leg_wear_img}
-                                alt="leg_wear_img"
-                              />
-                            </div>
-                            <div
-                              className={`absolute top-1 px-1 flex ${
-                                !item?.active
-                                  ? "justify-between"
-                                  : "justify-end"
-                              }  w-[190px] `}
-                            >
-                              {!item?.active ? (
-                                <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center">
-                                  <img src={statusFalse} alt="" />
-                                </div>
-                              ) : null}
-                              <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={Liked} alt="" />
-                              </div>
-                            </div>
-                            <div className="absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end">
-                              <div className="w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={nextInfo} alt="nextInfo" />
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </Slider>
+                  <div className="py-3 w-[60%] flex flex-wrap content-between mx-2">
+                    <div className="w-full font-AeonikProRegular text-sm  ">
+                      Mango Man футболка CHERLO Style
+                    </div>
+                    <div className="  w-full font-AeonikProMedium text-base">
+                      <span className="text-xl">279 000</span> сум
+                    </div>
                   </div>
-
-                  {/* Accessory */}
-                  <div className="w-full h-fit mt-3 mb-4">
-                    <Slider {...Accessory} className={`w-full h-[72px]`}>
-                      {producListMap?.Accessory.map((item) => {
-                        return (
-                          <div
-                            key={item?.id}
-                            className={`!w-[192px] flex items-center justify-center ml-[56px] h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
-                          >
-                            <div className="w-full h-full">
-                              <img
-                                className="w-[100px] h-full m-auto"
-                                src={item?.accessor_wear_img}
-                                alt="accessor_wear_img"
-                              />
-                            </div>
-                            <div
-                              className={`absolute top-1 px-1 flex ${
-                                !item?.active
-                                  ? "justify-between"
-                                  : "justify-end"
-                              }  w-[190px] `}
-                            >
-                              {!item?.active ? (
-                                <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center">
-                                  <img src={statusFalse} alt="" />
-                                </div>
-                              ) : null}
-                              <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={Liked} alt="" />
-                              </div>
-                            </div>
-                            <div className="absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end">
-                              <div className="w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={nextInfo} alt="nextInfo" />
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </Slider>
+                  <div className="w-12 flex flex-wrap content-end ">
+                    <button className=" w-12 h-12 mb-1 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                      <img src={Liked} alt="addbag" className="w-5 " />
+                    </button>
+                    <button className=" w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                      <img src={addBag} alt="addbag" className="w-8" />
+                    </button>
                   </div>
                 </div>
-              )}
-
-              {producListMap?.category.map((item) => {
-                return (
-                  <div
-                    key={item?.id}
-                    className="w-full relative border-y border-searchBgColor px-4 py-3"
-                  >
-                    <div className="font-AeonikProRegular text-sm leading-4 text-gray-500">
-                      Набор:
-                      <span className="not-italic font-AeonikProMedium text-base text-black ml-2">
-                        {item?.name}
-                      </span>
+              </div>
+            </div>
+            <div className="px-3 mb-3">
+              <div className="font-AeonikProMedium text-sm mb-2">
+                Верхняя одежда
+              </div>
+              <div className="px-3">
+                <div className="flex justify-between">
+                  <div className="w-[92px] border border-searchBgColor h-[120px] bg-btnBgColor rounded-lg ">
+                    <img src="" alt="" />
+                  </div>
+                  <div className="py-3 w-[60%] flex flex-wrap content-between mx-2">
+                    <div className="w-full font-AeonikProRegular text-sm  ">
+                      Mango Man футболка CHERLO Style
                     </div>
-                    {producListMap.SetToModel ? (
-                      <button
-                        onClick={() => {
-                          setClothesSetWear(false);
-                          setOpenToModel(false);
-                          OpenShowModel(producListMap?.id);
-                        }}
-                        className={` absolute top-[7px] right-2 group w-9 h-9 hover:w-[120px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
-                      >
-                        <span className="  flex flex-nowrap items-center ml-[-100px] group-hover:ml-[12px]  not-italic overflow-hidden p-[1px] duration-300   font-AeonikProRegular leading-3  text-black text-sm ">
-                          Структура
-                        </span>
-                        <span className="w-8 h-8 flex items-center justify-center">
-                          <img
-                            className="mr-[2px]"
-                            src={modelToSet}
-                            alt="model-to-set"
-                          />
-                        </span>
-                      </button>
-                    ) : producListMap.modelsList.length > 0 ? (
-                      <button
-                        onClick={() => {
-                          setClothesSetWear(true);
-                          setOpenToModel(true);
-                          OpenShowModel(producListMap?.id);
-                        }}
-                        className={`absolute top-[7px] right-2 group w-9 h-9 hover:w-[98px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
-                      >
-                        <span className="  flex flex-nowrap items-center ml-[-100px] group-hover:ml-[14px]  not-italic overflow-hidden  duration-300   font-AeonikProRegular leading-3  text-black text-sm ">
-                          Модель
-                        </span>
-                        <span className="w-8 h-8 flex items-center justify-center">
-                          <img
-                            className="mr-[2px]"
-                            src={setpersonIcons}
-                            alt="setpersonIcons"
-                          />
-                        </span>
-                      </button>
-                    ) : null}
-                  </div>
-                );
-              })}
-
-              <div className="w-full pr-2 pl-4 pb-2 pt-2 flex flex-wrap content-between">
-                <div className="relative flex w-full justify-between items-center">
-                  <div className="flex items-center mt-4 mb-3">
-                    <span className="mr-[6px] flex  items-center">
-                      <img src={star} alt="star" />
-                    </span>
-                    <span className="not-italic font-AeonikProMedium text-base leading-4 text-black">
-                      2.5{" "}
-                      <span className="mr-1 not-italic font-AeonikProRegular text-xs leading-3 text-setTexOpacity">
-                        (20 голосов)
-                      </span>
-                    </span>
-                  </div>
-                  <Button
-                    type="primary"
-                    onClick={() => setOpen(true)}
-                    className="group absolute -top-1 right-0 rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[10px] pr-[5px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300"
-                  >
-                    <span className="group-hover:text-white flex  items-center font-AeonikProRegular text-center text-black text-[12px] mr-1">
-                      Обзор набора
-                    </span>
-                    <svg
-                      className="group-hover:fill-white group-hover:stroke-white stroke-black"
-                      opacity={100}
-                      viewBox="-6 -6 36 36"
-                      width="24"
-                      height="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                    >
-                      {" "}
-                      <path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z" />
-                    </svg>
-                  </Button>
-                  <Modal
-                    centered
-                    open={open}
-                    onCancel={() => setOpen(false)}
-                    footer={null}
-                    className="!w-[1000px] !h-[100vh] "
-                    >
-                    <div className="h-full">
-                      <SetClothesOpenModelModal />
+                    <div className="  w-full font-AeonikProMedium text-base">
+                      <span className="text-xl">279 000</span> сум
                     </div>
-                  </Modal>
-                </div>
-                <div className="flex items-center w-full justify-between">
-                  <div>
-                    <span className="not-italic font-AeonikProMedium text-2xl leading-7 text-setPriceRed mr-[6px]">
-                      828000
-                    </span>
-                    <span className="not-italic font-AeonikProRegular line-through	 text-sm leading-4 text-setTexOpacity">
-                      1054000
-                    </span>
                   </div>
-                  <button className="w-[36px] h-[36px] rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
-                    <img src={addBag} alt="addbag" className="w-8" />
-                  </button>
+                  <div className="w-12 flex flex-wrap content-end ">
+                    <button className=" w-12 h-12 mb-1 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                      <img src={Liked} alt="addbag" className="w-5 " />
+                    </button>
+                    <button className=" w-12 h-12 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                      <img src={addBag} alt="addbag" className="w-8" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        );
-      })}
 
-      <div className="w-full h-fit flex items-center justify-center mt-14">
-        <div className="w-[760px] h-[60px] cursor-pointer not-italic font-AeonikProMedium text-base leading-4 text-center text-black flex items-center justify-center rounded-lg border border-searchBgColor bg-btnBgColor">
-          Показать ещё 12 наборов
+          <div className="h-[116px] w-full px-3 py-3  border-t border-searchBgColor">
+            <div className="mb-3 flex items-center justify-between">
+              <div className="font-AeonikProRegular text-setTexOpacity text-sm">
+                <span className="font-AeonikProMedium text-red-700 text-2xl mr-[11px]">
+                  814 000
+                </span>
+                1 054 000
+              </div>
+              <div className="flex items-center">
+                <span className="mr-[6px] flex items-center">
+                  <img src={star} alt="star" />
+                </span>
+                <span className="not-italic font-AeonikProMedium text-base leading-4 text-black">
+                  2.5{" "}
+                  <span className="mr-1 not-italic font-AeonikProRegular text-xs leading-3 text-setTexOpacity">
+                    (20 голосов)
+                  </span>
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <button className="group h-12 w-[49%] rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[10px] pr-[5px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300">
+                <span className="group-hover:text-white flex  items-center font-AeonikProRegular text-center text-black text-[14px] mr-2">
+                  Страница набора
+                </span>
+                <svg
+                  className="group-hover:fill-white group-hover:stroke-white stroke-black"
+                  opacity={100}
+                  viewBox="-6 -6 36 36"
+                  width="24"
+                  height="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                >
+                  {" "}
+                  <path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z" />
+                </svg>
+              </button>
+              <button className="group h-12 w-[49%] rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[10px] pr-[5px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300">
+                <span className="group-hover:text-white flex  items-center font-AeonikProRegular text-center text-black text-[14px] mr-2">
+                  Набор в корзину
+                </span>
+                <img src={addBag} alt="" className="hover:bg-transparent" />
+                {/* <svg className="group-hover:fill-white group-hover:stroke-white stroke-black" opacity={100} viewBox="-6 -6 36 36" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" > <path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z" />
+                                                        </svg>     */}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

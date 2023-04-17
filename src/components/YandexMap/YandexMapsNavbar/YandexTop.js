@@ -13,15 +13,46 @@ import {
   weatherBrandIcon,
 } from "../../../assets/imgs";
 import { dressMainData } from "../../../ContextHook/ContextMenu";
-import { Popover } from "antd";
+import { Modal, Popover } from "antd";
+import { useQuery } from "@tanstack/react-query";
+import WeatherInfo from "../../Weather/WeatherInfo";
 const YandexTop = () => {
   const [dressInfo] = useContext(dressMainData);
 
   const [state, setState] = useState({
     openLang: false,
     openRegion: false,
+    isModalOpen: false,
+    weatherSet: "",
   });
 
+  const showModal = () => {
+    setState({ ...state, isModalOpen: true });
+  };
+  const handleOk = () => {
+    setState({ ...state, isModalOpen: false });
+  };
+  const handleCancel = () => {
+    setState({ ...state, isModalOpen: false });
+  };
+
+  useQuery(
+    ["Weather"],
+    () => {
+      return fetch(
+        `https://api.weatherapi.com/v1/forecast.json?key=aec6a76815144405ac3125132232903&q=Toshkent&days=7`
+      ).then((res) => res.json());
+    },
+    {
+      onSuccess: (res) => {
+        setState({ ...state, weatherSet: res });
+        // console.log(res);
+      },
+      onError: (err) => {
+        console.log(err, "errpr");
+      },
+    }
+  );
   let dataStyle = "";
   if (dressInfo?.type === 1111) {
     dataStyle = " hover:text-borderSpring ";
@@ -141,18 +172,39 @@ const YandexTop = () => {
           </div>
         </div>
         <div className="flex items-center mx-[40px]  ">
-          <NavLink to="/weather" className={"flex items-center cursor-pointer"}>
-            <span className="mr-[6px]">
-              <img src={weatherBrandIcon} alt="weatherBrandIcon" />
-            </span>
-            <span className="not-italic font-AeonikProMedium text-base  leading-4 text-black after:content-['\00B0'] after:font-AeonikProMedium  mt-[3px]">
-              16
-            </span>
-            <span className="not-italic font-AeonikProRegular text-base  mt-[3px] leading-4 text-black">
-              C
-            </span>
-          </NavLink>
+          {state?.weatherSet?.current?.condition?.icon ? (
+            <div
+              onClick={showModal}
+              className={"flex items-center cursor-pointer"}
+            >
+              <span className="mr-[6px]">
+                <img
+                  className="w-[28px] h-[28px]"
+                  src={state?.weatherSet?.current?.condition?.icon}
+                  alt="icon"
+                />
+              </span>
+              <span className="not-italic font-AeonikProMedium text-base  leading-4 text-black after:content-['\00B0'] after:font-AeonikProMedium  mt-[3px]">
+                {state?.weatherSet?.current?.temp_c}
+              </span>
+              <span className="not-italic font-AeonikProRegular text-base  mt-[3px] leading-4 text-black">
+                C
+              </span>
+            </div>
+          ) : (
+            <span className="w-[70px] h-[28px] bg-borderColorCard rounded"></span>
+          )}
         </div>
+        <Modal
+          title="5"
+          className="!w-fit !h-fit"
+          open={state?.isModalOpen}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          footer={null}
+        >
+          <WeatherInfo />
+        </Modal>
 
         <div className="w-fit h-full rounded bg-white font-AeonikProMedium select-none cursor-pointer">
           {LanguageList.filter((data) => data.id === selectLang).map((data) => {

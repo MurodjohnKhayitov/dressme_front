@@ -16,6 +16,8 @@ import {
   winterVolume,
 } from "../../../assets/imgs";
 import { Popover } from "antd";
+import Slider from "react-slick";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 export default function NavbarTopOpenMenu() {
   const [dressInfo, setDressInfo] = useContext(dressMainData);
@@ -86,10 +88,87 @@ export default function NavbarTopOpenMenu() {
       })}
     </div>
   );
+  const NextArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <div
+        className={`absolute text-center cursor-pointer no-underline  w-12 h-12 flex items-center justify-center top-[5px] z-50	right-[-2px] rounded-full bg-white duration-200 border border-solid border-searchBgColor		`}
+        onClick={onClick}
+      >
+        <button className="next">
+          <GrFormNext size={20} />
+        </button>
+      </div>
+    );
+  };
 
+  const PrevArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <div
+        className={`absolute text-center cursor-pointer no-underline hidden w-12 h-12 flex items-center justify-center top-[0%] z-10	left-[10px] rounded-full bg-white duration-200 border border-solid border-searchBgColor`}
+        onClick={onClick}
+      >
+        <button className="prev">
+          <GrFormPrevious size={20} />
+        </button>
+      </div>
+    );
+  };
+
+  let settings1 = {
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    infinite: true,
+    speed: 500,
+    dots: false,
+    slidesToShow: 9,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 770,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 560,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+
+      {
+        breakpoint: 390,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
-    <div className="  w-[100%] overflow-x-auto   h-[60px] flex items-center rounded-[12px] bg-yandexNavbar border border-searchBgColor  backdrop-blur-sm ">
-      <div className="flex items-center ml-6">
+    <div className="  w-[100%] overflow-hidden mr-auto  border border-searchBgColor  h-[60px] flex items-center rounded-[12px] bg-yandexNavbar   backdrop-blur-sm ">
+      <div className="w-[30%] flex items-center ml-6  ">
         {/* Logo section */}
         <NavLink
           to="/"
@@ -155,19 +234,27 @@ export default function NavbarTopOpenMenu() {
             }
           )}
         </div>
-        <div className="w-[1px] h-full bg-searchBgColor mx-3"></div>
       </div>
-      <div className="w-fit gap-x-2  flex items-center justify-between">
-        {wearGroup?.map((data) => {
-          return (
-            <span
-              key={data?.id}
-              className="px-4 py-[10px] cursor-pointer rounded-lg bg-white not-italic font-AeonikProMedium text-sm text-black tracking-[0.16px] leading-[120%] border border-searchBgColor"
-            >
-              {data?.name || "none"}{" "}
-            </span>
-          );
-        })}
+        <span className="w-[2px] h-[30px] bg-searchBgColor mr-4"></span>
+      <div className="w-[67%]   h-full  ">
+        <Slider
+          {...settings1}
+          className="w-[100%] h-full items-center pr-2  flex xs:justify-between xs:pl-0"
+        >
+          {wearGroup?.map((data) => {
+            return (
+              <div key={data.id} className="!w-[85px]  h-full">
+                <div
+                  className={` w-full h-[38px] px-3 m-auto  bg-white rounded-lg flex justify-center items-center cursor-pointer  border border-searchBgColor  `}
+                >
+                  <p className=" cursor-pointer rounded-lg bg-white not-italic font-AeonikProMedium text-sm text-black tracking-[1%] ">
+                    {data?.name || "0"}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </Slider>
       </div>
     </div>
   );
