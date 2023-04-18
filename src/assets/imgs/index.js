@@ -222,6 +222,8 @@ export { default as Liked } from './Set/Liked.svg'
 export { default as LikedAfterRed } from './Set/LikedAfterRed.svg'
 export { default as nextInfo } from './Set/nextInfo.svg'
 export { default as statusFalse } from './Set/statusFalse.svg'
+export { default as RightBlack } from './Set/RightBlack.svg'
+export { default as LeftBlack } from './Set/LeftBlack.svg'
 
 
 // ------------------------Weather------------
