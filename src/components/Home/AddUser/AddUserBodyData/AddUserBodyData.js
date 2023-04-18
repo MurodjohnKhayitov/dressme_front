@@ -6,33 +6,33 @@ import { Popover } from "antd";
 
 const AddUserBodyData = () => {
 
-  const [openWearSize, setOpenWearSize] = useState(false);
-
-  const handleOpenChangeWearSize = (newOpen) => {
-    setOpenWearSize(newOpen);
+// ----------- Caps Size --------------
+  const [openCapSize, setOpenCapSize] = useState(false);
+  const handleOpenChangeCapSize = (newOpen) => {
+    setOpenCapSize(newOpen);
   };
-  const [selectWearSize, setselectWearSize] = useState("Size");
-  const handleWearValue = (value) => {
-    setselectWearSize(value);
-    setOpenWearSize(false);
+  const [selectCapSize, setselectCapSize] = useState("Size");
+  const handleCapValue = (value) => {
+    setselectCapSize(value);
+    setOpenCapSize(false);
   };
-  const wearList = [
-    { id: 1, type: "XS" },
-    { id: 2, type: "S" },
-    { id: 3, type: "M" },
-    { id: 4, type: "L" },
-    { id: 5, type: "XL" },
-    { id: 5, type: "XXL" },
-    { id: 5, type: "XXXL" },
+  const capList = [
+    { id: 1, type: "53" },
+    { id: 2, type: "54" },
+    { id: 3, type: "55" },
+    { id: 4, type: "56" },
+    { id: 5, type: "57" },
+    { id: 6, type: "58" },
+    { id: 6, type: "59" },
   ];
-  const contentWearSize = (
+  const contentCapSize = (
     <div className="w-[60px] h-fit m-0 p-0">
-      {wearList.map((data) => {
+      {capList.map((data) => {
         return (
           <p
             key={data?.id}
             onClick={() => {
-              handleWearValue(data?.type);
+              handleCapValue(data?.type);
             }}
             className={`w-full h-[30px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor`}
           >
@@ -42,6 +42,114 @@ const AddUserBodyData = () => {
       })}
     </div>
   );
+
+  // ----------- Shirt Size --------------
+  const [openShirtSize, setOpenShirtSize] = useState(false);
+  const handleOpenChangeShirtSize = (newOpen) => {
+    setOpenShirtSize(newOpen);
+  };
+  const [selectShirtSize, setselectShirtSize] = useState("Size");
+  const handleShirtValue = (value) => {
+    setselectShirtSize(value);
+    setOpenShirtSize(false);
+  };
+  const shirtList = [
+    { id: 1, type: "L" },
+    { id: 2, type: "XL" },
+    { id: 3, type: "2XL" },
+    { id: 4, type: "3XL" },
+    { id: 5, type: "4XL" },
+    { id: 6, type: "5XL" },
+  ];
+  const contentShirtSize = (
+    <div className="w-[60px] h-fit m-0 p-0">
+      {shirtList.map((data) => {
+        return (
+          <p
+            key={data?.id}
+            onClick={() => {
+              handleShirtValue(data?.type);
+            }}
+            className={`w-full h-[30px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor`}
+          >
+            {data?.type}
+          </p>
+        );
+      })}
+    </div>
+  );
+
+  // ----------- Shoes Size --------------
+  const [openShoesSize, setOpenShoesSize] = useState(false);
+  const handleOpenChangeShoesSize = (newOpen) => {
+    setOpenShoesSize(newOpen);
+  };
+  const [selectShoesSize, setselectShoesSize] = useState("Size");
+  const handleShoesValue = (value) => {
+    setselectShoesSize(value);
+    setOpenShoesSize(false);
+  };
+  const shoesList = [
+    { id: 1, type: "38" },
+    { id: 2, type: "39" },
+    { id: 3, type: "40" },
+    { id: 4, type: "41" },
+    { id: 5, type: "42" },
+  ];
+  const contentShoesSize = (
+    <div className="w-[60px] h-fit m-0 p-0">
+      {shoesList.map((data) => {
+        return (
+          <p
+            key={data?.id}
+            onClick={() => {
+              handleShoesValue(data?.type);
+            }}
+            className={`w-full h-[30px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor`}
+          >
+            {data?.type}
+          </p>
+        );
+      })}
+    </div>
+  );
+
+  // ----------- Trousers Size --------------
+  const [openTrouserSize, setOpenTrouserSize] = useState(false);
+  const handleOpenChangeTrouserSize = (newOpen) => {
+    setOpenTrouserSize(newOpen);
+  };
+  const [selectTrouserSize, setselectTrouserSize] = useState("Size");
+  const handleTrouserValue = (value) => {
+    setselectTrouserSize(value);
+    setOpenTrouserSize(false);
+  };
+  const trouserList = [
+    { id: 1, type: "28" },
+    { id: 2, type: "29" },
+    { id: 3, type: "30" },
+    { id: 4, type: "31" },
+    { id: 5, type: "32" },
+  ];
+  const contentTrouserSize = (
+    <div className="w-[60px] h-fit m-0 p-0">
+      {trouserList.map((data) => {
+        return (
+          <p
+            key={data?.id}
+            onClick={() => {
+              handleTrouserValue(data?.type);
+            }}
+            className={`w-full h-[30px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor`}
+          >
+            {data?.type}
+          </p>
+        );
+      })}
+    </div>
+  );
+
+  
 
   return (
     <main>
@@ -144,13 +252,28 @@ const AddUserBodyData = () => {
                   Обхват головы{" "}
                   <span className="font-AeonikProRegular ml-1">(шапки)</span>
                 </div>
-                <input
-                  type="number"
-                  name="caps"
-                  id="caps"
-                  placeholder="Size"
-                  className="w-[15%] font-AeonikProRegular text-base bg-btnBgColor mx-4 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                />
+                <Popover
+                  open={openCapSize}
+                  onOpenChange={handleOpenChangeCapSize}
+                  className="w-[25%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
+                  trigger="click"
+                  options={["Hide"]}
+                  placement="bottom"
+                  content={contentCapSize}
+                >
+                  <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                    {selectCapSize}
+                  </span>
+                  <span>
+                    <BiChevronDown
+                      size={20}
+                      style={{ color: "#c2c2c2" }}
+                      className={`${
+                        openCapSize ? "rotate-[-180deg]" : ""
+                      } duration-200`}
+                    />{" "}
+                  </span>
+                </Popover>
               </div>
 
               {/* Shirts */}
@@ -160,23 +283,23 @@ const AddUserBodyData = () => {
                   <span className="font-AeonikProRegular ml-1">(рубашки)</span>
                 </div>
                 <Popover
-                  open={openWearSize}
-                  onOpenChange={handleOpenChangeWearSize}
+                  open={openShirtSize}
+                  onOpenChange={handleOpenChangeShirtSize}
                   className="w-[25%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
                   trigger="click"
                   options={["Hide"]}
                   placement="bottom"
-                  content={contentWearSize}
+                  content={contentShirtSize}
                 >
                   <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
-                    {selectWearSize}
+                    {selectShirtSize}
                   </span>
                   <span>
                     <BiChevronDown
                       size={20}
                       style={{ color: "#c2c2c2" }}
                       className={`${
-                        openWearSize ? "rotate-[-180deg]" : ""
+                        openShirtSize ? "rotate-[-180deg]" : ""
                       } duration-200`}
                     />{" "}
                   </span>
@@ -189,13 +312,28 @@ const AddUserBodyData = () => {
                   Нижняя одежда{" "}
                   <span className="font-AeonikProRegular ml-1">(брюки)</span>
                 </div>
-                <input
-                  type="number"
-                  name="caps"
-                  id="caps"
-                  placeholder="Size"
-                  className="w-[25%] font-AeonikProRegular text-base bg-btnBgColor px-4 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                />
+                <Popover
+                  open={openTrouserSize}
+                  onOpenChange={handleOpenChangeTrouserSize}
+                  className="w-[25%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
+                  trigger="click"
+                  options={["Hide"]}
+                  placement="bottom"
+                  content={contentTrouserSize}
+                >
+                  <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                    {selectTrouserSize}
+                  </span>
+                  <span>
+                    <BiChevronDown
+                      size={20}
+                      style={{ color: "#c2c2c2" }}
+                      className={`${
+                        openTrouserSize ? "rotate-[-180deg]" : ""
+                      } duration-200`}
+                    />{" "}
+                  </span>
+                </Popover>
               </div>
 
               {/* Shoes */}
@@ -206,13 +344,28 @@ const AddUserBodyData = () => {
                     (кроссовки, туфли)
                   </span>
                 </div>
-                <input
-                  type="number"
-                  name="caps"
-                  id="caps"
-                  placeholder="Size"
-                  className="w-[25%] font-AeonikProRegular text-base bg-btnBgColor px-4 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                />
+                <Popover
+                  open={openShoesSize}
+                  onOpenChange={handleOpenChangeShoesSize}
+                  className="w-[25%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
+                  trigger="click"
+                  options={["Hide"]}
+                  placement="bottom"
+                  content={contentShoesSize}
+                >
+                  <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                    {selectShoesSize}
+                  </span>
+                  <span>
+                    <BiChevronDown
+                      size={20}
+                      style={{ color: "#c2c2c2" }}
+                      className={`${
+                        openShoesSize ? "rotate-[-180deg]" : ""
+                      } duration-200`}
+                    />{" "}
+                  </span>
+                </Popover>
               </div>
 
               <Link
