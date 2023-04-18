@@ -6,12 +6,82 @@ import { Popover } from "antd";
 
 const AddUserBodyData = () => {
 
-// ----------- Caps Size --------------
+// ----------- Waist Size --------------
+  const [openWaistSize, setOpenWaistSize] = useState(false);
+  const handleOpenChangeWaistSize = (newOpen) => {
+    setOpenWaistSize(newOpen);
+  };
+  const [selectWaistSize, setselectWaistSize] = useState("Обхват талии");
+  const handleWaistValue = (value) => {
+    setselectWaistSize(value);
+    setOpenWaistSize(false);
+  };
+  const waistList = [
+    { id: 1, type: "60 см" },
+    { id: 2, type: "62 см" },
+    { id: 3, type: "66 см" },
+    { id: 4, type: "68 см" },
+    { id: 5, type: "70 см" },
+  ];
+  const contentWaistSize = (
+    <div className="w-[140px] h-fit m-0 p-0">
+      {waistList.map((data) => {
+        return (
+          <p
+            key={data?.id}
+            onClick={() => {
+              handleWaistValue(data?.type);
+            }}
+            className={`w-full h-[30px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor`}
+          >
+            {data?.type}
+          </p>
+        );
+      })}
+    </div>
+  );
+
+  // ----------- Chest girth Size --------------
+  const [openChestSize, setOpenChestSize] = useState(false);
+  const handleOpenChangeChestSize = (newOpen) => {
+    setOpenChestSize(newOpen);
+  };
+  const [selectChestSize, setselectChestSize] = useState("Обхват груди");
+  const handleChestValue = (value) => {
+    setselectChestSize(value);
+    setOpenChestSize(false);
+  };
+  const chestList = [
+    { id: 1, type: "60 см" },
+    { id: 2, type: "62 см" },
+    { id: 3, type: "66 см" },
+    { id: 4, type: "68 см" },
+    { id: 5, type: "70 см" },
+  ];
+  const contentChestSize = (
+    <div className="w-[140px] h-fit m-0 p-0">
+      {chestList.map((data) => {
+        return (
+          <p
+            key={data?.id}
+            onClick={() => {
+              handleChestValue(data?.type);
+            }}
+            className={`w-full h-[30px] flex items-center justify-center not-italic cursor-pointer font-AeonikProMedium text-sm leading-4 text-center hover:bg-bgColor`}
+          >
+            {data?.type}
+          </p>
+        );
+      })}
+    </div>
+  );
+
+  // ----------- Caps Size --------------
   const [openCapSize, setOpenCapSize] = useState(false);
   const handleOpenChangeCapSize = (newOpen) => {
     setOpenCapSize(newOpen);
   };
-  const [selectCapSize, setselectCapSize] = useState("Size");
+  const [selectCapSize, setselectCapSize] = useState("53 см");
   const handleCapValue = (value) => {
     setselectCapSize(value);
     setOpenCapSize(false);
@@ -48,7 +118,7 @@ const AddUserBodyData = () => {
   const handleOpenChangeShirtSize = (newOpen) => {
     setOpenShirtSize(newOpen);
   };
-  const [selectShirtSize, setselectShirtSize] = useState("Size");
+  const [selectShirtSize, setselectShirtSize] = useState("3XL");
   const handleShirtValue = (value) => {
     setselectShirtSize(value);
     setOpenShirtSize(false);
@@ -84,7 +154,7 @@ const AddUserBodyData = () => {
   const handleOpenChangeShoesSize = (newOpen) => {
     setOpenShoesSize(newOpen);
   };
-  const [selectShoesSize, setselectShoesSize] = useState("Size");
+  const [selectShoesSize, setselectShoesSize] = useState("40");
   const handleShoesValue = (value) => {
     setselectShoesSize(value);
     setOpenShoesSize(false);
@@ -119,7 +189,7 @@ const AddUserBodyData = () => {
   const handleOpenChangeTrouserSize = (newOpen) => {
     setOpenTrouserSize(newOpen);
   };
-  const [selectTrouserSize, setselectTrouserSize] = useState("Size");
+  const [selectTrouserSize, setselectTrouserSize] = useState("31");
   const handleTrouserValue = (value) => {
     setselectTrouserSize(value);
     setOpenTrouserSize(false);
@@ -172,7 +242,7 @@ const AddUserBodyData = () => {
               </p>
               <div className="flex flex-col px-10">
                 <div className="flex items-center flex-row justify-between gap-x-5 mb-4">
-                  <div className="flex flex-col w-1/2">
+                  <div className="flex flex-col w-[47%]">
                     <label
                       htmlFor="firstname"
                       className="mb-[6px] font-AeonikProRegular text-sm"
@@ -187,7 +257,7 @@ const AddUserBodyData = () => {
                       className="bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor p-4 rounded-lg h-12"
                     />
                   </div>
-                  <div className="flex flex-col w-1/2">
+                  <div className="flex flex-col w-[47%]">
                     <label
                       htmlFor="firstname"
                       className="mb-[6px] font-AeonikProRegular text-sm"
@@ -211,13 +281,28 @@ const AddUserBodyData = () => {
                     >
                       Обхват талии
                     </label>
-                    <input
-                      type="text"
-                      name="firstname"
-                      id="firstname"
-                      placeholder="Обхват талии"
-                      className="bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor p-4 rounded-lg h-12"
-                    />
+                    <Popover
+                      open={openWaistSize}
+                      onOpenChange={handleOpenChangeWaistSize}
+                      className="w-full px-4 h-[48px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group rounded-lg border border-searchBgColor"
+                      trigger="click"
+                      options={["Hide"]}
+                      placement="bottom"
+                      content={contentWaistSize}
+                    >
+                      <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                        {selectWaistSize}
+                      </span>
+                      <span>
+                        <BiChevronDown
+                          size={20}
+                          style={{ color: "#c2c2c2" }}
+                          className={`${
+                            openWaistSize ? "rotate-[-180deg]" : ""
+                          } duration-200`}
+                        />{" "}
+                      </span>
+                    </Popover>
                   </div>
                   <div className="flex flex-col w-1/2">
                     <label
@@ -226,13 +311,28 @@ const AddUserBodyData = () => {
                     >
                       Обхват грудной клетки
                     </label>
-                    <input
-                      type="text"
-                      name="firstname"
-                      id="firstname"
-                      placeholder="Обхват груди"
-                      className="bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor p-4 rounded-lg h-12"
-                    />
+                    <Popover
+                      open={openChestSize}
+                      onOpenChange={handleOpenChangeChestSize}
+                      className="w-full px-4 h-[48px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group rounded-lg border border-searchBgColor"
+                      trigger="click"
+                      options={["Hide"]}
+                      placement="bottom"
+                      content={contentChestSize}
+                    >
+                      <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                        {selectChestSize}
+                      </span>
+                      <span>
+                        <BiChevronDown
+                          size={20}
+                          style={{ color: "#c2c2c2" }}
+                          className={`${
+                            openChestSize ? "rotate-[-180deg]" : ""
+                          } duration-200`}
+                        />{" "}
+                      </span>
+                    </Popover>
                   </div>
                 </div>
               </div>
@@ -255,7 +355,7 @@ const AddUserBodyData = () => {
                 <Popover
                   open={openCapSize}
                   onOpenChange={handleOpenChangeCapSize}
-                  className="w-[25%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
+                  className="w-[28%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
                   trigger="click"
                   options={["Hide"]}
                   placement="bottom"
@@ -285,7 +385,7 @@ const AddUserBodyData = () => {
                 <Popover
                   open={openShirtSize}
                   onOpenChange={handleOpenChangeShirtSize}
-                  className="w-[25%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
+                  className="w-[28%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
                   trigger="click"
                   options={["Hide"]}
                   placement="bottom"
@@ -315,7 +415,7 @@ const AddUserBodyData = () => {
                 <Popover
                   open={openTrouserSize}
                   onOpenChange={handleOpenChangeTrouserSize}
-                  className="w-[25%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
+                  className="w-[28%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
                   trigger="click"
                   options={["Hide"]}
                   placement="bottom"
@@ -347,7 +447,7 @@ const AddUserBodyData = () => {
                 <Popover
                   open={openShoesSize}
                   onOpenChange={handleOpenChangeShoesSize}
-                  className="w-[25%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
+                  className="w-[28%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
                   trigger="click"
                   options={["Hide"]}
                   placement="bottom"
