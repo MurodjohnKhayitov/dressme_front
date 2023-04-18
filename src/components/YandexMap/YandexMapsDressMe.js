@@ -42,7 +42,6 @@ function YandexMapsDressMe() {
     const coord = e.get("coords");
     setCoords({ ...coords, coords: coord });
   };
-  console.log(coords.coords, "coords");
   const [points, setPoints] = useState([
     {
       id: 1,
@@ -183,7 +182,6 @@ function YandexMapsDressMe() {
     setDressInfo({ ...dressInfo, yandexOpenMenu: !dressInfo?.yandexOpenMenu });
     // setOpenMenuYandex(!dressInfo);
   };
-  console.log(dressInfo?.yandexOpenMenu, "dressInfo");
   const handleAccordion = (value) => {
     setPoints((current) => {
       return current?.map((data) => {
@@ -311,7 +309,7 @@ function YandexMapsDressMe() {
               <div
                 className={`${
                   dressInfo?.yandexOpenMenu ? " ml-[0px]" : "  ml-[-1000px]"
-                } absolute cursor-pointer top-2 left-0 z-50 h-[100vh] rounded-lg overflow-hidden w-[25%] p-2 duration-500 bg-yandexNavbar backdrop-blur-sm	   border border-searchBgColor`}
+                } absolute cursor-pointer top-0 left-0 z-50 h-[100vh] rounded-lg overflow-hidden w-[25%] p-2 duration-500 bg-yandexNavbar backdrop-blur-sm	   border border-searchBgColor`}
               >
                 <div
                   onClick={handleToggleMenu}

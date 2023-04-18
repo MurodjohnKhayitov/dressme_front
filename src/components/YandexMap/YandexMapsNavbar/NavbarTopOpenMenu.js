@@ -88,11 +88,13 @@ export default function NavbarTopOpenMenu() {
       })}
     </div>
   );
+
+  
   const NextArrow = (props) => {
     const { onClick } = props;
     return (
       <div
-        className={`absolute text-center cursor-pointer no-underline  w-12 h-12 flex items-center justify-center top-[5px] z-50	right-[-2px] rounded-full bg-white duration-200 border border-solid border-searchBgColor		`}
+        className={`absolute text-center cursor-pointer no-underline  w-12 h-12 flex items-center justify-center top-[3px] z-50	right-[-1px]  rounded-full bg-white duration-200 border  border-searchBgColor		`}
         onClick={onClick}
       >
         <button className="next">
@@ -106,7 +108,7 @@ export default function NavbarTopOpenMenu() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute text-center cursor-pointer no-underline hidden w-12 h-12 flex items-center justify-center top-[0%] z-10	left-[10px] rounded-full bg-white duration-200 border border-solid border-searchBgColor`}
+        className={`absolute text-center cursor-pointer no-underline  w-12 h-12 flex items-center justify-center top-[3px] z-10	left-[0px]  rounded-full bg-white duration-200 border  border-searchBgColor`}
         onClick={onClick}
       >
         <button className="prev">
@@ -115,16 +117,50 @@ export default function NavbarTopOpenMenu() {
       </div>
     );
   };
+  // const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+  //   <button
+  //     {...props}
+  //     className={
+  //       " absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[0%] z-10	left-[10px] rounded-full  duration-200 border border-solid border-searchBgColor" +
+  //       (currentSlide === 0 ? " bg-none  hidden" : "bg-white")
+  //     }
+  //     aria-disabled={currentSlide === 0 ? true : false}
+  //     type="button"
+  //   >
+  //     <span className="w-full h-full bg-green-500">
+  //       <GrFormPrevious size={20} />
+  //     </span>
+  //   </button>
+  // );
+
+  // const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+  //   <button
+  //     {...props}
+  //     className={
+  //       " absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[0%] z-10	right-[10px] rounded-full duration-200 border border-solid border-searchBgColor" +
+  //       (currentSlide === slideCount - 0 ? "bg-none hidden" : " bg-white ")
+  //     }
+  //     aria-disabled={currentSlide === slideCount - 0 ? true : false}
+  //     type="button"
+  //   >
+  //     <span className="w-full h-full bg-green-500">
+  //       <GrFormNext size={20} />
+  //     </span>
+  //   </button>
+  // );
 
   let settings1 = {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     infinite: true,
+    arrows: true,
     speed: 500,
     dots: false,
-    slidesToShow: 9,
+    slidesToShow: 8,
     slidesToScroll: 1,
     initialSlide: 0,
+    
+
     responsive: [
       {
         breakpoint: 1024,
@@ -235,15 +271,15 @@ export default function NavbarTopOpenMenu() {
           )}
         </div>
       </div>
-        <span className="w-[2px] h-[30px] bg-searchBgColor mr-4"></span>
-      <div className="w-[67%]   h-full  ">
+      <span className="w-[2px] h-[30px] bg-searchBgColor mr-4"></span>
+      <div className="w-[67%]   h-full   px-1 ">
         <Slider
           {...settings1}
-          className="w-[100%] h-full items-center pr-2  flex xs:justify-between xs:pl-0"
+          className="w-[100%] h-full items-center px-4 flex xs:justify-between   "
         >
           {wearGroup?.map((data) => {
             return (
-              <div key={data.id} className="!w-[85px]  h-full">
+              <div key={data.id} className="!w-[85px]  h-full ">
                 <div
                   className={` w-full h-[38px] px-3 m-auto  bg-white rounded-lg flex justify-center items-center cursor-pointer  border border-searchBgColor  `}
                 >
