@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { AreaChart, Area, XAxis, Tooltip } from "recharts";
+// import { AreaChart, Area, XAxis, Tooltip } from "recharts";
 import moment from "moment";
+import GetGraph from "./GetGraph/GetGraph";
 
 export default function WeatherInfo() {
   const [state, setState] = useState({
     weatherSet: "",
     cilciyToGradus: true,
   });
+
   useQuery(
     ["Weather"],
     () => {
@@ -63,9 +65,12 @@ export default function WeatherInfo() {
     },
   ];
 
+
   return (
     <div className="w-full  flex justify-center items-center">
       <div className="w-[750px] h-fit p-2 ">
+        
+        {/* TOP of the Weather */}
         <div className="w-full h-fit my-2 flex justify-between ">
           <div className="w-fit h-full flex items-center flex-wrap gap-x-2">
             <div className="w-[70px] h-[70px] rounded-full overflow-hidden ">
@@ -152,7 +157,8 @@ export default function WeatherInfo() {
             </div>
           </div>
         </div>
-
+        
+        {/* Location CITY */}
         <div className="flex items-center justify-between  mt-5">
           <div>
             <span className="text-[20px] not-italic font-AeonikProMedium  leading-7 text-black">
@@ -165,9 +171,10 @@ export default function WeatherInfo() {
             </div>
           </div>
         </div>
-
+        
+        {/* Weatehr CHART FULL day*/}
         <div className="w-full h-400px  mt-5">
-          <AreaChart
+          {/* <AreaChart
             width={750}
             height={150}
             data={data1}
@@ -188,8 +195,11 @@ export default function WeatherInfo() {
               fillOpacity={0.3}
               strokeWidth={2}
             />
-          </AreaChart>
+          </AreaChart> */}
+          <GetGraph />
         </div>
+
+        {/* BOTTOM of the weather DAYS */}
         <div className="w-full h-fit flex justify-between  mt-5 ">
           {state?.weatherSet?.forecast?.forecastday?.map((data) => {
             return (
@@ -219,6 +229,7 @@ export default function WeatherInfo() {
             );
           })}
         </div>
+
       </div>
     </div>
   );
