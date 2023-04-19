@@ -91,9 +91,9 @@ export default function SetClothesOpenModelModal() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    initialSlide: 2,
+    initialSlide: 2, 
     dotsClass: "button__bar",
-    className: "SlickMain",
+    // className: "SlickMain",
   };
 
   return (

@@ -182,7 +182,7 @@ const TopHeader = () => {
               >
                 <span className="mr-[6px]">
                   <img
-                    className="w-[28px] h-[28px]"
+                    className="w-[32px] h-[32px]"
                     src={state?.weatherSet?.current?.condition?.icon}
                     alt="icon"
                   />
