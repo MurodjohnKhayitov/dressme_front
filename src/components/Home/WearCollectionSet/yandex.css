@@ -29,18 +29,19 @@
     background-color: #FCFCFC;
     margin: auto;
     bottom: 1px;
+    padding: 0px 50px;
     border: 1px solid #F2F2F2;
 
 }
-
-.SlickMain {
+.button__bar ul {
+    width: fit-content;
     border: 1px solid red;
 }
 
 .button__bar li {
     background-color: #E8E8E8;
-    height: 10px;
-    width: 30%;
+    height: 6px;
+    width: 64px;
     margin: auto;
     overflow: hidden;
     color: #E8E8E8;

@@ -46,8 +46,9 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           head_wear_img:
-            "https://images.uzum.uz/cf0llhivtie1lhbgpdq0/t_product_540_high.jpg#1679979817097",
+            "https://s.alicdn.com/@sc04/kf/H7819bbac91324384871fa6a41223c2955.png_300x300.png",
         },
+        
       ],
       outWear: [
         {
@@ -62,8 +63,10 @@ export default function SetClothesWear() {
           amount: "50000",
           currensy: "UZB",
           active: true,
-          out_wear_img: "https://footbolka.ru/images/polo01.jpg",
+          out_wear_img:
+            "https://s.alicdn.com/@sc04/kf/H4fe3f2c95d9f450baae7569fadb2fab4e.png_300x300.png",
         },
+        
       ],
       underWear: [
         {
@@ -79,8 +82,9 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           under_wear_img:
-            "https://media2.bulavka.uz/0cezA4z29ZiKE7ZCX1qxouIj2bU=/fit-in/220x260/products/pRvsHFqkNU/input.jpeg",
+            "https://s.alicdn.com/@sc04/kf/He9ecb7e78532450291e12c4e1de92035B.jpg_300x300.jpg",
         },
+      
       ],
       legWear: [
         {
@@ -96,8 +100,9 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           leg_wear_img:
-            "https://media2.bulavka.uz/1McaHjgNe3-t8IC1AKKYjqygy9I=/fit-in/220x260/products/EewQZSMtek/input.jpeg",
+            "https://s.alicdn.com/@sc04/kf/H8c6e7c4d96c34f628cfe9fd1acf5414eY.jpg_300x300.jpg",
         },
+        
       ],
       Accessory: [
         {
@@ -113,23 +118,9 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           accessor_wear_img:
-            "https://s.alicdn.com/@sc04/kf/HTB1k0BHgOAnBKNjSZFvq6yTKXXaa.jpg_300x300.jpg",
+            "https://s.alicdn.com/@sc04/kf/Hec52a45bd6454b8c83bfc190d8748332y.jpg_300x300.jpg",
         },
-        {
-          id: 2,
-          product_id: 2,
-          name: "Аксессуары",
-          gender: "Male",
-          quality: "semi-original",
-          composition: "cotton 100%",
-          wear_size: "51",
-          make_country: "china",
-          amount: "10000",
-          currensy: "UZB",
-          active: true,
-          accessor_wear_img:
-            "https://s.alicdn.com/@sc04/kf/HTB1GTM5bh6I8KJjSszfq6yZVXXaZ.jpg_300x300.jpg",
-        },
+      
       ],
       modelsList: [
         { id: 1, modelImg: require("../../../assets/imgs/Models/model1.svg") },
@@ -159,7 +150,7 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           head_wear_img:
-            "https://images.uzum.uz/cf0llhivtie1lhbgpdq0/t_product_540_high.jpg#1679979817097",
+            "https://s.alicdn.com/@sc04/kf/Ud6b25ff4e9e3477696538bc8e4836240A.jpg_300x300.jpg",
         },
       ],
       outWear: [
@@ -175,7 +166,8 @@ export default function SetClothesWear() {
           amount: "50000",
           currensy: "UZB",
           active: true,
-          out_wear_img: "https://footbolka.ru/images/polo01.jpg",
+          out_wear_img:
+            "https://s.alicdn.com/@sc04/kf/Hb52d77d0b9de428bb26551bebbbafd32D.jpg_300x300.jpg",
         },
       ],
       underWear: [
@@ -192,7 +184,7 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           under_wear_img:
-            "https://media2.bulavka.uz/0cezA4z29ZiKE7ZCX1qxouIj2bU=/fit-in/220x260/products/pRvsHFqkNU/input.jpeg",
+            "https://s.alicdn.com/@sc04/kf/He9ecb7e78532450291e12c4e1de92035B.jpg_300x300.jpg",
         },
       ],
       legWear: [
@@ -209,7 +201,7 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           leg_wear_img:
-            "https://media2.bulavka.uz/1McaHjgNe3-t8IC1AKKYjqygy9I=/fit-in/220x260/products/EewQZSMtek/input.jpeg",
+            "https://s.alicdn.com/@sc04/kf/H5b976707bf2d4e4493a7ab0a40b86ed2g.jpg_300x300.jpg",
         },
       ],
       Accessory: [
@@ -226,7 +218,7 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           accessor_wear_img:
-            "https://s.alicdn.com/@sc04/kf/H9f0e0ce6f3e8416291df7819fa6af755X.jpg_300x300.jpg",
+            "https://s.alicdn.com/@sc04/kf/Ha425f08d23ab4911ba76ac71c221924eD.jpg_300x300.jpg",
         },
         {
           id: 2,
@@ -241,7 +233,7 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           accessor_wear_img:
-            "https://s.alicdn.com/@sc04/kf/H2068dcd30c574549af603c8ff077d5cdJ.jpg_300x300.jpg",
+            "https://s.alicdn.com/@sc04/kf/Hec52a45bd6454b8c83bfc190d8748332y.jpg_300x300.jpg",
         },
       ],
       modelsList: [
@@ -272,7 +264,7 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           head_wear_img:
-            "https://images.uzum.uz/cf0llhivtie1lhbgpdq0/t_product_540_high.jpg#1679979817097",
+            "https://s.alicdn.com/@sc04/kf/HTB1oGyobfWG3KVjSZFgq6zTspXa5.jpg_300x300.jpg",
         },
       ],
       outWear: [
@@ -288,7 +280,8 @@ export default function SetClothesWear() {
           amount: "50000",
           currensy: "UZB",
           active: true,
-          out_wear_img: "https://footbolka.ru/images/polo01.jpg",
+          out_wear_img:
+            "https://s.alicdn.com/@sc04/kf/H4fe3f2c95d9f450baae7569fadb2fab4e.png_300x300.png",
         },
       ],
       underWear: [
@@ -305,7 +298,7 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           under_wear_img:
-            "https://media2.bulavka.uz/0cezA4z29ZiKE7ZCX1qxouIj2bU=/fit-in/220x260/products/pRvsHFqkNU/input.jpeg",
+            "https://s.alicdn.com/@sc04/kf/Hdf774be8cb404a8baa1eb7a834c08403m.jpg_300x300.jpg",
         },
       ],
       legWear: [
@@ -322,7 +315,7 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           leg_wear_img:
-            "https://media2.bulavka.uz/1McaHjgNe3-t8IC1AKKYjqygy9I=/fit-in/220x260/products/EewQZSMtek/input.jpeg",
+            "https://s.alicdn.com/@sc04/kf/H5b976707bf2d4e4493a7ab0a40b86ed2g.jpg_300x300.jpg",
         },
       ],
       Accessory: [
@@ -385,7 +378,7 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           head_wear_img:
-            "https://images.uzum.uz/cf0llhivtie1lhbgpdq0/t_product_540_high.jpg#1679979817097",
+            "https://s.alicdn.com/@sc04/kf/Hf31393ba732d413f9aef8d8d037bdcb0s.jpg_300x300.jpg",
         },
       ],
       outWear: [
@@ -401,7 +394,8 @@ export default function SetClothesWear() {
           amount: "50000",
           currensy: "UZB",
           active: true,
-          out_wear_img: "https://footbolka.ru/images/polo01.jpg",
+          out_wear_img:
+            "https://s.alicdn.com/@sc04/kf/H4fe3f2c95d9f450baae7569fadb2fab4e.png_300x300.png",
         },
       ],
       underWear: [
@@ -418,7 +412,7 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           under_wear_img:
-            "https://media2.bulavka.uz/0cezA4z29ZiKE7ZCX1qxouIj2bU=/fit-in/220x260/products/pRvsHFqkNU/input.jpeg",
+            "https://s.alicdn.com/@sc04/kf/Hdf774be8cb404a8baa1eb7a834c08403m.jpg_300x300.jpg",
         },
       ],
       legWear: [
@@ -435,7 +429,7 @@ export default function SetClothesWear() {
           currensy: "UZB",
           active: true,
           leg_wear_img:
-            "https://media2.bulavka.uz/1McaHjgNe3-t8IC1AKKYjqygy9I=/fit-in/220x260/products/EewQZSMtek/input.jpeg",
+            "https://s.alicdn.com/@sc04/kf/H5b976707bf2d4e4493a7ab0a40b86ed2g.jpg_300x300.jpg",
         },
       ],
       Accessory: [
@@ -478,7 +472,6 @@ export default function SetClothesWear() {
       ],
     },
   ]);
-
 
   const NextArrow = (props) => {
     const { onClick } = props;
@@ -571,7 +564,6 @@ export default function SetClothesWear() {
       </div>
     );
   };
-
 
   const [getSliderId, setGetSliderId] = useState({
     headWearId: 1,
@@ -690,41 +682,46 @@ export default function SetClothesWear() {
               ) : (
                 <div>
                   {/* HeadWear */}
-                  <div className="w-full h-fit">
+                  <div className="w-full h-fit ">
                     {producListMap?.headWear?.length >= 2 ? (
-                      <Slider {...headWear} className={`w-full h-[72px] mb-3`}>
+                      <Slider {...headWear} className={`w-full h-[72px] `}>
                         {producListMap?.headWear?.map((item) => {
                           return item.id ? (
                             <div
                               key={item?.id}
-                              className={`!w-[192px] box-border ml-[56px] flex items-center justify-center h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={`HeadWear !w-[192px]  box-border ml-[56px] cursor-pointer flex items-center justify-center h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
-                              <div className="w-full h-full">
-                                <img
-                                  className="w-[100px] h-full m-auto"
-                                  src={item?.head_wear_img}
-                                  alt="head_wear_img"
-                                />
-                              </div>
-                              <div
-                                className={`absolute w-[190px] top-1 px-1 flex ${
-                                  !item?.active
-                                    ? "justify-between"
-                                    : "justify-end"
-                                }`}
-                              >
-                                {!item?.active ? (
-                                  <div className="w-6 h-6 cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                    <img src={statusFalse} alt="statusFalse" />
-                                  </div>
-                                ) : null}
-                                <div className="w-6 h-6 flex items-center justify-center top-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
-                                  <img src={Liked} alt="Liked" />
+                              <div className="group relative w-full h-full flex items-center justify-center ">
+                                <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 ">
+                                  <img
+                                    className="w-[100px] h-full m-auto  "
+                                    src={item?.head_wear_img}
+                                    alt="head_wear_img"
+                                  />
                                 </div>
-                              </div>
-                              <div className="absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px] flex justify-end">
-                                <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor data-hover:bg-red-500 bg-white rounded-lg flex items-center justify-center">
-                                  <img src={nextInfo} alt="nextInfo" />
+                                <div
+                                  className={`   flex ${
+                                    !item?.active
+                                      ? "justify-between"
+                                      : "justify-end"
+                                  } `}
+                                >
+                                  {!item?.active ? (
+                                    <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                      <img
+                                        src={statusFalse}
+                                        alt="statusFalse"
+                                      />
+                                    </div>
+                                  ) : null}
+                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                    <img src={Liked} alt="Liked" />
+                                  </div>
+                                </div>
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                    <img src={nextInfo} alt="nextInfo" />
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -734,39 +731,44 @@ export default function SetClothesWear() {
                         })}
                       </Slider>
                     ) : (
-                      <div className={`w-full h-[72px] mb-3`}>
+                      <div className={`w-full h-[72px] `}>
                         {producListMap?.headWear?.map((item) => {
                           return item.id ? (
                             <div
                               key={item?.id}
-                              className={`!w-[192px] box-border ml-[56px] flex items-center justify-center h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={` w-[192px] box-border ml-[56px] cursor-pointer flex items-center justify-center h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
-                              <div className="w-full h-full">
-                                <img
-                                  className="w-[100px] h-full m-auto"
-                                  src={item?.head_wear_img}
-                                  alt="head_wear_img"
-                                />
-                              </div>
-                              <div
-                                className={`absolute w-[190px] top-1 px-1 flex ${
-                                  !item?.active
-                                    ? "justify-between"
-                                    : "justify-end"
-                                } `}
-                              >
-                                {!item?.active ? (
-                                  <div className="w-6 h-6 cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                    <img src={statusFalse} alt="statusFalse" />
-                                  </div>
-                                ) : null}
-                                <div className="w-6 h-6 flex items-center justify-center top-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
-                                  <img src={Liked} alt="Liked" />
+                              <div className="group relative w-full h-full flex items-center justify-center">
+                                <div className="w-full h-full hover:scale-110   ease-in-out	duration-300">
+                                  <img
+                                    className="w-[100px] h-full m-auto  "
+                                    src={item?.head_wear_img}
+                                    alt="head_wear_img"
+                                  />
                                 </div>
-                              </div>
-                              <div className="absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px] flex justify-end">
-                                <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor data-hover:bg-red-500 bg-white rounded-lg flex items-center justify-center">
-                                  <img src={nextInfo} alt="nextInfo" />
+                                <div
+                                  className={`   flex ${
+                                    !item?.active
+                                      ? "justify-between"
+                                      : "justify-end"
+                                  } `}
+                                >
+                                  {!item?.active ? (
+                                    <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                      <img
+                                        src={statusFalse}
+                                        alt="statusFalse"
+                                      />
+                                    </div>
+                                  ) : null}
+                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                    <img src={Liked} alt="Liked" />
+                                  </div>
+                                </div>
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                    <img src={nextInfo} alt="nextInfo" />
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -777,180 +779,387 @@ export default function SetClothesWear() {
                       </div>
                     )}
                   </div>
-             
 
                   {/* OutWear */}
-                  <div className="w-full h-fit ">
-                    
-                    <Slider {...outWear} className={`w-full h-[160px]`}>
-                      {producListMap?.outWear.map((item) => {
-                        return (
-                          <div
-                            key={item?.id}
-                            className={`!w-[192px] flex justify-center items-center ml-[56px] h-[148px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
-                          >
-                            <div className="w-full h-full">
-                              <img
-                                className=" h-full m-auto"
-                                src={item?.out_wear_img}
-                                alt="out_wear_img"
-                              />
-                            </div>
+                  <div className="w-full h-fit  mt-1">
+                    {producListMap?.outWear?.length >= 2 ? (
+                      <Slider {...outWear} className={`w-full h-[160px]`}>
+                        {producListMap?.outWear.map((item) => {
+                          return (
                             <div
-                              className={`absolute top-1 px-1 flex ${
-                                !item?.active
-                                  ? "justify-between"
-                                  : "justify-end"
-                              }  w-[190px] `}
+                              key={item?.id}
+                              className={`!w-[192px] cursor-pointer flex justify-center items-center ml-[56px] h-[148px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
-                              {!item?.active ? (
-                                <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                  <img src={statusFalse} alt="" />
+                              <div className="group relative w-full h-full flex items-center justify-center">
+                                <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
+                                  <img
+                                    className="h-[90%]"
+                                    src={item?.out_wear_img}
+                                    alt="head_wear_img"
+                                  />
                                 </div>
-                              ) : null}
-                              <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={Liked} alt="" />
+                                <div
+                                  className={`   flex ${
+                                    !item?.active
+                                      ? "justify-between"
+                                      : "justify-end"
+                                  } `}
+                                >
+                                  {!item?.active ? (
+                                    <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                      <img
+                                        src={statusFalse}
+                                        alt="statusFalse"
+                                      />
+                                    </div>
+                                  ) : null}
+                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                    <img src={Liked} alt="Liked" />
+                                  </div>
+                                </div>
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                    <img src={nextInfo} alt="nextInfo" />
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                            <div className="absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end">
-                              <div className="w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={nextInfo} alt="nextInfo" />
+                          );
+                        })}
+                      </Slider>
+                    ) : (
+                      <div>
+                        <div className={`w-full h-[160px]`}>
+                          {producListMap?.outWear.map((item) => {
+                            return (
+                              <div
+                                key={item?.id}
+                                className={`w-[192px] cursor-pointer flex justify-center items-center mx-auto h-[148px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              >
+                                <div className="group relative w-full h-full flex items-center justify-center">
+                                  <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
+                                    <img
+                                      className="h-[90%]"
+                                      src={item?.out_wear_img}
+                                      alt="head_wear_img"
+                                    />
+                                  </div>
+                                  <div
+                                    className={`   flex ${
+                                      !item?.active
+                                        ? "justify-between"
+                                        : "justify-end"
+                                    } `}
+                                  >
+                                    {!item?.active ? (
+                                      <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                        <img
+                                          src={statusFalse}
+                                          alt="statusFalse"
+                                        />
+                                      </div>
+                                    ) : null}
+                                    <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                      <img src={Liked} alt="Liked" />
+                                    </div>
+                                  </div>
+                                  <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                    <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                      <img src={nextInfo} alt="nextInfo" />
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </Slider>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* UnderWear */}
                   <div className="w-full h-fit -mt-2">
-                    <Slider {...underWear} className={`w-full h-[180px]`}>
-                      {producListMap?.underWear.map((item) => {
-                        return (
-                          <div
-                            key={item?.id}
-                            className={`!w-[192px] flex justify-center items-center ml-[56px] h-[168px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
-                          >
-                            <div className="w-full h-full">
-                              <img
-                                className=" h-full m-auto"
-                                src={item?.under_wear_img}
-                                alt="under_wear_img"
-                              />
-                            </div>
+                    {producListMap?.underWear?.length >= 2 ? (
+                      <Slider {...underWear} className={`w-full h-[180px]`}>
+                        {producListMap?.underWear.map((item) => {
+                          return (
                             <div
-                              className={`absolute top-1 px-1 flex ${
-                                !item?.active
-                                  ? "justify-between"
-                                  : "justify-end"
-                              }  w-[190px] `}
+                              key={item?.id}
+                              className={`!w-[192px] flex justify-center cursor-pointer items-center ml-[56px]  h-[168px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
-                              {!item?.active ? (
-                                <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center">
-                                  <img src={statusFalse} alt="" />
+                              <div className="group relative w-full h-full flex items-center justify-center">
+                                <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
+                                  <img
+                                    className="h-[90%]"
+                                    src={item?.under_wear_img}
+                                    alt="under_wear_img"
+                                  />
                                 </div>
-                              ) : null}
-                              <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={Liked} alt="" />
+                                <div
+                                  className={`   flex ${
+                                    !item?.active
+                                      ? "justify-between"
+                                      : "justify-end"
+                                  } `}
+                                >
+                                  {!item?.active ? (
+                                    <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                      <img
+                                        src={statusFalse}
+                                        alt="statusFalse"
+                                      />
+                                    </div>
+                                  ) : null}
+                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                    <img src={Liked} alt="Liked" />
+                                  </div>
+                                </div>
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                    <img src={nextInfo} alt="nextInfo" />
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                            <div className="absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end">
-                              <div className="w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={nextInfo} alt="nextInfo" />
+                          );
+                        })}
+                      </Slider>
+                    ) : (
+                      <div className={`w-full h-[180px]`}>
+                        {producListMap?.underWear.map((item) => {
+                          return (
+                            <div
+                              key={item?.id}
+                              className={`w-[192px] flex justify-center cursor-pointer items-center mx-auto  h-[168px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                            >
+                              <div className="group relative w-full h-full flex items-center justify-center">
+                                <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
+                                  <img
+                                    className="h-[90%]"
+                                    src={item?.under_wear_img}
+                                    alt="under_wear_img"
+                                  />
+                                </div>
+                                <div
+                                  className={`   flex ${
+                                    !item?.active
+                                      ? "justify-between"
+                                      : "justify-end"
+                                  } `}
+                                >
+                                  {!item?.active ? (
+                                    <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                      <img
+                                        src={statusFalse}
+                                        alt="statusFalse"
+                                      />
+                                    </div>
+                                  ) : null}
+                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                    <img src={Liked} alt="Liked" />
+                                  </div>
+                                </div>
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                    <img src={nextInfo} alt="nextInfo" />
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        );
-                      })}
-                    </Slider>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
 
                   {/* LegWear */}
                   <div className="w-full h-fit -mt-2">
-                    <Slider {...legWear} className={`w-full h-[72px]`}>
-                      {producListMap?.legWear.map((item) => {
-                        return (
-                          <div
-                            key={item?.id}
-                            className={`!w-[192px] flex justify-center items-center  ml-[56px] h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
-                          >
-                            <div className="w-full h-full">
-                              <img
-                                className=" h-full m-auto"
-                                src={item?.leg_wear_img}
-                                alt="leg_wear_img"
-                              />
-                            </div>
+                    {producListMap?.legWear?.length >= 2 ? (
+                      <Slider {...legWear} className={`w-full h-[72px]`}>
+                        {producListMap?.legWear.map((item) => {
+                          return (
                             <div
-                              className={`absolute top-1 px-1 flex ${
-                                !item?.active
-                                  ? "justify-between"
-                                  : "justify-end"
-                              }  w-[190px] `}
+                              key={item?.id}
+                              className={`!w-[192px] flex justify-center items-center  cursor-pointer ml-[56px] h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
-                              {!item?.active ? (
-                                <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center">
-                                  <img src={statusFalse} alt="" />
+                              <div className="group relative w-full h-full flex items-center justify-center">
+                                <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
+                                  <img
+                                    className="h-[90%]"
+                                    src={item?.leg_wear_img}
+                                    alt="leg_wear_img"
+                                  />
                                 </div>
-                              ) : null}
-                              <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={Liked} alt="" />
+                                <div
+                                  className={`   flex ${
+                                    !item?.active
+                                      ? "justify-between"
+                                      : "justify-end"
+                                  } `}
+                                >
+                                  {!item?.active ? (
+                                    <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                      <img
+                                        src={statusFalse}
+                                        alt="statusFalse"
+                                      />
+                                    </div>
+                                  ) : null}
+                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                    <img src={Liked} alt="Liked" />
+                                  </div>
+                                </div>
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                    <img src={nextInfo} alt="nextInfo" />
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                            <div className="absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end">
-                              <div className="w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={nextInfo} alt="nextInfo" />
+                          );
+                        })}
+                      </Slider>
+                    ) : (
+                      <div className={`w-full h-[72px]`}>
+                        {producListMap?.legWear.map((item) => {
+                          return (
+                            <div
+                              key={item?.id}
+                              className={`w-[192px] flex justify-center items-center  cursor-pointer mx-auto h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                            >
+                              <div className="group relative w-full h-full flex items-center justify-center">
+                                <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
+                                  <img
+                                    className="h-[90%]"
+                                    src={item?.leg_wear_img}
+                                    alt="leg_wear_img"
+                                  />
+                                </div>
+                                <div
+                                  className={`   flex ${
+                                    !item?.active
+                                      ? "justify-between"
+                                      : "justify-end"
+                                  } `}
+                                >
+                                  {!item?.active ? (
+                                    <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                      <img
+                                        src={statusFalse}
+                                        alt="statusFalse"
+                                      />
+                                    </div>
+                                  ) : null}
+                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                    <img src={Liked} alt="Liked" />
+                                  </div>
+                                </div>
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                    <img src={nextInfo} alt="nextInfo" />
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        );
-                      })}
-                    </Slider>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
 
                   {/* Accessory */}
-                  <div className="w-full h-fit mt-3 mb-4">
-                    <Slider {...Accessory} className={`w-full h-[72px]`}>
-                      {producListMap?.Accessory.map((item) => {
-                        return (
-                          <div
-                            key={item?.id}
-                            className={`!w-[192px] flex items-center justify-center ml-[56px] h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
-                          >
-                            <div className="w-full h-full">
-                              <img
-                                className="w-[100px] h-full m-auto"
-                                src={item?.accessor_wear_img}
-                                alt="accessor_wear_img"
-                              />
-                            </div>
+                  <div className="w-full h-fit mt-1 mb-4">
+                    {producListMap?.Accessory?.length >= 2 ? (
+                      <Slider {...Accessory} className={`w-full h-[72px]`}>
+                        {producListMap?.Accessory.map((item) => {
+                          return (
                             <div
-                              className={`absolute top-1 px-1 flex ${
-                                !item?.active
-                                  ? "justify-between"
-                                  : "justify-end"
-                              }  w-[190px] `}
+                              key={item?.id}
+                              className={`!w-[192px] flex items-center cursor-pointer justify-center ml-[56px] h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
-                              {!item?.active ? (
-                                <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded flex items-center justify-center">
-                                  <img src={statusFalse} alt="" />
+                               <div className="group relative w-full h-full flex items-center justify-center">
+                                <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
+                                  <img
+                                    className="h-[90%]"
+                                    src={item?.accessor_wear_img}
+                                    alt="accessor_wear_img"
+                                  />
                                 </div>
-                              ) : null}
-                              <div className="w-[24px] h-[24px] cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={Liked} alt="" />
+                                <div
+                                  className={`   flex ${
+                                    !item?.active
+                                      ? "justify-between"
+                                      : "justify-end"
+                                  } `}
+                                >
+                                  {!item?.active ? (
+                                    <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                      <img
+                                        src={statusFalse}
+                                        alt="statusFalse"
+                                      />
+                                    </div>
+                                  ) : null}
+                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                    <img src={Liked} alt="Liked" />
+                                  </div>
+                                </div>
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                    <img src={nextInfo} alt="nextInfo" />
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                            <div className="absolute duration-200  bottom-1 px-1 mb-[6px] w-[190px]  flex justify-end">
-                              <div className="w-[24px] h-[24px]     cursor-pointer border border-searchBgColor bg-white rounded-lg flex items-center justify-center">
-                                <img src={nextInfo} alt="nextInfo" />
+                          );
+                        })}
+                      </Slider>
+                    ) : (
+                      <div className={`w-full h-[72px]`}>
+                        {producListMap?.Accessory.map((item) => {
+                          return (
+                            <div
+                              key={item?.id}
+                              className={`w-[192px] flex items-center cursor-pointer justify-center mx-auto h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                            >
+                              <div className="group relative w-full h-full flex items-center justify-center">
+                                <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
+                                  <img
+                                    className="h-[90%]"
+                                    src={item?.accessor_wear_img}
+                                    alt="accessor_wear_img"
+                                  />
+                                </div>
+                                <div
+                                  className={`   flex ${
+                                    !item?.active
+                                      ? "justify-between"
+                                      : "justify-end"
+                                  } `}
+                                >
+                                  {!item?.active ? (
+                                    <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                      <img
+                                        src={statusFalse}
+                                        alt="statusFalse"
+                                      />
+                                    </div>
+                                  ) : null}
+                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                    <img src={Liked} alt="Liked" />
+                                  </div>
+                                </div>
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                    <img src={nextInfo} alt="nextInfo" />
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        );
-                      })}
-                    </Slider>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
@@ -1056,9 +1265,9 @@ export default function SetClothesWear() {
                   >
                     <div
                       onClick={() => setOpen(false)}
-                      className="flex justify-end p-2 cursor-pointer absolute z-50 top-2 right-2"
+                      className="w-[44px] h-[44px] border  border-searchBgColor select-none rounded-lg bg-btnBgColor flex justify-center items-center active:scale-95	active:opacity-70 p-2 cursor-pointer absolute z-50 top-2 right-2"
                     >
-                      <img src={MenuClose} alt="" />
+                      <img className="w-[16px] h-4" src={MenuClose} alt="" />
                     </div>
                     <div className="h-full">
                       <SetClothesOpenModelModal />
