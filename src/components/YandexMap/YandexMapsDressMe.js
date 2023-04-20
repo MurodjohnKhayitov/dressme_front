@@ -34,6 +34,7 @@ import YandexMapsIndex from "./YandexMapsNavbar/YandexMapsIndex";
 import { dressMainData } from "../../ContextHook/ContextMenu";
 import { GrFormDown } from "react-icons/gr";
 import NavbarTopOpenMenu from "./YandexMapsNavbar/NavbarTopOpenMenu";
+import { GiBookmarklet } from "react-icons/gi";
 function YandexMapsDressMe() {
   // const [openMenuYandex, setOpenMenuYandex] = useState(false);
 
@@ -182,16 +183,26 @@ function YandexMapsDressMe() {
     setDressInfo({ ...dressInfo, yandexOpenMenu: !dressInfo?.yandexOpenMenu });
     // setOpenMenuYandex(!dressInfo);
   };
-  const handleAccordion = (value) => {
+  // const handleAccordion = (value) => {
+  //   setPoints((current) => {
+  //     return current?.map((data) => {
+  //       if (data?.id == value) {
+  //         return { ...data, accordion: !data.accordion };
+  //       } else return data;
+  //     });
+  //   });
+  // };
+  const handleGetId = (getValue) => {
     setPoints((current) => {
-      return current?.map((data) => {
-        if (data?.id == value) {
+      return current.map((data) => {
+        if (data?.id == getValue) {
           return { ...data, accordion: !data.accordion };
-        } else return data;
+        } else {
+          return { ...data, accordion: false };
+        }
       });
     });
   };
-
   return (
     <div className=" h-fit w-full flex justify-center overflow-hidden  ">
       <div className="w-[100%] h-[100vh] border-b border-searchBgColor overflow-hidden">
@@ -226,7 +237,6 @@ function YandexMapsDressMe() {
             width="100%"
             height="100%"
             modules={["control.ZoomControl", "control.FullscreenControl"]}
-           
           >
             <GeolocationControl
               options={{
@@ -237,7 +247,7 @@ function YandexMapsDressMe() {
             <ZoomControl
               options={{
                 float: "right",
-                position: { bottom: 300, right: 10,size:"small" },
+                position: { bottom: 300, right: 10, size: "small" },
               }}
             />
             {/* ---------- */}
@@ -252,7 +262,7 @@ function YandexMapsDressMe() {
               {points.map((data, index) => (
                 <Placemark
                   className={"placemarkCLuster"}
-                  // className="bg-green-500 text-red-500 p-2 border border-red-500"
+                  // className="bg-green-500 text-red-500 p-2 "
                   key={index}
                   geometry={data?.cordinate}
                   options={{
@@ -356,136 +366,145 @@ function YandexMapsDressMe() {
                     </button>
                   </div>
                 </div>
-                <div className="w-full h-[80vh] mt-3 py-1 flex flex-col gap-y-2 overflow-auto   YandexListScroll ">
-                  {points?.map((data) => {
-                    return (
-                      <div
-                        key={data?.id}
-                        className={`w-full ${
-                          data?.accordion ? "!h-[426px]" : "!h-[202px]"
-                        }  p-4 flex flex-col gap-y-[11px] rounded-lg  bg-white border border-searchBgColor`}
-                      >
-                        <div className="w-full flex justify-between">
-                          <span className="not-italic font-AeonikProMedium text-lg leading-5 text-black tracking-[1%]">
-                            Button (Чиланзар)
-                          </span>
-                          <span className="flex">
-                            <span>
-                              <img src={star} alt="" />
-                            </span>
-                            <span className="not-italic ml-[6px] flex font-AeonikProMedium text-lg leading-5 text-black tracking-[1%]">
-                              4.8
-                            </span>
-                          </span>
-                        </div>
-                        <div className="w-full flex">
-                          <span>
-                            <img src={ColorLessLocation} alt="" />
-                          </span>
-                          <span className="w-[70%] not-italic ml-4 font-AeonikProRegular text-base leading-5 text-setTexOpacity">
-                            г. Ташкент, Чиланзарский район, квартал-7, д 45б
-                            (Катартал)
-                          </span>
-                        </div>
-                        <div className="w-full flex items-center">
-                          <span>
-                            <img src={ClothesHang} alt="" />
-                          </span>
-                          <span className="not-italic ml-4 font-AeonikProRegular text-base leading-4 text-black tracking-[1%]">
-                            Есть примерочная
-                          </span>
-                        </div>
+                <div className="w-full h-[85vh] mt-3 py-1 flex flex-col gap-y-2   ">
+                  <div className="w-full h-full overflow-y-auto  YandexListScroll ">
+                    {points?.map((data) => {
+                      return (
                         <div
-                          onClick={() => handleAccordion(data.id)}
-                          className="w-full flex items-center justify-between"
+                          key={data?.id}
+                          className={`w-full ${
+                            data?.accordion ? "h-[426px]" : "h-[202px]"
+                          }  flex flex-col  rounded-lg  bg-white border overflow-hidden border-searchBgColor pb-3 mt-3`}
                         >
-                          <div className="flex items-center ">
-                            <span>
-                              <img src={Clock} alt="" />
-                            </span>
-                            <span className="not-italic ml-4 font-AeonikProRegular text-base leading-4 text-black tracking-[1%]">
-                              10:00 - 20:00, без выходных
-                            </span>
-                          </div>{" "}
-                          <div className="flex items-center justify-end">
-                            <span
-                              className={`${
-                                data?.accordion
-                                  ? "rotate-[-180deg]"
-                                  : "rotate-0"
-                              } duration-300`}
-                            >
-                              <GrFormDown size={20} />
-                            </span>
-                          </div>
-                        </div>
-                        {data?.accordion ? (
-                          <div className="h-fit  flex flex-col justify-center w-full">
-                            <div className="w-[80%] h-[2px] bg-OpacitySignIn mx-auto  mb-6 mt-4"></div>
-                            <div className="flex flex-col gap-y-5">
-                              <div className=" flex justify-between items-center">
-                                <div className="flex items-center">
-                                  <span>
-                                    <img src={shirtMaps} alt="" />
-                                  </span>
-                                  <span className="ml-4 not-italic font-AeonikProMedium text-base leading-4 text-black">
-                                    Футболки
-                                  </span>
-                                </div>
-                                <div className="flex justify-end items-center">
-                                  <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-setTexOpacity">
-                                    от
-                                    <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-black">
-                                      {" "}
-                                      59 000{" "}
-                                    </span>
-                                    сум
-                                  </span>
-                                </div>
-                              </div>
-                              <div className=" flex justify-between items-center">
-                                <div className="flex items-center">
-                                  <span>
-                                    <img src={shirtMaps} alt="" />
-                                  </span>
-                                  <span className="ml-4 not-italic font-AeonikProMedium text-base leading-4 text-black">
-                                    Футболки
-                                  </span>
-                                </div>
-                                <div className="flex justify-end items-center">
-                                  <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-setTexOpacity">
-                                    от
-                                    <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-black">
-                                      {" "}
-                                      59 000{" "}
-                                    </span>
-                                    сум
-                                  </span>
-                                </div>
-                              </div>
-                              <div className=" flex justify-between items-center">
-                                <div className="flex items-center">
-                                  <span>
-                                    <img src={shirtMaps} alt="" />
-                                  </span>
-                                  <span className="ml-4 not-italic font-AeonikProMedium text-base leading-4 text-black">
-                                    Футболки
-                                  </span>
-                                </div>
-                                <div className="flex justify-end items-center">
-                                  <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-setTexOpacity">
-                                    от
-                                    <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-black">
-                                      {" "}
-                                      59 000{" "}
-                                    </span>
-                                    сум
-                                  </span>
-                                </div>
-                              </div>{" "}
+                          <div className="w-full p-4 h-[202px]  flex flex-wrap content-around ">
+                            <div className="w-full flex justify-between">
+                              <span className="not-italic font-AeonikProMedium text-lg leading-5 text-black tracking-[1%]">
+                                Button (Чиланзар)
+                              </span>
+                              <span className="flex">
+                                <span>
+                                  <img src={star} alt="" />
+                                </span>
+                                <span className="not-italic ml-[6px] flex font-AeonikProMedium text-lg leading-5 text-black tracking-[1%]">
+                                  4.8
+                                </span>
+                              </span>
                             </div>
-                            <div className="w-[80%] h-[2px] bg-OpacitySignIn mx-auto  mt-6"></div>
-                            <div className="w-full h-12 mt-3 flex justify-center items-center rounded-lg bg-searchBgColor border border-OpacitySignIn">
+                            <div className="w-full flex">
+                              <span>
+                                <img src={ColorLessLocation} alt="" />
+                              </span>
+                              <span className="w-[70%] not-italic ml-4 font-AeonikProRegular text-base leading-5 text-setTexOpacity">
+                                г. Ташкент, Чиланзарский район, квартал-7, д 45б
+                                (Катартал)
+                              </span>
+                            </div>
+                            <div className="w-full flex items-center">
+                              <span>
+                                <img src={ClothesHang} alt="" />
+                              </span>
+                              <span className="not-italic ml-4 font-AeonikProRegular text-base leading-4 text-black tracking-[1%]">
+                                Есть примерочная
+                              </span>
+                            </div>
+                            <div
+                              className="w-full flex items-center justify-between"
+                              onClick={() => handleGetId(data.id)}
+                            >
+                              <div className="flex items-center ">
+                                <span>
+                                  <img src={Clock} alt="" />
+                                </span>
+                                <span className="not-italic ml-4 font-AeonikProRegular text-base leading-4 text-black tracking-[1%]">
+                                  10:00 - 20:00, без выходных
+                                </span>
+                              </div>{" "}
+                              <div className="flex items-center justify-end">
+                                <span
+                                  className={`${
+                                    data?.accordion
+                                      ? "rotate-[-180deg]"
+                                      : "rotate-0"
+                                  } duration-300`}
+                                >
+                                  <GrFormDown size={20} />
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div
+                            className={`h-[214px] ${
+                              data?.accordion ? "mb-0" : "mb-[-300px]"
+                            } flex flex-wrap content-between justify-center  w-full mt-3 px-4`}
+                          >
+                            <div className="w-full ">
+                              <div className="w-[80%] h-[2px] bg-OpacitySignIn mx-auto  mb-5 "></div>
+                              <div className="flex flex-col gap-y-3 ">
+                                <div className=" flex justify-between items-center">
+                                  <div className="flex items-center">
+                                    <span>
+                                      <img src={shirtMaps} alt="" />
+                                    </span>
+                                    <span className="ml-4 not-italic font-AeonikProMedium text-base leading-4 text-black">
+                                      Футболки
+                                    </span>
+                                  </div>
+                                  <div className="flex justify-end items-center">
+                                    <span className="not-italic font-AeonikProMedium text-base leading-5 text-right text-setTexOpacity">
+                                      от
+                                      <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-black">
+                                        {" "}
+                                        59 000{" "}
+                                      </span>
+                                      сум
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className=" flex justify-between items-center">
+                                  <div className="flex items-center">
+                                    <span>
+                                      <img src={shirtMaps} alt="" />
+                                    </span>
+                                    <span className="ml-4 not-italic font-AeonikProMedium text-base leading-4 text-black">
+                                      Футболки
+                                    </span>
+                                  </div>
+                                  <div className="flex justify-end items-center">
+                                    <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-setTexOpacity">
+                                      от
+                                      <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-black">
+                                        {" "}
+                                        59 000{" "}
+                                      </span>
+                                      сум
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className=" flex justify-between items-center">
+                                  <div className="flex items-center">
+                                    <span>
+                                      <img src={shirtMaps} alt="" />
+                                    </span>
+                                    <span className="ml-4 not-italic font-AeonikProMedium text-base leading-4 text-black">
+                                      Футболки
+                                    </span>
+                                  </div>
+                                  <div className="flex justify-end items-center">
+                                    <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-setTexOpacity">
+                                      от
+                                      <span className="not-italic font-AeonikProMedium text-xl leading-5 text-right text-black">
+                                        {" "}
+                                        59 000{" "}
+                                      </span>
+                                      сум
+                                    </span>
+                                  </div>
+                                </div>{" "}
+                              </div>
+                              <div className="w-[80%] h-[2px] bg-OpacitySignIn mx-auto  mt-5"></div>
+                            </div>
+                            <div className="w-full h-12  flex justify-center items-center rounded-lg bg-searchBgColor border border-OpacitySignIn">
                               <span>
                                 <img src={shop} alt="" />
                               </span>
@@ -494,14 +513,14 @@ function YandexMapsDressMe() {
                               </span>
                             </div>
                           </div>
-                        ) : null}
-                      </div>
-                    );
-                  })}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
-            {/* <div className="absolute border border-red-500 bottom-0 w-full border "> */}
+            {/* <div className="absolute  bottom-0 w-full border "> */}
             <div
               className="absolute bottom-[24px] left-1/2 right-1/2 translate-x-[-50%] translate-y-[-50%]  overflow-hidden z-50 bg-yandexNavbar backdrop-blur-sm rounded-lg
              h-[48px] w-fit shadow-lg"
