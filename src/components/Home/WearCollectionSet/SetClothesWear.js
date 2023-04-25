@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { GrFormNext, GrFormPrevious } from "react-icons/gr";
+import { GrClose, GrFormNext, GrFormPrevious } from "react-icons/gr";
 import {
   addBag,
   adidas,
@@ -48,7 +48,6 @@ export default function SetClothesWear() {
           head_wear_img:
             "https://s.alicdn.com/@sc04/kf/H7819bbac91324384871fa6a41223c2955.png_300x300.png",
         },
-        
       ],
       outWear: [
         {
@@ -66,7 +65,6 @@ export default function SetClothesWear() {
           out_wear_img:
             "https://s.alicdn.com/@sc04/kf/H4fe3f2c95d9f450baae7569fadb2fab4e.png_300x300.png",
         },
-        
       ],
       underWear: [
         {
@@ -84,7 +82,6 @@ export default function SetClothesWear() {
           under_wear_img:
             "https://s.alicdn.com/@sc04/kf/He9ecb7e78532450291e12c4e1de92035B.jpg_300x300.jpg",
         },
-      
       ],
       legWear: [
         {
@@ -102,7 +99,6 @@ export default function SetClothesWear() {
           leg_wear_img:
             "https://s.alicdn.com/@sc04/kf/H8c6e7c4d96c34f628cfe9fd1acf5414eY.jpg_300x300.jpg",
         },
-        
       ],
       Accessory: [
         {
@@ -120,7 +116,6 @@ export default function SetClothesWear() {
           accessor_wear_img:
             "https://s.alicdn.com/@sc04/kf/Hec52a45bd6454b8c83bfc190d8748332y.jpg_300x300.jpg",
         },
-      
       ],
       modelsList: [
         { id: 1, modelImg: require("../../../assets/imgs/Models/model1.svg") },
@@ -649,8 +644,7 @@ export default function SetClothesWear() {
       setGetSliderId({ ...getSliderId, accessoryId: current + 1 }),
   };
 
-  const [clothesSetWear, setClothesSetWear] = useState(true);
-  const [openToModel, setOpenToModel] = useState(false);
+  
 
   const OpenShowModel = (modelId) => {
     setProductList((current) => {
@@ -665,6 +659,11 @@ export default function SetClothesWear() {
   };
 
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    open
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "unset");
+  }, [open]);
 
   return (
     <div className="w-full flex flex-row flex-wrap box-border gap-y-5 gap-x-5 h-fit justify-between">
@@ -1077,7 +1076,7 @@ export default function SetClothesWear() {
                               key={item?.id}
                               className={`!w-[192px] flex items-center cursor-pointer justify-center ml-[56px] h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
-                               <div className="group relative w-full h-full flex items-center justify-center">
+                              <div className="group relative w-full h-full flex items-center justify-center">
                                 <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
                                   <img
                                     className="h-[90%]"
@@ -1179,8 +1178,6 @@ export default function SetClothesWear() {
                     {producListMap.SetToModel ? (
                       <button
                         onClick={() => {
-                          setClothesSetWear(false);
-                          setOpenToModel(false);
                           OpenShowModel(producListMap?.id);
                         }}
                         className={` absolute top-[7px] right-2 group w-9 h-9 hover:w-[120px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
@@ -1199,8 +1196,6 @@ export default function SetClothesWear() {
                     ) : producListMap.modelsList.length > 0 ? (
                       <button
                         onClick={() => {
-                          setClothesSetWear(true);
-                          setOpenToModel(true);
                           OpenShowModel(producListMap?.id);
                         }}
                         className={`absolute top-[7px] right-2 group w-9 h-9 hover:w-[98px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
@@ -1256,23 +1251,48 @@ export default function SetClothesWear() {
                       <path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z" />
                     </svg>
                   </Button>
-                  <Modal
+                  {open && (
+                    <div className="fixed inset-0 z-50 ">
+                      <div className="fixed inset-0 w-full h-full bg-black opacity-40"></div>
+                      <div className="flex items-center min-h-screen ">
+                        <div className="relative w-[1000px] h-[90vh]   mx-auto bg-white rounded-md shadow-lg">
+                          <div
+                            onClick={() => setOpen(false)}
+                            className="w-[44px] h-[44px] border  border-searchBgColor select-none rounded-lg bg-btnBgColor flex justify-center items-center active:scale-95	active:opacity-70 p-2 cursor-pointer absolute z-50 top-2 right-2"
+                          >
+                            <img
+                              className="w-[16px] h-4"
+                              src={MenuClose}
+                              alt=""
+                            />
+                          </div>
+
+                          <div className="h-[100%] flex items-center">
+                            <SetClothesOpenModelModal />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  {/* <Modal
                     centered
                     closable={false}
                     open={open}
                     footer={null}
-                    className="!w-[1000px] !h-[100vh] relative"
+                    className="!w-[1000px] !h-[100vh]   border border-red-500 flex  items-center"
                   >
-                    <div
-                      onClick={() => setOpen(false)}
-                      className="w-[44px] h-[44px] border  border-searchBgColor select-none rounded-lg bg-btnBgColor flex justify-center items-center active:scale-95	active:opacity-70 p-2 cursor-pointer absolute z-50 top-2 right-2"
-                    >
-                      <img className="w-[16px] h-4" src={MenuClose} alt="" />
+                    <div className="w-full h-[90vh] !my-auto border border-green-800">
+                      <div
+                        onClick={() => setOpen(false)}
+                        className="w-[44px] h-[44px] border  border-searchBgColor select-none rounded-lg bg-btnBgColor flex justify-center items-center active:scale-95	active:opacity-70 p-2 cursor-pointer absolute z-50 top-2 right-2"
+                      >
+                        <img className="w-[16px] h-4" src={MenuClose} alt="" />
+                      </div>
+                      <div className="h-[90vh] flex items-center">
+                        <SetClothesOpenModelModal />
+                      </div>
                     </div>
-                    <div className="h-full">
-                      <SetClothesOpenModelModal />
-                    </div>
-                  </Modal>
+                  </Modal> */}
                 </div>
                 <div className="flex items-center w-full justify-between">
                   <div>

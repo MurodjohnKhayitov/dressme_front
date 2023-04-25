@@ -97,8 +97,7 @@ export default function SetClothesOpenModelModal() {
   };
 
   return (
-    <div>
-      <div className="w-full flex frex-row h-[100vh] ">
+      <div className="w-full flex frex-row h-[90vh] ">
         <div className="w-[580px] flex items-center justify-center border-r border-searchBgColor ">
           <Slider {...headWear} className="w-full h-full  ">
             {productList?.map((item) => {
@@ -303,6 +302,5 @@ export default function SetClothesOpenModelModal() {
           </div>
         </div>
       </div>
-    </div>
   );
 }

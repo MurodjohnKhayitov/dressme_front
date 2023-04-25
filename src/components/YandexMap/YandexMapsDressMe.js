@@ -35,6 +35,7 @@ import { dressMainData } from "../../ContextHook/ContextMenu";
 import { GrFormDown } from "react-icons/gr";
 import NavbarTopOpenMenu from "./YandexMapsNavbar/NavbarTopOpenMenu";
 import { GiBookmarklet } from "react-icons/gi";
+import NavMenu from "../header/nav-menu";
 function YandexMapsDressMe() {
   // const [openMenuYandex, setOpenMenuYandex] = useState(false);
 
@@ -179,19 +180,16 @@ function YandexMapsDressMe() {
   ]);
   const [dressInfo, setDressInfo] = useContext(dressMainData);
 
-  const handleToggleMenu = () => {
+  const handleOpenMenu = () => {
     setDressInfo({ ...dressInfo, yandexOpenMenu: !dressInfo?.yandexOpenMenu });
-    // setOpenMenuYandex(!dressInfo);
   };
-  // const handleAccordion = (value) => {
-  //   setPoints((current) => {
-  //     return current?.map((data) => {
-  //       if (data?.id == value) {
-  //         return { ...data, accordion: !data.accordion };
-  //       } else return data;
-  //     });
-  //   });
-  // };
+  const handleOpenMarket = () => {
+    setDressInfo({
+      ...dressInfo,
+      yandexOpenMarket: !dressInfo?.yandexOpenMarket,
+    });
+  };
+  console.log(dressInfo.yandexOpenMarket, "yandexOpenMarket");
   const handleGetId = (getValue) => {
     setPoints((current) => {
       return current.map((data) => {
@@ -203,6 +201,7 @@ function YandexMapsDressMe() {
       });
     });
   };
+
   return (
     <div className=" h-fit w-full flex justify-center overflow-hidden  ">
       <div className="w-[100%] h-[100vh] border-b border-searchBgColor overflow-hidden">
@@ -238,6 +237,23 @@ function YandexMapsDressMe() {
             height="100%"
             modules={["control.ZoomControl", "control.FullscreenControl"]}
           >
+            {" "}
+            {/* <div className="hidden md:block">
+              <SearchControl
+                options={{
+                  float: "right",
+                  position: { bottom: 50, right: "20%" },
+                }}
+              />
+            </div>
+            <div className="block md:hidden">
+              <SearchControl
+                options={{
+                  float: "right",
+                  position: { top: 50, right: "20%" },
+                }}
+              />
+            </div> */}
             <GeolocationControl
               options={{
                 float: "right",
@@ -245,6 +261,7 @@ function YandexMapsDressMe() {
               }}
             />
             <ZoomControl
+              className="zoomControl"
               options={{
                 float: "right",
                 position: { bottom: 300, right: 10, size: "small" },
@@ -294,10 +311,10 @@ function YandexMapsDressMe() {
             <div className="relative">
               {!dressInfo?.yandexOpenMenu ? (
                 <div
-                  className={` overflow-hidden duration-300 h-[40px] absolute cursor-pointer top-[8px] left-[8px] z-50 bg-white shadow-lg overflow-hidden rounded-lg  `}
+                  className={`  duration-300 h-[40px] absolute cursor-pointer ss:top-[-200px] md:top-[8px] left-[8px] z-50 bg-white shadow-lg overflow-hidden rounded-lg  `}
                 >
                   <div
-                    onClick={handleToggleMenu}
+                    onClick={handleOpenMenu}
                     className="w-fit flex items-center justify-between  cursor-pointer roundedn-lg h-full  "
                   >
                     <div className="group w-10 hover:w-[138px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden  flex items-center justify-between ">
@@ -318,23 +335,31 @@ function YandexMapsDressMe() {
 
               <div
                 className={`${
-                  dressInfo?.yandexOpenMenu ? " ml-[0px]" : "  ml-[-1000px]"
-                } absolute cursor-pointer top-0 left-0 z-50 h-[100vh] rounded-lg overflow-hidden w-[25%] p-2 duration-500 bg-yandexNavbar backdrop-blur-sm	   border border-searchBgColor`}
+                  dressInfo?.yandexOpenMenu || dressInfo?.yandexOpenMarket
+                    ? " ml-[0px]"
+                    : "  ml-[-1000px]"
+                } absolute cursor-pointer left-0 h-[100vh] z-[51] rounded-lg overflow-hidden ${
+                  !dressInfo?.yandexOpenMarket
+                    ? "w-[25%] top-0 bg-yandexNavbar backdrop-blur-sm	"
+                    : "bg-white w-[100%] top-[70px] "
+                }  p-2 duration-500    border border-searchBgColor`}
               >
-                <div
-                  onClick={handleToggleMenu}
-                  className="w-full h-[42px] flex items-center justify-center  "
-                >
-                  {" "}
-                  <div className="absolute left-2 top-2 w-[40px] h-[40px] rounded-lg bg-white  border border-searchBgColor flex items-center justify-center">
-                    <img src={MenuClose} alt="" />
+                {!dressInfo?.yandexOpenMarket ? (
+                  <div
+                    onClick={handleOpenMenu}
+                    className="w-full h-[42px] flex items-center justify-center  "
+                  >
+                    {" "}
+                    <div className="absolute left-2 top-2 w-[40px] h-[40px] rounded-lg bg-white  border border-searchBgColor flex items-center justify-center">
+                      <img src={MenuClose} alt="" />
+                    </div>
+                    <div className="w-fit ">
+                      <span className="not-italic font-AeonikProMedium text-xl leading-6 text-center tracking-[1%] text-black">
+                        Магазины
+                      </span>
+                    </div>
                   </div>
-                  <div className="w-fit ">
-                    <span className="not-italic font-AeonikProMedium text-xl leading-6 text-center tracking-[1%] text-black">
-                      Магазины
-                    </span>
-                  </div>
-                </div>
+                ) : null}
                 <div className="w-full h-12 flex items-center justify-between px-3 rounded-lg bg-white mt-3 border border-searchBgColor">
                   <div className="w-fit pr-3">
                     <img src={shop} alt="" className="w-6 h-6" />
@@ -376,7 +401,11 @@ function YandexMapsDressMe() {
                             data?.accordion ? "h-[426px]" : "h-[202px]"
                           }  flex flex-col  rounded-lg  bg-white border overflow-hidden border-searchBgColor pb-3 mt-3`}
                         >
-                          <div className="w-full p-4 h-[202px]  flex flex-wrap content-around ">
+                          <div
+                            className={`w-full p-4 h-[202px] ${
+                              data?.accordion ? "bg-white" : "bg-btnBgColor"
+                            }  flex flex-wrap content-around `}
+                          >
                             <div className="w-full flex justify-between">
                               <span className="not-italic font-AeonikProMedium text-lg leading-5 text-black tracking-[1%]">
                                 Button (Чиланзар)
@@ -519,10 +548,15 @@ function YandexMapsDressMe() {
                   </div>
                 </div>
               </div>
+              <div
+                className={`absolute top-[70px] left-0 z-[56] ${
+                  dressInfo?.openMainMenu ? "ml-0" : "ml-[-500px]"
+                } duration-200 w-full h-[90%] bg-green-400`}
+              ></div>
             </div>
             {/* <div className="absolute  bottom-0 w-full border "> */}
             <div
-              className="absolute bottom-[24px] left-1/2 right-1/2 translate-x-[-50%] translate-y-[-50%]  overflow-hidden z-50 bg-yandexNavbar backdrop-blur-sm rounded-lg
+              className="absolute md:bottom-[24px] ss:top-[160px] left-1/2  right-1/2 translate-x-[-50%] translate-y-[-50%]  overflow-hidden z-50 bg-yandexNavbar backdrop-blur-sm rounded-lg
              h-[48px] w-fit shadow-lg"
             >
               <div className="w-full h-full flex justify-between ">
@@ -557,6 +591,35 @@ function YandexMapsDressMe() {
                 </div>
                 {/* <div className="w-[20%] h-full flex items-center border border-red-400"></div> */}
               </div>
+            </div>
+            <div
+              className={`absolute bottom-[58px] block md:hidden left-1/2  right-1/2 translate-x-[-50%] translate-y-[-50%]  overflow-hidden z-[52] rounded-lg
+             h-[48px]  shadow-lg  ${
+               !dressInfo?.yandexOpenMarket
+                 ? "w-[202px] bg-white"
+                 : "w-[calc(100%-56px)]  bg-yandexNavbar backdrop-blur-sm"
+             }`}
+            >
+              <div className="w-full h-full flex justify-between ">
+                <div
+                  onClick={handleOpenMarket}
+                  className={`w-full h-12  flex justify-center gap-x-3 items-center rounded-lg`}
+                >
+                  {!dressInfo?.yandexOpenMarket ? (
+                    <img src={shop} alt="" />
+                  ) : (
+                    <img src={MenuClose} alt="" />
+                  )}
+                  <div className="not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
+                    Магазины
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className={`fixed  bottom-0 w-full bg-white    z-[52] block md:hidden`}
+            >
+              <NavMenu />
             </div>
             {/* </div> */}
             {/* ---------- */}
