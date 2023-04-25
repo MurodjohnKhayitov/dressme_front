@@ -1,49 +1,28 @@
-import React, { useState, useContext, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { NavLink } from "react-router-dom";
 import {
   adidas,
-  arrowBottomBlack,
-  arrowBottomRight,
   autummBrand,
   AutummCategory,
   AutummFemale,
   AutummMale,
   autummSeason,
   autummVolume,
-  blog,
-  booking,
-  brush,
   bucket,
-  business,
-  businessBlack,
-  catalog,
   chanel,
-  close,
-  clothing,
-  contact,
-  dashboard,
   dolce,
-  dollar,
-  eng,
-  female,
   gucci,
   heart,
-  help,
-  helpBlack,
   hm,
   lacoste,
-  location,
-  logo,
-  logoo,
   louis,
-  male,
   map,
-  menu,
+  MenuClose,
+  MenuOpen,
   nike,
   prada,
   puma,
   search,
-  shop,
   springBrand,
   SpringCategory,
   SpringFemale,
@@ -57,10 +36,7 @@ import {
   summerSeason,
   summerVolume,
   tommy,
-  topBrands,
   user,
-  voice,
-  winter,
   winterBrand,
   WinterCategory,
   WinterFemale,
@@ -70,42 +46,18 @@ import {
   zara,
 } from "../../../assets/imgs";
 import { dressMainData } from "../../../ContextHook/ContextMenu";
-import { GrClose } from "react-icons/gr";
+// import { GrClose } from "react-icons/gr";
 import { Popover } from "antd";
 
 const YandexMedium = () => {
-  const [state, setState] = useState({
-    hamburgerMenu: true,
-    toggle: false,
-    clothesTypeMobile: false,
-    priceToggleMobile: false,
-    brandToggleMobile: false,
-    selectColorToggleMobile: false,
-  });
-
-  useEffect(() => {
-    if (
-      state?.clothesTypeMobile ||
-      state?.priceToggleMobile ||
-      state?.brandToggleMobile ||
-      state?.selectColorToggleMobile
-    ) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [
-    state?.clothesTypeMobile,
-    state?.priceToggleMobile,
-    state?.brandToggleMobile,
-    state?.selectColorToggleMobile,
-  ]);
-
   const [dressInfo, setDressInfo] = useContext(dressMainData);
-  let dataStyle = "";
-  let genderStyle = "";
-  let hoverText = "";
 
+  const handleMainMenu = () => {
+    setDressInfo({ ...dressInfo, openMainMenu: !dressInfo.openMainMenu });
+  };
+
+  let dataStyle = "";
+  let hoverText = "";
   let IconsColor = "";
 
   if (dressInfo?.type === 1111) {
@@ -113,32 +65,24 @@ const YandexMedium = () => {
     hoverText = " hover:text-borderSpring ";
     IconsColor =
       "items-center justify-center bg-white rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex border border-borderSpring text-borderSpring";
-    genderStyle =
-      "focus:text-borderSpring focus:bg-bgSpring focus:border focus:border-borderSpring focus:text-borderSpring";
   }
   if (dressInfo?.type === 2222) {
     dataStyle = "bg-bgSummer  bg-opacity-10  text-borderSummer";
     IconsColor =
       "items-center justify-center bg-white rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex border border-borderSummer text-borderSummer";
     hoverText = " hover:text-borderSummer ";
-    genderStyle =
-      "focus:text-borderSummer focus:bg-bgSummer focus:border focus:border-borderSummer focus:text-borderSummer";
   }
   if (dressInfo?.type === 3333) {
     dataStyle = "bg-bgAutumm bg-opacity-10  text-borderAutumm";
     IconsColor =
       "items-center justify-center bg-white rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex border border-borderAutumm text-borderAutumm";
     hoverText = " hover:text-borderAutumm ";
-    genderStyle =
-      "focus:text-borderAutumm focus:bg-bgAutumm focus:border focus:border-borderAutumm focus:text-borderAutumm";
   }
   if (dressInfo?.type === 4444) {
     dataStyle = "bg-bgWinter bg-opacity-10  text-borderWinter";
     IconsColor =
       "items-center justify-center bg-white rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex border border-borderWinter text-borderWinter";
     hoverText = " hover:text-borderWinter ";
-    genderStyle =
-      "focus:text-borderWinter focus:bg-bgWinter focus:border focus:border-borderWinter focus:text-borderWinter";
   }
 
   const SeasonTypeArray = [
@@ -173,9 +117,7 @@ const YandexMedium = () => {
     { id: 4444, man: WinterMale, woman: WinterFemale },
   ];
   //------------------------------------------------------------------------------------------------
-  const toggleHamburger = () => {
-    setState({ ...state, hamburgerMenu: !state.hamburgerMenu });
-  };
+
   // Mobile Wear Brand Type
   const [selectWearMobile, setSelectWearMobile] = useState("Clothing type");
   const handleWearMobile = (value) => {
@@ -288,185 +230,28 @@ const YandexMedium = () => {
       {/* Starting of Full Screen page section */}
       <div className="w-full flex justify-center items-center py-3 overscroll-none overflow-y-hidden">
         <div className=" w-full flex items-center ss:w-full md:w-fit justify-between ">
-          {/* Menu section */}
           <div
-            onClick={toggleHamburger}
-            className={`flex items-center justify-center bg-yandexWhite border border-searchBgColor w-12 h-12 -lg-lg cursor-pointer md:hidden rounded-lg`}
+            onClick={handleMainMenu}
+            className="w-12 h-12 bg-white ss:block md:hidden  rounded-lg ss:flex items-center justify-center "
           >
-            <img
-              src={!state?.hamburgerMenu ? close : menu}
-              alt="voice"
-              className={`${close ? "w-6 h-6" : ""} `}
-            />
-
-            {/*Starting of Opened Hamburger menu section */}
-            <div
-              className={`${
-                !state?.hamburgerMenu
-                  ? "hamburger flex flex-col ease-linear duration-500 overscroll-none"
-                  : "left-[-450px] ll:-left-[500px] sm:left-[800px] ease-linear duration-500"
-              }  top-[62px] left-0 fixed right-0 w-full bg-yandexWhite z-10 h-full overflow-y-scroll px-[15px] ll:flex-fit`}
-            >
-              {/* Searching section */}
-              <div className="search flex items-center justify-between rounded-lg font-AeonikProMedium h-10 mt-3 mb-3 border border-searchBg ss:mt-3 md:hidden w-full">
-                <img
-                  src={search}
-                  alt="search"
-                  className=" flex ss:pl-[11.65px] md:hidden"
-                />
-                <input
-                  type="text"
-                  placeholder="Search products or brands"
-                  className="bg-transparent w-full px-3 h-10 text-[14px] border border-transparent md:border-searchBgColor md:mx-0 md:-ml-[3px] md:px-3 md:h-12"
-                />
-              </div>
-              {/* Music and Map selection for Mobile */}
-              <div className="flex items-center justify-between h-11 mb-3">
-                <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
-                  {VolumeTypeArray.filter(
-                    (data) => data?.id == dressInfo?.type
-                  ).map((data) => {
-                    return <img key={data?.id} src={data?.icons} alt="misic" />;
-                  })}
-                  <span className=" ml-[10px]">Music</span>
-                </button>
-                <Link
-                  to="#"
-                  className="right px-10 py-[9px] rounded-lg flex items-center justify-center font-AeonikProMedium border border-gray-300 bg-yandexWhite ss:w-[48%]"
-                >
-                  <img src={map} alt="map" />
-                  <span className="ml-[10px]">Map</span>
-                </Link>
-              </div>
-
-              {/* Categories */}
-              <ul className="flex flex-col">
-                <li>
-                  <button className="flex items-center bg-yandexWhite font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
-                    <div className="flex items-center">
-                      <span className="border-r border-gray-300 py-3 pr-5">
-                        <img src={dashboard} alt="" />
-                      </span>
-                      <span className="ml-[11.67px]">Dashboard (demo)</span>
-                    </div>
-                    <img
-                      src={arrowBottomRight}
-                      alt=""
-                      className="arrowRotate ml-auto"
-                    />
-                  </button>
-                </li>
-                <li>
-                  <button className="flex items-center bg-yandexWhite font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
-                    <div className="flex items-center">
-                      <span className="border-r border-gray-300 py-3 pr-5">
-                        <img src={businessBlack} alt="" />
-                      </span>
-                      <span className="ml-[11.67px]">Business</span>
-                    </div>
-                    <img
-                      src={arrowBottomRight}
-                      alt=""
-                      className="arrowRotate ml-auto"
-                    />
-                  </button>
-                </li>
-                <li>
-                  <button className="flex items-center bg-yandexWhite font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
-                    <div className="flex items-center">
-                      <span className="border-r border-gray-300 py-3 pr-5">
-                        <img src={booking} alt="" />
-                      </span>
-                      <span className="ml-[11.67px]">My orders</span>
-                    </div>
-                    <img
-                      src={arrowBottomRight}
-                      alt=""
-                      className="arrowRotate ml-auto"
-                    />
-                  </button>
-                </li>
-                <li>
-                  <button className="flex items-center bg-yandexWhite font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
-                    <div className="flex items-center">
-                      <span className="border-r border-gray-300 py-3 pr-5">
-                        <img src={shop} alt="" />
-                      </span>
-                      <span className="ml-[11.67px]">Shop</span>
-                    </div>
-                    <img
-                      src={arrowBottomRight}
-                      alt=""
-                      className="arrowRotate ml-auto"
-                    />
-                  </button>
-                </li>
-                <li>
-                  <button className="flex items-center bg-white font-AeonikProMedium h-12 border rounded-lg border-gray-300 px-5 mb-3 w-full">
-                    <div className="flex items-center">
-                      <span className="border-r border-gray-300 py-3 pr-5">
-                        <img src={blog} alt="" />
-                      </span>
-                      <span className="ml-[11.67px]">My blog</span>
-                    </div>
-                    <img
-                      src={arrowBottomRight}
-                      alt=""
-                      className="arrowRotate ml-auto"
-                    />
-                  </button>
-                </li>
-              </ul>
-
-              {/*Help and Contact selection for Mobile */}
-              <div className="flex items-center justify-between h-11 mb-3">
-                <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
-                  <img src={helpBlack} alt="misic" />
-                  <span className="ml-[10px]">Help</span>
-                </button>
-                <Link
-                  to="#"
-                  className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]"
-                >
-                  <img src={contact} alt="map" />
-                  <span className="ml-[10px]">Contact</span>
-                </Link>
-              </div>
-
-              {/* Line */}
-              <div className="line border-b w-[300px] border-gray-300 mb-3 ls:w-full"></div>
-
-              {/* Location and Language */}
-              <div className="flex items-center justify-between h-11 mb-3">
-                <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]">
-                  <img src={location} alt="music" />
-                  <span className="ml-[10px] mr-5">Tashkent</span>
-                  <img src={arrowBottomBlack} alt="" />
-                </button>
-                <Link
-                  to="#"
-                  className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-gray-300 bg-bgColor ss:w-[48%]"
-                >
-                  <img src={eng} alt="map" />
-                  <span className="ml-[10px] mr-5">English</span>
-                  <img src={arrowBottomBlack} alt="map" />
-                </Link>
-              </div>
-            </div>
-            {/*Ending of Opened Hamburger menu section */}
+            {dressInfo?.openMainMenu ? (
+              <img src={MenuClose} alt="" />
+            ) : (
+              <img src={MenuOpen} alt="" />
+            )}
           </div>
 
           {/* Logo section */}
           <NavLink
             to="/"
-            className="flex justify-center items-center rounded-lg h-[44px] md:w-[155px] ss:ml-2 md:ml-[0px]  "
+            className="flex justify-center items-center rounded-lg h-[48px] ss:w-[calc(100%-96px)] ss:p-2 md:p-0 md:w-[155px] ss:ml-2 md:ml-[0px]  ss:bg-white md:bg-transparent"
           >
             {BrandTypeArray.filter((data) => data.id == dressInfo.type).map(
               (data) => {
                 return (
                   <img
                     key={data?.id}
-                    className="w-full"
+                    className="h-full"
                     src={data?.icons}
                     alt="logo"
                   />
@@ -494,7 +279,7 @@ const YandexMedium = () => {
           </div>
 
           {/* Weather seection */}
-          <div className="w-12 h-12 md:w-[120px] md:h-11 bg-white border border-searchBgColor rounded-lg  md:rounded-lg ml-2">
+          <div className="w-12 h-12 md:w-[120px] md:h-11 bg-white   rounded-lg  md:rounded-lg ml-2">
             {SeasonTypeArray.filter((data) => data.id == dressInfo.type).map(
               (data) => {
                 return (
@@ -603,371 +388,6 @@ const YandexMedium = () => {
           </button>
         </div>
       </div>
-      {/* Ending of Full Screen page sesction Map*/}
-
-      <div
-        className={`h-fit top-30  left-[16px] fixed  bg-yandexWhite   shadow-lg duration-200 z-50 ${
-          state?.clothesTypeMobile ? "w-[92%]" : "w-0"
-        }  `}
-      >
-        {state?.clothesTypeMobile && (
-          <div className="fixed inset-0 z-10 ">
-            <div
-              className="fixed inset-0 w-full h-full bg-black opacity-40"
-              onClick={() => setState({ ...state, clothesTypeMobile: false })}
-            ></div>
-            <div className="flex items-center min-h-screen px-4 py-8">
-              <div className="relative w-full max-w-lg p-4 mx-auto bg-yandexWhite rounded-md shadow-lg">
-                <div className="flex items-center justify-end ">
-                  <button
-                    onClick={() =>
-                      setState({ ...state, clothesTypeMobile: false })
-                    }
-                  >
-                    <GrClose size={25} />
-                  </button>
-                </div>
-                <div className="py-4">
-                  {wearMobileList?.map((data) => {
-                    return (
-                      <div
-                        key={data?.id}
-                        onClick={() => {
-                          handleWearMobile(data?.type);
-                          setState({ ...state, clothesTypeMobile: false });
-                        }}
-                        className={`${hoverText} text-base font-AeonikProMedium hover:bg-bgColor w-full h-12 border border-solid border-searchBgColor flex items-center justify-center`}
-                      >
-                        {data?.type}
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-      <div
-        className={`h-fit top-30  left-[16px] fixed  bg-yandexWhite shadow-lg  duration-200 z-50 ${
-          state?.priceToggleMobile ? "w-[92%]" : "w-0"
-        }  `}
-      >
-        {state?.priceToggleMobile && (
-          <div className="fixed inset-0 z-10 ">
-            <div
-              className="fixed inset-0 w-full h-full bg-black opacity-40"
-              onClick={() => setState({ ...state, priceToggleMobile: false })}
-            ></div>
-            <div className="flex items-center min-h-screen px-4 py-8">
-              <div className="relative w-full max-w-lg p-4 mx-auto bg-yandexWhite rounded-md shadow-lg">
-                <div className="flex items-center justify-end ">
-                  <button
-                    type=""
-                    onClick={() =>
-                      setState({ ...state, priceToggleMobile: false })
-                    }
-                  >
-                    <GrClose size={25} />
-                  </button>
-                </div>
-                <div className="py-4">
-                  {PriceMobileList?.map((data) => {
-                    return (
-                      <div
-                        key={data?.id}
-                        onClick={() => {
-                          handlePriceMobile(data?.type);
-                          setState({ ...state, priceToggleMobile: false });
-                        }}
-                        className={` ${hoverText}  text-base font-AeonikProMedium hover:bg-bgColor w-full h-12 border border-solid border-searchBgColor flex items-center justify-center`}
-                      >
-                        {data?.type}
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-      <div
-        className={`h-fit top-30  left-[16px] fixed  bg-yandexWhite shadow-lg  duration-200 z-50 ${
-          state?.brandToggleMobile ? "w-[92%]" : "w-0"
-        }  `}
-      >
-        {state?.brandToggleMobile && (
-          <div className="fixed inset-0 z-10 ">
-            <div
-              className="fixed inset-0 w-full h-full bg-black opacity-40"
-              onClick={() => setState({ ...state, brandToggleMobile: false })}
-            ></div>
-            <div className="flex items-center min-h-screen px-4 py-8">
-              <div className="relative w-full max-w-lg p-4 mx-auto bg-yandexWhite rounded-md shadow-lg">
-                <div className="flex items-center justify-end ">
-                  <button
-                    onClick={() =>
-                      setState({ ...state, brandToggleMobile: false })
-                    }
-                  >
-                    <GrClose size={25} />
-                  </button>
-                </div>
-                <div className="py-4 flex flex-wrap justify-between gap-y-5">
-                  {campany?.map((data) => {
-                    return (
-                      <div
-                        key={data?.id}
-                        className="w-[80px] h-[80px] rounded-lg bg-bgColor  border border-solid border-borderColorCard"
-                      >
-                        <img
-                          className="h-full w-full"
-                          src={data?.imgFull}
-                          alt=""
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-      <div
-        className={`h-fit top-30  left-[16px] fixed  bg-yandexWhite shadow-lg  duration-200 z-50 ${
-          state?.selectColorToggleMobile ? "w-[92%]" : "w-0"
-        }`}
-      >
-        {state?.selectColorToggleMobile && (
-          <div className="fixed inset-0 z-10 ">
-            <div
-              className="fixed inset-0 w-full h-full bg-black opacity-40"
-              onClick={() =>
-                setState({ ...state, selectColorToggleMobile: false })
-              }
-            ></div>
-            <div className="flex items-center min-h-screen px-4 py-8">
-              <div className="relative w-full max-w-lg p-4 mx-auto bg-yandexWhite rounded-md shadow-lg">
-                <div className="flex items-center justify-end ">
-                  <button
-                    onClick={() =>
-                      setState({ ...state, selectColorToggleMobile: false })
-                    }
-                  >
-                    <GrClose size={25} />
-                  </button>
-                </div>
-                <div className="py-4 flex flex-wrap  gap-5">
-                  {changeColor?.map((data) => {
-                    return (
-                      <span
-                        key={data?.id}
-                        className="w-60px flex items-center cursour-pointer hover:shadow-md p-1 rounded-lg mr-2"
-                      >
-                        <div
-                          className={`rounded-full mr-2 w-6 h-6 ${data?.colors} cursor-pointer `}
-                        ></div>
-                        <span className="not-italic font-AeonikProMedium text-base leading-4 text-black">
-                          {data?.name}
-                        </span>
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/*Starting of Blocked  Hamburger Menu section */}
-      <div className={`md:hidden `}>
-        <div className="flex items-center justify-between w-full ">
-          {/* Searching section */}
-          <div className="search flex items-center rounded-lg font-AeonikProMedium h-10  border ss:w-[100%]">
-            <img src={search} alt="search" className="pl-[11.65px]" />
-            <input
-              type="text"
-              placeholder="Search..."
-              className="bg-transparent w-full h-full text-[14px] border border-transparent px-2  "
-            />
-          </div>
-
-          {/* Map section */}
-          <Link
-            to="/delivery-points"
-            className="flex items-center w-full justify-center bg-yandexWhite border border-searchBgColor rounded-lg ss:px-4 h-10 ml-2  ss:w-[94px] "
-          >
-            <img src={map} alt="map" className="pr-[6px]" />
-            <div className="font-AeonikProMedium">Map</div>
-          </Link>
-        </div>
-
-        {/* Gender selection for Mobile */}
-        <div className="flex flex-wrap items-center justify-between mt-3 rounded-lg  mb-4 w-full">
-          {personItems
-            ?.filter((value) => value.id === dressInfo?.type)
-            .map((data) => {
-              return (
-                <div
-                  key={data?.id}
-                  className="w-full flex items-center justify-between "
-                >
-                  <button
-                    className={` ${genderStyle} border rounded-lg bg-yandexWhite  border-searchBgColor font-AeonikProMedium w-[48%] h-[44px] px-4 flex items-center  focus:rounded-lg`}
-                  >
-                    <img src={data?.woman} alt="female" />
-                    <span className="ml-3">Женщинам</span>
-                  </button>
-                  <button
-                    className={` font-AeonikProMedium ${genderStyle} border rounded-lg bg-yandexWhite  border-searchBgColor w-[48%] h-[44px] px-4 justify-center flex items-center  focus:rounded-lg`}
-                  >
-                    <img src={data?.man} alt="male" />
-                    <span className="ml-3"> Мужчинам</span>
-                  </button>
-                </div>
-              );
-            })}
-
-          <button
-            onClick={() => {
-              setState({ ...state, toggle: !state.toggle });
-            }}
-            className="flex items-center bg-yandexWhite font-AeonikProMedium h-12 rounded-lg border border-gray-200 px-5 ss:w-full  ss:mt-4 "
-          >
-            <div className="flex items-center ml-auto">
-              <img src={clothing} alt="" />
-              <span className="ml-[11.67px]">Clothing options</span>
-            </div>
-            <img
-              src={arrowBottomBlack}
-              alt=""
-              className={`arrowRotate ml-auto ${
-                state?.toggle ? "rotate-180" : ""
-              } duration-500`}
-            />
-          </button>
-        </div>
-
-        {/* Params for Mobile */}
-        <div
-          className={`${
-            state?.toggle ? "h-[280px]" : "h-0"
-          } duration-500  overflow-hidden md:hidden`}
-        >
-          <ul className="ss:w-full mt-4 bg-yandexWhite">
-            <li
-              onClick={() => {
-                setState({
-                  ...state,
-                  clothesTypeMobile: !state.clothesTypeMobile,
-                });
-              }}
-            >
-              <button className="ss:w-full flex items-center bg-yandexWhite font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 md:hidden">
-                <div className="flex items-center">
-                  <span className="w-[52px]  border-r border-searchBgColor py-3 pr-5">
-                    <img src={clothing} alt="" />
-                  </span>
-                  <span className="ml-[11.67px]">{selectWearMobile}</span>
-                </div>
-                <img
-                  src={arrowBottomRight}
-                  alt=""
-                  className="arrowRotate ml-auto"
-                />
-              </button>
-            </li>
-            <li
-              onClick={() =>
-                setState({
-                  ...state,
-                  priceToggleMobile: !state.priceToggleMobile,
-                })
-              }
-            >
-              <button className="flex items-center w-full bg-yandexWhite font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 md:hidden">
-                <div className="flex items-center">
-                  <span className="w-[52px]  border-r border-searchBgColor py-3 pr-5">
-                    <img src={dollar} alt="" />
-                  </span>
-                  <span className="ml-[11.67px]">{selectPriceMobile}</span>
-                </div>
-                <img
-                  src={arrowBottomRight}
-                  alt=""
-                  className="arrowRotate ml-auto"
-                />
-              </button>
-            </li>
-
-            <li>
-              <button className="w-full flex items-center justify-between bg-yandexWhite font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 md:hidden">
-                <span className="w-[52px] border-r border-searchBgColor py-3 pr-5">
-                  <img src={brush} alt="" />
-                </span>
-                <div
-                  onClick={() =>
-                    setState({
-                      ...state,
-                      selectColorToggleMobile: !state.selectColorToggleMobile,
-                    })
-                  }
-                  className="flex w-[80%] h-full items-center overflow-x-scroll "
-                >
-                  {changeColor?.map((data) => {
-                    return (
-                      <span
-                        key={data?.id}
-                        className="w-60px flex items-center mr-2"
-                      >
-                        <div
-                          className={`rounded-full mr-2 w-6 h-6 ${data?.colors} cursor-pointer `}
-                        ></div>
-                        <span className="not-italic font-AeonikProMedium text-base leading-4 text-black">
-                          {data?.name}
-                        </span>
-                      </span>
-                    );
-                  })}
-                </div>
-                <span className="w-[40px]">
-                  <img
-                    src={arrowBottomRight}
-                    alt=""
-                    className="arrowRotate ml-auto"
-                  />
-                </span>
-              </button>
-            </li>
-            <li
-              onClick={() =>
-                setState({
-                  ...state,
-                  brandToggleMobile: !state.brandToggleMobile,
-                })
-              }
-            >
-              <button className="w-full flex items-center bg-yandexWhite font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 md:hidden">
-                <div className="flex items-center">
-                  <span className="w-[52px]  border-r border-searchBgColor py-3 pr-5">
-                    <img src={topBrands} alt="" />
-                  </span>
-                  <span className="ml-[11.67px]">Top Brands</span>
-                </div>
-                <img
-                  src={arrowBottomRight}
-                  alt=""
-                  className="arrowRotate ml-auto"
-                />
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-      {/* Ending of Blocked  Hamburger Menu section  */}
     </div>
   );
 };

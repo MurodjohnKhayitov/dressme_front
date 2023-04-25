@@ -50,8 +50,8 @@ const Header = () => {
         <div
           className={`fixed top-0 w-full bg-white  ${
             show
-              ? "visible duration-500 z-50"
-              : "visible duration-500 z-50 translate-y-[-100%]"
+              ? "visible duration-500 z-30"
+              : "visible duration-500 z-30 translate-y-[-100%]"
           } hidden md:block`}
         >
           <TopHeader />
@@ -62,8 +62,8 @@ const Header = () => {
           <div
             className={`fixed bottom-0 w-full bg-white  ${
               show
-                ? "visible duration-500 z-50"
-                : "visible duration-500 z-50 translate-y-[100%]"
+                ? "visible duration-500 z-30"
+                : "visible duration-500 z-30 translate-y-[100%]"
             } block md:hidden`}
           >
             <NavMenu />

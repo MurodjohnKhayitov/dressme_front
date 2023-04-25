@@ -15,7 +15,6 @@ import {
 import { dressMainData } from "../../../ContextHook/ContextMenu";
 
 import SetClothesWear from "../WearCollectionSet/SetClothesWear";
-import AccordionData from "./AccordionData";
 
 export default function CollectionCards() {
   console.log("CollectionCards Page");
@@ -436,9 +435,7 @@ export default function CollectionCards() {
 
   return (
     <div className="flex flex-col box-border mt-[86px]">
-      <div>
-        <AccordionData />
-      </div>
+      
       <div className="w-full ss:block sm:flex justify-between items-center mb-[25px] md:mb-0 md:px-0">
         <div className="not-italic font-AeonikProMedium lg:w-fit lg:text-2xl xl:text-3xl flex items-center leading-8 text-black">
           <span>Коллекция одежд, которые вам подходят</span>

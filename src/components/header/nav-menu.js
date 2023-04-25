@@ -33,7 +33,7 @@ const NavMenu = () => {
     const [active, setActive] = useState(0)
 
     return(
-        <div className={`bg-white shadow-navMenuShadov  px-4 w-full rounded-t-xl md:hidden z-50 h-full overscroll-none overflow-y-hidden`}>
+        <div className={`bg-white shadow-navMenuShadov  px-4 w-full rounded-t-xl md:hidden z-[55] h-full overscroll-none overflow-y-hidden`}>
             <ul className="flex items-center justify-between text-[10px] font-AeonikProMedium py-1 ">
                 
                 {menus.map((menu, index) => (
