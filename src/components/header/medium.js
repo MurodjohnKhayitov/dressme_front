@@ -274,7 +274,7 @@ const MediumHeader = () => {
                   src={!state?.hamburgerMenu ? close : menu}
                   alt="voice"
                   className={`${close ? "w-6 h-6" : ""} `}
-                />
+                /> 
 
                 {/*Starting of Opened Hamburger menu section */}
                 <div

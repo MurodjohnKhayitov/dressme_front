@@ -5,8 +5,9 @@ export const DressMenu = ({ children }) => {
     type: 1111,
     ClothesBorder: 1,
     yandexOpenMenu: false,
-    yandexOpenMarket:false,
-    openMainMenu:false
+    yandexOpenMarket: false,
+    openMainMenu: true,
+    yandexFullScreen: false,
   });
   return (
     <dressMainData.Provider value={[dressInfo, setDressInfo]}>

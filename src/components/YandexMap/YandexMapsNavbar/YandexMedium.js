@@ -1,49 +1,29 @@
 import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import {
-  adidas,
   autummBrand,
   AutummCategory,
-  AutummFemale,
-  AutummMale,
   autummSeason,
   autummVolume,
   bucket,
-  chanel,
-  dolce,
-  gucci,
   heart,
-  hm,
-  lacoste,
-  louis,
   map,
   MenuClose,
   MenuOpen,
-  nike,
-  prada,
-  puma,
   search,
   springBrand,
   SpringCategory,
-  SpringFemale,
-  SpringMale,
   springSeason,
   springVolume,
   summerBrand,
   SummerCategory,
-  SummerFemale,
-  SummerMale,
   summerSeason,
   summerVolume,
-  tommy,
   user,
   winterBrand,
   WinterCategory,
-  WinterFemale,
-  WinterMale,
   winterSeason,
   winterVolume,
-  zara,
 } from "../../../assets/imgs";
 import { dressMainData } from "../../../ContextHook/ContextMenu";
 // import { GrClose } from "react-icons/gr";
@@ -109,87 +89,6 @@ const YandexMedium = () => {
     { id: 3333, type: "Autumm", icons: AutummCategory },
     { id: 4444, type: "Winter", icons: WinterCategory },
   ];
-  const personItems = [
-    // { id: 1111, male: SpringMale, female: SpringFemale, boy: SpringBoy, girls: SpringGirl, childs: SpringChild },
-    { id: 1111, man: SpringMale, woman: SpringFemale },
-    { id: 2222, man: SummerMale, woman: SummerFemale },
-    { id: 3333, man: AutummMale, woman: AutummFemale },
-    { id: 4444, man: WinterMale, woman: WinterFemale },
-  ];
-  //------------------------------------------------------------------------------------------------
-
-  // Mobile Wear Brand Type
-  const [selectWearMobile, setSelectWearMobile] = useState("Clothing type");
-  const handleWearMobile = (value) => {
-    setSelectWearMobile(value);
-  };
-  const wearMobileList = [
-    { id: 1, type: "All Clothing types" },
-    { id: 2, type: "Headwear" },
-    { id: 3, type: "Outwear" },
-    { id: 4, type: "Underwear" },
-    { id: 5, type: "Legwear" },
-    { id: 6, type: "Accessory" },
-  ];
-  // Mobile Price Brand Type
-  const [selectPriceMobile, setSelectPriceMobile] = useState("Under 100$");
-  const handlePriceMobile = (value) => {
-    setSelectPriceMobile(value);
-  };
-
-  const PriceMobileList = [
-    { id: 1, type: "At all prices" },
-    { id: 2, type: "More than 500 $" },
-    { id: 3, type: "Under 500$" },
-    { id: 4, type: "Under 200$" },
-    { id: 5, type: "Under 100$" },
-    { id: 6, type: "Under 50$" },
-  ];
-
-  // Mobile Change color Type
-  const changeColor = [
-    { id: 1, name: "purple", value: 1, action: false, colors: "bg-purple-700" },
-    { id: 2, name: "green", value: 2, action: false, colors: "bg-green-600" },
-    { id: 3, name: "red", value: 3, action: false, colors: "bg-red-700" },
-    { id: 4, name: "yellow", value: 4, action: false, colors: "bg-yellow-500" },
-    { id: 5, name: "black", value: 5, action: false, colors: "bg-black" },
-    {
-      id: 6,
-      name: "yandexWhite",
-      value: 6,
-      action: false,
-      colors: "bg-yandexWhite",
-    },
-    { id: 7, name: "blue", value: 7, action: false, colors: "bg-blue-500" },
-    { id: 8, name: "orange", value: 8, action: false, colors: "bg-orange-600" },
-    { id: 9, name: "purple", value: 9, action: false, colors: "bg-purple-400" },
-    { id: 10, name: "blue", value: 10, action: false, colors: "bg-blue-900" },
-    {
-      id: 11,
-      name: "yellow",
-      value: 11,
-      action: false,
-      colors: "bg-yellow-900",
-    },
-    { id: 12, name: "gray", value: 12, action: false, colors: "bg-gray-600" },
-  ];
-
-  // Mobile top Branding Data Lists
-  const campany = [
-    { id: 1, imgFull: adidas },
-    { id: 2, imgFull: chanel },
-    { id: 3, imgFull: dolce },
-    { id: 4, imgFull: gucci },
-    { id: 5, imgFull: hm },
-    { id: 6, imgFull: lacoste },
-    { id: 7, imgFull: louis },
-    { id: 8, imgFull: nike },
-    { id: 9, imgFull: prada },
-    { id: 10, imgFull: puma },
-    { id: 11, imgFull: tommy },
-    { id: 12, imgFull: zara },
-  ];
-  // ------------------------------------------------------------------------------------------------
 
   // ----------------Wear state management----------------------------
   const [openwear, setOpenwear] = useState(false);
@@ -235,9 +134,9 @@ const YandexMedium = () => {
             className="w-12 h-12 bg-white ss:block md:hidden  rounded-lg ss:flex items-center justify-center "
           >
             {dressInfo?.openMainMenu ? (
-              <img src={MenuClose} alt="" />
-            ) : (
               <img src={MenuOpen} alt="" />
+            ) : (
+              <img src={MenuClose} alt="" />
             )}
           </div>
 

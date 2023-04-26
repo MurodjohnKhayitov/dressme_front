@@ -153,7 +153,7 @@
 }
 
 .ymaps-2-1-79-searchbox-input.ymaps-2-1-79-_focused {
-   
+
     inset: none;
     box-shadow: inset 0 0 0 0px #ffdb4d
 }
@@ -184,7 +184,42 @@
     backdrop-filter: blur(5px);
 }
 
-.zoomControl{
-    height: 20px;
-    border: 1px solid red;
+/* ----Zoom Controll---- */
+.ymaps-2-1-79-zoom__scale {
+    display: none !important;
+}
+
+.ymaps-2-1-79-zoom {
+    height: 86px !important;
+    width: 40px !important;
+    padding: 0px !important;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .15), 0 2px 5px -3px rgba(0, 0, 0, .15) !important;
+}
+
+.ymaps-2-1-79-zoom__plus,
+.ymaps-2-1-79-zoom__minus {
+    box-shadow: none !important;
+    top: 3px !important;
+}
+
+.ymaps-2-1-79-zoom__minus {
+    top: 47px !important;
+}
+
+.ymaps-2-1-79-float-button {
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+}
+
+.ymaps-2-1-79-float-button-icon {
+    width: 70% !important;
 }
