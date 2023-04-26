@@ -56,3 +56,15 @@
     background-color: #A1A1A1;
 
 }
+
+/* ----ZoomControl */
+
+.bb{
+    width: 300px;
+    height: 200px;
+    background-color: green;
+    position: absolute;
+    z-index: 3333;
+    bottom: 100px;
+    right: 100px;
+}

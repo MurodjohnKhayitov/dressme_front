@@ -90,7 +90,7 @@ export default function YandexFilter() {
       },
 
       {
-        breakpoint: 390,
+        breakpoint: 350,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -99,7 +99,7 @@ export default function YandexFilter() {
     ],
   };
   return (
-    <div className=" max-w-[1280px]  w-[100%] py-2 ss:px-3 md:px-6 overflow-hidden md:rounded-b-[16px] bg-yandexNavbar border border-searchBgColor border-t-0 backdrop-blur-sm flex justify-between items-center m-auto">
+    <div className=" max-w-[1280px]  w-[100%] py-2 ss:px-3 mt-[-2px] md:px-6 overflow-hidden md:rounded-b-[16px] bg-yandexNavbar border border-searchBgColor border-t-0 backdrop-blur-sm flex justify-between items-center m-auto">
       <div className="w-full ss:hidden  md:block md:flex  items-center justify-between ">
         {wearGroup?.map((data) => {
           return (
@@ -119,7 +119,7 @@ export default function YandexFilter() {
         >
           {wearGroup?.map((data) => {
             return (
-              <div key={data.id} className="!w-[85px]  h-full ml-[6px]">
+              <div key={data.id} className="!w-[84px]  h-full ">
                 <div
                   className={` w-full h-[38px] px-3 m-auto  bg-white rounded-lg flex justify-center items-center cursor-pointer  border border-searchBgColor  `}
                 >

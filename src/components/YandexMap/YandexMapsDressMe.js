@@ -4,16 +4,11 @@ import {
   YMaps,
   Map,
   ZoomControl,
-  FullscreenControl,
   GeolocationControl,
-  SearchControl,
-  TrafficControl,
-  TypeSelector,
-  RulerControl,
-  RouteEditor,
   Placemark,
   Clusterer,
 } from "react-yandex-maps";
+
 import {
   Clock,
   ClothesHang,
@@ -21,11 +16,28 @@ import {
   MenuClose,
   MenuOpen,
   locationIcons,
+  map,
   markerIcons,
-  searchIcons,
+  search,
   shirtMaps,
   shop,
   star,
+  autummVolume,
+  springVolume,
+  summerVolume,
+  winterVolume,
+  dashboard,
+  arrowBottomRight,
+  businessBlack,
+  booking,
+  blog,
+  helpBlack,
+  contact,
+  location,
+  arrowBottomBlack,
+  eng,
+  maximize,
+  FullScreen,
 } from "../../assets/imgs";
 
 import { useState } from "react";
@@ -34,8 +46,8 @@ import YandexMapsIndex from "./YandexMapsNavbar/YandexMapsIndex";
 import { dressMainData } from "../../ContextHook/ContextMenu";
 import { GrFormDown } from "react-icons/gr";
 import NavbarTopOpenMenu from "./YandexMapsNavbar/NavbarTopOpenMenu";
-import { GiBookmarklet } from "react-icons/gi";
 import NavMenu from "../header/nav-menu";
+import { Link } from "react-router-dom";
 function YandexMapsDressMe() {
   // const [openMenuYandex, setOpenMenuYandex] = useState(false);
 
@@ -180,6 +192,12 @@ function YandexMapsDressMe() {
   ]);
   const [dressInfo, setDressInfo] = useContext(dressMainData);
 
+  const handleFullScreen = () => {
+    setDressInfo({
+      ...dressInfo,
+      yandexFullScreen: !dressInfo?.yandexFullScreen,
+    });
+  };
   const handleOpenMenu = () => {
     setDressInfo({ ...dressInfo, yandexOpenMenu: !dressInfo?.yandexOpenMenu });
   };
@@ -201,6 +219,16 @@ function YandexMapsDressMe() {
       });
     });
   };
+  // --------------Open Main Menu
+
+  const VolumeTypeArray = [
+    { id: 1111, type: "Spring", icons: springVolume },
+    { id: 2222, type: "Summer", icons: summerVolume },
+    { id: 3333, type: "Autumm", icons: autummVolume },
+    { id: 4444, type: "Winter", icons: winterVolume },
+  ];
+
+  //------------------------------------------------------------------------------------------------
 
   return (
     <div className=" h-fit w-full flex justify-center overflow-hidden  ">
@@ -231,40 +259,40 @@ function YandexMapsDressMe() {
             state={{
               center: coords.coords ? coords.coords : [41.311153, 69.279729],
               zoom: 11,
+              // controls: ["smallMapDefaultSet"],
             }}
             onClick={onMapClick}
             width="100%"
             height="100%"
-            modules={["control.ZoomControl", "control.FullscreenControl"]}
+            modules={[
+              // "control.ZoomControl",
+              "control.FullscreenControl",
+              // "control.smallMapDefaultSet",
+            ]}
           >
-            {" "}
-            {/* <div className="hidden md:block">
-              <SearchControl
-                options={{
-                  float: "right",
-                  position: { bottom: 50, right: "20%" },
-                }}
-              />
+            <div
+              onClick={handleFullScreen}
+              className={`absolute right-2 ${
+                !dressInfo?.yandexFullScreen ? "bottom-[87px]" : "bottom-[20px]"
+              }  cursor-pointer z-[51] w-10 h-10 rounded-lg bg-white ss:flex items-center justify-center block md:hidden`}
+            >
+              {dressInfo?.yandexFullScreen ? (
+                <img src={FullScreen} alt="" />
+              ) : (
+                <img src={maximize} alt="" />
+              )}
             </div>
-            <div className="block md:hidden">
-              <SearchControl
-                options={{
-                  float: "right",
-                  position: { top: 50, right: "20%" },
-                }}
-              />
-            </div> */}
             <GeolocationControl
               options={{
                 float: "right",
-                position: { bottom: 250, right: 10 },
+                position: { bottom: 220, right: 10 },
               }}
             />
             <ZoomControl
-              className="zoomControl"
               options={{
                 float: "right",
-                position: { bottom: 300, right: 10, size: "small" },
+                position: { bottom: 270, right: 10, size: "small" },
+                size: "small",
               }}
             />
             {/* ---------- */}
@@ -308,6 +336,7 @@ function YandexMapsDressMe() {
                 />
               ))}
             </Clusterer>
+            {/* yandex menu Open Full Code */}
             <div className="relative">
               {!dressInfo?.yandexOpenMenu ? (
                 <div
@@ -338,11 +367,13 @@ function YandexMapsDressMe() {
                   dressInfo?.yandexOpenMenu || dressInfo?.yandexOpenMarket
                     ? " ml-[0px]"
                     : "  ml-[-1000px]"
-                } absolute cursor-pointer left-0 h-[100vh] z-[51] rounded-lg overflow-hidden ${
+                } absolute cursor-pointer left-0 h-[100vh] z-[52] rounded-lg overflow-hidden ${
+                  dressInfo?.yandexFullScreen ? "top-[0px]" : "ss:top-[70px] md:top-0"
+                } ${
                   !dressInfo?.yandexOpenMarket
-                    ? "w-[25%] top-0 bg-yandexNavbar backdrop-blur-sm	"
-                    : "bg-white w-[100%] top-[70px] "
-                }  p-2 duration-500    border border-searchBgColor`}
+                    ? "w-[25%] bg-yandexNavbar backdrop-blur-sm	"
+                    : "bg-white w-[100%]  "
+                }  p-2 duration-300    border border-searchBgColor`}
               >
                 {!dressInfo?.yandexOpenMarket ? (
                   <div
@@ -360,6 +391,7 @@ function YandexMapsDressMe() {
                     </div>
                   </div>
                 ) : null}
+                {/* yandex Menu Top */}
                 <div className="w-full h-12 flex items-center justify-between px-3 rounded-lg bg-white mt-3 border border-searchBgColor">
                   <div className="w-fit pr-3">
                     <img src={shop} alt="" className="w-6 h-6" />
@@ -391,6 +423,7 @@ function YandexMapsDressMe() {
                     </button>
                   </div>
                 </div>
+                {/* Yandex Menu List */}
                 <div className="w-full h-[85vh] mt-3 py-1 flex flex-col gap-y-2   ">
                   <div className="w-full h-full overflow-y-auto  YandexListScroll ">
                     {points?.map((data) => {
@@ -548,16 +581,168 @@ function YandexMapsDressMe() {
                   </div>
                 </div>
               </div>
-              <div
-                className={`absolute top-[70px] left-0 z-[56] ${
-                  dressInfo?.openMainMenu ? "ml-0" : "ml-[-500px]"
-                } duration-200 w-full h-[90%] bg-green-400`}
-              ></div>
+            </div>
+            {/* Yandex Main menu */}
+            <div
+              className={`fixed top-[70px] left-0  ${
+                dressInfo?.openMainMenu ? "ml-[-5000px] z-[-10]" : "ml-0 z-[53]"
+              } duration-200 w-[100%] h-[100%] bg-white`}
+            >
+              <div className="w-full h-full  px-3 overflow-hidden">
+                <div className="search flex items-center justify-between rounded-lg font-AeonikProMedium h-10 mt-3 mb-3 border border-searchBg ss:mt-3 md:hidden w-full">
+                  <img
+                    src={search}
+                    alt="search"
+                    className=" flex ss:pl-[11.65px] md:hidden"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Search products or brands"
+                    className="bg-transparent w-full px-3 h-10 text-[14px] border border-transparent md:border-searchBgColor md:mx-0 md:-ml-[3px] md:px-3 md:h-10"
+                  />
+                </div>
+                {/* Music and Map selection for Mobile */}
+                <div className="flex items-center justify-between h-11 mb-3">
+                  <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-searchBgColor bg-btnBgColor ss:w-[48%]">
+                    {VolumeTypeArray.filter(
+                      (data) => data?.id == dressInfo?.type
+                    ).map((data) => {
+                      return (
+                        <img key={data?.id} src={data?.icons} alt="misic" />
+                      );
+                    })}
+                    <span className=" ml-[10px]">Music</span>
+                  </button>
+                  <Link
+                    to="/delivery-points"
+                    className="right px-10 py-[9px] rounded-lg flex items-center justify-center font-AeonikProMedium border border-searchBgColor bg-btnBgColor ss:w-[48%]"
+                  >
+                    <img src={map} alt="map" />
+                    <span className="ml-[10px]">Map</span>
+                  </Link>
+                </div>
+                {/* Categories */}
+                <ul className="flex flex-col">
+                  <li>
+                    <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 w-full">
+                      <div className="flex items-center">
+                        <span className="border-r border-searchBgColor py-3 pr-5">
+                          <img src={dashboard} alt="" />
+                        </span>
+                        <span className="ml-[11.67px]">Dashboard (demo)</span>
+                      </div>
+                      <img
+                        src={arrowBottomRight}
+                        alt=""
+                        className="arrowRotate ml-auto"
+                      />
+                    </button>
+                  </li>
+                  <li>
+                    <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 w-full">
+                      <div className="flex items-center">
+                        <span className="border-r border-searchBgColor py-3 pr-5">
+                          <img src={businessBlack} alt="" />
+                        </span>
+                        <span className="ml-[11.67px]">Business</span>
+                      </div>
+                      <img
+                        src={arrowBottomRight}
+                        alt=""
+                        className="arrowRotate ml-auto"
+                      />
+                    </button>
+                  </li>
+                  <li>
+                    <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 w-full">
+                      <div className="flex items-center">
+                        <span className="border-r border-searchBgColor py-3 pr-5">
+                          <img src={booking} alt="" />
+                        </span>
+                        <span className="ml-[11.67px]">My orders</span>
+                      </div>
+                      <img
+                        src={arrowBottomRight}
+                        alt=""
+                        className="arrowRotate ml-auto"
+                      />
+                    </button>
+                  </li>
+                  <li>
+                    <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 w-full">
+                      <div className="flex items-center">
+                        <span className="border-r border-searchBgColor py-3 pr-5">
+                          <img src={shop} alt="" />
+                        </span>
+                        <span className="ml-[11.67px]">Shop</span>
+                      </div>
+                      <img
+                        src={arrowBottomRight}
+                        alt=""
+                        className="arrowRotate ml-auto"
+                      />
+                    </button>
+                  </li>
+                  <li>
+                    <button className="flex items-center bg-btnBgColor font-AeonikProMedium h-12 border rounded-lg border-searchBgColor px-5 mb-3 w-full">
+                      <div className="flex items-center">
+                        <span className="border-r border-searchBgColor py-3 pr-5">
+                          <img src={blog} alt="" />
+                        </span>
+                        <span className="ml-[11.67px]">My blog</span>
+                      </div>
+                      <img
+                        src={arrowBottomRight}
+                        alt=""
+                        className="arrowRotate ml-auto"
+                      />
+                    </button>
+                  </li>
+                </ul>
+                {/*Help and Contact selection for Mobile */}
+                <div className="flex items-center justify-between h-11 mb-3">
+                  <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-searchBgColor bg-bgColor ss:w-[48%]">
+                    <img src={helpBlack} alt="misic" />
+                    <span className="ml-[10px]">Help</span>
+                  </button>
+                  <Link
+                    to="#"
+                    className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-searchBgColor bg-bgColor ss:w-[48%]"
+                  >
+                    <img src={contact} alt="map" />
+                    <span className="ml-[10px]">Contact</span>
+                  </Link>
+                </div>
+                {/* Line */}
+                <div className="line border-b w-[300px] border-searchBgColor mb-3 ls:w-full"></div>
+
+                {/* Location and Language */}
+                <div className="flex items-center justify-between h-11 mb-3">
+                  <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-searchBgColor bg-bgColor ss:w-[48%]">
+                    <img src={location} alt="music" />
+                    <span className="ml-[10px] mr-5">Tashkent</span>
+                    <img src={arrowBottomBlack} alt="" />
+                  </button>
+                  <Link
+                    to="#"
+                    className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-searchBgColor bg-bgColor ss:w-[48%]"
+                  >
+                    <img src={eng} alt="map" />
+                    <span className="ml-[10px] mr-5">English</span>
+                    <img src={arrowBottomBlack} alt="map" />
+                  </Link>
+                </div>
+              </div>
             </div>
             {/* <div className="absolute  bottom-0 w-full border "> */}
+            {/* Yandex Search */}
             <div
-              className="absolute md:bottom-[24px] ss:top-[160px] left-1/2  right-1/2 translate-x-[-50%] translate-y-[-50%]  overflow-hidden z-50 bg-yandexNavbar backdrop-blur-sm rounded-lg
-             h-[48px] w-fit shadow-lg"
+              className={`absolute ${
+                !dressInfo?.yandexFullScreen
+                  ? "ss:top-[160px]"
+                  : "ss:top-[85px]"
+              }  md:top-auto md:bottom-[24px]  left-1/2  right-1/2 translate-x-[-50%] translate-y-[-50%]  overflow-hidden z-50 bg-yandexNavbar backdrop-blur-sm rounded-lg
+             h-[48px] w-fit shadow-lg`}
             >
               <div className="w-full h-full flex justify-between ">
                 <div className="w-[100%] h-full flex gap-x-2 items-center px-3">
@@ -593,7 +778,11 @@ function YandexMapsDressMe() {
               </div>
             </div>
             <div
-              className={`absolute bottom-[58px] block md:hidden left-1/2  right-1/2 translate-x-[-50%] translate-y-[-50%]  overflow-hidden z-[52] rounded-lg
+              className={`absolute  ${
+                !dressInfo?.yandexFullScreen
+                  ? "bottom-[58px]"
+                  : "bottom-[-10px]"
+              } block md:hidden left-1/2  right-1/2 translate-x-[-50%] translate-y-[-50%]  overflow-hidden z-[52] rounded-lg
              h-[48px]  shadow-lg  ${
                !dressInfo?.yandexOpenMarket
                  ? "w-[202px] bg-white"
@@ -616,11 +805,13 @@ function YandexMapsDressMe() {
                 </div>
               </div>
             </div>
-            <div
-              className={`fixed  bottom-0 w-full bg-white    z-[52] block md:hidden`}
-            >
-              <NavMenu />
-            </div>
+            {!dressInfo?.yandexFullScreen && (
+              <div
+                className={`fixed  bottom-0 w-full bg-white    z-[54] block md:hidden`}
+              >
+                <NavMenu />
+              </div>
+            )}
             {/* </div> */}
             {/* ---------- */}
           </Map>

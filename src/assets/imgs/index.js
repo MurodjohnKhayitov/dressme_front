@@ -241,6 +241,8 @@ export { default as ColorLessLocation } from './maps/locationColorLess.svg'
 export { default as ClothesHang } from './maps/clothes hanger.svg'
 export { default as Clock } from './maps//clock.svg'
 export { default as shirtMaps } from './maps/shirtsMaps.svg'
+export { default as FullScreen } from './maps/fullSecren.svg'
+export { default as maximize } from './maps/maximize.svg'
 
 // ------------------------SignIn------------
 export { default as SignInSpring } from './formImgs/Signin/SignInSpring.svg'

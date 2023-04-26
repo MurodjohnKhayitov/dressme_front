@@ -25,9 +25,11 @@ export default function YandexMapsIndex() {
               {" "}
               <YandexTop />
             </div>
-            <div className="overflow-hidden">
-              <YandexMedium />
-            </div>
+            {!dressInfo?.yandexFullScreen && (
+              <div className="overflow-hidden">
+                <YandexMedium />
+              </div>
+            )}
           </div>
 
           {!dressInfo?.yandexOpenMarket && (
