@@ -214,6 +214,7 @@
 .ymaps-2-1-79-float-button {
     width: 40px !important;
     height: 40px !important;
+    top: 45px;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -222,4 +223,7 @@
 
 .ymaps-2-1-79-float-button-icon {
     width: 70% !important;
+}
+.ymaps-2-1-79-controls__control {
+    inset: auto 10px 470px auto !important;
 }
