@@ -250,13 +250,14 @@ const YandexMedium = () => {
           <NavLink
             to="/delivery-points"
             className={({ isActive }) =>
-              isActive
+              isActive 
                 ? IconsColor
                 : "items-center justify-center bg-white rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex"
             }
             // className={`items-center justify-center bg-white rounded-lg md:h-[44px] text-sm md:w-[100px] md:mt-0 hidden md:flex`}
           >
             <img src={map} alt="map" className="pr-[6px]" />
+          
             <span className="font-AeonikProMedium text-sm  ">Карта</span>
           </NavLink>
 

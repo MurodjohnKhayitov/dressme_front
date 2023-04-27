@@ -184,6 +184,10 @@
     backdrop-filter: blur(5px);
 }
 
+
+
+
+
 /* ----Zoom Controll---- */
 .ymaps-2-1-79-zoom__scale {
     display: none !important;
@@ -224,6 +228,25 @@
 .ymaps-2-1-79-float-button-icon {
     width: 70% !important;
 }
+
 .ymaps-2-1-79-controls__control {
-    inset: auto 10px 470px auto !important;
+    inset: auto 10px 200px auto !important;
 }
+
+/* ---------------- */
+.ymaps-2-1-79-ground-pane{
+    width: 100%;
+    -ms-filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    filter: grayscale(1);
+}
+/* .ymaps-layers-pane {
+    width: 100%;
+    -ms-filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    filter: grayscale(1);
+} */

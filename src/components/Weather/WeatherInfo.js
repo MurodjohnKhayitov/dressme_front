@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-// import { AreaChart, Area, XAxis, Tooltip } from "recharts";
+
 import moment from "moment";
-import GetGraph from "./GetGraph/GetGraph";
 import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 export default function WeatherInfo() {
@@ -10,51 +9,49 @@ export default function WeatherInfo() {
     weatherSet: "",
     cilciyToGradus: true,
   });
-  const value = [
-    { id: 1, max: 25, min: 19, time: "8am" },
-    { id: 2, max: 21, min: 19, time: "11am" },
-    { id: 3, max: 28, min: 16, time: "2pm" },
-    { id: 4, max: 16, min: 16, time: "5pm" },
-    { id: 5, max: 19, min: 19, time: "8pm" },
-    { id: 6, max: 25, min: 25, time: "11pm" },
-    { id: 7, max: 28, min: 28, time: "2pm" },
-    { id: 8, max: 21, min: 21, time: "5pm" },
-  ];
-  useQuery(
-    ["Weather"],
-    () => {
-      return fetch(
-        `http://api.weatherapi.com/v1/forecast.json?key=51f65d6b83ed44f7a57110716232604 &q=toshkent&days=8`
-      ).then((res) => res.json());
-    },
-    {
-      onSuccess: (res) => {
-        console.log(res, "res");
-        setState({ ...state, weatherSet: res });
-      },
-      onError: (err) => {
-        console.log(err, "errpr");
-      },
-    }
-  );
-  // const handleGetData = () => {
-  //   fetch(
-  //     `http://api.weatherapi.com/v1/forecast.json?key=51f65d6b83ed44f7a57110716232604 &q=toshkent&days=8`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data, "data");
-  //       setState({ ...state, weatherSet: data });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err, "erer");
-  //     });
-  // };
-  // useEffect(() => {
-  //   handleGetData();
-  // }, []);
+
+  // useQuery(
+  //   ["Weather"],
+  //   () => {
+  //     return fetch(
+  //       `http://api.weatherapi.com/v1/forecast.json?key=51f65d6b83ed44f7a57110716232604 &q=toshkent&days=8`
+  //     ).then((res) => res.json());
+  //   },
+  //   {
+  //     onSuccess: (res) => {
+  //       console.log(res, "res");
+  //       setState({ ...state, weatherSet: res });
+  //     },
+  //     onError: (err) => {
+  //       console.log(err, "errpr");
+  //     },
+  //   }
+  // );
 
 
+  const handleGetData = () => {
+    fetch(
+      `http://api.weatherapi.com/v1/forecast.json?key=51f65d6b83ed44f7a57110716232604 &q=toshkent&days=8`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setState({ ...state, weatherSet: data });
+      })
+      .catch((err) => {
+        
+        console.log(err, "erer");
+      });
+  };
+
+  useEffect(() => {
+    handleGetData();
+  }, []);
+
+ let firstElement = state?.weatherSet?.forecast?.forecastday[0]
+ let GetWeatherHour=[]
+ for(let i=1; i<firstElement?.hour.length; i+=3){
+  GetWeatherHour.push(firstElement?.hour[i])
+ }
 
   return (
     <div className="w-full  flex justify-center items-center">
@@ -165,7 +162,7 @@ export default function WeatherInfo() {
         <div className="w-full h-400px  mt-5">
           <ResponsiveContainer width="100%" height={150}>
             <AreaChart
-              data={value}
+              data={GetWeatherHour}
               margin={{ top: 20, right: 30, left: 25, bottom: 0 }}
             >
               <defs>
@@ -174,11 +171,12 @@ export default function WeatherInfo() {
                   <stop offset="97%" stopColor="#F9B925" stopOpacity={0} />
                 </linearGradient>
               </defs>
+              {/* <XAxis key={Math.random()} dataKey={moment("time").format("LT")}/> */}
               <XAxis key={Math.random()} dataKey="time" />
               <Tooltip />
               <Area
                 type="monotone"
-                dataKey="max"
+                dataKey="temp_c"
                 stroke="#F4CA16"
                 fillOpacity={1}
                 fill="url(#colorUv)"
