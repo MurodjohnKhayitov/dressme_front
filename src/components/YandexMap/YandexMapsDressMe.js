@@ -189,6 +189,138 @@ function YandexMapsDressMe() {
         'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
       cordinate: [41.282263, 69.216182],
     },
+    {
+      id: 13,
+      accordion: false,
+      address: "Ильинское-Усово (Московская область) Заповедная улица",
+      workTime: "Ежедневно 08:00-22:00",
+      star: "4.55",
+      imgs: [{ id: 1, img: "" }],
+      direction:
+        'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
+      cordinate: [41.337827, 69.224570],
+    },
+    {
+      id: 14,
+      accordion: false,
+      address: "Ильинское-Усово (Московская область) Заповедная улица",
+      workTime: "Ежедневно 08:00-22:00",
+      star: "4.55",
+      imgs: [{ id: 1, img: "" }],
+      direction:
+        'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
+      cordinate: [41.327722,69.213853],
+    },
+    {
+      id: 15,
+      accordion: false,
+      address: "Ильинское-Усово (Московская область) Заповедная улица",
+      workTime: "Ежедневно 08:00-22:00",
+      star: "4.55",
+      imgs: [{ id: 1, img: "" }],
+      direction:
+        'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
+      cordinate: [41.311626,69.207701],
+    },
+    {
+      id: 16,
+      accordion: false,
+      address: "Ильинское-Усово (Московская область) Заповедная улица",
+      workTime: "Ежедневно 08:00-22:00",
+      star: "4.55",
+      imgs: [{ id: 1, img: "" }],
+      direction:
+        'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
+      cordinate: [41.318925, 69.312793],
+    },
+    {
+      id: 17,
+      accordion: false,
+      address: "Ильинское-Усово (Московская область) Заповедная улица",
+      workTime: "Ежедневно 08:00-22:00",
+      star: "4.55",
+      imgs: [{ id: 1, img: "" }],
+      direction:
+        'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
+      cordinate: [41.326482, 69.334138],
+    },
+    {
+      id: 18,
+      accordion: false,
+      address: "Ильинское-Усово (Московская область) Заповедная улица",
+      workTime: "Ежедневно 08:00-22:00",
+      star: "4.55",
+      imgs: [{ id: 1, img: "" }],
+      direction:
+        'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
+      cordinate: [41.316420, 69.230976],
+    },
+    {
+      id: 19,
+      accordion: false,
+      address: "Ильинское-Усово (Московская область) Заповедная улица",
+      workTime: "Ежедневно 08:00-22:00",
+      star: "4.55",
+      imgs: [{ id: 1, img: "" }],
+      direction:
+        'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
+      cordinate: [41.309585, 69.267861],
+    },
+    {
+      id: 20,
+      accordion: false,
+      address: "Ильинское-Усово (Московская область) Заповедная улица",
+      workTime: "Ежедневно 08:00-22:00",
+      star: "4.55",
+      imgs: [{ id: 1, img: "" }],
+      direction:
+        'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
+      cordinate: [41.314924, 69.245148],
+    },
+    {
+      id: 21,
+      accordion: false,
+      address: "Ильинское-Усово (Московская область) Заповедная улица",
+      workTime: "Ежедневно 08:00-22:00",
+      star: "4.55",
+      imgs: [{ id: 1, img: "" }],
+      direction:
+        'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
+      cordinate: [41.301140, 69.220787],
+    },
+    {
+      id: 22,
+      accordion: false,
+      address: "Ильинское-Усово (Московская область) Заповедная улица",
+      workTime: "Ежедневно 08:00-22:00",
+      star: "4.55",
+      imgs: [{ id: 1, img: "" }],
+      direction:
+        'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
+      cordinate: [41.325755, 69.282940],
+    },
+    {
+      id: 23,
+      accordion: false,
+      address: "Ильинское-Усово (Московская область) Заповедная улица",
+      workTime: "Ежедневно 08:00-22:00",
+      star: "4.55",
+      imgs: [{ id: 1, img: "" }],
+      direction:
+        'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
+      cordinate: [41.317964,69.295311],
+    },
+    {
+      id: 24,
+      accordion: false,
+      address: "Ильинское-Усово (Московская область) Заповедная улица",
+      workTime: "Ежедневно 08:00-22:00",
+      star: "4.55",
+      imgs: [{ id: 1, img: "" }],
+      direction:
+        'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
+      cordinate: [41.296016, 69.290532],
+    },
   ]);
   const [dressInfo, setDressInfo] = useContext(dressMainData);
 
@@ -252,13 +384,12 @@ function YandexMapsDressMe() {
           <NavbarTopOpenMenu />
         </div>
         <YMaps
-          className="w-full"
           query={{ apikey: "8b56a857-f05f-4dc6-a91b-bc58f302ff21" }}
         >
           <Map
             state={{
-              center: coords.coords ? coords.coords : [41.311153, 69.279729],
-              zoom: 11,
+              center: coords.coords ? coords.coords : [41.311753, 69.241822],
+              zoom: 14,
               // controls: ["smallMapDefaultSet"],
             }}
             onClick={onMapClick}
@@ -292,7 +423,7 @@ function YandexMapsDressMe() {
               options={{
                 float: "right",
                 position: { bottom: 270, right: 10, size: "small" },
-                size: "small",
+                size: "small", 
               }}
             />
             {/* ---------- */}

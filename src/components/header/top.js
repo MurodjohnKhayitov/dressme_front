@@ -200,11 +200,8 @@ const TopHeader = () => {
           </div>
           <Modal
             closable={false}
-            // keyboard={false}
             className="!w-fit !h-fit "
             open={state?.isModalOpen}
-            // onOk={handleOk}
-            // onCancel={handleCancel}
             footer={null}
           >
             <div onClick={handleOk} className="flex justify-end p-2 cursor-pointer">
