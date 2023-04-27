@@ -718,7 +718,7 @@ export default function SetClothesWear() {
                           return item.id ? (
                             <div
                               key={item?.id}
-                              className={`!w-[192px] box-border ml-[56px] cursor-pointer flex items-center justify-center h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={`!w-[192px] box-border ml-[47px] ls:ml-[66px] ll:ml-[83px] md:ml-[56px] cursor-pointer flex items-center justify-center h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
                               <div className="group relative w-full h-full flex items-center justify-center ">
                                 <div className="w-full h-full hover:scale-110 ease-in-out	duration-300 flex items-center justify-center">
@@ -766,7 +766,7 @@ export default function SetClothesWear() {
                           return item.id ? (
                             <div
                               key={item?.id}
-                              className={` w-[192px] box-border ml-[56px] cursor-pointer flex items-center justify-center h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={` w-[192px] box-border mx-auto cursor-pointer flex items-center justify-center h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
                               <div className="group relative w-full h-full flex items-center justify-center">
                                 <div className="w-full h-full hover:scale-110   ease-in-out	duration-300">
@@ -819,7 +819,7 @@ export default function SetClothesWear() {
                           return (
                             <div
                               key={item?.id}
-                              className={`!w-[192px] cursor-pointer flex justify-center items-center ml-[56px] h-[148px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={`!w-[192px] cursor-pointer flex justify-center items-center ml-[47px] ls:ml-[66px] ll:ml-[83px] md:ml-[56px] h-[148px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
                               <div className="group relative w-full h-full flex items-center justify-center">
                                 <div className="w-full h-full hover:scale-110 ease-in-out	duration-300 flex items-center justify-center">
@@ -1106,7 +1106,7 @@ export default function SetClothesWear() {
                           return (
                             <div
                               key={item?.id}
-                              className={`!w-[192px] flex items-center cursor-pointer justify-center ml-[56px] h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={`!w-[192px] flex items-center cursor-pointer justify-center ml-[47px] ls:ml-[66px] ll:ml-[83px] md:ml-[56px] h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
                               <div className="group relative w-full h-full flex items-center justify-center">
                                 <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
