@@ -49,7 +49,7 @@ export default function WeatherInfo() {
 
  let firstElement = state?.weatherSet?.forecast?.forecastday[0]
  let GetWeatherHour=[]
- for(let i=0; i<firstElement?.hour.length; i+=3){
+ for(let i=1; i<firstElement?.hour.length; i+=3){
   GetWeatherHour.push(firstElement?.hour[i])
  }
 
