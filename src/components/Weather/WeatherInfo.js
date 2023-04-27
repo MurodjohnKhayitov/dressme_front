@@ -20,39 +20,39 @@ export default function WeatherInfo() {
     { id: 7, max: 28, min: 28, time: "2pm" },
     { id: 8, max: 21, min: 21, time: "5pm" },
   ];
-  // useQuery(
-  //   ["Weather"],
-  //   () => {
-  //     return fetch(
-  //       `http://api.weatherapi.com/v1/forecast.json?key=51f65d6b83ed44f7a57110716232604 &q=toshkent&days=8`
-  //     ).then((res) => res.json());
-  //   },
-  //   {
-  //     onSuccess: (res) => {
-  //       console.log(res, "res");
-  //       setState({ ...state, weatherSet: res });
-  //     },
-  //     onError: (err) => {
-  //       console.log(err, "errpr");
-  //     },
-  //   }
-  // );
-  const handleGetData = () => {
-    fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=51f65d6b83ed44f7a57110716232604 &q=toshkent&days=8`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data, "data");
-        setState({ ...state, weatherSet: data });
-      })
-      .catch((err) => {
-        console.log(err, "erer");
-      });
-  };
-  useEffect(() => {
-    handleGetData();
-  }, []);
+  useQuery(
+    ["Weather"],
+    () => {
+      return fetch(
+        `http://api.weatherapi.com/v1/forecast.json?key=51f65d6b83ed44f7a57110716232604 &q=toshkent&days=8`
+      ).then((res) => res.json());
+    },
+    {
+      onSuccess: (res) => {
+        console.log(res, "res");
+        setState({ ...state, weatherSet: res });
+      },
+      onError: (err) => {
+        console.log(err, "errpr");
+      },
+    }
+  );
+  // const handleGetData = () => {
+  //   fetch(
+  //     `http://api.weatherapi.com/v1/forecast.json?key=51f65d6b83ed44f7a57110716232604 &q=toshkent&days=8`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data, "data");
+  //       setState({ ...state, weatherSet: data });
+  //     })
+  //     .catch((err) => {
+  //       console.log(err, "erer");
+  //     });
+  // };
+  // useEffect(() => {
+  //   handleGetData();
+  // }, []);
 
 
 
