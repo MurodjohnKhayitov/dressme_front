@@ -403,7 +403,7 @@ function YandexMapsDressMe() {
             <div
               onClick={handleFullScreen}
               className={`absolute right-2 ${
-                !dressInfo?.yandexFullScreen ? "bottom-[87px]" : "bottom-[20px]"
+                !dressInfo?.yandexFullScreen ? "bottom-[87px]" : "bottom-[87px]"
               }  cursor-pointer z-[51] w-10 h-10 rounded-lg bg-white ss:flex items-center justify-center block md:hidden`}
             >
               {dressInfo?.yandexFullScreen ? (
@@ -471,7 +471,7 @@ function YandexMapsDressMe() {
               {!dressInfo?.yandexOpenMenu ? (
                 <div
                   className={`  duration-300 h-[40px] absolute cursor-pointer ss:top-[-200px] md:top-[8px] left-[8px] z-50 bg-white shadow-lg overflow-hidden rounded-lg  `}
-                >
+                > 
                   <div
                     onClick={handleOpenMenu}
                     className="w-fit flex items-center justify-between  cursor-pointer roundedn-lg h-full  "
@@ -712,6 +712,9 @@ function YandexMapsDressMe() {
                 </div>
               </div>
             </div>
+
+
+            
             {/* Yandex Main menu */}
             <div
               className={`fixed top-[70px] left-0  ${
@@ -731,6 +734,8 @@ function YandexMapsDressMe() {
                     className="bg-transparent w-full px-3 h-10 text-[14px] border border-transparent md:border-searchBgColor md:mx-0 md:-ml-[3px] md:px-3 md:h-10"
                   />
                 </div>
+
+
                 {/* Music and Map selection for Mobile */}
                 <div className="flex items-center justify-between h-11 mb-3">
                   <button className="left py-[9px] px-10 rounded-lg flex items-center justify-center font-AeonikProMedium rouded border border-searchBgColor bg-btnBgColor ss:w-[48%]">
@@ -751,6 +756,8 @@ function YandexMapsDressMe() {
                     <span className="ml-[10px]">Map</span>
                   </Link>
                 </div>
+
+
                 {/* Categories */}
                 <ul className="flex flex-col">
                   <li>
@@ -908,16 +915,10 @@ function YandexMapsDressMe() {
               </div>
             </div>
             <div
-              className={`absolute  ${
-                !dressInfo?.yandexFullScreen
-                  ? "bottom-[58px]"
-                  : "bottom-[-10px]"
-              } block md:hidden left-1/2  right-1/2 translate-x-[-50%] translate-y-[-50%]  overflow-hidden z-[52] rounded-lg
-             h-[48px]  shadow-lg  ${
-               !dressInfo?.yandexOpenMarket
-                 ? "w-[202px] bg-white"
-                 : "w-[calc(100%-56px)]  bg-yandexNavbar backdrop-blur-sm"
-             }`}
+              className={`absolute block md:hidden left-1/2  right-1/2 translate-x-[-50%] translate-y-[-50%]  overflow-hidden z-[52] rounded-lg
+              h-[48px]  shadow-lg 
+              ${!dressInfo?.yandexFullScreen ? "bottom-[58px]":"bottom-[-15px] w-[calc(100%-16px)]"}
+              ${!dressInfo?.yandexOpenMarket ?   "w-[202px] bg-white":"w-[calc(100%-56px)]  bg-yandexNavbar backdrop-blur-sm" }`}
             >
               <div className="w-full h-full flex justify-between ">
                 <div
