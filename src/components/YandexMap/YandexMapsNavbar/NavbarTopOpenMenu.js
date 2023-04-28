@@ -89,7 +89,6 @@ export default function NavbarTopOpenMenu() {
     </div>
   );
 
-  
   const NextArrow = (props) => {
     const { onClick } = props;
     return (
@@ -117,37 +116,7 @@ export default function NavbarTopOpenMenu() {
       </div>
     );
   };
-  // const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
-  //   <button
-  //     {...props}
-  //     className={
-  //       " absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[0%] z-10	left-[10px] rounded-full  duration-200 border border-solid border-searchBgColor" +
-  //       (currentSlide === 0 ? " bg-none  hidden" : "bg-white")
-  //     }
-  //     aria-disabled={currentSlide === 0 ? true : false}
-  //     type="button"
-  //   >
-  //     <span className="w-full h-full bg-green-500">
-  //       <GrFormPrevious size={20} />
-  //     </span>
-  //   </button>
-  // );
-
-  // const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-  //   <button
-  //     {...props}
-  //     className={
-  //       " absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[0%] z-10	right-[10px] rounded-full duration-200 border border-solid border-searchBgColor" +
-  //       (currentSlide === slideCount - 0 ? "bg-none hidden" : " bg-white ")
-  //     }
-  //     aria-disabled={currentSlide === slideCount - 0 ? true : false}
-  //     type="button"
-  //   >
-  //     <span className="w-full h-full bg-green-500">
-  //       <GrFormNext size={20} />
-  //     </span>
-  //   </button>
-  // );
+  
 
   let settings1 = {
     nextArrow: <NextArrow />,
@@ -202,6 +171,7 @@ export default function NavbarTopOpenMenu() {
       },
     ],
   };
+  
   return (
     <div className="  w-[100%] overflow-hidden mr-auto  border border-searchBgColor  h-[60px] flex items-center rounded-[12px] bg-yandexNavbar   backdrop-blur-sm ">
       <div className="w-[30%] flex items-center ml-6  ">

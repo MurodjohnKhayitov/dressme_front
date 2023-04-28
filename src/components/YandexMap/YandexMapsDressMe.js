@@ -374,8 +374,7 @@ function YandexMapsDressMe() {
         >
           <YandexMapsIndex />
         </div>
-        <div
-          className={`absolute z-50   right-2  ${
+        <div className={`absolute z-50   right-2  ${
             dressInfo?.yandexOpenMenu
               ? "top-2  right-2 duration-300 "
               : "top-[-250px]  right-2 duration-300 "
@@ -865,7 +864,7 @@ function YandexMapsDressMe() {
                 </div>
               </div>
             </div>
-            {/* <div className="absolute  bottom-0 w-full border "> */}
+
             {/* Yandex Search */}
             <div
               className={`absolute ${
@@ -943,7 +942,6 @@ function YandexMapsDressMe() {
                 <NavMenu />
               </div>
             )}
-            {/* </div> */}
             {/* ---------- */}
           </Map>
         </YMaps>

@@ -306,7 +306,7 @@ export default function MainPageSliders() {
           });
         })}
       </div>
-      <div className="w-full 	mt-[64px]   ss:hidden xs:block">
+      <div className="w-full 	mt-[64px] ss:hidden xs:block">
         <Slider
           {...settings1}
           className="w-[100%] flex xs:justify-between  px-[1px]"
@@ -316,9 +316,8 @@ export default function MainPageSliders() {
               return (
                 <div
                   key={data?.id}
-                  className="!w-[98.98%] h-[100px]  rounded-lg bg-btnBgColor flex items-center justify-center select-none border border-solid border-searchBgColor"
+                  className="!w-[98.88%] h-[100px]  rounded-lg bg-btnBgColor flex items-center justify-center select-none border border-solid border-searchBgColor"
                 >
-                  {/* <p className='w-full h-full flex items-center justify-center not-italic font-AeonikProMedium text-xl leading-6 text-center text-black '>{data?.type || "0"}</p> */}
                   <div className=" h-full flex items-center justify-center px-[35px]">
                     <img
                       className="h-[70px] w-[80%] "
