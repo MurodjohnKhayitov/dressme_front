@@ -236,14 +236,23 @@
 }
 
 /* ---------------- */
-.ymaps-2-1-79-ground-pane{
-    width: 100%;
+.ymaps-2-1-79-ground-pane {
+    /* width: 100%; */
     -ms-filter: grayscale(1);
     -webkit-filter: grayscale(1);
     -moz-filter: grayscale(1);
     -o-filter: grayscale(1);
     filter: grayscale(1);
 }
+
+/* .ymaps-layers-pane {
+    width: 100%;
+    -ms-filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    filter: grayscale(1);
+} */
 
 @media (max-width: 480px) {
     .ymaps-2-1-79-controls__control {

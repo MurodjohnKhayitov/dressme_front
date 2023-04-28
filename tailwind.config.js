@@ -2,7 +2,7 @@
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  theme: { 
+  theme: {
     extend: {
       colors: {
         bgColor: "#fafafa",
@@ -40,25 +40,25 @@ module.exports = {
         yandexWhite: " #FFFFFF",
 
         // Icons Colors
-        Alyuminy: "#4D4D4D",
+        Alyuminy: "#4D4D4D"
       },
       fontFamily: {
         // Chrome for
         // 400
         AeonikProRegular: ["OTFAeonikProRegular", "sans-serif"],
         // 500
-        AeonikProMedium: ["OTFAeonikProMedium", "sans-serif"],
+        AeonikProMedium: ["OTFAeonikProMedium", "sans-serif"]
       },
       boxShadow: {
         myShadow1: "1px -2px 0 0 rgb(17,24,39)",
         myShadow2: "-1px -2px 0 0 rgb(17,24,39)",
         cardShadow: "0px 1px 10px 0px rgba(0,0,0,0.59)",
         navbarShadow: "0px -4px 14px -4px rgba(0,0,0,0.75)",
-        navMenuShadov: "0px -2px 10px -8px rgba(0,0,0,0.75)",
-      },
+        navMenuShadov: "0px -2px 10px -8px rgba(0,0,0,0.75)"
+      }
     },
     letterSpacing: {
-      "1": "0.01em",
+      "1": "0.01em"
     },
     screens: {
       ss: "320px",
@@ -69,8 +69,8 @@ module.exports = {
       md: "768px",
       lg: "1024px",
       xl: "1280px",
-      xxl: "1440px",
-    },
+      xxl: "1440px"
+    }
   },
-  plugins: [],
+  plugins: []
 };
