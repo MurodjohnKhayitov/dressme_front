@@ -219,6 +219,8 @@
     width: 40px !important;
     height: 40px !important;
     top: 45px;
+    /* bottom: 0; */
+    /* margin: auto 0; */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -242,3 +244,10 @@
     -o-filter: grayscale(1);
     filter: grayscale(1);
 }
+
+@media (max-width: 480px) {
+    .ymaps-2-1-79-controls__control {
+        inset: auto 10px 280px auto !important;
+    }
+}
+
