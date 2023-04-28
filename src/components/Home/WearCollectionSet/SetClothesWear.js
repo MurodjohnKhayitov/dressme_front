@@ -703,7 +703,7 @@ export default function SetClothesWear() {
             key={productList?.id}
             className="w-full md:w-[305px] flex flex-row overflow-hidden"
           >
-            <div className="w-full  border bg-white border-searchBgColor pt-4 rounded-lg">
+            <div className="w-full  border bg-white border-searchBgColor  pt-4 rounded-lg">
               {producListMap?.SetToModel ? (
                 <div className="w-full h-[572px] flex justify-center">
                   <img src={model1} alt="" />
