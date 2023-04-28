@@ -10,8 +10,8 @@ export default function SignIn() {
     phoneNumber: "",
   });
   return (
-    <div className=" py-8 w-full h-full flex justify-center">
-      <div className="w-[440px] h-fit  md:px-[40px] md:py-[32px] ss:p-5 border border-searchBgColor rounded-lg">
+    <div className=" py-8 w-full h-full flex justify-center ">
+      <div className="max-w-[440px] w-[100%] h-fit  md:px-[40px] md:py-[32px] ss:p-5 border border-searchBgColor rounded-lg">
         <div className=" w-full mt-1 mb-7 not-italic font-AeonikProMedium text-xl ss:text-start md:text-center leading-5   tracking-[0,16px] text-black">
           Авторизоваться
         </div>

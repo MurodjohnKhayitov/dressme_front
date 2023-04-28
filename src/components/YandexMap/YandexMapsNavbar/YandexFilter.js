@@ -13,7 +13,7 @@ export default function YandexFilter() {
     { id: 7, name: "Толстовки" },
     { id: 8, name: "Обуви" },
     { id: 9, name: "Куртки" },
-    { id: 10, name: "Сапоги" },
+    { id: 10, name: "Сапоги" }, 
     { id: 11, name: "Платья" },
     { id: 12, name: "Юбки" },
     { id: 13, name: "Ремень" },

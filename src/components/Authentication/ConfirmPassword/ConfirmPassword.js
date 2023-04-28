@@ -4,18 +4,21 @@ import { NavLink } from "react-router-dom";
 
 export default function ConfirmPassword() {
   const [timerDecrase, setTimerDecrase] = useState(60);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (timerDecrase >= 1) {
-        setTimerDecrase((timerDecrase) => timerDecrase - 1);
-      }
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [timerDecrase]);
+  useEffect(
+    () => {
+      const interval = setInterval(() => {
+        if (timerDecrase >= 1) {
+          setTimerDecrase(timerDecrase => timerDecrase - 1);
+        }
+      }, 1000);
+      return () => clearInterval(interval);
+    },
+    [timerDecrase]
+  );
 
   return (
-    <div className=" py-8 w-full h-full flex justify-center">
-      <div className="w-[440px] h-fit  md:px-[40px] md:py-[32px] ss:p-5 border border-searchBgColor rounded-lg">
+    <div className=" py-8 px-4 w-full h-full flex justify-center">
+      <div className="max-w-[440px] w-[100%] h-fit  md:px-[40px] md:py-[32px] ss:p-5 border border-searchBgColor rounded-lg">
         <div className=" w-full mt-1 mb-7 flex flex-col justify-center">
           <span className="not-italic font-AeonikProMedium text-xl ss:text-start md:text-center leading-5   tracking-[0,16px] text-black">
             Подтвердите пароль
