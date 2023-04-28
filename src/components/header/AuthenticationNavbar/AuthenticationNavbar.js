@@ -26,27 +26,32 @@ import { NavLink, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 const AuthenticationNavbar = () => {
   const [dressInfo] = useContext(dressMainData);
-  let genderStyle = "";
+  let authenActiveStyle = "";
+  let authenActiveForget="";
   let IconsColor = "";
   if (dressInfo?.type === 1111) {
     IconsColor = "borderSpring";
-    genderStyle =
-      "text-borderSpring bg-bgSpring border-borderSpring w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor border  mr-2 rounded-lg";
+    authenActiveForget="md:text-borderSpring bg-white bg-bgSpring border border-borderSpring ss:w-[calc(100%-60px)] ml-1 md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor  rounded-lg"
+    authenActiveStyle =
+      "md:text-borderSpring bg-white bg-bgSpring md:border-borderSpring ss:w-[160px] md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
   if (dressInfo?.type === 2222) {
     IconsColor = "borderSpring";
-    genderStyle =
-      "text-borderSummer bg-bgSummer border-borderSummer w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor border  mr-2 rounded-lg";
+    authenActiveForget="md:text-borderSummer bg-white bg-bgSummer border border-borderSummer ss:w-[calc(100%-60px)] ml-1 md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor rounded-lg"
+    authenActiveStyle =
+      "md:text-borderSummer bg-white bg-bgSummer md:border-borderSummer ss:w-[160px] md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
   if (dressInfo?.type === 3333) {
     IconsColor = "borderSpring";
-    genderStyle =
-      "text-borderAutumm bg-bgAutumm border-borderAutumm w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor border  mr-2 rounded-lg";
+    authenActiveForget="md:text-borderAutumm bg-white bg-bgAutumm border border-borderAutumm ss:w-[calc(100%-60px)] ml-1 md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor   rounded-lg"
+    authenActiveStyle =
+      "md:text-borderAutumm bg-white bg-bgAutumm md:border-borderAutumm ss:w-[160px] md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
   if (dressInfo?.type === 4444) {
     IconsColor = "borderSpring";
-    genderStyle =
-      "text-borderWinter bg-bgWinter border-borderWinter w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor border  mr-2 rounded-lg";
+    authenActiveForget="md:text-borderWinter bg-white bg-bgWinter border border-borderWinter ss:w-[calc(100%-60px)] ml-1 md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor   rounded-lg"
+    authenActiveStyle =
+      "md:text-borderWinter bg-white bg-bgWinter md:border-borderWinter ss:w-[160px] md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
 
   const personItems = [
@@ -63,23 +68,23 @@ const AuthenticationNavbar = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col justify-center items-center m-0 p-0 box-border ss:hidden md:block">
+    <div className="flex flex-col justify-center items-center m-0 p-0 box-border ">
       <div className="max-w-[1280px] w-[100%] flex justify-center  py-3 items-center m-auto   ">
         {personItems
           ?.filter((value) => value.id === dressInfo?.type)
           .map((data) => {
             return (
-              <div key={data?.id} className=" ">
+              <div key={data?.id} className=" w-full px-4 ">
                 {/* {locationWindow !== "/forget_password" ? ( */}
                 {locationWindow === "/sign_in" ||
                 locationWindow === "/sign_up" ? (
-                  <div className="w-fit flex items-center ">
+                  <div className="w-full md:w-fit flex gap-x-2 items-center justify-between ss:border md:border-0 ss:bg-btnBgColor md:bg-transparent border-searchBgColor rounded-lg">
                     <NavLink
                       to={"/sign_in"}
                       className={({ isActive }) =>
                         isActive
-                          ? genderStyle
-                          : "w-[170px] h-[44px]   justify-center flex items-center bg-btnBgColor border  mr-2 rounded-lg"
+                          ? authenActiveStyle
+                          : "w-[170px] h-[44px]   justify-center flex  items-center  md:bg-btnBgColor md:border   rounded-lg"
                       }
                     >
                       <img className="" src={data?.signInIcon} alt="female" />
@@ -91,8 +96,8 @@ const AuthenticationNavbar = () => {
                       to={"/sign_up"}
                       className={({ isActive }) =>
                         isActive
-                          ? genderStyle
-                          : "w-[170px] h-[44px]   justify-center flex items-center bg-btnBgColor border  mr-2 rounded-lg"
+                          ? authenActiveStyle
+                          : "w-[170px] h-[44px]   justify-center flex  items-center  md:bg-btnBgColor md:border   rounded-lg"
                       }
                     >
                       <img className="" src={data?.signUpIcon} alt="male" />
@@ -103,7 +108,7 @@ const AuthenticationNavbar = () => {
                   </div>
                 ) : null}
                 {locationWindow === "/forget_password" ? (
-                  <div className="w-fit h-12  flex items-center">
+                  <div className="w-full md:w-fit h-12  flex items-center ">
                     <NavLink
                       to="/sign_in "
                       className={`text-${IconsColor} h-[44px] w-[56px] rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center mr-3 `}
@@ -131,7 +136,7 @@ const AuthenticationNavbar = () => {
                       to={"/forget_password"}
                       className={({ isActive }) =>
                         isActive
-                          ? genderStyle
+                          ? authenActiveForget
                           : "w-[170px] h-[44px]   justify-center flex items-center bg-btnBgColor border  mr-2 rounded-lg"
                       }
                     >
@@ -149,7 +154,7 @@ const AuthenticationNavbar = () => {
                   </div>
                 ) : null}
                 {locationWindow === "/confirm_password" ? (
-                  <div className="w-fit h-12  flex items-center">
+                  <div className="w-full h-12  flex items-center">
                     <NavLink
                       to="/sign_in "
                       className={`text-${IconsColor} h-[44px] w-[56px] rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center mr-3 `}
@@ -177,7 +182,7 @@ const AuthenticationNavbar = () => {
                       to={"/confirm_password"}
                       className={({ isActive }) =>
                         isActive
-                          ? genderStyle
+                          ? authenActiveForget
                           : "w-[170px] h-[44px]   justify-center flex items-center bg-btnBgColor border  mr-2 rounded-lg"
                       }
                     >
