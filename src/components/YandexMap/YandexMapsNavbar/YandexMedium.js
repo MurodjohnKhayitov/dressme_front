@@ -144,6 +144,7 @@ const YandexMedium = () => {
           <NavLink
             to="/"
             className="flex justify-center items-center rounded-lg h-[48px] ss:w-[calc(100%-96px)] ss:p-1 md:p-0 md:w-[155px] ss:ml-2 md:ml-[0px]  ss:bg-white md:bg-transparent"
+
           >
             {BrandTypeArray.filter((data) => data.id == dressInfo.type).map(
               (data) => {
