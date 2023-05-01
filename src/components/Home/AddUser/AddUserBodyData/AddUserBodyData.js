@@ -222,268 +222,264 @@ const AddUserBodyData = () => {
   
 
   return (
-    <main>
+    <main className="mx-4 md:mx-0">
       <div className="flex justify-center  my-8 gap-x-8">
-        <div>
-          <img
-            src={person3D}
-            alt=""
-            className="border border-solid border-searchBgColor rounded-lg"
-          />
+        <div className="hidden md:flex">
+            <img src={person3D} alt="" className="border border-solid border-searchBgColor rounded-lg"/>
         </div>
-        <div>
-          <form className="rounded-lg border border-solid border-searchBgColor mb-6">
-            <div className="flex flex-col py-6 w-[440px] border-b border-searchBgColor">
-              <div className="text-[20px] font-AeonikProMedium mb-3 px-10">
-                Внешний вид персонажа
-              </div>
-              <p className="text-textColor font-AeonikProRegular mb-7 px-10">
-                Введите параметры вашего тела
-              </p>
-              <div className="flex flex-col px-10">
-                <div className="flex items-center flex-row justify-between gap-x-5 mb-4">
-                  <div className="flex flex-col w-[47%]">
-                    <label
-                      htmlFor="firstname"
-                      className="mb-[6px] font-AeonikProRegular text-sm"
-                    >
-                      Высота роста
-                    </label>
-                    <input
-                      type="text"
-                      name="firstname"
-                      id="firstname"
-                      placeholder="Высота роста"
-                      className="bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor p-4 rounded-lg h-12"
-                    />
-                  </div>
-                  <div className="flex flex-col w-[47%]">
-                    <label
-                      htmlFor="firstname"
-                      className="mb-[6px] font-AeonikProRegular text-sm"
-                    >
-                      Вес тела
-                    </label>
-                    <input
-                      type="text"
-                      name="firstname"
-                      id="firstname"
-                      placeholder="Вес тела"
-                      className="bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor p-4 rounded-lg h-12"
-                    />
-                  </div>
+        <div className="w-full md:w-[23.5%]">
+            <form className="rounded-lg border border-solid border-searchBgColor mb-6">
+                <div className="flex flex-col py-6 w-full border-b border-searchBgColor">
+                    <div className="text-[20px] font-AeonikProMedium mb-3 px-5 md:px-10">
+                        Внешний вид персонажа
+                    </div>
+                    <p className="text-textColor font-AeonikProRegular mb-7 px-5 md:px-10">
+                        Введите параметры вашего тела
+                    </p>
+                    <div className="flex flex-col px-5 md:px-10">
+                        <div className="flex items-center flex-row justify-between gap-x-5 mb-4">
+                            <div className="flex flex-col w-[47%]">
+                                <label
+                                htmlFor="firstname"
+                                className="mb-[6px] font-AeonikProRegular text-sm"
+                                >
+                                Высота роста
+                                </label>
+                                <input
+                                type="text"
+                                name="firstname"
+                                id="firstname"
+                                placeholder="Высота роста"
+                                className="bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor p-4 rounded-lg h-12"
+                                />
+                            </div>
+                            <div className="flex flex-col w-[47%]">
+                                <label
+                                htmlFor="firstname"
+                                className="mb-[6px] font-AeonikProRegular text-sm"
+                                >
+                                Вес тела
+                                </label>
+                                <input
+                                type="text"
+                                name="firstname"
+                                id="firstname"
+                                placeholder="Вес тела"
+                                className="bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor p-4 rounded-lg h-12"
+                                />
+                            </div>
+                        </div>
+                        <div className="flex items-center flex-row justify-between gap-x-5">
+                        <div className="flex flex-col w-1/2">
+                            <label
+                            htmlFor="waist"
+                            className="mb-[6px] font-AeonikProRegular text-sm"
+                            >
+                            Обхват талии
+                            </label>
+                            <Popover
+                            open={openWaistSize}
+                            onOpenChange={handleOpenChangeWaistSize}
+                            className="w-full px-4 h-[48px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group rounded-lg border border-searchBgColor"
+                            trigger="click"
+                            options={["Hide"]}
+                            placement="bottom"
+                            content={contentWaistSize}
+                            >
+                            <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                                {selectWaistSize}
+                            </span>
+                            <span>
+                                <BiChevronDown
+                                size={20}
+                                style={{ color: "#c2c2c2" }}
+                                className={`${
+                                    openWaistSize ? "rotate-[-180deg]" : ""
+                                } duration-200`}
+                                />{" "}
+                            </span>
+                            </Popover>
+                        </div>
+                        <div className="flex flex-col w-1/2">
+                            <label
+                            htmlFor="waist"
+                            className="mb-[6px] font-AeonikProRegular text-sm overflow-y-hidden"
+                            >
+                            Обхват грудной клетки
+                            </label>
+                            <Popover
+                            open={openChestSize}
+                            onOpenChange={handleOpenChangeChestSize}
+                            className="w-full px-4 h-[48px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group rounded-lg border border-searchBgColor"
+                            trigger="click"
+                            options={["Hide"]}
+                            placement="bottom"
+                            content={contentChestSize}
+                            >
+                            <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                                {selectChestSize}
+                            </span>
+                            <span>
+                                <BiChevronDown
+                                size={20}
+                                style={{ color: "#c2c2c2" }}
+                                className={`${
+                                    openChestSize ? "rotate-[-180deg]" : ""
+                                } duration-200`}
+                                />{" "}
+                            </span>
+                            </Popover>
+                        </div>
+                    </div>
+                    </div>
                 </div>
-                <div className="flex items-center flex-row justify-between gap-x-5">
-                  <div className="flex flex-col w-1/2">
-                    <label
-                      htmlFor="waist"
-                      className="mb-[6px] font-AeonikProRegular text-sm"
+
+                <div className="flex flex-col px-5 md:px-10 pt-6 w-full md:w-full">
+                    <div className="text-[20px] font-AeonikProMedium mb-3">
+                        Размеры одежды
+                    </div>
+                    <p className="text-textColor font-AeonikProRegular mb-7">
+                        Введите размеры ваших одежд
+                    </p>
+
+                    {/* Caps */}
+                    <div className="w-full flex items-center pl-4 bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor rounded-lg h-12 mb-2">
+                        <div className="flex items-center font-AeonikProMedium w-[75%] border-r border-searchBgColor h-12 bg-transparent pr-4">
+                        Обхват головы{" "}
+                        <span className="font-AeonikProRegular ml-1">(шапки)</span>
+                        </div>
+                        <Popover
+                        open={openCapSize}
+                        onOpenChange={handleOpenChangeCapSize}
+                        className="w-[28%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
+                        trigger="click"
+                        options={["Hide"]}
+                        placement="bottom"
+                        content={contentCapSize}
+                        >
+                        <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                            {selectCapSize}
+                        </span>
+                        <span>
+                            <BiChevronDown
+                            size={20}
+                            style={{ color: "#c2c2c2" }}
+                            className={`${
+                                openCapSize ? "rotate-[-180deg]" : ""
+                            } duration-200`}
+                            />{" "}
+                        </span>
+                        </Popover>
+                    </div>
+
+                    {/* Shirts */}
+                    <div className="flex items-center pl-4 bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor rounded-lg h-12 mb-2">
+                        <div className="flex items-center font-AeonikProMedium w-[75%] border-r border-searchBgColor h-12 bg-transparent pr-4">
+                        Верхняя одежда
+                        <span className="font-AeonikProRegular ml-1">(рубашки)</span>
+                        </div>
+                        <Popover
+                        open={openShirtSize}
+                        onOpenChange={handleOpenChangeShirtSize}
+                        className="w-[28%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
+                        trigger="click"
+                        options={["Hide"]}
+                        placement="bottom"
+                        content={contentShirtSize}
+                        >
+                        <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                            {selectShirtSize}
+                        </span>
+                        <span>
+                            <BiChevronDown
+                            size={20}
+                            style={{ color: "#c2c2c2" }}
+                            className={`${
+                                openShirtSize ? "rotate-[-180deg]" : ""
+                            } duration-200`}
+                            />{" "}
+                        </span>
+                        </Popover>
+                    </div>
+
+                    {/* Trousers */}
+                    <div className="flex items-center pl-4 bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor rounded-lg h-12 mb-2">
+                        <div className="flex items-center font-AeonikProMedium w-[75%] border-r border-searchBgColor h-12 bg-transparent pr-4">
+                        Нижняя одежда{" "}
+                        <span className="font-AeonikProRegular ml-1">(брюки)</span>
+                        </div>
+                        <Popover
+                        open={openTrouserSize}
+                        onOpenChange={handleOpenChangeTrouserSize}
+                        className="w-[28%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
+                        trigger="click"
+                        options={["Hide"]}
+                        placement="bottom"
+                        content={contentTrouserSize}
+                        >
+                        <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                            {selectTrouserSize}
+                        </span>
+                        <span>
+                            <BiChevronDown
+                            size={20}
+                            style={{ color: "#c2c2c2" }}
+                            className={`${
+                                openTrouserSize ? "rotate-[-180deg]" : ""
+                            } duration-200`}
+                            />{" "}
+                        </span>
+                        </Popover>
+                    </div>
+
+                    {/* Shoes */}
+                    <div className="flex items-center pl-4 bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor rounded-lg h-12">
+                        <div className="flex items-center font-AeonikProMedium w-[75%] border-r border-searchBgColor h-12 bg-transparent pr-4">
+                        Обувь
+                        <span className="font-AeonikProRegular ml-1">
+                            (кроссовки, туфли)
+                        </span>
+                        </div>
+                        <Popover
+                        open={openShoesSize}
+                        onOpenChange={handleOpenChangeShoesSize}
+                        className="w-[28%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
+                        trigger="click"
+                        options={["Hide"]}
+                        placement="bottom"
+                        content={contentShoesSize}
+                        >
+                        <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                            {selectShoesSize}
+                        </span>
+                        <span>
+                            <BiChevronDown
+                            size={20}
+                            style={{ color: "#c2c2c2" }}
+                            className={`${
+                                openShoesSize ? "rotate-[-180deg]" : ""
+                            } duration-200`}
+                            />{" "}
+                        </span>
+                        </Popover>
+                    </div>
+
+                    <Link
+                        to="/"
+                        className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4 mb-4 mt-6"
                     >
-                      Обхват талии
-                    </label>
-                    <Popover
-                      open={openWaistSize}
-                      onOpenChange={handleOpenChangeWaistSize}
-                      className="w-full px-4 h-[48px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group rounded-lg border border-searchBgColor"
-                      trigger="click"
-                      options={["Hide"]}
-                      placement="bottom"
-                      content={contentWaistSize}
+                        <span className="mr-[10px]">Следующий шаг</span>
+                        <img src={formArrowRightCircle} alt="" />
+                    </Link>
+                    <Link
+                        to="/"
+                        className="w-full bg-gray-400 flex items-center justify-center rounded-lg text-white mb-6 py-4"
                     >
-                      <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
-                        {selectWaistSize}
-                      </span>
-                      <span>
-                        <BiChevronDown
-                          size={20}
-                          style={{ color: "#c2c2c2" }}
-                          className={`${
-                            openWaistSize ? "rotate-[-180deg]" : ""
-                          } duration-200`}
-                        />{" "}
-                      </span>
-                    </Popover>
-                  </div>
-                  <div className="flex flex-col w-1/2">
-                    <label
-                      htmlFor="waist"
-                      className="mb-[6px] font-AeonikProRegular text-sm"
-                    >
-                      Обхват грудной клетки
-                    </label>
-                    <Popover
-                      open={openChestSize}
-                      onOpenChange={handleOpenChangeChestSize}
-                      className="w-full px-4 h-[48px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group rounded-lg border border-searchBgColor"
-                      trigger="click"
-                      options={["Hide"]}
-                      placement="bottom"
-                      content={contentChestSize}
-                    >
-                      <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
-                        {selectChestSize}
-                      </span>
-                      <span>
-                        <BiChevronDown
-                          size={20}
-                          style={{ color: "#c2c2c2" }}
-                          className={`${
-                            openChestSize ? "rotate-[-180deg]" : ""
-                          } duration-200`}
-                        />{" "}
-                      </span>
-                    </Popover>
-                  </div>
+                        <span className="mr-[10px]">Следующий шаг</span>
+                        <img src={formArrowRightCircle} alt="" />
+                    </Link>
                 </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col px-10 pt-6 w-[440px]">
-              <div className="text-[20px] font-AeonikProMedium mb-3">
-                Размеры одежды
-              </div>
-              <p className="text-textColor font-AeonikProRegular mb-7">
-                Введите размеры ваших одежд
-              </p>
-
-              {/* Caps */}
-              <div className="w-full flex items-center pl-4 bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor rounded-lg h-12 mb-2">
-                <div className="flex items-center font-AeonikProMedium w-[75%] border-r border-searchBgColor h-12 bg-transparent pr-4">
-                  Обхват головы{" "}
-                  <span className="font-AeonikProRegular ml-1">(шапки)</span>
-                </div>
-                <Popover
-                  open={openCapSize}
-                  onOpenChange={handleOpenChangeCapSize}
-                  className="w-[28%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
-                  trigger="click"
-                  options={["Hide"]}
-                  placement="bottom"
-                  content={contentCapSize}
-                >
-                  <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
-                    {selectCapSize}
-                  </span>
-                  <span>
-                    <BiChevronDown
-                      size={20}
-                      style={{ color: "#c2c2c2" }}
-                      className={`${
-                        openCapSize ? "rotate-[-180deg]" : ""
-                      } duration-200`}
-                    />{" "}
-                  </span>
-                </Popover>
-              </div>
-
-              {/* Shirts */}
-              <div className="flex items-center pl-4 bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor rounded-lg h-12 mb-2">
-                <div className="flex items-center font-AeonikProMedium w-[75%] border-r border-searchBgColor h-12 bg-transparent pr-4">
-                  Верхняя одежда
-                  <span className="font-AeonikProRegular ml-1">(рубашки)</span>
-                </div>
-                <Popover
-                  open={openShirtSize}
-                  onOpenChange={handleOpenChangeShirtSize}
-                  className="w-[28%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
-                  trigger="click"
-                  options={["Hide"]}
-                  placement="bottom"
-                  content={contentShirtSize}
-                >
-                  <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
-                    {selectShirtSize}
-                  </span>
-                  <span>
-                    <BiChevronDown
-                      size={20}
-                      style={{ color: "#c2c2c2" }}
-                      className={`${
-                        openShirtSize ? "rotate-[-180deg]" : ""
-                      } duration-200`}
-                    />{" "}
-                  </span>
-                </Popover>
-              </div>
-
-              {/* Trousers */}
-              <div className="flex items-center pl-4 bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor rounded-lg h-12 mb-2">
-                <div className="flex items-center font-AeonikProMedium w-[75%] border-r border-searchBgColor h-12 bg-transparent pr-4">
-                  Нижняя одежда{" "}
-                  <span className="font-AeonikProRegular ml-1">(брюки)</span>
-                </div>
-                <Popover
-                  open={openTrouserSize}
-                  onOpenChange={handleOpenChangeTrouserSize}
-                  className="w-[28%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
-                  trigger="click"
-                  options={["Hide"]}
-                  placement="bottom"
-                  content={contentTrouserSize}
-                >
-                  <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
-                    {selectTrouserSize}
-                  </span>
-                  <span>
-                    <BiChevronDown
-                      size={20}
-                      style={{ color: "#c2c2c2" }}
-                      className={`${
-                        openTrouserSize ? "rotate-[-180deg]" : ""
-                      } duration-200`}
-                    />{" "}
-                  </span>
-                </Popover>
-              </div>
-
-              {/* Shoes */}
-              <div className="flex items-center pl-4 bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor rounded-lg h-12">
-                <div className="flex items-center font-AeonikProMedium w-[75%] border-r border-searchBgColor h-12 bg-transparent pr-4">
-                  Обувь
-                  <span className="font-AeonikProRegular ml-1">
-                    (кроссовки, туфли)
-                  </span>
-                </div>
-                <Popover
-                  open={openShoesSize}
-                  onOpenChange={handleOpenChangeShoesSize}
-                  className="w-[28%] px-4 h-[44px] bg-btnBgColor flex items-center justify-between cursor-pointer select-none group  "
-                  trigger="click"
-                  options={["Hide"]}
-                  placement="bottom"
-                  content={contentShoesSize}
-                >
-                  <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
-                    {selectShoesSize}
-                  </span>
-                  <span>
-                    <BiChevronDown
-                      size={20}
-                      style={{ color: "#c2c2c2" }}
-                      className={`${
-                        openShoesSize ? "rotate-[-180deg]" : ""
-                      } duration-200`}
-                    />{" "}
-                  </span>
-                </Popover>
-              </div>
-
-              <Link
-                to="/"
-                className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4 mb-4 mt-6"
-              >
-                <span className="mr-[10px]">Следующий шаг</span>
-                <img src={formArrowRightCircle} alt="" />
-              </Link>
-              <Link
-                to="/"
-                className="w-[360px] mx-auto bg-gray-400 flex items-center justify-center rounded-lg text-white mb-6 py-4"
-              >
-                <span className="mr-[10px]">Следующий шаг</span>
-                <img src={formArrowRightCircle} alt="" />
-              </Link>
-            </div>
-          </form>
+            </form>
         </div>
       </div>
     </main>
