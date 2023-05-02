@@ -19,7 +19,7 @@ import SignUpSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import AuthenIndex from "../components/header/AuthenticationNavbar/AuthenIndex";
 // import YandexMapsIndex from "../components";
 import YandexSkeletonIndex from "../components/YandexMap/YandexMapsSkeleton/YandexSkeletonIndex";
-import ForgetPasswordIndex from "../components/Authentication/SignInDetail";
+// import ForgetPasswordIndex from "../components/Authentication/SignInDetail";
 import ConfirmPassword from "../components/Authentication/ConfirmPassword/ConfirmPassword";
 
 // --------With lazy component
@@ -38,6 +38,15 @@ const SignIn = React.lazy(() =>
 );
 const SignUp = React.lazy(() =>
   import("../components/Authentication/SignUp/index")
+);
+const ForgetConfirmPassword = React.lazy(() =>
+  import("../components/Authentication/SignInDetail/ForgetConfirmPassword")
+);
+const SetNewPassword = React.lazy(() =>
+  import("../components/Authentication/SignInDetail/SetNewPassword")
+);
+const ForgetPassword = React.lazy(() =>
+  import("../components/Authentication/SignInDetail/ForgetPassword")
 );
 const RouterList = () => {
   const location = useLocation();
@@ -158,7 +167,35 @@ const RouterList = () => {
                   </div>
                 }
               >
-                <ForgetPasswordIndex />
+                <ForgetPassword />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="/set_new_password"
+            element={
+              <React.Suspense
+                fallback={
+                  <div>
+                    <SignUpSkeletonIndex />
+                  </div>
+                }
+              >
+                <SetNewPassword />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="/enter_password_validate"
+            element={
+              <React.Suspense
+                fallback={
+                  <div>
+                    <SignUpSkeletonIndex />
+                  </div>
+                }
+              >
+                <ForgetConfirmPassword />
               </React.Suspense>
             }
           />
@@ -182,6 +219,8 @@ const RouterList = () => {
       {locationWindow !== "/add_user_private_data" &&
       locationWindow !== "/add_user_body_data" &&
       locationWindow !== "/confirm_password" &&
+      locationWindow !== "/set_new_password" &&
+      locationWindow !== "/enter_password_validate" &&
       locationWindow !== "/forget_password" &&
       locationWindow !== "/sign_up" &&
       locationWindow !== "/sign_in" &&

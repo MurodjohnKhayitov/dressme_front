@@ -33,25 +33,25 @@ const AuthenticationNavbar = () => {
   let IconsColor = "";
   if (dressInfo?.type === 1111) {
     IconsColor = "borderSpring";
-    authenActiveForget="md:text-borderSpring bg-white bg-bgSpring border md:border-borderSpring ml-1 md:w-fit ss:w-[65%] ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor px-4  rounded-lg"
+    authenActiveForget="text-borderSpring  bg-bgSpring border border-borderSpring "
     authenActiveStyle =
       "md:text-borderSpring bg-white bg-bgSpring md:border-borderSpring w-1/2  px-2 ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
   if (dressInfo?.type === 2222) {
     IconsColor = "borderSpring";
-    authenActiveForget="md:text-borderSummer bg-white bg-bgSummer border md:border-borderSummer ml-1 md:w-fit ss:w-[65%] ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor px-4 rounded-lg"
+    authenActiveForget="text-borderSummer  bg-bgSummer border border-borderSummer "
     authenActiveStyle =
       "md:text-borderSummer bg-white bg-bgSummer md:border-borderSummer w-1/2  px-2 ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
   if (dressInfo?.type === 3333) {
     IconsColor = "borderSpring";
-    authenActiveForget="md:text-borderAutumm bg-white bg-bgAutumm border md:border-borderAutumm ml-1 md:w-fit ss:w-[65%] ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor px-4   rounded-lg"
+    authenActiveForget="text-borderAutumm  bg-bgAutumm borderborder-borderAutumm "
     authenActiveStyle =
       "md:text-borderAutumm bg-white bg-bgAutumm md:border-borderAutumm w-1/2  px-2 ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
   if (dressInfo?.type === 4444) {
     IconsColor = "borderSpring";
-    authenActiveForget="md:text-borderWinter bg-white bg-bgWinter border md:border-borderWinter ml-1 md:w-fit ss:w-[65%] ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor px-4   rounded-lg"
+    authenActiveForget="text-borderWinter  bg-bgWinter border border-borderWinter "
     authenActiveStyle =
       "md:text-borderWinter bg-white bg-bgWinter md:border-borderWinter w-1/2  px-2 ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
@@ -70,8 +70,8 @@ const AuthenticationNavbar = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col justify-center items-center m-0 p-0 box-border border border-red-500">
-      <div className="max-w-[1280px] w-[100%] flex justify-center  py-3 items-center m-auto    border border-green-500">
+    <div className="flex flex-col justify-center items-center m-0 p-0 box-border ">
+      <div className="max-w-[1280px] w-[100%] flex justify-center  py-3 items-center m-auto">
     <div className="ss:w-full md:w-fit px-4 ">
 
    
@@ -112,8 +112,9 @@ const AuthenticationNavbar = () => {
                     </NavLink>
                   </div>
                 ) : null}
-                {locationWindow === "/forget_password" ? (
+                {locationWindow === "/forget_password" || locationWindow === "/enter_password_validate" || locationWindow === "/set_new_password" ? (
                   <>
+                  {/* Mobile-Device */}
                    <div className="w-full md:hidden ss:block md:w-fit ss:flex gap-x-2 items-center justify-between ss:border md:border-0 ss:bg-btnBgColor md:bg-transparent border-searchBgColor rounded-lg">
                    <NavLink
                      to={"/sign_in"}
@@ -127,22 +128,21 @@ const AuthenticationNavbar = () => {
                      Назад
                      </span>
                    </NavLink>
-                   <NavLink
-                     to={"/forget_password"}
-                     className={({ isActive }) =>
-                       isActive
-                         ? authenActiveForget
-                         : "w-fit md:h-[48px] ss:h-[52px] px-4   justify-center flex  items-center  md:bg-btnBgColor md:border   rounded-lg"
-                     }
+                   <div
+                    //  to={"/forget_password"}
+                     className={ "w-[65%] md:h-[48px] ss:h-[52px] px-4   justify-center flex  items-center bg-white  border border-searchBgColor  rounded-lg"}
                    >
                      <img className="" src={passwordCheck} alt="male" />
                      <span className="mt-1 font-AeonikProMedium not-italic ml-2  text-sm leading-4 tracking-[0,16px]">
                      Забыли пароль?
                      </span>
-                   </NavLink>
+                   </div>
                  </div>
+
+                  {/* LapTop-Device */}
+
                   <div className="w-full h-fit md:block ss:hidden  md:flex items-center">
-                  <NavLink
+                    <NavLink
                     to="/sign_in "
                     className={`text-${IconsColor} h-[44px] w-[56px] rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center mr-3 `}
                   >
@@ -164,14 +164,10 @@ const AuthenticationNavbar = () => {
                         />
                       </svg>
                     </span>
-                  </NavLink>
-                  <NavLink
-                    to={"/confirm_password"}
-                    className={({ isActive }) =>
-                      isActive
-                        ? authenActiveForget
-                        : "w-fit md:h-[48px] ss:h-[52px] px-4   justify-center flex items-center bg-btnBgColor border  mr-2 rounded-lg"
-                    }
+                     </NavLink>
+                  <div
+                    // to={"/confirm_password"}
+                    className={`${authenActiveForget} w-fit md:h-[48px] ss:h-[52px] px-4   justify-center flex items-center   mr-2 rounded-lg`}
                   >
                     <span>
                       {" "}
@@ -183,12 +179,12 @@ const AuthenticationNavbar = () => {
                     <span className="mt-1 font-AeonikProMedium not-italic ml-1  text-sm leading-4 tracking-[0,16px]">
                     Забыли пароль?    
                                     </span>
-                  </NavLink>{" "}
+                  </div>{" "}
                 </div>
                 </>
               
                 ) : null}
-                {locationWindow === "/confirm_password" ? (
+                {/* {locationWindow === "/confirm_password" ? (
                   <>
                    <div className="w-full md:hidden ss:block md:w-fit ss:flex gap-x-2 items-center justify-between ss:border md:border-0 ss:bg-btnBgColor md:bg-transparent border-searchBgColor rounded-lg">
                    <NavLink
@@ -264,7 +260,7 @@ const AuthenticationNavbar = () => {
                     </NavLink>{" "}
                   </div>
                   </>
-                ) : null}
+                ) : null} */}
               </div>
             );
           })}
