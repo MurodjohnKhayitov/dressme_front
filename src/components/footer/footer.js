@@ -296,17 +296,16 @@ const Footer = () => {
                     component={<MySVG />}
                     style={{ borderRadius: "50%", bottom:70, right:25, width: "48px", height: "48px", border: "1px solid #c1c1c1", backgroundColor: "#fafafa" }}
                     className="bg-bgColor rounded-full mt-[-100px] flex items-center opacity-70 justify-center ss:bottom-[75px] ss:right-[15px] md:bottom-10 md:right-10"/>
-
             </div>
             <div className='max-w-[1280px] w-[100%]  flex justify-center items-center m-auto'>
                 <div className="w-[100%] h-fit ss:p-0 md:p-[30px]  md:border md:border-searchBgColor border-solid rounded-lg">
-                    <div className=''>
+                    <div>
 
                         {/* Footer LOGO and Fedback form */}
-                        <div className="flex items-center ss:px-4 md:px-0 ">
+                        <div className="flex items-center md:px-0 ">
                             <div className="flex flex-col">
                                 <Link to='/' className="md:mb-[14px]">
-                                    <img src={blackBrand} alt="logo" className="ss:w-[85%] ll:w-[90%] sm:w-full" />
+                                    <img src={blackBrand} alt="logo" className="w-full" />
                                 </Link>
                                 <div className="text-textColor mb-[18px] text-sm hidden md:flex">Торговая площадка одежды</div>
                             </div>
@@ -336,7 +335,7 @@ const Footer = () => {
                         </div>
 
                         {/* Address */}
-                        <div className="flex flex-col ss:w-full md:w-[306px] ss:px-4 md:px-0 mt-[17px] md:hidden">
+                        <div className="flex flex-col ss:w-full md:w-[306px] md:px-0 mt-[17px] md:hidden">
                             <div className="text-textColor mb-[18px] text-sm">Юридический адрес :</div>
                             <div className="flex items-center mb-[46px]">
                                 <div className="border border-searchBgColor flex items-center justify-center rounded-lg mr-3 w-24 h-12 ss:bg-white md:bg-transparent">
@@ -534,7 +533,7 @@ const Footer = () => {
                         </div>
 
                         {/* Categories, menu, social networks for MOBILE*/}
-                        <div className="flex flex-row items-center md:hidden ss:px-4 md:px-0  md:mb-0 ">
+                        <div className="flex flex-row items-center md:hidden px-0 md:px-0  md:mb-0 ">
 
                             {/* Menu */}
                             <div className="basis-1/2 ">
@@ -578,7 +577,7 @@ const Footer = () => {
                             </div>
 
                             {/* Categories */}
-                            <div className="basis-1/2 pl-4">
+                            <div className="basis-1/2 pl-6">
 
                                 <div className="font-AeonikProMedium w-fit cursor-pointer ss:mb-4 md:mb-[30px]">
                                     Категории
@@ -633,7 +632,7 @@ const Footer = () => {
                         </Link>
 
                         {/* Menu for Mobile */}
-                        <div className="flex w-full md:hidden px-4 md:px-0   md:mb-0">
+                        <div className="flex w-full md:hidden md:px-0   md:mb-0">
 
                             <ul className="flex flex-row text-sm">
                                 <div className="basis-1/2">
@@ -668,7 +667,7 @@ const Footer = () => {
                                         </Link>
                                     </li>
                                 </div>
-                                <div className="basis-1/2 pl-4">
+                                <div className="basis-1/2 pl-6">
                                     <li className="mb-4">
                                         <Link to='#' className="flex items-center">
                                             <img src={message} alt="" />
