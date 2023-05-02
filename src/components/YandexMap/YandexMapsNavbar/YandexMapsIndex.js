@@ -32,7 +32,10 @@ export default function YandexMapsIndex() {
           </div>
 
           {!dressInfo?.yandexOpenMarket && (
-            <div className=" flex flex-col justify-center overflow-hidden">
+            <div className={`flex flex-col justify-center overflow-hidden
+            ${ !dressInfo?.yandexOpenMarket ? 'absolute left-0 right-0 bottom-[-670px]' : ''} 
+            ${ !dressInfo?.yandexFullScreen ? 'absolute left-0 right-0 bottom-[-535px]' : ''}
+            `}>
               <YandexFilter />
             </div>
           )}
@@ -42,3 +45,9 @@ export default function YandexMapsIndex() {
     </div>
   );
 }
+
+
+// position: absolute;
+    // left: 0;
+    // bottom: -669px;
+    // right: 0;

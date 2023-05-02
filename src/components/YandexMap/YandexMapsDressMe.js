@@ -466,6 +466,7 @@ function YandexMapsDressMe() {
                 />
               ))}
             </Clusterer>
+
             {/* yandex menu Open Full Code */}
             <div className="relative">
               {!dressInfo?.yandexOpenMenu ? (
@@ -877,7 +878,7 @@ function YandexMapsDressMe() {
               className={`absolute ${
                 !dressInfo?.yandexFullScreen
                   ? "ss:top-[160px]"
-                  : "ss:top-[85px]"
+                  : "ss:top-[85px] w-[368px]"
               }  md:top-auto md:bottom-[24px]  left-1/2  right-1/2 translate-x-[-50%] translate-y-[-50%]  overflow-hidden z-50 bg-yandexNavbar backdrop-blur-sm rounded-lg
              h-[48px] w-fit shadow-lg`}
             >
@@ -915,13 +916,15 @@ function YandexMapsDressMe() {
                 {/* <div className="w-[20%] h-full flex items-center border border-red-400"></div> */}
               </div>
             </div>
+            
+            {/* Yandex Shopping Card */}
             <div
-              className={`absolute block md:hidden left-1/2  right-1/2 translate-x-[-50%] translate-y-[-50%]  overflow-hidden z-[52] rounded-lg
-              h-[48px]  shadow-lg 
-              ${!dressInfo?.yandexFullScreen ? "bottom-[58px]":"bottom-[-15px] w-[calc(100%-16px)] rounded-lg"}
+              className={`absolute block md:hidden translate-x-[-50%] translate-y-[-50%] overflow-hidden z-[52] rounded-lg
+              h-[40px] shadow-lg right-1/2 left-1/2
+              ${!dressInfo?.yandexFullScreen ? "bottom-[120px] w-[40px] !left-[362px] rounded-lg":"bottom-[120px] w-[40px] !left-[362px] rounded-lg"}
               ${!dressInfo?.yandexOpenMarket ?   "w-[202px] bg-white":"w-[calc(100%-56px)]  bg-yandexNavbar backdrop-blur-sm" }`}
             >
-              <div className="w-full h-full flex justify-between ">
+              <div className="w-full h-full flex items-center justify-between  ">
                 <div
                   onClick={handleOpenMarket}
                   className={`w-full h-12  flex justify-center gap-x-3 items-center rounded-lg`}
@@ -931,9 +934,6 @@ function YandexMapsDressMe() {
                   ) : (
                     <img src={MenuClose} alt="" />
                   )}
-                  <div className="not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
-                    Магазины
-                  </div>
                 </div>
               </div>
             </div>
