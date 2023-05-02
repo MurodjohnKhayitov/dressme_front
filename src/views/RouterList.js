@@ -19,7 +19,7 @@ import SignUpSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import AuthenIndex from "../components/header/AuthenticationNavbar/AuthenIndex";
 // import YandexMapsIndex from "../components";
 import YandexSkeletonIndex from "../components/YandexMap/YandexMapsSkeleton/YandexSkeletonIndex";
-import ForgetPasswordIndex from "../components/Authentication/ForgetPassword";
+import ForgetPasswordIndex from "../components/Authentication/SignInDetail";
 import ConfirmPassword from "../components/Authentication/ConfirmPassword/ConfirmPassword";
 
 // --------With lazy component

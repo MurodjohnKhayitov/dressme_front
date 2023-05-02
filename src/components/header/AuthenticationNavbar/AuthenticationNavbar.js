@@ -16,6 +16,8 @@ import {
   SummerMale,
   WinterFemale,
   WinterMale,
+  backIcon,
+  passwordCheck,
   user,
 } from "../../../assets/imgs";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
@@ -31,27 +33,27 @@ const AuthenticationNavbar = () => {
   let IconsColor = "";
   if (dressInfo?.type === 1111) {
     IconsColor = "borderSpring";
-    authenActiveForget="md:text-borderSpring bg-white bg-bgSpring border border-borderSpring ss:w-[calc(100%-60px)] ml-1 md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor  rounded-lg"
+    authenActiveForget="md:text-borderSpring bg-white bg-bgSpring border md:border-borderSpring ml-1 md:w-fit ss:w-[65%] ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor px-4  rounded-lg"
     authenActiveStyle =
-      "md:text-borderSpring bg-white bg-bgSpring md:border-borderSpring ss:w-[160px] md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
+      "md:text-borderSpring bg-white bg-bgSpring md:border-borderSpring w-1/2  px-2 ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
   if (dressInfo?.type === 2222) {
     IconsColor = "borderSpring";
-    authenActiveForget="md:text-borderSummer bg-white bg-bgSummer border border-borderSummer ss:w-[calc(100%-60px)] ml-1 md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor rounded-lg"
+    authenActiveForget="md:text-borderSummer bg-white bg-bgSummer border md:border-borderSummer ml-1 md:w-fit ss:w-[65%] ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor px-4 rounded-lg"
     authenActiveStyle =
-      "md:text-borderSummer bg-white bg-bgSummer md:border-borderSummer ss:w-[160px] md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
+      "md:text-borderSummer bg-white bg-bgSummer md:border-borderSummer w-1/2  px-2 ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
   if (dressInfo?.type === 3333) {
     IconsColor = "borderSpring";
-    authenActiveForget="md:text-borderAutumm bg-white bg-bgAutumm border border-borderAutumm ss:w-[calc(100%-60px)] ml-1 md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor   rounded-lg"
+    authenActiveForget="md:text-borderAutumm bg-white bg-bgAutumm border md:border-borderAutumm ml-1 md:w-fit ss:w-[65%] ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor px-4   rounded-lg"
     authenActiveStyle =
-      "md:text-borderAutumm bg-white bg-bgAutumm md:border-borderAutumm ss:w-[160px] md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
+      "md:text-borderAutumm bg-white bg-bgAutumm md:border-borderAutumm w-1/2  px-2 ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
   if (dressInfo?.type === 4444) {
     IconsColor = "borderSpring";
-    authenActiveForget="md:text-borderWinter bg-white bg-bgWinter border border-borderWinter ss:w-[calc(100%-60px)] ml-1 md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor   rounded-lg"
+    authenActiveForget="md:text-borderWinter bg-white bg-bgWinter border md:border-borderWinter ml-1 md:w-fit ss:w-[65%] ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor px-4   rounded-lg"
     authenActiveStyle =
-      "md:text-borderWinter bg-white bg-bgWinter md:border-borderWinter ss:w-[160px] md:w-[170px] h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
+      "md:text-borderWinter bg-white bg-bgWinter md:border-borderWinter w-1/2  px-2 ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
 
   const personItems = [
@@ -68,23 +70,26 @@ const AuthenticationNavbar = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col justify-center items-center m-0 p-0 box-border ">
-      <div className="max-w-[1280px] w-[100%] flex justify-center  py-3 items-center m-auto   ">
+    <div className="flex flex-col justify-center items-center m-0 p-0 box-border border border-red-500">
+      <div className="max-w-[1280px] w-[100%] flex justify-center  py-3 items-center m-auto    border border-green-500">
+    <div className="ss:w-full md:w-fit px-4 ">
+
+   
         {personItems
           ?.filter((value) => value.id === dressInfo?.type)
           .map((data) => {
             return (
-              <div key={data?.id} className=" w-full px-4 ">
+              <div key={data?.id} className=" w-full  ">
                 {/* {locationWindow !== "/forget_password" ? ( */}
                 {locationWindow === "/sign_in" ||
                 locationWindow === "/sign_up" ? (
-                  <div className="w-full md:w-fit flex gap-x-2 items-center justify-between ss:border md:border-0 ss:bg-btnBgColor md:bg-transparent border-searchBgColor rounded-lg">
+                  <div className="w-full md:w-[350px] flex gap-x-2 items-center justify-between ss:border md:border-0 ss:bg-btnBgColor md:bg-transparent border-searchBgColor rounded-lg">
                     <NavLink
                       to={"/sign_in"}
                       className={({ isActive }) =>
                         isActive
                           ? authenActiveStyle
-                          : "w-[170px] h-[44px]   justify-center flex  items-center  md:bg-btnBgColor md:border   rounded-lg"
+                          : "w-1/2 md:h-[48px] ss:h-[52px] px-2   justify-center flex  items-center  md:bg-btnBgColor md:border   rounded-lg"
                       }
                     >
                       <img className="" src={data?.signInIcon} alt="female" />
@@ -97,7 +102,7 @@ const AuthenticationNavbar = () => {
                       className={({ isActive }) =>
                         isActive
                           ? authenActiveStyle
-                          : "w-[170px] h-[44px]   justify-center flex  items-center  md:bg-btnBgColor md:border   rounded-lg"
+                          : "w-1/2 md:h-[48px] ss:h-[52px] px-2   justify-center flex  items-center  md:bg-btnBgColor md:border   rounded-lg"
                       }
                     >
                       <img className="" src={data?.signUpIcon} alt="male" />
@@ -108,53 +113,113 @@ const AuthenticationNavbar = () => {
                   </div>
                 ) : null}
                 {locationWindow === "/forget_password" ? (
-                  <div className="w-full md:w-fit h-12  flex items-center ">
-                    <NavLink
-                      to="/sign_in "
-                      className={`text-${IconsColor} h-[44px] w-[56px] rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center mr-3 `}
+                  <>
+                   <div className="w-full md:hidden ss:block md:w-fit ss:flex gap-x-2 items-center justify-between ss:border md:border-0 ss:bg-btnBgColor md:bg-transparent border-searchBgColor rounded-lg">
+                   <NavLink
+                     to={"/sign_in"}
+                     className={
+                          "w-[30%] md:h-[48px] ss:h-[52px] px-4   justify-center flex  items-center  md:bg-btnBgColor md:border   rounded-lg"
+                     }
+                  
+                   >
+                     <img className="" src={backIcon} alt="female" />
+                     <span className="mt-1  font-AeonikProMedium ml-2 not-italic text-sm leading-4 tracking-[0,16px]">
+                     Назад
+                     </span>
+                   </NavLink>
+                   <NavLink
+                     to={"/forget_password"}
+                     className={({ isActive }) =>
+                       isActive
+                         ? authenActiveForget
+                         : "w-fit md:h-[48px] ss:h-[52px] px-4   justify-center flex  items-center  md:bg-btnBgColor md:border   rounded-lg"
+                     }
+                   >
+                     <img className="" src={passwordCheck} alt="male" />
+                     <span className="mt-1 font-AeonikProMedium not-italic ml-2  text-sm leading-4 tracking-[0,16px]">
+                     Забыли пароль?
+                     </span>
+                   </NavLink>
+                 </div>
+                  <div className="w-full h-fit md:block ss:hidden  md:flex items-center">
+                  <NavLink
+                    to="/sign_in "
+                    className={`text-${IconsColor} h-[44px] w-[56px] rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center mr-3 `}
+                  >
+                    <span
+                      className={`w-6 h-6 border border-${IconsColor} rounded-full flex items-center justify-center`}
                     >
-                      <span
-                        className={`w-6 h-6 border border-${IconsColor} rounded-full flex items-center justify-center`}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="16"
+                        fill="currentColor"
+                        class={`bi bi-arrow-left  `}
+                        viewBox="0 0 16 16"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="14"
-                          height="16"
-                          fill="currentColor"
-                          class={`bi bi-arrow-left  `}
-                          viewBox="0 0 16 16"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            strokeWidth={"2"}
-                            d={`M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z`}
-                          />
-                        </svg>
-                      </span>
-                    </NavLink>
-                    <NavLink
-                      to={"/forget_password"}
-                      className={({ isActive }) =>
-                        isActive
-                          ? authenActiveForget
-                          : "w-[170px] h-[44px]   justify-center flex items-center bg-btnBgColor border  mr-2 rounded-lg"
-                      }
-                    >
-                      <span>
-                        {" "}
-                        <AiOutlineEye
-                          // className={`text-${IconsColor}`}
-                          size={22}
+                        <path
+                          fill-rule="evenodd"
+                          strokeWidth={"2"}
+                          d={`M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z`}
                         />
-                      </span>
-                      <span className="mt-1 font-AeonikProMedium not-italic ml-1  text-sm leading-4 tracking-[0,16px]">
-                        Забыли пароль?{" "}
-                      </span>
-                    </NavLink>{" "}
-                  </div>
+                      </svg>
+                    </span>
+                  </NavLink>
+                  <NavLink
+                    to={"/confirm_password"}
+                    className={({ isActive }) =>
+                      isActive
+                        ? authenActiveForget
+                        : "w-fit md:h-[48px] ss:h-[52px] px-4   justify-center flex items-center bg-btnBgColor border  mr-2 rounded-lg"
+                    }
+                  >
+                    <span>
+                      {" "}
+                      <AiOutlineEye
+                        // className={`text-${IconsColor}`}
+                        size={22}
+                      />
+                    </span>
+                    <span className="mt-1 font-AeonikProMedium not-italic ml-1  text-sm leading-4 tracking-[0,16px]">
+                    Забыли пароль?    
+                                    </span>
+                  </NavLink>{" "}
+                </div>
+                </>
+              
                 ) : null}
                 {locationWindow === "/confirm_password" ? (
-                  <div className="w-full h-12  flex items-center">
+                  <>
+                   <div className="w-full md:hidden ss:block md:w-fit ss:flex gap-x-2 items-center justify-between ss:border md:border-0 ss:bg-btnBgColor md:bg-transparent border-searchBgColor rounded-lg">
+                   <NavLink
+                     to={"/sign_in"}
+                     className={
+                          "w-[30%] md:h-[48px] ss:h-[52px] px-4   justify-center flex  items-center  md:bg-btnBgColor md:border   rounded-lg"
+                     }
+                   
+                   >
+                     <img className="" src={backIcon} alt="female" />
+                     <span className="mt-1 font-AeonikProMedium ml-2 not-italic text-sm leading-4 tracking-[0,16px]">
+                     Назад
+                     </span>
+                   </NavLink>
+                   <NavLink
+                     to={"/confirm_password"}
+                     className={({ isActive }) =>
+                       isActive
+                         ? authenActiveForget
+                         : "w-fit md:h-[48px] ss:h-[52px] px-4   justify-center flex  items-center  md:bg-btnBgColor md:border   rounded-lg"
+                     }
+                   >
+                     <img className="" src={passwordCheck} alt="male" />
+                     <span className="mt-1 font-AeonikProMedium not-italic ml-2  text-sm leading-4 tracking-[0,16px]">
+                     Подтвердите парол   
+                                       </span>
+                      
+                       
+                   </NavLink>
+                 </div>
+                  <div className="w-full h-fit md:block ss:hidden  md:flex items-center">
                     <NavLink
                       to="/sign_in "
                       className={`text-${IconsColor} h-[44px] w-[56px] rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center mr-3 `}
@@ -183,7 +248,7 @@ const AuthenticationNavbar = () => {
                       className={({ isActive }) =>
                         isActive
                           ? authenActiveForget
-                          : "w-[170px] h-[44px]   justify-center flex items-center bg-btnBgColor border  mr-2 rounded-lg"
+                          : "w-fit md:h-[48px] ss:h-[52px] px-4   justify-center flex items-center bg-btnBgColor border  mr-2 rounded-lg"
                       }
                     >
                       <span>
@@ -198,11 +263,13 @@ const AuthenticationNavbar = () => {
                       </span>
                     </NavLink>{" "}
                   </div>
+                  </>
                 ) : null}
               </div>
             );
           })}
       </div>
+    </div> 
     </div>
   );
 };
