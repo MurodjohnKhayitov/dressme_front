@@ -4,11 +4,11 @@ import { home, bucket, heart, user, catalogBlack} from "../../assets/imgs";
 // import { dressMainData } from "../../ContextHook/ContextMenu";
 
 const menus = [
-    {name: 'Главная', icon: home, id:1},
-    {name: 'Каталог', icon: catalogBlack , id:2 },
-    {name: 'Корзина', icon: bucket, id:3},
-    {name: 'Избранное', icon: heart, id:4},
-    {name: 'Профиль', icon: user, id:5}
+    {link:"#", name: 'Главная', icon: home, id:1},
+    {link:"#", name: 'Каталог', icon: catalogBlack , id:2 },
+    {link:"#", name: 'Корзина', icon: bucket, id:3},
+    {link:"#", name: 'Избранное', icon: heart, id:4},
+    {link:"/sign_in", name: 'Профиль', icon: user, id:5}
 ]
 
 
@@ -40,7 +40,7 @@ const NavMenu = () => {
                     
                     <li className="w-[72px] h-[56px]" key={index}>
 
-                        <Link to="#"  className="w-full flex flex-col text-center pt-2" onClick={()=> {setActive(index)}}>
+                        <Link to={menu?.link}  className="w-full flex flex-col text-center pt-2" onClick={()=> {setActive(index)}}>
                             
                             <span className={`relative mx-auto cursor-pointer`}> 
                                 <img src={menu.icon} className=" w-5 h-5 mb-[6px]"/>

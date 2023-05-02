@@ -368,17 +368,17 @@ function YandexMapsDressMe() {
         <div
           className={`absolute z-50  ${
             !dressInfo?.yandexOpenMenu
-              ? "top-0 duration-300 "
-              : "top-[-250px] duration-300 "
-          }  duration-300 w-full`}
+              ? "top-0 ease-linear duration-500 "
+              : "top-[-250px] ease-linear duration-500 "
+          }  ease-linear duration-500 w-full`}
         >
           <YandexMapsIndex />
         </div>
         <div className={`absolute z-50   right-2  ${
             dressInfo?.yandexOpenMenu
-              ? "top-2  right-2 duration-300 "
-              : "top-[-250px]  right-2 duration-300 "
-          }  duration-300 w-[74%] `}
+              ? "top-2  right-2 ease-linear duration-500 "
+              : "top-[-250px]  right-2 ease-linear duration-500 "
+          }  ease-linear duration-500 w-[74%] `}
         >
           <NavbarTopOpenMenu />
         </div>
@@ -470,13 +470,13 @@ function YandexMapsDressMe() {
             <div className="relative">
               {!dressInfo?.yandexOpenMenu ? (
                 <div
-                  className={`  duration-300 h-[40px] absolute cursor-pointer ss:top-[-200px] md:top-[8px] left-[8px] z-50 bg-white shadow-lg overflow-hidden rounded-lg  `}
+                  className={`  ease-linear duration-500 h-[40px] absolute cursor-pointer ss:top-[-200px] md:top-[8px] left-[8px] z-50 bg-white shadow-lg overflow-hidden rounded-lg  `}
                 > 
                   <div
                     onClick={handleOpenMenu}
                     className="w-fit flex items-center justify-between  cursor-pointer roundedn-lg h-full  "
                   >
-                    <div className="group w-10 hover:w-[138px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden  flex items-center justify-between ">
+                    <div className="group w-10 hover:w-[138px] bg-bgCard hover:bg-white   ease-linear duration-500 rounded-lg overflow-hidden  flex items-center justify-between ">
                       <span className="w-[36px] h-8 flex items-center justify-center">
                         <img
                           className="ml-[2px]"
@@ -484,7 +484,7 @@ function YandexMapsDressMe() {
                           alt="setpersonIcons"
                         />
                       </span>
-                      <span className=" flex flex-nowrap items-center mr-[-100px] group-hover:mr-[10px] w-[92px] duration-300 pt-1 justify-center text-center  cursor-pointer bg-white not-italic font-AeonikProMedium text-sm text-black tracking-[1%] ">
+                      <span className=" flex flex-nowrap items-center mr-[-100px] group-hover:mr-[10px] w-[92px] ease-linear duration-500 pt-1 justify-center text-center  cursor-pointer bg-white not-italic font-AeonikProMedium text-sm text-black tracking-[1%] ">
                         Магазины
                       </span>
                     </div>
@@ -503,12 +503,12 @@ function YandexMapsDressMe() {
                   !dressInfo?.yandexOpenMarket
                     ? "w-[25%] bg-yandexNavbar backdrop-blur-sm	"
                     : "bg-white w-[100%]  "
-                }  p-2 duration-300    border border-searchBgColor`}
+                }  p-2 ease-linear duration-500    border border-searchBgColor`}
               >
                 {!dressInfo?.yandexOpenMarket ? (
                   <div
                     onClick={handleOpenMenu}
-                    className="w-full h-[42px] flex items-center justify-center  "
+                    className="w-full h-[42px] flex items-center justify-center"
                   >
                     {" "}
                     <div className="absolute left-2 top-2 w-[40px] h-[40px] rounded-lg bg-white  border border-searchBgColor flex items-center justify-center">
@@ -617,7 +617,7 @@ function YandexMapsDressMe() {
                                     data?.accordion
                                       ? "rotate-[-180deg]"
                                       : "rotate-0"
-                                  } duration-300`}
+                                  } ease-linear duration-300`}
                                 >
                                   <GrFormDown size={20} />
                                 </span>
@@ -717,9 +717,9 @@ function YandexMapsDressMe() {
             
             {/* Yandex Main menu */}
             <div
-              className={`fixed top-[70px] left-0  ${
-                dressInfo?.openMainMenu ? "ml-[-5000px] z-[-10]" : "ml-0 z-[53]"
-              } duration-200 w-[100%] h-[100%] bg-white`}
+              className={`fixed top-[70px] left-0 right-0  ${
+                dressInfo?.openMainMenu ? "left-[-5000px] z-[-10] ease-linear  duration-500 " : "left-0 z-[53] ease-linear  duration-500 "
+              } w-[100%] h-[100%] bg-white`}
             >
               <div className="w-full h-full  px-3 overflow-hidden">
                 <div className="search flex items-center justify-between rounded-lg font-AeonikProMedium h-10 mt-3 mb-3 border border-searchBg ss:mt-3 md:hidden w-full">
