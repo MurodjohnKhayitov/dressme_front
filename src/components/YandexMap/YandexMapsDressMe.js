@@ -403,7 +403,7 @@ function YandexMapsDressMe() {
             <div
               onClick={handleFullScreen}
               className={`absolute right-2 ${
-                !dressInfo?.yandexFullScreen ? "bottom-[87px]" : "bottom-[87px]"
+                !dressInfo?.yandexFullScreen ? "bottom-[128px] md:bottom-[87px]" : "bottom-[65px] md:bottom-[87px]"
               }  cursor-pointer z-[51] w-10 h-10 rounded-lg bg-white ss:flex items-center justify-center block md:hidden`}
             >
               {dressInfo?.yandexFullScreen ? (
@@ -877,8 +877,8 @@ function YandexMapsDressMe() {
             <div
               className={`absolute ${
                 !dressInfo?.yandexFullScreen
-                  ? "ss:top-[160px]"
-                  : "ss:top-[85px] w-[368px]"
+                  ? "ss:top-[104px] w-[368px]"
+                  : "ss:top-[30px] w-[368px]"
               }  md:top-auto md:bottom-[24px]  left-1/2  right-1/2 translate-x-[-50%] translate-y-[-50%]  overflow-hidden z-50 bg-yandexNavbar backdrop-blur-sm rounded-lg
              h-[48px] w-fit shadow-lg`}
             >
@@ -920,26 +920,34 @@ function YandexMapsDressMe() {
             {/* Yandex Shopping Card */}
             <div
               className={`absolute block md:hidden translate-x-[-50%] translate-y-[-50%] overflow-hidden z-[52] rounded-lg
-              h-[40px] shadow-lg right-1/2 left-1/2
-              ${!dressInfo?.yandexFullScreen ? "bottom-[120px] w-[40px] !left-[362px] rounded-lg":"bottom-[120px] w-[40px] !left-[362px] rounded-lg"}
-              ${!dressInfo?.yandexOpenMarket ?   "w-[202px] bg-white":"w-[calc(100%-56px)]  bg-yandexNavbar backdrop-blur-sm" }`}
+              h-[40px] shadow-lg right-1/2 left-1/2 w-[40px]
+              ${!dressInfo?.yandexFullScreen ? "bottom-[158px] md:bottom-[120px] left-[362px] rounded-lg":"bottom-[93px] md:bottom-[120px]  left-[362px] rounded-lg"}
+              ${!dressInfo?.yandexOpenMarket ? "w-[202px] bg-white":"w-[calc(100%-56px)]  bg-yandexNavbar backdrop-blur-sm" }
+              // ${!dressInfo?.yandexOpenMenu ? "bottom-[158px] md:bottom-[120px] left-[] rounded-lg":"bottom-[93px] md:bottom-[120px]  left-[362px] rounded-lg"}
+              `}
             >
               <div className="w-full h-full flex items-center justify-between  ">
                 <div
                   onClick={handleOpenMarket}
-                  className={`w-full h-12  flex justify-center gap-x-3 items-center rounded-lg`}
+                  className={`w-full h-12 flex justify-center gap-x-3 items-center rounded-lg`}
                 >
                   {!dressInfo?.yandexOpenMarket ? (
-                    <img src={shop} alt="" />
+                      <img src={shop} alt="" />
                   ) : (
-                    <img src={MenuClose} alt="" />
+                    <div className="flex items-center justify-center">
+                      <img src={MenuClose} alt="" />
+                      <div className="not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
+                        Магазины
+                      </div>
+                    </div>
                   )}
+                  
                 </div>
               </div>
             </div>
             {!dressInfo?.yandexFullScreen && (
               <div
-                className={`fixed  bottom-0 w-full bg-white    z-[54] block md:hidden`}
+                className={`fixed  bottom-0 w-full bg-white z-[54] block md:hidden`}
               >
                 <NavMenu />
               </div>
