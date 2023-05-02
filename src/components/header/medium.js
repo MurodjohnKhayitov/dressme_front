@@ -260,7 +260,7 @@ const MediumHeader = () => {
 
   return (
     <div className="flex flex-col justify-center items-center m-0 p-0 box-border ">
-      <div className="max-w-[1280px] w-[100%] ss:block md:flex ss:px-4 md:px-0 md:py-0 justify-center items-center m-auto ">
+      <div className="max-w-[1280px] w-[100%] block md:flex px-3 md:px-0 md:py-0 justify-center items-center m-auto ">
         <div className="">
           {/* Starting of Full Screen page section */}
           <div className="w-full flex justify-center items-center py-3 overscroll-none overflow-y-hidden">
@@ -438,7 +438,7 @@ const MediumHeader = () => {
               {/* Logo section */}
               <NavLink
             to="/"
-            className="flex justify-center items-center rounded-lg h-[48px] ss:w-[calc(100%-96px)] ss:p-[2px] md:p-0 md:w-[155px] ss:ml-2 md:ml-[0px]  ss:bg-btnBgColor md:bg-transparent"
+            className="flex justify-center items-center rounded-lg h-[48px] ss:w-[calc(100%-96px)] p-[2px] md:p-0 md:w-[155px] ss:ml-2 md:ml-[0px]  ss:bg-btnBgColor md:bg-transparent"
 
           >
             {BrandTypeArray.filter((data) => data.id == dressInfo.type).map(
@@ -453,7 +453,7 @@ const MediumHeader = () => {
                 );
               }
             )}
-          </NavLink>
+             </NavLink>
 
               {/* Voice section */}
               <div
