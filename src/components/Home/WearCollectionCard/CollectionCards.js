@@ -600,10 +600,10 @@ export default function CollectionCards() {
                       <div className="flex items-center ">
                         {data.sale ? (
                           <div className="flex ss:flex-col-reverse md:flex-row	text-start items-start ">
-                            <div className="text-start m-0 p-0  not-italic font-AeonikProMedium text-[18px] md:text-base leading-1 text-red-700 xs:text-base xs:leading-4 mr-1">
+                            <div className="text-start m-0 p-0  not-italic font-AeonikProMedium text-[16px]  md:text-base leading-1 text-red-700 xs:text-base xs:leading-4 mr-1">
                               {data?.sale}
                             </div>
-                            <div className="text-start m-0 p-0 text-[12px] mt-[8px]  line-through not-italic font-AeonikProRegular leading-3  text-borderColorCard ss:leading-1 md:text-[11px]">
+                            <div className="text-start m-0 p-0 text-[11px] mt-[8px]  line-through not-italic font-AeonikProRegular leading-3  text-borderColorCard ss:leading-1 md:text-[11px]">
                               {data?.price}
                             </div>
                           </div>
