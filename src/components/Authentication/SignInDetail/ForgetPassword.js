@@ -37,7 +37,7 @@ export default function ForgetPassword() {
         </div>
 
         <NavLink
-          to="/confirm_password"
+          to="/enter_password_validate"
           className="mt-8  border cursor-pointer flex items-center justify-center border-searchBgColor w-full h-12 bg-SignInBgColor select-none rounded-lg active:scale-95	active:opacity-70 "
         >
           <span className="not-italic font-AeonikProMedium mr-2 text-base leading-4 text-center text-white tracking-[0,16px]">

@@ -185,7 +185,7 @@ export default function SignUp() {
               </div>
             </div>
 
-            <div
+            <NavLink
               onClick={() => setState({ ...state, VerifyShow: false })}
               className="mt-8 border  cursor-pointer flex items-center justify-center border-searchBgColor w-full h-12 bg-SignInBgColor select-none rounded-lg active:scale-95	active:opacity-70	"
             >
@@ -193,7 +193,7 @@ export default function SignUp() {
                 Войти в систему
               </span>
               <img className="" src={formArrowRightCircle} alt="female" />
-            </div>
+            </NavLink>
           </div>
         </div>
       ) : (
@@ -285,7 +285,7 @@ export default function SignUp() {
             </div>
 
             <NavLink
-              to="/confirm_password"
+              to="/"
               className="mt-6  border cursor-pointer flex items-center justify-center border-searchBgColor w-full h-12 bg-SignInBgColor select-none rounded-lg active:scale-95	active:opacity-70 "
             >
               <span className="not-italic font-AeonikProMedium mr-2 text-base leading-4 text-center text-white tracking-[0,16px]">

@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { formArrowRightCircle, formPhone } from "../../../assets/imgs";
+import { NavLink } from "react-router-dom";
 
 export default function ForgetConfirmPassword() {
   const [timerDecrase, setTimerDecrase] = useState(60);
@@ -14,11 +16,11 @@ export default function ForgetConfirmPassword() {
     [timerDecrase]
   );
   return (
-    <div className=" py-8 px-4 w-full h-full flex justify-center">
+    <div className="py-8 px-4 w-full h-full flex justify-center">
       <div className="max-w-[440px] w-[100%] h-fit  md:px-[40px] md:py-[32px] ss:p-5 border border-searchBgColor rounded-lg">
         <div className=" w-full mt-1 mb-7 flex flex-col justify-center">
           <span className="not-italic font-AeonikProMedium text-xl ss:text-start md:text-center leading-5   tracking-[0,16px] text-black">
-            Подтвердите пароль
+            Забыли пароль?
           </span>
           <span className="mt-2 not-italic font-AeonikProRegular text-sm leading-4 text-center text-setTexOpacity tracking-[0.16px]">
             Не беспокойтесь, мы поможем вам
@@ -102,7 +104,7 @@ export default function ForgetConfirmPassword() {
         </div>
 
         <NavLink
-          to="/"
+          to="/set_new_password"
           className="mt-6  border cursor-pointer flex items-center justify-center border-searchBgColor w-full h-12 bg-SignInBgColor select-none rounded-lg active:scale-95	active:opacity-70 "
         >
           <span className="not-italic font-AeonikProMedium mr-2 text-base leading-4 text-center text-white tracking-[0,16px]">
