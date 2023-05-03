@@ -635,7 +635,7 @@ export default function CollectionCards() {
           </div>
         </>
       ) : (
-        <div className="mt-[50px]">
+        <div className="md:mt-[50px]">
           <SetClothesWear />
         </div>
       )}

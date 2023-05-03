@@ -144,153 +144,156 @@ const AddUserPrivateInfo = () => {
               </span>
             </div>
           
+
         <div>
-          {PersonTypeArray?.filter((data) => data.id == dressInfo?.type).map(
+            {PersonTypeArray?.filter((data) => data.id == dressInfo?.type).map(
             (data) => {
-              return (
+                return (
                 <div>
-                  <div className="flex flex-col gap-y-2 gap-x-2 mb-7">
+                    <div className="flex flex-col gap-y-2 gap-x-2 mb-7">
                     <div className="w-full flex-row flex items-center justify-between gap-x-2">
                       <button
                         className={`md:w-[176px] w-full h-[80px] flex flex-col items-center justify-center ${genderStyle} bg-btnBgColor border border-solid border-searchBgColor rounded-lg`}
                       >
+
                         <img
-                          src={data?.man}
-                          alt=""
-                          className="mb-[10px] mx-auto"
+                            src={data?.man}
+                            alt=""
+                            className="mb-[10px] mx-auto"
                         />
                         <span className="font-AeonikProMedium">Мужчина</span>
                       </button>
                       <button
                         className={`md:w-[176px] w-full h-[80px] flex flex-col items-center justify-center ${genderStyle} bg-btnBgColor border border-solid border-searchBgColor rounded-lg`}
                       >
+
                         <img
-                          src={data?.woman}
-                          alt=""
-                          className="mb-[10px] mx-auto"
+                            src={data?.woman}
+                            alt=""
+                            className="mb-[10px] mx-auto"
                         />
                         <span className="font-AeonikProMedium">Женщина</span>
-                      </button>
+                        </button>
                     </div>
-                  </div>
+                    </div>
 
-                  <form>
+                    <form>
                     <label
-                      htmlFor="firstname"
-                      className="mb-[6px] font-AeonikProRegular text-sm"
+                        htmlFor="firstname"
+                        className="mb-[6px] font-AeonikProRegular text-sm"
                     >
-                      Имя
+                        Имя
                     </label>
                     <div className="flex items-center justify-between border border-solid border-searchBgColor p-[14px] rounded-lg bg-btnBgColor mb-4">
-                      <input
+                        <input
                         type="text"
                         name="firstname"
                         id="firstname"
                         className="w-[90%] bg-transparent font-AeonikProMedium text-base"
-                      />
-                      <button>
+                        />
+                        <button>
                         <img src={formUser} alt="" />
-                      </button>
+                        </button>
                     </div>
 
                     <label
-                      htmlFor="lastname"
-                      className="mb-[6px] font-AeonikProRegular text-sm"
+                        htmlFor="lastname"
+                        className="mb-[6px] font-AeonikProRegular text-sm"
                     >
-                      {" "}
-                      Фамилия{" "}
+                        {" "}
+                        Фамилия{" "}
                     </label>
                     <div className="flex items-center justify-between border border-solid border-searchBgColor p-[14px] rounded-lg bg-btnBgColor mb-4">
-                      <input
+                        <input
                         type="text"
                         name="lastname"
                         id="lastname"
                         className="w-[90%] bg-transparent font-AeonikProMedium text-base"
-                      />
-                      <button>
+                        />
+                        <button>
                         <img src={formUser} alt="" />
-                      </button>
+                        </button>
                     </div>
 
                     <label
-                      htmlFor="bdate"
-                      className="mb-[6px] font-AeonikProRegular text-sm"
+                        htmlFor="bdate"
+                        className="mb-[6px] font-AeonikProRegular text-sm"
                     >
-                      {" "}
-                      Дата рождения{" "}
+                        {" "}
+                        Дата рождения{" "}
                     </label>
                     <div className="flex items-center justify-start border border-solid border-searchBgColor rounded-lg bg-btnBgColor mb-4 w-full">
-                      <span className="h-full w-[15%] py-[14px] border-r border-searchBgColor">
+                        <span className="h-full w-[15%] py-[14px] border-r border-searchBgColor">
                         <img src={formCalendar} alt="" className="mx-4" />
-                      </span>
-                      <input
+                        </span>
+                        <input
                         type="number"
                         name="day"
                         placeholder="День"
                         id="day"
                         className="w-[19%] h-12 flex items-center bg-btnBgColor font-AeonikProRegular text-[15px] px-[14px] border-r border-searchBgColor [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                      />
+                        />
 
-                      <Popover
+                        <Popover
                         open={openMonth}
                         onOpenChange={handleOpenChangeWear}
                         className="w-[40%] px-[17px] h-12 bg-btnBgColor border-r flex items-center justify-between cursor-pointer select-none group"
                         trigger="click"
                         content={contentMonth}
-                      >
+                        >
                         <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
-                          {selectMonth}
+                            {selectMonth}
                         </span>
                         <span>
-                          <BiChevronUp
+                            <BiChevronUp
                             size={20}
                             style={{ color: "#c2c2c2" }}
                             className={`${
-                              openMonth ? "rotate-[180deg]" : ""
+                                openMonth ? "rotate-[180deg]" : ""
                             } duration-200`}
-                          />{" "}
+                            />{" "}
                         </span>
-                      </Popover>
+                        </Popover>
 
-                      <Space
+                        <Space
                         className="w-[26%] cursor-pointer"
                         direction="vertical"
                         size={12}
                         options={["Hide"]}
-                      >
+                        >
                         <div className="flex items-center">
-                          <span>
+                            <span>
                             <DatePicker
-                              className="font-AeonikProRegular text-base flex items-center"
-                              placeholder="Год"
-                              picker="year"
-                              bordered={false}
-                              suffixIcon
+                                className="font-AeonikProRegular text-base flex items-center"
+                                placeholder="Год"
+                                picker="year"
+                                bordered={false}
+                                suffixIcon
                             />
-                          </span>
-                          <span>
+                            </span>
+                            <span>
                             <BiChevronUp
-                              size={20}
-                              style={{ color: "#c2c2c2" }}
-                              className="mr-2"
+                                size={20}
+                                style={{ color: "#c2c2c2" }}
+                                className="mr-2"
                             />{" "}
-                          </span>
+                            </span>
                         </div>
-                      </Space>
+                        </Space>
                     </div>
 
                     <Link
-                      to="/add_user_body_data"
-                      className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4"
+                        to="/add_user_body_data"
+                        className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4"
                     >
-                      <span className="mr-[10px]">Следующий шаг</span>
-                      <img src={formArrowRightCircle} alt="" />
+                        <span className="mr-[10px]">Следующий шаг</span>
+                        <img src={formArrowRightCircle} alt="" />
                     </Link>
-                  </form>
+                    </form>
                 </div>
-              );
+                );
             }
-          )}
+            )}
         </div>
       </div>
       </div>

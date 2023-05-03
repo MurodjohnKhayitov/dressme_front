@@ -128,7 +128,7 @@ export default function TypeSection() {
   return (
     <div className="flex flex-col">
       <div className="w-[100%] h-fit flex flex-col justify-center py-8">
-        <div className="w-full h-[60px]  block xs:hidden items-center justify-center text-center  rounded cursor-pointer  bg-bgColor border border-solid border-searchBgColor">
+        <div className="w-full h-[60px]  block xs:hidden flex items-center justify-center text-center  rounded cursor-pointer  bg-bgColor border border-solid border-searchBgColor">
           <span className="mr-3 not-italic font-AeonikProMedium text-base leading-4 text-center">
             Одежды, которые вам подходят
           </span>

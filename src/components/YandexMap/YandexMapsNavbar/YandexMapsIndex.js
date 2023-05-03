@@ -14,7 +14,7 @@ export default function YandexMapsIndex() {
       <div className="max-w-[1320px] w-[100%] ss:block md:flex  md:py-0 justify-center items-center m-auto ">
         {/* {!dressInfo?.yandexOpenMenu ? ( */}
         <div>
-          <div className={`ss:px-3 md:px-[40px] md:rounded-b-[16px] ${
+          <div className={`ss:px-3 mt-[1px] md:mt-0 md:px-[40px] md:rounded-b-[16px] ${
               !dressInfo?.yandexOpenMarket
                 ? "bg-yandexNavbar backdrop-blur-sm"
                 : "bg-white"
@@ -32,7 +32,10 @@ export default function YandexMapsIndex() {
           </div>
 
           {!dressInfo?.yandexOpenMarket && (
-            <div className=" flex flex-col justify-center overflow-hidden">
+            <div className={`flex flex-col justify-center overflow-hidden
+            ${ !dressInfo?.yandexOpenMarket ? 'absolute left-0 right-0 bottom-[-670px] md:top-[105px]' : ''} 
+            ${ !dressInfo?.yandexFullScreen ? 'absolute left-0 right-0 bottom-[-535px] md:top-[105px]' : ''}
+            `}>
               <YandexFilter />
             </div>
           )}
@@ -42,3 +45,9 @@ export default function YandexMapsIndex() {
     </div>
   );
 }
+
+
+// position: absolute;
+    // left: 0;
+    // bottom: -669px;
+    // right: 0;

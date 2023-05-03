@@ -14,6 +14,7 @@ const AddUserBodyData = () => {
       </div>
       <div className="px-4 py-5">
         <UserOfBodyMobile />
+
       </div>
     </div>
   );
