@@ -15,6 +15,7 @@ module.exports = {
         borderColor2: "#e2e2e2",
 
         borderColorCard: "#c1c1c1",
+        closeColorBtn: "#B8B8B8",
         yandexText: "#868695",
         // SignIn
         SignInBgColor: "#0077B6",

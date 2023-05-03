@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { AutummFemale, AutummMale, SpringFemale, SpringMale, SummerFemale, SummerMale, WinterFemale, WinterMale } from "../../../assets/imgs";
+import { AutummFemale, AutummMale, SpringFemale, SpringMale, SummerFemale, SummerMale, WinterFemale, WinterMale, backIcon, passwordCheck, plusIcon } from "../../../assets/imgs";
 import { dressMainData } from "../../../ContextHook/ContextMenu";
 import { MdAdd } from "react-icons/md"
+import { NavLink } from "react-router-dom";
 const AddUserGender = () => {
     const [dressInfo] = useContext(dressMainData)
     let genderStyle = ''
@@ -27,12 +28,42 @@ const AddUserGender = () => {
 
 
     return (
-        <div className="flex flex-col justify-center items-center m-0 p-0 box-border ss:hidden md:block">
-            <div className='max-w-[1280px] w-[100%] flex justify-center  py-3 items-center m-auto   '>
+        <div className="flex flex-col justify-center items-center m-0 p-0 box-border ">
+            <div className='max-w-[1280px] w-[100%] flex justify-center px-4  py-3 items-center m-auto   '>
+            <div className="max-w-[440px] w-[100%]">
+
+                 {/* Mobile-Device */}
+
+                  <div className="w-full md:hidden ss:block md:w-fit ss:flex gap-x-2 items-center justify-between ss:border md:border-0 ss:bg-btnBgColor md:bg-transparent border-searchBgColor rounded-lg">
+                   <NavLink
+                     to={"/sign_in"}
+                     className={
+                          "w-[30%] md:h-[48px] ss:h-[52px] px-4   justify-center flex  items-center  md:bg-btnBgColor md:border   rounded-lg"
+                     }
+                  
+                   >
+                     <img className="" src={backIcon} alt="female" />
+                     <span className="mt-1  font-AeonikProMedium ml-2 not-italic text-sm leading-4 tracking-[0,16px]">
+                     Назад
+                     </span>
+                   </NavLink>
+                   <div
+                    //  to={"/forget_password"}
+                     className={ "w-[65%] md:h-[48px] ss:h-[52px] px-4   justify-center flex  items-center bg-white  border border-searchBgColor  rounded-lg"}
+                   >
+                     <img className="" src={plusIcon} alt="male" />
+                     <span className="mt-1 font-AeonikProMedium not-italic ml-2  text-sm leading-4 tracking-[0,16px]">
+                      Добавить персонажа             
+                     </span>
+                   </div>   
+                   </div >
+                </div>  
                 {
                     personItems?.filter(value => value.id === dressInfo?.type).map(data => {
                         return (
-                            <div key={data?.id} className="w-fit flex items-center ">
+                            <>
+                          
+                            <div key={data?.id} className="w-fit ss:hidden md:block md:flex items-center ">
                                 <button className={`mr-1 ${genderStyle}  w-[136px] h-[44px] px-[16px] justify-between mr-2 flex items-center bg-btnBgColor border border-searchBgColor rounded-lg`}>
                                     <img className="mr-3" src={data?.woman} alt="female" />
                                     <span className="mt-1 font-AeonikProMedium not-italic text-sm leading-4 tracking-[0,16px]">Женщинам</span>
@@ -46,10 +77,13 @@ const AddUserGender = () => {
                                     <span className="mt-1 font-AeonikProMedium not-italic  text-sm leading-4 tracking-[0,16px]">Мужчинам</span>
                                 </button>
                             </div>
+                         
+                  </>
                         )
                     })
                 }
 
+          
             </div >
         </div >
     )

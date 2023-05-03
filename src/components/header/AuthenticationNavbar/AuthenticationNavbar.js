@@ -35,25 +35,25 @@ const AuthenticationNavbar = () => {
     IconsColor = "borderSpring";
     authenActiveForget="text-borderSpring  bg-bgSpring border border-borderSpring "
     authenActiveStyle =
-      "md:text-borderSpring bg-white bg-bgSpring md:border-borderSpring w-1/2  px-2 ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
+      "md:text-borderSpring bg-white bg-bgSpring md:border-borderSpring w-1/2  px-2 md:h-[48px] ss:h-[52px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
   if (dressInfo?.type === 2222) {
     IconsColor = "borderSpring";
     authenActiveForget="text-borderSummer  bg-bgSummer border border-borderSummer "
     authenActiveStyle =
-      "md:text-borderSummer bg-white bg-bgSummer md:border-borderSummer w-1/2  px-2 ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
+      "md:text-borderSummer bg-white bg-bgSummer md:border-borderSummer w-1/2  px-2 md:h-[48px] ss:h-[52px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
   if (dressInfo?.type === 3333) {
     IconsColor = "borderSpring";
     authenActiveForget="text-borderAutumm  bg-bgAutumm borderborder-borderAutumm "
     authenActiveStyle =
-      "md:text-borderAutumm bg-white bg-bgAutumm md:border-borderAutumm w-1/2  px-2 ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
+      "md:text-borderAutumm bg-white bg-bgAutumm md:border-borderAutumm w-1/2  px-2 md:h-[48px] ss:h-[52px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
   if (dressInfo?.type === 4444) {
     IconsColor = "borderSpring";
     authenActiveForget="text-borderWinter  bg-bgWinter border border-borderWinter "
     authenActiveStyle =
-      "md:text-borderWinter bg-white bg-bgWinter md:border-borderWinter w-1/2  px-2 ss:h-[52px] md:h-[44px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
+      "md:text-borderWinter bg-white bg-bgWinter md:border-borderWinter w-1/2  px-2 md:h-[48px] ss:h-[52px]  justify-center flex items-center bg-btnBgColor ss:border   rounded-lg";
   }
 
   const personItems = [
@@ -144,7 +144,7 @@ const AuthenticationNavbar = () => {
                   <div className="w-full h-fit md:block ss:hidden  md:flex items-center">
                     <NavLink
                     to="/sign_in "
-                    className={`text-${IconsColor} h-[44px] w-[56px] rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center mr-3 `}
+                    className={`text-${IconsColor} md:h-[48px] ss:h-[52px] w-[56px] rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center mr-3 `}
                   >
                     <span
                       className={`w-6 h-6 border border-${IconsColor} rounded-full flex items-center justify-center`}
