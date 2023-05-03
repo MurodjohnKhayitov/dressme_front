@@ -215,6 +215,7 @@
     top: 47px !important;
 }
 
+/* PLUS and MINUS  buttons for MAP */
 .ymaps-2-1-79-float-button {
     width: 40px !important;
     height: 40px !important;
@@ -227,6 +228,7 @@
     border-radius: 8px !important;
 }
 
+
 .ymaps-2-1-79-float-button-icon {
     width: 70% !important;
 }
@@ -234,6 +236,8 @@
 .ymaps-2-1-79-controls__control {
     inset: auto 10px 450px auto !important;
 }
+
+
 
 /* ---------------- */
 .ymaps-2-1-79-ground-pane {
@@ -243,29 +247,49 @@
     -moz-filter: grayscale(1) brightness(90%);
     -o-filter: grayscale(1) brightness(90%);
     -webkit-filter: grayscale(1) brightness(90%);
-    /* 
-    filter: grayscale(1);
-
-    -ms-filter: grayscale(1);
-    -moz-filter: grayscale(1);
-    -o-filter: grayscale(1);
-    -webkit-filter: grayscale(1); */
+}   
 
 
+
+@media screen and (max-height: 930px) {
+    .ymaps-2-1-79-controls__control {
+        inset: auto 10px 380px auto !important;
+    }
 }
 
-/* .ymaps-layers-pane {
-    width: 100%;
-    -ms-filter: grayscale(1);
-    -webkit-filter: grayscale(1);
-    -moz-filter: grayscale(1);
-    -o-filter: grayscale(1);
-    filter: grayscale(1);
-} */
+@media (max-height: 750px) {
+    .ymaps-2-1-79-controls__control {
+        inset: auto 10px 310px auto !important;
+    }
+}
+
+@media (max-height: 600px) {
+    .ymaps-2-1-79-controls__control {
+        inset: auto 10px 200px auto !important;
+    }
+}
 
 
-@media (max-width: 480px) {
+/* @media (max-height: 390px) {
+    .ymaps-2-1-79-controls__control {
+        inset: auto 10px 340px auto !important;
+    }
+}
+@media (max-height: 800px) {
+    .ymaps-2-1-79-controls__control {
+        inset: auto 10px 330px auto !important;
+    }
+}
+@media (max-height: 900px) {
     .ymaps-2-1-79-controls__control {
         inset: auto 10px 300px auto !important;
     }
-}
+} */
+
+
+
+
+
+
+
+

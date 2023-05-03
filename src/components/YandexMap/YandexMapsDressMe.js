@@ -714,8 +714,6 @@ function YandexMapsDressMe() {
               </div>
             </div>
 
-
-            
             {/* Yandex Main menu */}
             <div
               className={`fixed top-[70px] left-0 right-0 overscroll-none overflow-y-scroll ${
@@ -919,7 +917,7 @@ function YandexMapsDressMe() {
             {/* Yandex Shopping Card */}
             <div
               className={`absolute block md:hidden overflow-hidden z-[52] rounded-lg shadow-lg right-2 w-[40px] h-[40px] md:bottom-[120px]
-              ${!dressInfo?.yandexFullScreen ? "bottom-[176px] ":"bottom-[112px]"}
+              ${!dressInfo?.yandexFullScreen ? "bottom-[176px] ":"bottom-[114px]"}
               ${!dressInfo?.yandexOpenMarket ? "w-[202px] bg-white":"w-[calc(100%-56px)]  bg-yandexNavbar backdrop-blur-sm" }
               ${!dressInfo?.yandexOpenMenu ? "bottom-[158px] md:bottom-[120px] rounded-lg":"bottom-[93px] md:bottom-[120px]  left-[362px] rounded-lg"}
               `}
