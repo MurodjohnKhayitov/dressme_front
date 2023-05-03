@@ -112,6 +112,21 @@ export default function SetClothesWear() {
           under_wear_img:
             "https://s.alicdn.com/@sc04/kf/He9ecb7e78532450291e12c4e1de92035B.jpg_300x300.jpg",
         },
+        {
+          id: 2,
+          product_id: 2,
+          name: "Нижняя одежда",
+          gender: "Male",
+          quality: "semi-original",
+          composition: "cotton 100%",
+          wear_size: "51",
+          make_country: "china",
+          amount: "50000",
+          currensy: "UZB",
+          active: true,
+          under_wear_img:
+            "https://s.alicdn.com/@sc04/kf/He9ecb7e78532450291e12c4e1de92035B.jpg_300x300.jpg",
+        },
       ],
       legWear: [
         {
@@ -129,11 +144,41 @@ export default function SetClothesWear() {
           leg_wear_img:
             "https://s.alicdn.com/@sc04/kf/H8c6e7c4d96c34f628cfe9fd1acf5414eY.jpg_300x300.jpg",
         },
+        {
+          id: 2,
+          product_id: 2,
+          name: "Обувь",
+          gender: "Male",
+          quality: "semi-original",
+          composition: "cotton 100%",
+          wear_size: "51",
+          make_country: "china",
+          amount: "50000",
+          currensy: "UZB",
+          active: true,
+          leg_wear_img:
+            "https://s.alicdn.com/@sc04/kf/H8c6e7c4d96c34f628cfe9fd1acf5414eY.jpg_300x300.jpg",
+        },
       ],
       Accessory: [
         {
           id: 1,
           product_id: 1,
+          name: "Аксессуары",
+          gender: "Male",
+          quality: "semi-original",
+          composition: "cotton 100%",
+          wear_size: "51",
+          make_country: "china",
+          amount: "50000",
+          currensy: "UZB",
+          active: true,
+          accessor_wear_img:
+            "https://s.alicdn.com/@sc04/kf/Hec52a45bd6454b8c83bfc190d8748332y.jpg_300x300.jpg",
+        },
+        {
+          id: 2,
+          product_id: 2,
           name: "Аксессуары",
           gender: "Male",
           quality: "semi-original",
@@ -502,7 +547,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-3 top-[25%] z-10 text-center cursor-pointer no-underline w-8 h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-1 md:right-3 top-[25%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormNext size={15} />
@@ -513,7 +558,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-3 top-[25%] z-10 text-center cursor-pointer no-underline w-8 h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor`}
+        className={`absolute left-1 md:left-3 top-[25%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor`}
         onClick={onClick}
       >
         <GrFormPrevious size={15} />
@@ -525,7 +570,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-3 top-[40%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-1 md:right-3 top-[40%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormNext size={15} />
@@ -536,7 +581,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-3 top-[40%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute left-1 md:left-3 top-[40%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormPrevious size={15} />
@@ -548,7 +593,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-3 top-[25%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-1 md:right-3 top-[25%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormNext size={15} />
@@ -559,7 +604,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-3 top-[25%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute left-1 md:left-3 top-[25%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormPrevious size={15} />
@@ -571,7 +616,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-3 top-[25%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-1 md:right-3 top-[18%] md:top-[25%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormNext size={15} />
@@ -582,7 +627,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-3 top-[25%] z-10 text-center cursor-pointer no-underline  w-8 h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute left-1 md:left-3 top-[18%] md:top-[25%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormPrevious size={15} />
@@ -696,29 +741,29 @@ export default function SetClothesWear() {
   }, [open]);
 
   return (
-    <div className="w-full flex flex-row flex-wrap box-border gap-y-5 gap-x-5 h-fit justify-between">
+    <div className="w-full flex flex-row flex-wrap box-border gap-y-3 gap-x-3 md:gap-y-5 md:gap-x-5 h-fit justify-between">
       {productList.map((producListMap) => {
         return (
           <div
             key={productList?.id}
-            className="w-full md:w-[305px] flex flex-row overflow-hidden"
+            className="ls:w-1/2 md:w-[305px] flex flex-row overflow-hidden"
           >
-            <div className="w-full  border bg-white border-searchBgColor  pt-4 rounded-lg">
+            <div className="w-full  border bg-white border-searchBgColor rounded-lg">
               {producListMap?.SetToModel ? (
-                <div className="w-full h-[572px] flex justify-center">
+                <div className="w-full h-[350px] md:h-[572px] flex justify-center">
                   <img src={model1} alt="" />
                 </div>
               ) : (
-                <div>
+                <div className="h-[350px] md:h-[572px] pt-3 md:pt-4">
                   {/* HeadWear */}
                   <div className="w-full h-fit ">
                     {producListMap?.headWear?.length >= 2 ? (
-                      <Slider {...headWear} className={`w-full h-[72px] `}>
+                      <Slider {...headWear} className={`w-full h-11 md:h-[72px] `}>
                         {producListMap?.headWear?.map((item) => {
                           return item.id ? (
                             <div
                               key={item?.id}
-                              className={`!w-[192px] box-border ml-[47px] ls:ml-[66px] ll:ml-[83px] md:ml-[56px] cursor-pointer flex items-center justify-center h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={`!w-[110px] md:!w-[192px] h-11 md:h-[72px] box-border ml-[26px]  md:ml-[56px] cursor-pointer flex items-center justify-center rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
                               <div className="group relative w-full h-full flex items-center justify-center ">
                                 <div className="w-full h-full hover:scale-110 ease-in-out	duration-300 flex items-center justify-center">
@@ -761,12 +806,12 @@ export default function SetClothesWear() {
                       </Slider>
                     ) : (
                       <div>
-                        <div className={`w-full h-[72px] `}>
+                        <div className={`w-full h-11 md:h-[72px] `}>
                         {producListMap?.headWear?.map((item) => {
                           return item.id ? (
                             <div
                               key={item?.id}
-                              className={` w-[192px] box-border mx-auto cursor-pointer flex items-center justify-center h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={`!w-[110px] md:!w-[192px] h-11 md:h-[72px] box-border mx-auto cursor-pointer flex items-center justify-center  rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
                               <div className="group relative w-full h-full flex items-center justify-center">
                                 <div className="w-full h-full hover:scale-110   ease-in-out	duration-300">
@@ -814,12 +859,12 @@ export default function SetClothesWear() {
                   {/* OutWear */}
                   <div className="w-full h-fit  mt-1">
                     {producListMap?.outWear?.length >= 2 ? (
-                      <Slider {...outWear} className={`w-full h-[160px]`}>
+                      <Slider {...outWear} className={`w-full h-[90px] md:h-[160px]`}>
                         {producListMap?.outWear.map((item) => {
                           return (
                             <div
                               key={item?.id}
-                              className={`!w-[192px] cursor-pointer flex justify-center items-center ml-[47px] ls:ml-[66px] ll:ml-[83px] md:ml-[56px] h-[148px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={`!w-[110px] md:!w-[192px] cursor-pointer flex justify-center items-center ml-[26px] md:ml-[56px] h-[90px] md:h-[148px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
                               <div className="group relative w-full h-full flex items-center justify-center">
                                 <div className="w-full h-full hover:scale-110 ease-in-out	duration-300 flex items-center justify-center">
@@ -860,12 +905,12 @@ export default function SetClothesWear() {
                       </Slider>
                     ) : (
                       <div>
-                        <div className={`w-full h-[160px]`}>
+                        <div className={`w-full h-[90px] md:h-[160px]`}>
                           {producListMap?.outWear.map((item) => {
                             return (
                               <div
                                 key={item?.id}
-                                className={`w-[192px] cursor-pointer flex justify-center items-center mx-auto h-[148px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                                className={`!w-[110px] md:!w-[192px] cursor-pointer flex justify-center items-center mx-auto h-[90px] md:h-[148px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                               >
                                 <div className="group relative w-full h-full flex items-center justify-center">
                                   <div className="w-full h-full hover:scale-110 ease-in-out	duration-300 flex items-center justify-center">
@@ -909,14 +954,14 @@ export default function SetClothesWear() {
                   </div>
 
                   {/* UnderWear */}
-                  <div className="w-full h-fit -mt-2">
+                  <div className="w-full h-fit mt-1 md:-mt-2">
                     {producListMap?.underWear?.length >= 2 ? (
-                      <Slider {...underWear} className={`w-full h-[180px]`}>
+                      <Slider {...underWear} className={`w-full h-[90px] md:h-[180px]`}>
                         {producListMap?.underWear.map((item) => {
                           return (
                             <div
                               key={item?.id}
-                              className={`!w-[192px] flex justify-center cursor-pointer items-center ml-[56px]  h-[168px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={`!w-[110px] md:!w-[192px] flex justify-center cursor-pointer items-center ml-[26px] md:ml-[56px] h-[90px] md:h-[168px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
                               <div className="group relative w-full h-full flex items-center justify-center">
                                 <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
@@ -956,12 +1001,12 @@ export default function SetClothesWear() {
                         })}
                       </Slider>
                     ) : (
-                      <div className={`w-full h-[180px]`}>
+                      <div className={`w-full h-[90px] md:h-[180px]`}>
                         {producListMap?.underWear.map((item) => {
                           return (
                             <div
                               key={item?.id}
-                              className={`w-[192px] flex justify-center cursor-pointer items-center mx-auto  h-[168px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={`!w-[110px] md:!w-[192px] flex justify-center cursor-pointer items-center mx-auto h-[90px] md:h-[168px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
                               <div className="group relative w-full h-full flex items-center justify-center">
                                 <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
@@ -1004,14 +1049,14 @@ export default function SetClothesWear() {
                   </div>
 
                   {/* LegWear */}
-                  <div className="w-full h-fit -mt-2">
+                  <div className="w-full h-fit mt-1 md:-mt-2">
                     {producListMap?.legWear?.length >= 2 ? (
-                      <Slider {...legWear} className={`w-full h-[72px]`}>
+                      <Slider {...legWear} className={`w-full h-11 md:h-[72px]`}>
                         {producListMap?.legWear.map((item) => {
                           return (
                             <div
                               key={item?.id}
-                              className={`!w-[192px] flex justify-center items-center  cursor-pointer ml-[56px] h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={`!w-[110px] md:!w-[192px] flex justify-center items-center cursor-pointer ml-[26px] md:ml-[56px] h-11 md:h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
                               <div className="group relative w-full h-full flex items-center justify-center">
                                 <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
@@ -1051,12 +1096,12 @@ export default function SetClothesWear() {
                         })}
                       </Slider>
                     ) : (
-                      <div className={`w-full h-[72px]`}>
+                      <div className={`!w-full h-11 md:h-[72px]`}>
                         {producListMap?.legWear.map((item) => {
                           return (
                             <div
                               key={item?.id}
-                              className={`w-[192px] flex justify-center items-center  cursor-pointer mx-auto h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={`!w-[110px] md:!w-[192px] flex justify-center items-center cursor-pointer mx-auto h-11 md:h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
                               <div className="group relative w-full h-full flex items-center justify-center">
                                 <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
@@ -1099,14 +1144,14 @@ export default function SetClothesWear() {
                   </div>
 
                   {/* Accessory */}
-                  <div className="w-full h-fit mt-1 mb-4">
+                  <div className="w-full h-fit mt-2 mb-4">
                     {producListMap?.Accessory?.length >= 2 ? (
                       <Slider {...Accessory} className={`w-full h-[72px]`}>
                         {producListMap?.Accessory.map((item) => {
                           return (
                             <div
                               key={item?.id}
-                              className={`!w-[192px] flex items-center cursor-pointer justify-center ml-[47px] ls:ml-[66px] ll:ml-[83px] md:ml-[56px] h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={`!w-[110px] md:!w-[192px] flex items-center cursor-pointer justify-center ml-[26px] md:ml-[56px] h-11 md:h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
                               <div className="group relative w-full h-full flex items-center justify-center">
                                 <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
@@ -1151,7 +1196,7 @@ export default function SetClothesWear() {
                           return (
                             <div
                               key={item?.id}
-                              className={`w-[192px] flex items-center cursor-pointer justify-center mx-auto h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              className={`!w-[110px] md:!w-[192px] flex items-center cursor-pointer justify-center mx-auto h-11 md:h-[72px] rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
                             >
                               <div className="group relative w-full h-full flex items-center justify-center">
                                 <div className="w-full h-full hover:scale-110   ease-in-out	duration-300 flex items-center justify-center">
