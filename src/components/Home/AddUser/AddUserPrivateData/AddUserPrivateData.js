@@ -132,15 +132,19 @@ const AddUserPrivateInfo = () => {
   const { RangePicker } = DatePicker;
 
   return (
-    <main className="mx-4 md:mx-0">
-      {/* <AddUserPrivateSkeleton/> */}
-      <div className="flex flex-col px-5 md:px-10 py-6 w-full md:w-[25%] rounded-lg border border-solid border-searchBgColor my-8 mx-auto">
-        <div className="text-[20px] font-AeonikProMedium mb-3">
-            Добавить персонаж
-        </div>
-        <p className="text-textColor2 font-AeonikProRegular mb-6">
-            Добавляйте информацию о себе или близких людей в качестве персонажа
-        </p>
+      <div className=" py-8 w-full h-full flex justify-center px-4">
+        <div className="max-w-[440px] w-[100%] h-fit  p-5 border border-searchBgColor rounded-lg">  
+        
+           <div className=" w-full mt-1 mb-5 flex flex-col justify-center">
+              <span className="not-italic font-AeonikProMedium text-xl ss:text-start md:text-center leading-5   tracking-[0,16px] text-black">
+              Добавить персонаж
+              </span>
+              <span className="mt-2 not-italic font-AeonikProRegular text-sm leading-4 ss:text-start md:text-center text-setTexOpacity tracking-[0.16px]">
+              Добавляйте информацию о себе или близких людей в качестве персонажа
+              </span>
+            </div>
+          
+
         <div>
             {PersonTypeArray?.filter((data) => data.id == dressInfo?.type).map(
             (data) => {
@@ -148,19 +152,21 @@ const AddUserPrivateInfo = () => {
                 <div>
                     <div className="flex flex-col gap-y-2 gap-x-2 mb-7">
                     <div className="w-full flex-row flex items-center justify-between gap-x-2">
-                        <button
-                        className={`w-[48%] ${genderStyle} justify-center bg-btnBgColor border border-solid border-searchBgColor rounded-lg py-3`}
-                        >
+                      <button
+                        className={`md:w-[176px] w-full h-[80px] flex flex-col items-center justify-center ${genderStyle} bg-btnBgColor border border-solid border-searchBgColor rounded-lg`}
+                      >
+
                         <img
                             src={data?.man}
                             alt=""
                             className="mb-[10px] mx-auto"
                         />
                         <span className="font-AeonikProMedium">Мужчина</span>
-                        </button>
-                        <button
-                        className={`w-[48%] ${genderStyle} bg-btnBgColor border border-solid border-searchBgColor rounded-lg py-3`}
-                        >
+                      </button>
+                      <button
+                        className={`md:w-[176px] w-full h-[80px] flex flex-col items-center justify-center ${genderStyle} bg-btnBgColor border border-solid border-searchBgColor rounded-lg`}
+                      >
+
                         <img
                             src={data?.woman}
                             alt=""
@@ -290,7 +296,7 @@ const AddUserPrivateInfo = () => {
             )}
         </div>
       </div>
-    </main>
+      </div>
   );
 };
 export default AddUserPrivateInfo;

@@ -5,6 +5,7 @@ import {
   formPhone,
   formUser,
   formUzFlag,
+  person3D,
 } from "../../../assets/imgs";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
@@ -21,6 +22,8 @@ export default function SignUp() {
     password: "",
     eyesShow: true,
     VerifyShow: true,
+    validateConfirm:true,
+    requestPerson:true,
   });
 
   let data = phone.split("-");
@@ -56,9 +59,10 @@ export default function SignUp() {
     }, 1000);
     return () => clearInterval(interval);
   }, [timerDecrase]);
+
   return (
     <div>
-      {state?.VerifyShow ? (
+      {/* {state?.validateConfirm ? (
         <div className=" py-8 w-full h-full flex justify-center ">
           <div className="max-w-[440px] w-[100%] h-fit  md:px-[40px] md:py-[32px] ss:p-5 border border-searchBgColor rounded-lg">
             <div className=" w-full mt-1 mb-7 not-italic font-AeonikProMedium text-xl  leading-5 ss:text-start md:text-center  tracking-[0,16px] text-black">
@@ -74,7 +78,6 @@ export default function SignUp() {
                 <input
                   className="  w-full h-12 placeholder-not-italic placeholder-font-AeonikProMedium placeholder-text-base placeholder-leading-4 placeholder-text-black"
                   type="text"
-                  // name="fname"
                   placeholder="Имя"
                   required
                 />
@@ -89,7 +92,6 @@ export default function SignUp() {
                 <input
                   className="  w-full h-12 placeholder-not-italic placeholder-font-AeonikProMedium placeholder-text-base placeholder-leading-4 placeholder-text-black"
                   type="text"
-                  // name="lname"
                   placeholder="Фамилия"
                   required
                 />
@@ -97,7 +99,6 @@ export default function SignUp() {
               </div>
             </div>
 
-            {/* Phone Number */}
             <div className="mt-4 w-full h-fit">
               <div className="not-italic font-AeonikProRegular text-sm leading-4 text-black  tracking-[0,16px] ">
                 Номер телефона{" "}
@@ -108,7 +109,6 @@ export default function SignUp() {
                   <input
                     className="w-[40px]  h-full select-none mx-2 not-italic font-AeonikProMedium text-base leading-4 text-black"
                     type="text"
-                    // name=""
                     value={state.phoneCode}
                     readOnly
                   />
@@ -128,7 +128,6 @@ export default function SignUp() {
               </div>
             </div>
 
-            {/* Email */}
             <div className="mt-4 w-full h-fit">
               <div className=" flex items-center justify-between w-full">
                 <NavLink
@@ -148,7 +147,6 @@ export default function SignUp() {
                 <input
                   className="  w-full h-12 placeholder-not-italic placeholder-font-AeonikProMedium placeholder-text-base placeholder-leading-4 placeholder-text-black"
                   type="email"
-                  // name="email"
                   placeholder="Адрес электронной почты"
                   required
                 />
@@ -186,7 +184,7 @@ export default function SignUp() {
             </div>
 
             <NavLink
-              onClick={() => setState({ ...state, VerifyShow: false })}
+              onClick={() => setState({ ...state, validateConfirm: false })}
               className="mt-8 border  cursor-pointer flex items-center justify-center border-searchBgColor w-full h-12 bg-SignInBgColor select-none rounded-lg active:scale-95	active:opacity-70	"
             >
               <span className="not-italic font-AeonikProMedium mr-2 text-base leading-4 text-center text-white tracking-[0,16px]">
@@ -196,7 +194,7 @@ export default function SignUp() {
             </NavLink>
           </div>
         </div>
-      ) : (
+      ) : state?.requestPerson ? (
         <div className=" py-8 w-full h-full flex justify-center">
           <div className="max-w-[440px] w-[100%] h-fit  md:px-[40px] md:py-[32px] ss:p-5 border border-searchBgColor rounded-lg">
             <div className=" w-full mt-1 mb-7 flex flex-col justify-center">
@@ -216,7 +214,6 @@ export default function SignUp() {
                 <input
                   className="  w-full h-12 bg-btnBgColor focus:bg-btnBgColor active:bg-btnBgColor placeholder:bg-btnBgColor placeholder-not-italic placeholder-font-AeonikProMedium placeholder-text-base placeholder-leading-4 placeholder-text-black "
                   type="text"
-                  // name="phone"
                   placeholder="Phone number"
                   required
                 />
@@ -284,18 +281,61 @@ export default function SignUp() {
               </span>
             </div>
 
-            <NavLink
-              to="/"
+            <div
+              onClick={() => setState({ ...state, requestPerson: false })}
               className="mt-6  border cursor-pointer flex items-center justify-center border-searchBgColor w-full h-12 bg-SignInBgColor select-none rounded-lg active:scale-95	active:opacity-70 "
             >
               <span className="not-italic font-AeonikProMedium mr-2 text-base leading-4 text-center text-white tracking-[0,16px]">
                 Подтвердить
               </span>
               <img className="" src={formArrowRightCircle} alt="female" />
-            </NavLink>
+            </div>
           </div>
         </div>
-      )}
+      ):( */}
+        <div className=" py-8 w-full h-full flex justify-center">
+          <div className="max-w-[440px] w-[100%] h-fit  p-5 ss:p-5 border border-searchBgColor rounded-lg">
+            <div className=" w-full mt-1 mb-5 flex flex-col justify-center">
+              <span className="not-italic font-AeonikProMedium text-xl ss:text-start md:text-center leading-5   tracking-[0,16px] text-black">
+              Хотите ли вы создать персонажа?
+              </span>
+              <span className="mt-2 not-italic font-AeonikProRegular text-sm leading-4 text-center text-setTexOpacity tracking-[0.16px]">
+              Персонаж поможет нам подобрать идеальную сочетанию одежд для вас 
+              </span>
+            </div>
+            <div className="flex items-center justify-center  h-[250px]">
+              <img className="h-full" src={person3D} alt=""/>
+            </div>
+            
+
+           
+            
+           
+
+            <div className="flex justify-center gap-x-2 items-center">
+            <NavLink
+              to="/"
+              className="mt-6  w-[166px] h-[52px]     border cursor-pointer flex items-center justify-center border-searchBgColor  bg-closeColorBtn select-none rounded-lg active:scale-95	active:opacity-70 "
+            >
+              <span className="not-italic font-AeonikProMedium mr-2 text-base leading-4 text-center text-white tracking-[0,16px]">
+              Пропустить
+              </span>
+              {/* <img className="" src={formArrowRightCircle} alt="female" /> */}
+            </NavLink>
+            <NavLink
+              to="/add_user_private_data"
+              className="mt-6  w-[166px] h-[52px] border cursor-pointer flex items-center justify-center border-searchBgColor  bg-SignInBgColor select-none rounded-lg active:scale-95	active:opacity-70 "
+            >
+              <span className="not-italic font-AeonikProMedium mr-2 text-base leading-4 text-center text-white tracking-[0,16px]">
+              Создать
+              </span>
+              <img className="" src={formArrowRightCircle} alt="" />
+            </NavLink>
+            </div>
+          </div>
+        </div>
+      {/* )
+      } */}
     </div>
   );
 }
