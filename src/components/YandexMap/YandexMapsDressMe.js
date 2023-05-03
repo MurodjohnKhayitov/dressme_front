@@ -917,11 +917,18 @@ function YandexMapsDressMe() {
             </div>
             
             {/* Yandex Shopping Card */}
+            {!dressInfo?.yandexOpenMarket &&
             <div
-              className={`absolute block md:hidden overflow-hidden z-[52] rounded-lg shadow-lg right-2 w-[40px] h-[40px] md:bottom-[120px]
-              ${!dressInfo?.yandexFullScreen ? "bottom-[176px] ":"bottom-[112px]"}
-              ${!dressInfo?.yandexOpenMarket ? "w-[202px] bg-white":"w-[calc(100%-56px)]  bg-yandexNavbar backdrop-blur-sm" }
-              ${!dressInfo?.yandexOpenMenu ? "bottom-[158px] md:bottom-[120px] rounded-lg":"bottom-[93px] md:bottom-[120px]  left-[362px] rounded-lg"}
+            onClick={handleOpenMarket}
+             className={`fixed right-2 md:hidden cursor-pointer ${!dressInfo?.yandexFullScreen ? "bottom-[180px]" : "bottom-[115px]" }   w-[40px]  z-[52]  h-[40px] rounded-lg bg-white flex items-center justify-center`}>
+              <div className="w-full h-full flex items-center justify-center">
+                 <img src={shop} alt="" />
+              </div>
+            </div>}
+            <div
+              className={`absolute block md:hidden overflow-hidden z-[52] rounded-lg shadow-lg left-1/2 right-1/2 translate-x-[-50%] translate-y-[-50%]  md:bottom-[120px]
+              ${dressInfo?.yandexFullScreen ? "bottom-[10px] md:bottom-auto":"bottom-[70px] md:bottom-auto"}
+              ${dressInfo?.yandexOpenMarket && "w-[calc(100%-56px)]  bg-yandexNavbar backdrop-blur-sm duration-500" }
               `}
             >
               <div className="w-full h-full flex items-center justify-between  ">
@@ -929,16 +936,16 @@ function YandexMapsDressMe() {
                   onClick={handleOpenMarket}
                   className={`w-full h-12 flex justify-center gap-x-3 items-center rounded-lg`}
                 >
-                  {!dressInfo?.yandexOpenMarket ? (
+                  {/* {!dressInfo?.yandexOpenMarket ? (
                       <img src={shop} alt="" />
-                  ) : (
+                  ) : ( */}
                     <div className="flex items-center justify-center">
                       <img src={MenuClose} alt="" />
                       <div className="not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
                         Магазины
                       </div>
                     </div>
-                  )}
+                  {/* )} */}
                   
                 </div>
               </div>
