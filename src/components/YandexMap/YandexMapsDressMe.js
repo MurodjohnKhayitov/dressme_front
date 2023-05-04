@@ -714,8 +714,6 @@ function YandexMapsDressMe() {
               </div>
             </div>
 
-
-            
             {/* Yandex Main menu */}
             <div
               className={`fixed top-[70px] left-0 right-0 overscroll-none overflow-y-scroll ${
@@ -931,6 +929,7 @@ function YandexMapsDressMe() {
               className={`absolute block md:hidden  ml-[-1000px] duration-1000 overflow-hidden z-[52] rounded-lg shadow-lg left-1/2 right-1/2 translate-x-[-50%] translate-y-[-50%]  md:bottom-[120px]
               ${dressInfo?.yandexFullScreen ? "bottom-[10px] md:bottom-auto":"bottom-[70px] md:bottom-auto"}
               ${dressInfo?.yandexOpenMarket && "w-[calc(100%-56px)] ml-[0]  duration-500 bg-yandexNavbar backdrop-blur-sm" }
+
               `}
             >
               <div className="w-full h-full flex items-center justify-between  ">
