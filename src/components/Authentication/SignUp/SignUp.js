@@ -312,11 +312,6 @@ export default function SignUp() {
             </div>
             </div>
             
-
-           
-            
-           
-
             <div className="flex justify-center gap-x-2 items-center">
             <NavLink
               to="/"
