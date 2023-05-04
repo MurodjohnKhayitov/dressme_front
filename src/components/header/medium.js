@@ -283,7 +283,7 @@ const MediumHeader = () => {
                   className={`${
                     !state?.hamburgerMenu
                       ? "hamburger flex flex-col ease-linear duration-500 overscroll-none"
-                      : "left-[-450px] ll:-left-[500px] sm:left-[800px] ease-linear duration-500"
+                      : "left-[-800px] z-[-10] ease-linear duration-500"
                   }  top-[62px] left-0 fixed right-0 w-full bg-white z-10 h-full overflow-y-scroll px-[15px] ll:flex-fit`}
                 >
                   {/* Searching section */}
