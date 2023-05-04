@@ -54,7 +54,7 @@ export default function YandexFilter() {
     speed: 500,
     dots: false,
     slidesToShow: 8,
-    slidesToScroll: 1,
+    swipeToSlide: true,
     initialSlide: 0,
 
     responsive: [
