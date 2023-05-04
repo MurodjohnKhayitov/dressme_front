@@ -78,7 +78,7 @@ const MediumHeader = () => {
 
   useEffect(() => {
     if (
-      state?.hamburgerMenu ||
+      !state?.hamburgerMenu ||
       state?.clothesTypeMobile ||
       state?.priceToggleMobile ||
       state?.brandToggleMobile ||
