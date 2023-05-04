@@ -78,6 +78,7 @@ const MediumHeader = () => {
 
   useEffect(() => {
     if (
+      state?.hamburgerMenu ||
       state?.clothesTypeMobile ||
       state?.priceToggleMobile ||
       state?.brandToggleMobile ||
@@ -88,6 +89,7 @@ const MediumHeader = () => {
       document.body.style.overflow = "auto";
     }
   }, [
+    state?.hamburgerMenu,
     state?.clothesTypeMobile,
     state?.priceToggleMobile,
     state?.brandToggleMobile,
