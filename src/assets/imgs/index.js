@@ -238,6 +238,7 @@ export { default as SignInSummer } from "./formImgs/Signin/SignInSummer.svg";
 export { default as SignInWinter } from "./formImgs/Signin/SignInWinter.svg";
 export { default as backIcon } from "./formImgs/Signin/backIcon.svg";
 export { default as plusIcon } from "./formImgs/Signin/plusIcon.svg";
+export { default as Person3Dyarim } from "./formImgs/Signin/Peson3Dyarim.svg";
 
 // ------------------------SignUp------------
 export { default as SignUpSpring } from "./formImgs/SignUp/SingUpSpring.svg";

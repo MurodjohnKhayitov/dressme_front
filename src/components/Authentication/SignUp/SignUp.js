@@ -1,5 +1,6 @@
 import React, { useContext, useState,useEffect } from "react";
 import {
+  Person3Dyarim,
   formArrowBottom,
   formArrowRightCircle,
   formPhone,
@@ -62,7 +63,7 @@ export default function SignUp() {
 
   return (
     <div>
-      {/* {state?.validateConfirm ? (
+      {state?.validateConfirm ? (
         <div className=" py-8 w-full h-full flex justify-center ">
           <div className="max-w-[440px] w-[100%] h-fit  md:px-[40px] md:py-[32px] ss:p-5 border border-searchBgColor rounded-lg">
             <div className=" w-full mt-1 mb-7 not-italic font-AeonikProMedium text-xl  leading-5 ss:text-start md:text-center  tracking-[0,16px] text-black">
@@ -292,19 +293,23 @@ export default function SignUp() {
             </div>
           </div>
         </div>
-      ):( */}
-        <div className=" py-8 w-full h-full flex justify-center">
-          <div className="max-w-[440px] w-[100%] h-fit  p-5 ss:p-5 border border-searchBgColor rounded-lg">
+      ):(
+        <div className=" py-8 w-full h-full flex justify-center  ">
+          <div className="max-w-[440px] w-[100%] h-fit ">
+            <div className=" border border-searchBgColor   rounded-lg p-5">
+
             <div className=" w-full mt-1 mb-5 flex flex-col justify-center">
               <span className="not-italic font-AeonikProMedium text-xl ss:text-start md:text-center leading-5   tracking-[0,16px] text-black">
               Хотите ли вы создать персонажа?
               </span>
-              <span className="mt-2 not-italic font-AeonikProRegular text-sm leading-4 text-center text-setTexOpacity tracking-[0.16px]">
+              <span className="mt-2 not-italic font-AeonikProRegular text-sm leading-4 ss:text-start md:text-center  text-setTexOpacity tracking-[0.16px]">
               Персонаж поможет нам подобрать идеальную сочетанию одежд для вас 
               </span>
             </div>
-            <div className="flex items-center justify-center  h-[250px]">
-              <img className="h-full" src={person3D} alt=""/>
+            <div className="flex  justify-center  h-[300px] overflow-hidden">
+              <img className="" src={Person3Dyarim} alt=""/>
+              {/* <img className="" src={person3D} alt=""/> */}
+            </div>
             </div>
             
 
@@ -334,8 +339,8 @@ export default function SignUp() {
             </div>
           </div>
         </div>
-      {/* )
-      } */}
+        )
+      } 
     </div>
   );
 }
