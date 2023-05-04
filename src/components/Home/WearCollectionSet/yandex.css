@@ -68,3 +68,7 @@
     bottom: 100px;
     right: 100px;
 }
+
+.slick-list {
+    margin: 0;
+}
