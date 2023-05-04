@@ -497,14 +497,14 @@ function YandexMapsDressMe() {
                 className={`${
                   dressInfo?.yandexOpenMenu || dressInfo?.yandexOpenMarket
                     ? " ml-[0px]"
-                    : "  ml-[-1000px]"
+                    : "  ml-[-800px]"
                 } absolute cursor-pointer left-0 h-[100vh] z-[52] rounded-lg overflow-hidden ${
                   dressInfo?.yandexFullScreen ? "top-[0px]" : "ss:top-[70px] md:top-0"
                 } ${
                   !dressInfo?.yandexOpenMarket
                     ? "w-[25%] bg-yandexNavbar backdrop-blur-sm	"
                     : "bg-white w-[100%]  "
-                }  p-2 ease-linear duration-500    border border-searchBgColor`}
+                }  p-2 ease-linear duration-[600ms]    border border-searchBgColor`}
               >
                 {!dressInfo?.yandexOpenMarket ? (
                   <div
@@ -717,7 +717,7 @@ function YandexMapsDressMe() {
             {/* Yandex Main menu */}
             <div
               className={`fixed top-[70px] left-0 right-0 overscroll-none overflow-y-scroll ${
-                dressInfo?.openMainMenu ? "left-[-500px] md:left-[-5000px]  z-[53] ease-in-out  duration-500 " : "left-0 z-[53] ease-linear duration-500 "
+                dressInfo?.openMainMenu ? "left-[-700px] md:left-[-5000px]  z-[53] ease-in-out  duration-700 " : "left-0 z-[53] ease-linear duration-500 "
               } w-[100%] h-[100%] bg-white`}
             >
               <div className="w-full h-full  px-3 overflow-hidden">
@@ -923,12 +923,11 @@ function YandexMapsDressMe() {
                  <img src={shop} alt="" />
               </div>
             </div>}
-            <div
-
             
-              className={`absolute block md:hidden  ml-[-1000px] duration-1000 overflow-hidden z-[52] rounded-lg shadow-lg left-1/2 right-1/2 translate-x-[-50%] translate-y-[-50%]  md:bottom-[120px]
+            <div
+              className={`absolute block md:hidden  ml-[-1000px] overflow-hidden z-[52] rounded-lg shadow-lg left-1/2 right-1/2 translate-x-[-50%] translate-y-[-50%]  md:bottom-[120px]
               ${dressInfo?.yandexFullScreen ? "bottom-[10px] md:bottom-auto":"bottom-[70px] md:bottom-auto"}
-              ${dressInfo?.yandexOpenMarket && "w-[calc(100%-56px)] ml-[0]  duration-500 bg-yandexNavbar backdrop-blur-sm" }
+              ${dressInfo?.yandexOpenMarket && "w-[calc(100%-56px)] ml-[0] duration-1000 bg-yandexNavbar backdrop-blur-sm" }
 
               `}
             >
