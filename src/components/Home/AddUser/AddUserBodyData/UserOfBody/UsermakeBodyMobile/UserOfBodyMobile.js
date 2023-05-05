@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { formArrowRightCircle, person3D } from "../../../../../assets/imgs";
+import { formArrowRightCircle, person3D } from "../../../../../../assets/imgs";
 import { BiChevronDown } from "react-icons/bi";
 import { Popover } from "antd";
+import '../../../../../header/header.css'
+import CreatePerson from "./CreatePerson";
 
 const UserOfBodyMobile = () => {
 
@@ -223,27 +225,32 @@ const UserOfBodyMobile = () => {
 
   return (
     <main>
-      <div className="flex flex-col justify-center border border-green-500">
-        <div className="w-full border border-black flex  justify-center ">
-            <div className="w-fit border border-blue-500">
-                <img
-                    src={person3D}
-                    alt=""
-                    className="border border-solid border-searchBgColor rounded-lg"
-                  />
-            </div>
+      <div className="flex flex-col justify-center border border-searchBgColor rounded-lg px-4 py-5">
+        <div className="not-italic font-AeonikProMedium text-xl leading-5 text-black tracking-[1%]">Аватар вашего персонажа</div>
+        <div>
+          <CreatePerson/>
+          <div className="border-b mx-auto w-[80%] my-5 border-searchBgColor"></div>
         </div>
-        <div className="w-full border border-red-500 rounded-lg">
-            <div className="flex flex-col py-6 w-[440px] border-b border-searchBgColor">
-              <div className="text-[20px] font-AeonikProMedium mb-3 px-10">
+
+
+
+
+
+        <div className="max-w-[440px] w-[100%]  rounded-lg ">
+            <div className="flex flex-col w-full h-fit ">
+             
+              <div className=" w-full mt-1 mb-5 flex flex-col justify-center">
+                <span className="not-italic font-AeonikProMedium text-xl ss:text-start md:text-center leading-5   tracking-[0,16px] text-black">
                 Внешний вид персонажа
-              </div>
-              <p className="text-textColor font-AeonikProRegular mb-7 px-10">
+                </span>
+                <span className="mt-2 not-italic font-AeonikProRegular text-sm leading-4 ss:text-start md:text-center  text-setTexOpacity tracking-[0.16px]">
                 Введите параметры вашего тела
-              </p>
-              <div className="flex flex-col px-10">
-                <div className="flex items-center flex-row justify-between gap-x-5 mb-4">
-                  <div className="flex flex-col w-[47%]">
+                </span>
+              </div>
+
+              <div className="flex flex-col">
+                <div className="flex items-center flex-row justify-between gap-x-2 mb-4">
+                  <div className="flex flex-col w-[48%]">
                     <label
                       htmlFor="firstname"
                       className="mb-[6px] font-AeonikProRegular text-sm"
@@ -255,10 +262,10 @@ const UserOfBodyMobile = () => {
                       name="firstname"
                       id="firstname"
                       placeholder="Высота роста"
-                      className="bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor p-4 rounded-lg h-12"
+                      className="bg-btnBgColor font-AeonikProRegular ss:text-[14px] ll:text-base border border-solid border-searchBgColor p-4 rounded-lg h-12"
                     />
                   </div>
-                  <div className="flex flex-col w-[47%]">
+                  <div className="flex flex-col w-[48%]">
                     <label
                       htmlFor="firstname"
                       className="mb-[6px] font-AeonikProRegular text-sm"
@@ -274,11 +281,11 @@ const UserOfBodyMobile = () => {
                     />
                   </div>
                 </div>
-                <div className="flex items-center flex-row justify-between gap-x-5">
-                  <div className="flex flex-col w-1/2">
+                <div className="flex items-center flex-row justify-between gap-x-2">
+                  <div className="flex flex-col w-[48%]">
                     <label
                       htmlFor="waist"
-                      className="mb-[6px] font-AeonikProRegular text-sm"
+                      className="mb-[6px] font-AeonikProRegular  ss:text-[12px] ll:text-sm"
                     >
                       Обхват талии
                     </label>
@@ -291,7 +298,7 @@ const UserOfBodyMobile = () => {
                       placement="bottom"
                       content={contentWaistSize}
                     >
-                      <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                      <span className="not-italic font-AeonikProMedium text-center mt-1  ss:text-[12px] ll:text-sm leading-4 text-black">
                         {selectWaistSize}
                       </span>
                       <span>
@@ -305,10 +312,10 @@ const UserOfBodyMobile = () => {
                       </span>
                     </Popover>
                   </div>
-                  <div className="flex flex-col w-1/2">
+                  <div className="flex flex-col w-[48%]">
                     <label
                       htmlFor="waist"
-                      className="mb-[6px] font-AeonikProRegular text-sm"
+                      className="mb-[6px] font-AeonikProRegular  ss:text-[12px] ll:text-sm"
                     >
                       Обхват грудной клетки
                     </label>
@@ -321,7 +328,7 @@ const UserOfBodyMobile = () => {
                       placement="bottom"
                       content={contentChestSize}
                     >
-                      <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                      <span className="not-italic font-AeonikProMedium text-center mt-1  ss:text-[12px] ll:text-sm leading-4 text-black">
                         {selectChestSize}
                       </span>
                       <span>
@@ -338,8 +345,9 @@ const UserOfBodyMobile = () => {
                 </div>
               </div>
             </div>
+            <div className="border-b mx-auto w-[80%] my-5 border-searchBgColor"></div>
 
-            <div className="flex flex-col px-10 pt-6 w-[440px]">
+            <div className="flex flex-col w-full">
               <div className="text-[20px] font-AeonikProMedium mb-3">
                 Размеры одежды
               </div>
@@ -348,7 +356,7 @@ const UserOfBodyMobile = () => {
               </p>
 
               {/* Caps */}
-              <div className="w-full flex items-center pl-4 bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor rounded-lg h-12 mb-2">
+              <div className="w-full flex items-center pl-4 bg-btnBgColor font-AeonikProRegular ss:text-[14px] ll:text-base border border-solid border-searchBgColor rounded-lg h-12 mb-2">
                 <div className="flex items-center font-AeonikProMedium w-[75%] border-r border-searchBgColor h-12 bg-transparent pr-4">
                   Обхват головы{" "}
                   <span className="font-AeonikProRegular ml-1">(шапки)</span>
@@ -378,7 +386,7 @@ const UserOfBodyMobile = () => {
               </div>
 
               {/* Shirts */}
-              <div className="flex items-center pl-4 bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor rounded-lg h-12 mb-2">
+              <div className="flex items-center pl-4 bg-btnBgColor font-AeonikProRegular ss:text-[14px] ll:text-base border border-solid border-searchBgColor rounded-lg h-12 mb-2">
                 <div className="flex items-center font-AeonikProMedium w-[75%] border-r border-searchBgColor h-12 bg-transparent pr-4">
                   Верхняя одежда
                   <span className="font-AeonikProRegular ml-1">(рубашки)</span>
@@ -408,7 +416,7 @@ const UserOfBodyMobile = () => {
               </div>
 
               {/* Trousers */}
-              <div className="flex items-center pl-4 bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor rounded-lg h-12 mb-2">
+              <div className="flex items-center pl-4 bg-btnBgColor font-AeonikProRegular ss:text-[14px] ll:text-base border border-solid border-searchBgColor rounded-lg h-12 mb-2">
                 <div className="flex items-center font-AeonikProMedium w-[75%] border-r border-searchBgColor h-12 bg-transparent pr-4">
                   Нижняя одежда{" "}
                   <span className="font-AeonikProRegular ml-1">(брюки)</span>
@@ -438,7 +446,7 @@ const UserOfBodyMobile = () => {
               </div>
 
               {/* Shoes */}
-              <div className="flex items-center pl-4 bg-btnBgColor font-AeonikProRegular text-base border border-solid border-searchBgColor rounded-lg h-12">
+              <div className="flex items-center pl-4 bg-btnBgColor font-AeonikProRegular ss:text-[14px] ll:text-base border border-solid border-searchBgColor rounded-lg h-12">
                 <div className="flex items-center font-AeonikProMedium w-[75%] border-r border-searchBgColor h-12 bg-transparent pr-4">
                   Обувь
                   <span className="font-AeonikProRegular ml-1">
@@ -469,23 +477,20 @@ const UserOfBodyMobile = () => {
                 </Popover>
               </div>
 
-              <Link
-                to="/"
-                className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4 mb-4 mt-6"
-              >
-                <span className="mr-[10px]">Следующий шаг</span>
-                <img src={formArrowRightCircle} alt="" />
-              </Link>
-              <Link
-                to="/"
-                className="w-[360px] mx-auto bg-gray-400 flex items-center justify-center rounded-lg text-white mb-6 py-4"
-              >
-                <span className="mr-[10px]">Следующий шаг</span>
-                <img src={formArrowRightCircle} alt="" />
-              </Link>
+             
+             
             </div>
         </div>
       </div>
+       <div className="max-w-[440px] w-[100%] first-line:">
+                <Link
+                   to="/"
+                   className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4 mb-4 mt-6"
+                 >
+                   <span className="mr-[10px]">Создать персонажа</span>
+                   <img src={formArrowRightCircle} alt="" />
+                 </Link>
+       </div>
     </main>
   );
 };

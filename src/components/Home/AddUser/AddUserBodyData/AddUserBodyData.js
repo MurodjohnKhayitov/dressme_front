@@ -4,17 +4,17 @@ import { formArrowRightCircle, person3D } from "../../../../assets/imgs";
 import { BiChevronDown } from "react-icons/bi";
 import { Popover } from "antd";
 import UserOfBodyDesktop from "./UserOfBody/UserOfBodyDesktop";
-import UserOfBodyMobile from "./UserOfBody/UserOfBodyMobile";
+import UserOfBodyMobile from "./UserOfBody/UsermakeBodyMobile/UserOfBodyMobile";
+// import UserOfBodyMobile from "./UserOfBody/UserOfBodyMobile";
 
 const AddUserBodyData = () => {
   return (
     <div>
-      <div className="hidden">
+      <div className="hidden md:block">
         <UserOfBodyDesktop />
       </div>
-      <div className="px-4 py-5">
+      <div className="px-4 py-5 block md:hidden">
         <UserOfBodyMobile />
-
       </div>
     </div>
   );
