@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import Slider from "react-slick";
 
@@ -49,20 +49,21 @@ export default function YandexFilter() {
   let settings1 = {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    focusOnSelect: true,
     infinite: true,
-    arrows: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
     speed: 500,
-    dots: false,
-    slidesToShow: 8,
-    swipeToSlide: true,
-    initialSlide: 0,
+   
 
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 6,
-          slidesToScroll: 1,
+          slidesToScroll: 1,              
+          focusOnSelect: true,
+
           infinite: true,
         },
       },
@@ -70,7 +71,9 @@ export default function YandexFilter() {
         breakpoint: 770,
         settings: {
           slidesToShow: 7,
-          slidesToScroll: 1,
+          slidesToScroll: 1,              
+          focusOnSelect: true,
+
           initialSlide: 2,
         },
       },
@@ -78,14 +81,25 @@ export default function YandexFilter() {
         breakpoint: 560,
         settings: {
           slidesToShow: 5,
-          slidesToScroll: 1,
+          slidesToScroll: 1,              
+          focusOnSelect: true,
+
         },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 1,
+          slidesToScroll: 1,                 
+          focusOnSelect: true,
+
+          // focusOnSelect = true,
+
+          // swipeToSlide={true},
+        
+
+          // focusOnSelect={true},         
+
         },
       },
 
@@ -93,7 +107,9 @@ export default function YandexFilter() {
         breakpoint: 350,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToScroll: 1,              
+          focusOnSelect: true,
+
         },
       },
     ],
@@ -116,6 +132,11 @@ export default function YandexFilter() {
       <div className="w-full ss:block md:hidden flex items-center justify-between ">
         <Slider
           {...settings1}
+          // asNavFor={nav2}
+          // ref={slider => (slider2 = slider)}
+          // slidesToShow={3}
+          // swipeToSlide={true}
+          // focusOnSelect={true}
           className="w-[100%] h-full items-center  flex xs:justify-between  "
         >
           {wearGroup?.map((data) => {
