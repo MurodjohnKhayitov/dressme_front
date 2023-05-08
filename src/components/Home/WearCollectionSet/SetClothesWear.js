@@ -9,6 +9,7 @@ import {
   checkTrue,
   Liked,
   MenuClose,
+  miximize,
   model1,
   model2,
   modelToSet,
@@ -547,10 +548,10 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-1 ll:right-[6px] md:right-3 top-[23%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-8 ls:right-0 ll:right-[4px] md:right-3 top-[23%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center  md:rounded-full md:bg-btnBgColor duration-200 md:border md:border-solid md:border-searchBgColor	`}
         onClick={onClick}
       >
-        <GrFormNext size={15} />
+        <GrFormNext size={15} className="w-6 h-6 md:w-4 md:h-4" />
       </div>
     );
   };
@@ -558,10 +559,10 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-1 ll:left-[6px] md:left-3 top-[23%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor`}
+        className={`absolute left-8 ls:left-0 ll:left-[4px] md:left-3 top-[23%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center md:rounded-full md:bg-btnBgColor duration-200 md:border md:border-solid md:border-searchBgColor`}
         onClick={onClick}
       >
-        <GrFormPrevious size={15} />
+        <GrFormPrevious size={15} className="w-6 h-6 md:w-4 md:h-4"/>
       </div>
     );
   };
@@ -570,10 +571,10 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-1 ll:right-[6px] md:right-3 top-[37%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-8 ls:right-0 ll:right-[4px] md:right-3 top-[37%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center  md:rounded-full md:bg-btnBgColor duration-200 md:border md:border-solid md:border-searchBgColor	`}
         onClick={onClick}
       >
-        <GrFormNext size={15} />
+        <GrFormNext size={15} className="w-6 h-6 md:w-4 md:h-4" />
       </div>
     );
   };
@@ -581,10 +582,10 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-1 ll:left-[6px] md:left-3 top-[36%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute left-8 ls:left-0 ll:left-[4px] md:left-3 top-[36%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center md:rounded-full md:bg-btnBgColor duration-200 md:border md:border-solid md:border-searchBgColor	`}
         onClick={onClick}
       >
-        <GrFormPrevious size={15} />
+        <GrFormPrevious size={15} className="w-6 h-6 md:w-4 md:h-4" />
       </div>
     );
   };
@@ -593,10 +594,10 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-1 ll:right-[6px] md:right-3 top-[23%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-8 ls:right-0 ll:right-[4px] md:right-3 top-[23%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center  md:rounded-full md:bg-btnBgColor duration-200 md:border md:border-solid md:border-searchBgColor	`}
         onClick={onClick}
       >
-        <GrFormNext size={15} />
+        <GrFormNext size={15} className="w-6 h-6 md:w-4 md:h-4" />
       </div>
     );
   };
@@ -604,10 +605,10 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-1 ll:left-[6px] md:left-3 top-[22%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute left-8 ls:left-0 ll:left-[4px] md:left-3 top-[22%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center md:rounded-full md:bg-btnBgColor duration-200 md:border md:border-solid md:border-searchBgColor	`}
         onClick={onClick}
       >
-        <GrFormPrevious size={15} />
+        <GrFormPrevious size={15} className="w-6 h-6 md:w-4 md:h-4" />
       </div>
     );
   };
@@ -616,10 +617,10 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-1 ll:right-[6px] md:right-3 top-[14%] md:top-[25%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-8 ls:right-0 ll:right-[4px] md:right-3 top-[14%] md:top-[25%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center  md:rounded-full md:bg-btnBgColor duration-200 md:border md:border-solid md:border-searchBgColor	`}
         onClick={onClick}
       >
-        <GrFormNext size={15} />
+        <GrFormNext size={15} className="w-6 h-6 md:w-4 md:h-4" />
       </div>
     );
   };
@@ -627,10 +628,10 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-1 ll:left-[6px] md:left-3 top-[14%] md:top-[25%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute left-8 ls:left-0 ll:left-[4px] md:left-3 top-[14%] md:top-[25%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center md:rounded-full md:bg-btnBgColor duration-200 md:border md:border-solid md:border-searchBgColor	`}
         onClick={onClick}
       >
-        <GrFormPrevious size={15} />
+        <GrFormPrevious size={15} className="w-6 h-6 md:w-4 md:h-4" />
       </div>
     );
   };
@@ -750,8 +751,11 @@ export default function SetClothesWear() {
           >
             <div className="w-full border bg-white border-searchBgColor rounded-lg">
               {producListMap?.SetToModel ? (
-                <div className="w-full h-[350px] md:h-[572px] flex justify-center">
+                <div className="relative w-full h-[350px] md:h-[572px] flex justify-center">
                   <img src={model1} alt="" />
+                  <button className="absolute flex items-center justify-center bottom-2 right-2 w-8 h-8 md:w-0 md:h-0 rounded-lg border border-solid border-searchBgColor">
+                    <img src={miximize} alt="maxsimize-icon" />
+                  </button>
                 </div>
               ) : (
                 <div className="h-[350px] md:h-[572px] pt-3 md:pt-4">
@@ -1263,14 +1267,14 @@ export default function SetClothesWear() {
                         onClick={() => {
                           OpenShowModel(producListMap?.id);
                         }}
-                        className={` absolute top-[2px] md:top-[7px] right-2 group w-[36px] h-[36px] md:hover:w-[120px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
+                        className={` absolute top-1 md:top-[7px] right-2 group w-[32px] h-[32px] md:w-[36px] md:h-[36px] md:hover:w-[120px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
                       >
                         <span className="hidden md:flex flex-nowrap items-center ml-0 md:ml-[-100px] group-hover:ml-0 md:group-hover:ml-[12px]  not-italic overflow-hidden p-[1px] duration-300   font-AeonikProRegular leading-3  text-black text-sm ">
                           Структура
                         </span>
                         <span className="w-4 h-4 md:w-8 md:h-8 flex items-center justify-center">
                           <img
-                            className="ml-[18px] md:ml-0 md:mr-[2px]"
+                            className="ml-[14px] md:ml-0 md:mr-[2px]"
                             src={modelToSet}
                             alt="model-to-set"
                           />
@@ -1281,14 +1285,14 @@ export default function SetClothesWear() {
                         onClick={() => {
                           OpenShowModel(producListMap?.id);
                         }}
-                        className={`absolute top-[2px] md:top-[7px] right-2 group w-[36px] h-[36px] md:hover:w-[98px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
+                        className={`absolute top-1 md:top-[7px] right-2 group w-[32px] h-[32px] md:w-[36px] md:h-[36px] md:hover:w-[98px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
                       >
                         <span className="hidden md:flex flex-nowrap items-center ml-0 md:ml-[-100px] group-hover:ml-0 md:group-hover:ml-[14px]  not-italic overflow-hidden duration-300 font-AeonikProRegular leading-3  text-black text-sm ">
                           Модель
                         </span>
                         <span className="w-4 h-4 md:w-8 md:h-8 flex items-center justify-center">
                           <img
-                            className="ml-[18px] md:ml-0 md:mr-[2px]"
+                            className="ml-[14px] md:ml-0 md:mr-[2px]"
                             src={setpersonIcons}
                             alt="setpersonIcons"
                           />
@@ -1369,8 +1373,8 @@ export default function SetClothesWear() {
                       1054000
                     </span>
                   </div>
-                  <button className="absolute w-[36px] h-[36px] md:w-[40px] md:h-[40px] -right-1 bottom-2 md:right-0 md:bottom-0 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
-                    <img src={addBag} alt="addbag" className="w-8" />
+                  <button className="absolute w-[32px] h-[32px] md:w-[40px] md:h-[40px] -right-1 bottom-2 md:right-0 md:bottom-0 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                    <img src={addBag} alt="addbag" className="w-[28px]" />
                   </button>
                 </div>
               </div>
