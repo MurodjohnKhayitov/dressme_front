@@ -547,7 +547,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-1 md:right-3 top-[25%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-1 ll:right-[6px] md:right-3 top-[23%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormNext size={15} />
@@ -558,7 +558,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-1 md:left-3 top-[25%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor`}
+        className={`absolute left-1 ll:left-[6px] md:left-3 top-[23%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor`}
         onClick={onClick}
       >
         <GrFormPrevious size={15} />
@@ -570,7 +570,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-1 md:right-3 top-[40%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-1 ll:right-[6px] md:right-3 top-[37%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormNext size={15} />
@@ -581,7 +581,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-1 md:left-3 top-[40%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute left-1 ll:left-[6px] md:left-3 top-[36%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormPrevious size={15} />
@@ -593,7 +593,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-1 md:right-3 top-[25%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-1 ll:right-[6px] md:right-3 top-[23%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormNext size={15} />
@@ -604,7 +604,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-1 md:left-3 top-[25%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute left-1 ll:left-[6px] md:left-3 top-[22%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormPrevious size={15} />
@@ -616,7 +616,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute right-1 md:right-3 top-[18%] md:top-[25%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute right-1 ll:right-[6px] md:right-3 top-[14%] md:top-[25%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center  rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormNext size={15} />
@@ -627,7 +627,7 @@ export default function SetClothesWear() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute left-1 md:left-3 top-[18%] md:top-[25%] z-10 text-center cursor-pointer no-underline w-5 h-5 md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
+        className={`absolute left-1 ll:left-[6px] md:left-3 top-[14%] md:top-[25%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center rounded-full bg-btnBgColor duration-200 border border-solid border-searchBgColor	`}
         onClick={onClick}
       >
         <GrFormPrevious size={15} />
@@ -768,7 +768,7 @@ export default function SetClothesWear() {
                               <div className="group relative w-full h-full flex items-center justify-center ">
                                 <div className="w-full h-full hover:scale-110 ease-in-out	duration-300 flex items-center justify-center">
                                   <img
-                                    className="w-[100px] h-full m-auto  "
+                                    className="md:w-[full] h-full m-auto  "
                                     src={item?.head_wear_img}
                                     alt="head_wear_img"
                                   />
@@ -781,20 +781,23 @@ export default function SetClothesWear() {
                                   } `}
                                 >
                                   {!item?.active ? (
-                                    <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                    <div className="absolute w-[18px] h-[18px] md:w-6 md:h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
                                       <img
                                         src={statusFalse}
                                         alt="statusFalse"
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
-                                    <img src={Liked} alt="Liked" />
+                                  <div className="absolute w-[18px] h-[18px] md:w-6 md:h-6 flex items-center justify-center top-[2px] right-[2px] md:top-1 md:right-1 cursor-pointer border border-searchBgColor bg-white rounded-[6px] md:rounded-lg">
+                                    <img 
+                                    src={Liked} 
+                                    alt="Liked" 
+                                    className="w-[80%] md:w-[100%] pr-[1px] pt-[1px] md:pr-0 md:pt-0" />
                                   </div>
                                 </div>
-                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
-                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
-                                    <img src={nextInfo} alt="nextInfo" />
+                                <div className="absolute top-[-20px] left-[2px] md:bottom-[-35px] md:right-1 group-hover:top-[2px] md:group-hover:bottom-1 duration-300 flex justify-end">
+                                  <div className=" z-50 w-[18px] h-[18px] md:w-6 md:h-6 cursor-pointer border border-searchBgColor  bg-white rounded-[6px] md:rounded-lg flex items-center justify-center">
+                                    <img src={nextInfo} alt="nextInfo" className="w-[80%] md:w-[100%] pr-[1px]  md:pr-0"/>
                                   </div>
                                 </div>
                               </div>
@@ -816,7 +819,7 @@ export default function SetClothesWear() {
                               <div className="group relative w-full h-full flex items-center justify-center">
                                 <div className="w-full h-full hover:scale-110   ease-in-out	duration-300">
                                   <img
-                                    className="w-[100px] h-full m-auto  "
+                                    className="m-auto md:w-[full] h-full pr-[1px] pt-[1px] md:pr-0 md:pt-0 "
                                     src={item?.head_wear_img}
                                     alt="head_wear_img"
                                   />
@@ -829,15 +832,18 @@ export default function SetClothesWear() {
                                   } `}
                                 >
                                   {!item?.active ? (
-                                    <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                    <div className="absolute  w-[18px] h-[18px] md:w-6 md:h-6  cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
                                       <img
                                         src={statusFalse}
                                         alt="statusFalse"
+                                        className="w-[80%] md:w-[100%] pr-[1px] pt-[1px] md:pr-0 md:pt-0" 
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
-                                    <img src={Liked} alt="Liked" />
+                                  <div className="absolute w-[18px] h-[18px] md:w-6 md:h-6 flex items-center justify-center top-[2px] right-[2px] md:top-1 md:right-1 cursor-pointer border border-searchBgColor bg-white rounded-[6px] md:rounded-lg">
+                                    <img src={Liked} 
+                                    alt="Liked" 
+                                    className="w-[80%] md:w-[100%]  pl-[1px] pt-[1px] md:pl-0 md:pt-0"/>
                                   </div>
                                 </div>
                                 <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
@@ -1257,14 +1263,14 @@ export default function SetClothesWear() {
                         onClick={() => {
                           OpenShowModel(producListMap?.id);
                         }}
-                        className={` absolute top-[7px] right-2 group w-[26px] h-[26px] md:w-9 md:h-9 md:hover:w-[120px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
+                        className={` absolute top-[4px] md:top-[7px] right-2 group w-[32px] h-[32px] md:w-9 md:h-9 md:hover:w-[120px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
                       >
                         <span className="hidden md:flex flex-nowrap items-center ml-0 md:ml-[-100px] group-hover:ml-0 md:group-hover:ml-[12px]  not-italic overflow-hidden p-[1px] duration-300   font-AeonikProRegular leading-3  text-black text-sm ">
                           Структура
                         </span>
                         <span className="w-4 h-4 md:w-8 md:h-8 flex items-center justify-center">
                           <img
-                            className="ml-2 md:ml-0 md:mr-[2px]"
+                            className="ml-[14px] md:ml-0 md:mr-[2px]"
                             src={modelToSet}
                             alt="model-to-set"
                           />
@@ -1275,14 +1281,14 @@ export default function SetClothesWear() {
                         onClick={() => {
                           OpenShowModel(producListMap?.id);
                         }}
-                        className={`absolute top-[7px] right-2 group w-[26px] h-[26px] md:w-9 md:h-9 md:hover:w-[98px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
+                        className={`absolute top-[4px] md:top-[7px] right-2 group w-[32px] h-[32px] md:w-9 md:h-9 md:hover:w-[98px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
                       >
                         <span className="hidden md:flex flex-nowrap items-center ml-0 md:ml-[-100px] group-hover:ml-0 md:group-hover:ml-[14px]  not-italic overflow-hidden duration-300 font-AeonikProRegular leading-3  text-black text-sm ">
                           Модель
                         </span>
                         <span className="w-4 h-4 md:w-8 md:h-8 flex items-center justify-center">
                           <img
-                            className="ml-2 md:ml-0 md:mr-[2px]"
+                            className="ml-[14px] md:ml-0 md:mr-[2px]"
                             src={setpersonIcons}
                             alt="setpersonIcons"
                           />
