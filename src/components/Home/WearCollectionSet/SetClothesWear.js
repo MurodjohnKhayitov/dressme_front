@@ -781,23 +781,23 @@ export default function SetClothesWear() {
                                   } `}
                                 >
                                   {!item?.active ? (
-                                    <div className="absolute w-[18px] h-[18px] md:w-6 md:h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                    <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
                                       <img
                                         src={statusFalse}
                                         alt="statusFalse"
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-[18px] h-[18px] md:w-6 md:h-6 flex items-center justify-center top-[2px] right-[2px] md:top-1 md:right-1 cursor-pointer border border-searchBgColor bg-white rounded-[6px] md:rounded-lg">
+                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-[2px] right-[2px] md:top-1 md:right-1 cursor-pointer border border-searchBgColor bg-white rounded-[6px] md:rounded-lg">
                                     <img 
                                     src={Liked} 
                                     alt="Liked" 
-                                    className="w-[80%] md:w-[100%] pr-[1px] pt-[1px] md:pr-0 md:pt-0" />
+                                    className="pr-0 pt-0" />
                                   </div>
                                 </div>
-                                <div className="absolute top-[-20px] left-[2px] md:bottom-[-35px] md:right-1 group-hover:top-[2px] md:group-hover:bottom-1 duration-300 flex justify-end">
-                                  <div className=" z-50 w-[18px] h-[18px] md:w-6 md:h-6 cursor-pointer border border-searchBgColor  bg-white rounded-[6px] md:rounded-lg flex items-center justify-center">
-                                    <img src={nextInfo} alt="nextInfo" className="w-[80%] md:w-[100%] pr-[1px]  md:pr-0"/>
+                                <div className="absolute md:bottom-[-35px] md:right-1 md:group-hover:bottom-1 duration-300 flex justify-end">
+                                  <div className="z-50 w-4 h-4 md:w-6 md:h-6 cursor-pointer border border-searchBgColor   bg-white rounded-[6px] md:rounded-lg flex items-center justify-center">
+                                    <img src={nextInfo} alt="nextInfo" className="pr-0"/>
                                   </div>
                                 </div>
                               </div>
@@ -895,11 +895,11 @@ export default function SetClothesWear() {
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
                                     <img src={Liked} alt="Liked" />
                                   </div>
                                 </div>
-                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 hidden md:flex justify-end">
                                   <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
                                     <img src={nextInfo} alt="nextInfo" />
                                   </div>
@@ -934,18 +934,18 @@ export default function SetClothesWear() {
                                     } `}
                                   >
                                     {!item?.active ? (
-                                      <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                      <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg hidden md:flex items-center justify-center">
                                         <img
                                           src={statusFalse}
                                           alt="statusFalse"
                                         />
                                       </div>
                                     ) : null}
-                                    <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                    <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
                                       <img src={Liked} alt="Liked" />
                                     </div>
                                   </div>
-                                  <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                  <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 hidden md:flex justify-end">
                                     <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
                                       <img src={nextInfo} alt="nextInfo" />
                                     </div>
@@ -978,25 +978,25 @@ export default function SetClothesWear() {
                                   />
                                 </div>
                                 <div
-                                  className={`   flex ${
+                                  className={`hidden md:flex ${
                                     !item?.active
                                       ? "justify-between"
                                       : "justify-end"
                                   } `}
                                 >
                                   {!item?.active ? (
-                                    <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                    <div className="absolute w-6 h-6 cursor-pointer border border-searchBgColor bg-white rounded-lg items-center justify-center">
                                       <img
                                         src={statusFalse}
                                         alt="statusFalse"
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
                                     <img src={Liked} alt="Liked" />
                                   </div>
                                 </div>
-                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                <div className="hidden md:flex absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300  justify-end">
                                   <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
                                     <img src={nextInfo} alt="nextInfo" />
                                   </div>
@@ -1037,11 +1037,11 @@ export default function SetClothesWear() {
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
                                     <img src={Liked} alt="Liked" />
                                   </div>
                                 </div>
-                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 hidden md:flex justify-end">
                                   <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
                                     <img src={nextInfo} alt="nextInfo" />
                                   </div>
@@ -1087,11 +1087,11 @@ export default function SetClothesWear() {
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
                                     <img src={Liked} alt="Liked" />
                                   </div>
                                 </div>
-                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 hidden md:flex justify-end">
                                   <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
                                     <img src={nextInfo} alt="nextInfo" />
                                   </div>
@@ -1132,12 +1132,12 @@ export default function SetClothesWear() {
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
                                     <img src={Liked} alt="Liked" />
                                   </div>
                                 </div>
-                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
-                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 hidden md:flex justify-end">
+                                  <div className=" z-50 w-6 h-6 cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
                                     <img src={nextInfo} alt="nextInfo" />
                                   </div>
                                 </div>
@@ -1182,12 +1182,12 @@ export default function SetClothesWear() {
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
                                     <img src={Liked} alt="Liked" />
                                   </div>
                                 </div>
-                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
-                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 hidden md:flex justify-end">
+                                  <div className=" z-50 w-6 h-6 cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
                                     <img src={nextInfo} alt="nextInfo" />
                                   </div>
                                 </div>
@@ -1227,12 +1227,12 @@ export default function SetClothesWear() {
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-6 h-6 flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
                                     <img src={Liked} alt="Liked" />
                                   </div>
                                 </div>
                                 <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
-                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg hidden md:flex items-center justify-center">
                                     <img src={nextInfo} alt="nextInfo" />
                                   </div>
                                 </div>
@@ -1370,7 +1370,7 @@ export default function SetClothesWear() {
                     </span>
                   </div>
                   <button className="absolute w-[36px] h-[36px] md:w-[40px] md:h-[40px] -right-1 bottom-2 md:right-0 md:bottom-0 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
-                    <img src={addBag} alt="addbag" className="w-8" />
+x                    <img src={addBag} alt="addbag" className="w-8" />
                   </button>
                 </div>
               </div>
