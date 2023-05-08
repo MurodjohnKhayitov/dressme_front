@@ -31,19 +31,18 @@ export default function YandexMapsIndex() {
               </div>
             )}
           </div>
-          {/* {!dressInfo?.yandexOpenMarket && (
+          {!dressInfo?.yandexOpenMarket && (
             <div
               className={`flex flex-col justify-center  fixed left-0 right-0 z-55  md:top-[105px] ss:top-auto ${
                 !dressInfo?.yandexFullScreen
                   ? "ss:bottom-[63px] "
                   : "ss:bottom-[0]"
               }  md:bottom-auto
-
             `}
             >
               <YandexFilter />
             </div>
-          )} */}
+          )}
         </div>
         <Outlet />
       </div>

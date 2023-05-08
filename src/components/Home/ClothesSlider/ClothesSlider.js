@@ -706,7 +706,7 @@ export default function ClothesSlider() {
                         {data?.price}{" "}
                       </div>
                       <div className="flex items-center">
-                        <button className="w-[32px] h-[32px] mb-[4px]  rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                        <button className="w-[32px] h-[32px] mb-[4px] overflow-hidden rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
                           <img src={addBag} alt="addbag" className="w-8" />
                         </button>
                       </div>

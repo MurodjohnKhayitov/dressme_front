@@ -22,6 +22,8 @@ import YandexSkeletonIndex from "../components/YandexMap/YandexMapsSkeleton/Yand
 // import ForgetPasswordIndex from "../components/Authentication/SignInDetail";
 import ConfirmPassword from "../components/Authentication/ConfirmPassword/ConfirmPassword";
 
+import LoadingOpacity from "../Page/Loading/LoadingOpacity";
+
 // --------With lazy component
 const HomePage = React.lazy(() => import("../Page/Home/Home"));
 const AddUserPrivateInfo = React.lazy(() =>
@@ -67,7 +69,7 @@ const RouterList = () => {
               <React.Suspense
                 fallback={
                   <div>
-                    <SkeletonHomeIndex />
+                    <LoadingOpacity />
                   </div>
                 }
               >
@@ -75,7 +77,6 @@ const RouterList = () => {
               </React.Suspense>
             }
           />
-          
         </Route>
 
         {/* Yandex Maps */}
@@ -86,7 +87,7 @@ const RouterList = () => {
               <React.Suspense
                 fallback={
                   <div>
-                    <YandexSkeletonIndex />
+                    <LoadingOpacity />
                   </div>
                 }
               >
@@ -104,7 +105,7 @@ const RouterList = () => {
               <React.Suspense
                 fallback={
                   <div>
-                    <AddUserPrivateSkeleton />
+                    <LoadingOpacity />
                   </div>
                 }
               >
@@ -118,7 +119,7 @@ const RouterList = () => {
               <React.Suspense
                 fallback={
                   <div>
-                    <AddUserBodySkeleton />
+                    <LoadingOpacity />
                   </div>
                 }
               >
@@ -135,7 +136,7 @@ const RouterList = () => {
               <React.Suspense
                 fallback={
                   <div>
-                    <SignInSkeletonIndex />
+                    <LoadingOpacity />
                   </div>
                 }
               >
@@ -149,7 +150,7 @@ const RouterList = () => {
               <React.Suspense
                 fallback={
                   <div>
-                    <SignUpSkeletonIndex />
+                    <LoadingOpacity />
                   </div>
                 }
               >
@@ -163,7 +164,7 @@ const RouterList = () => {
               <React.Suspense
                 fallback={
                   <div>
-                    <SignUpSkeletonIndex />
+                    <LoadingOpacity />
                   </div>
                 }
               >
@@ -177,7 +178,7 @@ const RouterList = () => {
               <React.Suspense
                 fallback={
                   <div>
-                    <SignUpSkeletonIndex />
+                    <LoadingOpacity />
                   </div>
                 }
               >
@@ -191,7 +192,7 @@ const RouterList = () => {
               <React.Suspense
                 fallback={
                   <div>
-                    <SignUpSkeletonIndex />
+                    <LoadingOpacity />
                   </div>
                 }
               >
@@ -205,7 +206,7 @@ const RouterList = () => {
               <React.Suspense
                 fallback={
                   <div>
-                    <SignUpSkeletonIndex />
+                    <LoadingOpacity />
                   </div>
                 }
               >
