@@ -34,7 +34,7 @@ export default function YandexFilter() {
           );
         })}
       </div>
-      <div className="Container ss:block  md:hidden">
+      {/* <div className="Container ss:block  md:hidden">
         <ScrollFilter _class="items gap-x-2 pl-3">
           {wearGroup?.map((data) => {
             return (
@@ -46,7 +46,7 @@ export default function YandexFilter() {
             );
           })}
         </ScrollFilter>
-      </div>
+      </div> */}
     </div>
   );
 }
