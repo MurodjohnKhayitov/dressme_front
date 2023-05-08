@@ -213,6 +213,7 @@ export { default as nextInfo } from "./Set/nextInfo.svg";
 export { default as statusFalse } from "./Set/statusFalse.svg";
 export { default as RightBlack } from "./Set/RightBlack.svg";
 export { default as LeftBlack } from "./Set/LeftBlack.svg";
+export { default as miximize } from "./Set/maximize.svg";
 
 // ------------------------Weather------------
 export { default as weatherBrandIcon } from "./Weather/weatherBrandIcon.svg";
