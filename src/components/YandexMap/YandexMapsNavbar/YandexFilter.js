@@ -1,7 +1,8 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import Slider from "react-slick";
-
+import "../yandex.css";
+import ScrollFilter from "./ScrollFilter";
 export default function YandexFilter() {
   const wearGroup = [
     { id: 1, name: "Футболки" },
@@ -13,110 +14,14 @@ export default function YandexFilter() {
     { id: 7, name: "Толстовки" },
     { id: 8, name: "Обуви" },
     { id: 9, name: "Куртки" },
-    { id: 10, name: "Сапоги" }, 
+    { id: 10, name: "Сапоги" },
     { id: 11, name: "Платья" },
     { id: 12, name: "Юбки" },
     { id: 13, name: "Ремень" },
   ];
-  const NextArrow = (props) => {
-    const { onClick } = props;
-    return (
-      <div
-        className={`absolute ss:hidden text-center cursor-pointer no-underline  w-12 h-12 flex items-center justify-center top-[3px] z-50	right-[-1px]  rounded-full bg-white duration-200 border  border-searchBgColor		`}
-        onClick={onClick}
-      >
-        <button className="next">
-          <GrFormNext size={20} />
-        </button>
-      </div>
-    );
-  };
 
-  const PrevArrow = (props) => {
-    const { onClick } = props;
-    return (
-      <div
-        className={`absolute ss:hidden text-center cursor-pointer no-underline  w-12 h-12 flex items-center justify-center top-[3px] z-10	left-[0px]  rounded-full bg-white duration-200 border  border-searchBgColor`}
-        onClick={onClick}
-      >
-        <button className="prev">
-          <GrFormPrevious size={20} />
-        </button>
-      </div>
-    );
-  };
-
-  let settings1 = {
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    focusOnSelect: true,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    speed: 500,
-   
-
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 6,
-          slidesToScroll: 1,              
-          focusOnSelect: true,
-
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 770,
-        settings: {
-          slidesToShow: 7,
-          slidesToScroll: 1,              
-          focusOnSelect: true,
-
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 560,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 1,              
-          focusOnSelect: true,
-
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,                 
-          focusOnSelect: true,
-
-          // focusOnSelect = true,
-
-          // swipeToSlide={true},
-        
-
-          // focusOnSelect={true},         
-
-        },
-      },
-
-      {
-        breakpoint: 350,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,              
-          focusOnSelect: true,
-
-        },
-      },
-    ],
-  };
- 
   return (
-    <div className=" max-w-[1280px] w-[100%] py-2 ss:px-3 mt-[-2px] md:px-6 overflow-hidden md:rounded-b-[16px] bg-yandexNavbar border border-searchBgColor border-t-0 backdrop-blur-sm flex justify-between items-center m-auto md:border-t">
+    <div className=" max-w-[1280px] w-[100%] py-2 mt-[-2px] md:px-6  md:rounded-b-[16px] bg-yandexNavbar border border-searchBgColor border-t-0 backdrop-blur-sm flex justify-between items-center m-auto md:border-t">
       <div className="w-full ss:hidden  md:block md:flex  items-center justify-between ">
         {wearGroup?.map((data) => {
           return (
@@ -129,30 +34,18 @@ export default function YandexFilter() {
           );
         })}
       </div>
-      <div className="w-full ss:block md:hidden flex items-center justify-between ">
-        <Slider
-          {...settings1}
-          // asNavFor={nav2}
-          // ref={slider => (slider2 = slider)}
-          // slidesToShow={3}
-          // swipeToSlide={true}
-          // focusOnSelect={true}
-          className="w-[100%] h-full items-center  flex xs:justify-between  "
-        >
+      <div className="Container ss:block  md:hidden">
+        <ScrollFilter _class="items gap-x-2 pl-3">
           {wearGroup?.map((data) => {
             return (
-              <div key={data.id} className="!w-[84px]  h-full ">
-                <div
-                  className={` w-full h-[38px] px-3 m-auto  bg-white rounded-lg flex justify-center items-center cursor-pointer  border border-searchBgColor  `}
-                >
-                  <p className=" cursor-pointer rounded-lg bg-white not-italic font-AeonikProMedium text-sm text-black tracking-[1%] ">
-                    {data?.name || "0"}
-                  </p>
-                </div>
+              <div key={data.id} className={`item  `}>
+                <p className=" cursor-pointer rounded-lg bg-white not-italic font-AeonikProMedium text-sm text-black tracking-[1%] ">
+                  {data?.name || "0"}
+                </p>
               </div>
             );
           })}
-        </Slider>
+        </ScrollFilter>
       </div>
     </div>
   );
