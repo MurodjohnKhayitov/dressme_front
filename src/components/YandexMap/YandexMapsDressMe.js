@@ -48,30 +48,32 @@ import { GrFormDown } from "react-icons/gr";
 import NavbarTopOpenMenu from "./YandexMapsNavbar/NavbarTopOpenMenu";
 import NavMenu from "../header/nav-menu";
 import { Link } from "react-router-dom";
+import ScrollFilter from "./YandexMapsNavbar/ScrollFilter";
 
 function YandexMapsDressMe() {
   // const [openMenuYandex, setOpenMenuYandex] = useState(false);
+  const wearGroup = [
+    { id: 1, name: "Футболки" },
+    { id: 2, name: "Рубашки" },
+    { id: 3, name: "Шорты" },
+    { id: 4, name: "Джинсы" },
+    { id: 5, name: "Свитер" },
+    { id: 6, name: "Куртки" },
+    { id: 7, name: "Толстовки" },
+    { id: 8, name: "Обуви" },
+    { id: 9, name: "Куртки" },
+    { id: 10, name: "Сапоги" },
+    { id: 11, name: "Платья" },
+    { id: 12, name: "Юбки" },
+    { id: 13, name: "Ремень" },
+  ];
 
   const [coords, setCoords] = useState("");
   const onMapClick = (e) => {
     const coord = e.get("coords");
     setCoords({ ...coords, coords: coord });
   };
-  async function zoomCOntrols() {
-    try {
-      return await (
-        <ZoomControl
-          options={{
-            float: "right",
-            position: { bottom: 270, right: 10, size: "small" },
-            size: "small",
-          }}
-        />
-      );
-    } catch (e) {
-      console.log(e);
-    }
-  }
+
   const [points, setPoints] = useState([
     {
       id: 1,
@@ -442,7 +444,13 @@ function YandexMapsDressMe() {
                 size: "small", 
               }}
             /> */}
-            <zoomCOntrols />
+            <ZoomControl
+              options={{
+                float: "right",
+                position: { bottom: 270, right: 10, size: "small" },
+                size: "small",
+              }}
+            />{" "}
             {/* ---------- */}
             <Clusterer
               // className="bg-green-500 text-red-500"
@@ -484,7 +492,6 @@ function YandexMapsDressMe() {
                 />
               ))}
             </Clusterer>
-
             {/* yandex menu Open Full Code */}
             <div className="relative">
               {!dressInfo?.yandexOpenMenu ? (
@@ -733,7 +740,6 @@ function YandexMapsDressMe() {
                 </div>
               </div>
             </div>
-
             {/* Yandex Main menu */}
             <div
               className={`fixed top-[70px] left-0 right-0 overscroll-none overflow-y-scroll ${
@@ -890,7 +896,6 @@ function YandexMapsDressMe() {
                 </div>
               </div>
             </div>
-
             {/* Yandex Search */}
             <div
               className={`absolute ${
@@ -931,7 +936,6 @@ function YandexMapsDressMe() {
                 {/* <div className="w-[20%] h-full flex items-center border border-red-400"></div> */}
               </div>
             </div>
-
             {/* Yandex Shopping Card */}
             {!dressInfo?.yandexOpenMarket && (
               <div
@@ -979,6 +983,28 @@ function YandexMapsDressMe() {
                 </div>
               </div>
             </div>
+            {!dressInfo?.yandexOpenMarket && (
+              <div
+                className={`fixed   bg-white  z-[55]  ${
+                  !dressInfo?.yandexFullScreen ? "bottom-[63px] " : "bottom-[0]"
+                }   w-full  bg-yandexNavbar flex items-center py-2
+
+            `}
+              >
+                {/* <YandexFilter /> */}
+                <ScrollFilter _class="items gap-x-2 pl-3">
+                  {wearGroup?.map((data) => {
+                    return (
+                      <div key={data.id} className={`item  `}>
+                        <p className=" cursor-pointer rounded-lg bg-white not-italic font-AeonikProMedium text-sm text-black tracking-[1%] ">
+                          {data?.name || "0"}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </ScrollFilter>
+              </div>
+            )}
             {!dressInfo?.yandexFullScreen && (
               <div
                 className={`fixed bottom-0 w-full bg-white z-[54] block md:hidden`}
