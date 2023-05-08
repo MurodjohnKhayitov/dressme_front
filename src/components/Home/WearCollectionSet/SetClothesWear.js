@@ -796,7 +796,7 @@ export default function SetClothesWear() {
                                   </div>
                                 </div>
                                 <div className="absolute md:bottom-[-35px] md:right-1 md:group-hover:bottom-1 duration-300 flex justify-end">
-                                  <div className="z-50 w-4 h-4 md:w-6 md:h-6 cursor-pointer border border-searchBgColor   bg-white rounded-[6px] md:rounded-lg flex items-center justify-center">
+                                  <div className="z-50 w-4 h-4 md:w-6 md:h-6 cursor-pointer border border-searchBgColor   bg-white rounded-[6px] md:rounded-lg hidden md:flex items-center justify-center">
                                     <img src={nextInfo} alt="nextInfo" className="pr-0"/>
                                   </div>
                                 </div>
@@ -840,13 +840,13 @@ export default function SetClothesWear() {
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-[18px] h-[18px] md:w-6 md:h-6 flex items-center justify-center top-[2px] right-[2px] md:top-1 md:right-1 cursor-pointer border border-searchBgColor bg-white rounded-[6px] md:rounded-lg">
+                                  <div className="absolute w-[18px] h-[18px] md:w-6 md:h-6 hidden md:flex items-center justify-center top-[2px] right-[2px] md:top-1 md:right-1 cursor-pointer border border-searchBgColor bg-white rounded-[6px] md:rounded-lg">
                                     <img src={Liked} 
                                     alt="Liked" 
                                     className="w-[80%] md:w-[100%]  pl-[1px] pt-[1px] md:pl-0 md:pt-0"/>
                                   </div>
                                 </div>
-                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
+                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 hidden md:flex justify-end">
                                   <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
                                     <img src={nextInfo} alt="nextInfo" />
                                   </div>
@@ -1263,14 +1263,14 @@ export default function SetClothesWear() {
                         onClick={() => {
                           OpenShowModel(producListMap?.id);
                         }}
-                        className={` absolute top-[4px] md:top-[7px] right-2 group w-[32px] h-[32px] md:w-9 md:h-9 md:hover:w-[120px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
+                        className={` absolute top-[2px] md:top-[7px] right-2 group w-[36px] h-[36px] md:hover:w-[120px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
                       >
                         <span className="hidden md:flex flex-nowrap items-center ml-0 md:ml-[-100px] group-hover:ml-0 md:group-hover:ml-[12px]  not-italic overflow-hidden p-[1px] duration-300   font-AeonikProRegular leading-3  text-black text-sm ">
                           Структура
                         </span>
                         <span className="w-4 h-4 md:w-8 md:h-8 flex items-center justify-center">
                           <img
-                            className="ml-[14px] md:ml-0 md:mr-[2px]"
+                            className="ml-[18px] md:ml-0 md:mr-[2px]"
                             src={modelToSet}
                             alt="model-to-set"
                           />
@@ -1281,14 +1281,14 @@ export default function SetClothesWear() {
                         onClick={() => {
                           OpenShowModel(producListMap?.id);
                         }}
-                        className={`absolute top-[4px] md:top-[7px] right-2 group w-[32px] h-[32px] md:w-9 md:h-9 md:hover:w-[98px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
+                        className={`absolute top-[2px] md:top-[7px] right-2 group w-[36px] h-[36px] md:hover:w-[98px] bg-bgCard hover:bg-white   duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between`}
                       >
                         <span className="hidden md:flex flex-nowrap items-center ml-0 md:ml-[-100px] group-hover:ml-0 md:group-hover:ml-[14px]  not-italic overflow-hidden duration-300 font-AeonikProRegular leading-3  text-black text-sm ">
                           Модель
                         </span>
                         <span className="w-4 h-4 md:w-8 md:h-8 flex items-center justify-center">
                           <img
-                            className="ml-[14px] md:ml-0 md:mr-[2px]"
+                            className="ml-[18px] md:ml-0 md:mr-[2px]"
                             src={setpersonIcons}
                             alt="setpersonIcons"
                           />
@@ -1370,7 +1370,7 @@ export default function SetClothesWear() {
                     </span>
                   </div>
                   <button className="absolute w-[36px] h-[36px] md:w-[40px] md:h-[40px] -right-1 bottom-2 md:right-0 md:bottom-0 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
-x                    <img src={addBag} alt="addbag" className="w-8" />
+                    <img src={addBag} alt="addbag" className="w-8" />
                   </button>
                 </div>
               </div>
