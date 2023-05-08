@@ -985,7 +985,7 @@ function YandexMapsDressMe() {
             </div>
             {!dressInfo?.yandexOpenMarket && (
               <div
-                className={`fixed   bg-white  z-[55]  ${
+                className={`fixed block md:hidden  bg-white  z-[55]  ${
                   !dressInfo?.yandexFullScreen ? "bottom-[63px] " : "bottom-[0]"
                 }   w-full  bg-yandexNavbar flex items-center py-2
 

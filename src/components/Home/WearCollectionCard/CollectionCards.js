@@ -435,7 +435,6 @@ export default function CollectionCards() {
 
   return (
     <div className="flex flex-col box-border mt-[86px]">
-      
       <div className="w-full ss:block sm:flex justify-between items-center mb-[25px] md:mb-0 md:px-0">
         <div className="not-italic font-AeonikProMedium lg:w-fit lg:text-2xl xl:text-3xl flex items-center leading-8 text-black">
           <span>Коллекция одежд, которые вам подходят</span>
@@ -617,7 +616,7 @@ export default function CollectionCards() {
                         )}
                       </div>
                       <div className="flex items-center">
-                        <button className="w-[32px] h-[32px] mb-[4px]  rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                        <button className="w-[32px] h-[32px] mb-[4px]  rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor flex items-center justify-center">
                           <img src={addBag} alt="addbag" className="w-8" />
                         </button>
                       </div>
