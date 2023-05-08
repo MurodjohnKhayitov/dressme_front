@@ -14,7 +14,8 @@ export default function YandexMapsIndex() {
       <div className="max-w-[1320px] w-[100%] ss:block md:flex  md:py-0 justify-center items-center m-auto ">
         {/* {!dressInfo?.yandexOpenMenu ? ( */}
         <div>
-          <div className={`ss:px-3 mt-[1px] md:mt-0 md:px-[40px] md:rounded-b-[16px] ${
+          <div
+            className={`ss:px-3 mt-[1px] md:mt-0 md:px-[40px] md:rounded-b-[16px] ${
               !dressInfo?.yandexOpenMarket
                 ? "bg-yandexNavbar backdrop-blur-sm"
                 : "bg-white"
@@ -31,10 +32,15 @@ export default function YandexMapsIndex() {
             )}
           </div>
           {!dressInfo?.yandexOpenMarket && (
+            <div
+              className={`flex flex-col justify-center overflow-hidden fixed left-0 right-0 z-55  md:top-[105px] ss:top-auto ${
+                !dressInfo?.yandexFullScreen
+                  ? "ss:bottom-[63px] "
+                  : "ss:bottom-[0]"
+              }  md:bottom-auto
 
-            <div className={`flex flex-col justify-center overflow-hidden fixed left-0 right-0  md:top-[105px] ss:top-auto ${ !dressInfo?.yandexFullScreen ? 'ss:bottom-[63px] ' : 'ss:bottom-[0]' }  md:bottom-auto
-
-            `}>
+            `}
+            >
               <YandexFilter />
             </div>
           )}
@@ -46,8 +52,7 @@ export default function YandexMapsIndex() {
 }
 // ${ !dressInfo?.yandexFullScreen ? 'bottom-[-535px] ' : 'bottom-[-670px]' }
 
-
 // position: absolute;
-    // left: 0;
-    // bottom: -669px;
-    // right: 0;
+// left: 0;
+// bottom: -669px;
+// right: 0;

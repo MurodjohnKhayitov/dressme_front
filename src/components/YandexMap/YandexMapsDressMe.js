@@ -48,6 +48,7 @@ import { GrFormDown } from "react-icons/gr";
 import NavbarTopOpenMenu from "./YandexMapsNavbar/NavbarTopOpenMenu";
 import NavMenu from "../header/nav-menu";
 import { Link } from "react-router-dom";
+
 function YandexMapsDressMe() {
   // const [openMenuYandex, setOpenMenuYandex] = useState(false);
 
@@ -56,6 +57,21 @@ function YandexMapsDressMe() {
     const coord = e.get("coords");
     setCoords({ ...coords, coords: coord });
   };
+  async function zoomCOntrols() {
+    try {
+      return await (
+        <ZoomControl
+          options={{
+            float: "right",
+            position: { bottom: 270, right: 10, size: "small" },
+            size: "small",
+          }}
+        />
+      );
+    } catch (e) {
+      console.log(e);
+    }
+  }
   const [points, setPoints] = useState([
     {
       id: 1,
@@ -198,7 +214,7 @@ function YandexMapsDressMe() {
       imgs: [{ id: 1, img: "" }],
       direction:
         'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
-      cordinate: [41.337827, 69.224570],
+      cordinate: [41.337827, 69.22457],
     },
     {
       id: 14,
@@ -209,7 +225,7 @@ function YandexMapsDressMe() {
       imgs: [{ id: 1, img: "" }],
       direction:
         'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
-      cordinate: [41.327722,69.213853],
+      cordinate: [41.327722, 69.213853],
     },
     {
       id: 15,
@@ -220,7 +236,7 @@ function YandexMapsDressMe() {
       imgs: [{ id: 1, img: "" }],
       direction:
         'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
-      cordinate: [41.311626,69.207701],
+      cordinate: [41.311626, 69.207701],
     },
     {
       id: 16,
@@ -253,7 +269,7 @@ function YandexMapsDressMe() {
       imgs: [{ id: 1, img: "" }],
       direction:
         'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
-      cordinate: [41.316420, 69.230976],
+      cordinate: [41.31642, 69.230976],
     },
     {
       id: 19,
@@ -286,7 +302,7 @@ function YandexMapsDressMe() {
       imgs: [{ id: 1, img: "" }],
       direction:
         'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
-      cordinate: [41.301140, 69.220787],
+      cordinate: [41.30114, 69.220787],
     },
     {
       id: 22,
@@ -297,7 +313,7 @@ function YandexMapsDressMe() {
       imgs: [{ id: 1, img: "" }],
       direction:
         'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
-      cordinate: [41.325755, 69.282940],
+      cordinate: [41.325755, 69.28294],
     },
     {
       id: 23,
@@ -308,7 +324,7 @@ function YandexMapsDressMe() {
       imgs: [{ id: 1, img: "" }],
       direction:
         'From the bus stop "LCD Usovo Park", cross the road. Opposite the Locals restaurant.',
-      cordinate: [41.317964,69.295311],
+      cordinate: [41.317964, 69.295311],
     },
     {
       id: 24,
@@ -374,7 +390,8 @@ function YandexMapsDressMe() {
         >
           <YandexMapsIndex />
         </div>
-        <div className={`absolute z-50   right-2  ${
+        <div
+          className={`absolute z-50   right-2  ${
             dressInfo?.yandexOpenMenu
               ? "top-2  right-2 ease-linear duration-500 "
               : "top-[-250px]  right-2 ease-linear duration-500 "
@@ -382,9 +399,7 @@ function YandexMapsDressMe() {
         >
           <NavbarTopOpenMenu />
         </div>
-        <YMaps
-          query={{ apikey: "8b56a857-f05f-4dc6-a91b-bc58f302ff21" }}
-        >
+        <YMaps query={{ apikey: "8b56a857-f05f-4dc6-a91b-bc58f302ff21" }}>
           <Map
             state={{
               center: coords.coords ? coords.coords : [41.311753, 69.241822],
@@ -403,7 +418,9 @@ function YandexMapsDressMe() {
             <div
               onClick={handleFullScreen}
               className={`absolute right-2 ${
-                !dressInfo?.yandexFullScreen ? "bottom-[128px] md:bottom-[87px]" : "bottom-[65px] md:bottom-[87px]"
+                !dressInfo?.yandexFullScreen
+                  ? "bottom-[128px] md:bottom-[87px]"
+                  : "bottom-[65px] md:bottom-[87px]"
               }  cursor-pointer z-[51] w-10 h-10 rounded-lg bg-white ss:flex items-center justify-center block md:hidden`}
             >
               {dressInfo?.yandexFullScreen ? (
@@ -418,13 +435,14 @@ function YandexMapsDressMe() {
                 position: { bottom: 220, right: 10 },
               }}
             />
-            <ZoomControl
+            {/* <ZoomControl
               options={{
                 float: "right",
                 position: { bottom: 270, right: 10, size: "small" },
                 size: "small", 
               }}
-            />
+            /> */}
+            <zoomCOntrols />
             {/* ---------- */}
             <Clusterer
               // className="bg-green-500 text-red-500"
@@ -472,7 +490,7 @@ function YandexMapsDressMe() {
               {!dressInfo?.yandexOpenMenu ? (
                 <div
                   className={`  ease-linear duration-500 h-[40px] absolute cursor-pointer ss:top-[-200px] md:top-[8px] left-[8px] z-50 bg-white shadow-lg overflow-hidden rounded-lg  `}
-                > 
+                >
                   <div
                     onClick={handleOpenMenu}
                     className="w-fit flex items-center justify-between  cursor-pointer roundedn-lg h-full  "
@@ -493,15 +511,15 @@ function YandexMapsDressMe() {
                 </div>
               ) : null}
 
-
-
               <div
                 className={`${
                   dressInfo?.yandexOpenMenu || dressInfo?.yandexOpenMarket
                     ? " ml-[0px]"
                     : "  ml-[-1000px]"
                 } absolute cursor-pointer left-0 h-[100vh] z-[52] rounded-lg overflow-hidden ${
-                  dressInfo?.yandexFullScreen ? "top-[0px]" : "ss:top-[70px] md:top-0"
+                  dressInfo?.yandexFullScreen
+                    ? "top-[0px]"
+                    : "ss:top-[70px] md:top-0"
                 } ${
                   !dressInfo?.yandexOpenMarket
                     ? "w-[25%] bg-yandexNavbar backdrop-blur-sm	"
@@ -719,7 +737,9 @@ function YandexMapsDressMe() {
             {/* Yandex Main menu */}
             <div
               className={`fixed top-[70px] left-0 right-0 overscroll-none overflow-y-scroll ${
-                dressInfo?.openMainMenu ? "left-[-500px] md:left-[-5000px]  z-[53] ease-in-out  duration-500 " : "left-0 z-[53] ease-linear duration-500 "
+                dressInfo?.openMainMenu
+                  ? "left-[-500px] md:left-[-5000px]  z-[53] ease-in-out  duration-500 "
+                  : "left-0 z-[53] ease-linear duration-500 "
               } w-[100%] h-[100%] bg-white`}
             >
               <div className="w-full h-full  px-3 overflow-hidden">
@@ -735,7 +755,6 @@ function YandexMapsDressMe() {
                     className="bg-transparent w-full px-3 h-10 text-[14px] border border-transparent md:border-searchBgColor md:mx-0 md:-ml-[3px] md:px-3 md:h-10"
                   />
                 </div>
-
 
                 {/* Music and Map selection for Mobile */}
                 <div className="flex items-center justify-between h-11 mb-3">
@@ -757,7 +776,6 @@ function YandexMapsDressMe() {
                     <span className="ml-[10px]">Map</span>
                   </Link>
                 </div>
-
 
                 {/* Categories */}
                 <ul className="flex flex-col">
@@ -876,9 +894,7 @@ function YandexMapsDressMe() {
             {/* Yandex Search */}
             <div
               className={`absolute ${
-                !dressInfo?.yandexFullScreen
-                  ? "top-[80px]"
-                  : "top-[8px]"
+                !dressInfo?.yandexFullScreen ? "top-[80px]" : "top-[8px]"
               }  md:top-auto md:bottom-[24px] left-0 right-0 mx-auto  overflow-hidden z-50 bg-yandexNavbar backdrop-blur-sm rounded-lg h-[48px] w-[94%] md:w-fit shadow-lg`}
             >
               <div className="w-full h-full flex justify-between ">
@@ -915,20 +931,33 @@ function YandexMapsDressMe() {
                 {/* <div className="w-[20%] h-full flex items-center border border-red-400"></div> */}
               </div>
             </div>
-            
+
             {/* Yandex Shopping Card */}
-            {!dressInfo?.yandexOpenMarket &&
-            <div
-            onClick={handleOpenMarket}
-             className={`fixed right-2 md:hidden cursor-pointer ${!dressInfo?.yandexFullScreen ? "bottom-[180px]" : "bottom-[115px]" }   w-[40px]  z-[52]  h-[40px] rounded-lg bg-white flex items-center justify-center`}>
-              <div className="w-full h-full flex items-center justify-center">
-                 <img src={shop} alt="" />
+            {!dressInfo?.yandexOpenMarket && (
+              <div
+                onClick={handleOpenMarket}
+                className={`fixed right-2 md:hidden cursor-pointer ${
+                  !dressInfo?.yandexFullScreen
+                    ? "bottom-[180px]"
+                    : "bottom-[115px]"
+                }   w-[40px]  z-[52]  h-[40px] rounded-lg bg-white flex items-center justify-center`}
+              >
+                <div className="w-full h-full flex items-center justify-center">
+                  <img src={shop} alt="" />
+                </div>
               </div>
-            </div>}
+            )}
             <div
-            className={`absolute block md:hidden  ml-[-1000px] duration-1000 overflow-hidden z-[52] rounded-lg shadow-lg left-1/2 right-1/2 translate-x-[-50%] translate-y-[-50%]  md:bottom-[120px]
-              ${dressInfo?.yandexFullScreen ? "bottom-[10px] md:bottom-auto":"bottom-[70px] md:bottom-auto"}
-              ${dressInfo?.yandexOpenMarket && "w-[calc(100%-56px)] ml-[0] duration-1000 bg-yandexNavbar backdrop-blur-sm" }
+              className={`absolute block md:hidden  ml-[-1000px] duration-1000 overflow-hidden z-[52] rounded-lg shadow-lg left-1/2 right-1/2 translate-x-[-50%] translate-y-[-50%]  md:bottom-[120px]
+              ${
+                dressInfo?.yandexFullScreen
+                  ? "bottom-[10px] md:bottom-auto"
+                  : "bottom-[70px] md:bottom-auto"
+              }
+              ${
+                dressInfo?.yandexOpenMarket &&
+                "w-[calc(100%-56px)] ml-[0] duration-1000 bg-yandexNavbar backdrop-blur-sm"
+              }
 
               `}
             >
@@ -940,14 +969,13 @@ function YandexMapsDressMe() {
                   {/* {!dressInfo?.yandexOpenMarket ? (
                       <img src={shop} alt="" />
                   ) : ( */}
-                    <div className="flex items-center justify-center">
-                      <img src={MenuClose} alt="" />
-                      <div className="not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
-                        Магазины
-                      </div>
+                  <div className="flex items-center justify-center">
+                    <img src={MenuClose} alt="" />
+                    <div className="not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
+                      Магазины
                     </div>
+                  </div>
                   {/* )} */}
-                  
                 </div>
               </div>
             </div>
