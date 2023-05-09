@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { dressMainData } from "../../../../ContextHook/ContextMenu";
 import {
@@ -30,7 +30,6 @@ import { DatePicker, Popover, Space } from "antd";
 import { BiChevronUp } from "react-icons/bi";
 
 const AddUserPrivateInfo = () => {
-
   const [dressInfo] = useContext(dressMainData);
 
   let genderStyle = "";
@@ -129,174 +128,178 @@ const AddUserPrivateInfo = () => {
     </div>
   );
 
-  const { RangePicker } = DatePicker;
-
+  const [load, setLoad] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoad(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
+    <div className={`${!load && "LoadingAnimation"}`}>
       <div className=" py-8 w-full h-full flex justify-center px-4">
-        <div className="max-w-[440px] w-[100%] h-fit  p-5 border border-searchBgColor rounded-lg">  
-        
-           <div className=" w-full mt-1 mb-5 flex flex-col justify-center">
-              <span className="not-italic font-AeonikProMedium text-xl ss:text-start md:text-center leading-5   tracking-[0,16px] text-black">
+        <div className="max-w-[440px] w-[100%] h-fit  p-5 border border-searchBgColor rounded-lg">
+          <div className=" w-full mt-1 mb-5 flex flex-col justify-center">
+            <span className="not-italic font-AeonikProMedium text-xl ss:text-start md:text-center leading-5   tracking-[0,16px] text-black">
               Добавить персонаж
-              </span>
-              <span className="mt-2 not-italic font-AeonikProRegular text-sm leading-4 ss:text-start md:text-center text-setTexOpacity tracking-[0.16px]">
-              Добавляйте информацию о себе или близких людей в качестве персонажа
-              </span>
-            </div>
-          
+            </span>
+            <span className="mt-2 not-italic font-AeonikProRegular text-sm leading-4 ss:text-start md:text-center text-setTexOpacity tracking-[0.16px]">
+              Добавляйте информацию о себе или близких людей в качестве
+              персонажа
+            </span>
+          </div>
 
-        <div>
+          <div>
             {PersonTypeArray?.filter((data) => data.id == dressInfo?.type).map(
-            (data) => {
+              (data) => {
                 return (
-                <div>
+                  <div>
                     <div className="flex flex-col gap-y-2 gap-x-2 mb-7">
-                    <div className="w-full flex-row flex items-center justify-between gap-x-2">
-                      <button
-                        className={`md:w-[176px] w-full h-[80px] flex flex-col items-center justify-center ${genderStyle} bg-btnBgColor border border-solid border-searchBgColor rounded-lg`}
-                      >
-
-                        <img
+                      <div className="w-full flex-row flex items-center justify-between gap-x-2">
+                        <button
+                          className={`md:w-[176px] w-full h-[80px] flex flex-col items-center justify-center ${genderStyle} bg-btnBgColor border border-solid border-searchBgColor rounded-lg`}
+                        >
+                          <img
                             src={data?.man}
                             alt=""
                             className="mb-[10px] mx-auto"
-                        />
-                        <span className="font-AeonikProMedium">Мужчина</span>
-                      </button>
-                      <button
-                        className={`md:w-[176px] w-full h-[80px] flex flex-col items-center justify-center ${genderStyle} bg-btnBgColor border border-solid border-searchBgColor rounded-lg`}
-                      >
-
-                        <img
+                          />
+                          <span className="font-AeonikProMedium">Мужчина</span>
+                        </button>
+                        <button
+                          className={`md:w-[176px] w-full h-[80px] flex flex-col items-center justify-center ${genderStyle} bg-btnBgColor border border-solid border-searchBgColor rounded-lg`}
+                        >
+                          <img
                             src={data?.woman}
                             alt=""
                             className="mb-[10px] mx-auto"
-                        />
-                        <span className="font-AeonikProMedium">Женщина</span>
+                          />
+                          <span className="font-AeonikProMedium">Женщина</span>
                         </button>
-                    </div>
+                      </div>
                     </div>
 
                     <form>
-                    <label
+                      <label
                         htmlFor="firstname"
                         className="mb-[6px] font-AeonikProRegular text-sm"
-                    >
+                      >
                         Имя
-                    </label>
-                    <div className="flex items-center justify-between border border-solid border-searchBgColor p-[14px] rounded-lg bg-btnBgColor mb-4">
+                      </label>
+                      <div className="flex items-center justify-between border border-solid border-searchBgColor p-[14px] rounded-lg bg-btnBgColor mb-4">
                         <input
-                        type="text"
-                        name="firstname"
-                        id="firstname"
-                        className="w-[90%] bg-transparent font-AeonikProMedium text-base"
+                          type="text"
+                          name="firstname"
+                          id="firstname"
+                          className="w-[90%] bg-transparent font-AeonikProMedium text-base"
                         />
                         <button>
-                        <img src={formUser} alt="" />
+                          <img src={formUser} alt="" />
                         </button>
-                    </div>
+                      </div>
 
-                    <label
+                      <label
                         htmlFor="lastname"
                         className="mb-[6px] font-AeonikProRegular text-sm"
-                    >
+                      >
                         {" "}
                         Фамилия{" "}
-                    </label>
-                    <div className="flex items-center justify-between border border-solid border-searchBgColor p-[14px] rounded-lg bg-btnBgColor mb-4">
+                      </label>
+                      <div className="flex items-center justify-between border border-solid border-searchBgColor p-[14px] rounded-lg bg-btnBgColor mb-4">
                         <input
-                        type="text"
-                        name="lastname"
-                        id="lastname"
-                        className="w-[90%] bg-transparent font-AeonikProMedium text-base"
+                          type="text"
+                          name="lastname"
+                          id="lastname"
+                          className="w-[90%] bg-transparent font-AeonikProMedium text-base"
                         />
                         <button>
-                        <img src={formUser} alt="" />
+                          <img src={formUser} alt="" />
                         </button>
-                    </div>
+                      </div>
 
-                    <label
+                      <label
                         htmlFor="bdate"
                         className="mb-[6px] font-AeonikProRegular text-sm"
-                    >
+                      >
                         {" "}
                         Дата рождения{" "}
-                    </label>
-                    <div className="flex items-center justify-start border border-solid border-searchBgColor rounded-lg bg-btnBgColor mb-4 w-full">
+                      </label>
+                      <div className="flex items-center justify-start border border-solid border-searchBgColor rounded-lg bg-btnBgColor mb-4 w-full">
                         <span className="h-full w-[15%] py-[14px] border-r border-searchBgColor">
-                        <img src={formCalendar} alt="" className="mx-4" />
+                          <img src={formCalendar} alt="" className="mx-4" />
                         </span>
                         <input
-                        type="number"
-                        name="day"
-                        placeholder="День"
-                        id="day"
-                        className="w-[19%] h-12 flex items-center bg-btnBgColor font-AeonikProRegular text-[15px] px-[14px] border-r border-searchBgColor [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          type="number"
+                          name="day"
+                          placeholder="День"
+                          id="day"
+                          className="w-[19%] h-12 flex items-center bg-btnBgColor font-AeonikProRegular text-[15px] px-[14px] border-r border-searchBgColor [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
 
                         <Popover
-                        open={openMonth}
-                        onOpenChange={handleOpenChangeWear}
-                        className="w-[40%] px-[17px] h-12 bg-btnBgColor border-r flex items-center justify-between cursor-pointer select-none group"
-                        trigger="click"
-                        content={contentMonth}
+                          open={openMonth}
+                          onOpenChange={handleOpenChangeWear}
+                          className="w-[40%] px-[17px] h-12 bg-btnBgColor border-r flex items-center justify-between cursor-pointer select-none group"
+                          trigger="click"
+                          content={contentMonth}
                         >
-                        <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
+                          <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">
                             {selectMonth}
-                        </span>
-                        <span>
+                          </span>
+                          <span>
                             <BiChevronUp
-                            size={20}
-                            style={{ color: "#c2c2c2" }}
-                            className={`${
+                              size={20}
+                              style={{ color: "#c2c2c2" }}
+                              className={`${
                                 openMonth ? "rotate-[180deg]" : ""
-                            } duration-200`}
+                              } duration-200`}
                             />{" "}
-                        </span>
+                          </span>
                         </Popover>
 
                         <Space
-                        className="w-[26%] cursor-pointer"
-                        direction="vertical"
-                        size={12}
-                        options={["Hide"]}
+                          className="w-[26%] cursor-pointer"
+                          direction="vertical"
+                          size={12}
+                          options={["Hide"]}
                         >
-                        <div className="flex items-center">
+                          <div className="flex items-center">
                             <span>
-                            <DatePicker
+                              <DatePicker
                                 className="font-AeonikProRegular text-base flex items-center"
                                 placeholder="Год"
                                 picker="year"
                                 bordered={false}
                                 suffixIcon
-                            />
+                              />
                             </span>
                             <span>
-                            <BiChevronUp
+                              <BiChevronUp
                                 size={20}
                                 style={{ color: "#c2c2c2" }}
                                 className="mr-2"
-                            />{" "}
+                              />{" "}
                             </span>
-                        </div>
+                          </div>
                         </Space>
-                    </div>
+                      </div>
 
-                    <Link
+                      <Link
                         to="/add_user_body_data"
                         className="w-full bg-blue-500 flex items-center justify-center rounded-lg text-white py-4"
-                    >
+                      >
                         <span className="mr-[10px]">Следующий шаг</span>
                         <img src={formArrowRightCircle} alt="" />
-                    </Link>
+                      </Link>
                     </form>
-                </div>
+                  </div>
                 );
-            }
+              }
             )}
+          </div>
         </div>
       </div>
-      </div>
+    </div>
   );
 };
 export default AddUserPrivateInfo;
