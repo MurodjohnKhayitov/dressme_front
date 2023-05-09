@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { formArrowRightCircle, person3D } from "../../../../assets/imgs";
 import { BiChevronDown } from "react-icons/bi";
@@ -8,8 +8,15 @@ import UserOfBodyMobile from "./UserOfBody/UsermakeBodyMobile/UserOfBodyMobile";
 // import UserOfBodyMobile from "./UserOfBody/UserOfBodyMobile";
 
 const AddUserBodyData = () => {
+  const [load, setLoad] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoad(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <div>
+    <div className={`${!load && "LoadingAnimation"}`}>
       <div className="hidden md:block">
         <UserOfBodyDesktop />
       </div>
