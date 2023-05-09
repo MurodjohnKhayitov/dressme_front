@@ -741,6 +741,17 @@ export default function SetClothesWear() {
       : (document.body.style.overflow = "unset");
   }, [open]);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="w-full flex flex-row flex-wrap gap-y-[10px] md:gap-y-5 md:gap-x-5 h-fit justify-between">
       {productList.map((producListMap) => {
@@ -753,9 +764,22 @@ export default function SetClothesWear() {
               {producListMap?.SetToModel ? (
                 <div className="relative w-full h-[350px] md:h-[572px] flex justify-center">
                   <img src={model1} alt="" />
-                  <button className="absolute flex items-center justify-center bottom-2 right-2 w-8 h-8 md:w-0 md:h-0 rounded-lg border border-solid border-searchBgColor">
-                    <img src={miximize} alt="maxsimize-icon" />
-                  </button>
+                  <Button 
+                    type="primary" 
+                    onClick={showModal} 
+                    className="shadow-none px-[7px] absolute !bg-transparent hidden ls:flex md:hidden items-center justify-center bottom-2 right-2 md:w-0 md:h-0 rounded-lg border border-solid border-searchBgColor"
+                    >
+                      <img src={miximize} alt="maxsimize-icon" />
+                  </Button>
+                  <Modal 
+                    open={isModalOpen} 
+                    onOk={handleOk} 
+                    onCancel={handleCancel}
+                    footer={null}
+                    className="modalSetMobile overscroll-none overflow-y-hidden"
+                    >
+                    <img src={model1} alt="" />
+                  </Modal>
                 </div>
               ) : (
                 <div className="h-[350px] md:h-[572px] pt-3 md:pt-4">
@@ -1320,9 +1344,9 @@ export default function SetClothesWear() {
                   <Button
                     type="primary"
                     onClick={() => setOpen(true)}
-                    className="group absolute top-9 right-0 left-0 md:left-36 md:-top-1 md:right-0 rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[10px] pr-[5px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300"
+                    className="group shadow-none absolute top-9 right-0 left-0 md:left-36 md:-top-1 md:right-0 rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[10px] pr-[5px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300"
                   >
-                    <span className="group-hover:text-white flex  items-center font-AeonikProRegular text-center text-black text-[12px] mr-1">
+                    <span className="group-hover:text-white flex items-center font-AeonikProRegular text-center text-black text-[12px] mr-1">
                     Страница образа
                     </span>
                     <svg
@@ -1389,5 +1413,6 @@ export default function SetClothesWear() {
         </div>
       </div>
     </div>
+    
   );
 }
