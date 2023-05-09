@@ -158,6 +158,13 @@ select {
   padding-bottom: 7px !important;
 }
 
+
+
+.modalSetMobile .ant-modal-body {
+  display: flex;
+  justify-content: center;
+}
+
 /* ----------------Loading Animation ----------------*/
 
 .LoadingAnimation {
