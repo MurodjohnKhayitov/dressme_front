@@ -776,7 +776,7 @@ export default function SetClothesWear() {
                     onOk={handleOk} 
                     onCancel={handleCancel}
                     footer={null}
-                    className="modalSetMobile overscroll-none overflow-y-scroll"
+                    className="modalSetMobile overflow-y-scroll overflow-hidden overscroll-contain"
                     >
                     <img src={model1} alt="" />
                   </Modal>
