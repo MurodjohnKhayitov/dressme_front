@@ -44,6 +44,8 @@ module.exports = {
         // Make body Mobile
         makeBodyBg: "rgba(252,252,252,0.5)",
 
+        // BgCategory...
+        bgCategory: "#F8F8F8",
         // Loading...
         LoadinBg: "rgba(252,252,252,0.8)",
       },

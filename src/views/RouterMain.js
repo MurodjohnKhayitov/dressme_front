@@ -32,6 +32,8 @@ import SignUp from "../components/Authentication/SignUp/SignUp";
 import ForgetPassword from "../components/Authentication/SignInDetail/ForgetPassword";
 import SetNewPassword from "../components/Authentication/SignInDetail/SetNewPassword";
 import ForgetConfirmPassword from "../components/Authentication/SignInDetail/ForgetConfirmPassword";
+import CategoryForType from "../components/Category/CategoryForType/CategoryForType";
+import CategoryMainType from "../components/Category/CategoryForType";
 
 // --------With lazy component
 // const HomePage = React.lazy(() => import("../Page/Home/Home"));
@@ -73,6 +75,7 @@ const RouterMain = () => {
         {/* Home Page */}
         <Route element={<Header />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/categoriesType" element={<CategoryMainType />} />
         </Route>
 
         {/* Yandex Maps */}
