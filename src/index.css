@@ -128,6 +128,9 @@ select {
 .ant-modal-content {
   padding: 0 !important;
 }
+.ant-modal-content .ant-modal-close{
+  right: 10px !important;
+}
 
 .modelSlider .slick-dots {
   height: 32px;

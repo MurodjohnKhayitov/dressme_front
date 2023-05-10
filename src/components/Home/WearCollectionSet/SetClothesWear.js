@@ -776,7 +776,7 @@ export default function SetClothesWear() {
                     onOk={handleOk} 
                     onCancel={handleCancel}
                     footer={null}
-                    className="modalSetMobile overscroll-none overflow-y-hidden"
+                    className="modalSetMobile overscroll-none overflow-y-scroll"
                     >
                     <img src={model1} alt="" />
                   </Modal>
@@ -868,14 +868,14 @@ export default function SetClothesWear() {
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-[18px] h-[18px] md:w-6 md:h-6 hidden md:flex items-center justify-center top-[2px] right-[2px] md:top-1 md:right-1 cursor-pointer border border-searchBgColor bg-white rounded-[6px] md:rounded-lg">
+                                  <div className="absolute w-[18px] h-[18px] md:w-6 md:h-6 hidden md:flex items-center justify-center top-[2px] right-[2px] md:top-1 md:right-1 cursor-pointer border border-searchBgColor bg-bgCard hover:bg-white transition ease-out duration-500 rounded-[6px] md:rounded-lg">
                                     <img src={Liked} 
                                     alt="Liked" 
-                                    className="w-[80%] md:w-[100%]  pl-[1px] pt-[1px] md:pl-0 md:pt-0"/>
+                                    className="pl-[1px] pt-[1px] md:pl-0 md:pt-0"/>
                                   </div>
                                 </div>
                                 <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 hidden md:flex justify-end">
-                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-bgCard hover:bg-white transition ease-out duration-500 rounded-lg flex items-center justify-center">
                                     <img src={nextInfo} alt="nextInfo" />
                                   </div>
                                 </div>
@@ -969,12 +969,12 @@ export default function SetClothesWear() {
                                         />
                                       </div>
                                     ) : null}
-                                    <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                    <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-bgCard hover:bg-white transition ease-out duration-500 rounded-lg">
                                       <img src={Liked} alt="Liked" />
                                     </div>
                                   </div>
                                   <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 hidden md:flex justify-end">
-                                    <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                    <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-bgCard hover:bg-white transition ease-out duration-500 rounded-lg flex items-center justify-center">
                                       <img src={nextInfo} alt="nextInfo" />
                                     </div>
                                   </div>
@@ -1020,12 +1020,12 @@ export default function SetClothesWear() {
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-bgCard hover:bg-white transition ease-out duration-500 rounded-lg">
                                     <img src={Liked} alt="Liked" />
                                   </div>
                                 </div>
                                 <div className="hidden md:flex absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300  justify-end">
-                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-bgCard hover:bg-white transition ease-out duration-500 rounded-lg flex items-center justify-center">
                                     <img src={nextInfo} alt="nextInfo" />
                                   </div>
                                 </div>
@@ -1065,12 +1065,12 @@ export default function SetClothesWear() {
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-bgCard hover:bg-white transition ease-out duration-500 rounded-lg">
                                     <img src={Liked} alt="Liked" />
                                   </div>
                                 </div>
                                 <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 hidden md:flex justify-end">
-                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-bgCard hover:bg-white transition ease-out duration-500 rounded-lg flex items-center justify-center">
                                     <img src={nextInfo} alt="nextInfo" />
                                   </div>
                                 </div>
@@ -1160,12 +1160,12 @@ export default function SetClothesWear() {
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-bgCard hover:bg-white transition ease-out duration-500 rounded-lg">
                                     <img src={Liked} alt="Liked" />
                                   </div>
                                 </div>
                                 <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 hidden md:flex justify-end">
-                                  <div className=" z-50 w-6 h-6 cursor-pointer border border-searchBgColor   bg-white rounded-lg flex items-center justify-center">
+                                  <div className=" z-50 w-6 h-6 cursor-pointer border border-searchBgColor bg-bgCard hover:bg-white transition ease-out duration-500 rounded-lg flex items-center justify-center">
                                     <img src={nextInfo} alt="nextInfo" />
                                   </div>
                                 </div>
@@ -1255,12 +1255,12 @@ export default function SetClothesWear() {
                                       />
                                     </div>
                                   ) : null}
-                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-white rounded-lg">
+                                  <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-1 right-1 cursor-pointer border border-searchBgColor bg-bgCard hover:bg-white transition ease-out duration-500 rounded-lg">
                                     <img src={Liked} alt="Liked" />
                                   </div>
                                 </div>
                                 <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 flex justify-end">
-                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-white rounded-lg hidden md:flex items-center justify-center">
+                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-bgCard hover:bg-white transition ease-out duration-500rounded-lg hidden md:flex items-center justify-center">
                                     <img src={nextInfo} alt="nextInfo" />
                                   </div>
                                 </div>
@@ -1280,7 +1280,7 @@ export default function SetClothesWear() {
                     key={item?.id}
                     className="w-full relative border-y border-searchBgColor px-3 md:px-4 py-3"
                   >
-                    <div className="font-AeonikProRegular text-sm leading-4 text-gray-500">
+                    <div className="font-AeonikProRegular truncate text-sm leading-4 text-gray-500">
                       <span className="hidden md:inline-block">Набор:</span>
                       <span className="not-italic font-AeonikProMedium text-xs md:text-base text-black ml-0 md:ml-2">
                         {item?.name}

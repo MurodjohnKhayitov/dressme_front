@@ -465,7 +465,7 @@ export default function CategoryCards() {
             >
               <div className="relative w-full cursor-pointer ss:h-[206px] ls:h-[238px] xs:h-[309px] bg-btnBgColor lg:h-[320px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap">
                 <img
-                  className=" m-auto hover:scale-105 transition duration-700 ease-in-out "
+                  className=" m-auto hover:scale-105 transition duration-700 ease-in-out"
                   src={data?.ProducImg || cardImg}
                   alt="ProducImg"
                 />
@@ -542,9 +542,9 @@ export default function CategoryCards() {
                   })}
                 </div>
               </div>
-              <div className="w-full rounded-b-1xl bg-white  flex flex-wrap   ss:h-[124px] xs:h-[147px] lg:h-[120px] ">
+              <div className="w-full rounded-b-1xl bg-white  flex flex-wrap ss:h-[124px] xs:h-[147px] lg:h-[120px]">
                 <div className="w-full  xs:px-3 ss:px-3 xs:mt-3 ss:mt-2">
-                  <div className="relative w-full  whitespace-nowrap overflow-hidden py-1 not-italic font-AeonikProRegular text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-2 md:mb-0  cursor-pointer">
+                  <div className="relative w-full whitespace-nowrap overflow-hidden py-1 not-italic font-AeonikProRegular text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-2 md:mb-0  cursor-pointer">
                     <div className="absolute categoryLinearText left-0 w-full h-full z-[51] top-0"></div>
                     <span>{data?.title || "NoData"}</span>
                   </div>
