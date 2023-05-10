@@ -173,24 +173,24 @@ select {
   background-color: white;
   /* opacity: 0.2; */
   /* animation: load 1s ease-out; */
-  -webkit-animation: fadeInFromNone 1.5s ease-out;
-  -moz-animation: fadeInFromNone 1.5s ease-out;
-  -o-animation: fadeInFromNone 1.5s ease-out;
-  animation: fadeInFromNone 1.5s ease-out;
+  -webkit-animation: fadeInFromNone 1s ease-out;
+  -moz-animation: fadeInFromNone 1s ease-out;
+  -o-animation: fadeInFromNone 1s ease-out;
+  animation: fadeInFromNone 1s ease-out;
 }
 @keyframes fadeInFromNone {
   0% {
-    opacity: 0.5;
+    opacity: 0;
   }
   25% {
-    opacity: 0.2;
+    opacity: 0.01;
   }
 
   50% {
-    opacity: 0.4;
+    opacity: 0.1;
   }
 
   100% {
-    opacity: 8;
+    opacity: 0.5;
   }
 }
