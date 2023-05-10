@@ -21,11 +21,11 @@ import Slider from "react-slick";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 import { dressMainData } from "../../../ContextHook/ContextMenu";
+import { NavLink } from "react-router-dom";
 // import required modules``
 export default function MainPageSliders() {
   const [dressInfo] = useContext(dressMainData);
 
- 
   const changeColor = [
     { id: 1, data: 1, action: false, colors: "border-black" },
     { id: 2, data: 2, action: false, colors: "border-white" },
@@ -242,7 +242,8 @@ export default function MainPageSliders() {
           {carosuelData?.map((data) => {
             return data.Category.map((data) => {
               return (
-                <div
+                <NavLink
+                  to={"/categoriesType"}
                   key={data?.id}
                   className="!w-[99%]  h-[260px] rounded-lg  "
                 >
@@ -274,7 +275,7 @@ export default function MainPageSliders() {
                       </span>
                     </p>
                   </div>
-                </div>
+                </NavLink>
               );
             });
           })}

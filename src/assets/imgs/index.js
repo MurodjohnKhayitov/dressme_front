@@ -136,15 +136,17 @@ export { default as formUser } from "./formImgs/form-user.svg";
 export { default as formDate } from "./formImgs/form-date.svg";
 export { default as formEmail } from "./formImgs/form-gmail.svg";
 export { default as formPhone } from "./formImgs/form-phone.svg";
-export {
-  default as formArrowRightCircle
-} from "./formImgs/form-arrow-right-circle.svg";
+export { default as formArrowRightCircle } from "./formImgs/form-arrow-right-circle.svg";
 export { default as formArrowBottom } from "./formImgs/form-arrow-bottom.svg";
 export { default as formCalendar } from "./formImgs/form-calendar.svg";
 export { default as formUzFlag } from "./formImgs/form-uz-flag.svg";
 export { default as person3D } from "./formImgs/person3d.svg";
 
-// ----------------ForBrand---------
+// ----------------Category---------
+export { default as ticketDiscount } from "./Category/ticketDiscount.svg";
+export { default as PrevCate } from "./Category/PrevCate.svg";
+export { default as NextCate } from "./Category/NextCate.svg";
+export { default as DownCate } from "./Category/downCate.svg";
 // ----------------ForBrand---------
 
 export { default as adidas } from "./BrandType/Item/adidas.svg";

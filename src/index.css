@@ -166,24 +166,53 @@ select {
   background-color: white;
   /* opacity: 0.2; */
   /* animation: load 1s ease-out; */
-  -webkit-animation: fadeInFromNone 1s ease-out;
-  -moz-animation: fadeInFromNone 1s ease-out;
-  -o-animation: fadeInFromNone 1s ease-out;
-  animation: fadeInFromNone 1s ease-out;
+  -webkit-animation: fadeInFromNone 0.8s ease-out;
+  -moz-animation: fadeInFromNone 0.8s ease-out;
+  -o-animation: fadeInFromNone 0.8s ease-out;
+  animation: fadeInFromNone 0.8s ease-out;
 }
 @keyframes fadeInFromNone {
   0% {
     opacity: 0;
   }
-  25% {
+  /* 50% {
     opacity: 0.01;
-  }
-
-  50% {
-    opacity: 0.1;
-  }
-
+  } */
   100% {
-    opacity: 0.5;
+    opacity: 1;
   }
+}
+/* .fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to  {
+  opacity: 0;
+} */
+
+.fade-appear,
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 450ms linear 250ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 150ms linear;
+}
+
+/* ----------CateGory----------- */
+.categoryLinearText {
+  background: linear-gradient(
+    to right,
+    rgba(167, 207, 223, 0) 50%,
+    rgba(255, 255, 255, 0.99) 100%
+  );
 }
