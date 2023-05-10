@@ -11,6 +11,7 @@ import {
   star,
   setpersonIcons,
   InputCheck,
+  ticketDiscount,
 } from "../../../assets/imgs";
 import { dressMainData } from "../../../ContextHook/ContextMenu";
 
@@ -434,7 +435,7 @@ export default function CollectionCards() {
   const [clothesSetWear, setClothesSetWear] = useState(true);
 
   return (
-    <div className="flex flex-col box-border mt-[86px]">
+    <div className="flex flex-col box-border mt-[50px] md:mt-[86px]">
       <div className="w-full ss:block sm:flex justify-between items-center mb-[25px] md:mb-0 md:px-0">
         <div className="not-italic font-AeonikProMedium lg:w-fit lg:text-2xl xl:text-3xl flex items-center leading-8 text-black">
           <span>Коллекция одежд, которые вам подходят</span>
@@ -465,15 +466,15 @@ export default function CollectionCards() {
       </div>
       {clothesSetWear ? (
         <>
-          <div className="flex justify-between flex-wrap  md:mx-0 md:mt-[50px] gap-y-5 lg:gap-y-5 ">
+          <div className="flex justify-between flex-wrap  md:mx-0 md:mt-[50px] gap-y-2 lg:gap-y-5 ">
             {productList.map((data) => {
               return (
                 <div
                   key={data.id}
                   // onClick={() => handleGetCardId(data?.id)}
-                  className={` ss:w-[48%] md:w-[24%] lg:w-[240px] transition ease-in-out delay-50 hover:shadow-cardShadow ${shadowStyle} xs:h-[456px] lg:h-[440px] border border-solid borderColorCard overflow-hidden rounded-lg`}
+                  className={`ss:w-[49%] md:w-[24%] lg:w-[240px] transition ease-in-out delay-50 hover:shadow-cardShadow ${shadowStyle} xs:h-[456px] lg:h-[440px] border border-solid borderColorCard overflow-hidden rounded-lg`}
                 >
-                  <div className="relative w-full cursor-pointer ss:h-[206px] ls:h-[238px] xs:h-[309px] lg:h-[320px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap">
+                  <div className="relative w-full cursor-pointer ss:h-[200px] ls:h-[230px] ll:h-[250px] xs:h-[309px] bg-btnBgColor lg:h-[320px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap">
                     {data.ProducImg ? (
                       <img
                         className="w-full h-full m-auto hover:scale-105 transition duration-700 ease-in-out"
@@ -491,7 +492,7 @@ export default function CollectionCards() {
                       <ul className="nav-lists flex-col gap-y-1 justify-center h-full ss:hidden xs:flex">
                         <p className="group w-8 hover:w-[70px] bg-bgCard hover:bg-white  duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center">
                           <span className="w-8 h-8 flex items-center justify-center  ">
-                            <img src={discount} alt="" />
+                            <img src={ticketDiscount} alt="" />
                           </span>
                           <span className=" w-0 flex items-center -mr-[1px] group-hover:w-10 duration-300  text-red-700 not-italic  font-AeonikProRegular text-[11px]">
                             -30%
@@ -565,9 +566,10 @@ export default function CollectionCards() {
                       })}
                     </div>
                   </div>
-                  <div className="w-full rounded-b-1xl bg-white  flex flex-wrap   ss:h-[124px] xs:h-[147px] lg:h-[120px] ">
+                  <div className="w-full rounded-b-1xl bg-white  flex flex-wrap h-[110px] ll:h-[106px] md:h-[120px]">
                     <div className="w-full  xs:px-3 ss:px-3 xs:mt-3 ss:mt-2">
-                      <div className="w-full  not-italic font-AeonikProRegular text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-2 md:mb-0  cursor-pointer">
+                      <div className="relative w-full whitespace-nowrap overflow-hidden py-1 not-italic font-AeonikProRegular text-[12px] ls:text-sm lg:text-[15px] leading-4 text-black mb-2 md:mb-0  cursor-pointer">
+                      <div className="absolute categoryLinearText left-0 w-full h-full z-[51] top-0"></div>
                         {data?.title || "NoData"}
                       </div>
                       <div className="w-full flex justify-between items-center xs:mt-3">
@@ -598,7 +600,7 @@ export default function CollectionCards() {
                     <div className="w-full flex items-center justify-between  pl-3 pr-[5px]">
                       <div className="flex items-center ">
                         {data.sale ? (
-                          <div className="flex ss:flex-col-reverse md:flex-row	text-start items-start ">
+                          <div className="flex flex-col-reverse ll:flex-row	text-start items-start ">
                             <div className="text-start m-0 p-0  not-italic font-AeonikProMedium text-[16px]  md:text-base leading-1 text-red-700 xs:text-base xs:leading-4 mr-1">
                               {data?.sale}
                             </div>
@@ -616,7 +618,7 @@ export default function CollectionCards() {
                         )}
                       </div>
                       <div className="flex items-center">
-                        <button className="w-[32px] h-[32px] mb-[4px]  rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                        <button className="w-[32px] h-[32px] ll:mb-1 rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor flex items-center justify-center">
                           <img src={addBag} alt="addbag" className="w-8" />
                         </button>
                       </div>
