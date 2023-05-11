@@ -34,8 +34,8 @@ export default function CollectionCards() {
       title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
       starCount: 256,
       shirtSize: "M | 3XL",
-      sale: "258.000",
-      price: "372.000",
+      sale: "258 000",
+      price: "372 000",
       changeColor: [
         { id: 1, value: 1, action: false, colors: "bg-purple-700" },
         { id: 2, value: 2, action: false, colors: "bg-green-600" },
@@ -472,7 +472,7 @@ export default function CollectionCards() {
                 <div
                   key={data.id}
                   // onClick={() => handleGetCardId(data?.id)}
-                  className={`ss:w-[49%] md:w-[24%] lg:w-[240px] transition ease-in-out delay-50 hover:shadow-cardShadow ${shadowStyle} xs:h-[456px] lg:h-[440px] border border-solid borderColorCard overflow-hidden rounded-lg`}
+                  className={`ss:w-[49%] md:w-[24%] lg:w-[240px] transition ease-in-out delay-50 hover:shadow-cardShadow ${shadowStyle} xs:h-[456px] lg:h-[428px] border border-solid borderColorCard overflow-hidden rounded-lg`}
                 >
                   <div className="relative w-full cursor-pointer ss:h-[200px] ls:h-[230px] ll:h-[250px] xs:h-[309px] bg-btnBgColor lg:h-[320px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap">
                     {data.ProducImg ? (
@@ -566,10 +566,10 @@ export default function CollectionCards() {
                       })}
                     </div>
                   </div>
-                  <div className="w-full rounded-b-1xl bg-white  flex flex-wrap h-[110px] ll:h-[106px] md:h-[120px]">
+                  <div className="w-full rounded-b-xl bg-white  flex flex-wrap h-[100px] md:h-[106px]">
                     <div className="w-full  xs:px-3 ss:px-3 xs:mt-3 ss:mt-2">
-                      <div className="relative w-full whitespace-nowrap overflow-hidden py-1 not-italic font-AeonikProRegular text-[12px] ls:text-sm lg:text-[15px] leading-4 text-black mb-2 md:mb-0  cursor-pointer">
-                      <div className="absolute categoryLinearText left-0 w-full h-full z-[51] top-0"></div>
+                      <div className="relative w-full whitespace-nowrap overflow-hidden not-italic font-AeonikProRegular text-[12px] ls:text-sm lg:text-[15px] leading-4 text-black mb-2 md:mb-0  cursor-pointer">
+                        <div className="absolute categoryLinearText left-0 w-full h-full z-[51] top-0"></div>
                         {data?.title || "NoData"}
                       </div>
                       <div className="w-full flex justify-between items-center xs:mt-3">
@@ -618,7 +618,7 @@ export default function CollectionCards() {
                         )}
                       </div>
                       <div className="flex items-center">
-                        <button className="w-[32px] h-[32px] ll:mb-1 rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                        <button className="w-[32px] h-[32px] md:w-[36px] md:h-[36px] ll:mb-1 rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor flex items-center justify-center">
                           <img src={addBag} alt="addbag" className="w-8" />
                         </button>
                       </div>

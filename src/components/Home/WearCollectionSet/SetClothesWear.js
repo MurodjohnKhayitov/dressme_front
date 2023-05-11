@@ -1391,10 +1391,10 @@ export default function SetClothesWear() {
                 <div className="relative flex items-center w-full justify-between">
                   <div>
                     <span className="not-italic font-AeonikProMedium text-lg md:text-2xl leading-7 text-setPriceRed mr-[6px]">
-                      828000
+                      828 000
                     </span>
-                    <span className="absolute bottom-[26px] left-0 md:left-24 md:bottom-[6px] not-italic font-AeonikProRegular line-through text-xs md:text-sm leading-4 text-setTexOpacity">
-                      1054000
+                    <span className="absolute bottom-[26px] left-0 md:left-[98px] md:bottom-[4px] not-italic font-AeonikProRegular line-through text-xs md:text-sm leading-4 text-setTexOpacity">
+                      105 4000
                     </span>
                   </div>
                   <button className="absolute w-[32px] h-[32px] md:w-[40px] md:h-[40px] -right-1 bottom-2 md:right-0 md:bottom-0 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
