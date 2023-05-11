@@ -11,11 +11,7 @@ import AddUserNavbar from "../components/header/AddUserNavbar/AddUserNavbar";
 // -------Without Lazy
 
 // ---------Only Skeleton
-import SkeletonHomeIndex from "../components/Home/Skeleton/SkeletonHomeIndex";
-import AddUserPrivateSkeleton from "../components/Home/AddUser/Skeleton/AddUserPrivateSkeleton";
-import AddUserBodySkeleton from "../components/Home/AddUser/Skeleton/AddUserPrivateSkeleton";
-import SignInSkeletonIndex from "../components/Authentication/SignUpSkeleton";
-import SignUpSkeletonIndex from "../components/Authentication/SignUpSkeleton";
+
 import AuthenIndex from "../components/header/AuthenticationNavbar/AuthenIndex";
 // import YandexMapsIndex from "../components";
 import YandexSkeletonIndex from "../components/YandexMap/YandexMapsSkeleton/YandexSkeletonIndex";
@@ -35,32 +31,8 @@ import ForgetConfirmPassword from "../components/Authentication/SignInDetail/For
 import CategoryForType from "../components/Category/CategoryForType/CategoryForType";
 import CategoryMainType from "../components/Category/CategoryForType";
 
-// --------With lazy component
-// const HomePage = React.lazy(() => import("../Page/Home/Home"));
-// const AddUserPrivateInfo = React.lazy(() =>
-//   import("../components/Home/AddUser/AddUserPrivateData/AddUserPrivateData")
-// );
-// const AddUserBodyData = React.lazy(() =>
-//   import("../components/Home/AddUser/AddUserBodyData/AddUserBodyData")
-// );
-// const YandexMapDressMe = React.lazy(() =>
-//   import("../components/YandexMap/index")
-// );
-// const SignIn = React.lazy(() =>
-//   import("../components/Authentication/SignIn/index")
-// );
-// const SignUp = React.lazy(() =>
-//   import("../components/Authentication/SignUp/index")
-// );
-// const ForgetConfirmPassword = React.lazy(() =>
-//   import("../components/Authentication/SignInDetail/ForgetConfirmPassword")
-// );
-// const SetNewPassword = React.lazy(() =>
-//   import("../components/Authentication/SignInDetail/SetNewPassword")
-// );
-// const ForgetPassword = React.lazy(() =>
-//   import("../components/Authentication/SignInDetail/ForgetPassword")
-// );
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 const RouterMain = () => {
   const location = useLocation();
 
@@ -71,39 +43,48 @@ const RouterMain = () => {
 
   return (
     <>
-      <Routes>
-        {/* Home Page */}
-        <Route element={<Header />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/categoriesType" element={<CategoryMainType />} />
-        </Route>
+      <TransitionGroup>
+        <CSSTransition
+          key={location.pathname}
+          timeout={500}
+          classNames={"fade"}
+        >
+          <Routes>
+            {/* Home Page */}
+            <Route element={<Header />}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/categoriesType" element={<CategoryMainType />} />
+            </Route>
 
-        {/* Yandex Maps */}
-        <Route>
-          <Route path="/delivery-points" element={<YandexMapDressMe />} />
-        </Route>
+            {/* Yandex Maps */}
+            <Route>
+              <Route path="/delivery-points" element={<YandexMapDressMe />} />
+            </Route>
 
-        {/* Add user */}
-        <Route element={<AddUserNavbar />}>
-          <Route
-            path="/add_user_private_data"
-            element={<AddUserPrivateInfo />}
-          />
-          <Route path="/add_user_body_data" element={<AddUserBodyData />} />
-        </Route>
-        {/* Registration page  */}
-        <Route element={<AuthenIndex />}>
-          <Route path="/sign_in" element={<SignIn />} />
-          <Route path="/sign_up" element={<SignUp />} />
-          <Route path="/forget_password" element={<ForgetPassword />} />
-          <Route path="/set_new_password" element={<SetNewPassword />} />
-          <Route
-            path="/enter_password_validate"
-            element={<ForgetConfirmPassword />}
-          />
-          <Route path="/confirm_password" element={<ConfirmPassword />} />
-        </Route>
-      </Routes>
+            {/* Add user */}
+            <Route element={<AddUserNavbar />}>
+              <Route
+                path="/add_user_private_data"
+                element={<AddUserPrivateInfo />}
+              />
+              <Route path="/add_user_body_data" element={<AddUserBodyData />} />
+            </Route>
+
+            {/* Registration page  */}
+            <Route element={<AuthenIndex />}>
+              <Route path="/sign_in" element={<SignIn />} />
+              <Route path="/sign_up" element={<SignUp />} />
+              <Route path="/forget_password" element={<ForgetPassword />} />
+              <Route path="/set_new_password" element={<SetNewPassword />} />
+              <Route
+                path="/enter_password_validate"
+                element={<ForgetConfirmPassword />}
+              />
+              <Route path="/confirm_password" element={<ConfirmPassword />} />
+            </Route>
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
 
       {locationWindow !== "/add_user_private_data" &&
       locationWindow !== "/add_user_body_data" &&
