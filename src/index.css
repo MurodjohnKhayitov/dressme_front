@@ -192,14 +192,9 @@ select {
     opacity: 1;
   }
 }
-/* .fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter, .fade-leave-to  {
-  opacity: 0;
-} */
 
+/* ------------------- */
+/* simple - enter transition 300ms, exit 150ms */
 .fade-appear,
 .fade-enter {
   opacity: 0;
@@ -208,11 +203,14 @@ select {
 .fade-appear-active,
 .fade-enter.fade-enter-active {
   opacity: 1;
-  transition: opacity 450ms linear 250ms;
+  transition: opacity 300ms linear 150ms;
 }
+
 .fade-exit {
   opacity: 1;
+  z-index: 1;
 }
+
 .fade-exit.fade-exit-active {
   opacity: 0;
   transition: opacity 150ms linear;
