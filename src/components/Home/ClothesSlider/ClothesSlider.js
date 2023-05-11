@@ -332,7 +332,7 @@ export default function ClothesSlider() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[25%] z-10	right-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard		`}
+        className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[25%] z-10	right-[22px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard		`}
         onClick={onClick}
       >
         <button className="next">
@@ -346,7 +346,7 @@ export default function ClothesSlider() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[25%] z-10	left-[10px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard`}
+        className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[25%] z-10	left-[18px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard`}
         onClick={onClick}
       >
         <button className="prev">
@@ -360,7 +360,7 @@ export default function ClothesSlider() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	right-[18px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard		`}
+        className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	right-[22px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard		`}
         onClick={onClick}
       >
         <button className="next">
@@ -374,7 +374,7 @@ export default function ClothesSlider() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	left-[18px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard`}
+        className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[40%] z-10	left-[26px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard`}
         onClick={onClick}
       >
         <button className="prev">
@@ -560,7 +560,7 @@ export default function ClothesSlider() {
               return (
                 <div
                   key={data.id}
-                  className={`!w-[100%] ss:m-0 md:my-8 cursor-pointer transition ease-in-out delay-150 hover:shadow-cardShadow ${shadowStyle} ss:h-[320px] xs:h-[456px] lg:h-[440px] border border-solid borderColorCard overflow-hidden rounded-lg`}
+                  className={`!w-[100%] ss:m-0 md:my-8 cursor-pointer transition ease-in-out delay-150 hover:shadow-cardShadow ${shadowStyle} border border-solid borderColorCard overflow-hidden rounded-lg`}
                 >
                   <div className="relative w-full  h-[206px] ls:h-[220px] ll:h-[234px] xs:h-[309px] lg:h-[320px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard">
                     {data.ProducImg ? (
@@ -666,9 +666,10 @@ export default function ClothesSlider() {
                     </div>
                   </div>
 
-                  <div className="w-full rounded-b-1xl bg-white   flex flex-wrap   h-[120px] xs:h-[147px] lg:h-[120px]   ">
-                    <div className="w-full   xs:px-3 ss:px-3 xs:mt-3 ss:mt-2">
-                      <div className="w-full  not-italic font-AeonikProRegular text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
+                  <div className="w-full rounded-b-xl bg-white   flex flex-wrap h-[100px] md:h-[106px]">
+                    <div className="w-full xs:px-3 ss:px-3 xs:mt-3 ss:mt-2">
+                      <div className="relative w-full whitespace-nowrap overflow-hidden not-italic font-AeonikProRegular text-[10px] ls:text-xs lg:text-[14px] leading-4 text-black mb-3 md:mb-0  cursor-pointer">
+                        <div className="absolute categoryLinearText left-0 w-full h-full z-[51] top-0"></div>
                         {data?.title || "NoData"}
                       </div>
                       <div className="w-full flex justify-between items-center xs:mt-3 ">
