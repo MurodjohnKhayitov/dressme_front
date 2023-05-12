@@ -193,7 +193,7 @@ const NavbarBottomIndex = () => {
                   ) : null}
                   {locationWindow === "/" ||
                   locationWindow === "/categoriesType" ? (
-                    <div className="py-3">
+                    <div className="">
                       <BottomHeader />
                     </div>
                   ) : null}

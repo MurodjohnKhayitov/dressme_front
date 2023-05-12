@@ -8,22 +8,15 @@ import UserOfBodyMobile from "./UserOfBody/UsermakeBodyMobile/UserOfBodyMobile";
 // import UserOfBodyMobile from "./UserOfBody/UserOfBodyMobile";
 
 const AddUserBodyData = () => {
-  const [load, setLoad] = useState(false);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoad(true);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
   return (
-    <div className={`${!load && "LoadingAnimation"}`}>
+    <>
       <div className="hidden md:block">
         <UserOfBodyDesktop />
       </div>
       <div className="px-4 py-5 block md:hidden">
         <UserOfBodyMobile />
       </div>
-    </div>
+    </>
   );
 };
 export default AddUserBodyData;
