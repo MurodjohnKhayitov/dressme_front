@@ -39,8 +39,8 @@ export default function YandexMapsIndex() {
                   : "ss:bottom-[0]"
               } ${
                 !dressInfo?.yandexOpenMenu
-                  ? "md:top-[105px] transition ease-in-out duration-500"
-                  : "md:top-[-100px] transition ease-in-out duration-500"
+                  ? "md:top-[105px]"
+                  : "md:top-[-100px]"
               }  md:bottom-auto
             `}
             >
