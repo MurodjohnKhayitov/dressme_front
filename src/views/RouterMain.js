@@ -43,6 +43,10 @@ const RouterMain = () => {
 
   return (
     <>
+      <Routes>
+        <Route path="/delivery-points" element={<YandexMapDressMe />} />
+      </Routes>
+      <Header />
       <TransitionGroup>
         <CSSTransition
           key={location.pathname}
@@ -50,41 +54,28 @@ const RouterMain = () => {
           classNames={"fade"}
         >
           <Routes>
-            {/* Home Page */}
-            <Route element={<Header />}>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/categoriesType" element={<CategoryMainType />} />
-            </Route>
-
-            {/* Yandex Maps */}
-            <Route>
-              <Route path="/delivery-points" element={<YandexMapDressMe />} />
-            </Route>
-
-            {/* Add user */}
-            <Route element={<AddUserNavbar />}>
-              <Route
-                path="/add_user_private_data"
-                element={<AddUserPrivateInfo />}
-              />
-              <Route path="/add_user_body_data" element={<AddUserBodyData />} />
-            </Route>
-
-            {/* Registration page  */}
-            <Route element={<AuthenIndex />}>
-              <Route path="/sign_in" element={<SignIn />} />
-              <Route path="/sign_up" element={<SignUp />} />
-              <Route path="/forget_password" element={<ForgetPassword />} />
-              <Route path="/set_new_password" element={<SetNewPassword />} />
-              <Route
-                path="/enter_password_validate"
-                element={<ForgetConfirmPassword />}
-              />
-              <Route path="/confirm_password" element={<ConfirmPassword />} />
-            </Route>
+            
+            <Route
+              path="/add_user_private_data"
+              element={<AddUserPrivateInfo />}
+            />
+            <Route path="/add_user_body_data" element={<AddUserBodyData />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/categoriesType" element={<CategoryMainType />} />
+            <Route path="/sign_in" element={<SignIn />} />
+            <Route path="/sign_up" element={<SignUp />} />
+            <Route path="/forget_password" element={<ForgetPassword />} />
+            <Route path="/set_new_password" element={<SetNewPassword />} />
+            <Route
+              path="/enter_password_validate"
+              element={<ForgetConfirmPassword />}
+            />
+            <Route path="/confirm_password" element={<ConfirmPassword />} />
+            {/* </Route> */}
           </Routes>
         </CSSTransition>
       </TransitionGroup>
+
 
       {locationWindow !== "/add_user_private_data" &&
       locationWindow !== "/add_user_body_data" &&
@@ -97,12 +88,12 @@ const RouterMain = () => {
       locationWindow !== "/delivery-points" ? (
         <Footer />
       ) : null}
-      {/* {locationWindow !== "/add_user_private_data" ||
-      locationWindow !== "/add_user_body_data" ||
-      locationWindow !== "/confirm_password" ||
-      locationWindow !== "/forget_password" ||
-      locationWindow !== "/sign_up" ||
-      locationWindow !== "/sign_in" ||
+      {/* {locationWindow !== "/add_user_private_data" 
+      locationWindow !== "/add_user_body_data" 
+      locationWindow !== "/confirm_password" 
+      locationWindow !== "/forget_password" 
+      locationWindow !== "/sign_up" 
+      locationWindow !== "/sign_in" 
       locationWindow !== "/delivery-points" ? (
         <Footer />
       ) : null} */}

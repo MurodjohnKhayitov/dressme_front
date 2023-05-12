@@ -4,7 +4,8 @@ import MediumHeader from "./medium";
 import BottomHeader from "./bottom";
 import NavMenu from "./nav-menu";
 import "./header.css";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import NavbarBottomIndex from "./NavbarBottomIndex";
 const Header = () => {
   // ----------------NavBar----------------
   const [show, setShow] = useState(true);
@@ -39,37 +40,44 @@ const Header = () => {
       window.removeEventListener("scroll", handleScrollNavMenu);
     };
   }, [show, scrollPost, ShowNavMenu, ScrollPostNavMenu]);
+  const location = useLocation();
 
+  const [locationWindow, setLocationWindow] = useState("");
+  useEffect(() => {
+    setLocationWindow(location.pathname);
+  }, [location.pathname]);
   return (
     <div>
-      <header className="border border-searchBgColor">
-        <div className={`ss:block md:hidden `}>
-          <TopHeader />
-          <MediumHeader />
-        </div>
-        <div
-          className={`fixed top-0 w-full bg-white  ${
-            show
-              ? "visible duration-500 z-30"
-              : "visible duration-500 z-30 translate-y-[-100%]"
-          } hidden md:block`}
-        >
-          <TopHeader />
-          <MediumHeader />
-        </div>
-        <div className="md:mt-[99px] ss:mt-0">
-          <BottomHeader />
+      {locationWindow !== "/delivery-points" ? (
+        <header className="border border-searchBgColor">
+          <div className={`ss:block md:hidden`}>
+            <TopHeader />
+            <MediumHeader />
+          </div>
           <div
-            className={`fixed bottom-0 w-full bg-white  ${
+            className={`fixed top-0 w-full bg-white  ${
               show
                 ? "visible duration-500 z-30"
-                : "visible duration-500 z-30 translate-y-[100%]"
-            } block md:hidden`}
+                : "visible duration-500 z-30 translate-y-[-100%]"
+            } hidden md:block`}
           >
-            <NavMenu />
+            <TopHeader />
+            <MediumHeader />
           </div>
-        </div>
-      </header>
+          <div className="md:mt-[99px] ss:mt-0">
+            <NavbarBottomIndex />
+            <div
+              className={`fixed bottom-0 w-full bg-white  ${
+                show
+                  ? "visible duration-500 z-30"
+                  : "visible duration-500 z-30 translate-y-[100%]"
+              } block md:hidden`}
+            >
+              <NavMenu />
+            </div>
+          </div>
+        </header>
+      ) : null}
       <Outlet />
     </div>
   );
