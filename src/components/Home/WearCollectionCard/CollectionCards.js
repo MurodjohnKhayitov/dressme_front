@@ -474,7 +474,7 @@ export default function CollectionCards() {
                   // onClick={() => handleGetCardId(data?.id)}
                   className={`ss:w-[49%] md:w-[24%] lg:w-[240px] transition ease-in-out delay-50 hover:shadow-cardShadow ${shadowStyle} xs:h-[456px] lg:h-[428px] border border-solid borderColorCard overflow-hidden rounded-lg`}
                 >
-                  <div className="relative w-full cursor-pointer ss:h-[200px] ls:h-[230px] ll:h-[250px] xs:h-[309px] bg-btnBgColor lg:h-[320px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap">
+                  <div className="relative w-full cursor-pointer ss:h-[200px] ls:h-[220px] ll:h-[238px] xs:h-[309px] bg-btnBgColor lg:h-[320px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap">
                     {data.ProducImg ? (
                       <img
                         className="w-full h-full m-auto hover:scale-105 transition duration-700 ease-in-out"
