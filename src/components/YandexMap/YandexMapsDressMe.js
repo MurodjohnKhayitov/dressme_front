@@ -390,7 +390,9 @@ function YandexMapsDressMe() {
               : "top-[-250px] ease-linear duration-500 "
           }  ease-linear duration-500 w-full`}
         >
+
           <YandexMapsIndex />
+        
         </div>
         <div
           className={`absolute z-50   right-2  ${
