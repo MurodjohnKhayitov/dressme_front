@@ -50,11 +50,11 @@ const RouterMain = () => {
       <TransitionGroup>
         <CSSTransition
           key={location.pathname}
-          timeout={500}
+          timeout={300}
           classNames={"fade"}
+          exit={false}
         >
           <Routes>
-            
             <Route
               path="/add_user_private_data"
               element={<AddUserPrivateInfo />}
@@ -75,7 +75,6 @@ const RouterMain = () => {
           </Routes>
         </CSSTransition>
       </TransitionGroup>
-
 
       {locationWindow !== "/add_user_private_data" &&
       locationWindow !== "/add_user_body_data" &&
