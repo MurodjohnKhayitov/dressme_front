@@ -1,12 +1,36 @@
 import React, { useState } from "react";
 import { DownCate, search } from "../../../../assets/imgs";
-
+import { BsCheckLg } from "react-icons/bs";
 export default function CategoryForBrand() {
   const [state, setState] = useState({
     brandShow: true,
+    checkBrand: false,
   });
+  const [product, setProduct] = useState({
+    brandWear: [
+      { id: 1, action: false, name: "Adidas", count: 125 },
+      { id: 2, action: false, name: "Reebok", count: 125 },
+      { id: 3, action: false, name: "Nike", count: 125 },
+      { id: 4, action: false, name: "Puma", count: 125 },
+      { id: 5, action: false, name: "ECCO", count: 125 },
+      { id: 6, action: false, name: "New Balance", count: 125 },
+      { id: 7, action: false, name: " Asics", count: 125 },
+      { id: 8, action: false, name: "Columbian", count: 125 },
+      { id: 9, action: false, name: "Under Armour", count: 125 },
+    ],
+  });
+  const HandleCheckStatus = (e) => {
+    console.log(e, "id");
+    // setProduct((current) => {
+    //   return current.brandWear.map((data) => {
+    //     if (data?.id == e) {
+    //       return { ...data, action: !data.action };
+    //     } else return data;
+    //   });
+    // });
+  };
 
-  console.log(state?.brandShow);
+  // console.log(state?.brandShow);
   return (
     <div className="w-full h-hull border border-green-500 rounded-lg px-5 py-[30px]">
       <div className="w-full border border-red-500 flex flex-wrap gap-x-[4px] gap-y-[8px]">
@@ -59,17 +83,33 @@ export default function CategoryForBrand() {
           </div>
           {/* Field */}
           <div className="h-[300px] w-full border border-blue-600 mt-5">
-            <div className="flex items-center cursor-pointer">
-              <div className="w-[22px] h-[22px] hover:bg-red-500 mr-[10px] rounded-lg border border-searchBgColor">
-                {/* <input type="checkbox" className="border border-red-500" /> */}
-              </div>
-              <p className="not-italic mr-2 font-AeonikProRegular text-lg leading-4 text-black">
-                Reebok
-              </p>
-              <p className="not-italic font-AeonikProRegular text-base leading-4 text-setTexOpacity">
-                (142)
-              </p>
-            </div>
+            {product?.brandWear.map((data) => {
+              return (
+                <div
+                  key={data?.id}
+                  onClick={HandleCheckStatus(data?.id)}
+                  className="flex items-center cursor-pointer select-none border border-red-500"
+                >
+                  <div
+                    className={`w-[22px] h-[22px] p-1 flex items-center ${
+                      state?.checkBrand ? "bg-fullBlue " : "bg-white"
+                    }  mr-[10px] rounded border border-borderColorCard`}
+                  >
+                    {state?.checkBrand && (
+                      <span className="text-white">
+                        <BsCheckLg size={12} />
+                      </span>
+                    )}
+                  </div>
+                  <div className="border border-red-500 flex items-center not-italic mr-2 font-AeonikProRegular text-lg leading-4 text-black">
+                    {data?.name}
+                  </div>
+                  <div className="border border-red-500 flex items-center not-italic font-AeonikProRegular text-base leading-4 text-setTexOpacity">
+                    ({data?.count})
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

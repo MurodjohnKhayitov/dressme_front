@@ -18,8 +18,6 @@ import { dressMainData } from "../../../ContextHook/ContextMenu";
 import SetClothesWear from "../WearCollectionSet/SetClothesWear";
 
 export default function CollectionCards() {
-  console.log("CollectionCards Page");
-
   const [productList, setProductList] = useState([
     {
       id: 1,
