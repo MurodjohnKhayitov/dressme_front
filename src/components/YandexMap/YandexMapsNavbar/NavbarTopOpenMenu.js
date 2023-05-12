@@ -174,7 +174,7 @@ export default function NavbarTopOpenMenu() {
   
   return (
     <div className="  w-[100%] overflow-hidden mr-auto  border border-searchBgColor  h-[60px] flex items-center rounded-[12px] bg-yandexNavbar   backdrop-blur-sm ">
-      <div className="w-[30%] flex items-center ml-6  ">
+      <div className="w-[27%] flex items-center ml-6  ">
         {/* Logo section */}
         <NavLink
           to="/"
@@ -242,7 +242,7 @@ export default function NavbarTopOpenMenu() {
         </div>
       </div>
       <span className="w-[2px] h-[30px] bg-searchBgColor mr-4"></span>
-      <div className="w-[67%]   h-full   px-1 ">
+      <div className="w-[69%]   h-full   px-1 ">
         <Slider
           {...settings1}
           className="w-[100%] h-full items-center px-4 flex xs:justify-between   "
