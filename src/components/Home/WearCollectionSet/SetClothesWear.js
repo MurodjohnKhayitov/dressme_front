@@ -1327,7 +1327,7 @@ export default function SetClothesWear() {
                 );
               })}
 
-              <div className="w-full h-[124px] md:h-[104px] px-3 md:pr-2 md:pl-4 md:pb-2 md:pt-2 flex flex-wrap content-between">
+              <div className="w-full h-[124px] md:h-[100px] px-3 md:pr-2 md:pl-4 md:pb-2 md:pt-2 flex flex-wrap content-between">
                 
                 <div className="relative flex w-full justify-between items-center">
                   <div className="flex items-center mt-3 md:mt-4 mb-[10px] md:mb-3">
@@ -1344,7 +1344,7 @@ export default function SetClothesWear() {
                   <Button
                     type="primary"
                     onClick={() => setOpen(true)}
-                    className="group shadow-none absolute top-9 right-0 left-0 md:left-36 md:-top-1 md:right-0 rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[10px] pr-[5px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300"
+                    className="group md:w-[145px] shadow-none absolute top-9 right-0 left-0 md:left-[134px] md:-top-1 md:right-0 rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[2px] pr-[0px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300"
                   >
                     <span className="group-hover:text-white flex items-center font-AeonikProRegular text-center text-black text-[12px] mr-1">
                     Страница образа
