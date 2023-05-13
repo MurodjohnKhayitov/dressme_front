@@ -37,11 +37,10 @@ export default function YandexMapsIndex() {
                 !dressInfo?.yandexFullScreen
                   ? "ss:bottom-[63px] "
                   : "ss:bottom-[0]"
-              } ${
-                !dressInfo?.yandexOpenMenu
-                  ? "md:top-[105px]"
-                  : "md:top-[-100px]"
-              }  md:bottom-auto
+              } 
+              
+               md:bottom-auto
+              duration-500
             `}
             >
               <YandexFilter />

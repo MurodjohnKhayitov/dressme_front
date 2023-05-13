@@ -358,6 +358,7 @@ function YandexMapsDressMe() {
     });
   };
   console.log(dressInfo.yandexOpenMarket, "yandexOpenMarket");
+
   const handleGetId = (getValue) => {
     setPoints((current) => {
       return current.map((data) => {

@@ -34,19 +34,6 @@ export default function YandexFilter() {
           );
         })}
       </div>
-      {/* <div className="Container ss:block  md:hidden">
-        <ScrollFilter _class="items gap-x-2 pl-3">
-          {wearGroup?.map((data) => {
-            return (
-              <div key={data.id} className={`item  `}>
-                <p className=" cursor-pointer rounded-lg bg-white not-italic font-AeonikProMedium text-sm text-black tracking-[1%] ">
-                  {data?.name || "0"}
-                </p>
-              </div>
-            );
-          })}
-        </ScrollFilter>
-      </div> */}
     </div>
   );
 }
