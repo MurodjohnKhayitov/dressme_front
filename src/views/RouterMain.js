@@ -21,11 +21,11 @@ import ConfirmPassword from "../components/Authentication/ConfirmPassword/Confir
 import LoadingOpacity from "../Page/Loading/LoadingOpacity";
 // import HomePage from "../Page/Home/Home";
 
-// import YandexMapDressMe from "../components/YandexMap";
-// import AddUserPrivateInfo from "../components/Home/AddUser/AddUserPrivateData/AddUserPrivateData";
-// import AddUserBodyData from "../components/Home/AddUser/AddUserBodyData/AddUserBodyData";
-// import SignIn from "../components/Authentication/SignIn/SignIn";
-// import SignUp from "../components/Authentication/SignUp/SignUp";
+import YandexMapDressMe from "../components/YandexMap";
+import AddUserPrivateInfo from "../components/Home/AddUser/AddUserPrivateData/AddUserPrivateData";
+import AddUserBodyData from "../components/Home/AddUser/AddUserBodyData/AddUserBodyData";
+import SignIn from "../components/Authentication/SignIn/SignIn";
+import SignUp from "../components/Authentication/SignUp/SignUp";
 // import ForgetPassword from "../components/Authentication/SignInDetail/ForgetPassword";
 // import SetNewPassword from "../components/Authentication/SignInDetail/SetNewPassword";
 // import ForgetConfirmPassword from "../components/Authentication/SignInDetail/ForgetConfirmPassword";
@@ -41,21 +41,21 @@ import SignUpSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 
 // -------------------------------------
 const HomePage = React.lazy(() => import("../Page/Home/Home"));
-const AddUserPrivateInfo = React.lazy(() =>
-  import("../components/Home/AddUser/AddUserPrivateData/AddUserPrivateData")
-);
-const AddUserBodyData = React.lazy(() =>
-  import("../components/Home/AddUser/AddUserBodyData/AddUserBodyData")
-);
-const YandexMapDressMe = React.lazy(() =>
-  import("../components/YandexMap/index")
-);
-const SignIn = React.lazy(() =>
-  import("../components/Authentication/SignIn/index")
-);
-const SignUp = React.lazy(() =>
-  import("../components/Authentication/SignUp/index")
-);
+// const AddUserPrivateInfo = React.lazy(() =>
+//   import("../components/Home/AddUser/AddUserPrivateData/AddUserPrivateData")
+// );
+// const AddUserBodyData = React.lazy(() =>
+//   import("../components/Home/AddUser/AddUserBodyData/AddUserBodyData")
+// );
+// const YandexMapDressMe = React.lazy(() =>
+//   import("../components/YandexMap/index")
+// );
+// const SignIn = React.lazy(() =>
+//   import("../components/Authentication/SignIn/index")
+// );
+// const SignUp = React.lazy(() =>
+//   import("../components/Authentication/SignUp/index")
+// );
 const ForgetConfirmPassword = React.lazy(() =>
   import("../components/Authentication/SignInDetail/ForgetConfirmPassword")
 );
@@ -66,12 +66,6 @@ const ForgetPassword = React.lazy(() =>
   import("../components/Authentication/SignInDetail/ForgetPassword")
 );
 const Footer = React.lazy(() => import("../components/footer/footer"), 500);
-// const Footer = lazy(() => {
-//   return new Promise((resolve) => {
-//     setTimeout(() => resolve(import("../components/footer/footer")), 500);
-//     console.log("datas");
-//   });
-// });
 
 // -------------------------------------
 
@@ -110,46 +104,10 @@ const RouterMain = () => {
             />
             <Route
               path="/add_user_private_data"
-              element={
-                <Suspense
-                  fallback={
-                    <div>
-                      <AddUserPrivateSkeleton />
-                    </div>
-                  }
-                >
-                  <AddUserPrivateInfo />
-                </Suspense>
-              }
+              element={<AddUserPrivateInfo />}
             />
-            <Route
-              path="/delivery-points"
-              element={
-                <Suspense
-                  fallback={
-                    <div>
-                      <YandexSkeletonIndex />
-                    </div>
-                  }
-                >
-                  <YandexMapDressMe />
-                </Suspense>
-              }
-            />
-            <Route
-              path="/add_user_body_data"
-              element={
-                <Suspense
-                  fallback={
-                    <div>
-                      <AddUserBodySkeleton />
-                    </div>
-                  }
-                >
-                  <AddUserBodyData />
-                </Suspense>
-              }
-            />
+            <Route path="/delivery-points" element={<YandexMapDressMe />} />
+            <Route path="/add_user_body_data" element={<AddUserBodyData />} />
             <Route
               path="/categoriesType"
               element={
@@ -164,34 +122,8 @@ const RouterMain = () => {
                 </Suspense>
               }
             />
-            <Route
-              path="/sign_in"
-              element={
-                <Suspense
-                  fallback={
-                    <div>
-                      <SignInSkeletonIndex />
-                    </div>
-                  }
-                >
-                  <SignIn />
-                </Suspense>
-              }
-            />
-            <Route
-              path="/sign_up"
-              element={
-                <Suspense
-                  fallback={
-                    <div>
-                      <SignInSkeletonIndex />
-                    </div>
-                  }
-                >
-                  <SignUp />
-                </Suspense>
-              }
-            />
+            <Route path="/sign_in" element={<SignIn />} />
+            <Route path="/sign_up" element={<SignUp />} />
             <Route
               path="/forget_password"
               element={
