@@ -567,7 +567,7 @@ export default function CollectionCards() {
                   <div className="w-full rounded-b-xl bg-white  flex flex-wrap h-[100px] md:h-[106px]">
                     <div className="w-full  xs:px-3 ss:px-3 xs:mt-3 ss:mt-2">
                       <div className="relative w-full whitespace-nowrap overflow-hidden not-italic font-AeonikProRegular text-[12px] ls:text-sm lg:text-[15px] leading-4 text-black mb-2 md:mb-0  cursor-pointer">
-                        <div className="absolute categoryLinearText left-0 w-full h-full z-[51] top-0"></div>
+                        <div className="absolute categoryLinearText left-0 w-full h-full z-[10] top-0"></div>
                         {data?.title || "NoData"}
                       </div>
                       <div className="w-full flex justify-between items-center xs:mt-3">
