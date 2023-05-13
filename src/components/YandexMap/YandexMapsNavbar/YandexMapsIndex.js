@@ -41,6 +41,7 @@ export default function YandexMapsIndex() {
               
                md:bottom-auto
               duration-500
+
             `}
             >
               <YandexFilter />
