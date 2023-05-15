@@ -1,4 +1,5 @@
 import React from "react";
+import '../category.css'
 import CategoryCards from "./CategoryElement/CategoryCards";
 import { DownCate, arrowBottomRight, search } from "../../../assets/imgs";
 import CategoryForBrand from "./CategoryForBrand/CategoryForBrand";

@@ -1,0 +1,18 @@
+.categoryScroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.categoryScroll::-webkit-scrollbar-thumb {
+    background-color: #b5b5bd;
+    height: 50px;
+    border-radius: 8px
+}
+
+/* .openedBrands {
+    height: 0;
+    overflow: hidden;
+} */
+
+.openBrands.open .openedBrands {
+    height: auto;
+}
