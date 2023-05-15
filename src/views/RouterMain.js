@@ -6,7 +6,6 @@ import "../index.css";
 // -------Navbar VS Footer
 import Header from "../components/header/header";
 // import Footer from "../components/footer/footer";
-import AddUserNavbar from "../components/header/AddUserNavbar/AddUserNavbar";
 
 // -------Without Lazy
 

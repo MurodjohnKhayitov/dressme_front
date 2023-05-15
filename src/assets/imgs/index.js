@@ -147,6 +147,8 @@ export { default as ticketDiscount } from "./Category/ticketDiscount.svg";
 export { default as PrevCate } from "./Category/PrevCate.svg";
 export { default as NextCate } from "./Category/NextCate.svg";
 export { default as DownCate } from "./Category/downCate.svg";
+export { default as iIcons } from "./Category/IIcons.svg";
+
 // ----------------ForBrand---------
 
 export { default as adidas } from "./BrandType/Item/adidas.svg";

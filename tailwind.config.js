@@ -46,6 +46,7 @@ module.exports = {
 
         // BgCategory...
         bgCategory: "#F8F8F8",
+        textOpacity: "#D9D9D9",
         // Loading...
         LoadinBg: "rgba(252,252,252,0.8)",
       },
