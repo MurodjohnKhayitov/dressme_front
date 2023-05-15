@@ -135,30 +135,103 @@ export default function CategoryForBrand() {
         </div>
 
         {/* Prizes */}
-            <div className="w-full flex justify-between items-center mb-[30px] border border-red-500">
-                <div onClick={() => setState({ ...state, checkedPrize: !state.checkedPrize })} className="flex items-center cursor-pointer select-none">
-                    <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
-                        Budget
-                    </span>
-                    <img src={DownCate} className={`${state?.checkedPrize ? "rotate-[180deg]" : ""
-                    } duration-300`} alt="" />
-                </div>
-            </div>    
-            <div className="w-full border border-red-500 flex flex-wrap gap-x-1 gap-y-2">
-                {product.prizes.map( item => (
-                    <button key={item.id} className="h-11 w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory hover:bg-fullBlue hover:text-white transition ease-linear duration-200 rounded-lg">
-                        {item.name}
-                    </button>
-                ))}
+        <div className="w-full flex justify-between items-center mb-[30px] border border-red-500">
+            <div onClick={() => setState({ ...state, checkedPrize: !state.checkedPrize })} className="flex items-center cursor-pointer select-none">
+                <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
+                    Budget
+                </span>
+                <img src={DownCate} className={`${state?.checkedPrize ? "rotate-[180deg]" : ""
+                } duration-300`} alt="" />
             </div>
-            <div className="w-full bg-bgCategory mt-4 h-12 rounded-lg">
-                <InputRange
-                    formatLabel={value => `${value}$`}
-                    minValue={0} maxValue={200}
-                    value={value}
-                    onChange={value => SetValue( value )} 
+        </div>    
+        <div className="w-full border border-red-500 flex flex-wrap gap-x-1 gap-y-2">
+            {product.prizes.map( item => (
+                <button key={item.id} className="h-11 w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory hover:bg-fullBlue hover:text-white transition ease-linear duration-200 rounded-lg">
+                    {item.name}
+                </button>
+            ))}
+        </div>
+        <div className="w-full bg-bgCategory mt-4 h-12 rounded-lg">
+            <InputRange
+                formatLabel={value => `${value}$`}
+                minValue={0} maxValue={200}
+                value={value}
+                onChange={value => SetValue( value )} 
+            />
+        </div>
+
+        {/* Brands filter */}
+        <div className="w-full h-fit mt-[40px]">
+            
+            {/* Controls */}
+            <div className="openBrands w-full flex justify-between items-center" 
+                onClick={(event)=>{event.target.classList.toggle('open')}}
+            >
+            <div
+                onClick={() => setState({ ...state, brandShow: !state.brandShow })}
+                className="flex items-center cursor-pointer select-none"
+            >
+                <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black" >
+                Brands
+                </span>
+                <img
+                src={DownCate}
+                className={`${
+                    state?.brandShow ? "rotate-[180deg]" : ""
+                } duration-300`}
+                alt=""
                 />
             </div>
+            <span className="not-italic font-AeonikProMedium text-base leading-4 text-fullBlue cursor-pointer">
+                Clear
+            </span>
+            </div>
+            <div className="mt-5 openedBrands">
+                {/* Search */}
+                <div className="h-[44px] w-full flex items-center justify-between px-4 border border-searchBgColor rounded-lg ">
+                <input
+                    className="w-[85%] h-full "
+                    type="text"
+                    name="search"
+                    placeholder="Search for brand"
+                />
+                <img src={search} className="" />
+                </div>
+
+                {/* Field */}
+                <div className="h-[300px] w-full border border-blue-600 my-5 overflow-auto scrollbar dark:scrollbar categoryScroll">
+                {product?.brandWear.map((data) => {
+                    return (
+                    <div
+                        key={data?.id}
+                        onClick={HandleCheckStatus(data?.id)}
+                        className="flex items-center cursor-pointer select-none mb-4 overflow-auto"
+                    >
+                        <div
+                        className={`w-[22px] h-[22px] p-1 flex items-center ${
+                            state?.checkBrand ? "bg-fullBlue " : "bg-white"
+                        }  mr-[10px] rounded border border-borderColorCard`}
+                        >
+                        {state?.checkBrand && (
+                            <span className="text-white">
+                            <BsCheckLg size={12} />
+                            </span>
+                        )}
+                        </div>
+                        <div className="flex items-center not-italic mr-2 font-AeonikProRegular text-lg leading-4 text-black">
+                        {data?.name}
+                        </div>
+                        <div className="flex items-center not-italic font-AeonikProRegular text-base leading-4 text-setTexOpacity">
+                        ({data?.count})
+                        </div>
+                    </div>
+                    );
+                })}
+                </div>
+
+                
+            </div>
+        </div>
 
         </div>
     );
