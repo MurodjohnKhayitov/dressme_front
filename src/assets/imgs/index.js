@@ -148,6 +148,7 @@ export { default as PrevCate } from "./Category/PrevCate.svg";
 export { default as NextCate } from "./Category/NextCate.svg";
 export { default as DownCate } from "./Category/downCate.svg";
 export { default as iIcons } from "./Category/IIcons.svg";
+export { default as CategoryMenu } from "./Category/CategoryMenu.svg";
 
 // ----------------ForBrand---------
 
@@ -163,7 +164,6 @@ export { default as prada } from "./BrandType/prada.svg";
 export { default as puma } from "./BrandType/puma-logo.svg";
 export { default as tommy } from "./BrandType/tommy-hilfig-vectorlogo.svg";
 export { default as zara } from "./BrandType/Item/zara.svg";
-
 // -------------------Persons Img For Season-----------------
 
 // Spring
