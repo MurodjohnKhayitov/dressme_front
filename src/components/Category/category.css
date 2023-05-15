@@ -16,3 +16,18 @@
 .openBrands.open .openedBrands {
     height: auto;
 }
+
+.input-range {
+    top: 37px;
+    width: 98%;
+}
+
+.input-range__slider {
+    background-color: #fff !important;
+    border: 1px solid #000 !important;
+}
+
+.input-range__label--max,  
+.input-range__label--min{
+    display: none;
+}
