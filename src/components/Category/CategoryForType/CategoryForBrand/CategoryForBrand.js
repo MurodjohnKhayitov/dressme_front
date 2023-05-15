@@ -5,6 +5,7 @@ export default function CategoryForBrand() {
   const [state, setState] = useState({
     brandShow: true,
     checkBrand: false,
+    checkedPrize: true,
   });
   const [product, setProduct] = useState({
     brandWear: [
@@ -18,6 +19,12 @@ export default function CategoryForBrand() {
       { id: 8, action: false, name: "Columbian", count: 125 },
       { id: 9, action: false, name: "Under Armour", count: 125 },
     ],
+    prizes: [
+        {id:1, action: false, name: 'Undes 10$'},
+        {id:2, action: false, name: 'Undes 50$'},
+        {id:3, action: false, name: 'Undes 100$'},
+        {id:4, action: false, name: 'Above 100$'},
+    ]
   });
   const HandleCheckStatus = (e) => {
     console.log(e, "id");
@@ -48,21 +55,24 @@ export default function CategoryForBrand() {
         </button>
       </div>
       {/* Brands filter */}
-      <div className="w-full h-fit border border-red-500 mt-[40px]">
+      <div className="w-full h-fit mt-[40px]">
+        
         {/* Controls */}
-        <div className="w-full flex justify-between items-center border border-red-500">
+        <div className="openBrands w-full flex justify-between items-center" 
+            onClick={(event)=>{event.target.classList.toggle('open')}}
+        >
           <div
             onClick={() => setState({ ...state, brandShow: !state.brandShow })}
             className="flex items-center cursor-pointer select-none"
           >
-            <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
+            <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black" >
               Brands
             </span>
             <img
               src={DownCate}
               className={`${
                 state?.brandShow ? "rotate-[180deg]" : ""
-              } duration-200`}
+              } duration-300`}
               alt=""
             />
           </div>
@@ -70,49 +80,74 @@ export default function CategoryForBrand() {
             Clear
           </span>
         </div>
-        <div className="border border-green-600 mt-5">
-          {/* Search */}
-          <div className="h-[44px] w-full flex items-center justify-between px-4 border border-searchBgColor rounded-lg ">
+        <div className="mt-5 openedBrands">
+            {/* Search */}
+            <div className="h-[44px] w-full flex items-center justify-between px-4 border border-searchBgColor rounded-lg ">
             <input
-              className="w-[85%] h-full "
-              type="text"
-              name="search"
-              placeholder="Search for brand"
+                className="w-[85%] h-full "
+                type="text"
+                name="search"
+                placeholder="Search for brand"
             />
             <img src={search} className="" />
-          </div>
-          {/* Field */}
-          <div className="h-[300px] w-full border border-blue-600 mt-5">
+            </div>
+
+            {/* Field */}
+            <div className="h-[300px] w-full border border-blue-600 my-5 overflow-auto scrollbar dark:scrollbar categoryScroll">
             {product?.brandWear.map((data) => {
-              return (
+                return (
                 <div
-                  key={data?.id}
-                  onClick={HandleCheckStatus(data?.id)}
-                  className="flex items-center cursor-pointer select-none border border-red-500"
+                    key={data?.id}
+                    onClick={HandleCheckStatus(data?.id)}
+                    className="flex items-center cursor-pointer select-none mb-4 overflow-auto"
                 >
-                  <div
+                    <div
                     className={`w-[22px] h-[22px] p-1 flex items-center ${
-                      state?.checkBrand ? "bg-fullBlue " : "bg-white"
+                        state?.checkBrand ? "bg-fullBlue " : "bg-white"
                     }  mr-[10px] rounded border border-borderColorCard`}
-                  >
+                    >
                     {state?.checkBrand && (
-                      <span className="text-white">
+                        <span className="text-white">
                         <BsCheckLg size={12} />
-                      </span>
+                        </span>
                     )}
-                  </div>
-                  <div className="border border-red-500 flex items-center not-italic mr-2 font-AeonikProRegular text-lg leading-4 text-black">
+                    </div>
+                    <div className="flex items-center not-italic mr-2 font-AeonikProRegular text-lg leading-4 text-black">
                     {data?.name}
-                  </div>
-                  <div className="border border-red-500 flex items-center not-italic font-AeonikProRegular text-base leading-4 text-setTexOpacity">
+                    </div>
+                    <div className="flex items-center not-italic font-AeonikProRegular text-base leading-4 text-setTexOpacity">
                     ({data?.count})
-                  </div>
+                    </div>
                 </div>
-              );
+                );
             })}
-          </div>
+            </div>
+
+            
         </div>
       </div>
+
+      {/* Prizes */}
+        <div className="w-full flex justify-between items-center mb-[30px] border border-red-500">
+            <div onClick={() => setState({ ...state, checkedPrize: !state.checkedPrize })} className="flex items-center cursor-pointer select-none">
+                <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
+                    Budget
+                </span>
+                <img src={DownCate} className={`${state?.checkedPrize ? "rotate-[180deg]" : ""
+                } duration-300`} alt="" />
+            </div>
+        </div>    
+        <div className="w-full border border-red-500 flex flex-wrap gap-x-1 gap-y-2">
+            {product.prizes.map( item => (
+                <button key={item.id} className="h-11 w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory hover:bg-fullBlue hover:text-white transition ease-linear duration-200 rounded-lg">
+                    {item.name}
+                </button>
+            ))}
+        </div>
+        <div className="w-full">
+            
+        </div>
+
     </div>
   );
 }

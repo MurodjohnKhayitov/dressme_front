@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import '../../../Category/category.css'
 import { dressMainData } from "../../../../ContextHook/ContextMenu";
 import {
   AutummBoy,
@@ -111,7 +112,7 @@ const AddUserPrivateInfo = () => {
     { id: 12, type: "Декабрь" },
   ];
   const contentMonth = (
-    <div className="w-[125px] h-44 overflow-auto scrollbar dark:scrollbarkdark">
+    <div className="w-[125px] h-44 overflow-auto scrollbar dark:scrollbarkdark categoryScroll">
       {monthList.map((data) => {
         return (
           <p
