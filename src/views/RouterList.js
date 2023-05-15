@@ -6,7 +6,6 @@ import "../index.css";
 // -------Navbar VS Footer
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
-import AddUserNavbar from "../components/header/AddUserNavbar/AddUserNavbar";
 
 // -------Without Lazy
 
@@ -98,7 +97,7 @@ const RouterList = () => {
         </Route>
 
         {/* Add user */}
-        <Route element={<AddUserNavbar />}>
+        <Route>
           <Route
             path="/add_user_private_data"
             element={

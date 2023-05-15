@@ -29,6 +29,7 @@ import TopHeader from "./top";
 import BottomHeader from "./bottom";
 import AddUserGender from "./AddUserNavbar/AddUserGender";
 import { dressMainData } from "../../ContextHook/ContextMenu";
+import CategoryNavbar from "./CategoryNavbar/CategoryNavbar";
 const NavbarBottomIndex = () => {
   const [dressInfo] = useContext(dressMainData);
   let authenActiveStyle = "";
@@ -79,7 +80,7 @@ const NavbarBottomIndex = () => {
   return (
     <div className="flex flex-col justify-center items-center m-0 p-0 box-border ">
       <div className="max-w-[1280px] w-[100%] flex justify-center  items-center m-auto">
-        <div className="ss:w-full md:w-fit px-4 ">
+        <div className="ss:w-full mt-[6px] ss:px-0 md:px-0 border border-red-500">
           {personItems
             ?.filter((value) => value.id === dressInfo?.type)
             .map((data) => {
@@ -191,10 +192,14 @@ const NavbarBottomIndex = () => {
                       </div>
                     </>
                   ) : null}
-                  {locationWindow === "/" ||
-                  locationWindow === "/categoriesType" ? (
+                  {locationWindow === "/" ? (
                     <div className="">
                       <BottomHeader />
+                    </div>
+                  ) : null}
+                  {locationWindow === "/categoriesType" ? (
+                    <div className="">
+                      <CategoryNavbar />
                     </div>
                   ) : null}
                   {locationWindow === "/add_user_private_data" ||

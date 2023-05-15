@@ -262,7 +262,7 @@ const MediumHeader = () => {
 
   return (
     <div className="flex flex-col justify-center items-center m-0 p-0 box-border ">
-      <div className="max-w-[1280px] w-[100%] block md:flex px-3 md:px-0 md:py-0 justify-center items-center m-auto ">
+      <div className="max-w-[1280px] w-[100%] block md:flex px-3 md:px-0 md:py-0 justify-center  items-center m-auto ">
         <div className="">
           {/* Starting of Full Screen page section */}
           <div className="w-full flex justify-center items-center py-3 overscroll-none overflow-y-hidden">
@@ -275,8 +275,8 @@ const MediumHeader = () => {
                 <img
                   src={!state?.hamburgerMenu ? close : menu}
                   alt="voice"
-                  className={`${close ? "w-6 h-6" : ""} `} 
-                /> 
+                  className={`${close ? "w-6 h-6" : ""} `}
+                />
 
                 {/*Starting of Opened Hamburger menu section */}
                 <div
@@ -439,23 +439,22 @@ const MediumHeader = () => {
 
               {/* Logo section */}
               <NavLink
-            to="/"
-            className="flex justify-center items-center rounded-lg h-[48px] ss:w-[calc(100%-96px)] ss:p-2 ll:p-1 md:p-0 md:w-[155px] ss:ml-2 md:ml-[0px]  ss:bg-btnBgColor md:bg-transparent"
-
-          >
-            {BrandTypeArray.filter((data) => data.id == dressInfo.type).map(
-              (data) => {
-                return (
-                  <img
-                    key={data?.id}
-                    className="h-full"
-                    src={data?.icons}
-                    alt="logo"
-                  />
-                );
-              }
-            )}
-          </NavLink>
+                to="/"
+                className="flex justify-center items-center rounded-lg h-[48px] ss:w-[calc(100%-96px)] ss:p-2 ll:p-1 md:p-0 md:w-[155px] ss:ml-2 md:ml-[0px]  ss:bg-btnBgColor md:bg-transparent"
+              >
+                {BrandTypeArray.filter((data) => data.id == dressInfo.type).map(
+                  (data) => {
+                    return (
+                      <img
+                        key={data?.id}
+                        className="h-full"
+                        src={data?.icons}
+                        alt="logo"
+                      />
+                    );
+                  }
+                )}
+              </NavLink>
 
               {/* Voice section */}
               <div
