@@ -492,7 +492,7 @@ export default function CollectionCards() {
                           <span className="w-8 h-8 flex items-center justify-center  ">
                             <img src={ticketDiscount} alt="" />
                           </span>
-                          <span className=" w-0 flex items-center -mr-[1px] group-hover:w-10 duration-300  text-red-700 not-italic  font-AeonikProRegular text-[11px]">
+                          <span className=" w-0 flex items-center group-hover:w-10 duration-300  text-red-700 not-italic  font-AeonikProRegular text-[11px]">
                             -30%
                           </span>
                         </p>
@@ -500,15 +500,15 @@ export default function CollectionCards() {
                           <span className="w-8 h-8 flex items-center justify-center">
                             <img src={video} alt="" />
                           </span>
-                          <span className=" w-0 flex items-center -mr-[1px] group-hover:w-10 duration-300 not-italic  font-AeonikProRegular text-[11px]">
-                            Video
+                          <span className=" w-0 flex items-center group-hover:w-10 duration-300 not-italic  font-AeonikProRegular text-[11px]">
+                            {" "}Video
                           </span>
                         </p>
                         <p className="group w-8 hover:w-[85px] bg-bgCard hover:bg-white  duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center">
                           <span className="w-8 h-8 flex items-center justify-center  ">
                             <img src={delivery} alt="" />
                           </span>
-                          <span className=" w-0 flex items-center  group-hover:w-[40px] duration-300 not-italic  font-AeonikProRegular text-[11px]">
+                          <span className=" w-0 flex items-center group-hover:w-[40px] duration-300 not-italic  font-AeonikProRegular text-[11px]">
                             Delivery
                           </span>
                         </p>
