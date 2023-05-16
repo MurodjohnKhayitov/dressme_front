@@ -63,7 +63,7 @@ export default function SignUp() {
   return (
     <div>
       {state?.validateConfirm ? (
-        <div className=" py-8 w-full  min-h-[calc(100vh-180px)]  flex justify-center ">
+        <div className=" py-8 w-full  min-h-[calc(100vh-180px)] mb-10 flex justify-center ss:px-4 md:px-0">
           <div className="max-w-[440px] w-[100%] h-fit  md:px-[40px] md:py-[32px] ss:p-5 border border-searchBgColor rounded-lg">
             <div className=" w-full mt-1 mb-7 not-italic font-AeonikProMedium text-xl  leading-5 ss:text-start md:text-center  tracking-[0,16px] text-black">
               Добро пожаловать в{" "}
@@ -195,7 +195,7 @@ export default function SignUp() {
           </div>
         </div>
       ) : state?.requestPerson ? (
-        <div className=" py-8 w-full min-h-[calc(100vh-180px)] flex justify-center">
+        <div className=" py-8 w-full min-h-[calc(100vh-180px)] flex justify-center ss:px-4 md:px-0">
           <div className="max-w-[440px] w-[100%] h-fit  md:px-[40px] md:py-[32px] ss:p-5 border border-searchBgColor rounded-lg">
             <div className=" w-full mt-1 mb-7 flex flex-col justify-center">
               <span className="not-italic font-AeonikProMedium text-xl ss:text-start md:text-center leading-5   tracking-[0,16px] text-black">
@@ -293,7 +293,7 @@ export default function SignUp() {
           </div>
         </div>
       ) : (
-        <div className=" py-8 w-full min-h-[calc(100vh-180px)] flex justify-center  ">
+        <div className=" py-8 w-full min-h-[calc(100vh-180px)] flex justify-center ss:px-4 md:px-0 ">
           <div className="max-w-[440px] w-[100%] h-fit ">
             <div className=" border border-searchBgColor   rounded-lg p-5">
               <div className=" w-full mt-1 mb-5 flex flex-col justify-center">
