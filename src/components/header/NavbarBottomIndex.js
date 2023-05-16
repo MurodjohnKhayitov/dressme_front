@@ -80,7 +80,7 @@ const NavbarBottomIndex = () => {
   return (
     <div className="flex flex-col justify-center items-center m-0 p-0 box-border ">
       <div className="max-w-[1280px] w-[100%] flex justify-center  items-center m-auto">
-        <div className="ss:w-full mt-[6px] ss:px-0 md:px-0 border border-red-500">
+        <div className="ss:w-full mt-[6px] ss:px-0 md:px-0 ">
           {personItems
             ?.filter((value) => value.id === dressInfo?.type)
             .map((data) => {

@@ -7,6 +7,7 @@ import {
   heart,
   addBag,
   cardImg,
+  ticketDiscount,
 } from "../../../assets/imgs";
 
 import Slider from "react-slick";
@@ -560,7 +561,8 @@ export default function ClothesSlider() {
               return (
                 <div
                   key={data.id}
-                  className={`!w-[100%] ss:m-0 md:my-8 cursor-pointer transition ease-in-out delay-150 hover:shadow-cardShadow ${shadowStyle} border border-solid borderColorCard overflow-hidden rounded-lg`}
+                  className={`!w-[100%] ss:m-0 md:my-8 cursor-pointer  border border-solid borderColorCard overflow-hidden rounded-lg`}
+                  // className={`!w-[100%] ss:m-0 md:my-8 cursor-pointer transition ease-in-out delay-150 hover:shadow-cardShadow ${shadowStyle} border border-solid borderColorCard overflow-hidden rounded-lg`}
                 >
                   <div className="relative w-full  h-[206px] ls:h-[220px] ll:h-[234px] xs:h-[309px] lg:h-[320px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard">
                     {data.ProducImg ? (
@@ -579,7 +581,7 @@ export default function ClothesSlider() {
                     <div className="w-full flex justify-between absolute top-px p-[5px]">
                       <div className="group w-8 hover:w-[85px] bg-bgCard hover:bg-white  duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center justify-center">
                         <span className="w-8 h-8 flex items-center justify-center  ">
-                          <img src={delivery} alt="" />
+                          <img src={ticketDiscount} alt="" />
                         </span>
                         <span className=" w-0 flex items-center mt-1 group-hover:w-[40px] duration-300 not-italic  font-AeonikProRegular text-[11px]">
                           Delivery
