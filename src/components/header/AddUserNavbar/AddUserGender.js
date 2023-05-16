@@ -44,7 +44,7 @@ const AddUserGender = () => {
 
   return (
     <div className="flex flex-col justify-center items-center m-0 p-0 box-border ">
-      <div className="max-w-[1280px] w-[100%] flex flex-col justify-center px-4  py-3 items-center m-auto   ">
+      <div className="max-w-[1280px] w-[100%] flex flex-col justify-center px-4   items-center m-auto   ">
         <div className="max-w-[440px] w-[100%] ">
           {/* Mobile-Device */}
 

@@ -80,16 +80,19 @@ const NavbarBottomIndex = () => {
   return (
     <div className="flex flex-col justify-center items-center m-0 p-0 box-border ">
       <div className="max-w-[1280px] w-[100%] flex justify-center  items-center m-auto">
-        <div className="ss:w-full mt-[6px] ss:px-0 md:px-0 ">
+        <div className="ss:w-full flex flex-col justify-center mt-[6px]">
           {personItems
             ?.filter((value) => value.id === dressInfo?.type)
             .map((data) => {
               return (
-                <div key={data?.id} className=" w-full  ">
+                <div
+                  key={data?.id}
+                  className=" w-full  flex flex-col justify-center ss:px-4 md:px-0"
+                >
                   {/* {locationWindow !== "/forget_password" ? ( */}
                   {locationWindow === "/sign_in" ||
                   locationWindow === "/sign_up" ? (
-                    <div className="w-full md:w-[350px] py-3 flex gap-x-2 items-center justify-between ss:border md:border-0 ss:bg-btnBgColor md:bg-transparent border-searchBgColor rounded-lg">
+                    <div className="w-full md:w-[350px] md:mx-auto my-3  flex gap-x-2 items-center justify-between ss:border md:border-0 ss:bg-btnBgColor md:bg-transparent border-searchBgColor rounded-lg">
                       <NavLink
                         to={"/sign_in"}
                         className={({ isActive }) =>
@@ -123,7 +126,7 @@ const NavbarBottomIndex = () => {
                   locationWindow === "/set_new_password" ? (
                     <>
                       {/* Mobile-Device */}
-                      <div className="w-full md:hidden py-3 ss:block md:w-fit ss:flex gap-x-2 items-center justify-between ss:border md:border-0 ss:bg-btnBgColor md:bg-transparent border-searchBgColor rounded-lg">
+                      <div className="w-full md:hidden md:mx-auto  my-3 ss:block md:w-fit ss:flex gap-x-2 items-center justify-between ss:border md:border-0 ss:bg-btnBgColor md:bg-transparent border-searchBgColor rounded-lg">
                         <NavLink
                           to={"/sign_in"}
                           className={
@@ -150,7 +153,7 @@ const NavbarBottomIndex = () => {
 
                       {/* LapTop-Device */}
 
-                      <div className="w-full h-fit md:block ss:hidden  md:flex items-center">
+                      <div className="w-full h-fit md:mx-auto my-3 md:block ss:hidden justify-center  md:flex items-center">
                         <NavLink
                           to="/sign_in "
                           className={`text-${IconsColor} md:h-[48px] ss:h-[52px] w-[56px] rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center mr-3 `}
@@ -193,18 +196,18 @@ const NavbarBottomIndex = () => {
                     </>
                   ) : null}
                   {locationWindow === "/" ? (
-                    <div className="">
+                    <div className=" my-3">
                       <BottomHeader />
                     </div>
                   ) : null}
                   {locationWindow === "/categoriesType" ? (
-                    <div className="">
+                    <div className=" my-3">
                       <CategoryNavbar />
                     </div>
                   ) : null}
                   {locationWindow === "/add_user_private_data" ||
                   locationWindow === "/add_user_body_data" ? (
-                    <div className="py-3">
+                    <div className=" my-3">
                       <AddUserGender />
                     </div>
                   ) : null}
