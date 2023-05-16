@@ -470,7 +470,7 @@ export default function CollectionCards() {
                 <div
                   key={data.id}
                   // onClick={() => handleGetCardId(data?.id)}
-                  className={`ss:w-[49%] md:w-[24%] lg:w-[240px] transition ease-in-out delay-50 hover:shadow-cardShadow ${shadowStyle} xs:h-[456px] lg:h-[428px] border border-solid borderColorCard overflow-hidden rounded-lg`}
+                  className={`ss:w-[49%] md:w-[24%] lg:w-[240px]  xs:h-[456px] lg:h-[428px] border border-solid borderColorCard overflow-hidden rounded-lg`}
                 >
                   <div className="relative w-full cursor-pointer ss:h-[200px] ls:h-[220px] ll:h-[238px] xs:h-[309px] bg-btnBgColor lg:h-[320px] flex content-between items-center overflow-hidden border-b border-solid flex-nowrap">
                     {data.ProducImg ? (
@@ -488,7 +488,7 @@ export default function CollectionCards() {
                     )}
                     <div className="w-full flex absolute top-px p-[5px]  ss:justify-end xs:justify-between">
                       <ul className="nav-lists flex-col gap-y-1 justify-center h-full ss:hidden xs:flex">
-                        <p className="group w-8 hover:w-[70px] bg-bgCard hover:bg-white  duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center">
+                        {/* <p className="group w-8 hover:w-[70px] bg-bgCard hover:bg-white  duration-300 rounded-lg overflow-hidden border border-borderColorCard flex items-center">
                           <span className="w-8 h-8 flex items-center justify-center  ">
                             <img src={ticketDiscount} alt="" />
                           </span>
@@ -511,16 +511,16 @@ export default function CollectionCards() {
                           <span className=" w-0 flex items-center group-hover:w-[40px] duration-300 not-italic  font-AeonikProRegular text-[11px]">
                             Delivery
                           </span>
-                        </p>
+                        </p> */}
                       </ul>
 
                       <div className="flex flex-col gap-y-1">
                         <p className="w-8 h-8  rounded-lg flex items-center bg-bgCard justify-center border border-solid border-borderColorCard hover:bg-white transition ease-out duration-500">
                           <img src={heart} alt="" />
                         </p>
-                        <p className="w-8 h-8 ss:hidden rounded-lg bg-bgCard xs:flex items-center justify-center border border-solid border-borderColorCard hover:bg-white transition ease-out duration-500">
+                        {/* <p className="w-8 h-8 ss:hidden rounded-lg bg-bgCard xs:flex items-center justify-center border border-solid border-borderColorCard hover:bg-white transition ease-out duration-500">
                           <img src={bucket} alt="" />
-                        </p>
+                        </p> */}
                       </div>
                     </div>
                     <div className="w-full  flex absolute bottom-[31px] pb-[6px] pr-[5px] justify-end ">
