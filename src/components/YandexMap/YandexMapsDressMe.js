@@ -592,12 +592,14 @@ function YandexMapsDressMe() {
                       return (
                         <div
                           key={data?.id}
-                          className={`w-full  flex flex-col duration-300 rounded-lg   bg-white border overflow-hidden border-searchBgColor   mt-3`}
+                          className={`w-full relative ${
+                            data?.accordion ? "h-[426px]" : "h-[202px]"
+                          } border border-searchBgColor flex flex-col duration-300 rounded-lg   bg-white  overflow-hidden   mt-3`}
                         >
                           <div
                             className={`w-full p-4 !h-[202px] ${
                               data?.accordion ? "bg-white" : "bg-btnBgColor"
-                            }  flex flex-wrap content-around `}
+                            } absolute top-0 flex flex-wrap content-around `}
                           >
                             <div className="w-full flex justify-between">
                               <span className="not-italic font-AeonikProMedium text-lg leading-5 text-black tracking-[1%]">
@@ -656,11 +658,7 @@ function YandexMapsDressMe() {
                           </div>
 
                           <div
-                            className={`${
-                              data?.accordion
-                                ? " h-[214px] duration-300 "
-                                : " h-0 duration-300 "
-                            } overflow-hidden flex flex-wrap   content-between justify-center transition ease-in-out duration-300  w-full px-4 `}
+                            className={`h-[214px] absolute top-[202px]   overflow-hidden flex flex-wrap  content-between justify-center transition ease-in-out duration-300  w-full px-4 `}
                           >
                             <div className="w-full ">
                               <div className="w-[80%] h-[2px] bg-OpacitySignIn mx-auto  mb-5 "></div>
