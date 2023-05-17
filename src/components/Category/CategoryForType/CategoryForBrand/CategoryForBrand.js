@@ -19,10 +19,10 @@ export default function CategoryForBrand() {
       { id: 9, action: false, name: "Under Armour", count: 125 },
     ],
     prizes: [
-      { id: 1, action: false, name: "Undes 10$" },
-      { id: 2, action: false, name: "Undes 50$" },
-      { id: 3, action: false, name: "Undes 100$" },
-      { id: 4, action: false, name: "Above 100$" },
+      { id: 1, action: false, prize: "До 100 000" },
+      { id: 2, action: false, prize: "До 500 000" },
+      { id: 3, action: false, prize: "До 1 000 000" },
+      { id: 4, action: false, prize: "Выше" },
     ],
     changeColor: [
         { id: 1, value: 1, action: false, colors: "bg-black" },
@@ -39,9 +39,39 @@ export default function CategoryForBrand() {
         { id: 12, value: 12, action: false, colors: "bg-cyan-900" },
       ],
       availability: [
-        { id: 1, action: false, title: "In stock is available", count: 892 },
-        { id: 2, action: false, title: "Delivery available", count: 641 },
-      ]
+        { id: 1, action: false, title: "На складе доступен", count: 892 },
+        { id: 2, action: false, title: "Доставка доступна", count: 641 },
+      ],
+      clothingSize: [
+        { id: 1, action: false, size: "XS" },
+        { id: 2, action: false, size: "S" },
+        { id: 3, action: false, size: "M" },
+        { id: 4, action: false, size: "L" },
+        { id: 4, action: false, size: "XL" },
+        { id: 4, action: false, size: "2XL" },
+        { id: 4, action: false, size: "3XL" },
+        { id: 4, action: false, size: "4XL" },
+      ],
+      pantsSize: [
+        { id: 1, action: false, size: "XS" },
+        { id: 2, action: false, size: "S" },
+        { id: 3, action: false, size: "M" },
+        { id: 4, action: false, size: "L" },
+        { id: 4, action: false, size: "XL" },
+        { id: 4, action: false, size: "2XL" },
+        { id: 4, action: false, size: "3XL" },
+        { id: 4, action: false, size: "4XL" },
+      ],
+      shoeSize: [
+        { id: 1, action: false, size: "37" },
+        { id: 2, action: false, size: "38" },
+        { id: 3, action: false, size: "39" },
+        { id: 4, action: false, size: "40" },
+        { id: 4, action: false, size: "41" },
+        { id: 4, action: false, size: "42" },
+        { id: 4, action: false, size: "43" },
+        { id: 4, action: false, size: "44" },
+      ],
   });
 
   const [state, setState] = useState({
@@ -85,16 +115,16 @@ export default function CategoryForBrand() {
     <div className="w-full h-hull border border-searchBgColor rounded-lg px-5 py-[30px]">
         <div className="w-full flex flex-wrap gap-x-[4px] gap-y-[8px]">
             <button className="h-[44px] w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory hover:bg-fullBlue hover:text-white rounded-lg">
-            Men
+            Женщинам
             </button>
             <button className="h-[44px] w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory hover:bg-fullBlue hover:text-white rounded-lg">
-            Women
+            Мужчинам
             </button>
             <button className="h-[44px] w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory hover:bg-fullBlue hover:text-white rounded-lg">
-            Kids
+            Детям
             </button>
-            <button className="h-[44px] w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory hover:bg-fullBlue hover:text-white rounded-lg">
-            Sale
+            <button className="h-[44px] w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory hover:bg-fullBlue hover:text-white rounded-lg text-red-600">
+            Скидки
             </button>
         </div>
         {/* Brands filter */}
@@ -106,7 +136,7 @@ export default function CategoryForBrand() {
                 <div onClick={() => setState({ ...state, brandShow: !state.brandShow })}
                     className="flex items-center cursor-pointer select-none">
                     <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
-                    Brands
+                    Бренды
                     </span>
                     <img
                         src={DownCate}
@@ -117,7 +147,7 @@ export default function CategoryForBrand() {
                     />
                 </div>
                 <span className="not-italic font-AeonikProMedium text-base leading-4 text-fullBlue cursor-pointer">
-                    Clear
+                Очистить все
                 </span>
             </div>
             <div className="mt-5 openedBrands">
@@ -127,7 +157,7 @@ export default function CategoryForBrand() {
                     className="w-[85%] h-full "
                     type="text"
                     name="search"
-                    placeholder="Search for brand"
+                    placeholder="Поиск бренда"
                     />
                     <img src={search} className="" />
                 </div>
@@ -190,7 +220,7 @@ export default function CategoryForBrand() {
                 key={item.id}
                 className="h-11 w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory hover:bg-fullBlue hover:text-white transition ease-linear duration-200 rounded-lg"
                 >
-                {item.name}
+                {item.prize}
                 </button>
             ))}
             </div>
@@ -217,7 +247,7 @@ export default function CategoryForBrand() {
             >
             <div onClick={() => setState({ ...state, brandShow: !state.brandShow })} className="flex items-center cursor-pointer select-none">
                 <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
-                Colors
+                Цвет
                 </span>
                 <img
                 src={DownCate}
@@ -228,7 +258,7 @@ export default function CategoryForBrand() {
                 />
             </div>
             <span className="not-italic font-AeonikProMedium text-base leading-4 text-fullBlue cursor-pointer">
-                Clear
+            Очистить все
             </span>
             </div>
             {/* Colors */}
@@ -263,7 +293,7 @@ export default function CategoryForBrand() {
                 onClick={(event) => {event.target.classList.toggle("open")}}>
                 <div onClick={() => setState({ ...state, availability: !state.availability })} className="flex items-center cursor-pointer select-none">
                     <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
-                        Availability
+                    Доступность
                     </span>
                     <img
                         src={DownCate}
@@ -311,7 +341,7 @@ export default function CategoryForBrand() {
                 onClick={(event) => {event.target.classList.toggle("open")}}>
                 <div onClick={() => setState({ ...state, customerRreviews: !state.customerRreviews })} className="flex items-center cursor-pointer select-none">
                     <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
-                        Customer reviews
+                    Отзывы клиентов
                     </span>
                     <img
                         src={DownCate}
@@ -331,6 +361,120 @@ export default function CategoryForBrand() {
 
         </div>
 
+        {/* Размер одежды */}
+        <div className="w-full h-fit">
+            <div  className="w-full flex justify-between items-center mb-[30px]" onClick={(event) => {event.target.classList.toggle("open")}}>
+                <div
+                    onClick={() => setState({ ...state, checkedPrize: !state.checkedPrize })}
+                className="flex items-center cursor-pointer select-none"
+                >
+                    <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
+                    Размер одежды
+                    </span>
+                    <img
+                        src={DownCate}
+                        className={`${
+                        state?.checkedPrize ? "rotate-[180deg]" : ""
+                        } duration-300`}
+                        alt=""
+                    />
+                </div>
+                <span className="not-italic font-AeonikProMedium text-base leading-4 text-fullBlue cursor-pointer">
+                3XL
+                </span>
+            </div>
+            <div className="mb-[50px]">
+                <div className="w-full flex flex-wrap gap-x-1 gap-y-2">
+                {product.clothingSize.map((item) => (
+                    <button
+                    key={item.id}
+                    className="h-10 w-[57px] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory hover:bg-fullBlue hover:text-white transition ease-linear duration-200 rounded-lg"
+                    >
+                    {item.size}
+                    </button>
+                ))}
+                </div>
+            </div>
+        </div>
+
+        {/* Размер брюк */}
+        <div className="w-full h-fit">
+            <div  className="w-full flex justify-between items-center mb-[30px]" onClick={(event) => {event.target.classList.toggle("open")}}>
+                <div
+                    onClick={() => setState({ ...state, checkedPrize: !state.checkedPrize })}
+                className="flex items-center cursor-pointer select-none"
+                >
+                    <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
+                    Размер брюк
+                    </span>
+                    <img
+                        src={DownCate}
+                        className={`${
+                        state?.checkedPrize ? "rotate-[180deg]" : ""
+                        } duration-300`}
+                        alt=""
+                    />
+                </div>
+                <span className="not-italic font-AeonikProMedium text-base leading-4 text-fullBlue cursor-pointer">
+                2XL
+                </span>
+            </div>
+            <div className="mb-[50px]">
+                <div className="w-full flex flex-wrap gap-x-1 gap-y-2">
+                {product.pantsSize.map((item) => (
+                    <button
+                    key={item.id}
+                    className="h-10 w-[57px] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory hover:bg-fullBlue hover:text-white transition ease-linear duration-200 rounded-lg"
+                    >
+                    {item.size}
+                    </button>
+                ))}
+                </div>
+            </div>
+        </div>
+
+        {/* Размер брюк */}
+        <div className="w-full h-fit border border-red-700">
+            <div  className="w-full flex justify-between items-center mb-[30px]" onClick={(event) => {event.target.classList.toggle("open")}}>
+                <div
+                    onClick={() => setState({ ...state, checkedPrize: !state.checkedPrize })}
+                className="flex items-center cursor-pointer select-none"
+                >
+                    <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
+                    Размер обуви
+                    </span>
+                    <img
+                        src={DownCate}
+                        className={`${
+                        state?.checkedPrize ? "rotate-[180deg]" : ""
+                        } duration-300`}
+                        alt=""
+                    />
+                </div>
+                <span className="not-italic font-AeonikProMedium text-base leading-4 text-fullBlue cursor-pointer">
+                44
+                </span>
+            </div>
+            <div className="mb-[50px]">
+                <div className="w-full flex flex-wrap gap-x-1 gap-y-2">
+                {product.shoeSize.map((item) => (
+                    <button
+                    key={item.id}
+                    className="h-10 w-[57px] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory hover:bg-fullBlue hover:text-white transition ease-linear duration-200 rounded-lg"
+                    >
+                    {item.size}
+                    </button>
+                ))}
+                </div>
+            </div>
+        </div>
+
+        <button className="h-[44px] w-full flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-white bg-fullBlue hover:text-white rounded-lg mb-3">
+        Показать результаты (248)
+        </button>
+        <button className="h-[44px] border w-full flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-white rounded-lg">
+        Сбросить фильтр
+        </button>
     </div>
   );
 }
