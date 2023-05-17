@@ -147,6 +147,8 @@ export { default as NextCate } from "./Category/NextCate.svg";
 export { default as DownCate } from "./Category/downCate.svg";
 export { default as iIcons } from "./Category/IIcons.svg";
 export { default as CategoryMenu } from "./Category/CategoryMenu.svg";
+export { default as StarWithoutColor } from "./Category/StarWithColor.svg";
+export { default as StarWithColor } from "./Category/StarWithoutColor.svg";
 
 // ----------------ForBrand---------
 
