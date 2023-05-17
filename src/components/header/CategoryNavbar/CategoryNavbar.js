@@ -155,7 +155,14 @@ const CategoryNavbar = () => {
               {personItems
                 ?.filter((value) => value.id === dressInfo?.type)
                 .map((data) => {
-                  return <img className="mr-3" src={data?.man} alt="female" />;
+                  return (
+                    <img
+                      key={data.id}
+                      className="mr-3"
+                      src={data?.man}
+                      alt="female"
+                    />
+                  );
                 })}
             </span>
             <span className="not-italic font-AeonikProMedium text-center mt-1 text-sm leading-4 text-black">

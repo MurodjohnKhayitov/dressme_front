@@ -1,11 +1,11 @@
 .categoryScroll::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 
 .categoryScroll::-webkit-scrollbar-thumb {
-    background-color: #b5b5bd;
-    height: 50px;
-    border-radius: 8px
+  background-color: #b5b5bd;
+  height: 30px;
+  border-radius: 8px;
 }
 
 /* .openedBrands {
@@ -14,29 +14,29 @@
 } */
 
 .openBrands.open .openedBrands {
-    height: auto;
+  height: auto;
 }
 
 .input-range {
-    top: 37px;
+  top: 37px;
 }
 
 .input-range__track {
-    height: 4px;
-    width: 99%;
+  height: 4px;
+  width: 99%;
 }
 
 .input-range__slider {
-    background-color: #fff !important;
-    border: 0.5px solid #000 !important;
+  background-color: #fff !important;
+  border: 0.5px solid #000 !important;
 }
 
 .input-range__label-container {
-    color: #2a86b8;
-    font-weight: 500;
+  color: #2a86b8;
+  font-weight: 500;
 }
 
-.input-range__label--max,  
-.input-range__label--min{
-    display: none;
+.input-range__label--max,
+.input-range__label--min {
+  display: none;
 }

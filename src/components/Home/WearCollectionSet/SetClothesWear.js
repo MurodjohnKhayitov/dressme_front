@@ -562,7 +562,7 @@ export default function SetClothesWear() {
         className={`absolute left-8 ls:left-0 ll:left-[4px] md:left-3 top-[23%] z-10 text-center cursor-pointer no-underline w-[25px] h-[25px] md:w-8 md:h-8 flex items-center justify-center md:rounded-full md:bg-btnBgColor duration-200 md:border md:border-solid md:border-searchBgColor`}
         onClick={onClick}
       >
-        <GrFormPrevious size={15} className="w-6 h-6 md:w-4 md:h-4"/>
+        <GrFormPrevious size={15} className="w-6 h-6 md:w-4 md:h-4" />
       </div>
     );
   };
@@ -720,8 +720,6 @@ export default function SetClothesWear() {
       setGetSliderId({ ...getSliderId, accessoryId: current + 1 }),
   };
 
-  
-
   const OpenShowModel = (modelId) => {
     setProductList((current) => {
       return current?.map((data) => {
@@ -764,20 +762,20 @@ export default function SetClothesWear() {
               {producListMap?.SetToModel ? (
                 <div className="relative w-full h-[350px] md:h-[572px] flex justify-center">
                   <img src={model1} alt="" />
-                  <Button 
-                    type="primary" 
-                    onClick={showModal} 
+                  <Button
+                    type="primary"
+                    onClick={showModal}
                     className="shadow-none px-[7px] absolute !bg-transparent hidden ls:flex md:hidden items-center justify-center bottom-2 right-2 md:w-0 md:h-0 rounded-lg border border-solid border-searchBgColor"
-                    >
-                      <img src={miximize} alt="maxsimize-icon" />
+                  >
+                    <img src={miximize} alt="maxsimize-icon" />
                   </Button>
-                  <Modal 
-                    open={isModalOpen} 
-                    onOk={handleOk} 
+                  <Modal
+                    open={isModalOpen}
+                    onOk={handleOk}
                     onCancel={handleCancel}
                     footer={null}
                     className="modalSetMobile overscroll-none overflow-y-scroll"
-                    >
+                  >
                     <img src={model1} alt="" />
                   </Modal>
                 </div>
@@ -786,7 +784,10 @@ export default function SetClothesWear() {
                   {/* HeadWear */}
                   <div className="w-full h-fit ">
                     {producListMap?.headWear?.length >= 2 ? (
-                      <Slider {...headWear} className={`w-full h-11 md:h-[72px] `}>
+                      <Slider
+                        {...headWear}
+                        className={`w-full h-11 md:h-[72px] `}
+                      >
                         {producListMap?.headWear?.map((item) => {
                           return item.id ? (
                             <div
@@ -817,15 +818,20 @@ export default function SetClothesWear() {
                                     </div>
                                   ) : null}
                                   <div className="absolute w-6 h-6 hidden md:flex items-center justify-center top-[2px] right-[2px] md:top-1 md:right-1 cursor-pointer border border-searchBgColor bg-white rounded-[6px] md:rounded-lg">
-                                    <img 
-                                    src={Liked} 
-                                    alt="Liked" 
-                                    className="pr-0 pt-0" />
+                                    <img
+                                      src={Liked}
+                                      alt="Liked"
+                                      className="pr-0 pt-0"
+                                    />
                                   </div>
                                 </div>
                                 <div className="absolute md:bottom-[-35px] md:right-1 md:group-hover:bottom-1 duration-300 flex justify-end">
                                   <div className="z-50 w-4 h-4 md:w-6 md:h-6 cursor-pointer border border-searchBgColor   bg-white rounded-[6px] md:rounded-lg hidden md:flex items-center justify-center">
-                                    <img src={nextInfo} alt="nextInfo" className="pr-0"/>
+                                    <img
+                                      src={nextInfo}
+                                      alt="nextInfo"
+                                      className="pr-0"
+                                    />
                                   </div>
                                 </div>
                               </div>
@@ -838,53 +844,55 @@ export default function SetClothesWear() {
                     ) : (
                       <div>
                         <div className={`w-full h-11 md:h-[72px] `}>
-                        {producListMap?.headWear?.map((item) => {
-                          return item.id ? (
-                            <div
-                              key={item?.id}
-                              className={`!w-[110px] md:!w-[192px] h-11 md:h-[72px] box-border mx-auto cursor-pointer flex items-center justify-center  rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
-                            >
-                              <div className="group relative w-full h-full flex items-center justify-center">
-                                <div className="w-full h-full hover:scale-110   ease-in-out	duration-300">
-                                  <img
-                                    className="m-auto md:w-[full] h-full pr-[1px] pt-[1px] md:pr-0 md:pt-0 "
-                                    src={item?.head_wear_img}
-                                    alt="head_wear_img"
-                                  />
-                                </div>
-                                <div
-                                  className={`   flex ${
-                                    !item?.active
-                                      ? "justify-between"
-                                      : "justify-end"
-                                  } `}
-                                >
-                                  {!item?.active ? (
-                                    <div className="absolute  w-[18px] h-[18px] md:w-6 md:h-6  cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                          {producListMap?.headWear?.map((item) => {
+                            return item.id ? (
+                              <div
+                                key={item?.id}
+                                className={`!w-[110px] md:!w-[192px] h-11 md:h-[72px] box-border mx-auto cursor-pointer flex items-center justify-center  rounded-lg overflow-hidden border border-searchBgColor bg-btnBgColor`}
+                              >
+                                <div className="group relative w-full h-full flex items-center justify-center">
+                                  <div className="w-full h-full hover:scale-110   ease-in-out	duration-300">
+                                    <img
+                                      className="m-auto md:w-[full] h-full pr-[1px] pt-[1px] md:pr-0 md:pt-0 "
+                                      src={item?.head_wear_img}
+                                      alt="head_wear_img"
+                                    />
+                                  </div>
+                                  <div
+                                    className={`   flex ${
+                                      !item?.active
+                                        ? "justify-between"
+                                        : "justify-end"
+                                    } `}
+                                  >
+                                    {!item?.active ? (
+                                      <div className="absolute  w-[18px] h-[18px] md:w-6 md:h-6  cursor-pointer border border-searchBgColor bg-white  rounded-lg flex items-center justify-center">
+                                        <img
+                                          src={statusFalse}
+                                          alt="statusFalse"
+                                          className="w-[80%] md:w-[100%] pr-[1px] pt-[1px] md:pr-0 md:pt-0"
+                                        />
+                                      </div>
+                                    ) : null}
+                                    <div className="absolute w-[18px] h-[18px] md:w-6 md:h-6 hidden md:flex items-center justify-center top-[2px] right-[2px] md:top-1 md:right-1 cursor-pointer border border-searchBgColor bg-bgCard hover:bg-white transition ease-out duration-500 rounded-[6px] md:rounded-lg">
                                       <img
-                                        src={statusFalse}
-                                        alt="statusFalse"
-                                        className="w-[80%] md:w-[100%] pr-[1px] pt-[1px] md:pr-0 md:pt-0" 
+                                        src={Liked}
+                                        alt="Liked"
+                                        className="pl-[1px] pt-[1px] md:pl-0 md:pt-0"
                                       />
                                     </div>
-                                  ) : null}
-                                  <div className="absolute w-[18px] h-[18px] md:w-6 md:h-6 hidden md:flex items-center justify-center top-[2px] right-[2px] md:top-1 md:right-1 cursor-pointer border border-searchBgColor bg-bgCard hover:bg-white transition ease-out duration-500 rounded-[6px] md:rounded-lg">
-                                    <img src={Liked} 
-                                    alt="Liked" 
-                                    className="pl-[1px] pt-[1px] md:pl-0 md:pt-0"/>
                                   </div>
-                                </div>
-                                <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 hidden md:flex justify-end">
-                                  <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-bgCard hover:bg-white transition ease-out duration-500 rounded-lg flex items-center justify-center">
-                                    <img src={nextInfo} alt="nextInfo" />
+                                  <div className="absolute bottom-[-35px] right-1 group-hover:bottom-1 duration-300 hidden md:flex justify-end">
+                                    <div className=" z-50 w-[24px] h-[24px] cursor-pointer border border-searchBgColor   bg-bgCard hover:bg-white transition ease-out duration-500 rounded-lg flex items-center justify-center">
+                                      <img src={nextInfo} alt="nextInfo" />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          ) : (
-                            <div className="w-0 h-0"></div>
-                          );
-                        })}
+                            ) : (
+                              <div className="w-0 h-0"></div>
+                            );
+                          })}
                         </div>
                       </div>
                     )}
@@ -893,7 +901,10 @@ export default function SetClothesWear() {
                   {/* OutWear */}
                   <div className="w-full h-fit  mt-1">
                     {producListMap?.outWear?.length >= 2 ? (
-                      <Slider {...outWear} className={`w-full h-[90px] md:h-[160px]`}>
+                      <Slider
+                        {...outWear}
+                        className={`w-full h-[90px] md:h-[160px]`}
+                      >
                         {producListMap?.outWear.map((item) => {
                           return (
                             <div
@@ -990,7 +1001,10 @@ export default function SetClothesWear() {
                   {/* UnderWear */}
                   <div className="w-full h-fit mt-1 md:-mt-2">
                     {producListMap?.underWear?.length >= 2 ? (
-                      <Slider {...underWear} className={`w-full h-[90px] md:h-[180px]`}>
+                      <Slider
+                        {...underWear}
+                        className={`w-full h-[90px] md:h-[180px]`}
+                      >
                         {producListMap?.underWear.map((item) => {
                           return (
                             <div
@@ -1085,7 +1099,10 @@ export default function SetClothesWear() {
                   {/* LegWear */}
                   <div className="w-full h-fit mt-1 md:-mt-2">
                     {producListMap?.legWear?.length >= 2 ? (
-                      <Slider {...legWear} className={`w-full h-11 md:h-[72px]`}>
+                      <Slider
+                        {...legWear}
+                        className={`w-full h-11 md:h-[72px]`}
+                      >
                         {producListMap?.legWear.map((item) => {
                           return (
                             <div
@@ -1328,7 +1345,6 @@ export default function SetClothesWear() {
               })}
 
               <div className="w-full h-[124px] md:h-[100px] px-3 md:pr-2 md:pl-4 md:pb-2 md:pt-2 flex flex-wrap content-between">
-                
                 <div className="relative flex w-full justify-between items-center">
                   <div className="flex items-center mt-3 md:mt-4 mb-[10px] md:mb-3">
                     <span className="mr-[6px] mt-[-5px] flex  items-center">
@@ -1347,7 +1363,7 @@ export default function SetClothesWear() {
                     className="group md:w-[145px] shadow-none absolute top-9 right-0 left-0 md:left-[134px] md:-top-1 md:right-0 rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[2px] pr-[0px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300"
                   >
                     <span className="group-hover:text-white flex items-center font-AeonikProRegular text-center text-black text-[12px] mr-1">
-                    Страница образа
+                      Страница образа
                     </span>
                     <svg
                       className="group-hover:fill-white group-hover:stroke-white stroke-black"
@@ -1388,7 +1404,7 @@ export default function SetClothesWear() {
                   )}
                 </div>
 
-                <div className="relative flex items-center w-full justify-between">
+                <div className="relative flex items-center w-full md:justify-between">
                   <div>
                     <span className="not-italic font-AeonikProMedium text-lg md:text-2xl leading-7 text-setPriceRed mr-[6px]">
                       828 000
@@ -1397,7 +1413,7 @@ export default function SetClothesWear() {
                       105 4000
                     </span>
                   </div>
-                  <button className="absolute w-[32px] h-[32px] md:w-[40px] md:h-[40px] -right-1 bottom-2 md:right-0 md:bottom-0 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
+                  <button className="hidden md:block absolute w-[32px] h-[32px] md:w-[40px] md:h-[40px] -right-1 bottom-2 md:right-0 md:bottom-0 rounded-lg border border-searchBgColor bg-btnBgColor flex items-center justify-center">
                     <img src={addBag} alt="addbag" className="w-[28px]" />
                   </button>
                 </div>
@@ -1413,6 +1429,5 @@ export default function SetClothesWear() {
         </div>
       </div>
     </div>
-    
   );
 }
