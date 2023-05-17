@@ -12,7 +12,7 @@ export default function CategoryForType() {
         <CategoryTopDetail />
       </div>
       <div className="flex flex-gap-6 justify-between my-10">
-        <div className="w-[21.5%] h-full ">
+        <div className="w-[22.3%] h-full ">
           <CategoryForBrand />
         </div>
         <div className="w-[77%] h-[full] border border-green-600">
