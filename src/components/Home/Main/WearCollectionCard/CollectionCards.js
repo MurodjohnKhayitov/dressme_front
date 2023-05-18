@@ -464,7 +464,7 @@ export default function CollectionCards() {
       </div>
       {clothesSetWear ? (
         <>
-          <div className="flex justify-between flex-wrap  md:mx-0 md:mt-[50px] gap-y-2 lg:gap-y-5 ">
+          <div className="flex flex-wrap justify-between md:justify-start md:mx-0 md:mt-[50px] gap-y-2 lg:gap-x-5 lg:gap-y-5 ">
             {productList.map((data) => {
               return (
                 <div
