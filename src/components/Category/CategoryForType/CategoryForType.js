@@ -8,9 +8,6 @@ import CategoryTopDetail from "./CategoryTop/CategoryTopDetail";
 export default function CategoryForType() {
   return (
     <div className="w-full h-full  ">
-      <div>
-        <CategoryTopDetail />
-      </div>
       <div className="flex flex-gap-6 justify-between my-10">
         <div className="w-[22.3%] h-full ">
           <CategoryForBrand />
