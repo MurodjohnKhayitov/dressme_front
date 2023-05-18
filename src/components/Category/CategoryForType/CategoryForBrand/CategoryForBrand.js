@@ -10,6 +10,7 @@ import { BsCheckLg } from "react-icons/bs";
 import { FiStar } from "react-icons/fi";
 import InputRange from "react-input-range";
 import "react-input-range/lib/css/index.css";
+import ReactSlider from "react-slider";
 
 export default function CategoryForBrand() {
   const [product, setProduct] = useState({
@@ -84,6 +85,9 @@ export default function CategoryForBrand() {
       { id: 3, check: false, value: 2, text: "" },
     ],
   });
+  const Min = "100";
+  const Max = "12 000";
+  const [values, setValues] = useState([Min, Max]);
 
   const [state, setState] = useState({
     brandShow: false,
@@ -263,10 +267,10 @@ export default function CategoryForBrand() {
             </div>
           </div>
           <div
-            className={`  border-0  overflow-hidden  ${
+            className={`  border-1 border-green-600  overflow-hidden  ${
               state?.budgetShow
                 ? "duration-300 h-0"
-                : "duration-300 h-[166px] mt-5"
+                : "duration-300 h-[170px] mt-5"
             } duration-300`}
           >
             <div className="w-full flex flex-wrap gap-x-1 gap-y-2">
@@ -279,14 +283,30 @@ export default function CategoryForBrand() {
                 </button>
               ))}
             </div>
-            <div className="w-full bg-bgCategory mt-4 h-12 rounded-lg">
-              <InputRange
-                formatLabel={(value) => `${value}$`}
-                minValue={0}
-                maxValue={200}
-                value={value}
-                onChange={(value) => SetValue(value)}
-              />
+            <div className="w-full h-12 bg-bgCategory  mt-4 pb-1">
+              <div className=" w-full flex justify-center items-center gap-x-1">
+                <div className=" h-fit  not-italic font-AeonikProMedium text-base leading-4 text-center text-fullBlue tracking-[1%]">
+                  {values[0]}
+                </div>{" "}
+                <div className=" h-fit pb-2">-</div>
+                <div className=" h-fit not-italic font-AeonikProMedium text-base leading-4 text-center text-fullBlue tracking-[1%]">
+                  {values[1]}
+                </div>
+              </div>{" "}
+              <div>
+                {" "}
+                <ReactSlider
+                  className="horizontal-slider"
+                  thumbClassName="example-thumb"
+                  trackClassName="example-track"
+                  defaultValue={[0, 100]}
+                  ariaLabel={["Lower thumb", "Upper thumb"]}
+                  // ariaValuetext={(state) => `Thumb value ${state.valueNow}`}
+                  // renderThumb={() => <div>1</div>}
+                  pearling
+                  minDistance={10}
+                />
+              </div>
             </div>
           </div>
         </div>

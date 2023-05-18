@@ -1,5 +1,5 @@
 import React from "react";
-import '../category.css'
+import "../category.css";
 import CategoryCards from "./CategoryElement/CategoryCards";
 import { DownCate, arrowBottomRight, search } from "../../../assets/imgs";
 import CategoryForBrand from "./CategoryForBrand/CategoryForBrand";
@@ -7,7 +7,7 @@ import CategoryTopDetail from "./CategoryTop/CategoryTopDetail";
 
 export default function CategoryForType() {
   return (
-    <div className="w-full h-full border border-red-500 ">
+    <div className="w-full h-full  ">
       <div>
         <CategoryTopDetail />
       </div>
@@ -15,7 +15,7 @@ export default function CategoryForType() {
         <div className="w-[22.3%] h-full ">
           <CategoryForBrand />
         </div>
-        <div className="w-[77%] h-[full] border border-green-600">
+        <div className="w-[77%] h-[full]">
           <CategoryCards />
         </div>
       </div>
