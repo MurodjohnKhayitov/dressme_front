@@ -8,13 +8,13 @@ import {
   addBag,
   cardImg,
   ticketDiscount,
-} from "../../../assets/imgs";
+} from "../../../../assets/imgs";
 
 import Slider from "react-slick";
 
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
-import { dressMainData } from "../../../ContextHook/ContextMenu";
+import { dressMainData } from "../../../../ContextHook/ContextMenu";
 export default function ClothesSlider() {
   const productList = [
     {

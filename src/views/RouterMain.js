@@ -7,10 +7,6 @@ import "../index.css";
 import Header from "../components/header/header";
 // import Footer from "../components/footer/footer";
 
-// -------Without Lazy
-
-// ---------Only Skeleton
-
 import AuthenIndex from "../components/header/AuthenticationNavbar/AuthenIndex";
 // import YandexMapsIndex from "../components";
 import YandexSkeletonIndex from "../components/YandexMap/YandexMapsSkeleton/YandexSkeletonIndex";
@@ -32,7 +28,7 @@ import CategoryMainType from "../components/Category/CategoryForType";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 // -------------------------------------
-import SkeletonHomeIndex from "../components/Home/Skeleton/SkeletonHomeIndex";
+import SkeletonHomeIndex from "../components/Home/Main/Skeleton/SkeletonHomeIndex";
 import AddUserPrivateSkeleton from "../components/Home/AddUser/Skeleton/AddUserPrivateSkeleton";
 import AddUserBodySkeleton from "../components/Home/AddUser/Skeleton/AddUserPrivateSkeleton";
 import SignInSkeletonIndex from "../components/Authentication/SignUpSkeleton";
