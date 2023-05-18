@@ -6,13 +6,11 @@ import {
   SpringSquare,
   SummerSquare,
   WinterSquare,
-} from "../../../assets/imgs";
+} from "../../../../assets/imgs";
 
-import { dressMainData } from "../../../ContextHook/ContextMenu";
+import { dressMainData } from "../../../../ContextHook/ContextMenu";
 
 export default function TypeSection() {
-
-
   const [dressInfo] = useContext(dressMainData);
   const typeSectionData = [
     {
@@ -187,7 +185,6 @@ export default function TypeSection() {
           })}
         </div>
       </div>
-    
     </div>
   );
 }

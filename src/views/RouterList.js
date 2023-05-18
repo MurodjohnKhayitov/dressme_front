@@ -10,7 +10,7 @@ import Footer from "../components/footer/footer";
 // -------Without Lazy
 
 // ---------Only Skeleton
-import SkeletonHomeIndex from "../components/Home/Skeleton/SkeletonHomeIndex";
+import SkeletonHomeIndex from "../components/Home/Main/Skeleton/SkeletonHomeIndex";
 import AddUserPrivateSkeleton from "../components/Home/AddUser/Skeleton/AddUserPrivateSkeleton";
 import AddUserBodySkeleton from "../components/Home/AddUser/Skeleton/AddUserPrivateSkeleton";
 import SignInSkeletonIndex from "../components/Authentication/SignUpSkeleton";

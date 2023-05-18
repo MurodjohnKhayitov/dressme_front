@@ -12,8 +12,8 @@ import {
   setpersonIcons,
   InputCheck,
   ticketDiscount,
-} from "../../../assets/imgs";
-import { dressMainData } from "../../../ContextHook/ContextMenu";
+} from "../../../../assets/imgs";
+import { dressMainData } from "../../../../ContextHook/ContextMenu";
 
 import SetClothesWear from "../WearCollectionSet/SetClothesWear";
 

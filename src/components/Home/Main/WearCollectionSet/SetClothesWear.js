@@ -18,7 +18,7 @@ import {
   setpersonIcons,
   star,
   statusFalse,
-} from "../../../assets/imgs";
+} from "../../../../assets/imgs";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -194,10 +194,22 @@ export default function SetClothesWear() {
         },
       ],
       modelsList: [
-        { id: 1, modelImg: require("../../../assets/imgs/Models/model1.svg") },
-        { id: 2, modelImg: require("../../../assets/imgs/Models/model2.svg") },
-        { id: 3, modelImg: require("../../../assets/imgs/Models/model3.svg") },
-        { id: 4, modelImg: require("../../../assets/imgs/Models/model4.svg") },
+        {
+          id: 1,
+          modelImg: require("../../../../assets/imgs/Models/model1.svg"),
+        },
+        {
+          id: 2,
+          modelImg: require("../../../../assets/imgs/Models/model2.svg"),
+        },
+        {
+          id: 3,
+          modelImg: require("../../../../assets/imgs/Models/model3.svg"),
+        },
+        {
+          id: 4,
+          modelImg: require("../../../../assets/imgs/Models/model4.svg"),
+        },
       ],
     },
     {
@@ -308,10 +320,22 @@ export default function SetClothesWear() {
         },
       ],
       modelsList: [
-        { id: 1, modelImg: require("../../../assets/imgs/Models/model1.svg") },
-        { id: 2, modelImg: require("../../../assets/imgs/Models/model2.svg") },
-        { id: 3, modelImg: require("../../../assets/imgs/Models/model3.svg") },
-        { id: 4, modelImg: require("../../../assets/imgs/Models/model4.svg") },
+        {
+          id: 1,
+          modelImg: require("../../../../assets/imgs/Models/model1.svg"),
+        },
+        {
+          id: 2,
+          modelImg: require("../../../../assets/imgs/Models/model2.svg"),
+        },
+        {
+          id: 3,
+          modelImg: require("../../../../assets/imgs/Models/model3.svg"),
+        },
+        {
+          id: 4,
+          modelImg: require("../../../../assets/imgs/Models/model4.svg"),
+        },
       ],
     },
     {
@@ -422,10 +446,22 @@ export default function SetClothesWear() {
         },
       ],
       modelsList: [
-        { id: 1, modelImg: require("../../../assets/imgs/Models/model1.svg") },
-        { id: 2, modelImg: require("../../../assets/imgs/Models/model2.svg") },
-        { id: 3, modelImg: require("../../../assets/imgs/Models/model3.svg") },
-        { id: 4, modelImg: require("../../../assets/imgs/Models/model4.svg") },
+        {
+          id: 1,
+          modelImg: require("../../../../assets/imgs/Models/model1.svg"),
+        },
+        {
+          id: 2,
+          modelImg: require("../../../../assets/imgs/Models/model2.svg"),
+        },
+        {
+          id: 3,
+          modelImg: require("../../../../assets/imgs/Models/model3.svg"),
+        },
+        {
+          id: 4,
+          modelImg: require("../../../../assets/imgs/Models/model4.svg"),
+        },
       ],
     },
     {
@@ -536,10 +572,22 @@ export default function SetClothesWear() {
         },
       ],
       modelsList: [
-        { id: 1, modelImg: require("../../../assets/imgs/Models/model1.svg") },
-        { id: 2, modelImg: require("../../../assets/imgs/Models/model2.svg") },
-        { id: 3, modelImg: require("../../../assets/imgs/Models/model3.svg") },
-        { id: 4, modelImg: require("../../../assets/imgs/Models/model4.svg") },
+        {
+          id: 1,
+          modelImg: require("../../../../assets/imgs/Models/model1.svg"),
+        },
+        {
+          id: 2,
+          modelImg: require("../../../../assets/imgs/Models/model2.svg"),
+        },
+        {
+          id: 3,
+          modelImg: require("../../../../assets/imgs/Models/model3.svg"),
+        },
+        {
+          id: 4,
+          modelImg: require("../../../../assets/imgs/Models/model4.svg"),
+        },
       ],
     },
   ]);

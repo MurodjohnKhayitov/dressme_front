@@ -16,11 +16,11 @@ import {
   AutummSquare,
   WinterSquare,
   noProductImg,
-} from "../../../assets/imgs";
+} from "../../../../assets/imgs";
 import Slider from "react-slick";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
-import { dressMainData } from "../../../ContextHook/ContextMenu";
+import { dressMainData } from "../../../../ContextHook/ContextMenu";
 import { NavLink } from "react-router-dom";
 // import required modules``
 export default function MainPageSliders() {
