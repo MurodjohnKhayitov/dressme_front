@@ -11,12 +11,11 @@ import { BiChevronDown } from "react-icons/bi";
 import ReactSlider from "react-slider";
 
 export default function CategoryTopDetail() {
-  const [value, SetValue] = useState({ min: 20, max: 150 });
-  const Min = "100";
-  const Max = "12 000";
+  const Min = "60 000";
+  const Max = "120 000";
   const [values, setValues] = useState([Min, Max]);
   return (
-    <div className="flex flex-col min-h-[44px]  justify-center items-center m-0 p-0 box-border border border-green-600 ">
+    <div className="flex flex-col min-h-[44px]  justify-center items-center m-0 pb-2 pt-2 box-border  border-b border-searchBgColor">
       <div className="max-w-[1280px] w-[100%] flex items-center justify-between items-center m-auto py-3  ">
         <div>
           <button className="w-fit h-[44px] px-3 rounded-lg bg-btnBgColor  border-searchBgColor border flex items-center  cursor-pointer select-none group  ">
@@ -57,7 +56,7 @@ export default function CategoryTopDetail() {
                     {values[1]} сум
                   </div>
                 </div>{" "}
-                <div className=" ">
+                <div className="relative z-10 ">
                   {" "}
                   <ReactSlider
                     className="horizontal-slider"

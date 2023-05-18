@@ -106,7 +106,6 @@
   justify-content: center;
   align-items: center;
   cursor: grab;
-  /* background: #007dca; */
   border-radius: 16px;
   border: 1px solid #007dca;
   margin-top: 10px;
@@ -118,8 +117,9 @@
 
 .example-track1 {
   position: relative;
-  background: #f8f8f8;
+  background: #fff;
   margin-top: 0px;
+  border: 1px solid #d2d2d2;
 }
 
 .example-track1.example-track1-1 {
@@ -128,14 +128,16 @@
 }
 
 .example-track1.example-track1-2 {
-  background: #f8f8f8;
+  background: #fff;
   margin-top: 0px;
+  border: 1px solid #d2d2d2;
 }
 
 .horizontal-slider .example-track1 {
   top: 16px;
-  height: 5px;
+  height: 6px;
   border-radius: 5px;
+  padding: 2px;
 }
 /* 
 .horizontal-slider .example-thumb {

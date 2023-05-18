@@ -106,6 +106,7 @@ export default function CategoryForBrand() {
   const [value, SetValue] = useState({ min: 20, max: 150 });
 
   const HandleBrandFilter = (e) => {
+    console.log(e, "e");
     // setProduct((current) => {
     //   return current?.brandWear?.map((value) => {
     //     if (value?.id == e) {
@@ -293,7 +294,7 @@ export default function CategoryForBrand() {
                   {values[1]}
                 </div>
               </div>{" "}
-              <div>
+              <div className="relative z-10">
                 {" "}
                 <ReactSlider
                   className="horizontal-slider"
