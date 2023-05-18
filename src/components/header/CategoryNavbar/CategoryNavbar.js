@@ -135,8 +135,8 @@ const CategoryNavbar = () => {
             </span>
           </div>
           <div className="not-italic font-AeonikProRegular flex items-center  text-sm leading-4 text-black tracking-[1%] mr-[10px]">
-            <div className="h-5 w-5 rounded bg-SignInBgColor"></div>
-            <NavLink className="flex items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-SignInBgColor tracking-[1%]">
+            <div className="h-5 w-5 rounded bg-setTexOpacity"></div>
+            <NavLink className="flex items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-setTexOpacity tracking-[1%]">
               Кроссовки
             </NavLink>
           </div>
