@@ -33,6 +33,7 @@ import AddUserPrivateSkeleton from "../components/Home/AddUser/Skeleton/AddUserP
 import AddUserBodySkeleton from "../components/Home/AddUser/Skeleton/AddUserPrivateSkeleton";
 import SignInSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import SignUpSkeletonIndex from "../components/Authentication/SignUpSkeleton";
+import FavoriteUser from "../components/Home/Favorite";
 
 // -------------------------------------
 const HomePage = React.lazy(() => import("../Page/Home/Home"));
@@ -75,7 +76,8 @@ const RouterMain = () => {
   return (
     <>
       <Header />
-      <TransitionGroup>
+      {/* Transition group opacity pagedan pagega o'tganda */}
+      <TransitionGroup> 
         <CSSTransition
           key={location.pathname}
           timeout={300}
@@ -86,6 +88,7 @@ const RouterMain = () => {
             <Route
               path="/"
               element={
+                // Ortiqcha pagelarni yuklamaydi Lazy load
                 <Suspense
                   fallback={
                     <div>
@@ -98,8 +101,7 @@ const RouterMain = () => {
               }
             />
             <Route
-              path="/add_user_private_data"
-              element={<AddUserPrivateInfo />}
+              path="/add_user_private_data" element={<AddUserPrivateInfo />}
             />
             <Route path="/delivery-points" element={<YandexMapDressMe />} />
             <Route path="/add_user_body_data" element={<AddUserBodyData />} />
@@ -119,6 +121,9 @@ const RouterMain = () => {
             />
             <Route path="/sign_in" element={<SignIn />} />
             <Route path="/sign_up" element={<SignUp />} />
+            
+            <Route path="/favoutires" element={< FavoriteUser />} />
+
             <Route
               path="/forget_password"
               element={
