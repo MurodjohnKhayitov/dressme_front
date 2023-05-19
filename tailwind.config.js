@@ -47,6 +47,9 @@ module.exports = {
         // BgCategory...
         bgCategory: "#F8F8F8",
         textOpacity: "#D9D9D9",
+
+        // Basket Result Money
+        BasketMoneyColor: "#008F0E",
         // Loading...
         LoadinBg: "rgba(252,252,252,0.8)",
       },

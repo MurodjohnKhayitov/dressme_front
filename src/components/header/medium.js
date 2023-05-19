@@ -565,21 +565,24 @@ const MediumHeader = () => {
 
               {/* Heart section */}
               <NavLink
-                to='/favoutires'
+                to="/favoutires"
                 className="bg-btnBgColor rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex"
               >
-                  {/* <FaRegHeart /> */}
-                  <img src={heart} className={"w-5 h-5"} alt="heart" />
+                {/* <FaRegHeart /> */}
+                <img src={heart} className={"w-5 h-5"} alt="heart" />
               </NavLink>
 
               {/* Bucket section */}
-              <button className=" bg-btnBgColor rounded-lg flex items-center justify-center w-11 h-11 relative md:flex ss:hidden">
+              <NavLink
+                to="/basket-check-out"
+                className=" bg-btnBgColor rounded-lg flex items-center justify-center w-11 h-11 relative md:flex ss:hidden"
+              >
                 <img src={bucket} alt="bucket" />
                 <span className="count bg-red-700 w-4 h-4 text-white text-[10px] rounded-lg flex items-center justify-center absolute top-0 right-0 font-AeonikProMedium">
                   {" "}
                   4{" "}
                 </span>
-              </button>
+              </NavLink>
             </div>
           </div>
           {/* Ending of Full Screen page sesction Map*/}
