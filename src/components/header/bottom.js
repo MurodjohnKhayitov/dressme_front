@@ -203,7 +203,7 @@ const BottomHeader = () => {
 
   return (
     <div className="flex flex-col justify-center items-center m-0 p-0 box-border ss:hidden md:block">
-      <div className="max-w-[1280px] w-[100%] flex justify-center  py-3 items-center m-auto   ">
+      <div className="max-w-[1280px] w-[100%] flex justify-center   items-center m-auto   ">
         <Popover
           open={state?.openwear}
           onOpenChange={handleOpenChangeWear}

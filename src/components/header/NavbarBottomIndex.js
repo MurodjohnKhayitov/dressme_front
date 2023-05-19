@@ -178,15 +178,11 @@ const NavbarBottomIndex = () => {
                           </span>
                         </NavLink>
                         <div
-                          // to={"/confirm_password"}
                           className={`${authenActiveForget} w-fit md:h-[48px] ss:h-[52px] px-4   justify-center flex items-center   mr-2 rounded-lg`}
                         >
                           <span>
                             {" "}
-                            <AiOutlineEye
-                              // className={`text-${IconsColor}`}
-                              size={22}
-                            />
+                            <AiOutlineEye size={22} />
                           </span>
                           <span className="mt-1 font-AeonikProMedium not-italic ml-1  text-sm leading-4 tracking-[0,16px]">
                             Забыли пароль?

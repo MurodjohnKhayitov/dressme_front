@@ -37,21 +37,7 @@ import FavoriteUser from "../components/Home/Favorite";
 
 // -------------------------------------
 const HomePage = React.lazy(() => import("../Page/Home/Home"));
-// const AddUserPrivateInfo = React.lazy(() =>
-//   import("../components/Home/AddUser/AddUserPrivateData/AddUserPrivateData")
-// );
-// const AddUserBodyData = React.lazy(() =>
-//   import("../components/Home/AddUser/AddUserBodyData/AddUserBodyData")
-// );
-// const YandexMapDressMe = React.lazy(() =>
-//   import("../components/YandexMap/index")
-// );
-// const SignIn = React.lazy(() =>
-//   import("../components/Authentication/SignIn/index")
-// );
-// const SignUp = React.lazy(() =>
-//   import("../components/Authentication/SignUp/index")
-// );
+
 const ForgetConfirmPassword = React.lazy(() =>
   import("../components/Authentication/SignInDetail/ForgetConfirmPassword")
 );
@@ -61,7 +47,13 @@ const SetNewPassword = React.lazy(() =>
 const ForgetPassword = React.lazy(() =>
   import("../components/Authentication/SignInDetail/ForgetPassword")
 );
-const Footer = React.lazy(() => import("../components/footer/footer"), 500);
+const Footer = React.lazy(() => import("../components/footer/footer"));
+const BasketCheckOut = React.lazy(() =>
+  import("../components/Home/Basket/BasketCheckOut/BasketCheckOut")
+);
+const PaymentForClothes = React.lazy(() =>
+  import("../components/Home/Basket/Payment/PaymentForClothes")
+);
 
 // -------------------------------------
 
@@ -77,7 +69,7 @@ const RouterMain = () => {
     <>
       <Header />
       {/* Transition group opacity pagedan pagega o'tganda */}
-      <TransitionGroup> 
+      <TransitionGroup>
         <CSSTransition
           key={location.pathname}
           timeout={300}
@@ -101,7 +93,8 @@ const RouterMain = () => {
               }
             />
             <Route
-              path="/add_user_private_data" element={<AddUserPrivateInfo />}
+              path="/add_user_private_data"
+              element={<AddUserPrivateInfo />}
             />
             <Route path="/delivery-points" element={<YandexMapDressMe />} />
             <Route path="/add_user_body_data" element={<AddUserBodyData />} />
@@ -119,10 +112,38 @@ const RouterMain = () => {
                 </Suspense>
               }
             />
+            <Route
+              path="/basket-check-out"
+              element={
+                <Suspense
+                  fallback={
+                    <div>
+                      <SkeletonHomeIndex />
+                    </div>
+                  }
+                >
+                  <BasketCheckOut />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/payment"
+              element={
+                <Suspense
+                  fallback={
+                    <div>
+                      <SkeletonHomeIndex />
+                    </div>
+                  }
+                >
+                  <PaymentForClothes />
+                </Suspense>
+              }
+            />
             <Route path="/sign_in" element={<SignIn />} />
             <Route path="/sign_up" element={<SignUp />} />
-            
-            <Route path="/favoutires" element={< FavoriteUser />} />
+
+            <Route path="/favoutires" element={<FavoriteUser />} />
 
             <Route
               path="/forget_password"
