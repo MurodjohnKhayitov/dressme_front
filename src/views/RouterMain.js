@@ -34,6 +34,7 @@ import AddUserBodySkeleton from "../components/Home/AddUser/Skeleton/AddUserPriv
 import SignInSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import SignUpSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import FavoriteUser from "../components/Home/Favorite";
+import Favourites from "../components/Home/Favorite";
 
 // -------------------------------------
 const HomePage = React.lazy(() => import("../Page/Home/Home"));
@@ -143,7 +144,7 @@ const RouterMain = () => {
             <Route path="/sign_in" element={<SignIn />} />
             <Route path="/sign_up" element={<SignUp />} />
 
-            <Route path="/favoutires" element={<FavoriteUser />} />
+            <Route path="/Избранное" element={<Favourites />} />
 
             <Route
               path="/forget_password"

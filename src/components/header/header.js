@@ -6,6 +6,7 @@ import NavMenu from "./nav-menu";
 import "./header.css";
 import { Outlet, useLocation } from "react-router-dom";
 import NavbarBottomIndex from "./NavbarBottomIndex";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 const Header = () => {
   // ----------------NavBar----------------
   const [show, setShow] = useState(true);
@@ -76,6 +77,7 @@ const Header = () => {
               <NavMenu />
             </div>
           </div>
+          <Breadcrumbs />
         </header>
       ) : null}
       <Outlet />
