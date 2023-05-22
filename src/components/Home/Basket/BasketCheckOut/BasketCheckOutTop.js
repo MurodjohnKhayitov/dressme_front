@@ -105,7 +105,7 @@ const BasketCheckOutTop = () => {
               <img src={bucket} alt="" />
             </div>
 
-            <NavLink className="flex items-center cursor-pointer pt-[4px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
+            <NavLink to='/' className="flex items-center cursor-pointer pt-[4px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
               Главная
             </NavLink>
             <span>

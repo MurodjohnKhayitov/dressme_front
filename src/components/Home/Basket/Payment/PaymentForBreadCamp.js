@@ -97,7 +97,7 @@ const PaymentForBreadCamp = () => {
   );
   return (
     <div className="flex flex-col min-h-[44px]  justify-center items-center m-0 py-3 box-border border-b border-searchBgColor">
-      <div className="max-w-[1280px] w-[100%] flex items-center justify-between items-center m-auto   ">
+      <div className="max-w-[1280px] w-[100%] flex justify-between items-center m-auto">
         <div className="flex items-center ">
           <div className="not-italic font-AeonikProRegular flex items-center  text-sm leading-4 text-black tracking-[1%] mr-[10px]">
             <div className="h-5 w-5 flex justify-center items-center">
@@ -116,7 +116,7 @@ const PaymentForBreadCamp = () => {
             <div className="h-5 w-5 flex justify-center items-center">
               <img src={bucket} alt="" />
             </div>{" "}
-            <NavLink className="flex items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
+            <NavLink to='/basket-check-out' className="flex items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
               Корзинка{" "}
             </NavLink>
             <span>
@@ -127,7 +127,7 @@ const PaymentForBreadCamp = () => {
             <div className="h-5 w-5 flex justify-center items-center">
               <img src={bucket} alt="" />
             </div>{" "}
-            <NavLink className="flex items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
+            <NavLink to='/basket-check-out' className="flex items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
               Оформление заказа{" "}
             </NavLink>
             <span>
