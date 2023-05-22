@@ -105,82 +105,81 @@ export default function FavouriteProducts() {
         { id: 6, value: 6, action: false, colors: "bg-sky-500" },
       ],
     },
-    
-    // {
-    //   id: 5,
-    //   discount: "-30%",
-    //   video: true,
-    //   diliver: true,
-    //   like: true,
-    //   buy: true,
-    //   ProducImg:
-    //     "https://images.uzum.uz/cfmebc7hgiopn8lcdoh0/t_product_540_high.jpg#1677855264045",
-    //   noProductImg: cardImg,
-    //   title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
+    {
+      id: 5,
+      discount: "-30%",
+      video: true,
+      diliver: true,
+      like: true,
+      buy: true,
+      ProducImg:
+        "https://images.uzum.uz/cfmebc7hgiopn8lcdoh0/t_product_540_high.jpg#1677855264045",
+      noProductImg: cardImg,
+      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
 
-    //   starCount: 256,
-    //   shirtSize: "M | 3XL",
-    //   sale: "258.000",
-    //   price: "372.000",
-    //   changeColor: [
-    //     { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-    //     { id: 2, value: 2, action: false, colors: "bg-green-600" },
-    //     { id: 3, value: 3, action: false, colors: "bg-red-700" },
-    //     { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-    //     { id: 5, value: 5, action: false, colors: "bg-black" },
-    //     { id: 6, value: 6, action: false, colors: "bg-sky-500" },
-    //   ],
-    // },
-    // {
-    //   id: 6,
-    //   discount: "-30%",
-    //   video: true,
-    //   diliver: true,
-    //   like: true,
-    //   buy: true,
-    //   ProducImg:
-    //     "https://images.uzum.uz/cf557s8l08k0o9qi31gg/t_product_540_high.jpg#1677855329602",
-    //   noProductImg: cardImg,
-    //   title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
+      starCount: 256,
+      shirtSize: "M | 3XL",
+      sale: "258.000",
+      price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" },
+      ],
+    },
+    {
+      id: 6,
+      discount: "-30%",
+      video: true,
+      diliver: true,
+      like: true,
+      buy: true,
+      ProducImg:
+        "https://images.uzum.uz/cf557s8l08k0o9qi31gg/t_product_540_high.jpg#1677855329602",
+      noProductImg: cardImg,
+      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
 
-    //   starCount: 256,
-    //   shirtSize: "M | 3XL",
-    //   sale: "258.000",
-    //   price: "372.000",
-    //   changeColor: [
-    //     { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-    //     { id: 2, value: 2, action: false, colors: "bg-green-600" },
-    //     { id: 3, value: 3, action: false, colors: "bg-red-700" },
-    //     { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-    //     { id: 5, value: 5, action: false, colors: "bg-black" },
-    //     { id: 6, value: 6, action: false, colors: "bg-sky-500" },
-    //   ],
-    // },
-    // {
-    //   id: 7,
-    //   discount: "-30%",
-    //   video: true,
-    //   diliver: true,
-    //   like: true,
-    //   buy: true,
-    //   ProducImg:
-    //     "https://images.uzum.uz/cfmebc7hgiopn8lcdoh0/t_product_540_high.jpg#1677855264045",
-    //   noProductImg: cardImg,
-    //   title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
+      starCount: 256,
+      shirtSize: "M | 3XL",
+      sale: "258.000",
+      price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" },
+      ],
+    },
+    {
+      id: 7,
+      discount: "-30%",
+      video: true,
+      diliver: true,
+      like: true,
+      buy: true,
+      ProducImg:
+        "https://images.uzum.uz/cfmebc7hgiopn8lcdoh0/t_product_540_high.jpg#1677855264045",
+      noProductImg: cardImg,
+      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
 
-    //   starCount: 256,
-    //   shirtSize: "M | 3XL",
-    //   sale: "258.000",
-    //   price: "372.000",
-    //   changeColor: [
-    //     { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-    //     { id: 2, value: 2, action: false, colors: "bg-green-600" },
-    //     { id: 3, value: 3, action: false, colors: "bg-red-700" },
-    //     { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-    //     { id: 5, value: 5, action: false, colors: "bg-black" },
-    //     { id: 6, value: 6, action: false, colors: "bg-sky-500" },
-    //   ],
-    // },
+      starCount: 256,
+      shirtSize: "M | 3XL",
+      sale: "258.000",
+      price: "372.000",
+      changeColor: [
+        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
+        { id: 2, value: 2, action: false, colors: "bg-green-600" },
+        { id: 3, value: 3, action: false, colors: "bg-red-700" },
+        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
+        { id: 5, value: 5, action: false, colors: "bg-black" },
+        { id: 6, value: 6, action: false, colors: "bg-sky-500" },
+      ],
+    },
     // {
     //   id: 8,
     //   discount: "-30%",
@@ -587,8 +586,9 @@ export default function FavouriteProducts() {
                 );
             })}
             </div>
-
-            <div className="w-full h-fit flex items-center justify-center mt-[75px] gap-x-6">
+            
+            {/* Pagination */}
+            {/* <div className="w-full h-fit flex items-center justify-center mt-[75px] gap-x-6">
               <div className="flex items-center cursor-pointer bg-searchBgColor px-5 py-3 rounded-lg">
                 <img src={PrevCate} />
                 <span className="not-italic ml-1  font-AeonikProRegular text-lg leading-4 text-fullBlue">
@@ -632,7 +632,7 @@ export default function FavouriteProducts() {
                 </span>
                 <img src={NextCate} />
               </div>
-            </div>
+            </div> */}
         </>
         ) : (
         <div className="md:my-[50px] mx-auto">

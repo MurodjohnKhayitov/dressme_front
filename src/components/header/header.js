@@ -77,7 +77,7 @@ const Header = () => {
               <NavMenu />
             </div>
           </div>
-          <Breadcrumbs />
+          {/* <Breadcrumbs /> */}
         </header>
       ) : null}
       <Outlet />
