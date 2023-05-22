@@ -251,3 +251,14 @@ export { default as SignUpAutumm } from "./formImgs//SignUp/SignUpAutumm.svg";
 export { default as SignUpSummer } from "./formImgs/SignUp/SignUpSummer.svg";
 export { default as SignUpWinter } from "./formImgs/SignUp/SignUpWinter.svg";
 export { default as passwordCheck } from "./formImgs/Signin/passwordCheck.svg";
+
+// --------- PAYMENTS ----------
+export {default as profilePayment} from './Payments/profile.svg'
+export {default as emailPayment} from './Payments/email.svg'
+export {default as callPayment} from './Payments/call.svg'
+export {default as confirmCheckPayment} from './Payments/confirm-check.svg'
+export {default as calendatPayment} from './Payments/calendar.svg'
+export {default as arrowBottomPayment} from './Payments/arrow-bottom.svg'
+export {default as kartaLogoPayment} from './Payments/karta-logo.svg'
+export {default as paymentLogoPayment} from './Payments/payme-logo.svg'
+export {default as plasticCardPayment} from './Payments/plastic-card.svg'
