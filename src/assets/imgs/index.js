@@ -253,17 +253,26 @@ export { default as SignUpWinter } from "./formImgs/SignUp/SignUpWinter.svg";
 export { default as passwordCheck } from "./formImgs/Signin/passwordCheck.svg";
 
 // --------- PAYMENTS ----------
-export {default as profilePayment} from './Payments/profile.svg'
-export {default as emailPayment} from './Payments/email.svg'
-export {default as callPayment} from './Payments/call.svg'
-export {default as confirmCheckPayment} from './Payments/confirm-check.svg'
-export {default as calendarPayment} from './Payments/calendar.svg'
-export {default as arrowBottomPayment} from './Payments/arrow-bottom.svg'
-export {default as kartaLogoPayment} from './Payments/karta-logo.svg'
-export {default as paymeLogoPayment} from './Payments/payme-logo.svg'
-export {default as clickLogoPayment} from './Payments/click-logo.svg'
-export {default as plasticCardPayment} from './Payments/plastic-card.svg'
+export { default as profilePayment } from "./Payments/profile.svg";
+export { default as emailPayment } from "./Payments/email.svg";
+export { default as callPayment } from "./Payments/call.svg";
+export { default as confirmCheckPayment } from "./Payments/confirm-check.svg";
+export { default as calendarPayment } from "./Payments/calendar.svg";
+export { default as arrowBottomPayment } from "./Payments/arrow-bottom.svg";
+export { default as kartaLogoPayment } from "./Payments/karta-logo.svg";
+export { default as paymeLogoPayment } from "./Payments/payme-logo.svg";
+export { default as clickLogoPayment } from "./Payments/click-logo.svg";
+export { default as plasticCardPayment } from "./Payments/plastic-card.svg";
 
 // ----------- BREADCRUMB ICONS -----------
-export {default as homeBreadcrumb} from './BreadcrumbIcons/home.svg'
-export {default as shopBreadcrumb} from './BreadcrumbIcons/shop.svg'
+export { default as homeBreadcrumb } from "./BreadcrumbIcons/home.svg";
+export { default as shopBreadcrumb } from "./BreadcrumbIcons/shop.svg";
+
+// ----------- ProductID Icon -----------
+export { default as ProductArticle } from "./products/ProductArticle.svg";
+export { default as ProductBing } from "./products/ProductBing.svg";
+export { default as ProductSize } from "./products/ProductSize.svg";
+export { default as ProductStar } from "./products/ProductStar.svg";
+export { default as ProductSuccess } from "./products/ProductSuccess.svg";
+export { default as ProductWarning } from "./products/ProductWarning.svg";
+export { default as ProductSwitch } from "./products/ProductSwitch.svg";
