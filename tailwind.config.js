@@ -52,6 +52,14 @@ module.exports = {
         BasketMoneyColor: "#008F0E",
         // Loading...
         LoadinBg: "rgba(252,252,252,0.8)",
+
+        // Products Colors
+        PC1: "#7000FF",
+        PC2: "#000",
+        PC3: "#fff",
+        PC4: "#7F7F7F",
+        PC5: "#0D5F91",
+        PC6: "#E2B000",
       },
       fontFamily: {
         // Chrome for
