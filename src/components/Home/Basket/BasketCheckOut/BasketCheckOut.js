@@ -1,285 +1,52 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { BasketCheckOutTop } from "./BasketCheckOutTop";
 import { bucket, formArrowRightCircle } from "../../../../assets/imgs";
 import { NavLink } from "react-router-dom";
 
-import { discount, video, delivery, heart, shirt, addBag, cardImg, star, setpersonIcons, InputCheck, ticketDiscount, PrevCate, NextCate } from "../../../../assets/imgs";
+import {
+  discount,
+  video,
+  delivery,
+  heart,
+  shirt,
+  addBag,
+  cardImg,
+  star,
+  setpersonIcons,
+  InputCheck,
+  ticketDiscount,
+  PrevCate,
+  NextCate,
+} from "../../../../assets/imgs";
+import { dressMainData } from "../../../../ContextHook/ContextMenu";
 
 export default function BasketCheckOut() {
-  
   const bucket_products = [
     {
-      id:1, 
-      title: 'Спортивная мужская кроссовка Nike RUN',
-      img:"",
-      store_dealer:'Nike Store Official Dealer',
-      size:'3XL',
-      color:'bg-zinc-400',
-      color_text:"Серый",
+      id: 1,
+      title: "Спортивная мужская кроссовка Nike RUN",
+      img: "",
+      store_dealer: "Nike Store Official Dealer",
+      size: "3XL",
+      color: "bg-zinc-400",
+      color_text: "Серый",
       old_prize: "372 000",
       new_prize: "258 000",
     },
     {
-      id:2, 
-      title: 'Спортивная мужская кроссовка Adidas RUN',
-      img:"",
-      store_dealer:'Adidas Store Official Dealer',
-      size:'3XL',
-      color:'bg-sky-700',
-      color_text:"Синий океан",
-      old_prize: "372 000",
-      new_prize: "258 000"
-    },
-  ]
-
-  const [productList, setProductList] = useState([
-    {
-      id: 1,
-      discount: "-30%",
-      video: true,
-      diliver: true,
-      like: true,
-      buy: true,
-      ProducImg: "",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "258.000",
-      price: "372.000",
-      changeColor: [
-        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-        { id: 2, value: 2, action: false, colors: "bg-green-600" },
-        { id: 3, value: 3, action: false, colors: "bg-red-700" },
-        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-        { id: 5, value: 5, action: false, colors: "bg-black" },
-        { id: 6, value: 6, action: false, colors: "bg-sky-500" },
-      ],
-    },
-    {
       id: 2,
-      discount: "-30%",
-      video: true,
-      diliver: true,
-      like: true,
-      buy: true,
-      ProducImg: "",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "258.000",
-      price: "372.000",
-      changeColor: [
-        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-        { id: 2, value: 2, action: false, colors: "bg-green-600" },
-        { id: 3, value: 3, action: false, colors: "bg-red-700" },
-        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-        { id: 5, value: 5, action: false, colors: "bg-black" },
-        { id: 6, value: 6, action: false, colors: "bg-sky-500" },
-      ],
+      title: "Спортивная мужская кроссовка Adidas RUN",
+      img: "",
+      store_dealer: "Adidas Store Official Dealer",
+      size: "3XL",
+      color: "bg-sky-700",
+      color_text: "Синий океан",
+      old_prize: "372 000",
+      new_prize: "258 000",
     },
-    {
-      id: 3,
-      discount: "-30%",
-      video: true,
-      diliver: true,
-      like: true,
-      buy: true,
-      ProducImg: "",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
+  ];
+  const [dressInfo, setDressInfo] = useContext(dressMainData);
 
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "",
-      price: "372.000",
-      changeColor: [
-        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-        { id: 2, value: 2, action: false, colors: "bg-green-600" },
-        { id: 3, value: 3, action: false, colors: "bg-red-700" },
-        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-        { id: 5, value: 5, action: false, colors: "bg-black" },
-        { id: 6, value: 6, action: false, colors: "bg-sky-500" },
-      ],
-    },
-    {
-      id: 4,
-      discount: "-30%",
-      video: true,
-      diliver: true,
-      like: true,
-      buy: true,
-      ProducImg:
-        "https://images.uzum.uz/cfh16dd40v9uauhi42hg/t_product_540_high.jpg#1677855222081",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "258.000",
-      price: "372.000",
-      changeColor: [
-        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-        { id: 2, value: 2, action: false, colors: "bg-green-600" },
-        { id: 3, value: 3, action: false, colors: "bg-red-700" },
-        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-        { id: 5, value: 5, action: false, colors: "bg-black" },
-        { id: 6, value: 6, action: false, colors: "bg-sky-500" },
-      ],
-    },
-    {
-      id: 5,
-      discount: "-30%",
-      video: true,
-      diliver: true,
-      like: true,
-      buy: true,
-      ProducImg:
-        "https://images.uzum.uz/cfmebc7hgiopn8lcdoh0/t_product_540_high.jpg#1677855264045",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "258.000",
-      price: "372.000",
-      changeColor: [
-        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-        { id: 2, value: 2, action: false, colors: "bg-green-600" },
-        { id: 3, value: 3, action: false, colors: "bg-red-700" },
-        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-        { id: 5, value: 5, action: false, colors: "bg-black" },
-        { id: 6, value: 6, action: false, colors: "bg-sky-500" },
-      ],
-    },
-    {
-      id: 6,
-      discount: "-30%",
-      video: true,
-      diliver: true,
-      like: true,
-      buy: true,
-      ProducImg:
-        "https://images.uzum.uz/cf557s8l08k0o9qi31gg/t_product_540_high.jpg#1677855329602",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "258.000",
-      price: "372.000",
-      changeColor: [
-        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-        { id: 2, value: 2, action: false, colors: "bg-green-600" },
-        { id: 3, value: 3, action: false, colors: "bg-red-700" },
-        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-        { id: 5, value: 5, action: false, colors: "bg-black" },
-        { id: 6, value: 6, action: false, colors: "bg-sky-500" },
-      ],
-    },
-    {
-      id: 7,
-      discount: "-30%",
-      video: true,
-      diliver: true,
-      like: true,
-      buy: true,
-      ProducImg:
-        "https://images.uzum.uz/cfmebc7hgiopn8lcdoh0/t_product_540_high.jpg#1677855264045",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "258.000",
-      price: "372.000",
-      changeColor: [
-        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-        { id: 2, value: 2, action: false, colors: "bg-green-600" },
-        { id: 3, value: 3, action: false, colors: "bg-red-700" },
-        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-        { id: 5, value: 5, action: false, colors: "bg-black" },
-        { id: 6, value: 6, action: false, colors: "bg-sky-500" },
-      ],
-    },
-    {
-      id: 8,
-      discount: "-30%",
-      video: true,
-      diliver: true,
-      like: true,
-      buy: true,
-      ProducImg:
-        "https://images.uzum.uz/cf2h9jqvtie1lhbgt6mg/t_product_540_high.jpg#1677855329588",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "258.000",
-      price: "372.000",
-      changeColor: [
-        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-        { id: 2, value: 2, action: false, colors: "bg-green-600" },
-        { id: 3, value: 3, action: false, colors: "bg-red-700" },
-        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-        { id: 5, value: 5, action: false, colors: "bg-black" },
-        { id: 6, value: 6, action: false, colors: "bg-sky-500" },
-      ],
-    },
-    {
-      id: 9,
-      discount: "-30%",
-      video: true,
-      diliver: true,
-      like: true,
-      buy: true,
-      ProducImg:
-        "https://images.uzum.uz/cf53ng0v1htd23al4sqg/t_product_540_high.jpg#1677855423341",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "15.000",
-      price: "372.000",
-      changeColor: [
-        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-        { id: 2, value: 2, action: false, colors: "bg-green-600" },
-        { id: 3, value: 3, action: false, colors: "bg-red-700" },
-        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-        { id: 5, value: 5, action: false, colors: "bg-black" },
-        { id: 6, value: 6, action: false, colors: "bg-sky-500" },
-      ],
-    },
-    {
-      id: 10,
-      discount: "-30%",
-      video: true,
-      diliver: true,
-      like: true,
-      buy: true,
-      ProducImg:
-        "https://images.uzum.uz/cf5vfb2vtie1lhbh7h50/t_product_540_high.jpg#1677855423352",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "258.000",
-      price: "372.000",
-      changeColor: [
-        { id: 1, value: 1, action: false, colors: "bg-purple-700" },
-        { id: 2, value: 2, action: false, colors: "bg-green-600" },
-        { id: 3, value: 3, action: false, colors: "bg-red-700" },
-        { id: 4, value: 4, action: false, colors: "bg-yellow-500" },
-        { id: 5, value: 5, action: false, colors: "bg-black" },
-        { id: 6, value: 6, action: false, colors: "bg-sky-500" },
-      ],
-    },
-  ]);
- 
   const [state, setState] = useState({
     clothesCount: 1,
   });
@@ -345,7 +112,10 @@ export default function BasketCheckOut() {
         <div className="w-[68%] h-full border-t-0 border border-searchBgColor rounded-b-lg  flex flex-col  ">
           {bucket_products.map((data) => {
             return (
-              <div key={data.id} className="w-full pl-5 pr-8 flex flex-col justify-center">
+              <div
+                key={data.id}
+                className="w-full pl-5 pr-8 flex flex-col justify-center"
+              >
                 <div className="w-full h-[180px] my-5 flex items-center justify-between">
                   <div className=" flex items-center h-full">
                     <div className="w-[132px] h-full rounded-lg bg-btnBgColor border border-searchBgColor">
@@ -371,7 +141,9 @@ export default function BasketCheckOut() {
                         </div>
                         <div className="flex items-center mt-4">
                           <div className="cursor-pointer h-fit p-[2px] flex items-center rounded-lg border border-searchBgColor">
-                            <p className={`w-8 h-8 border border-searchBgColor rounded-lg bg-setTexOpacity ${data.color}`}></p>
+                            <p
+                              className={`w-8 h-8 border border-searchBgColor rounded-lg bg-setTexOpacity ${data.color}`}
+                            ></p>
                             <p className="not-italic pl-[10px] pr-[15px] mt-1 font-AeonikProMedium text-base leading-4 text-black tracking-[1%]">
                               {data.color_text}
                             </p>
@@ -476,14 +248,16 @@ export default function BasketCheckOut() {
           </div>
         </div>
       </div>
-      
+
       <div className="max-w-[1280px] w-[100%] flex justify-start items-center m-auto">
         <div className="w-[100%] h-fit">
           <div className="w-full flex items-center mb-10">
-            <div className="font-AeonikProMedium text-2xl">Подобрали для вас</div>
+            <div className="font-AeonikProMedium text-2xl">
+              Подобрали для вас
+            </div>
           </div>
           <div className="flex  flex-wrap gap-x-5 gap-y-5 ">
-            {productList.map((data) => {
+            {dressInfo.ProductList.map((data) => {
               return (
                 <div
                   key={data.id}
@@ -565,7 +339,6 @@ export default function BasketCheckOut() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }
