@@ -128,7 +128,7 @@ select {
 .ant-modal-content {
   padding: 0 !important;
 }
-.ant-modal-content .ant-modal-close{
+.ant-modal-content .ant-modal-close {
   right: 10px !important;
 }
 
@@ -160,8 +160,6 @@ select {
   border-radius: 8px !important;
   padding-bottom: 7px !important;
 }
-
-
 
 .modalSetMobile .ant-modal-body {
   display: flex;
@@ -233,4 +231,16 @@ select {
     rgba(167, 207, 223, 0) 50%,
     rgba(255, 255, 255, 0.99) 100%
   );
+}
+
+/* Table */
+
+table,
+tr,
+td {
+  border: 1px solid #f2f2f2;
+  padding: 4px 8px;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 14px;
 }

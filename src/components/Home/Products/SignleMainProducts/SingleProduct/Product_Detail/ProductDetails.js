@@ -333,6 +333,64 @@ const ProductDetails = () => {
           </li>
         </ul>
       </div>
+      <div className="mt-15 ">
+        <div></div>
+        <div className="mt-15">
+          <table className="w-full border border-searchBgColor  border-collapse	">
+            <tr className="">
+              <td>data1</td>
+              <td>86-90</td>
+              <td>86-90</td>
+              <td>86-90</td>
+              <td>86-90</td>
+              <td>86-90</td>
+              <td>86-90</td>
+              <td>86-90</td>
+              <td>86-90</td>
+              <td>86-90</td>
+              <td>86-90</td>
+            </tr>
+            <tr>
+              <td>data2</td>
+              <td>74-78</td>
+              <td>74-78</td>
+              <td>74-78</td>
+              <td>74-78</td>
+              <td>74-78</td>
+              <td>74-78</td>
+              <td>74-78</td>
+              <td>74-78</td>
+              <td>74-78</td>
+              <td>74-78</td>
+            </tr>
+            <tr>
+              <td>data3</td>
+              <td>94-97</td>
+              <td>94-97</td>
+              <td>94-97</td>
+              <td>94-97</td>
+              <td>94-97</td>
+              <td>94-97</td>
+              <td>94-97</td>
+              <td>94-97</td>
+              <td>94-97</td>
+              <td>94-97</td>
+            </tr>
+            <tr>
+              <td>data4</td>
+              <td colSpan={2}>36-38</td>
+              <td>36-38</td>
+              <td>36-38</td>
+              <td>36-38</td>
+              <td>36-38</td>
+              <td>36-38</td>
+              <td>36-38</td>
+              <td>36-38</td>
+              <td>36-38</td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };
