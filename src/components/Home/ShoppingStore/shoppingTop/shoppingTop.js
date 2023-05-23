@@ -4,7 +4,7 @@ import { dressMainData } from "../../../../ContextHook/ContextMenu";
 
 
 const ShoppingTop = () => {
-
+    
     const [categories, setSetCategories] = useState(true);
     const [dressInfo] = useContext(dressMainData);
 
@@ -45,6 +45,7 @@ const ShoppingTop = () => {
                             <img src={allStore} alt="" className="mr-3 -mt-1"/>
                             Все
                         </button>
+                        <span className="text-searchBgColor flex items-center">|</span>
                         <button
                             onClick={() => setSetCategories(false)}
                             className={`h-10 text-[15px] text-black text-center px-6 font-AeonikProRegular ${
@@ -55,6 +56,7 @@ const ShoppingTop = () => {
                         >
                             Верхняя
                         </button>
+                        <span className="text-searchBgColor flex items-center">|</span>
                         <button
                             onClick={() => setSetCategories(false)}
                             className={`h-10 text-[15px] text-black text-center px-6 font-AeonikProRegular ${
@@ -65,6 +67,7 @@ const ShoppingTop = () => {
                         >
                             Нижняя
                         </button>
+                        <span className="text-searchBgColor flex items-center">|</span>
                         <button
                             onClick={() => setSetCategories(false)}
                             className={`h-10 text-[15px] text-black text-center px-6 font-AeonikProRegular ${
@@ -75,6 +78,7 @@ const ShoppingTop = () => {
                         >
                             Обувь
                         </button>
+                        <span className="text-searchBgColor flex items-center">|</span>
                         <button
                             onClick={() => setSetCategories(false)}
                             className={`h-10 text-[15px] text-black text-center px-6 font-AeonikProRegular ${
@@ -100,6 +104,7 @@ const ShoppingTop = () => {
                                 <img src={allStore} alt="" className="mr-3 -mt-1"/>
                                 Все
                             </button>
+                            <span className="text-searchBgColor flex items-center">|</span>
                             <button
                                 onClick={() => setSetCategories(false)}
                                 className={`h-10 text-[15px] text-black text-center px-6 font-AeonikProRegular ${
@@ -110,6 +115,7 @@ const ShoppingTop = () => {
                             >
                                 <img src={manGenderStore} alt="" />
                             </button>
+                            <span className="text-searchBgColor flex items-center">|</span>
                             <button
                                 onClick={() => setSetCategories(false)}
                                 className={`h-10 text-[15px] text-black text-center px-6 font-AeonikProRegular ${
