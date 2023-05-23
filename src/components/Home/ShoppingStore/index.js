@@ -1,3 +1,4 @@
+import ShoppingBrands from "./shoppingBrands/shoppingBrands";
 import ShoppingStoreBreadCrumb from "./shoppingStoreBreadcrumb/shoppingStoreBreadcrumb";
 import ShoppingTop from "./shoppingTop/shoppingTop";
 
@@ -9,6 +10,9 @@ export default function ShoppingStore() {
              </div>
              <div className="w-full border-b border-searchBgColor">
                 <ShoppingTop />
+             </div>
+             <div className="w-full">
+                <ShoppingBrands />
              </div>
         </div>
     )
