@@ -35,9 +35,13 @@ import SignInSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import SignUpSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import FavoriteUser from "../components/Home/Favorite";
 import Favourites from "../components/Home/Favorite";
+// import SingleMainProduct from "../components/Home/Product/SingleMainProduct/SingleMainProduct";
 
 // -------------------------------------
 const HomePage = React.lazy(() => import("../Page/Home/Home"));
+const SingleMainProduct = React.lazy(() =>
+  import("../components/Home/Products/SignleMainProducts")
+);
 
 const ForgetConfirmPassword = React.lazy(() =>
   import("../components/Authentication/SignInDetail/ForgetConfirmPassword")
@@ -138,6 +142,20 @@ const RouterMain = () => {
                   }
                 >
                   <PaymentForClothes />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/product/:id"
+              element={
+                <Suspense
+                  fallback={
+                    <div>
+                      <SkeletonHomeIndex />
+                    </div>
+                  }
+                >
+                  <SingleMainProduct />
                 </Suspense>
               }
             />
