@@ -267,3 +267,10 @@ export {default as plasticCardPayment} from './Payments/plastic-card.svg'
 // ----------- BREADCRUMB ICONS -----------
 export {default as homeBreadcrumb} from './BreadcrumbIcons/home.svg'
 export {default as shopBreadcrumb} from './BreadcrumbIcons/shop.svg'
+
+
+// ----------- STORE FOR BRANDS ICONS -----------
+export {default as allStore} from './StoreForBrands/all.svg'
+export {default as videoStore} from './StoreForBrands/video.svg'
+export {default as manGenderStore} from './StoreForBrands/man-gender.svg'
+export {default as womanGenderStore} from './StoreForBrands/woman-gender.svg'
