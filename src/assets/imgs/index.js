@@ -263,3 +263,7 @@ export {default as kartaLogoPayment} from './Payments/karta-logo.svg'
 export {default as paymeLogoPayment} from './Payments/payme-logo.svg'
 export {default as clickLogoPayment} from './Payments/click-logo.svg'
 export {default as plasticCardPayment} from './Payments/plastic-card.svg'
+
+// ----------- BREADCRUMB ICONS -----------
+export {default as homeBreadcrumb} from './BreadcrumbIcons/home.svg'
+export {default as shopBreadcrumb} from './BreadcrumbIcons/shop.svg'

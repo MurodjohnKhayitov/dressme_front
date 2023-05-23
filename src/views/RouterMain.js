@@ -33,7 +33,7 @@ import AddUserPrivateSkeleton from "../components/Home/AddUser/Skeleton/AddUserP
 import AddUserBodySkeleton from "../components/Home/AddUser/Skeleton/AddUserPrivateSkeleton";
 import SignInSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import SignUpSkeletonIndex from "../components/Authentication/SignUpSkeleton";
-import FavoriteUser from "../components/Home/Favorite";
+import ShoppingStore from "../components/Home/ShoppingStore";
 import Favourites from "../components/Home/Favorite";
 // import SingleMainProduct from "../components/Home/Product/SingleMainProduct/SingleMainProduct";
 
@@ -162,7 +162,8 @@ const RouterMain = () => {
             <Route path="/sign_in" element={<SignIn />} />
             <Route path="/sign_up" element={<SignUp />} />
 
-            <Route path="/Избранное" element={<Favourites />} />
+            <Route path="/favourites" element={<Favourites />} />
+            <Route path="/store" element={<ShoppingStore />} />
 
             <Route
               path="/forget_password"
