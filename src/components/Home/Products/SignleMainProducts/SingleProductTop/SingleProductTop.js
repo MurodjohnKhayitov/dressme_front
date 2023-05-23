@@ -14,8 +14,8 @@ import {
   iIcons,
   passwordCheck,
   plusIcon,
-} from "../../../../assets/imgs";
-import { dressMainData } from "../../../../ContextHook/ContextMenu";
+} from "../../../../../assets/imgs";
+import { dressMainData } from "../../../../../ContextHook/ContextMenu";
 import { MdAdd } from "react-icons/md";
 import { NavLink, useParams } from "react-router-dom";
 import { Popover } from "antd";

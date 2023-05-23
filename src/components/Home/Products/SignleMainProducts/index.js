@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { SingleProduct } from "./SingleProduct";
+import { SingleProduct } from "./SingleProduct/SingleProduct";
 
 export default function SingleMainProducts() {
   return (
-    <div className="w-full border border-red-500">
+    <div className="w-full ">
       <SingleProduct />
     </div>
   );
