@@ -565,7 +565,7 @@ const MediumHeader = () => {
 
               {/* Heart section */}
               <NavLink
-                to="/Избранное"
+                to="/favourites"
                 className="bg-btnBgColor rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex"
               >
                 {/* <FaRegHeart /> */}

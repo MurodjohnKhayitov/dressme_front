@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {
   MenuClose,
   business,
@@ -174,7 +174,7 @@ const TopHeader = () => {
               </Popover>
             </div>
           </Link>
-          <div className="flex items-center mx-[40px]  ">
+          {/* <div className="flex items-center mx-[40px]  ">
             {state?.weatherSet?.current?.condition?.icon ? (
               <div
                 onClick={showModal}
@@ -197,7 +197,7 @@ const TopHeader = () => {
             ) : (
               <span className="w-[70px] h-[28px] bg-borderColorCard rounded"></span>
             )}
-          </div>
+          </div> */}
           <Modal
             closable={false}
             className="!w-fit !h-fit "
@@ -266,12 +266,12 @@ const TopHeader = () => {
               Мои заказы
             </span>
           </Link>
-          <button className="flex items-center bg-white rounded cursor-pointer h-full  ml-6 px-3">
+          <NavLink to='/store' className="flex items-center bg-white rounded cursor-pointer h-full  ml-6 px-3">
             <img src={shop} alt="shop" className="mr-2" />
             <span className="font-AeonikProMedium  text-[13px]    ">
               Магазины
             </span>
-          </button>
+          </NavLink>
         </div>
       </div>
     </div>
