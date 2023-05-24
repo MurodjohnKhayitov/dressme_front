@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   InputCheck,
   ProductArticle,
@@ -42,13 +42,14 @@ const ProductDetails = () => {
     genderStyle = "text-borderWinter bg-bgWinter border-borderWinter";
   }
   const [selectColor, setSelectColor] = useState([
-    { id: 1, color: "PC1", action: false },
-    { id: 2, color: "PC2", action: false },
-    { id: 3, color: "PC3", action: false },
-    { id: 4, color: "PC4", action: false },
-    { id: 5, color: "PC5", action: false },
-    { id: 6, color: "PC6", action: false },
+    { id: 1, color: "bg-PC1", out: "outline-PC1", action: true },
+    { id: 2, color: "bg-PC2", out: "outline-PC2", action: false },
+    { id: 3, color: "bg-PC3", out: "outline-PC2", action: false },
+    { id: 4, color: "bg-PC4", out: "outline-PC4", action: false },
+    { id: 5, color: "bg-PC5", out: "outline-PC5", action: false },
+    { id: 6, color: "bg-PC6", out: "outline-PC6", action: false },
   ]);
+
   const [selectSize, setSelectSize] = useState([
     { id: 1, size: "S", bingIcons: "" },
     { id: 2, size: "M", bingIcons: "" },
@@ -58,16 +59,29 @@ const ProductDetails = () => {
     { id: 6, size: "3XL", bingIcons: "" },
     { id: 7, size: "4XL", bingIcons: ProductBing },
   ]);
-
+  const [getCheckColor, setGetCheckColor] = useState("");
   const handleColorCheck = (value) => {
+    setGetCheckColor(value);
     setSelectColor((data) => {
       return data.map((e) => {
         if (e.id == value) {
           return { ...e, action: !e.action };
-        } else return e;
+        } else return { ...e, action: false };
       });
     });
   };
+
+  // const handleGetId = (getValue) => {
+  //   setPoints((current) => {
+  //     return current.map((data) => {
+  //       if (data?.id == getValue) {
+  //         return { ...data, accordion: !data.accordion };
+  //       } else {
+  //         return { ...data, accordion: false };
+  //       }
+  //     });
+  //   });
+  // };
   return (
     <div className="w-full h-full ">
       <div className="">
@@ -81,14 +95,14 @@ const ProductDetails = () => {
               <img src={ProductStar} alt="" />
             </div>
             <div className="flex items-center w-fit ml-2">
-              <div className="not-italic font-AeonikProMedium text-sm mt-2 leading-4 text-black tracking-[1%]">
+              <div className="not-italic font-AeonikProMedium text-[13px] mt-2 leading-4 text-black tracking-[1%]">
                 4.7
               </div>
-              <div className=" pl-1 not-italic font-AeonikProRegular text-sm mt-2 leading-4 text-setTexOpacity tracking-[1%]">
+              <div className=" pl-1 not-italic font-AeonikProRegular text-[13px] mt-2 leading-4 text-setTexOpacity tracking-[1%]">
                 (265 votes)
               </div>
               <div className="w-[1px] h-[14px] border-2 border-r border-searchBgColor mx-[10px]"></div>
-              <div className=" not-italic font-AeonikProRegular text-sm mt-2 leading-4 text-setTexOpacity tracking-[1%]">
+              <div className=" not-italic font-AeonikProRegular text-[13px] mt-2 leading-4 text-setTexOpacity tracking-[1%]">
                 (678 orders)
               </div>
             </div>
@@ -97,16 +111,16 @@ const ProductDetails = () => {
             <div>
               <img src={ProductArticle} alt="" />
             </div>
-            <div className="ml-[2px] mr-[6px] not-italic font-AeonikProRegular mt-1 text-sm leading-4 text-right text-black tracking-[1%]">
+            <div className="ml-[2px] mr-[6px] not-italic font-AeonikProRegular mt-1 text-[13px] leading-4 text-right text-black tracking-[1%]">
               Article:
             </div>
-            <div className="not-italic font-AeonikProRegular mt-1 text-sm leading-4 text-right text-setTexOpacity tracking-[1%]">
+            <div className="not-italic font-AeonikProRegular mt-1 text-[13px] leading-4 text-right text-setTexOpacity tracking-[1%]">
               AA009842
             </div>
           </div>
         </div>
         <div className=" mt-4">
-          <span className="not-italic font-AeonikProMedium text-2xl leading-7 text-black tracking-[1%]">
+          <span className="not-italic font-AeonikProMedium text-[22px] leading-7 text-TextTitle tracking-[1%]">
             Спортивная мужская кроссовка Nike RUN
           </span>
         </div>
@@ -115,12 +129,12 @@ const ProductDetails = () => {
             <div>
               <img src={bucket} alt="" />
             </div>
-            <div className="not-italic flex items-center mt-1  font-AeonikProMedium text-base leading-4 text-black tracking-[1%] ml-2">
+            <div className="not-italic flex items-center mt-1  font-AeonikProMedium text-[14px] leading-4 text-black tracking-[1%] ml-2">
               Магазин:
             </div>
           </div>
           <div className="w-fit ml-10">
-            <span className="not-italic font-AeonikProRegular text-base leading-4 text-black tracking-[1%]">
+            <span className="not-italic font-AeonikProRegular text-[14px] leading-4 text-black tracking-[1%]">
               Nike Store Official Dealer
             </span>
           </div>
@@ -134,7 +148,7 @@ const ProductDetails = () => {
               <span>
                 <img src={delivery} alt="" />
               </span>
-              <span className="ml-2 not-italic font-AeonikProMedium mt-1 text-base leading-4 text-black tracking-[1%]">
+              <span className="ml-2 not-italic font-AeonikProMedium mt-1 text-[14px] leading-4 text-black tracking-[1%]">
                 Доставка:
               </span>
             </div>
@@ -148,26 +162,26 @@ const ProductDetails = () => {
             </div>
           </div>
           <div className="w-fit flex items-center h-fit ">
-            <div className="not-italic mr-3 mt-1 font-AeonikProMedium text-base leading-4 text-black tracking-[1%]">
+            <div className="not-italic mr-3 mt-1 font-AeonikProMedium text-[14px] leading-4 text-black tracking-[1%]">
               Сезон:
             </div>
             <div className="flex items-center">
               <img src={winterSeason} alt="" />
-              <span className="not-italic mt-1 ml-1 font-AeonikProRegular text-base leading-4 text-black tracking-[1%]">
+              <span className="not-italic mt-1 ml-1 font-AeonikProRegular text-[14px] leading-4 text-black tracking-[1%]">
                 Зима
               </span>
             </div>
             <div className="w-[1px] border h-3 border-searchBgColor mx-3"></div>
             <div className="flex items-center">
               <img src={summerSeason} alt="" />
-              <span className="not-italic mt-1 ml-1 font-AeonikProRegular text-base leading-4 text-black tracking-[1%]">
+              <span className="not-italic mt-1 ml-1 font-AeonikProRegular text-[14px] leading-4 text-black tracking-[1%]">
                 Весна
               </span>
             </div>
             <div className="w-[1px] border h-3 border-searchBgColor mx-3"></div>
             <div className="flex items-center">
               <img src={autummSeason} alt="" />
-              <span className="not-italic mt-1 ml-1 font-AeonikProRegular text-base leading-4 text-black tracking-[1%]">
+              <span className="not-italic mt-1 ml-1 font-AeonikProRegular text-[14px] leading-4 text-black tracking-[1%]">
                 Осень
               </span>
             </div>
@@ -179,10 +193,10 @@ const ProductDetails = () => {
           <span>
             <img src={ProductSwitch} alt="" />
           </span>
-          <span className="not-italic ml-2 mr-3 mt-1 font-AeonikProMedium text-base leading-4 text-black">
+          <span className="not-italic ml-2 mr-3 mt-1 font-AeonikProMedium text-[14px] leading-4 text-black">
             Цвет:
           </span>
-          <span className="not-italic mt-1 font-AeonikProMedium text-base leading-4 text-black">
+          <span className="not-italic mt-1 font-AeonikProMedium text-[14px] leading-4 text-black">
             Синий океан
           </span>
         </div>
@@ -192,13 +206,16 @@ const ProductDetails = () => {
               <div
                 key={data?.id}
                 onClick={() => handleColorCheck(data.id)}
-                className={`w-[64px] h-[72px] flex items-center justify-center rounded-lg bg-${
-                  data?.color
+                className={`w-[64px] h-[72px] flex items-center justify-center rounded-lg ${
+                  data.color
                 } border border-searchBgColor cursor-pointer ${
                   data.action ? "outline outline-offset-2 outline-2" : ""
-                }  outline-${data?.color} `}
+                } ${data.out} `}
               >
-                {data.action ? (
+                {data.action && getCheckColor == 3 ? (
+                  <img className="w-fit" src={inputCheckBlack} alt="" />
+                ) : null}
+                {data.action && getCheckColor !== 3 ? (
                   <img className="w-fit" src={InputCheck} alt="" />
                 ) : null}
               </div>
@@ -209,10 +226,10 @@ const ProductDetails = () => {
           <span>
             <img src={ProductSize} alt="" />
           </span>
-          <span className="not-italic ml-2 mr-3 mt-1 font-AeonikProMedium text-base leading-4 text-black">
+          <span className="not-italic ml-2 mr-3 mt-1 font-AeonikProMedium text-[14px] leading-4 text-black">
             Размер:
           </span>
-          <span className="not-italic mt-1 font-AeonikProMedium text-base leading-4 text-black">
+          <span className="not-italic mt-1 font-AeonikProMedium text-[14px] leading-4 text-black">
             3XL{" "}
           </span>
         </div>
@@ -223,7 +240,7 @@ const ProductDetails = () => {
               return (
                 <div className="h-[44px] cursor-pointer rounded-lg  border border-searchBgColor focus:border-fullBlue px-4 flex items-center justify-center">
                   <span
-                    className={`mt-1 not-italic font-AeonikProMedium text-base leading-4 text-center ${
+                    className={`mt-1 not-italic font-AeonikProMedium text-[14px] leading-4 text-center ${
                       data?.bingIcons ? "text-textOpacity" : "text-black"
                     } tracking-[1%]`}
                   >
@@ -244,17 +261,17 @@ const ProductDetails = () => {
       </div>
       <div className=" mt-5">
         <div className="flex items-center">
-          <span className="not-italic font-AeonikProMedium text-3xl leading-9 text-black trcking-[1%]">
+          <span className="not-italic mt-1 font-AeonikProMedium text-[20px] leading-9 text-black trcking-[1%]">
             452 000 сум
           </span>
-          <span className="not-italic ml-4 mt-1 font-AeonikProRegular line-through text-2xl leading-7 text-setTexOpacity">
-            452 000 сум
+          <span className="not-italic ml-4 mt-1 font-AeonikProRegular line-through text-[14px] leading-7 text-setTexOpacity">
+            652 000 сум
           </span>
           <div className="w-[108px] cursor-pointer ml-8  flex items-center justify-center h-11 border border-searchBgColor rounded-lg">
             <span>
               <img src={discount} alt="" />
             </span>
-            <span className="ml-[6px] not-italic mt-1 font-AeonikProMedium text-lg leading-5 text-red-700">
+            <span className="ml-[6px] not-italic mt-1 font-AeonikProMedium text-[16px] leading-5 text-red-700">
               -30%
             </span>
           </div>
@@ -278,10 +295,10 @@ const ProductDetails = () => {
             </button>
           </div>
           <div className={`w-fit ml-8 ${dataStyle}`}>
-            <span className="not-italic mt-1 font-AeonikProRegular text-lg leading-5 text-right tracking-[1%]">
+            <span className="not-italic mt-1 font-AeonikProRegular text-[14px] leading-5 text-right tracking-[1%]">
               В наличии:
             </span>
-            <span className="not-italic mt-1 ml-1 font-AeonikProMedium text-xl leading-6 text-right tracking-[1%]">
+            <span className="not-italic mt-1 ml-1 font-AeonikProMedium text-[14px] leading-6 text-right tracking-[1%]">
               28
             </span>
           </div>
@@ -290,20 +307,20 @@ const ProductDetails = () => {
 
       {/* Text Items */}
       <div className="mt-20 ">
-        <span className="not-italic font-AeonikProRegular text-lg leading-7 text-black tracking-[1%]">
+        <span className="not-italic font-AeonikProRegular text-[14px] leading-7 text-black tracking-[1%]">
           Кратко о товаре
         </span>
         <ul className="pl-2">
           <li
             className={
-              "flex items-center not-italic font-AeonikProRegular text-lg leading-7 text-black tracking-[1%]"
+              "flex items-center not-italic font-AeonikProRegular text-[14px] leading-7 text-black tracking-[1%]"
             }
           >
             <BsCircleFill size={5} className="mx-2" /> Подошва 100% EVA
           </li>
           <li
             className={
-              "flex items-center not-italic font-AeonikProRegular text-lg leading-7 text-black tracking-[1%]"
+              "flex items-center not-italic font-AeonikProRegular text-[14px] leading-7 text-black tracking-[1%]"
             }
           >
             <BsCircleFill size={5} className="mx-2" /> Подметка 100% резина
@@ -311,14 +328,14 @@ const ProductDetails = () => {
           </li>
           <li
             className={
-              "flex items-center not-italic font-AeonikProRegular text-lg leading-7 text-black tracking-[1%]"
+              "flex items-center not-italic font-AeonikProRegular text-[14px] leading-7 text-black tracking-[1%]"
             }
           >
             <BsCircleFill size={5} className="mx-2" /> Нереально легкие и мягкие
           </li>
           <li
             className={
-              "flex items-center not-italic font-AeonikProRegular text-lg leading-7 text-black tracking-[1%]"
+              "flex items-center not-italic font-AeonikProRegular text-[14px] leading-7 text-black tracking-[1%]"
             }
           >
             <BsCircleFill size={5} className="mx-2" /> Стрейчевый верх –
@@ -326,7 +343,7 @@ const ProductDetails = () => {
           </li>
           <li
             className={
-              "flex items-center not-italic font-AeonikProRegular text-lg leading-7 text-black tracking-[1%]"
+              "flex items-center not-italic font-AeonikProRegular text-[14px] leading-7 text-black tracking-[1%]"
             }
           >
             <BsCircleFill size={5} className="mx-2" /> Отличная фиксация стопы
