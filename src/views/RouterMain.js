@@ -35,6 +35,7 @@ import SignInSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import SignUpSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import ShoppingStore from "../components/Home/ShoppingStore";
 import Favourites from "../components/Home/Favorite";
+import ShoppingStoreOfficial from "../components/Home/ShoppingStoreOfficial";
 // import SingleMainProduct from "../components/Home/Product/SingleMainProduct/SingleMainProduct";
 
 // -------------------------------------
@@ -163,7 +164,8 @@ const RouterMain = () => {
             <Route path="/sign_up" element={<SignUp />} />
 
             <Route path="/favourites" element={<Favourites />} />
-            <Route path="/store" element={<ShoppingStore />} />
+            <Route path="/stores" element={<ShoppingStore />} />
+            <Route path="/shopping_store" element={<ShoppingStoreOfficial />} />
 
             <Route
               path="/forget_password"
