@@ -110,7 +110,7 @@ const ProductCarousel = () => {
             swipeToSlide={true}
             focusOnSelect={true}
             vertical={true}
-            className="flex flex-col flex-wrap w-full h-full pt-0 "
+            className="flex flex-col flex-wrap w-full h-full pt-0"
           >
             {imgGroup?.map((data) => {
               return (

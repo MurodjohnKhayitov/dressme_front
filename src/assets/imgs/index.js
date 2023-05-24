@@ -263,6 +263,7 @@ export { default as kartaLogoPayment } from "./Payments/karta-logo.svg";
 export { default as paymeLogoPayment } from "./Payments/payme-logo.svg";
 export { default as clickLogoPayment } from "./Payments/click-logo.svg";
 export { default as plasticCardPayment } from "./Payments/plastic-card.svg";
+export { default as TrashDelet } from "./Payments/Delete.svg";
 
 // ----------- BREADCRUMB ICONS -----------
 
@@ -279,11 +280,10 @@ export { default as ProductWarning } from "./products/ProductWarning.svg";
 export { default as ProductSwitch } from "./products/ProductSwitch.svg";
 
 // ----------- STORE FOR BRANDS ICONS -----------
-export {default as allStore} from './StoreForBrands/all.svg'
-export {default as videoStore} from './StoreForBrands/video.svg'
-export {default as starForStore} from './StoreForBrands/starForStore.svg'
-export {default as manGenderStore} from './StoreForBrands/man-gender.svg'
-export {default as womanGenderStore} from './StoreForBrands/woman-gender.svg'
-export {default as nikeStoreBreadcrumb} from './StoreForBrands/nike-store-breadcrumb.svg'
-export {default as nikeLogo} from './StoreForBrands/nike-logo.svg'
-
+export { default as allStore } from "./StoreForBrands/all.svg";
+export { default as videoStore } from "./StoreForBrands/video.svg";
+export { default as starForStore } from "./StoreForBrands/starForStore.svg";
+export { default as manGenderStore } from "./StoreForBrands/man-gender.svg";
+export { default as womanGenderStore } from "./StoreForBrands/woman-gender.svg";
+export { default as nikeStoreBreadcrumb } from "./StoreForBrands/nike-store-breadcrumb.svg";
+export { default as nikeLogo } from "./StoreForBrands/nike-logo.svg";
