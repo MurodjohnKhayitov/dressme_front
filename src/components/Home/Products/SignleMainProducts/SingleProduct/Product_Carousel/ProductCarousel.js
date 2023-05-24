@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import Slider from "react-slick";
+import { setpersonIcons, video } from "../../../../../../assets/imgs";
 
 const ProductCarousel = () => {
   const [imgGroup, setImgGroup] = useState([
@@ -60,6 +62,42 @@ const ProductCarousel = () => {
     setNav1(slider1.current);
     setNav2(slider2.current);
   }, []);
+
+  const NextArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <div
+        className={`absolute text-center cursor-pointer no-underline opacity-50 w-8 h-8 flex items-center justify-center top-[50%] z-10	right-[20px] rounded-full bg-bgColor duration-200 border  border-searchBgColor	`}
+        onClick={onClick}
+      >
+        <button className="next">
+          <GrFormNext size={20} />
+        </button>
+      </div>
+    );
+  };
+
+  const PrevArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <div
+        className={`absolute text-center cursor-pointer no-underline opacity-50 w-8 h-8 flex items-center justify-center top-[50%] z-10	left-[20px] rounded-full bg-bgColor duration-200 border  border-searchBgColor	`}
+        onClick={onClick}
+      >
+        <button className="prev">
+          <GrFormPrevious size={20} />
+        </button>
+      </div>
+    );
+  };
+  let settings = {
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    infinite: true,
+    dots: false,
+
+    speed: 500,
+  };
   return (
     <div className="w-fit h-full ">
       <div className="w-fit flex h-[560px]  gap-x-[5px]">
@@ -91,6 +129,7 @@ const ProductCarousel = () => {
             className="w-full h-full rounded-lg"
             asNavFor={nav2}
             ref={slider1}
+            {...settings}
           >
             {imgGroup?.map((data) => {
               return (
@@ -99,6 +138,16 @@ const ProductCarousel = () => {
                   className="w-full h-full overflow-hidden border border-searchBgColor bg-btnBgColor rounded-lg flex items-center justify-center"
                 >
                   <img className="w-[420px] h-[560px]" src={data?.img} alt="" />{" "}
+                  <div className="w-[404px]   flex absolute top-2 mx-2  justify-end ">
+                    <p className="w-fit cursor-pointer bg-bgCard px-4 duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between">
+                      <span className=" h-10 flex items-center justify-center">
+                        <img className="" src={video} alt="setpersonIcons" />
+                      </span>
+                      <span className="ml-2 mt-1 not-italic font-AeonikProRegular text-sm leading-4 text-right text-black tracking-[1%]">
+                        Video Preview
+                      </span>
+                    </p>
+                  </div>
                 </div>
               );
             })}

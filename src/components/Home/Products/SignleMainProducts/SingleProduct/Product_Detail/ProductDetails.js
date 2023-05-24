@@ -304,7 +304,6 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-
       {/* Text Items */}
       <div className="mt-20 ">
         <span className="not-italic font-AeonikProRegular text-[14px] leading-7 text-black tracking-[1%]">
@@ -350,12 +349,17 @@ const ProductDetails = () => {
           </li>
         </ul>
       </div>
-      <div className="mt-15 ">
-        <div></div>
-        <div className="mt-15">
-          <table className="w-full border border-searchBgColor  border-collapse	">
+      {/* Table */}
+      <div className="mt-[60px] ">
+        <div className="">
+          <div>
+            <span className="not-italic mt-1 font-AeonikProRegular text-[14px] leading-5 text-right tracking-[1%]">
+              таблица соответствия мужских размеров
+            </span>
+          </div>
+          <table className="w-full border border-searchBgColor  border-collapse	mt-5">
             <tr className="">
-              <td>data1</td>
+              <td>обхват груди см</td>
               <td>86-90</td>
               <td>86-90</td>
               <td>86-90</td>
@@ -368,7 +372,7 @@ const ProductDetails = () => {
               <td>86-90</td>
             </tr>
             <tr>
-              <td>data2</td>
+              <td>обхват груди см</td>
               <td>74-78</td>
               <td>74-78</td>
               <td>74-78</td>
@@ -381,7 +385,7 @@ const ProductDetails = () => {
               <td>74-78</td>
             </tr>
             <tr>
-              <td>data3</td>
+              <td>обхват груди см</td>
               <td>94-97</td>
               <td>94-97</td>
               <td>94-97</td>
@@ -394,19 +398,55 @@ const ProductDetails = () => {
               <td>94-97</td>
             </tr>
             <tr>
-              <td>data4</td>
+              <td>обхват груди см</td>
+              <td>36-38</td>
+              <td colSpan={2}>36-38</td>
+              <td colSpan={2}>36-38</td>
+              <td colSpan={2}>36-38</td>
               <td colSpan={2}>36-38</td>
               <td>36-38</td>
-              <td>36-38</td>
-              <td>36-38</td>
-              <td>36-38</td>
-              <td>36-38</td>
-              <td>36-38</td>
-              <td>36-38</td>
-              <td>36-38</td>
+            </tr>
+            <tr>
+              <th>Русский размер РУС</th>
+              <th colSpan={2}>S</th>
+              <th colSpan={2}>M</th>
+              <th colSpan={2}>L</th>
+              <th colSpan={2}>XL</th>
+              <th colSpan={2}>XXL</th>
             </tr>
           </table>
         </div>
+      </div>
+
+      <div className="mt-[60px] flex flex-col gap-y-5">
+        <span className="not-italic font-AeonikProRegular text-lg leading-7 text-black">
+          {" "}
+          Бренд GRN занимает №4 место в Юго-Восточной Азии, относится к ТОПовому
+          сегменту качества. Бренд GRN один из самых старейших брендов обуви и
+          одежды в Азии - был основан в 1978 году.
+        </span>
+        <span className="not-italic font-AeonikProRegular text-lg leading-7 text-black">
+          {" "}
+          Бренд GRN имеет более 12000 магазинов собственной розницы в таких
+          странах как: Китай, Япония, Вьетнам, Малайзия, Марокко, Югославия,
+          Словения, Польша.
+        </span>
+        <span className="not-italic font-AeonikProRegular text-lg leading-7 text-black">
+          {" "}
+          Бренд GRN ориентирован на выпуск высококачественной одежды и обуви для
+          спорта и для носки на каждый день.
+        </span>
+        <span className="not-italic font-AeonikProRegular text-lg leading-7 text-black">
+          {" "}
+          Суммарные объемы выпускаемой обуви – 20.000.000 пар в год, что делает
+          бренд GRN одним из самых крупных брендов не только в Азии, но и в
+          мире.
+        </span>
+        <span className="not-italic font-AeonikProRegular text-lg leading-7 text-black">
+          {" "}
+          Отличительные черты продукции GRN – высокое качество, комфортные
+          лекала и стиль.
+        </span>
       </div>
     </div>
   );
