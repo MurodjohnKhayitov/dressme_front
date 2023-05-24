@@ -60,6 +60,7 @@ module.exports = {
         PC4: "#7F7F7F",
         PC5: "#0D5F91",
         PC6: "#E2B000",
+        TextTitle: "#212121",
       },
       fontFamily: {
         // Chrome for

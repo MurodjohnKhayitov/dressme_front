@@ -62,7 +62,7 @@ const ProductCarousel = () => {
   }, []);
   return (
     <div className="w-fit h-full ">
-      <div className="w-fit flex h-[600px]  gap-x-[10px]">
+      <div className="w-fit flex h-[560px]  gap-x-[5px]">
         <div className="w-[90px] flex flex-col  ">
           {" "}
           <Slider
@@ -72,13 +72,13 @@ const ProductCarousel = () => {
             swipeToSlide={true}
             focusOnSelect={true}
             vertical={true}
-            className="flex flex-col flex-wrap w-full h-full "
+            className="flex flex-col flex-wrap w-full h-full pt-0 "
           >
             {imgGroup?.map((data) => {
               return (
                 <div
                   key={data?.id}
-                  className="!w-[98%] cursor-pointer !h-[120px] border border-searchBgColor bg-btnBgColor rounded-lg flex items-center justify-center"
+                  className="!w-[85px] cursor-pointer !h-[112px] mt-[-2.5px] border border-searchBgColor bg-btnBgColor rounded-lg flex items-center justify-center"
                 >
                   <img className="w-full h-full" src={data?.img} alt="" />{" "}
                 </div>
@@ -86,7 +86,7 @@ const ProductCarousel = () => {
             })}
           </Slider>
         </div>
-        <div className="w-[440px] h-[600px]  ">
+        <div className="w-[420px] h-[560px]  ">
           <Slider
             className="w-full h-full rounded-lg"
             asNavFor={nav2}
@@ -98,7 +98,7 @@ const ProductCarousel = () => {
                   key={data?.id}
                   className="w-full h-full overflow-hidden border border-searchBgColor bg-btnBgColor rounded-lg flex items-center justify-center"
                 >
-                  <img className="w-[440px] h-[600px]" src={data?.img} alt="" />{" "}
+                  <img className="w-[420px] h-[560px]" src={data?.img} alt="" />{" "}
                 </div>
               );
             })}
