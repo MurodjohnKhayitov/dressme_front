@@ -123,7 +123,7 @@ const SingleProductTop = () => {
               {" "}
               <img src={bucket} alt="" />
             </div>{" "}
-            <NavLink className="flex items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-setTexOpacity tracking-[1%]">
+            <NavLink className="flex w-1/2 items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-setTexOpacity tracking-[1%]">
               {Newid}{" "}
             </NavLink>
           </div>

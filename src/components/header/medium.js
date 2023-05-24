@@ -63,6 +63,7 @@ import {
 import { dressMainData } from "../../ContextHook/ContextMenu";
 import { GrClose } from "react-icons/gr";
 import { Popover } from "antd";
+import BasketList from "../Home/Main/BasketList/BasketList";
 
 const MediumHeader = () => {
   const [dressInfo, setDressInfo] = useContext(dressMainData);
@@ -74,6 +75,7 @@ const MediumHeader = () => {
     priceToggleMobile: false,
     brandToggleMobile: false,
     selectColorToggleMobile: false,
+    BasketOpen: false,
   });
 
   useEffect(() => {
@@ -573,8 +575,8 @@ const MediumHeader = () => {
               </NavLink>
 
               {/* Bucket section */}
-              <NavLink
-                to="/basket-check-out"
+              <button
+                onClick={() => setState({ ...state, BasketOpen: true })}
                 className=" bg-btnBgColor rounded-lg flex items-center justify-center w-11 h-11 relative md:flex ss:hidden"
               >
                 <img src={bucket} alt="bucket" />
@@ -582,7 +584,49 @@ const MediumHeader = () => {
                   {" "}
                   4{" "}
                 </span>
-              </NavLink>
+              </button>
+              {/*  */}
+              {/* <div
+                className={`h-fit top-30 border border-red-500 left-[16px] fixed  bg-white shadow-lg  duration-200 z-50 ${
+                  state?.BasketOpen ? "w-[92%]" : "w-0"
+                }  `}
+              > */}
+              {state?.BasketOpen && (
+                <div className="fixed inset-0 z-10 right-0 top-2 ">
+                  <div
+                    className="fixed inset-0 w-full h-full bg-yandexNavbar "
+                    onClick={() => setState({ ...state, BasketOpen: false })}
+                  ></div>
+                  <div className="max-w-[1280px] w-[100%] flex flex-col justify-start items-center mx-auto  border-box ">
+                    <div className="w-[100%] h-fit  flex justify-end  mx-auto">
+                      <div className="relative w-full max-w-[656px] h-fit border border-searchBgColor bg-white rounded-lg   ">
+                        <div className="h-[76px] flex items-center justify-between px-8 border-b border-searchBgColor">
+                          <div className="w-fit  flex  items-center">
+                            <p className="flex not-italic font-AeonikProMedium text-xl leading-6 text-black tracking-[1%]">
+                              Корзина{" "}
+                              <span className="w-6 h-6 ml-2 pt-1 rounded-full flex items-center justify-center bg-red-500 not-italic font-AeonikProMedium text-base leading-4 text-center text-white">
+                                4
+                              </span>
+                            </p>
+                          </div>
+                          <button
+                            className="w-[44px] h-[44px] flex items-center justify-center rounded-lg border border-searchBgColor"
+                            onClick={() =>
+                              setState({ ...state, BasketOpen: false })
+                            }
+                          >
+                            <GrClose size={18} />
+                          </button>
+                        </div>
+                        <div className="">
+                          <BasketList />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {/* </div> */}
             </div>
           </div>
           {/* Ending of Full Screen page sesction Map*/}
