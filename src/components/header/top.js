@@ -266,7 +266,7 @@ const TopHeader = () => {
               Мои заказы
             </span>
           </Link>
-          <NavLink to='/store' className="flex items-center bg-white rounded cursor-pointer h-full  ml-6 px-3">
+          <NavLink to='/stores' className="flex items-center bg-white rounded cursor-pointer h-full  ml-6 px-3">
             <img src={shop} alt="shop" className="mr-2" />
             <span className="font-AeonikProMedium  text-[13px]    ">
               Магазины

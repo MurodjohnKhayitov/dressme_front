@@ -284,4 +284,6 @@ export {default as videoStore} from './StoreForBrands/video.svg'
 export {default as starForStore} from './StoreForBrands/starForStore.svg'
 export {default as manGenderStore} from './StoreForBrands/man-gender.svg'
 export {default as womanGenderStore} from './StoreForBrands/woman-gender.svg'
+export {default as nikeStoreBreadcrumb} from './StoreForBrands/nike-store-breadcrumb.svg'
+export {default as nikeLogo} from './StoreForBrands/nike-logo.svg'
 

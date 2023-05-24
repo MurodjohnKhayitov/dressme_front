@@ -110,11 +110,10 @@ export default function SetClothesOpenModelModal() {
             );
           })}
         </Slider>
-        {/* <img src={model1} alt="" /> */}
       </div>
       <div className="w-[420px]   flex flex-wrap content-between">
         <div className="h-[100px] px-2  flex flex-wrap content-center w-full border-b border-searchBgColor">
-          {/* <div> */}
+          
           <div className="px-3 w-full font-AeonikProMedium text-2xl">
             Business Wear (Man)
           </div>
@@ -122,7 +121,7 @@ export default function SetClothesOpenModelModal() {
             <span className="text-setTexOpacity mr-2">Магазин:</span>
             Patek Business Wear
           </div>
-          {/* </div> */}
+          
         </div>
 
         <div className="h-[calc(100%-216px)] pt-3 px-2  w-full  cursor-pointer  overflow-auto YandexListScroll">
