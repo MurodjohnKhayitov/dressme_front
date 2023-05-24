@@ -237,10 +237,29 @@ select {
 
 table,
 tr,
-td {
+td,
+th {
   border: 1px solid #f2f2f2;
-  padding: 4px 8px;
+  padding: 8px 8px;
   border-collapse: collapse;
   text-align: center;
   font-size: 14px;
+}
+table tr td {
+  color: #a1a1a1;
+  font-size: 12px;
+}
+table tr td:nth-child(1) {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+}
+table tr th {
+  background-color: #fcfcfc;
+}
+table tr th:nth-child(1) {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+  padding: 8px 8px;
 }
