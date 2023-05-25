@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { DownCate, allStore, manGenderStore, womanGenderStore } from "../../../../assets/imgs"
-import { dressMainData } from "../../../../ContextHook/ContextMenu";
+import { DownCate, allStore, manGenderStore, womanGenderStore } from "../../../../../assets/imgs"
+import { dressMainData } from "../../../../../ContextHook/ContextMenu";
 
 
 const ShoppingTop = () => {

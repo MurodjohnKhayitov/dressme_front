@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-import { location, manGenderStore, nikeLogo, starForStore, videoStore, womanGenderStore } from "../../../../assets/imgs"
+import { location, manGenderStore, nikeLogo, starForStore, videoStore, womanGenderStore } from "../../../../../assets/imgs"
 
 const ShoppingStoreOfficialTop = () => {
     return(

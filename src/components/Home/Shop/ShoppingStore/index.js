@@ -1,6 +1,6 @@
 import ShoppingBrands from "./shoppingBrands/shoppingBrands";
 import ShoppingStoreBreadCrumb from "./shoppingStoreBreadcrumb/shoppingStoreBreadcrumb";
-import ShoppingTop from "./shoppingTop/shoppingTop";
+import ShoppingTop from "../ShoppingStore/shoppingTop/shoppingTop";
 
 export default function ShoppingStore() {
     return(

@@ -1,4 +1,4 @@
-import CategoryForType from "../../../Category/CategoryForType/CategoryForType";
+import CategoryForType from "../../../../Category/CategoryForType/CategoryForType";
 
 const ShoppingStoreCategory = () => {
     return ( 

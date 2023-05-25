@@ -33,9 +33,9 @@ import AddUserPrivateSkeleton from "../components/Home/AddUser/Skeleton/AddUserP
 import AddUserBodySkeleton from "../components/Home/AddUser/Skeleton/AddUserPrivateSkeleton";
 import SignInSkeletonIndex from "../components/Authentication/SignUpSkeleton";
 import SignUpSkeletonIndex from "../components/Authentication/SignUpSkeleton";
-import ShoppingStore from "../components/Home/ShoppingStore";
+import ShoppingStore from "../components/Home/Shop/ShoppingStore";
 import Favourites from "../components/Home/Favorite";
-import ShoppingStoreOfficial from "../components/Home/ShoppingStoreOfficial";
+import ShoppingStoreOfficial from "../components/Home/Shop/ShoppingStoreOfficial";
 // import SingleMainProduct from "../components/Home/Product/SingleMainProduct/SingleMainProduct";
 
 // -------------------------------------
