@@ -269,6 +269,7 @@ export { default as TrashDelet } from "./Payments/Delete.svg";
 
 export { default as homeBreadcrumb } from "./BreadcrumbIcons/home.svg";
 export { default as shopBreadcrumb } from "./BreadcrumbIcons/shop.svg";
+export { default as BreadcrumbPayme } from "./BreadcrumbIcons/payment.svg";
 
 // ----------- ProductID Icon -----------
 export { default as ProductArticle } from "./products/ProductArticle.svg";

@@ -59,7 +59,7 @@ export default function BasketList() {
             <span>
               <img src={ProductSuccess} alt="" />
             </span>
-            <span className="mt-1 ml-2 not-italic font-AeonikProMedium text-base leading-4 text-black tracking-[1%]">
+            <span className="mt-1 ml-2 not-italic font-AeonikProMedium text-base leading-4 text-BasketMoneyColor tracking-[1%]">
               Оформить все
             </span>
           </div>

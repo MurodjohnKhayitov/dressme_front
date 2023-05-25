@@ -101,27 +101,36 @@ const MediumHeader = () => {
   let dataStyle = "";
   let genderStyle = "";
   let hoverText = "";
+  let authenActiveStyle = "";
   if (dressInfo?.type === 1111) {
     dataStyle = "bg-bgSpring bg-opacity-10	  text-borderSpring ";
     hoverText = " hover:text-borderSpring ";
+    authenActiveStyle =
+      "bg-red-500 rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex  ";
     genderStyle =
       "focus:text-borderSpring focus:bg-bgSpring focus:border focus:border-borderSpring focus:text-borderSpring";
   }
   if (dressInfo?.type === 2222) {
     dataStyle = "bg-bgSummer  bg-opacity-10  text-borderSummer";
     hoverText = " hover:text-borderSummer ";
+    authenActiveStyle =
+      "bg-red-500 rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex  ";
     genderStyle =
       "focus:text-borderSummer focus:bg-bgSummer focus:border focus:border-borderSummer focus:text-borderSummer";
   }
   if (dressInfo?.type === 3333) {
     dataStyle = "bg-bgAutumm bg-opacity-10  text-borderAutumm";
     hoverText = " hover:text-borderAutumm ";
+    authenActiveStyle =
+      "bg-red-500 rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex  ";
     genderStyle =
       "focus:text-borderAutumm focus:bg-bgAutumm focus:border focus:border-borderAutumm focus:text-borderAutumm";
   }
   if (dressInfo?.type === 4444) {
     dataStyle = "bg-bgWinter bg-opacity-10  text-borderWinter";
     hoverText = " hover:text-borderWinter ";
+    authenActiveStyle =
+      "bg-red-500 rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex  ";
     genderStyle =
       "focus:text-borderWinter focus:bg-bgWinter focus:border focus:border-borderWinter focus:text-borderWinter";
   }
@@ -568,7 +577,11 @@ const MediumHeader = () => {
               {/* Heart section */}
               <NavLink
                 to="/favourites"
-                className="bg-btnBgColor rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex"
+                className={({ isActive }) =>
+                  isActive
+                    ? authenActiveStyle
+                    : "bg-btnBgColor rounded-lg items-center justify-center w-11 h-11 mr-2 hidden md:flex"
+                }
               >
                 {/* <FaRegHeart /> */}
                 <img src={heart} className={"w-5 h-5"} alt="heart" />
