@@ -113,7 +113,6 @@ export default function SetClothesOpenModelModal() {
       </div>
       <div className="w-[420px]   flex flex-wrap content-between">
         <div className="h-[100px] px-2  flex flex-wrap content-center w-full border-b border-searchBgColor">
-          
           <div className="px-3 w-full font-AeonikProMedium text-2xl">
             Business Wear (Man)
           </div>
@@ -121,7 +120,6 @@ export default function SetClothesOpenModelModal() {
             <span className="text-setTexOpacity mr-2">Магазин:</span>
             Patek Business Wear
           </div>
-          
         </div>
 
         <div className="h-[calc(100%-216px)] pt-3 px-2  w-full  cursor-pointer  overflow-auto YandexListScroll">
@@ -282,8 +280,8 @@ export default function SetClothesOpenModelModal() {
                 width="24"
                 height="24"
                 xmlns="http://www.w3.org/2000/svg"
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
               >
                 {" "}
                 <path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z" />
@@ -294,8 +292,6 @@ export default function SetClothesOpenModelModal() {
                 Набор в корзину
               </span>
               <img src={addBag} alt="" className="hover:bg-transparent" />
-              {/* <svg className="group-hover:fill-white group-hover:stroke-white stroke-black" opacity={100} viewBox="-6 -6 36 36" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" > <path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z" />
-                                                        </svg>     */}
             </button>
           </div>
         </div>

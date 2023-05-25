@@ -8,6 +8,12 @@ import UserOfBodyMobile from "./UserOfBody/UsermakeBodyMobile/UserOfBodyMobile";
 // import UserOfBodyMobile from "./UserOfBody/UserOfBodyMobile";
 
 const AddUserBodyData = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
   return (
     <>
       <div className="hidden md:block">

@@ -16,283 +16,6 @@ import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 import { dressMainData } from "../../../../ContextHook/ContextMenu";
 export default function ClothesSlider() {
-  const productList = [
-    {
-      id: 1,
-      discount: "-30%",
-      video: "video",
-      diliver: true,
-      buy: true,
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cfrous7hj8j9g698ann0/t_product_540_high.jpg#1677854670106",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "45.000",
-      price: "70.000",
-    },
-    {
-      id: 2,
-      discount: "",
-      video: "video",
-      diliver: false,
-      buy: true,
-
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cfvjvm7hj8j9g698q1qg/t_product_540_high.jpg#1677854670118",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "45.000",
-      price: "70.000",
-    },
-    {
-      id: 3,
-      discount: "",
-      video: "video",
-      diliver: true,
-      buy: false,
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cee9lmov1htd23aj6gjg/t_product_540_high.jpg#1677855157929",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "",
-      price: "70.000",
-    },
-    {
-      id: 4,
-      discount: "-30%",
-      video: "video",
-      diliver: true,
-      buy: true,
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cfh16dd40v9uauhi42hg/t_product_540_high.jpg#1677855222081",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "45.000",
-      price: "70.000",
-    },
-    {
-      id: 5,
-      discount: "-30%",
-      video: "video",
-      diliver: false,
-      buy: true,
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cfmebc7hgiopn8lcdoh0/t_product_540_high.jpg#1677855264045",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "45.000",
-      price: "70.000",
-    },
-    {
-      id: 6,
-      discount: "",
-      video: "",
-      diliver: true,
-      buy: true,
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cf557s8l08k0o9qi31gg/t_product_540_high.jpg#1677855329602",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "45.000",
-      price: "70.000",
-    },
-    {
-      id: 7,
-      discount: "-30%",
-      video: "video",
-      diliver: true,
-      buy: true,
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cfmebc7hgiopn8lcdoh0/t_product_540_high.jpg#1677855264045",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "45.000",
-      price: "70.000",
-    },
-    {
-      id: 8,
-      discount: "-30%",
-      video: "video",
-      diliver: false,
-      buy: true,
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cf2h9jqvtie1lhbgt6mg/t_product_540_high.jpg#1677855329588",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "45.000",
-      price: "70.000",
-    },
-    {
-      id: 9,
-      discount: "",
-      video: "",
-      diliver: true,
-      buy: true,
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cf53ng0v1htd23al4sqg/t_product_540_high.jpg#1677855423341",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "15.000",
-      price: "70.000",
-    },
-    {
-      id: 10,
-      discount: "-30%",
-      video: "video",
-      diliver: false,
-      buy: true,
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cf5vfb2vtie1lhbh7h50/t_product_540_high.jpg#1677855423352",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "45.000",
-      price: "70.000",
-    },
-    {
-      id: 11,
-      discount: "-30%",
-      video: "video",
-      diliver: true,
-      buy: true,
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cf53ng0v1htd23al4sqg/t_product_540_high.jpg#1677855423341",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "",
-      price: "75.000",
-    },
-    {
-      id: 12,
-      discount: "",
-      video: "video",
-      diliver: true,
-      buy: true,
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cf8g3tivtie1lhbhf1p0/t_product_540_high.jpg#1677855423420",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "45.000",
-      price: "70.000",
-    },
-    {
-      id: 13,
-      discount: "",
-      video: "video",
-      diliver: true,
-      buy: true,
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cfcdqlavtie1lhbhs490/t_product_540_high.jpg#1677855423521",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "45.000",
-      price: "70.000",
-    },
-    {
-      id: 14,
-      discount: "",
-      video: "",
-      diliver: true,
-      buy: true,
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cfcgam8l08k07f16n0ag/t_product_540_high.jpg#1677855423623",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "",
-      price: "140.000",
-    },
-    {
-      id: 15,
-      discount: "",
-      video: "",
-      diliver: true,
-      buy: false,
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cfcdvh0l08k0o9qiqgcg/t_product_540_high.jpg#1677855423619",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "",
-      price: "70.000",
-    },
-    {
-      id: 16,
-      discount: "-40%",
-      video: "video",
-      diliver: false,
-      buy: true,
-
-      star:
-        "data:image/svg+xml,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z' fill='%23F5A623'/%3e %3c/svg%3e",
-      ProducImg:
-        "https://images.uzum.uz/cf9ldv0v1htd23aljs7g/t_product_540_high.jpg#1677855423555",
-      noProductImg: cardImg,
-      title: "Line-Pattern Zipper Sweatshirt (Original Quality)",
-      starCount: 256,
-      shirtSize: "M | 3XL",
-      sale: "35.000",
-      price: "70.000",
-    },
-  ];
-
   const carosuelData = [
     {
       Category: [
@@ -310,21 +33,21 @@ export default function ClothesSlider() {
       ],
 
       campany: [
-        { id: 1, type: "All", name: "All" },
-        { id: 2, type: "icons", name: "Cotegory 1" },
-        { id: 3, type: "icons", name: "Cotegory2" },
-        { id: 4, type: "icons", name: "Cotegory3" },
-        { id: 5, type: "icons", name: "Cotegory4" },
-        { id: 6, type: "icons", name: "Cotegory5" },
-        { id: 7, type: "icons", name: "Cotegory6" },
-        { id: 8, type: "icons", name: "Cotegory7" },
-        { id: 9, type: "icons", name: "Cotegory8" },
-        { id: 10, type: "icons", name: "Cotegory9" },
-        { id: 11, type: "icons", name: "Cotegory10" },
-        { id: 12, type: "icons", name: "Cotegory11" },
-        { id: 13, type: "icons", name: "Cotegory12" },
-        { id: 14, type: "icons", name: "Cotegory13" },
-        { id: 15, type: "icons", name: "Cotegory14" },
+        { id: 1, check: true, type: "Bсе типы", name: "Bсе типы" },
+        { id: 2, check: false, type: "Категория типы", name: "" },
+        { id: 3, check: false, type: "Категория типы", name: "" },
+        { id: 4, check: false, type: "Категория типы", name: "" },
+        { id: 5, check: false, type: "Категория типы", name: "" },
+        { id: 6, check: false, type: "Категория типы", name: "" },
+        { id: 7, check: false, type: "Категория типы", name: "" },
+        { id: 8, check: false, type: "Категория типы", name: "" },
+        { id: 9, check: false, type: "Категория типы", name: "" },
+        { id: 10, check: false, type: "Категория типы", name: "" },
+        { id: 11, check: false, type: "Категория типы", name: "" },
+        { id: 12, check: false, type: "Категория типы", name: "" },
+        { id: 13, check: false, type: "Категория типы", name: "" },
+        { id: 14, check: false, type: "Категория типы", name: "" },
+        { id: 15, check: false, type: "Категория типы", name: "" },
       ],
     },
   ];
@@ -333,7 +56,7 @@ export default function ClothesSlider() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[25%] z-10	right-[22px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard		`}
+        className={`absolute text-center cursor-pointer no-underline  w-10 h-10 flex items-center justify-center top-[24%] z-10	right-[52px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard		`}
         onClick={onClick}
       >
         <button className="next">
@@ -347,7 +70,7 @@ export default function ClothesSlider() {
     const { onClick } = props;
     return (
       <div
-        className={`absolute text-center cursor-pointer no-underline opacity-50 w-10 h-10 flex items-center justify-center top-[25%] z-10	left-[18px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard`}
+        className={`absolute text-center cursor-pointer no-underline hidden opacity-50 w-10 h-10 flex items-center justify-center top-[25%] z-10	left-[18px] rounded-full bg-bgColor duration-200 border border-solid border-borderColorCard`}
         onClick={onClick}
       >
         <button className="prev">
@@ -391,7 +114,7 @@ export default function ClothesSlider() {
     infinite: true,
     speed: 500,
     dots: false,
-    slidesToShow: 8,
+    slidesToShow: 9,
     slidesToScroll: 1,
     initialSlide: 0,
     responsive: [
@@ -473,27 +196,23 @@ export default function ClothesSlider() {
   };
 
   const [dressInfo] = useContext(dressMainData);
-  let shadowStyle = "";
+  let dataStyle = "";
   let genderStyle = "";
   if (dressInfo?.type === 1111) {
-    shadowStyle = " hover:shadow-green-300/100 ";
-    genderStyle =
-      "hover:text-borderSpring hover:bg-bgSpring hover:border-borderSpring hover:text-borderSpring";
+    dataStyle = " #008F0E ";
+    genderStyle = " bg-bgSpring border-borderSpring text-borderSpring";
   }
   if (dressInfo?.type === 2222) {
-    shadowStyle = "hover:shadow-amber-200/100 ";
-    genderStyle =
-      "hover:text-borderSummer hover:bg-bgSummer hover:border-borderSummer hover:text-borderSummer";
+    dataStyle = " #EAA700";
+    genderStyle = " bg-bgSummer border-borderSummer text-borderSummer";
   }
   if (dressInfo?.type === 3333) {
-    shadowStyle = "hover:shadow-orange-200/100";
-    genderStyle =
-      "hover:text-borderAutumm hover:bg-bgAutumm hover:border-borderAutumm hover:text-borderAutumm";
+    dataStyle = " #E17A02 ";
+    genderStyle = " bg-bgAutumm border-borderAutumm text-borderAutumm";
   }
   if (dressInfo?.type === 4444) {
-    shadowStyle = "hover:shadow-sky-200/100";
-    genderStyle =
-      "hover:text-borderWinter hover:bg-bgWinter hover:border-borderWinter hover:text-borderWinter";
+    dataStyle = " #007DCA ";
+    genderStyle = " bg-bgWinter border-borderWinter text-borderWinter";
   }
 
   return (
@@ -503,21 +222,42 @@ export default function ClothesSlider() {
           <div className="flex items-center ss:justify-center md:justify-start ss:w-full xs:w-[48%] md:w-fit border ss:border-solid  md:border-none ss:border-borderColorCard ss:h-[44px] rounded-lg ">
             <p className="flex items-center cursor-pointer select-none">
               <span className="not-italic font-AeonikProRegular xs:text-base md:text-base ss:text-base leading-7 text-black">
-                Deals under:
+                Категория и продукты от:{" "}
               </span>
               <span className="flex items-center not-italic font-AeonikProMedium text-xl leading-6 text-black ml-3 mr-2">
                 100$
-                <img className="mt-[1px] " src={arrowBottomFull} alt="next" />
+                <img className="mt-[-1px] " src={arrowBottomFull} alt="next" />
               </span>{" "}
             </p>
           </div>
           <div className="flex items-center ss:justify-center md:justify-end ss:w-full xs:w-[48%]  md:w-fit ss:mt-4 xs:mt-0 border ss:border-solid  md:border-none ss:border-borderColorCard ss:h-[44px] rounded-lg">
             <p className="flex items-center cursor-pointer select-none">
               <span className="not-italic font-AeonikProMedium mr-2 md:text-base ss:text-base xs:text-sm leading-4 text-right text-black">
-                Stores closest to you
+                Страница фильтра{" "}
               </span>
               <span>
-                <img src={next} alt="next" />
+                <svg
+                  width="20"
+                  height="21"
+                  viewBox="0 0 20 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18.3333 12.5019L18.3333 7.50193C18.3333 3.33526 16.6666 1.6686 12.5 1.6686L7.49996 1.6686C3.33329 1.6686 1.66663 3.33527 1.66663 7.50193L1.66663 12.5019C1.66663 16.6686 3.33329 18.3353 7.49996 18.3353L12.5 18.3353C16.6666 18.3353 18.3333 16.6686 18.3333 12.5019Z"
+                    stroke={dataStyle}
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M8.8667 12.9436L11.8 10.0019L8.8667 7.06027"
+                    stroke={dataStyle}
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>{" "}
               </span>{" "}
             </p>
           </div>
@@ -530,17 +270,61 @@ export default function ClothesSlider() {
             {carosuelData?.map((data) => {
               return data.campany.map((data) => {
                 return (
-                  <div key={data.id} className="!w-[97.5%]  h-full">
+                  <div key={data.id} className="!w-[110px]  h-full ">
                     <div
-                      className={`${genderStyle} w-full h-[110px]  m-auto ss:py-5  ls:p-0 bg-gray-100 rounded-lg flex justify-center items-center cursor-pointer  border border-searchBgColor  `}
+                      className={`${
+                        data.check
+                          ? genderStyle
+                          : "bg-btnBgColor  border-searchBgColor"
+                      } w-full h-[110px] border m-auto ss:py-5  ls:p-0   rounded-full flex justify-center items-center cursor-pointer    `}
                     >
                       <p className="not-italic font-AeonikProMedium text-xs leading-4 text-center text-black">
-                        {data?.type || "0"}
+                        {/* {data?.type || "0"} */}
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 32 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M6.66669 13.3334H9.33335C12 13.3334 13.3334 12 13.3334 9.33335V6.66669C13.3334 4.00002 12 2.66669 9.33335 2.66669H6.66669C4.00002 2.66669 2.66669 4.00002 2.66669 6.66669V9.33335C2.66669 12 4.00002 13.3334 6.66669 13.3334Z"
+                            stroke="#000"
+                            strokeWidth="2"
+                            strokeMiterlimit="10"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M22.6667 13.3334H25.3334C28 13.3334 29.3334 12 29.3334 9.33335V6.66669C29.3334 4.00002 28 2.66669 25.3334 2.66669H22.6667C20 2.66669 18.6667 4.00002 18.6667 6.66669V9.33335C18.6667 12 20 13.3334 22.6667 13.3334Z"
+                            stroke="#000"
+                            strokeWidth="2"
+                            strokeMiterlimit="10"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M22.6667 29.3334H25.3334C28 29.3334 29.3334 28 29.3334 25.3334V22.6667C29.3334 20 28 18.6667 25.3334 18.6667H22.6667C20 18.6667 18.6667 20 18.6667 22.6667V25.3334C18.6667 28 20 29.3334 22.6667 29.3334Z"
+                            stroke="#000"
+                            strokeWidth="2"
+                            strokeMiterlimit="10"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M6.66669 29.3334H9.33335C12 29.3334 13.3334 28 13.3334 25.3334V22.6667C13.3334 20 12 18.6667 9.33335 18.6667H6.66669C4.00002 18.6667 2.66669 20 2.66669 22.6667V25.3334C2.66669 28 4.00002 29.3334 6.66669 29.3334Z"
+                            stroke="#000"
+                            strokeWidth="2"
+                            strokeMiterlimit="10"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
                       </p>
                     </div>
                     <div>
                       <p className="not-italic font-AeonikProMedium ss:text-sm xs:text-xs leading-4 text-center ls:mt-5 ss:mt-2 text-black ">
-                        {data?.name || "type"}
+                        {data?.type || "type"}
                       </p>
                     </div>
                   </div>
@@ -557,7 +341,7 @@ export default function ClothesSlider() {
             {...settings}
             className="w-[100%] flex xs:justify-between px-3"
           >
-            {productList.map((data) => {
+            {dressInfo.ProductList.map((data) => {
               return (
                 <div
                   key={data.id}
