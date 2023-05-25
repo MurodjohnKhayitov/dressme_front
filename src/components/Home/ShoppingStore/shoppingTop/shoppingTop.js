@@ -27,91 +27,89 @@ const ShoppingTop = () => {
     }
 
     const [typesCategory, setTypeCategory] = useState([
-        {id:1, action: true, name: 'Все', icon:{allStore}},
+        {id:1, action: true, name: 'Все', icon:allStore},
         {id:2, action: false, name: 'Верхняя',icon:''},
         {id:3, action: false, name: 'Нижняя', icon:''},
         {id:4, action: false, name: 'Обувь', icon:''},
         {id:5, action: false, name: 'Аксессуары', icon:''},
     ])
 
-    const handleColorCheck = (value) => {
+    const handleTypeCheck = (value) => {
         setTypeCategory((data) => {
         return data.map((e) => {
             if (e.id == value) {
-            return { ...e, action: !e.action };
+            return { ...e, action: true};
             } else return { ...e, action: false };
         });
         });
     };
 
-    const [categories, setCategories] = useState(true);
+    const [genderCategory, setGenderCategory] = useState([
+        {id:1, action: true, name: 'Все', icon:allStore},
+        {id:2, action: false, name: '',icon:manGenderStore},
+        {id:3, action: false, name: '', icon:womanGenderStore},
+    ])
+
+    const handleGenderCheck = (value) => {
+        setGenderCategory((data) => {
+        return data.map((e) => {
+            if (e.id == value) {
+            return { ...e, action: true};
+            } else return { ...e, action: false };
+        });
+        });
+    };
 
     return(
         <div className="flex flex-col min-h-[44px]  justify-center items-center my-5">
             <div className="max-w-[1280px] w-[100%] flex items-center justify-between m-auto">
                 <div className="flex items-center">
                     
-                    <div className="w-full flex  items-center border rounded-lg bg-slate-50 mr-6">
+                    <div className="w-[98%] flex items-center border rounded-lg bg-slate-50 mr-6">
                         {typesCategory.map(data => {
+                            console.log(data);
                             return(
-                                <div className="">
-                                    <div className="w-full h-10 rounded-lg overflow-hidden flex justify-between">
-                                        <button
-                                            key={data.id}
-                                            onClick={() => handleColorCheck(data.id)}
-                                            className={`flex items-center h-10 text-[15px] text-black text-center px-6 font-AeonikProRegular ${
+                                <div key={data.id} className="flex justify-between h-10 rounded-lg">
+                                    <button
+                                        key={data.id}
+                                        onClick={() => handleTypeCheck(data.id)}
+                                        className={`flex items-center justify-center h-10 text-[15px] text-black text-center px-7 font-AeonikProRegular ${
                                             data.action
-                                                ? `{ bg-white border w-[96%] h-[96%] my-auto mx-auto  border-searchBgColor rounded-lg ${dataStyle}`
+                                                ? `{ bg-white border w-full h-[98%] my-auto mx-auto  border-searchBgColor rounded-lg ${dataStyle}`
                                                 : ""
-                                            } `}
-                                        >
-                                            
-                                            {data.icon ? (<img src={allStore} alt="" className="mr-3 "/>) : ''}
-                                            <span>{data.name}</span>
-                                        </button>
-                                        <span className={`${data.id === 5 ? 'text-searchBgColor hidden' : 'text-searchBgColor flex items-center'}`}>|</span>
-                                    </div>
-                                </div>
+                                        } `}
+                                    >
+                                        {data.icon ? (<img src={data.icon} alt="" className="mr-2 "/>) : ''}
+                                        <span className="mt-1">{data.name}</span>
+                                    </button>
+                                    <span className={`${data.id === 5 ? 'text-searchBgColor hidden' : 'text-searchBgColor flex items-center'}`}>|</span>
+                                </div>    
                             )
                         })}
                     </div>
 
-                    <div className="w-full flex  items-center">
-                        <div className="w-full h-10 rounded-lg overflow-hidden flex justify-between bg-slate-50 border border-solid ss:mt-5 md:mt-0 mx-auto ">
-                            <button
-                                onClick={() => setCategories(true)}
-                                className={`flex items-center h-10 text-[15px] text-black text-center px-6 font-AeonikProRegular ${
-                                categories
-                                    ? `{ bg-white border  border-searchBgColor rounded-lg ${dataStyle}`
-                                    : ""
-                                } `}
-                            >
-                                <img src={allStore} alt="" className="mr-3 -mt-1"/>
-                                Все
-                            </button>
-                            <span className="text-searchBgColor flex items-center">|</span>
-                            <button
-                                onClick={() => setCategories(false)}
-                                className={`h-10 text-[15px] text-black text-center px-6 font-AeonikProRegular ${
-                                !categories
-                                    ? ` bg-white border  border-searchBgColor rounded-lg `
-                                    : ""
-                                } `}
-                            >
-                                <img src={manGenderStore} alt="" />
-                            </button>
-                            <span className="text-searchBgColor flex items-center">|</span>
-                            <button
-                                onClick={() => setCategories(false)}
-                                className={`h-10 text-[15px] text-black text-center px-6 font-AeonikProRegular ${
-                                !categories
-                                    ? ` bg-white border  border-searchBgColor rounded-lg `
-                                    : ""
-                                } `}
-                            >
-                                <img src={womanGenderStore} alt="" />
-                            </button>
-                        </div>
+                    <div className="w-[40%] flex items-center border rounded-lg bg-slate-50">
+                        {genderCategory.map(data => {
+                            return(
+                                <div key={data.id} className="flex justify-between h-10 rounded-lg ">
+                                    <button
+                                        key={data.id}
+                                        onClick={() => handleGenderCheck(data.id)}
+                                        className={`flex items-center justify-center h-10 text-[15px] text-black text-center ${!data.name ? 'px-5' : 'px-7'} font-AeonikProRegular ${
+                                            data.action
+                                                ? `{ bg-white border w-full h-[98%] my-auto mx-auto  border-searchBgColor rounded-lg ${dataStyle}`
+                                                : ""
+                                        } `}
+                                    >
+                                        
+                                        {data.icon ? (<img src={data.icon} alt=""/>) : ''}
+                                        {data.name ? (<span className="mt-1 ml-2">{data.name}</span>) : ''}
+                                        
+                                    </button>
+                                    <span className={`${data.id === 3 ? 'text-searchBgColor hidden' : 'text-searchBgColor flex items-center'}`}>|</span>
+                                </div>
+                            )
+                        })}
                     </div>
 
                 </div>
