@@ -5,6 +5,7 @@ export const DressMenu = ({ children }) => {
   const [dressInfo, setDressInfo] = useState({
     type: 1111,
     ClothesBorder: 1,
+    PageSetModal: false,
     yandexOpenMenu: false,
     yandexOpenMarket: false,
     openMainMenu: true,

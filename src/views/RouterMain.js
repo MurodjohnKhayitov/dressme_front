@@ -43,6 +43,9 @@ const HomePage = React.lazy(() => import("../Page/Home/Home"));
 const SingleMainProduct = React.lazy(() =>
   import("../components/Home/Products/SignleMainProducts")
 );
+const SingleSetProducts = React.lazy(() =>
+  import("../components/Home/Products/SingleSetProducts")
+);
 
 const ForgetConfirmPassword = React.lazy(() =>
   import("../components/Authentication/SignInDetail/ForgetConfirmPassword")
@@ -157,6 +160,20 @@ const RouterMain = () => {
                   }
                 >
                   <SingleMainProduct />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/set-single-products/:id"
+              element={
+                <Suspense
+                  fallback={
+                    <div>
+                      <SkeletonHomeIndex />
+                    </div>
+                  }
+                >
+                  <SingleSetProducts />
                 </Suspense>
               }
             />
