@@ -1,14 +1,13 @@
-import { NavLink } from "react-router-dom"
-import { AutummFemale, AutummMale, SpringFemale, SpringMale, SummerFemale, SummerMale, WinterFemale, WinterMale, homeBreadcrumb, iIcons, shopBreadcrumb } from "../../../../assets/imgs"
+import { useContext, useState } from "react";
+import { dressMainData } from "../../../../../ContextHook/ContextMenu";
+import { AutummFemale, AutummMale, SpringFemale, SpringMale, SummerFemale, SummerMale, WinterFemale, WinterMale, homeBreadcrumb, iIcons, nikeStoreBreadcrumb, shopBreadcrumb } from "../../../../../assets/imgs";
+import { NavLink } from "react-router-dom";
 import { Popover } from "antd";
 import { BiChevronDown } from "react-icons/bi";
-import { useContext, useState } from "react";
-import { dressMainData } from "../../../../ContextHook/ContextMenu";
 
 
-const ShoppingStoreBreadCrumb = () =>{
-
-  const [dressInfo, setDressInfo] = useContext(dressMainData);
+const ShoppingStoreOfficialBreadCrumb = () => {
+    const [dressInfo, setDressInfo] = useContext(dressMainData);
 
   const [state, setState] = useState({
     openwear: false,
@@ -84,7 +83,7 @@ const ShoppingStoreBreadCrumb = () =>{
                 <div className="flex items-center ">
                     <div className="not-italic font-AeonikProRegular flex items-center  text-sm leading-4 text-black tracking-[1%] mr-[10px]">
                         <img src={homeBreadcrumb} alt="" />
-                        <NavLink to="/" className="flex items-center cursor-pointer pt-[4px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
+                        <NavLink to="/" className="flex items-center cursor-pointer pt-[4px] px-[10px] not-italic font-AeonikProMedium text-[15px] leading-4 text-black tracking-[1%]">
                             Главная
                         </NavLink>
                         <span>
@@ -93,8 +92,17 @@ const ShoppingStoreBreadCrumb = () =>{
                     </div>
                     <div className="not-italic font-AeonikProRegular flex items-center  text-sm leading-4 text-black tracking-[1%] mr-[10px]">
                         <img src={shopBreadcrumb} alt="" />
-                        <NavLink to='#' className="flex items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 tracking-[1%] text-setTexOpacity">
+                        <NavLink to='/stores' className="flex items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-[15px] leading-4 tracking-[1%]">
                             Магазины
+                        </NavLink>
+                        <span>
+                            <img className="" src={iIcons} alt="" />
+                        </span>
+                    </div>
+                    <div className="not-italic font-AeonikProRegular flex items-center  text-sm leading-4  tracking-[1%] mr-[10px]">
+                        <img src={nikeStoreBreadcrumb} alt="" />
+                        <NavLink to='#' className="flex items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-[15px] leading-4 tracking-[1%] text-setTexOpacity">
+                            NIKE Official Dealer (Chilonzor)
                         </NavLink>
                     </div>
                 </div>
@@ -140,5 +148,4 @@ const ShoppingStoreBreadCrumb = () =>{
         </div>
     )
 }
-
-export default ShoppingStoreBreadCrumb
+export default ShoppingStoreOfficialBreadCrumb

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { NextCate, PrevCate, location, manGenderStore, nikeLogo, starForStore, videoStore, womanGenderStore } from "../../../../assets/imgs"
+import { NextCate, PrevCate, location, manGenderStore, nikeLogo, starForStore, videoStore, womanGenderStore } from "../../../../../assets/imgs"
 import { NavLink } from "react-router-dom"
 
 
