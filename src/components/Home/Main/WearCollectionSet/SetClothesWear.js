@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Slider from "react-slick";
 import { GrClose, GrFormNext, GrFormPrevious } from "react-icons/gr";
 import {
@@ -24,7 +24,10 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Button, Modal } from "antd";
 import SetClothesOpenModelModal from "./SetClothesOpenModelModal";
+import { dressMainData } from "../../../../ContextHook/ContextMenu";
 export default function SetClothesWear() {
+  const [dressInfo, setDressInfo] = useContext(dressMainData);
+
   const [productList, setProductList] = useState([
     {
       id: 1,
@@ -591,6 +594,10 @@ export default function SetClothesWear() {
       ],
     },
   ]);
+  const [getIdSet, setGetIdSet] = useState(null);
+  const handleGetIdSet = (e) => {
+    setGetIdSet(e);
+  };
 
   const NextArrow = (props) => {
     const { onClick } = props;
@@ -780,12 +787,11 @@ export default function SetClothesWear() {
     });
   };
 
-  const [open, setOpen] = useState(false);
-  useEffect(() => {
-    open
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "unset");
-  }, [open]);
+  // useEffect(() => {
+  //   dressInfo?.PageSetModal
+  //     ? (document.body.style.overflow = "hidden")
+  //     : (document.body.style.overflow = "unset");
+  // }, [dressInfo?.PageSetModal]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
@@ -803,7 +809,7 @@ export default function SetClothesWear() {
       {productList.map((producListMap) => {
         return (
           <div
-            key={productList?.id}
+            key={producListMap?.id}
             className="w-full ls:w-[48.8%] md:w-[305px] flex flex-row overflow-hidden"
           >
             <div className="w-full border bg-white border-searchBgColor rounded-lg">
@@ -1407,7 +1413,10 @@ export default function SetClothesWear() {
                   </div>
                   <Button
                     type="primary"
-                    onClick={() => setOpen(true)}
+                    onClick={() => {
+                      handleGetIdSet(producListMap.id);
+                      setDressInfo({ ...dressInfo, PageSetModal: true });
+                    }}
                     className="group md:w-[145px] shadow-none absolute top-9 right-0 left-0 md:left-[134px] md:-top-1 md:right-0 rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[2px] pr-[0px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300"
                   >
                     <span className="group-hover:text-white flex items-center font-AeonikProRegular text-center text-black text-[12px] mr-1">
@@ -1427,13 +1436,18 @@ export default function SetClothesWear() {
                       <path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z" />
                     </svg>
                   </Button>
-                  {open && (
+                  {dressInfo?.PageSetModal && (
                     <div className="fixed inset-0 z-50 ">
                       <div className="fixed inset-0 w-full h-full bg-black opacity-40"></div>
                       <div className="flex items-center min-h-screen ">
                         <div className="relative w-[1000px] h-[90vh]   mx-auto bg-white rounded-md shadow-lg">
                           <div
-                            onClick={() => setOpen(false)}
+                            onClick={() =>
+                              setDressInfo({
+                                ...dressInfo,
+                                PageSetModal: false,
+                              })
+                            }
                             className="w-[44px] h-[44px] border  border-searchBgColor select-none rounded-lg bg-btnBgColor flex justify-center items-center active:scale-95	active:opacity-70 p-2 cursor-pointer absolute z-50 top-2 right-2"
                           >
                             <img
@@ -1444,7 +1458,7 @@ export default function SetClothesWear() {
                           </div>
 
                           <div className="h-[100%] flex items-center">
-                            <SetClothesOpenModelModal />
+                            <SetClothesOpenModelModal value={getIdSet} />
                           </div>
                         </div>
                       </div>

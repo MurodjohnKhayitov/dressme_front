@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Slider from "react-slick";
 import {
   LeftBlack,
@@ -11,7 +11,11 @@ import {
 } from "../../../../assets/imgs";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import "./yandex.css";
-export default function SetClothesOpenModelModal() {
+import { useNavigate } from "react-router-dom";
+import { dressMainData } from "../../../../ContextHook/ContextMenu";
+export default function SetClothesOpenModelModal({ value }) {
+  const [dressInfo, setDressInfo] = useContext(dressMainData);
+
   const [productList, setProductList] = useState([
     {
       id: 1,
@@ -59,6 +63,12 @@ export default function SetClothesOpenModelModal() {
         "https://images.uzum.uz/cft1g4vhgiov1qid0vmg/t_product_540_high.jpg#1679979817063",
     },
   ]);
+
+  const navigate = useNavigate();
+  const handleOpenSinglePage = () => {
+    setDressInfo({ ...dressInfo, PageSetModal: false });
+    navigate(`/set-single-products/:${value}`);
+  };
   const NextArrow = (props) => {
     const { onClick } = props;
     return (
@@ -269,7 +279,13 @@ export default function SetClothesOpenModelModal() {
           </div>
 
           <div className="flex items-center justify-between">
-            <button className="group h-12 w-[49%] rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[10px] pr-[5px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300">
+            <button
+              onClick={() => {
+                setDressInfo({ ...dressInfo, PageSetModal: true });
+                handleOpenSinglePage();
+              }}
+              className="group h-12 w-[49%] rounded-lg bg-btnBgColor border border-searchBgColor flex items-center justify-center pl-[10px] pr-[5px] py-[7px] hover:bg-SignInBgColor transition ease-in duration-300"
+            >
               <span className="group-hover:text-white flex  items-center font-AeonikProRegular text-center text-black text-[14px] mr-2">
                 Страница набора
               </span>
