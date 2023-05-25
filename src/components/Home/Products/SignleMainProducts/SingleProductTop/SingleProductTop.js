@@ -11,6 +11,7 @@ import {
   backIcon,
   bucket,
   clothing,
+  homeBreadcrumb,
   iIcons,
   passwordCheck,
   plusIcon,
@@ -104,7 +105,7 @@ const SingleProductTop = () => {
           <div className="not-italic font-AeonikProRegular flex items-center  text-sm leading-4 text-black tracking-[1%] mr-[10px]">
             <div className="h-5 w-5 flex justify-center items-center">
               {" "}
-              <img src={bucket} alt="" />
+              <img src={homeBreadcrumb} alt="" />
             </div>
 
             <NavLink
@@ -123,7 +124,7 @@ const SingleProductTop = () => {
               {" "}
               <img src={bucket} alt="" />
             </div>{" "}
-            <NavLink className="flex w-1/2 items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-setTexOpacity tracking-[1%]">
+            <NavLink className="flex w-fit items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-setTexOpacity tracking-[1%]">
               {Newid}{" "}
             </NavLink>
           </div>

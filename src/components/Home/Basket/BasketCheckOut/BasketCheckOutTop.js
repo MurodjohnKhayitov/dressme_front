@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import {
   AutummFemale,
   AutummMale,
+  ProductSuccess,
   SpringFemale,
   SpringMale,
   SummerFemale,
@@ -11,9 +12,11 @@ import {
   backIcon,
   bucket,
   clothing,
+  homeBreadcrumb,
   iIcons,
   passwordCheck,
   plusIcon,
+  shopBreadcrumb,
 } from "../../../../assets/imgs";
 import { dressMainData } from "../../../../ContextHook/ContextMenu";
 import { MdAdd } from "react-icons/md";
@@ -102,10 +105,13 @@ const BasketCheckOutTop = () => {
           <div className="not-italic font-AeonikProRegular flex items-center  text-sm leading-4 text-black tracking-[1%] mr-[10px]">
             <div className="h-5 w-5 flex justify-center items-center">
               {" "}
-              <img src={bucket} alt="" />
+              <img src={homeBreadcrumb} alt="" />
             </div>
 
-            <NavLink to='/' className="flex items-center cursor-pointer pt-[4px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
+            <NavLink
+              to="/"
+              className="flex items-center cursor-pointer pt-[4px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]"
+            >
               Главная
             </NavLink>
             <span>
@@ -114,7 +120,7 @@ const BasketCheckOutTop = () => {
           </div>
           <div className="not-italic font-AeonikProRegular flex items-center  text-sm leading-4 text-black tracking-[1%] mr-[10px]">
             <div className="h-5 w-5 flex justify-center items-center">
-              <img src={bucket} alt="" />
+              <img src={shopBreadcrumb} alt="" />
             </div>{" "}
             <NavLink className="flex items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]">
               Корзинка{" "}
@@ -127,7 +133,30 @@ const BasketCheckOutTop = () => {
           <div className="not-italic font-AeonikProRegular flex items-center  text-sm leading-4 text-black tracking-[1%] mr-[10px]">
             <div className="h-5 w-5 flex justify-center items-center">
               {" "}
-              <img src={bucket} alt="" />
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.99996 18.3327C14.5833 18.3327 18.3333 14.5827 18.3333 9.99935C18.3333 5.41602 14.5833 1.66602 9.99996 1.66602C5.41663 1.66602 1.66663 5.41602 1.66663 9.99935C1.66663 14.5827 5.41663 18.3327 9.99996 18.3327Z"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  stroke="#A1A1A1"
+                  // fill="#A1A1A1"
+                />
+                <path
+                  d="M6.45837 10.0009L8.81671 12.3592L13.5417 7.64258"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  stroke="#A1A1A1"
+                  // fill="#A1A1A1"
+                />
+              </svg>
             </div>{" "}
             <NavLink className="flex items-center cursor-pointer mt-[6px] px-[10px] not-italic font-AeonikProMedium text-sm leading-4 text-setTexOpacity tracking-[1%]">
               Оформление заказа

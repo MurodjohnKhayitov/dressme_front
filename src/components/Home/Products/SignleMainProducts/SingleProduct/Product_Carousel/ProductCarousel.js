@@ -138,7 +138,7 @@ const ProductCarousel = () => {
                   className="w-full h-full overflow-hidden border border-searchBgColor bg-btnBgColor rounded-lg flex items-center justify-center"
                 >
                   <img className="w-[420px] h-[560px]" src={data?.img} alt="" />{" "}
-                  <div className="w-[404px]   flex absolute top-2 mx-2  justify-end ">
+                  <div className="w-[380px]   flex absolute top-2 mx-2  justify-end ">
                     <p className="w-fit cursor-pointer bg-bgCard px-4 duration-300 rounded-lg overflow-hidden border border-searchBgColor flex items-center justify-between">
                       <span className=" h-10 flex items-center justify-center">
                         <img className="" src={video} alt="setpersonIcons" />
