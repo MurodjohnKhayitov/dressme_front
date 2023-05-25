@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import '../../../Category/category.css'
+import "../../../Category/category.css";
 import { dressMainData } from "../../../../ContextHook/ContextMenu";
 import {
   AutummBoy,
@@ -128,7 +128,12 @@ const AddUserPrivateInfo = () => {
       })}
     </div>
   );
-
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
   return (
     <div className=" py-8 w-full min-h-[calc(100vh-180px)] flex justify-center px-4">
       <div className="max-w-[440px] w-[100%] h-fit  p-5 border border-searchBgColor rounded-lg">

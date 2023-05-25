@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BasketCheckOutTop } from "./BasketCheckOutTop";
 import {
   bucket,
@@ -63,6 +63,12 @@ export default function BasketCheckOut() {
       });
     }
   };
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  });
+
   return (
     <div className="flex flex-col  m-0 p-0 box-border">
       <div>

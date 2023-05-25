@@ -25,6 +25,24 @@ import { NavLink } from "react-router-dom";
 // import required modules``
 export default function MainPageSliders() {
   const [dressInfo] = useContext(dressMainData);
+  let dataStyle = "";
+  let genderStyle = "";
+  if (dressInfo?.type == 1111) {
+    dataStyle = " #008F0E ";
+    genderStyle = "text-borderSpring bg-bgSpring border-borderSpring";
+  }
+  if (dressInfo?.type == 2222) {
+    dataStyle = " #EAA700";
+    genderStyle = "text-borderSummer bg-bgSummer border-borderSummer";
+  }
+  if (dressInfo?.type == 3333) {
+    dataStyle = " #E17A02 ";
+    genderStyle = "text-borderAutumm bg-bgAutumm border-borderAutumm";
+  }
+  if (dressInfo?.type == 4444) {
+    dataStyle = " #007DCA ";
+    genderStyle = "text-borderWinter bg-bgWinter border-borderWinter";
+  }
 
   const changeColor = [
     { id: 1, data: 1, action: false, colors: "border-black" },
@@ -307,7 +325,47 @@ export default function MainPageSliders() {
           });
         })}
       </div>
-      <div className="w-full 	mt-[64px] ss:hidden xs:block">
+      <div className="w-full flex justify-center items-center  mt-10 ">
+        <button
+          className={`w-fit cursor-pointer active:scale-95	active:opacity-70 flex items-center h-[52px] px-10 rounded-lg border ${genderStyle}`}
+        >
+          <span className="not-italic mt-1 font-AeonikProMedium text-base leading-4 text-center">
+            Посмотреть все категории
+          </span>
+          <span className="ml-2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                stroke={dataStyle}
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M8.5 12H14.5"
+                stroke={dataStyle}
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M12.5 15L15.5 12L12.5 9"
+                stroke={dataStyle}
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div className="w-full 	mt-[60px] ss:hidden xs:block">
         <Slider
           {...settings1}
           className="w-[100%] flex xs:justify-between  px-[1px]"

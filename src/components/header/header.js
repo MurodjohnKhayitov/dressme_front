@@ -47,6 +47,7 @@ const Header = () => {
   useEffect(() => {
     setLocationWindow(location.pathname);
   }, [location.pathname]);
+
   return (
     <div>
       {locationWindow !== "/delivery-points" ? (
