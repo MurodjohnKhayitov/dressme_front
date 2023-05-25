@@ -1,15 +1,27 @@
+import { useEffect } from "react";
 import FavouriteProducts from "./faouriteProducts/FavouriteProducts";
 import FavouriteTop from "./favouriteTop/favouriteTop";
+import FavoutireBreadCrumbs from "./favouriteBreadcrumbs/favouriteBreadcrumbs";
 
 export default function Favourites() {
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  });
+
   return (
-    <div className="flex flex-col justify-center items-center m-0 p-0 box-border">
-      <div className="max-w-[1280px] w-[100%] ss:px-4 md:px-0 flex justify-center items-center m-auto">
-        <div className="w-[100%] h-fit">
-          <FavouriteTop />
-          <FavouriteProducts />
-        </div>
+      <div className="w-full flex flex-col items-center ">
+          <div className="w-full border-b border-searchBgColor">
+            <FavoutireBreadCrumbs/>
+          </div>
+          <div className="w-full border-b border-searchBgColor">
+            <FavouriteTop />
+          </div>
+          <div className="w-full">
+            <FavouriteProducts />
+          </div>
       </div>
-    </div>
   );
 }
