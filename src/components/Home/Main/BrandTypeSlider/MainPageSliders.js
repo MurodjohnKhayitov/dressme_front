@@ -1,22 +1,6 @@
 import React, { useContext } from "react";
 
-import {
-  arrowBottomFull,
-  markets,
-  adidas,
-  chanel,
-  hm,
-  lacoste,
-  nike,
-  puma,
-  tommy,
-  zara,
-  SpringSquare,
-  SummerSquare,
-  AutummSquare,
-  WinterSquare,
-  noProductImg,
-} from "../../../../assets/imgs";
+import { arrowBottomFull, markets, adidas, chanel, hm, lacoste, nike, puma, tommy, zara, SpringSquare, SummerSquare, AutummSquare, WinterSquare, noProductImg } from "../../../../assets/imgs";
 import Slider from "react-slick";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
@@ -29,19 +13,19 @@ export default function MainPageSliders() {
   let genderStyle = "";
   if (dressInfo?.type == 1111) {
     dataStyle = " #008F0E ";
-    genderStyle = "text-borderSpring bg-bgSpring border-borderSpring";
+    genderStyle = "text-borderSpring bg-btnBgColor border-searchBgColor";
   }
   if (dressInfo?.type == 2222) {
     dataStyle = " #EAA700";
-    genderStyle = "text-borderSummer bg-bgSummer border-borderSummer";
+    genderStyle = "text-borderSummer bg-btnBgColor border-searchBgColor";
   }
   if (dressInfo?.type == 3333) {
     dataStyle = " #E17A02 ";
-    genderStyle = "text-borderAutumm bg-bgAutumm border-borderAutumm";
+    genderStyle = "text-borderAutumm bg-btnBgColor border-searchBgColor";
   }
   if (dressInfo?.type == 4444) {
     dataStyle = " #007DCA ";
-    genderStyle = "text-borderWinter bg-bgWinter border-borderWinter";
+    genderStyle = "text-borderWinter bg-btnBgColor border-searchBgColor";
   }
 
   const changeColor = [
@@ -252,7 +236,7 @@ export default function MainPageSliders() {
 
   return (
     <div className="box-border flex flex-col justify-center	 my-6">
-      <div className="w-full 	 ss:hidden xs:block">
+      <div className="w-full ss:hidden xs:block">
         <Slider
           {...settings}
           className="w-[100%] flex xs:justify-between flex-wrap  "
@@ -300,7 +284,7 @@ export default function MainPageSliders() {
         </Slider>
       </div>
       {/* carosuel hidden bloack */}
-      <div className="w-full h-fit xs:hidden   grid grid-cols-3  gap-4 ll:gap-x-[38px] ls:gap-x-[35px] overflow-hidden  my-0 py-0 md:my-5 md:py-7 ">
+      <div className="w-full h-fit xs:hidden grid grid-cols-3  gap-4 ll:gap-x-[38px] ls:gap-x-[35px] overflow-hidden  my-0 py-0 md:my-5 md:py-7 ">
         {carosuelData?.map((data) => {
           return data.Category.map((data) => {
             return (
