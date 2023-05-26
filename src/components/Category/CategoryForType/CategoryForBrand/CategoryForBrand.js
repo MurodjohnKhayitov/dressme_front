@@ -146,16 +146,16 @@ export default function CategoryForBrand() {
     <div className="w-full h-hull border border-searchBgColor py-5 rounded-lg overflow-hidden ">
       <div className="w-full px-3 ">
         <div className="w-full flex flex-wrap gap-x-[4px] gap-y-[8px]">
-          <button className="h-[44px] w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white rounded-lg">
+          <button className="h-[44px] w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-[14px] leading-3 text-center text-black bg-bgCategory focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white rounded-lg">
             Женщинам
           </button>
-          <button className="h-[44px] w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white rounded-lg">
+          <button className="h-[44px] w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-[14px] leading-3 text-center text-black bg-bgCategory focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white rounded-lg">
             Мужчинам
           </button>
-          <button className="h-[44px] w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white rounded-lg">
+          <button className="h-[44px] w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-[14px] leading-3 text-center text-black bg-bgCategory focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white rounded-lg">
             Детям
           </button>
-          <button className="h-[44px] w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white rounded-lg text-red-600">
+          <button className="h-[44px] w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-[14px] leading-3 text-center text-black bg-bgCategory focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white rounded-lg text-red-600">
             Скидки
           </button>
         </div>
@@ -174,7 +174,7 @@ export default function CategoryForBrand() {
               }
               className="flex items-center cursor-pointer select-none"
             >
-              <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
+              <span className="not-italic mr-1 font-AeonikProMedium text-[16px] leading-4 text-black">
                 Бренды
               </span>
               <img
@@ -185,7 +185,7 @@ export default function CategoryForBrand() {
                 alt=""
               />
             </div>
-            <span className="not-italic font-AeonikProMedium text-base leading-4 text-fullBlue cursor-pointer">
+            <span className="not-italic font-AeonikProMedium text-[16px] leading-4 text-fullBlue cursor-pointer">
               Очистить все
             </span>
           </div>
@@ -228,9 +228,9 @@ export default function CategoryForBrand() {
                         <BsCheckLg size={12} />
                       </span>
                     </div>
-                    <div className="flex items-center not-italic mt-1  font-AeonikProRegular text-lg leading-4 text-black">
+                    <div className="flex items-center not-italic mt-1  font-AeonikProRegular text-[14px] leading-4 text-black">
                       {data?.name}
-                      <span className=" not-italic ml-2 font-AeonikProRegular text-base leading-4 text-setTexOpacity">
+                      <span className=" not-italic ml-2 font-AeonikProRegular text-[14px] leading-4 text-setTexOpacity">
                         ({data?.count})
                       </span>
                     </div>
@@ -255,7 +255,7 @@ export default function CategoryForBrand() {
               }
               className="flex items-center cursor-pointer select-none"
             >
-              <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
+              <span className="not-italic mr-1 font-AeonikProMedium text-[16px] leading-4 text-black">
                 Budget
               </span>
               <img
@@ -268,7 +268,7 @@ export default function CategoryForBrand() {
             </div>
           </div>
           <div
-            className={`  border-1 border-green-600  overflow-hidden  ${
+            className={`overflow-hidden  ${
               state?.budgetShow
                 ? "duration-300 h-0"
                 : "duration-300 h-[170px] mt-5"
@@ -278,7 +278,7 @@ export default function CategoryForBrand() {
               {product.prizes.map((item) => (
                 <button
                   key={item.id}
-                  className="h-11 w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory transition ease-linear duration-200 rounded-lg focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white"
+                  className="h-11 w-[49%] flex items-center justify-center not-italic font-AeonikProMedium text-[14px] leading-3 text-center text-black bg-bgCategory transition ease-linear duration-200 rounded-lg focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white"
                 >
                   {item.prize}
                 </button>
@@ -286,11 +286,11 @@ export default function CategoryForBrand() {
             </div>
             <div className="w-full h-12 bg-bgCategory  mt-4 pb-1">
               <div className=" w-full flex justify-center items-center gap-x-1">
-                <div className=" h-fit  not-italic font-AeonikProMedium text-base leading-4 text-center text-fullBlue tracking-[1%]">
+                <div className=" h-fit  not-italic font-AeonikProMedium text-[14px] leading-4 text-center text-fullBlue tracking-[1%]">
                   {values[0]}
                 </div>{" "}
                 <div className=" h-fit pb-2">-</div>
-                <div className=" h-fit not-italic font-AeonikProMedium text-base leading-4 text-center text-fullBlue tracking-[1%]">
+                <div className=" h-fit not-italic font-AeonikProMedium text-[14px] leading-4 text-center text-fullBlue tracking-[1%]">
                   {values[1]}
                 </div>
               </div>{" "}
@@ -327,7 +327,7 @@ export default function CategoryForBrand() {
               }
               className="flex items-center cursor-pointer select-none"
             >
-              <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
+              <span className="not-italic mr-1 font-AeonikProMedium text-[16px] leading-4 text-black">
                 Цвет
               </span>
               <img
@@ -338,7 +338,7 @@ export default function CategoryForBrand() {
                 alt=""
               />
             </div>
-            <span className="not-italic font-AeonikProMedium text-base leading-4 text-fullBlue cursor-pointer">
+            <span className="not-italic font-AeonikProMedium text-[16px] leading-4 text-fullBlue cursor-pointer">
               Очистить все
             </span>
           </div>
@@ -355,7 +355,7 @@ export default function CategoryForBrand() {
                 <div
                   key={item?.id}
                   onClick={() => HandleColorCheck(item?.id)}
-                  className={`rounded-full flex items-center justify-center hover:scale-110 duration-300 w-8 h-8 ${item?.colors} cursor-pointer  border border-solid border-borderColorCard`}
+                  className={`rounded-full flex items-center justify-center hover:scale-110 duration-300 w-8 h-8 ${item?.colors} cursor-pointer  border border-borderColorCard`}
                   htmlFor="Color1"
                 >
                   {item?.action ? (
@@ -381,7 +381,7 @@ export default function CategoryForBrand() {
               }
               className="flex items-center cursor-pointer select-none"
             >
-              <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
+              <span className="not-italic mr-1 font-AeonikProMedium text-[16px] leading-4 text-black">
                 Доступность
               </span>
               <img
@@ -420,10 +420,10 @@ export default function CategoryForBrand() {
                       </span>
                     )}
                   </div>
-                  <div className="flex items-center not-italic mr-2 font-AeonikProRegular text-base leading-4 text-black">
+                  <div className="flex items-center not-italic mr-2 font-AeonikProRegular text-[14px] leading-4 text-black">
                     {data?.title}
                   </div>
-                  <div className="flex items-center not-italic font-AeonikProRegular text-base leading-4 text-setTexOpacity">
+                  <div className="flex items-center not-italic font-AeonikProRegular text-[14px] leading-4 text-setTexOpacity">
                     ({data?.count})
                   </div>
                 </div>
@@ -449,7 +449,7 @@ export default function CategoryForBrand() {
               }
               className="flex items-center cursor-pointer select-none"
             >
-              <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
+              <span className="not-italic mr-1 font-AeonikProMedium text-[16px] leading-4 text-black">
                 Отзывы клиентов
               </span>
               <img
@@ -488,7 +488,7 @@ export default function CategoryForBrand() {
                     <img src={StarWithoutColor} alt="" />
                     <img src={StarWithoutColor} alt="" />
                   </div>
-                  <div className="flex items-endnot-italic font-AeonikProMedium text-base leading-4 text-black mt-[4px]">
+                  <div className="flex items-endnot-italic font-AeonikProMedium text-[14px] leading-4 text-black mt-[4px]">
                     {data?.text || null}
                   </div>
                 </div>
@@ -511,7 +511,7 @@ export default function CategoryForBrand() {
               }
               className="flex items-center cursor-pointer select-none"
             >
-              <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
+              <span className="not-italic mr-1 font-AeonikProMedium text-[16px] leading-4 text-black">
                 Размер одежды
               </span>
               <img
@@ -522,7 +522,7 @@ export default function CategoryForBrand() {
                 alt=""
               />
             </div>
-            <span className="not-italic font-AeonikProMedium text-base leading-4 text-fullBlue cursor-pointer">
+            <span className="not-italic font-AeonikProMedium text-[16px] leading-4 text-fullBlue cursor-pointer">
               3XL
             </span>
           </div>
@@ -537,7 +537,7 @@ export default function CategoryForBrand() {
               {product.clothingSize.map((item) => (
                 <button
                   key={item.id}
-                  className="h-10 w-[57px] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white transition ease-linear duration-200 rounded-lg"
+                  className="h-10 w-[57px] flex items-center justify-center not-italic font-AeonikProMedium text-[14px] leading-3 text-center text-black bg-bgCategory focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white transition ease-linear duration-200 rounded-lg"
                 >
                   {item.size}
                 </button>
@@ -560,7 +560,7 @@ export default function CategoryForBrand() {
               }
               className="flex items-center cursor-pointer select-none"
             >
-              <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
+              <span className="not-italic mr-1 font-AeonikProMedium text-[16px] leading-4 text-black">
                 Размер брюк
               </span>
               <img
@@ -571,7 +571,7 @@ export default function CategoryForBrand() {
                 alt=""
               />
             </div>
-            <span className="not-italic font-AeonikProMedium text-base leading-4 text-fullBlue cursor-pointer">
+            <span className="not-italic font-AeonikProMedium text-[16px] leading-4 text-fullBlue cursor-pointer">
               2XL
             </span>
           </div>
@@ -586,7 +586,7 @@ export default function CategoryForBrand() {
               {product.pantsSize.map((item) => (
                 <button
                   key={item.id}
-                  className="h-10 w-[57px] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white transition ease-linear duration-200 rounded-lg"
+                  className="h-10 w-[57px] flex items-center justify-center not-italic font-AeonikProMedium text-[14px] leading-3 text-center text-black bg-bgCategory focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white transition ease-linear duration-200 rounded-lg"
                 >
                   {item.size}
                 </button>
@@ -609,7 +609,7 @@ export default function CategoryForBrand() {
               }
               className="flex items-center cursor-pointer select-none"
             >
-              <span className="not-italic mr-1 font-AeonikProMedium text-lg leading-4 text-black">
+              <span className="not-italic mr-1 font-AeonikProMedium text-[16px] leading-4 text-black">
                 Размер обуви
               </span>
               <img
@@ -620,7 +620,7 @@ export default function CategoryForBrand() {
                 alt=""
               />
             </div>
-            <span className="not-italic font-AeonikProMedium text-base leading-4 text-fullBlue cursor-pointer">
+            <span className="not-italic font-AeonikProMedium text-[16px] leading-4 text-fullBlue cursor-pointer">
               44
             </span>
           </div>
@@ -635,7 +635,7 @@ export default function CategoryForBrand() {
               {product.shoeSize.map((item) => (
                 <button
                   key={item.id}
-                  className="h-10 w-[57px] flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-bgCategory focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white transition ease-linear duration-200 rounded-lg"
+                  className="h-10 w-[57px] flex items-center justify-center not-italic font-AeonikProMedium text-[14px] leading-3 text-center text-black bg-bgCategory focus:bg-fullBlue hover:bg-fullBlue focus:text-white hover:text-white transition ease-linear duration-200 rounded-lg"
                 >
                   {item.size}
                 </button>
@@ -645,7 +645,7 @@ export default function CategoryForBrand() {
         </div>
       </div>
       <div className=" mt-8 border-t border-searchBgColor py-5 px-3">
-        <button className="h-[44px] border w-full flex items-center justify-center not-italic font-AeonikProMedium text-sm leading-3 text-center text-black bg-white rounded-lg active:scale-95	active:opacity-70">
+        <button className="h-[44px] border w-full flex items-center justify-center not-italic font-AeonikProMedium text-[16px] leading-3 text-center text-black bg-white rounded-lg active:scale-95	active:opacity-70">
           Сбросить фильтр
         </button>
       </div>

@@ -22,7 +22,7 @@ export default function CategoryTopDetail() {
             <span>
               <img src={CategoryMenu} alt="CategoryMenu" className="" />{" "}
             </span>
-            <span className="not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%] px-2 mt-1">
+            <span className="not-italic font-AeonikProMedium text-[14px] leading-4 text-black tracking-[1%] px-2 mt-1">
               Все категории{" "}
             </span>
             <span>
@@ -33,26 +33,18 @@ export default function CategoryTopDetail() {
 
         <div className="flex items-center">
           <div className="flex items-center w-fit mr-4">
-            <span className="not-italic font-normal text-sm leading-4 text-setTexOpacity tractking-[1%]">
+            <span className="not-italic font-normal text-[14px] leading-4 text-setTexOpacity tractking-[1%]">
               Цена:
             </span>
           </div>{" "}
           <div className="w-[360px]  ">
-            {/* <div className="w-full border border-green-500 flex justify-between">
-              <span className="not-italic font-AeonikProMedium text-sm leading-4 tracking-[1%] ">
-                60 000 сум
-              </span>
-              <span className="not-italic font-AeonikProMedium text-sm leading-4 tracking-[1%] ">
-                180 000 сум
-              </span>
-            </div> */}
             <div className="w-full">
               <div className="w-full mt-1 ">
                 <div className=" w-full flex justify-between items-center pt-1  gap-x-1">
-                  <div className=" h-fit  not-italic font-AeonikProMedium text-base leading-4 text-center text-black tracking-[1%]">
+                  <div className=" h-fit  not-italic font-AeonikProMedium text-[14px] leading-4 text-center text-black tracking-[1%]">
                     {values[0]} сум
                   </div>{" "}
-                  <div className=" h-fit not-italic font-AeonikProMedium text-base leading-4 text-center text-black tracking-[1%]">
+                  <div className=" h-fit not-italic font-AeonikProMedium text-[14px] leading-4 text-center text-black tracking-[1%]">
                     {values[1]} сум
                   </div>
                 </div>{" "}
@@ -80,7 +72,7 @@ export default function CategoryTopDetail() {
             {/* <span>
               <img src={CategoryMenu} alt="CategoryMenu" className="" />{" "}
             </span> */}
-            <span className="not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%] mr-2 mt-1">
+            <span className="not-italic font-AeonikProMedium text-[14px] leading-4 text-black tracking-[1%] mr-2 mt-1">
               Доставка{" "}
             </span>
             <span>
@@ -90,7 +82,7 @@ export default function CategoryTopDetail() {
         </div>
         <div className="w-[fit] flex items-center ">
           <div className="flex items-center w-fit mr-4">
-            <span className="not-italic font-normal text-sm leading-4 text-setTexOpacity tractking-[1%]">
+            <span className="not-italic font-normal text-[14px] leading-4 text-setTexOpacity tractking-[1%]">
               Сортировка:
             </span>
           </div>
@@ -99,7 +91,7 @@ export default function CategoryTopDetail() {
               {/* <span>
                 <img src={CategoryMenu} alt="CategoryMenu" className="" />{" "}
               </span> */}
-              <span className="not-italic font-AeonikProMedium text-sm leading-4 text-black tracking-[1%]  mt-1">
+              <span className="not-italic font-AeonikProMedium text-[14px] leading-4 text-black tracking-[1%] mt-1">
                 Последние добавленные{" "}
               </span>
               <span>
