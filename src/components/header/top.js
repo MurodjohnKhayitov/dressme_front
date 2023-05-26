@@ -1,17 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import {
-  MenuClose,
-  business,
-  englishFlag,
-  glasses,
-  help,
-  location,
-  order,
-  russiaFlag,
-  shop,
-  uzbekFlag,
-} from "../../assets/imgs";
+import { MenuClose, business, englishFlag, glasses, help, location, order, russiaFlag, shop, uzbekFlag } from "../../assets/imgs";
 import { dressMainData } from "../../ContextHook/ContextMenu";
 import { Modal, Popover } from "antd";
 import { useQuery } from "@tanstack/react-query";
@@ -156,8 +145,12 @@ const TopHeader = () => {
       <div className="max-w-[1280px] w-[100%] h-[32px] py-[2px] flex justify-between items-center m-auto  ">
         <div className="left h-full flex items-center  ">
           <Link to="/" className="flex w-fit items-center">
-            <img src={location} alt="location" className="mr-2" />
-            <span className="text-textColor text-[13px] mr-[6px] font-AeonikProMedium">
+            {/* Location svg img */}
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.99992 8.95333C9.14867 8.95333 10.0799 8.02209 10.0799 6.87333C10.0799 5.72458 9.14867 4.79333 7.99992 4.79333C6.85117 4.79333 5.91992 5.72458 5.91992 6.87333C5.91992 8.02209 6.85117 8.95333 7.99992 8.95333Z" stroke="black" stroke-width="1.5"/>
+                <path d="M2.4133 5.66C3.72664 -0.113333 12.28 -0.106666 13.5866 5.66667C14.3533 9.05333 12.2466 11.92 10.4 13.6933C9.05997 14.9867 6.93997 14.9867 5.5933 13.6933C3.7533 11.92 1.64664 9.04667 2.4133 5.66Z" stroke="black" stroke-width="1.5"/>
+            </svg>
+            <span className="text-textColor text-[13px] ml-2 mr-[6px] font-AeonikProMedium">
               Город:
             </span>
             <div className="w-[90px] font-AeonikProMedium   flex items-center ">
@@ -174,30 +167,6 @@ const TopHeader = () => {
               </Popover>
             </div>
           </Link>
-          {/* <div className="flex items-center mx-[40px]  ">
-            {state?.weatherSet?.current?.condition?.icon ? (
-              <div
-                onClick={showModal}
-                className={"flex items-center cursor-pointer"}
-              >
-                <span className="mr-[6px]">
-                  <img
-                    className="w-[32px] h-[32px]"
-                    src={state?.weatherSet?.current?.condition?.icon}
-                    alt="icon"
-                  />
-                </span>
-                <span className="not-italic font-AeonikProMedium text-base  leading-4 text-black after:content-['\00B0'] after:font-AeonikProMedium  mt-[3px]">
-                  {state?.weatherSet?.current?.temp_c}
-                </span>
-                <span className="not-italic font-AeonikProRegular text-base  mt-[3px] leading-4 text-black">
-                  C
-                </span>
-              </div>
-            ) : (
-              <span className="w-[70px] h-[28px] bg-borderColorCard rounded"></span>
-            )}
-          </div> */}
           <Modal
             closable={false}
             className="!w-fit !h-fit "
@@ -240,7 +209,8 @@ const TopHeader = () => {
           </div>
 
           <div className="flex h-full px-[11px] items-center bg-white rounded ml-3 cursor-pointer ">
-            <img src={glasses} alt="glasses" className="mr-2" />
+            {/* Glasses svg img */}
+            
             <span className="h-full flex items-center font-AeonikProMedium text-[13px] ">
               Спец. возможности
             </span>

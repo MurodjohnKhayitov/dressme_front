@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 
 import {
+
   adidas,
   chanel,
   hm,
@@ -10,6 +11,8 @@ import {
   tommy,
   zara,
 } from "../../../../AssetsMain";
+
+
 import Slider from "react-slick";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
@@ -454,6 +457,7 @@ export default function MainPageSliders() {
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
+
                         />
                         <path
                           d="M12.4133 18.1183L16.52 14L12.4133 9.88168"
@@ -461,6 +465,7 @@ export default function MainPageSliders() {
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
+
                         />
                       </svg>
                     </p>
@@ -492,6 +497,7 @@ export default function MainPageSliders() {
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
+
                         />
                         <path
                           d="M12.4133 18.1183L16.52 14L12.4133 9.88168"
@@ -499,6 +505,7 @@ export default function MainPageSliders() {
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
+
                         />
                       </svg>
                     </p>
@@ -549,6 +556,7 @@ export default function MainPageSliders() {
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
+
                         />
                         <path
                           d="M12.4133 18.1183L16.52 14L12.4133 9.88168"
@@ -556,6 +564,7 @@ export default function MainPageSliders() {
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
+
                         />
                       </svg>
                     </p>
@@ -634,6 +643,7 @@ export default function MainPageSliders() {
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
+
                         />
                         <path
                           d="M12.4133 18.1183L16.52 14L12.4133 9.88168"
@@ -643,6 +653,7 @@ export default function MainPageSliders() {
                           strokeLinejoin="round"
                         />
                       </svg>{" "}
+
                     </p>
                   </div>
                 </div>
