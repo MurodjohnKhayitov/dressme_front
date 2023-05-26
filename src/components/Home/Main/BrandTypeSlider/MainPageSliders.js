@@ -1,6 +1,22 @@
 import React, { useContext } from "react";
 
-import { arrowBottomFull, markets, adidas, chanel, hm, lacoste, nike, puma, tommy, zara, SpringSquare, SummerSquare, AutummSquare, WinterSquare, noProductImg } from "../../../../assets/imgs";
+import {
+  arrowBottomFull,
+  markets,
+  adidas,
+  chanel,
+  hm,
+  lacoste,
+  nike,
+  puma,
+  tommy,
+  zara,
+  SpringSquare,
+  SummerSquare,
+  AutummSquare,
+  WinterSquare,
+  noProductImg,
+} from "../../../../assets/imgs";
 import Slider from "react-slick";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
@@ -400,11 +416,28 @@ export default function MainPageSliders() {
                       Sports clothes
                     </p>
                     <p>
-                      <img
-                        src={data?.imgFull}
-                        alt="next"
-                        className="ss:w-[70%] xs:w-[100%]"
-                      />
+                      <svg
+                        width="28"
+                        height="28"
+                        viewBox="0 0 28 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M25.6666 17.5L25.6666 10.5C25.6666 4.66669 23.3333 2.33336 17.5 2.33336L10.5 2.33336C4.66665 2.33336 2.33331 4.66669 2.33331 10.5L2.33331 17.5C2.33331 23.3334 4.66665 25.6667 10.5 25.6667L17.5 25.6667C23.3333 25.6667 25.6666 23.3334 25.6666 17.5Z"
+                          stroke={dataStyle}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12.4133 18.1183L16.52 14L12.4133 9.88168"
+                          stroke={dataStyle}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </p>
                   </div>
                 </div>
@@ -421,11 +454,28 @@ export default function MainPageSliders() {
                       Muslim clothes
                     </p>
                     <p>
-                      <img
-                        src={data?.imgFull}
-                        alt="next"
-                        className="ss:w-[70%] xs:w-[100%]"
-                      />
+                      <svg
+                        width="28"
+                        height="28"
+                        viewBox="0 0 28 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M25.6666 17.5L25.6666 10.5C25.6666 4.66669 23.3333 2.33336 17.5 2.33336L10.5 2.33336C4.66665 2.33336 2.33331 4.66669 2.33331 10.5L2.33331 17.5C2.33331 23.3334 4.66665 25.6667 10.5 25.6667L17.5 25.6667C23.3333 25.6667 25.6666 23.3334 25.6666 17.5Z"
+                          stroke={dataStyle}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12.4133 18.1183L16.52 14L12.4133 9.88168"
+                          stroke={dataStyle}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </p>
                   </div>
                 </div>
@@ -450,11 +500,28 @@ export default function MainPageSliders() {
                       </span>
                     </p>
                     <p>
-                      <img
-                        src={data?.imgFull}
-                        alt="next"
-                        className="ss:w-[70%] xs:w-[100%]"
-                      />
+                      <svg
+                        width="28"
+                        height="28"
+                        viewBox="0 0 28 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M25.6666 17.5L25.6666 10.5C25.6666 4.66669 23.3333 2.33336 17.5 2.33336L10.5 2.33336C4.66665 2.33336 2.33331 4.66669 2.33331 10.5L2.33331 17.5C2.33331 23.3334 4.66665 25.6667 10.5 25.6667L17.5 25.6667C23.3333 25.6667 25.6666 23.3334 25.6666 17.5Z"
+                          stroke={dataStyle}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12.4133 18.1183L16.52 14L12.4133 9.88168"
+                          stroke={dataStyle}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </p>
                   </div>
                 </div>
@@ -480,7 +547,28 @@ export default function MainPageSliders() {
                       </span>
                     </p>
                     <p>
-                      <img src={data?.imgFull} alt="next" />
+                      <svg
+                        width="28"
+                        height="28"
+                        viewBox="0 0 28 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M25.6666 17.5L25.6666 10.5C25.6666 4.66669 23.3333 2.33336 17.5 2.33336L10.5 2.33336C4.66665 2.33336 2.33331 4.66669 2.33331 10.5L2.33331 17.5C2.33331 23.3334 4.66665 25.6667 10.5 25.6667L17.5 25.6667C23.3333 25.6667 25.6666 23.3334 25.6666 17.5Z"
+                          stroke={dataStyle}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12.4133 18.1183L16.52 14L12.4133 9.88168"
+                          stroke={dataStyle}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </p>
                   </div>
                 </div>
